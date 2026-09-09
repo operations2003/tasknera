@@ -1,120 +1,196 @@
 'use client';
 import React, { useState } from 'react';
+import Link from 'next/link';
+import {
+  Laptop,
+  Activity,
+  Factory,
+  ShoppingBag,
+  Landmark,
+  Truck,
+  GraduationCap,
+  Share2,
+  Briefcase,
+  Building2,
+  Rocket,
+  Coins,
+  Code2,
+  Megaphone,
+  Headphones,
+  RotateCw,
+  Crown,
+  Users,
+  HeartPulse,
+  Globe2,
+  ArrowRight,
+} from 'lucide-react';
 
 const industries = [
-  { icon: '💻', label: 'IT, SaaS & Tech' },
-  { icon: '🏥', label: 'Healthcare' },
-  { icon: '🏭', label: 'Manufacturing' },
-  { icon: '🛒', label: 'Retail & E-commerce' },
-  { icon: '🏦', label: 'BFSI' },
-  { icon: '🚚', label: 'Logistics & Supply Chain' },
-  { icon: '🎓', label: 'Education' },
-  { icon: '📱', label: 'Digital Marketing' },
-  { icon: '🤝', label: 'Consulting' },
-  { icon: '🏨', label: 'Hospitality' },
-  { icon: '🚀', label: 'Startups & High-Growth' },
-  { icon: '💰', label: 'Finance & Accounting' },
+  { icon: Laptop, label: 'IT, SaaS & Tech', roles: 'Full-stack, QA, DevOps, Product' },
+  { icon: Activity, label: 'Healthcare & Biotech', roles: 'Clinical, medical billing, support' },
+  { icon: Factory, label: 'Manufacturing', roles: 'Supply chain, plant ops, procurement' },
+  { icon: ShoppingBag, label: 'Retail & E-commerce', roles: 'Catalog, customer care, ops' },
+  { icon: Landmark, label: 'BFSI & Fintech', roles: 'Risk, compliance, financial ops' },
+  { icon: Truck, label: 'Logistics & Supply Chain', roles: 'Dispatch, fleet, freight ops' },
+  { icon: GraduationCap, label: 'EdTech & Education', roles: 'Admissions, student support, counselors' },
+  { icon: Share2, label: 'Digital Media & Agencies', roles: 'Account managers, content, performance' },
+  { icon: Briefcase, label: 'Professional Consulting', roles: 'Business analysts, project coordinators' },
+  { icon: Building2, label: 'Hospitality & Real Estate', roles: 'Guest care, bookings, facility management' },
+  { icon: Rocket, label: 'Startups & Scale-ups', roles: 'Founding teams, rapid hiring pods' },
+  { icon: Coins, label: 'Finance & Accounting', roles: 'Bookkeeping, tax, controller support' },
 ];
 
 const functionalRoles = [
-  { icon: '⚙️', label: 'IT & Engineering' },
-  { icon: '💹', label: 'Finance & Accounting' },
-  { icon: '📣', label: 'Sales & Marketing' },
-  { icon: '🎧', label: 'Customer Support & BPO' },
-  { icon: '🔄', label: 'Operations & Supply Chain' },
-  { icon: '👔', label: 'Executive & Leadership' },
-  { icon: '👥', label: 'HR & Administration' },
-  { icon: '🩺', label: 'Healthcare & Clinical' },
+  { icon: Code2, label: 'IT & Engineering', desc: 'Software engineers, architects, cloud, QA' },
+  { icon: Coins, label: 'Finance & Accounting', desc: 'Accountants, controllers, financial analysts' },
+  { icon: Megaphone, label: 'Sales & Marketing', desc: 'SDRs, AEs, demand gen, CRM specialists' },
+  { icon: Headphones, label: 'Customer Support (VCS)', desc: 'Omnichannel voice, live chat, ticket pods' },
+  { icon: RotateCw, label: 'Operations & Supply Chain', desc: 'Inventory managers, logisticians, coordinators' },
+  { icon: Crown, label: 'Executive & Leadership', desc: 'C-suite, VPs, country & regional directors' },
+  { icon: Users, label: 'HR & Administration', desc: 'HR generalists, recruiters, executive VAs' },
+  { icon: HeartPulse, label: 'Healthcare & Clinical', desc: 'Triage staff, medical admins, patient support' },
 ];
 
 export default function IndustriesSection() {
   const [tab, setTab] = useState<'industries' | 'roles'>('industries');
-  const items = tab === 'industries' ? industries : functionalRoles;
 
   return (
-    <section id="industries" className="py-20 sm:py-28 bg-muted">
+    <section id="industries" className="py-20 sm:py-28 bg-muted relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 scroll-reveal">
-          <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/20 rounded-full px-4 py-1.5 mb-5">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-            <span className="text-xs font-semibold text-accent tracking-widest uppercase">Coverage</span>
+        <div className="text-center max-w-3xl mx-auto mb-14 scroll-reveal">
+          <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/20 rounded-full px-4 py-1.5 mb-5 shadow-sm">
+            <span className="w-2 h-2 rounded-full bg-accent" />
+            <span className="text-xs font-bold text-accent tracking-widest uppercase">
+              Domain Coverage
+            </span>
           </div>
-          <h2 className="text-section-title font-display font-700 text-foreground mb-4">
-            Industries & Functional{' '}
+          <h2 className="text-section-title font-display font-bold text-foreground mb-4">
+            Industries &amp; Functional{' '}
             <span className="gradient-text-teal">Expertise</span>
           </h2>
-          <p className="text-muted-foreground text-lg">
-            Deep domain knowledge across 12+ industries and 8 functional hiring areas.
+          <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
+            Specialized domain knowledge across 12+ industry sectors and 8 core functional business roles.
           </p>
         </div>
 
         {/* Tab toggle */}
-        <div className="flex justify-center mb-8 scroll-reveal" style={{ transitionDelay: '0.1s' }}>
-          <div className="bg-card border border-border rounded-full p-1 flex gap-1">
-            {(['industries', 'roles'] as const).map((t) => (
-              <button
-                key={t}
-                onClick={() => setTab(t)}
-                suppressHydrationWarning
-                className={`px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${tab === t
-                  ? 'bg-primary text-white shadow-sm'
-                  : 'text-muted-foreground hover:text-foreground'
-                  }`}
-              >
-                {t === 'industries' ? 'Industries Served' : 'Functional Roles'}
-              </button>
-            ))}
+        <div className="flex justify-center mb-10 scroll-reveal" style={{ transitionDelay: '0.05s' }}>
+          <div className="bg-card border border-border rounded-full p-1.5 flex gap-1.5 shadow-sm">
+            <button
+              type="button"
+              onClick={() => setTab('industries')}
+              className={`px-6 py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all duration-300 ${
+                tab === 'industries'
+                  ? 'bg-primary text-white shadow-md'
+                  : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+              }`}
+            >
+              Industries Served (12)
+            </button>
+            <button
+              type="button"
+              onClick={() => setTab('roles')}
+              className={`px-6 py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all duration-300 ${
+                tab === 'roles'
+                  ? 'bg-primary text-white shadow-md'
+                  : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+              }`}
+            >
+              Functional Roles (8)
+            </button>
           </div>
         </div>
 
-        {/* Grid — 4 cols desktop, 2 mobile */}
-        {/* BENTO GRID AUDIT for industries (12 cards, 4 cols): 
-            Row 1: [IT col-1] [Healthcare col-2] [Manufacturing col-3] [Retail col-4]
-            Row 2: [BFSI col-1] [Logistics col-2] [Education col-3] [Digital col-4]
-            Row 3: [Consulting col-1] [Hospitality col-2] [Startups col-3] [Finance col-4]
-            Placed 12/12 ✓
-            For functional roles (8 cards, 4 cols):
-            Row 1: [IT col-1] [Finance col-2] [Sales col-3] [Support col-4]
-            Row 2: [Ops col-1] [Exec col-2] [HR col-3] [Healthcare col-4]
-            Placed 8/8 ✓
-        */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 scroll-reveal" style={{ transitionDelay: '0.2s' }}>
-          {items.map((item, i) => (
-            <div
-              key={item.label}
-              className="spotlight-card hover-lift bg-card border border-border rounded-2xl p-4 flex items-center gap-3 shadow-sm cursor-default"
-              style={{ transitionDelay: `${i * 0.03}s` }}
-            >
-              <div className="w-10 h-10 rounded-xl bg-muted flex items-center justify-center text-xl flex-shrink-0">
-                {item.icon}
-              </div>
-              <span className="text-sm font-medium text-foreground leading-snug">{item.label}</span>
-            </div>
-          ))}
-        </div>
+        {/* Grid */}
+        {tab === 'industries' ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 scroll-reveal" style={{ transitionDelay: '0.1s' }}>
+            {industries.map((item, i) => {
+              const IconComp = item.icon;
+              return (
+                <div
+                  key={item.label}
+                  className="card-premium rounded-2xl p-5 flex items-start gap-4 group"
+                  style={{ transitionDelay: `${i * 0.02}s` }}
+                >
+                  <div className="w-11 h-11 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent flex-shrink-0 group-hover:scale-110 transition-transform">
+                    <IconComp className="w-5 h-5" />
+                  </div>
+                  <div className="min-w-0">
+                    <span className="text-sm font-bold text-foreground block group-hover:text-accent transition-colors">
+                      {item.label}
+                    </span>
+                    <span className="text-xs text-muted-foreground line-clamp-1 mt-0.5">
+                      {item.roles}
+                    </span>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 scroll-reveal" style={{ transitionDelay: '0.1s' }}>
+            {functionalRoles.map((item, i) => {
+              const IconComp = item.icon;
+              return (
+                <div
+                  key={item.label}
+                  className="card-premium rounded-2xl p-5 flex items-start gap-4 group"
+                  style={{ transitionDelay: `${i * 0.02}s` }}
+                >
+                  <div className="w-11 h-11 rounded-xl bg-secondary/10 border border-secondary/20 flex items-center justify-center text-secondary flex-shrink-0 group-hover:scale-110 transition-transform">
+                    <IconComp className="w-5 h-5" />
+                  </div>
+                  <div className="min-w-0">
+                    <span className="text-sm font-bold text-foreground block group-hover:text-secondary transition-colors">
+                      {item.label}
+                    </span>
+                    <span className="text-xs text-muted-foreground line-clamp-1 mt-0.5">
+                      {item.desc}
+                    </span>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        )}
 
         {/* Global reach strip */}
-        <div className="mt-12 bg-primary rounded-3xl p-6 sm:p-8 scroll-reveal" style={{ transitionDelay: '0.3s' }}>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 items-center">
-            <div className="lg:col-span-2">
-              <div className="text-xs font-semibold text-white/50 uppercase tracking-widest mb-2">Global Reach</div>
-              <h3 className="font-display font-700 text-white text-xl sm:text-2xl">Hiring Across 5 Regions</h3>
-              <p className="text-white/60 text-sm mt-2">We source, screen, and deliver globally.</p>
+        <div className="mt-14 bg-primary rounded-3xl p-8 sm:p-10 text-white shadow-2xl relative overflow-hidden border border-white/10 scroll-reveal" style={{ transitionDelay: '0.2s' }}>
+          <div className="grid lg:grid-cols-12 gap-6 items-center">
+            <div className="lg:col-span-5 space-y-2">
+              <div className="inline-flex items-center gap-2 bg-white/10 px-3 py-1 rounded-full text-xs font-bold text-accent uppercase tracking-wider">
+                <Globe2 className="w-3.5 h-3.5" />
+                <span>Global Sourcing Coverage</span>
+              </div>
+              <h3 className="font-display font-bold text-2xl sm:text-3xl text-white">
+                Sourcing Across 5 Continents &amp; Hubs
+              </h3>
+              <p className="text-white/70 text-sm">
+                We source, pre-vet, and place talent across local and international timezones.
+              </p>
             </div>
-            <div className="lg:col-span-3 flex flex-wrap gap-3">
-              {['India', 'United States', 'United Kingdom', 'Europe', 'Remote Global'].map((region) => (
+            <div className="lg:col-span-7 flex flex-wrap gap-2.5">
+              {[
+                { name: 'India (Headquarters)', tag: 'Core Delivery Hub' },
+                { name: 'United States', tag: 'EST / CST / PST' },
+                { name: 'United Kingdom', tag: 'GMT / BST' },
+                { name: 'Europe', tag: 'CET Multi-lingual' },
+                { name: 'Remote Global', tag: '24/7 Coverage' },
+              ].map((region) => (
                 <div
-                  key={region}
-                  className="glass-card rounded-full px-4 py-2 text-white/80 text-sm font-medium"
+                  key={region.name}
+                  className="glass-card rounded-2xl px-4 py-2.5 text-white flex flex-col justify-center border border-white/15"
                 >
-                  {region}
+                  <span className="text-sm font-bold text-white">{region.name}</span>
+                  <span className="text-[10px] text-accent font-semibold">{region.tag}</span>
                 </div>
               ))}
             </div>
           </div>
         </div>
+
       </div>
     </section>
   );

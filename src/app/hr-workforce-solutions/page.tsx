@@ -38,47 +38,49 @@ const services = [
   },
 ];
 
+import { Search, Compass, Cog, GraduationCap, Rocket, RefreshCw, FileSpreadsheet, Zap, Briefcase, BarChart3, Users, Clock } from 'lucide-react';
+
 const processSteps = [
   {
     num: '01',
     title: 'HR Audit & Discovery',
     desc: 'We assess your current HR processes, compliance posture, and workforce data to identify gaps and priorities.',
-    icon: '🔎',
+    icon: Search,
     detail: 'Process audit · Compliance gap analysis · Workforce data review',
   },
   {
     num: '02',
     title: 'Solution Design',
     desc: 'Custom HR framework design aligned to your headcount, industry, and growth stage not a generic template.',
-    icon: '📐',
+    icon: Compass,
     detail: 'Policy drafting · Process mapping · Technology selection',
   },
   {
     num: '03',
     title: 'System Setup & Configuration',
     desc: 'HRMS configuration, payroll system setup, and integration with existing tools like ERP or accounting software.',
-    icon: '⚙️',
+    icon: Cog,
     detail: 'HRMS onboarding · Payroll engine setup · Integration testing',
   },
   {
     num: '04',
     title: 'Team Training & Handover',
     desc: 'Your HR team and managers are trained on new processes, systems, and compliance requirements.',
-    icon: '🎓',
+    icon: GraduationCap,
     detail: 'Manager workshops · Employee self-service training · SOP documentation',
   },
   {
     num: '05',
     title: 'Go Live & Parallel Run',
     desc: 'Controlled go live with a parallel run period to validate accuracy before full cutover.',
-    icon: '🚀',
+    icon: Rocket,
     detail: 'Parallel payroll validation · Compliance sign-off · Issue resolution',
   },
   {
     num: '06',
     title: 'Ongoing Support & Optimisation',
     desc: 'Monthly compliance reviews, payroll processing, and continuous improvement of HR operations.',
-    icon: '🔄',
+    icon: RefreshCw,
     detail: 'Monthly payroll runs · Quarterly compliance reviews · Annual policy updates',
   },
 ];
@@ -229,27 +231,32 @@ export default function HRWorkforceSolutionsPage() {
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
               {[
-                { title: 'Contract Workforce', desc: 'Pre-screened, specialized professionals deployed on flexible tenures for high-priority initiatives.', icon: '📋' },
-                { title: 'Temporary Workforce', desc: 'Agile staffing support to handle seasonal peaks, project deadlines, and operational leaves.', icon: '⚡' },
-                { title: 'Workforce Deployment', desc: 'Rapid mobilization and multi-location field staffing with full onboarding and legal compliance.', icon: '🚀' },
-                { title: 'Workforce Planning', desc: 'Strategic capacity modeling, skills-gap identification, and headcount budgeting alignment.', icon: '📐' },
-                { title: 'Workforce Management', desc: 'Ongoing performance tracking, shift scheduling, payroll administration, and SLA governance.', icon: '📊' },
-                { title: 'Flexible & Scalable Workforce', desc: 'Modular models allowing rapid headcount changes without long-term overhead liabilities.', icon: '🔄' },
-              ].map((wf) => (
-                <div key={wf.title} className="spotlight-card hover-lift bg-background border border-border rounded-2xl p-6 shadow-sm flex flex-col justify-between">
-                  <div>
-                    <div className="text-3xl mb-3">{wf.icon}</div>
-                    <h3 className="font-display font-700 text-foreground text-lg mb-2">{wf.title}</h3>
-                    <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed">{wf.desc}</p>
+                { title: 'Contract Workforce', desc: 'Pre-screened, specialized professionals deployed on flexible tenures for high-priority initiatives.', icon: FileSpreadsheet },
+                { title: 'Temporary Workforce', desc: 'Agile staffing support to handle seasonal peaks, project deadlines, and operational leaves.', icon: Zap },
+                { title: 'Workforce Deployment', desc: 'Rapid mobilization and multi-location field staffing with full onboarding and legal compliance.', icon: Rocket },
+                { title: 'Workforce Planning', desc: 'Strategic capacity modeling, skills-gap identification, and headcount budgeting alignment.', icon: Compass },
+                { title: 'Workforce Management', desc: 'Ongoing performance tracking, shift scheduling, payroll administration, and SLA governance.', icon: BarChart3 },
+                { title: 'Flexible & Scalable Workforce', desc: 'Modular models allowing rapid headcount changes without long-term overhead liabilities.', icon: RefreshCw },
+              ].map((wf) => {
+                const IconComp = wf.icon;
+                return (
+                  <div key={wf.title} className="spotlight-card hover-lift bg-background border border-border rounded-2xl p-6 shadow-sm flex flex-col justify-between group">
+                    <div>
+                      <div className="w-12 h-12 rounded-xl bg-secondary/10 border border-secondary/20 flex items-center justify-center text-secondary mb-4 group-hover:bg-secondary group-hover:text-white transition-all duration-300">
+                        <IconComp className="w-6 h-6" />
+                      </div>
+                      <h3 className="font-display font-bold text-foreground text-lg mb-2">{wf.title}</h3>
+                      <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed">{wf.desc}</p>
+                    </div>
+                    <div className="mt-5 pt-3 border-t border-border/60">
+                      <Link href="/#contact" className="text-xs font-semibold text-secondary hover:underline flex items-center gap-1">
+                        <span>Request deployment</span>
+                        <span>→</span>
+                      </Link>
+                    </div>
                   </div>
-                  <div className="mt-5 pt-3 border-t border-border/60">
-                    <Link href="/#contact" className="text-xs font-semibold text-accent hover:underline flex items-center gap-1">
-                      <span>Request deployment</span>
-                      <span>→</span>
-                    </Link>
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
 
             <div className="bg-primary rounded-2xl p-6 sm:p-8 text-white flex flex-col sm:flex-row items-center justify-between gap-6">
@@ -280,18 +287,23 @@ export default function HRWorkforceSolutionsPage() {
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {processSteps.map((step, i) => (
-                <div key={step.num} className="glass-card rounded-2xl p-6 hover-lift group" style={{ transitionDelay: `${i * 0.06}s` }}>
-                  <div className="flex items-start justify-between mb-4">
-                    <span className="text-3xl font-display font-700 text-white/70 leading-none">{step.num}</span>
-                    <span className="text-2xl">{step.icon}</span>
+              {processSteps.map((step, i) => {
+                const IconComp = step.icon;
+                return (
+                  <div key={step.num} className="glass-card rounded-2xl p-6 hover-lift group" style={{ transitionDelay: `${i * 0.06}s` }}>
+                    <div className="flex items-start justify-between mb-4">
+                      <span className="text-3xl font-display font-bold text-white/70 leading-none">{step.num}</span>
+                      <div className="w-10 h-10 rounded-xl bg-secondary/20 border border-secondary/30 flex items-center justify-center text-secondary">
+                        <IconComp className="w-5 h-5" />
+                      </div>
+                    </div>
+                    <div className="w-8 h-0.5 bg-secondary mb-4 transition-all duration-300 group-hover:w-16" />
+                    <h3 className="font-semibold text-white text-base mb-2">{step.title}</h3>
+                    <p className="text-white/80 text-sm leading-relaxed mb-4">{step.desc}</p>
+                    <div className="text-xs text-white/60 font-medium border-t border-white/20 pt-3">{step.detail}</div>
                   </div>
-                  <div className="w-8 h-0.5 bg-secondary mb-4 transition-all duration-300 group-hover:w-16" />
-                  <h3 className="font-semibold text-white text-base mb-2">{step.title}</h3>
-                  <p className="text-white/80 text-sm leading-relaxed mb-4">{step.desc}</p>
-                  <div className="text-xs text-white/60 font-medium border-t border-white/20 pt-3">{step.detail}</div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>

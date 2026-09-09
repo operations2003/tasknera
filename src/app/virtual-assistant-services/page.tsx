@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Icon from '@/components/ui/AppIcon';
+import { UserCheck } from 'lucide-react';
 
 export const dynamic = 'force-static';
 
@@ -91,7 +92,9 @@ export default function VirtualAssistantServicesPage() {
 
               {/* Crucial Human Clarification Banner */}
               <div className="bg-white/10 border border-white/20 rounded-2xl p-4 sm:p-5 flex items-start gap-4 backdrop-blur-md">
-                <div className="text-2xl mt-0.5">👤</div>
+                <div className="w-10 h-10 rounded-xl bg-accent/20 border border-accent/30 flex items-center justify-center text-accent flex-shrink-0 mt-0.5">
+                  <UserCheck className="w-5 h-5" />
+                </div>
                 <div>
                   <div className="text-white font-semibold text-sm sm:text-base">
                     100% Vetted Human Remote Professionals

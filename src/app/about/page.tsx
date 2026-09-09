@@ -6,24 +6,26 @@ import Footer from '@/components/Footer';
 import AboutSection from '@/app/components/AboutSection';
 import PrinciplesSection from '@/app/components/PrinciplesSection';
 
+import { Zap, Globe, ShieldCheck, Handshake } from 'lucide-react';
+
 const corePillars = [
   {
-    icon: '⚡',
+    icon: Zap,
     title: 'Speed & Precision',
     desc: 'Cutting hiring cycles from months to days without compromising quality or culture fit.',
   },
   {
-    icon: '🌏',
+    icon: Globe,
     title: 'Cross-Border Talent',
     desc: 'Connecting global businesses with top talent across India, US, UK, Europe, and remote markets.',
   },
   {
-    icon: '🛡️',
+    icon: ShieldCheck,
     title: '100% Compliance',
     desc: 'Flawless payroll, statutory compliance, and HR governance built into every process.',
   },
   {
-    icon: '🤝',
+    icon: Handshake,
     title: 'True Partnership',
     desc: 'Not a passive vendor, but an active partner invested in your long-term business roadmap.',
   },
@@ -163,16 +165,21 @@ export default function AboutPage() {
 
               {/* Right Column — Core Values Bento Grid */}
               <div className="lg:col-span-6 grid sm:grid-cols-2 gap-4">
-                {corePillars.map((pillar) => (
-                  <div
-                    key={pillar.title}
-                    className="spotlight-card hover-lift bg-card border border-border rounded-2xl p-6 shadow-sm flex flex-col gap-3"
-                  >
-                    <div className="text-3xl mb-1">{pillar.icon}</div>
-                    <h3 className="font-display font-700 text-foreground text-base">{pillar.title}</h3>
-                    <p className="text-muted-foreground text-xs leading-relaxed">{pillar.desc}</p>
-                  </div>
-                ))}
+                {corePillars.map((pillar) => {
+                  const IconComp = pillar.icon;
+                  return (
+                    <div
+                      key={pillar.title}
+                      className="spotlight-card hover-lift bg-card border border-border rounded-2xl p-6 shadow-sm flex flex-col gap-3 group"
+                    >
+                      <div className="w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-all duration-300">
+                        <IconComp className="w-6 h-6" />
+                      </div>
+                      <h3 className="font-display font-bold text-foreground text-base">{pillar.title}</h3>
+                      <p className="text-muted-foreground text-xs leading-relaxed">{pillar.desc}</p>
+                    </div>
+                  );
+                })}
               </div>
 
             </div>

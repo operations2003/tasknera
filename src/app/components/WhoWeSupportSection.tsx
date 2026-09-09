@@ -1,145 +1,159 @@
 'use client';
 import React from 'react';
 import Link from 'next/link';
+import {
+  Rocket,
+  TrendingUp,
+  Building,
+  Globe2,
+  Zap,
+  CheckCircle2,
+  ArrowRight,
+} from 'lucide-react';
 
 const stages = [
   {
-    stage: 'Startups',
-    subtitle: 'Early-stage & Seed to Series A',
-    icon: '🚀',
-    desc: 'Build your team without building a large internal HR function.',
+    stage: 'Startups & Early Stage',
+    subtitle: 'Pre-Seed to Series A',
+    icon: Rocket,
+    desc: 'Build your initial core team and establish HR infrastructure without high fixed overheads.',
     benefits: [
-      'Flexible hiring without heavy fixed overheads',
-      'Instant HR processes, compliant offer letters & onboarding',
-      'Virtual assistant support for founders & early leadership',
+      'Contingent success-fee hiring for critical first hires',
+      'Plug-and-play HR compliance, offer letters & onboarding',
+      'Dedicated virtual assistants for founders & leadership',
     ],
     color: 'border-accent/30',
-    accent: 'text-accent',
+    iconBg: 'bg-accent/10 text-accent border-accent/20',
   },
   {
-    stage: 'SMEs',
-    subtitle: 'Growing businesses & mid-market',
-    icon: '📈',
-    desc: 'Create structured HR and workforce processes as you grow.',
+    stage: 'Growing SMEs',
+    subtitle: '15 to 250 Headcount',
+    icon: TrendingUp,
+    desc: 'Create structured people operations and reliable back-office support as you scale.',
     benefits: [
-      'Payroll & statutory compliance audit and execution',
-      'Structured performance frameworks & HR portal setup',
-      'Reliable customer support and back-office teams',
+      'Full payroll & statutory compliance execution (PF, ESIC, TDS)',
+      'Structured performance frameworks & employee portals',
+      'Omnichannel virtual customer support pods & CRM management',
     ],
     color: 'border-secondary/30',
-    accent: 'text-secondary',
+    iconBg: 'bg-secondary/10 text-secondary border-secondary/20',
   },
   {
-    stage: 'Enterprises',
-    subtitle: 'Large organizations & corporations',
-    icon: '🏢',
-    desc: 'Scale recruitment, workforce and support operations efficiently.',
+    stage: 'Enterprises & Corporates',
+    subtitle: '250+ Headcount',
+    icon: Building,
+    desc: 'Scale high-volume talent pipelines and distributed support operations with strict SLAs.',
     benefits: [
-      'High-volume workforce deployment & contract staffing',
-      'RPO and dedicated recruitment desks with strict SLAs',
-      'Omnichannel virtual customer support (VCS) scaling',
+      'High-volume contract staffing and turnkey workforce deployment',
+      'Dedicated RPO recruitment pods with guaranteed turnaround times',
+      '24/7 omnichannel virtual customer support (VCS) scaling',
     ],
-    color: 'border-primary/25',
-    accent: 'text-primary',
+    color: 'border-blue-500/30',
+    iconBg: 'bg-blue-500/10 text-blue-500 border-blue-500/20',
   },
   {
-    stage: 'Global Companies',
-    subtitle: 'Cross-border & distributed teams',
-    icon: '🌍',
-    desc: 'Build and manage distributed and remote teams.',
+    stage: 'Global Distributed Teams',
+    subtitle: 'Cross-Border & Remote',
+    icon: Globe2,
+    desc: 'Source, hire, and manage cross-border professionals across global timezones.',
     benefits: [
-      'Cross-border talent acquisition across global timezones',
-      'Remote workforce compliance, documentation & support',
-      'Transparent remote workplace policies and governance',
+      'International talent sourcing across India, US, UK, and Europe',
+      'Remote workforce compliance, agreements & digital onboarding',
+      'Strict remote workplace policies and data security standards',
     ],
-    color: 'border-accent/30',
-    accent: 'text-accent',
+    color: 'border-purple-500/30',
+    iconBg: 'bg-purple-500/10 text-purple-600 border-purple-500/20',
   },
   {
-    stage: 'High-Growth Businesses',
-    subtitle: 'Scale-ups & rapid expansion phase',
-    icon: '⚡',
-    desc: 'Scale people and operations quickly during expansion.',
+    stage: 'High-Growth Scale-Ups',
+    subtitle: 'Rapid Expansion Phase',
+    icon: Zap,
+    desc: 'Ramp headcount quickly and eliminate operational bottlenecks during expansion.',
     benefits: [
-      'Rapid ramp-up of engineering, sales, and operations headcount',
-      'Fast-track candidate screening with JD Match Evaluator',
-      'Modular business support to prevent operational bottlenecks',
+      'Fast-track candidate evaluation with JD Match Evaluator scoring',
+      'Rapid ramp-up of engineering, sales, and operations capacity',
+      'Agile modular support that scales smoothly as demand spikes',
     ],
-    color: 'border-secondary/30',
-    accent: 'text-secondary',
+    color: 'border-amber-500/30',
+    iconBg: 'bg-amber-500/10 text-amber-600 border-amber-500/20',
   },
 ];
 
 export default function WhoWeSupportSection() {
   return (
-    <section className="py-20 sm:py-28 bg-background relative overflow-hidden">
+    <section className="py-20 sm:py-28 bg-background relative overflow-hidden border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 scroll-reveal">
-          <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/20 rounded-full px-4 py-1.5 mb-5">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-            <span className="text-xs font-semibold text-accent tracking-widest uppercase">
-              Target Fit
+          <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/20 rounded-full px-4 py-1.5 mb-5 shadow-sm">
+            <span className="w-2 h-2 rounded-full bg-accent" />
+            <span className="text-xs font-bold text-accent tracking-widest uppercase">
+              Target Organizational Fit
             </span>
           </div>
 
-          <h2 className="text-section-title font-display font-700 text-foreground mb-4">
+          <h2 className="text-section-title font-display font-bold text-foreground mb-4">
             Built for Businesses at{' '}
-            <span className="gradient-text-coral">Every Stage</span>
+            <span className="gradient-text-coral">Every Stage of Growth</span>
           </h2>
 
-          <p className="text-muted-foreground text-lg leading-relaxed">
-            Whether you are bootstrapping a new venture, managing rapid growth, or scaling enterprise business operations, TaskNera delivers the right people and support architecture.
+          <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
+            Whether you are bootstrapping a new venture, managing rapid team growth, or scaling enterprise business operations, TaskNera delivers the right people, structure, and operational support.
           </p>
         </div>
 
         {/* 5 Stages Bento Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 scroll-reveal" style={{ transitionDelay: '0.1s' }}>
-          {stages.map((st, idx) => (
-            <div
-              key={st.stage}
-              className={`spotlight-card hover-lift bg-card border rounded-3xl p-6 sm:p-7 shadow-sm flex flex-col justify-between ${st.color} ${
-                idx === 4 ? 'md:col-span-2 lg:col-span-1' : ''
-              }`}
-            >
-              <div>
-                <div className="flex items-center justify-between mb-4">
-                  <div className="text-3xl">{st.icon}</div>
-                  <span className="text-xs font-medium text-muted-foreground bg-muted rounded-full px-3 py-1">
-                    {st.subtitle}
-                  </span>
-                </div>
-
-                <h3 className="font-display font-700 text-foreground text-xl mb-2">
-                  {st.stage}
-                </h3>
-
-                <p className="text-foreground/90 font-medium text-sm mb-5 leading-snug">
-                  {st.desc}
-                </p>
-
-                <div className="space-y-2 pt-3 border-t border-border/60">
-                  {st.benefits.map((b) => (
-                    <div key={b} className="flex items-start gap-2 text-xs text-muted-foreground">
-                      <span className="text-accent mt-0.5 font-bold">✓</span>
-                      <span>{b}</span>
+          {stages.map((st, idx) => {
+            const IconComp = st.icon;
+            return (
+              <div
+                key={st.stage}
+                className={`card-premium rounded-3xl p-7 sm:p-8 flex flex-col justify-between group ${
+                  idx === 4 ? 'md:col-span-2 lg:col-span-1' : ''
+                }`}
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-5">
+                    <div className={`w-12 h-12 rounded-2xl border flex items-center justify-center ${st.iconBg} shadow-sm group-hover:scale-110 transition-transform`}>
+                      <IconComp className="w-6 h-6" />
                     </div>
-                  ))}
+                    <span className="text-xs font-bold text-muted-foreground bg-muted border border-border rounded-full px-3 py-1">
+                      {st.subtitle}
+                    </span>
+                  </div>
+
+                  <h3 className="font-display font-bold text-foreground text-xl mb-2 group-hover:text-accent transition-colors">
+                    {st.stage}
+                  </h3>
+
+                  <p className="text-foreground/80 font-medium text-sm mb-6 leading-relaxed">
+                    {st.desc}
+                  </p>
+
+                  <div className="space-y-2.5 pt-4 border-t border-border/70">
+                    {st.benefits.map((b) => (
+                      <div key={b} className="flex items-start gap-2.5 text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                        <CheckCircle2 className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
+                        <span>{b}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="mt-8 pt-4 border-t border-border/70">
+                  <Link
+                    href="/#contact"
+                    className="text-xs font-bold text-foreground group-hover:text-accent flex items-center gap-1.5 transition-colors"
+                  >
+                    <span>Explore engagement for {st.stage.split(' ')[0]}</span>
+                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                  </Link>
                 </div>
               </div>
-
-              <div className="mt-6 pt-4 border-t border-border/60">
-                <Link
-                  href="/#contact"
-                  className="text-xs font-semibold text-foreground hover:text-accent flex items-center gap-1.5 transition-colors"
-                >
-                  <span>Explore engagement for {st.stage}</span>
-                  <span>→</span>
-                </Link>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
       </div>

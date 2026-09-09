@@ -44,47 +44,49 @@ const services = [
   },
 ];
 
+import { FileText, Search, CheckCircle2, UserCheck, Calendar, Award } from 'lucide-react';
+
 const processSteps = [
   {
     num: '01',
     title: 'Requirement Briefing',
     desc: 'Deep-dive consultation to understand the role, team dynamics, culture, and success criteria. We challenge vague JDs and help define what "great" looks like.',
-    icon: '📋',
+    icon: FileText,
     detail: '60–90 min intake call · Competency mapping · Salary benchmarking',
   },
   {
     num: '02',
     title: 'Market Mapping & Sourcing',
     desc: 'Multi-channel sourcing using our proprietary database, LinkedIn Recruiter, niche job boards, and AI-assisted candidate mapping.',
-    icon: '🔍',
+    icon: Search,
     detail: 'Active + passive candidate outreach · Competitor talent mapping · Referral network activation',
   },
   {
     num: '03',
     title: 'Screening & Assessment',
     desc: 'Structured phone screens, competency-based interviews, and technical assessments aligned to your role requirements.',
-    icon: '✅',
+    icon: CheckCircle2,
     detail: 'Behavioural interview frameworks · Skills assessments · Culture-fit evaluation',
   },
   {
     num: '04',
     title: 'Curated Shortlist',
     desc: 'You receive a shortlist of 3–5 pre-vetted candidates with detailed profiles, assessment summaries, and our recommendation rationale.',
-    icon: '📤',
+    icon: UserCheck,
     detail: 'Candidate scorecards · Video introductions · Comparative analysis',
   },
   {
     num: '05',
     title: 'Interview Coordination',
     desc: 'End-to-end scheduling, candidate preparation, interviewer briefing, and real-time feedback loops to keep momentum.',
-    icon: '🗓️',
+    icon: Calendar,
     detail: 'Panel scheduling · Candidate coaching · Debrief facilitation',
   },
   {
     num: '06',
     title: 'Offer & Onboarding Handoff',
     desc: 'Offer negotiation support, counter offer management, documentation, and a structured handoff to your onboarding team.',
-    icon: '🎉',
+    icon: Award,
     detail: 'Offer letter drafting · Notice period management · Day-1 readiness checklist',
   },
 ];
@@ -235,18 +237,23 @@ export default function TalentAcquisitionPage() {
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {processSteps.map((step, i) => (
-                <div key={step.num} className="glass-card rounded-2xl p-6 hover-lift group" style={{ transitionDelay: `${i * 0.06}s` }}>
-                  <div className="flex items-start justify-between mb-4">
-                    <span className="text-3xl font-display font-700 text-white/70 leading-none">{step.num}</span>
-                    <span className="text-2xl">{step.icon}</span>
+              {processSteps.map((step, i) => {
+                const IconComp = step.icon;
+                return (
+                  <div key={step.num} className="glass-card rounded-2xl p-6 hover-lift group" style={{ transitionDelay: `${i * 0.06}s` }}>
+                    <div className="flex items-start justify-between mb-4">
+                      <span className="text-3xl font-display font-bold text-white/70 leading-none">{step.num}</span>
+                      <div className="w-10 h-10 rounded-xl bg-accent/15 border border-accent/25 flex items-center justify-center text-accent">
+                        <IconComp className="w-5 h-5" />
+                      </div>
+                    </div>
+                    <div className="w-8 h-0.5 bg-accent mb-4 transition-all duration-300 group-hover:w-16" />
+                    <h3 className="font-semibold text-white text-base mb-2">{step.title}</h3>
+                    <p className="text-white/85 text-sm leading-relaxed mb-4">{step.desc}</p>
+                    <div className="text-xs text-white/75 font-medium border-t border-white/25 pt-3">{step.detail}</div>
                   </div>
-                  <div className="w-8 h-0.5 bg-accent mb-4 transition-all duration-300 group-hover:w-16" />
-                  <h3 className="font-semibold text-white text-base mb-2">{step.title}</h3>
-                  <p className="text-white/85 text-sm leading-relaxed mb-4">{step.desc}</p>
-                  <div className="text-xs text-white/75 font-medium border-t border-white/25 pt-3">{step.detail}</div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>

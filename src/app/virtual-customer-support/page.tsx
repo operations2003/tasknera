@@ -58,26 +58,28 @@ const channels = [
   },
 ];
 
+import { Shield, RefreshCw, BarChart3, TrendingUp } from 'lucide-react';
+
 const vcsPillars = [
   {
     title: 'Professional Business Support',
     desc: 'Not a noisy, generic call-centre. We deploy brand-aligned, educated support specialists dedicated to your customer experience.',
-    icon: '🛡️',
+    icon: Shield,
   },
   {
     title: 'Omnichannel Integration',
     desc: 'Seamless continuity across voice, live chat, ticketing systems, and messaging apps with unified customer history.',
-    icon: '🔄',
+    icon: RefreshCw,
   },
   {
     title: 'Rigorous Quality Assurance',
     desc: 'Dedicated QA leads monitoring call recordings, ticket accuracy, response times, and customer satisfaction scores.',
-    icon: '📊',
+    icon: BarChart3,
   },
   {
     title: 'Scalable Team Pods',
     desc: 'Scale up during seasonal peaks or product launches, and scale down smoothly without overhead or severance friction.',
-    icon: '📈',
+    icon: TrendingUp,
   },
 ];
 
@@ -149,17 +151,22 @@ export default function VirtualCustomerSupportPage() {
         <section className="py-16 sm:py-20 bg-card border-b border-border">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {vcsPillars.map((p) => (
-                <div key={p.title} className="p-6 rounded-2xl bg-muted/60 border border-border/80 space-y-3">
-                  <div className="text-3xl">{p.icon}</div>
-                  <h3 className="font-display font-700 text-foreground text-base">
-                    {p.title}
-                  </h3>
-                  <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed">
-                    {p.desc}
-                  </p>
-                </div>
-              ))}
+              {vcsPillars.map((p) => {
+                const IconComp = p.icon;
+                return (
+                  <div key={p.title} className="p-6 rounded-2xl bg-muted/60 border border-border/80 space-y-3 group hover:border-accent/30 transition-colors">
+                    <div className="w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-all duration-300">
+                      <IconComp className="w-6 h-6" />
+                    </div>
+                    <h3 className="font-display font-bold text-foreground text-base">
+                      {p.title}
+                    </h3>
+                    <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed">
+                      {p.desc}
+                    </p>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>

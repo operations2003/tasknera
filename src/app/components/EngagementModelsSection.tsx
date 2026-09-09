@@ -1,180 +1,200 @@
 'use client';
 import React from 'react';
-import Icon from '@/components/ui/AppIcon';
 import Link from 'next/link';
+import {
+  Trophy,
+  ClipboardCheck,
+  UserCheck,
+  RefreshCw,
+  CreditCard,
+  Users,
+  Briefcase,
+  Headphones,
+  MessagesSquare,
+  FileCheck,
+  Rocket,
+  BarChart,
+  TrendingUp,
+  ArrowRight,
+  ShieldCheck,
+} from 'lucide-react';
 
 const models = [
   {
-    icon: 'TrophyIcon',
+    icon: Trophy,
     title: 'Permanent Recruitment',
-    desc: 'Specialized hiring for critical and leadership roles with a transparent milestone/success-aligned structure.',
+    desc: 'Specialized hiring for critical and leadership roles with transparent, success-fee milestone alignment.',
     tag: 'Direct Placement',
     color: 'border-accent/30',
-    bg: 'bg-accent/5',
+    iconBg: 'bg-accent/10 text-accent border-accent/20',
   },
   {
-    icon: 'ClipboardDocumentListIcon',
+    icon: ClipboardCheck,
     title: 'Contract Staffing',
-    desc: 'Flexible technical and operational talent for project-based, seasonal, or transitional workforce spikes.',
+    desc: 'Flexible technical, functional, and operational talent for project-based surges and seasonal spikes.',
     tag: 'Flexible Tenure',
     color: 'border-secondary/30',
-    bg: 'bg-secondary/5',
+    iconBg: 'bg-secondary/10 text-secondary border-secondary/20',
   },
   {
-    icon: 'UserCircleIcon',
+    icon: UserCheck,
     title: 'Dedicated Resources',
-    desc: 'Full-time professionals embedded within your internal team, reporting directly into your workflows.',
+    desc: 'Full-time professionals embedded within your internal team, reporting directly into your daily workflows.',
     tag: 'Embedded Team',
-    color: 'border-primary/20',
-    bg: 'bg-primary/5',
+    color: 'border-blue-500/30',
+    iconBg: 'bg-blue-500/10 text-blue-500 border-blue-500/20',
   },
   {
-    icon: 'ArrowPathIcon',
-    title: 'RPO (Recruitment Process Outsourcing)',
-    desc: 'End-to-end management of your talent acquisition lifecycle, from sourcing to offer letter handoff.',
+    icon: RefreshCw,
+    title: 'RPO (Recruitment Outsourcing)',
+    desc: 'End-to-end management of your entire talent acquisition lifecycle, from requisition to offer letter handoff.',
     tag: 'Full Talent Function',
-    color: 'border-accent/30',
-    bg: 'bg-accent/5',
+    color: 'border-purple-500/30',
+    iconBg: 'bg-purple-500/10 text-purple-600 border-purple-500/20',
   },
   {
-    icon: 'BanknotesIcon',
-    title: 'HR Outsourcing',
-    desc: 'Complete HR operations including payroll processing, statutory compliance, onboarding, and portal administration.',
+    icon: CreditCard,
+    title: 'HR & Payroll Outsourcing',
+    desc: 'Complete HR operations including payroll processing, statutory compliance, onboarding, and portal management.',
     tag: '100% Compliant',
-    color: 'border-secondary/30',
-    bg: 'bg-secondary/5',
+    color: 'border-emerald-500/30',
+    iconBg: 'bg-emerald-500/10 text-emerald-600 border-emerald-500/20',
   },
   {
-    icon: 'UsersIcon',
+    icon: Users,
     title: 'Workforce Outsourcing',
-    desc: 'End-to-end workforce planning, rapid deployment, scheduling, and multi-location field management.',
+    desc: 'Turnkey workforce planning, rapid multi-location deployment, shift scheduling, and on-site governance.',
     tag: 'Operational Scale',
-    color: 'border-primary/20',
-    bg: 'bg-primary/5',
+    color: 'border-orange-500/30',
+    iconBg: 'bg-orange-500/10 text-orange-600 border-orange-500/20',
   },
   {
-    icon: 'BriefcaseIcon',
-    title: 'Virtual Assistant Teams',
-    desc: 'Dedicated human remote professionals handling executive assistance, CRM, admin, research, and data operations.',
+    icon: Briefcase,
+    title: 'Virtual Assistant Pods',
+    desc: 'Dedicated human remote professionals handling executive assistance, CRM, admin, research, and scheduling.',
     tag: 'Human Remote Pros',
-    color: 'border-accent/30',
-    bg: 'bg-accent/5',
+    color: 'border-amber-500/30',
+    iconBg: 'bg-amber-500/10 text-amber-600 border-amber-500/20',
   },
   {
-    icon: 'PhoneIcon',
-    title: 'Virtual Customer Support Teams',
+    icon: Headphones,
+    title: 'Virtual Customer Support (VCS)',
     desc: 'Professional omnichannel customer support pods covering voice, live chat, email, WhatsApp, and ticketing.',
     tag: 'Omnichannel VCS',
-    color: 'border-secondary/30',
-    bg: 'bg-secondary/5',
+    color: 'border-teal-500/30',
+    iconBg: 'bg-teal-500/10 text-teal-600 border-teal-500/20',
   },
 ];
 
 const journey = [
   {
     step: '01',
-    title: 'Consultation',
-    desc: 'Understand your operational scope, team requirements, and timelines.',
-    icon: 'ChatBubbleLeftRightIcon',
+    title: 'Consultation & Intake',
+    desc: 'Deep-dive intake on operational scope, required headcount, skillsets, and timelines.',
+    icon: MessagesSquare,
   },
   {
     step: '02',
-    title: 'Proposal & SLA',
-    desc: 'Tailored engagement design with transparent pricing and deliverable benchmarks.',
-    icon: 'DocumentCheckIcon',
+    title: 'Proposal & SLA Design',
+    desc: 'Tailored engagement design with transparent deliverables, KPIs, and milestone pricing.',
+    icon: FileCheck,
   },
   {
     step: '03',
     title: 'Deployment & Setup',
-    desc: 'Team matching, workflow alignment, technology onboarding, and training.',
-    icon: 'RocketLaunchIcon',
+    desc: 'Candidate matching, workflow alignment, technology onboarding, and systems integration.',
+    icon: Rocket,
   },
   {
     step: '04',
-    title: 'Execution & Quality Assurance',
-    desc: 'Daily operations management with performance tracking and regular reporting.',
-    icon: 'ChartBarIcon',
+    title: 'Execution & QA',
+    desc: 'Daily operations management with supervisory oversight, SLA monitoring, and reporting.',
+    icon: BarChart,
   },
   {
     step: '05',
-    title: 'Review & Agile Scale',
-    desc: 'Continuous SLA reviews with rapid capacity adjustments as demands shift.',
-    icon: 'ArrowTrendingUpIcon',
+    title: 'Review & Scaling',
+    desc: 'Continuous performance reviews with agile capacity adjustments as your demand expands.',
+    icon: TrendingUp,
   },
 ];
 
 export default function EngagementModelsSection() {
   return (
-    <section id="engagement" className="py-20 sm:py-28 bg-background border-b border-border">
+    <section id="engagement" className="py-20 sm:py-28 bg-background border-b border-border relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14 scroll-reveal">
-          <div className="inline-flex items-center gap-2 bg-secondary/10 border border-secondary/20 rounded-full px-4 py-1.5 mb-5">
-            <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
-            <span className="text-xs font-semibold text-secondary tracking-widest uppercase">
-              Engagement Models
+        <div className="text-center max-w-3xl mx-auto mb-16 scroll-reveal">
+          <div className="inline-flex items-center gap-2 bg-secondary/10 border border-secondary/20 rounded-full px-4 py-1.5 mb-5 shadow-sm">
+            <span className="w-2 h-2 rounded-full bg-secondary" />
+            <span className="text-xs font-bold text-secondary tracking-widest uppercase">
+              Flexible Partnership Models
             </span>
           </div>
-          <h2 className="text-section-title font-display font-700 text-foreground mb-4">
+          <h2 className="text-section-title font-display font-bold text-foreground mb-4">
             Our Engagement{' '}
             <span className="gradient-text-coral">Models</span>
           </h2>
-          <p className="text-muted-foreground text-lg leading-relaxed">
-            Choose the engagement model that fits your operational stage, organizational scale, and flexibility requirements.
+          <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
+            Choose the engagement model that fits your operational stage, internal team size, and growth timelines.
           </p>
         </div>
 
-        {/* 8 Models Grid (Requirement 6) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-16 scroll-reveal" style={{ transitionDelay: '0.1s' }}>
-          {models.map((model, i) => (
-            <div
-              key={model.title}
-              className={`spotlight-card hover-lift bg-card border rounded-2xl p-6 shadow-sm flex flex-col justify-between ${model.color} ${model.bg}`}
-              style={{ transitionDelay: `${i * 0.04}s` }}
-            >
-              <div>
-                <div className="flex items-start justify-between mb-4">
-                  <div className="w-10 h-10 rounded-xl bg-card border border-border shadow-sm flex items-center justify-center">
-                    <Icon name={model.icon as 'TrophyIcon'} size={18} className="text-foreground" variant="outline" />
+        {/* 8 Models Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-20 scroll-reveal" style={{ transitionDelay: '0.1s' }}>
+          {models.map((model, i) => {
+            const IconComp = model.icon;
+            return (
+              <div
+                key={model.title}
+                className="card-premium rounded-3xl p-6 flex flex-col justify-between group"
+                style={{ transitionDelay: `${i * 0.03}s` }}
+              >
+                <div>
+                  <div className="flex items-start justify-between mb-4">
+                    <div className={`w-11 h-11 rounded-2xl border flex items-center justify-center ${model.iconBg} shadow-sm group-hover:scale-105 transition-transform`}>
+                      <IconComp className="w-5 h-5" />
+                    </div>
+                    <span className="text-[10px] font-bold bg-muted border border-border rounded-full px-2.5 py-0.5 text-muted-foreground">
+                      {model.tag}
+                    </span>
                   </div>
-                  <span className="text-[10px] font-semibold bg-muted border border-border rounded-full px-2.5 py-0.5 text-muted-foreground">
-                    {model.tag}
-                  </span>
+                  <h3 className="font-display font-bold text-foreground text-base mb-2 group-hover:text-accent transition-colors">
+                    {model.title}
+                  </h3>
+                  <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed">
+                    {model.desc}
+                  </p>
                 </div>
-                <h3 className="font-display font-700 text-foreground text-base mb-2">
-                  {model.title}
-                </h3>
-                <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed">
-                  {model.desc}
-                </p>
-              </div>
 
-              <div className="mt-5 pt-3 border-t border-border/60">
-                <Link
-                  href="/#contact"
-                  className="text-xs font-semibold text-accent hover:underline flex items-center gap-1"
-                >
-                  Request Model Pricing →
-                </Link>
+                <div className="mt-6 pt-3 border-t border-border/70">
+                  <Link
+                    href="/#contact"
+                    className="text-xs font-bold text-accent hover:underline flex items-center gap-1"
+                  >
+                    <span>Request Model Pricing</span>
+                    <ArrowRight className="w-3 h-3" />
+                  </Link>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Client Engagement Journey */}
         <div className="scroll-reveal" style={{ transitionDelay: '0.2s' }}>
-          <div className="bg-card border border-border rounded-3xl p-6 sm:p-10 shadow-sm relative overflow-hidden">
+          <div className="bg-card border border-border rounded-3xl p-8 sm:p-12 shadow-md relative overflow-hidden">
 
             {/* Inner Section Header */}
-            <div className="text-center max-w-xl mx-auto mb-12">
+            <div className="text-center max-w-xl mx-auto mb-14">
               <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-3 py-1 mb-3">
-                <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                <span className="text-xs font-semibold text-primary tracking-widest uppercase">
-                  Predictable Execution
+                <ShieldCheck className="w-3.5 h-3.5 text-primary" />
+                <span className="text-xs font-bold text-primary tracking-widest uppercase">
+                  Transparent Delivery
                 </span>
               </div>
-              <h3 className="font-display font-700 text-foreground text-2xl sm:text-3xl">
+              <h3 className="font-display font-bold text-foreground text-2xl sm:text-3xl">
                 Client Engagement Journey
               </h3>
               <p className="text-muted-foreground text-sm sm:text-base mt-2">
@@ -183,28 +203,18 @@ export default function EngagementModelsSection() {
             </div>
 
             {/* Step Timeline Container */}
-            <div className="relative">
-              {/* Desktop Horizontal Line */}
-              <div
-                className="hidden lg:block absolute top-7 left-[calc(10%+28px)] right-[calc(10%+28px)] h-0.5 bg-gradient-to-r from-primary/30 via-secondary/40 to-primary/30 z-0"
-              />
-
-              {/* Mobile Vertical Line */}
-              <div
-                className="lg:hidden absolute top-7 bottom-7 left-[27px] w-0.5 bg-gradient-to-b from-primary/30 via-secondary/40 to-primary/30 z-0"
-              />
-
-              {/* 5 Steps Grid */}
-              <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-4 relative z-10">
-                {journey.map((j) => (
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-6 relative z-10">
+              {journey.map((j) => {
+                const IconComp = j.icon;
+                return (
                   <div
                     key={j.step}
-                    className="flex lg:flex-col items-start lg:items-center text-left lg:text-center group"
+                    className="flex flex-col items-start md:items-center text-left md:text-center group"
                   >
                     {/* Circle Node with Icon & Step Badge */}
-                    <div className="relative flex-shrink-0 flex items-center justify-center mr-4 lg:mr-0 mb-0 lg:mb-4">
-                      <div className="w-14 h-14 rounded-2xl bg-card border-2 border-border group-hover:border-secondary shadow-sm flex items-center justify-center text-primary group-hover:text-secondary group-hover:scale-105 transition-all duration-300 relative z-10">
-                        <Icon name={j.icon} size={22} className="transition-transform group-hover:scale-110" variant="outline" />
+                    <div className="relative flex-shrink-0 flex items-center justify-center mb-4">
+                      <div className="w-14 h-14 rounded-2xl bg-card border-2 border-border group-hover:border-accent shadow-sm flex items-center justify-center text-primary group-hover:text-accent group-hover:scale-105 transition-all duration-300 relative z-10">
+                        <IconComp className="w-6 h-6 transition-transform group-hover:scale-110" />
 
                         {/* Step Badge */}
                         <span className="absolute -top-2 -right-2 bg-primary text-white text-[10px] font-bold rounded-full w-5 h-5 flex items-center justify-center shadow-sm">
@@ -214,17 +224,17 @@ export default function EngagementModelsSection() {
                     </div>
 
                     {/* Content Card */}
-                    <div className="bg-muted/50 hover:bg-muted border border-border/70 rounded-2xl p-4 transition-all duration-300 w-full group-hover:shadow-md group-hover:-translate-y-0.5">
-                      <div className="font-semibold text-foreground text-sm sm:text-base group-hover:text-primary transition-colors">
+                    <div className="bg-muted/40 group-hover:bg-card border border-border/80 rounded-2xl p-4 transition-all duration-300 w-full group-hover:shadow-md">
+                      <div className="font-bold text-foreground text-sm sm:text-base group-hover:text-primary transition-colors mb-1">
                         {j.title}
                       </div>
-                      <p className="text-muted-foreground text-xs leading-relaxed mt-1">
+                      <p className="text-muted-foreground text-xs leading-relaxed">
                         {j.desc}
                       </p>
                     </div>
                   </div>
-                ))}
-              </div>
+                );
+              })}
             </div>
 
           </div>
