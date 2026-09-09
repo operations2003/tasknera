@@ -93,7 +93,7 @@ const metrics = [
   { value: '72hrs', label: 'Average time to first shortlist' },
   { value: '94%', label: 'Offer acceptance rate' },
   { value: '3.2x', label: 'Faster than in-house hiring' },
-  { value: '180-day', label: 'Placement guarantee' },
+  { value: 'SLA-backed', label: 'Replacement guarantee' },
 ];
 
 const industries = ['Technology', 'BFSI', 'Healthcare', 'Manufacturing', 'Retail', 'Logistics', 'Professional Services', 'E-commerce'];
@@ -125,13 +125,16 @@ export default function TalentAcquisitionPage() {
                 Talent Acquisition{' '}
                 <span className="gradient-text-coral">&amp; Recruitment</span>
               </h1>
-              <p className="text-white/65 text-lg sm:text-xl leading-relaxed max-w-2xl mb-10">
-                From a single critical hire to a 500 person ramp ups we own the full recruitment cycle so your team can focus on building the business.
+              <p className="text-white/75 text-lg sm:text-xl leading-relaxed max-w-2xl mb-10">
+                Specialized hiring for every stage of growth. As a core pillar of TaskNera's People &amp; Operations platform, we manage end-to-end recruitment with JD Match Evaluator precision and dedicated domain recruiters.
               </p>
               <div className="flex flex-wrap gap-4">
                 <a href="#process" className="bg-accent text-accent-foreground font-semibold px-6 py-3 rounded-full hover:opacity-90 transition-all hover:-translate-y-0.5 shadow-lg shadow-accent/30">
                   See Our Process
                 </a>
+                <Link href="/#contact" className="glass-btn text-white font-semibold px-6 py-3 rounded-full hover:bg-white/15 transition-all">
+                  Talk to a Talent Specialist
+                </Link>
               </div>
             </div>
           </div>

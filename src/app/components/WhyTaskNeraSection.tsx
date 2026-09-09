@@ -46,7 +46,7 @@ const valueProps = [
   {
     icon: 'CpuChipIcon',
     title: 'Technology-Driven',
-    desc: 'ATS, AI sourcing, and pipeline dashboards power every engagement.',
+    desc: 'JD Match Evaluator, AI sourcing, and pipeline dashboards power every engagement.',
     color: 'text-secondary',
     bg: 'bg-secondary/10',
   },

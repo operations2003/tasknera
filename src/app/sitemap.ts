@@ -1,13 +1,28 @@
 import type { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
-  return [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 1.0,
-    },
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.tasknera.com';
+  const routes = [
+    '',
+    '/hr-workforce-solutions',
+    '/talent-acquisition',
+    '/virtual-customer-support',
+    '/virtual-assistant-services',
+    '/workplace-policies',
+    '/business-support',
+    '/about',
+    '/process',
+    '/industries',
+    '/pricing',
+    '/contact',
+    '/privacy',
+    '/terms',
   ];
+
+  return routes.map((route) => ({
+    url: `${baseUrl}${route}`,
+    lastModified: new Date(),
+    changeFrequency: route === '' ? 'daily' : 'weekly',
+    priority: route === '' ? 1.0 : 0.8,
+  }));
 }

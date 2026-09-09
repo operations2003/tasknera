@@ -42,16 +42,17 @@ interface FormErrors {
   name?: string;
   email?: string;
   company?: string;
+  message?: string;
 }
 
-const initialForm: FormData = { name: '', email: '', company: '', enquiry: 'hiring', message: '' };
+const initialForm: FormData = { name: '', email: '', company: '', enquiry: 'hr-ops', message: '' };
 const initialErrors: FormErrors = {};
 
 export default function CTASection() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [form, setForm] = useState<FormData>(initialForm);
   const [errors, setErrors] = useState<FormErrors>(initialErrors);
-  const [touched, setTouched] = useState<{ name?: boolean; email?: boolean; company?: boolean }>({});
+  const [touched, setTouched] = useState<{ name?: boolean; email?: boolean; company?: boolean; message?: boolean }>({});
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
 
@@ -228,11 +229,11 @@ export default function CTASection() {
                   <span className="text-xs font-semibold text-white/80 tracking-widest uppercase">Let's Build Together</span>
                 </div>
                 <h2 className="text-section-title font-display font-700 text-white mb-5">
-                  Ready to build a team that{' '}
-                  <span className="gradient-text-coral">scales with your ambitions?</span>
+                  Build, Manage, and Scale{' '}
+                  <span className="gradient-text-coral">Your People &amp; Operations.</span>
                 </h2>
-                <p className="text-white/60 text-base leading-relaxed mb-8">
-                  Whether you need one critical hire or a full HR transformation — TaskNera is your strategic partner from day one.
+                <p className="text-white/70 text-base leading-relaxed mb-8">
+                  From talent acquisition and HR operations to workforce management, virtual assistance and customer support, TaskNera provides flexible, technology-enabled solutions that help businesses build teams, streamline operations and scale with confidence.
                 </p>
 
                 {/* Contact cards */}
@@ -259,8 +260,8 @@ export default function CTASection() {
 
               {/* Right — Contact Form */}
               <div className="glass-card rounded-3xl p-7 sm:p-8">
-                <h3 className="text-white font-semibold text-lg mb-1">Send us a message</h3>
-                <p className="text-white/50 text-sm mb-6">We'll get back to you within 1 business day.</p>
+                <h3 className="text-white font-semibold text-lg mb-1">Talk to an HR &amp; Workforce Expert</h3>
+                <p className="text-white/50 text-sm mb-6">Tell us about your team, workforce, or operations support needs.</p>
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
@@ -334,11 +335,13 @@ export default function CTASection() {
                       style={{ background: 'rgba(255,255,255,0.06)' }}
                       suppressHydrationWarning
                     >
-                      <option value="hiring" className="bg-primary text-white">Hiring / Recruitment</option>
-                      <option value="hr-outsourcing" className="bg-primary text-white">HR & Payroll Outsourcing</option>
-                      <option value="staffing" className="bg-primary text-white">Contract Staffing</option>
-                      <option value="rpo" className="bg-primary text-white">RPO / Talent Partnership</option>
-                      <option value="other" className="bg-primary text-white">Other</option>
+                      <option value="hr-ops" className="bg-primary text-white">HR &amp; People Operations</option>
+                      <option value="recruitment" className="bg-primary text-white">Talent &amp; Recruitment</option>
+                      <option value="workforce" className="bg-primary text-white">Workforce Solutions / Staffing</option>
+                      <option value="va" className="bg-primary text-white">Virtual Assistant &amp; Business Support</option>
+                      <option value="vcs" className="bg-primary text-white">Virtual Customer Support (VCS)</option>
+                      <option value="tech" className="bg-primary text-white">HR Technology &amp; JD Match Evaluator</option>
+                      <option value="other" className="bg-primary text-white">Comprehensive / Other</option>
                     </select>
                   </div>
                   <div>
@@ -349,7 +352,7 @@ export default function CTASection() {
                       value={form.message}
                       onChange={handleChange}
                       rows={4}
-                      placeholder="Tell us about your hiring needs or HR challenges..."
+                      placeholder="Tell us about your team, workforce, or operations support needs..."
                       className="w-full border border-white/15 rounded-xl px-4 py-2.5 text-white text-sm placeholder-white/30 focus:outline-none focus:border-accent/60 transition-colors resize-none"
                       style={{ background: 'rgba(255,255,255,0.06)' }}
                       suppressHydrationWarning
@@ -372,7 +375,7 @@ export default function CTASection() {
                       </>
                     ) : (
                       <>
-                        Send Message
+                        Talk to an HR &amp; Workforce Expert
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                           <path d="M5 12h14M12 5l7 7-7 7" />
                         </svg>

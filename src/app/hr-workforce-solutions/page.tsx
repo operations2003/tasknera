@@ -210,6 +210,60 @@ export default function HRWorkforceSolutionsPage() {
           </div>
         </section>
 
+        {/* Workforce Solutions Section (Pillar 3) */}
+        <section id="workforce" className="py-20 sm:py-28 bg-card border-t border-b border-border">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-1.5 mb-4">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                <span className="text-xs font-semibold text-primary tracking-widest uppercase">Workforce Solutions</span>
+              </div>
+              <h2 className="text-section-title font-display font-700 text-foreground mb-4">
+                Flexible Workforce Models{' '}
+                <span className="gradient-text-teal">Built Around Demand</span>
+              </h2>
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                Scale your operational capacity up or down with compliant contract staffing, workforce planning, and turnkey deployment solutions.
+              </p>
+            </div>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+              {[
+                { title: 'Contract Workforce', desc: 'Pre-screened, specialized professionals deployed on flexible tenures for high-priority initiatives.', icon: '📋' },
+                { title: 'Temporary Workforce', desc: 'Agile staffing support to handle seasonal peaks, project deadlines, and operational leaves.', icon: '⚡' },
+                { title: 'Workforce Deployment', desc: 'Rapid mobilization and multi-location field staffing with full onboarding and legal compliance.', icon: '🚀' },
+                { title: 'Workforce Planning', desc: 'Strategic capacity modeling, skills-gap identification, and headcount budgeting alignment.', icon: '📐' },
+                { title: 'Workforce Management', desc: 'Ongoing performance tracking, shift scheduling, payroll administration, and SLA governance.', icon: '📊' },
+                { title: 'Flexible & Scalable Workforce', desc: 'Modular models allowing rapid headcount changes without long-term overhead liabilities.', icon: '🔄' },
+              ].map((wf) => (
+                <div key={wf.title} className="spotlight-card hover-lift bg-background border border-border rounded-2xl p-6 shadow-sm flex flex-col justify-between">
+                  <div>
+                    <div className="text-3xl mb-3">{wf.icon}</div>
+                    <h3 className="font-display font-700 text-foreground text-lg mb-2">{wf.title}</h3>
+                    <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed">{wf.desc}</p>
+                  </div>
+                  <div className="mt-5 pt-3 border-t border-border/60">
+                    <Link href="/#contact" className="text-xs font-semibold text-accent hover:underline flex items-center gap-1">
+                      <span>Request deployment</span>
+                      <span>→</span>
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="bg-primary rounded-2xl p-6 sm:p-8 text-white flex flex-col sm:flex-row items-center justify-between gap-6">
+              <div className="space-y-1 text-center sm:text-left">
+                <h3 className="font-display font-bold text-xl">Need a custom contract staffing or workforce model?</h3>
+                <p className="text-white/70 text-sm">Our workforce consultants design customized headcount solutions tailored to your operational SLA.</p>
+              </div>
+              <Link href="/#contact" className="bg-accent text-accent-foreground font-semibold px-6 py-3 rounded-full hover:brightness-110 transition-all text-xs flex-shrink-0 shadow-md">
+                Talk to a Workforce Specialist
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* Process */}
         <section id="process" className="py-20 sm:py-28 bg-primary overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

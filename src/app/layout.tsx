@@ -26,9 +26,9 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
-  title: 'TaskNera | Global HR Solutions & Recruitment',
+  title: 'TaskNera | Your Global HR, Workforce & Business Support Partner',
   description:
-    'TaskNera is a full-spectrum HR, recruitment, and workforce solutions partner for startups, SMEs, and enterprises across India and international markets.',
+    'TaskNera helps startups, SMEs and enterprises build their teams, manage their people and scale their operations through integrated HR, Workforce, Talent, Virtual Assistant and Customer Support solutions.',
   icons: {
     icon: [
       { 

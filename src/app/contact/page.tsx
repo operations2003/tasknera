@@ -41,28 +41,28 @@ const teamMembers = [
 
 const offices = [
   {
-    city: 'India HQ',
-    address: 'East Delhi, India',
-    region: 'South Asia Operations',
+    city: 'Registered Office',
+    address: 'Dilshad Colony, Dilshad Garden, Delhi - 110095, India',
+    region: 'Corporate Headquarters',
     timezone: 'IST (UTC+5:30)',
     flag: '🇮🇳',
-    coverage: 'Pan-India hiring, HR outsourcing, payroll compliance',
+    coverage: 'Core corporate operations, client servicing, HR outsourcing, and centralized management',
   },
   {
-    city: 'United Kingdom',
-    address: 'London, England',
-    region: 'EMEA Operations',
-    timezone: 'GMT / BST (UTC+0/+1)',
+    city: 'UK & Europe Coverage',
+    address: 'Remote & Distributed Delivery',
+    region: 'EMEA Timezones',
+    timezone: 'GMT / BST / CET',
     flag: '🇬🇧',
-    coverage: 'UK & European talent acquisition, cross-border staffing',
+    coverage: 'Cross-border hiring, dedicated virtual assistants, and localized business operations support',
   },
   {
-    city: 'United States',
-    address: 'Washington D.C. ,US',
-    region: 'North America',
-    timezone: 'EST / PST (UTC-5/-8)',
+    city: 'North America Coverage',
+    address: 'Remote & Distributed Delivery',
+    region: 'North America Timezones',
+    timezone: 'EST / CST / PST',
     flag: '🇺🇸',
-    coverage: 'US market sourcing, remote-global talent pools',
+    coverage: 'US & Canadian market talent sourcing, virtual assistant pods, and customer care coverage',
   },
 ];
 
@@ -108,10 +108,10 @@ export default function ContactPage() {
             <div className="mb-12">
               <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/20 rounded-full px-4 py-1.5 mb-4">
                 <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-                <span className="text-xs font-semibold text-accent tracking-widest uppercase">Global Presence</span>
+                <span className="text-xs font-semibold text-accent tracking-widest uppercase">Global Delivery</span>
               </div>
               <h2 className="text-3xl sm:text-4xl font-display font-700 text-foreground">
-                Where we operate
+                Service &amp; Timezone Coverage
               </h2>
             </div>
 

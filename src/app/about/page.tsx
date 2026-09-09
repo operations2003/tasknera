@@ -149,13 +149,13 @@ export default function AboutPage() {
                 </p>
 
                 <p className="text-muted-foreground text-base leading-relaxed">
-                  Founded in 2026, TaskNera brings together specialized recruitment, HR management, payroll, and compliance services under one roof. Built on a foundation of domain expertise and streamlined HR operations, the company provides growing businesses with practical, flexible, and scalable support across their people and workforce needs.
+                  Founded in 2026, TaskNera brings together HR &amp; people operations, talent acquisition, workforce solutions, virtual assistant support, and customer support under one roof. Built on a foundation of domain expertise, human-centered delivery, and transparent governance, the company provides growing organizations with scalable, flexible operational support.
                 </p>
 
                 {/* Founder Quote Card */}
                 <div className="border-l-4 border-accent pl-6 py-3 bg-card border rounded-r-2xl shadow-sm">
                   <p className="text-foreground/90 text-base italic font-display leading-relaxed">
-                    "Our mission is to empower organizations worldwide with reliable, scalable, and human-centered HR solutions that build exceptional teams."
+                    "Our mission is to empower organizations worldwide with reliable, scalable, and human-centered workforce and operational support that helps founders build exceptional teams."
                   </p>
                   <p className="text-accent font-semibold text-xs mt-3">— Sheetal Bedi, CEO &amp; Founder</p>
                 </div>
@@ -175,6 +175,36 @@ export default function AboutPage() {
                 ))}
               </div>
 
+            </div>
+          </div>
+        </section>
+
+        {/* ── Remote Transparency & Workplace Policies Banner (Requirement 11) ── */}
+        <section className="py-16 bg-card border-t border-border">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-5">
+            <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/20 rounded-full px-4 py-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+              <span className="text-xs font-semibold text-accent tracking-widest uppercase">
+                Remote Culture &amp; Transparency
+              </span>
+            </div>
+
+            <h3 className="text-2xl sm:text-3xl font-display font-700 text-foreground">
+              Workplace Policies &amp; Governance
+            </h3>
+
+            <p className="text-muted-foreground text-base max-w-2xl mx-auto leading-relaxed">
+              Because our team and client engagements operate in a remote-first and distributed environment, we maintain complete transparency regarding our remote work standards, cybersecurity safeguards, employee protections, and ethical commitments.
+            </p>
+
+            <div className="pt-2">
+              <Link
+                href="/workplace-policies"
+                className="inline-flex items-center gap-2 bg-primary text-white font-semibold px-7 py-3 rounded-full hover:opacity-90 transition-opacity text-sm shadow-sm"
+              >
+                View Workplace Policies &amp; Commitments
+                <span>→</span>
+              </Link>
             </div>
           </div>
         </section>
