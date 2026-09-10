@@ -67,11 +67,11 @@ export default function IndustriesSection() {
             </span>
           </div>
           <h2 className="text-section-title font-display font-bold text-foreground mb-4">
-            Industries &amp; Functional{' '}
-            <span className="gradient-text-teal">Expertise</span>
+            12+ Industry Areas{' '}
+            <span className="gradient-text-teal">Supported</span>
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
-            Specialized domain knowledge across 12+ industry sectors and 8 core functional business roles.
+            Domain support across 12+ industry areas and 8 core functional business roles.
           </p>
         </div>
 
@@ -87,7 +87,7 @@ export default function IndustriesSection() {
                   : 'text-muted-foreground hover:text-foreground hover:bg-muted'
               }`}
             >
-              Industries Served (12)
+              Industry Areas Supported (12+)
             </button>
             <button
               type="button"

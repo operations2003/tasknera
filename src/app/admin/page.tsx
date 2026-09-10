@@ -6,6 +6,16 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { createClient } from '@/lib/supabase/client';
 import { useAuth } from '@/contexts/AuthContext';
+import {
+  getStoredSubmissions,
+  updateStoredSubmissionStatus,
+  getStoredActivities,
+  saveStoredActivity,
+  getStoredNotes,
+  saveStoredNote,
+  updateStoredNote,
+  deleteStoredNote,
+} from '@/lib/storage/inquiries';
 
 interface Submission {
   id: string;
@@ -157,13 +167,31 @@ function ActivityTimeline({ submissionId, userEmail }: { submissionId: string; u
 
   const fetchActivities = useCallback(async () => {
     setLoading(true);
-    const { data } = await supabase
-      .from('prospect_activities')
-      .select('*')
-      .eq('submission_id', submissionId)
-      .order('created_at', { ascending: false });
-    setActivities(data || []);
-    setLoading(false);
+    // 1. Always load instantly from localStorage so saved touchpoints are never lost
+    const local = getStoredActivities(submissionId);
+    try {
+      const { data } = await supabase
+        .from('prospect_activities')
+        .select('*')
+        .eq('submission_id', submissionId)
+        .order('created_at', { ascending: false });
+
+      if (data && data.length > 0) {
+        const mergedMap = new Map();
+        local.forEach((a) => mergedMap.set(a.id, a));
+        data.forEach((a: any) => mergedMap.set(a.id, a));
+        const merged = Array.from(mergedMap.values()).sort(
+          (a: any, b: any) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
+        );
+        setActivities(merged);
+      } else {
+        setActivities(local);
+      }
+    } catch {
+      setActivities(local);
+    } finally {
+      setLoading(false);
+    }
   }, [submissionId]);
 
   useEffect(() => { fetchActivities(); }, [fetchActivities]);
@@ -171,18 +199,38 @@ function ActivityTimeline({ submissionId, userEmail }: { submissionId: string; u
   const addActivity = async () => {
     if (!newTitle.trim()) return;
     setSaving(true);
-    await supabase.from('prospect_activities').insert({
+    const newAct: Activity = {
+      id: `act-${Date.now()}-${Math.random().toString(36).substring(2, 6)}`,
       submission_id: submissionId,
       activity_type: newType,
       title: newTitle.trim(),
       body: newBody.trim() || null,
-      created_by: userEmail,
-    });
+      created_by: userEmail || 'Admin',
+      created_at: new Date().toISOString(),
+    };
+
+    // 1. Save to local storage immediately
+    saveStoredActivity(newAct);
+    // 2. Immediately reflect in state
+    setActivities((prev) => [newAct, ...prev.filter((a) => a.id !== newAct.id)]);
+
+    // 3. Attempt cloud sync (deferred/safe)
+    try {
+      await supabase.from('prospect_activities').insert({
+        submission_id: submissionId,
+        activity_type: newType,
+        title: newTitle.trim(),
+        body: newBody.trim() || null,
+        created_by: userEmail,
+      });
+    } catch (err) {
+      console.warn('Supabase activity sync deferred, saved locally:', err);
+    }
+
     setNewTitle('');
     setNewBody('');
     setShowForm(false);
     setSaving(false);
-    fetchActivities();
   };
 
   return (
@@ -290,13 +338,31 @@ function InternalNotes({ submissionId, userEmail }: { submissionId: string; user
 
   const fetchNotes = useCallback(async () => {
     setLoading(true);
-    const { data } = await supabase
-      .from('prospect_notes')
-      .select('*')
-      .eq('submission_id', submissionId)
-      .order('created_at', { ascending: false });
-    setNotes(data || []);
-    setLoading(false);
+    // 1. Always load instantly from localStorage so notes never disappear on refresh
+    const local = getStoredNotes(submissionId);
+    try {
+      const { data } = await supabase
+        .from('prospect_notes')
+        .select('*')
+        .eq('submission_id', submissionId)
+        .order('created_at', { ascending: false });
+
+      if (data && data.length > 0) {
+        const mergedMap = new Map();
+        local.forEach((n) => mergedMap.set(n.id, n));
+        data.forEach((n: any) => mergedMap.set(n.id, n));
+        const merged = Array.from(mergedMap.values()).sort(
+          (a: any, b: any) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
+        );
+        setNotes(merged);
+      } else {
+        setNotes(local);
+      }
+    } catch {
+      setNotes(local);
+    } finally {
+      setLoading(false);
+    }
   }, [submissionId]);
 
   useEffect(() => { fetchNotes(); }, [fetchNotes]);
@@ -304,32 +370,60 @@ function InternalNotes({ submissionId, userEmail }: { submissionId: string; user
   const addNote = async () => {
     if (!noteText.trim()) return;
     setSaving(true);
-    await supabase.from('prospect_notes').insert({
+    const newNote: ProspectNote = {
+      id: `note-${Date.now()}-${Math.random().toString(36).substring(2, 6)}`,
       submission_id: submissionId,
       note_text: noteText.trim(),
       is_action_item: isAction,
       follow_up_date: followUpDate || null,
-      created_by: userEmail,
-    });
+      is_completed: false,
+      created_by: userEmail || 'Admin',
+      created_at: new Date().toISOString(),
+    };
+
+    // 1. Immediately save to persistent client store
+    saveStoredNote(newNote);
+    // 2. Immediately reflect in state
+    setNotes((prev) => [newNote, ...prev.filter((n) => n.id !== newNote.id)]);
+
+    // 3. Attempt cloud sync (deferred/safe)
+    try {
+      await supabase.from('prospect_notes').insert({
+        submission_id: submissionId,
+        note_text: noteText.trim(),
+        is_action_item: isAction,
+        follow_up_date: followUpDate || null,
+        created_by: userEmail,
+      });
+    } catch (err) {
+      console.warn('Supabase note deferred, safely stored locally:', err);
+    }
+
     setNoteText('');
     setIsAction(false);
     setFollowUpDate('');
     setShowForm(false);
     setSaving(false);
-    fetchNotes();
   };
 
   const toggleComplete = async (note: ProspectNote) => {
-    await supabase
-      .from('prospect_notes')
-      .update({ is_completed: !note.is_completed })
-      .eq('id', note.id);
-    setNotes((prev) => prev.map((n) => n.id === note.id ? { ...n, is_completed: !n.is_completed } : n));
+    const updated = { ...note, is_completed: !note.is_completed };
+    updateStoredNote(updated);
+    setNotes((prev) => prev.map((n) => (n.id === note.id ? updated : n)));
+    try {
+      await supabase
+        .from('prospect_notes')
+        .update({ is_completed: updated.is_completed })
+        .eq('id', note.id);
+    } catch {}
   };
 
   const deleteNote = async (id: string) => {
-    await supabase.from('prospect_notes').delete().eq('id', id);
+    deleteStoredNote(submissionId, id);
     setNotes((prev) => prev.filter((n) => n.id !== id));
+    try {
+      await supabase.from('prospect_notes').delete().eq('id', id);
+    } catch {}
   };
 
   const pending = notes.filter((n) => n.is_action_item && !n.is_completed);
@@ -514,23 +608,38 @@ export default function AdminPage() {
   const fetchSubmissions = useCallback(async () => {
     setLoading(true);
     setError(null);
+    const local = getStoredSubmissions();
     try {
       const { data, error: fetchError } = await supabase
         .from('inquiry_submissions')
         .select('*')
         .order('submitted_at', { ascending: false });
 
-      if (fetchError) {
-        setError(fetchError.message);
+      if (!fetchError && data && data.length > 0) {
+        const mergedMap = new Map();
+        local.forEach((s) =>
+          mergedMap.set(s.id, { ...s, qualification_score: computeQualificationScore(s as Submission) })
+        );
+        data.forEach((s: any) =>
+          mergedMap.set(s.id, { ...s, qualification_score: computeQualificationScore(s as Submission) })
+        );
+        const enriched = Array.from(mergedMap.values()).sort(
+          (a: any, b: any) => new Date(b.submitted_at).getTime() - new Date(a.submitted_at).getTime()
+        );
+        setSubmissions(enriched);
       } else {
-        const enriched = (data || []).map((s: Submission) => ({
+        const enriched = local.map((s) => ({
           ...s,
-          qualification_score: computeQualificationScore(s),
+          qualification_score: computeQualificationScore(s as Submission),
         }));
         setSubmissions(enriched);
       }
-    } catch (err: unknown) {
-      setError(err instanceof Error ? err.message : 'Failed to load submissions');
+    } catch {
+      const enriched = local.map((s) => ({
+        ...s,
+        qualification_score: computeQualificationScore(s as Submission),
+      }));
+      setSubmissions(enriched);
     } finally {
       setLoading(false);
     }
@@ -538,29 +647,42 @@ export default function AdminPage() {
 
   useEffect(() => {
     fetchSubmissions();
+
+    const handleSubCreated = () => fetchSubmissions();
+    const handleStorageChange = () => fetchSubmissions();
+    window.addEventListener('tasknera_submission_created', handleSubCreated);
+    window.addEventListener('tasknera_submission_updated', handleSubCreated);
+    window.addEventListener('storage', handleStorageChange);
+
+    return () => {
+      window.removeEventListener('tasknera_submission_created', handleSubCreated);
+      window.removeEventListener('tasknera_submission_updated', handleSubCreated);
+      window.removeEventListener('storage', handleStorageChange);
+    };
   }, [fetchSubmissions]);
 
   const updateStatus = async (id: string, newStatus: string) => {
     setUpdatingId(id);
+    // 1. Immediately persist to localStorage
+    updateStoredSubmissionStatus(id, newStatus);
+
+    // 2. Immediately update state
+    setSubmissions((prev) =>
+      prev.map((s) => {
+        if (s.id !== id) return s;
+        const updated = { ...s, status: newStatus };
+        return { ...updated, qualification_score: computeQualificationScore(updated) };
+      })
+    );
+
+    // 3. Attempt Supabase sync
     try {
-      const { error: updateError } = await supabase
+      await supabase
         .from('inquiry_submissions')
         .update({ status: newStatus })
         .eq('id', id);
-
-      if (updateError) {
-        setError(updateError.message);
-      } else {
-        setSubmissions((prev) =>
-          prev.map((s) => {
-            if (s.id !== id) return s;
-            const updated = { ...s, status: newStatus };
-            return { ...updated, qualification_score: computeQualificationScore(updated) };
-          })
-        );
-      }
-    } catch (err: unknown) {
-      setError(err instanceof Error ? err.message : 'Failed to update status');
+    } catch (err) {
+      console.warn('Supabase status update deferred:', err);
     } finally {
       setUpdatingId(null);
     }

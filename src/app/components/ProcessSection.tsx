@@ -17,7 +17,7 @@ import {
 const steps = [
   {
     num: '01',
-    title: 'Understand & Intake',
+    title: 'Discover & Understand',
     desc: 'Deep-dive intake to analyze your organizational dynamics, operational scope, skills matrix, and timeline requirements.',
     icon: Compass,
     applicable: 'HR Ops · Talent · Workforce · Virtual Support',
@@ -41,7 +41,7 @@ const steps = [
   },
   {
     num: '04',
-    title: 'Operate & Execute',
+    title: 'Deliver & Operate',
     desc: 'Our embedded pods manage your agreed workflows daily with active supervision, documentation, and continuous communication.',
     icon: Settings,
     applicable: 'Day-to-Day Execution · Agile Coordination',
@@ -162,7 +162,7 @@ export default function ProcessSection() {
                 </p>
 
                 <p className="text-white/60 text-xs sm:text-sm leading-relaxed">
-                  We never replace people with generic bots; we empower vetted human teams with specialized tools like our JD Match Evaluator, real-time analytics dashboards, and automated workflows to guarantee quality at every stage.
+                  We never replace people with generic bots; we empower vetted human teams with specialized tools like our JD Match Evaluator, real-time analytics dashboards, and automated workflows to deliver quality and consistency at every stage.
                 </p>
 
                 <div className="pt-2 flex flex-wrap gap-3">

@@ -154,7 +154,7 @@ export default function Header() {
                   TaskNera
                 </span>
                 <span className="text-[10px] text-accent tracking-wider uppercase font-semibold mt-1 flex items-center gap-1">
-                  <span>People &amp; Operations</span>
+                  <span>Global HR &amp; Operations</span>
                 </span>
               </div>
             </Link>

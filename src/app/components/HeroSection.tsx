@@ -105,7 +105,7 @@ export default function HeroSection() {
             <div className="clip-in stagger-1 inline-flex items-center gap-2.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-2 shadow-lg shadow-black/10">
               <span className="w-2 h-2 rounded-full bg-accent animate-ping" />
               <span className="text-xs font-bold text-white tracking-wider uppercase">
-                Your Global HR, Workforce &amp; Operations Partner
+                Your Global HR, Workforce &amp; Business Support Partner
               </span>
             </div>
 
@@ -119,7 +119,7 @@ export default function HeroSection() {
 
             {/* Description */}
             <p className="fade-up stagger-3 text-lg sm:text-xl text-white/85 leading-relaxed max-w-2xl font-normal">
-              TaskNera empowers startups, SMEs, and global enterprises to build high-impact teams, manage human capital, and streamline operational workflows through integrated HR, Talent, Workforce, Virtual Assistant, and Customer Support solutions.
+              TaskNera helps startups, SMEs and enterprises build their teams, manage their people and scale their operations through integrated HR, Talent, Workforce, Virtual Assistant and Virtual Customer Support solutions.
             </p>
 
             {/* Supporting capability pills */}
@@ -245,7 +245,7 @@ export default function HeroSection() {
                   <div className="flex items-center gap-2.5">
                     <ShieldCheck className="w-5 h-5 text-accent flex-shrink-0" />
                     <div className="text-xs font-semibold text-white">
-                      <div>100% Compliant &amp; SLA Backed</div>
+                      <div>Compliance-Focused &amp; SLA Backed</div>
                       <div className="text-[11px] text-white/60 font-normal">
                         Transparent governance &amp; dedicated account managers
                       </div>

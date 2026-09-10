@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { createClient } from '@supabase/supabase-js';
 import {
   HelpCircle,
@@ -15,7 +15,20 @@ import {
   ArrowRight,
   ShieldCheck,
   AlertCircle,
+  FileText,
+  RotateCcw,
+  Edit3,
+  X,
 } from 'lucide-react';
+import {
+  saveFormDraft,
+  getFormDraft,
+  clearFormDraft,
+  saveSubmission,
+  getLastSubmission,
+  clearLastSubmission,
+  StoredSubmission,
+} from '@/lib/storage/inquiries';
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
@@ -77,8 +90,46 @@ export default function CTASection() {
   const [form, setForm] = useState<FormData>(initialForm);
   const [errors, setErrors] = useState<FormErrors>({});
   const [touched, setTouched] = useState<{ [key: string]: boolean }>({});
-  const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [draftRestored, setDraftRestored] = useState(false);
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [submittedReference, setSubmittedReference] = useState<string>('');
+
+  const handleCloseModal = () => {
+    setShowSuccessModal(false);
+    clearLastSubmission();
+    clearFormDraft();
+    setForm(initialForm);
+    setErrors({});
+    setTouched({});
+    setDraftRestored(false);
+
+    // Directly take to the top of the website
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+  // Keyboard accessibility for modal dismissal
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && showSuccessModal) {
+        handleCloseModal();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [showSuccessModal]);
+
+  // Restore unsaved draft on load if user was in the middle of typing
+  useEffect(() => {
+    clearLastSubmission();
+    const draft = getFormDraft();
+    if (draft && (draft.name || draft.email || draft.company || draft.message)) {
+      setForm(draft);
+      setDraftRestored(true);
+    }
+  }, []);
 
   function validateField(name: string, value: string): string | undefined {
     if (name === 'name') {
@@ -109,7 +160,11 @@ export default function CTASection() {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) {
     const { name, value } = e.target;
-    setForm((prev) => ({ ...prev, [name]: value }));
+    setForm((prev) => {
+      const next = { ...prev, [name]: value };
+      saveFormDraft(next);
+      return next;
+    });
     if (touched[name]) {
       setErrors((prev) => ({ ...prev, [name]: validateField(name, value) }));
     }
@@ -121,6 +176,31 @@ export default function CTASection() {
     setErrors((prev) => ({ ...prev, [name]: validateField(name, value) }));
   }
 
+  const handleStartNewInquiry = () => {
+    clearLastSubmission();
+    clearFormDraft();
+    setSubmitted(false);
+    setActiveSubmission(null);
+    setForm(initialForm);
+    setErrors({});
+    setTouched({});
+    setDraftRestored(false);
+  };
+
+  const handleEditInquiry = () => {
+    clearLastSubmission();
+    setSubmitted(false);
+    setActiveSubmission(null);
+  };
+
+  const handleClearDraft = () => {
+    clearFormDraft();
+    setForm(initialForm);
+    setErrors({});
+    setTouched({});
+    setDraftRestored(false);
+  };
+
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     const allErrors = validateAll();
@@ -129,15 +209,47 @@ export default function CTASection() {
     if (allErrors.name || allErrors.email || allErrors.company) return;
     setSubmitting(true);
 
+    const submissionId = `sub-${Date.now().toString(36)}-${Math.random().toString(36).substring(2, 6)}`;
+    const newSubmission: StoredSubmission = {
+      id: submissionId,
+      name: form.name.trim(),
+      email: form.email.trim(),
+      company: form.company.trim() || null,
+      phone: null,
+      enquiry_type: form.enquiry,
+      message: form.message.trim(),
+      project_details: null,
+      submitted_at: new Date().toISOString(),
+      status: 'new',
+      qualification_score: 80,
+      synced_with_cloud: false,
+    };
+
+    // 1. Immediately save to persistent client storage for Admin & CRM
+    saveSubmission(newSubmission);
+    setSubmittedReference(submissionId);
+    setShowSuccessModal(true);
+    clearFormDraft();
+    setDraftRestored(false);
+    setForm(initialForm);
+    setErrors({});
+    setTouched({});
+
+    // 2. Attempt cloud sync (Supabase)
     try {
       if (supabase) {
-        await supabase.from('inquiry_submissions').insert({
+        const { error: insErr } = await supabase.from('inquiry_submissions').insert({
           name: form.name,
           email: form.email,
           company: form.company || null,
           enquiry_type: form.enquiry,
           message: form.message,
         });
+
+        if (!insErr) {
+          newSubmission.synced_with_cloud = true;
+          saveSubmission(newSubmission);
+        }
 
         // Fire-and-forget notification email if available
         if (supabaseUrl && supabaseAnonKey) {
@@ -154,14 +266,11 @@ export default function CTASection() {
               enquiry_type: form.enquiry,
               message: form.message,
             }),
-          }).catch((err) => console.log('Notification non-fatal notice:', err));
+          }).catch((err) => console.log('Notification notice:', err));
         }
       }
-      setSubmitted(true);
     } catch (err) {
-      console.error('Submission handled:', err);
-      // Still show confirmed screen so client inquiry isn't lost
-      setSubmitted(true);
+      console.warn('Supabase cloud sync deferred, safely stored locally:', err);
     } finally {
       setSubmitting(false);
     }
@@ -255,8 +364,7 @@ export default function CTASection() {
         />
 
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          {!submitted ? (
-            <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start scroll-reveal">
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start scroll-reveal">
               {/* Left — Headline & Inquiries */}
               <div className="lg:col-span-6 space-y-6">
                 <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 shadow-sm">
@@ -266,8 +374,8 @@ export default function CTASection() {
                   </span>
                 </div>
                 <h2 className="text-section-title font-display font-bold text-white leading-tight">
-                  Build, Manage, and Scale{' '}
-                  <span className="gradient-text-coral block">Your People &amp; Operations.</span>
+                  Tell Us What You Need.{' '}
+                  <span className="gradient-text-coral block">We'll Build the Right Support Model.</span>
                 </h2>
                 <p className="text-white/75 text-base sm:text-lg leading-relaxed font-normal">
                   From talent acquisition and HR operations to workforce management, virtual assistance, and customer support, TaskNera provides flexible, SLA-backed solutions designed to scale your business with confidence.
@@ -275,45 +383,81 @@ export default function CTASection() {
 
                 {/* Contact cards */}
                 <div className="space-y-3 pt-2">
-                  <a
-                    href="mailto:operations@tasknera.com"
-                    className="glass-card rounded-2xl p-4 flex items-center gap-4 hover:bg-white/10 transition-all group"
-                  >
-                    <div className="w-10 h-10 rounded-xl bg-accent/20 border border-accent/30 flex items-center justify-center text-accent flex-shrink-0">
-                      <Mail className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <div className="text-white/50 text-xs font-semibold uppercase tracking-wider">Business Enquiries</div>
-                      <div className="text-white text-sm font-bold group-hover:text-accent transition-colors">
-                        operations@tasknera.com
+                  <div className="grid sm:grid-cols-2 gap-3">
+                    <a
+                      href="mailto:operations@tasknera.com"
+                      className="glass-card rounded-2xl p-3.5 flex items-center gap-3.5 hover:bg-white/10 transition-all group"
+                    >
+                      <div className="w-9 h-9 rounded-xl bg-accent/20 border border-accent/30 flex items-center justify-center text-accent flex-shrink-0">
+                        <Mail className="w-4 h-4" />
                       </div>
-                    </div>
-                  </a>
-
-                  <a
-                    href="mailto:hello@tasknera.com"
-                    className="glass-card rounded-2xl p-4 flex items-center gap-4 hover:bg-white/10 transition-all group"
-                  >
-                    <div className="w-10 h-10 rounded-xl bg-secondary/20 border border-secondary/30 flex items-center justify-center text-secondary flex-shrink-0">
-                      <Briefcase className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <div className="text-white/50 text-xs font-semibold uppercase tracking-wider">Careers &amp; Talent</div>
-                      <div className="text-white text-sm font-bold group-hover:text-secondary transition-colors">
-                        hello@tasknera.com
+                      <div className="overflow-hidden">
+                        <div className="text-white/50 text-[10px] font-bold uppercase tracking-wider">Business Enquiries</div>
+                        <div className="text-white text-xs font-bold truncate group-hover:text-accent transition-colors">
+                          operations@tasknera.com
+                        </div>
                       </div>
-                    </div>
-                  </a>
+                    </a>
 
-                  <div className="glass-card rounded-2xl p-4 flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 flex-shrink-0">
+                    <a
+                      href="mailto:careers@tasknera.com"
+                      className="glass-card rounded-2xl p-3.5 flex items-center gap-3.5 hover:bg-white/10 transition-all group"
+                    >
+                      <div className="w-9 h-9 rounded-xl bg-secondary/20 border border-secondary/30 flex items-center justify-center text-secondary flex-shrink-0">
+                        <Briefcase className="w-4 h-4" />
+                      </div>
+                      <div className="overflow-hidden">
+                        <div className="text-white/50 text-[10px] font-bold uppercase tracking-wider">Careers &amp; Candidates</div>
+                        <div className="text-white text-xs font-bold truncate group-hover:text-secondary transition-colors">
+                          careers@tasknera.com
+                        </div>
+                      </div>
+                    </a>
+
+                    <a
+                      href="mailto:hello@tasknera.com"
+                      className="glass-card rounded-2xl p-3.5 flex items-center gap-3.5 hover:bg-white/10 transition-all group"
+                    >
+                      <div className="w-9 h-9 rounded-xl bg-teal-500/20 border border-teal-500/30 flex items-center justify-center text-teal-400 flex-shrink-0">
+                        <HelpCircle className="w-4 h-4" />
+                      </div>
+                      <div className="overflow-hidden">
+                        <div className="text-white/50 text-[10px] font-bold uppercase tracking-wider">General Enquiries</div>
+                        <div className="text-white text-xs font-bold truncate group-hover:text-teal-400 transition-colors">
+                          hello@tasknera.com
+                        </div>
+                      </div>
+                    </a>
+
+                    <a
+                      href="mailto:partners@tasknera.com"
+                      className="glass-card rounded-2xl p-3.5 flex items-center gap-3.5 hover:bg-white/10 transition-all group"
+                    >
+                      <div className="w-9 h-9 rounded-xl bg-purple-500/20 border border-purple-500/30 flex items-center justify-center text-purple-400 flex-shrink-0">
+                        <Globe className="w-4 h-4" />
+                      </div>
+                      <div className="overflow-hidden">
+                        <div className="text-white/50 text-[10px] font-bold uppercase tracking-wider">Partners &amp; Vendors</div>
+                        <div className="text-white text-xs font-bold truncate group-hover:text-purple-400 transition-colors">
+                          partners@tasknera.com
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+
+                  {/* Global Delivery Card */}
+                  <div className="glass-card rounded-2xl p-4 flex items-start gap-4 border border-white/15 bg-white/5">
+                    <div className="w-10 h-10 rounded-xl bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 flex-shrink-0 mt-0.5">
                       <Globe className="w-5 h-5" />
                     </div>
                     <div>
-                      <div className="text-white/50 text-xs font-semibold uppercase tracking-wider">Global Operations</div>
+                      <div className="text-white/60 text-[11px] font-bold uppercase tracking-wider">Global Delivery</div>
                       <div className="text-white text-sm font-bold">
-                        Delhi, India · UK · US · EMEA Delivery
+                        India | US | UK | Europe | Remote Global
                       </div>
+                      <p className="text-white/65 text-xs mt-1 leading-relaxed">
+                        Supporting clients and talent requirements across international markets through remote and cross-border delivery models, subject to applicable requirements.
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -327,6 +471,22 @@ export default function CTASection() {
                 <p className="text-white/60 text-xs sm:text-sm mb-6">
                   Tell us about your team, workforce, or operations support needs. We respond within 1 business day.
                 </p>
+
+                {draftRestored && (
+                  <div className="flex items-center justify-between bg-accent/15 border border-accent/30 rounded-2xl px-4 py-2.5 mb-4 text-xs text-white">
+                    <div className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+                      <span>Restored your saved inquiry draft from this session.</span>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={handleClearDraft}
+                      className="text-white/70 hover:text-white underline text-xs font-semibold ml-3"
+                    >
+                      Clear draft
+                    </button>
+                  </div>
+                )}
 
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid sm:grid-cols-2 gap-4">
@@ -437,7 +597,7 @@ export default function CTASection() {
                     className="w-full bg-accent text-accent-foreground font-bold py-4 rounded-xl hover:brightness-110 active:scale-98 transition-all shadow-xl shadow-accent/30 text-sm disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2 mt-2"
                   >
                     {submitting ? (
-                      <span>Sending inquiry…</span>
+                      <span>Saving &amp; Submitting inquiry…</span>
                     ) : (
                       <>
                         <span>Submit Inquiry to Expert Team</span>
@@ -453,62 +613,73 @@ export default function CTASection() {
                 </form>
               </div>
             </div>
-          ) : (
-            /* Success State */
-            <div className="max-w-2xl mx-auto text-center scroll-reveal py-8">
-              <div className="w-20 h-20 rounded-3xl bg-accent/20 border border-accent/40 flex items-center justify-center mx-auto mb-6 text-accent shadow-xl">
-                <CheckCircle2 className="w-10 h-10" />
-              </div>
-
-              <div className="inline-flex items-center gap-2 bg-accent/15 border border-accent/30 rounded-full px-4 py-1.5 mb-4">
-                <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-                <span className="text-xs font-bold text-accent tracking-widest uppercase">
-                  Inquiry Confirmed
-                </span>
-              </div>
-
-              <h2 className="text-section-title font-display font-bold text-white mb-4">
-                Thank you,{' '}
-                <span className="gradient-text-coral">{form.name.split(' ')[0] || 'there'}!</span>
-              </h2>
-
-              <p className="text-white/80 text-lg leading-relaxed mb-10">
-                Your enquiry has been received by our senior operations desk. We will review your requirements and reach out within 1 business day.
-              </p>
-
-              {/* Steps */}
-              <div className="grid sm:grid-cols-3 gap-4 mb-10 text-left">
-                {[
-                  { icon: Clock, title: 'Within 4 Hours', desc: 'Acknowledgement and initial requisition review.' },
-                  { icon: Briefcase, title: '1 Business Day', desc: 'A senior consultant prepares a tailored scope proposal.' },
-                  { icon: Calendar, title: '2–3 Days', desc: 'Discovery alignment call and candidate matching kickoff.' },
-                ].map((s, idx) => {
-                  const IconComp = s.icon;
-                  return (
-                    <div key={s.title} className="glass-card rounded-2xl p-5 border border-white/15">
-                      <div className="w-8 h-8 rounded-xl bg-accent/20 flex items-center justify-center text-accent mb-3">
-                        <IconComp className="w-4 h-4" />
-                      </div>
-                      <div className="font-bold text-white text-sm mb-1">{s.title}</div>
-                      <div className="text-xs text-white/60 leading-relaxed">{s.desc}</div>
-                    </div>
-                  );
-                })}
-              </div>
-
-              <button
-                onClick={() => {
-                  setSubmitted(false);
-                  setForm(initialForm);
-                }}
-                className="glass-btn text-white font-semibold px-8 py-3 rounded-full text-sm"
-              >
-                Submit another inquiry
-              </button>
-            </div>
-          )}
         </div>
       </section>
+
+      {/* ── Success Pop-up / Modal ── */}
+      {showSuccessModal && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-slate-950/80 backdrop-blur-md transition-opacity animate-in fade-in duration-200"
+          onClick={() => setShowSuccessModal(false)}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="success-modal-headline"
+        >
+          <div
+            className="relative w-full max-w-lg bg-slate-900/95 border border-white/20 rounded-3xl p-7 sm:p-9 shadow-2xl shadow-black/80 text-center transform transition-all backdrop-blur-xl animate-in zoom-in-95 duration-200"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Top Right Close 'X' Button */}
+            <button
+              type="button"
+              onClick={handleCloseModal}
+              className="absolute top-4 right-4 sm:top-5 sm:right-5 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white/70 hover:text-white flex items-center justify-center transition-all"
+              aria-label="Close modal"
+            >
+              <X className="w-4 h-4" />
+            </button>
+
+            {/* Checkmark Icon Circle */}
+            <div className="w-16 h-16 rounded-2xl bg-accent/20 border border-accent/40 flex items-center justify-center mx-auto mb-5 text-accent shadow-lg shadow-accent/25">
+              <CheckCircle2 className="w-9 h-9" />
+            </div>
+
+            {/* Title */}
+            <h3
+              id="success-modal-headline"
+              className="text-2xl sm:text-3xl font-display font-bold text-white mb-3 tracking-tight"
+            >
+              Thank you for submitting the form!
+            </h3>
+
+            {/* Body Message */}
+            <p className="text-white/80 text-sm sm:text-base leading-relaxed mb-6 max-w-md mx-auto">
+              We’ve received your query successfully. Our team will review your request and get back to you once we have an update.
+            </p>
+
+            {/* Reference Badge */}
+            {submittedReference && (
+              <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 mb-7 text-xs text-white/70">
+                <span className="text-white/40">Inquiry Reference:</span>
+                <span className="font-mono font-bold text-accent">
+                  #TN-{submittedReference.slice(-6).toUpperCase()}
+                </span>
+              </div>
+            )}
+
+            {/* Clear "Close" Button */}
+            <div>
+              <button
+                type="button"
+                onClick={handleCloseModal}
+                className="w-full bg-accent text-accent-foreground font-bold py-3.5 px-6 rounded-xl hover:brightness-110 active:scale-98 transition-all shadow-xl shadow-accent/30 text-sm"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }

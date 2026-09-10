@@ -21,8 +21,8 @@ const corePillars = [
   },
   {
     icon: ShieldCheck,
-    title: '100% Compliance',
-    desc: 'Flawless payroll, statutory compliance, and HR governance built into every process.',
+    title: 'Compliance-Focused HR',
+    desc: 'Structured payroll, statutory compliance, and HR governance built into every process.',
   },
   {
     icon: Handshake,
@@ -32,9 +32,9 @@ const corePillars = [
 ];
 
 const milestones = [
-  { year: '8+ Yrs', label: 'Global HR Leadership Experience' },
+  { year: '8+ Yrs', label: 'Founder HR Experience' },
   { year: '5', label: 'International Sourcing Regions' },
-  { year: '12+', label: 'Industries Transformed' },
+  { year: '12+', label: 'Industry Areas Supported' },
   { year: '2026', label: 'TaskNera Founded' },
 ];
 
@@ -70,7 +70,7 @@ export default function AboutPage() {
                 </p>
 
                 <p className="text-white/70 text-lg leading-relaxed max-w-xl">
-                  HR strategist with 8+ years of experience building, managing, and scaling talent pipelines for fast-growing startups, SMEs, and global enterprises.
+                  Founded in 2026, TaskNera is led by an HR professional with 8+ years of experience across talent acquisition, HR operations and workforce management.
                 </p>
 
                 <div className="flex flex-wrap gap-4 pt-2">

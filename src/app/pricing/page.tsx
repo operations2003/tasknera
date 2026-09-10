@@ -25,7 +25,7 @@ const tiers = [
     billing: 'Success-Aligned Milestone Fee',
     idealFor: 'Startups & SMEs needing critical specialist hires',
     sla: 'First shortlist in 48–72 hours',
-    replacement: '90-day replacement guarantee',
+    replacement: 'Contractual replacement support (terms defined in agreement)',
     features: [
       'Zero upfront commitment until candidate offer acceptance',
       'Proprietary JD Match Evaluator candidate scoring',
@@ -61,7 +61,7 @@ const tiers = [
     billing: 'Blended SLA Retainer + Volume Milestones',
     idealFor: 'Enterprises and scale-ups managing 50+ headcount',
     sla: 'Strict SLA benchmarks & dedicated Account Director',
-    replacement: 'Continuous pipeline buffer guarantee',
+    replacement: 'Continuous talent pipeline buffer',
     features: [
       'End-to-end recruitment process outsourcing (RPO)',
       'Complete statutory payroll & HR compliance audit and execution',
@@ -79,7 +79,7 @@ const comparisonRows = [
   { feature: 'Minimum Commitment', contingent: 'Single Role Mandate', embedded: '1 Dedicated Professional', managed: 'Custom Multi-Pod SLA' },
   { feature: 'Turnaround Time', contingent: '48–72 Hours to Shortlist', embedded: '3–5 Days Deployment', managed: 'Custom Implementation Roadmap' },
   { feature: 'Candidate Screening', contingent: 'JD Match Evaluator + Human Interview', embedded: 'Multi-stage Assessment + Client Interview', managed: 'Full Competency Framework' },
-  { feature: 'Replacement Guarantee', contingent: '90 Days', embedded: 'Immediate Talent Buffer', managed: 'Ongoing SLA Governance' },
+  { feature: 'Replacement Support', contingent: 'Defined in SOW', embedded: 'Immediate Talent Buffer', managed: 'Ongoing SLA Governance' },
   { feature: 'Compliance & Payroll', contingent: 'Handled on Placement', embedded: '100% Managed by TaskNera', managed: 'Full Statutory & Multi-State' },
   { feature: 'Tool Integration', contingent: 'Client Discretion', embedded: 'Direct in your Slack/CRM', managed: 'Enterprise API & Portal Sync' },
 ];
@@ -102,8 +102,8 @@ export default function PricingPage() {
               </div>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-white leading-tight">
-                Engagement &amp;{' '}
-                <span className="gradient-text-coral">Pricing Frameworks</span>
+                Flexible Models.{' '}
+                <span className="gradient-text-coral">Scalable Support.</span>
               </h1>
 
               <p className="text-white/80 text-lg sm:text-xl leading-relaxed">

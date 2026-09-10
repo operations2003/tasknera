@@ -92,10 +92,10 @@ const processSteps = [
 ];
 
 const metrics = [
-  { value: '72hrs', label: 'Average time to first shortlist' },
-  { value: '94%', label: 'Offer acceptance rate' },
-  { value: '3.2x', label: 'Faster than in-house hiring' },
-  { value: 'SLA-backed', label: 'Replacement guarantee' },
+  { value: 'Agile', label: 'Shortlist Turnaround' },
+  { value: 'Precision', label: 'JD Match Competency Scoring' },
+  { value: 'Domain-Led', label: 'Specialist Recruiter Desks' },
+  { value: 'SLA-Backed', label: 'Replacement Support' },
 ];
 
 const industries = ['Technology', 'BFSI', 'Healthcare', 'Manufacturing', 'Retail', 'Logistics', 'Professional Services', 'E-commerce'];

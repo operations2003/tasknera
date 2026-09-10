@@ -16,16 +16,22 @@ const solutionsLinks = [
 const companyLinks = [
   { label: 'About TaskNera', href: '/about' },
   { label: 'How We Work (Process)', href: '/process' },
-  { label: 'Industries Served', href: '/industries' },
+  { label: '12+ Industry Areas', href: '/industries' },
   { label: 'Engagement & Pricing', href: '/pricing' },
   { label: 'Workplace Policies & Governance', href: '/workplace-policies' },
   { label: 'Contact Us', href: '/contact' },
 ];
 
-const legalLinks = [
+const policiesAndLegalLinks = [
   { label: 'Privacy Policy', href: '/privacy' },
-  { label: 'Terms of Service', href: '/terms' },
-  { label: 'Remote Workplace Standards', href: '/workplace-policies' },
+  { label: 'Cookie Policy', href: '/cookie-policy' },
+  { label: 'Terms & Conditions', href: '/terms' },
+  { label: 'Candidate Privacy Notice', href: '/candidate-privacy' },
+  { label: 'Client / Service Disclaimer', href: '/service-disclaimer' },
+  { label: 'Data Security & Confidentiality', href: '/data-security' },
+  { label: 'Refund & Cancellation Policy', href: '/refund-cancellation' },
+  { label: 'Grievance / Complaints', href: '/grievance-policy' },
+  { label: 'Accessibility Statement', href: '/accessibility' },
 ];
 
 export default function Footer() {
@@ -37,10 +43,10 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 relative z-10">
         
         {/* Upper Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 mb-16">
           
           {/* Brand Col */}
-          <div className="md:col-span-5 space-y-5">
+          <div className="lg:col-span-4 space-y-5">
             <div className="flex items-center gap-3">
               <AppLogo
                 src="/assets/images/logo_1-1786267820748.png"
@@ -52,13 +58,13 @@ export default function Footer() {
                   TaskNera
                 </span>
                 <span className="text-[10px] text-accent tracking-wider uppercase font-semibold">
-                  Global People &amp; Operations Partner
+                  Global HR, Workforce &amp; Business Support Partner
                 </span>
               </div>
             </div>
 
-            <p className="text-white/80 text-sm leading-relaxed max-w-md">
-              TaskNera helps startups, SMEs and global enterprises build high-performing teams, manage people, and scale business operations through integrated HR, Talent, Workforce, Virtual Assistant, and Customer Support solutions.
+            <p className="text-white/80 text-sm leading-relaxed max-w-sm">
+              TaskNera helps startups, SMEs and enterprises build their teams, manage their people and scale their operations through integrated HR, Talent, Workforce, Virtual Assistant and Virtual Customer Support solutions.
             </p>
 
             {/* Operational badge */}
@@ -69,7 +75,7 @@ export default function Footer() {
 
             <div className="space-y-1 text-xs text-white/45">
               <p>Corporate Office: D-57 F1 Dilshad Colony, Dilshad Garden, Delhi - 110095, East Delhi, India.</p>
-              <p>Coverage: India, United Kingdom, United States, Europe &amp; Remote Global.</p>
+              <p>Global Delivery: India | US | UK | Europe | Remote Global.</p>
             </div>
 
             {/* Social & Contact */}
@@ -103,7 +109,7 @@ export default function Footer() {
           </div>
 
           {/* Solutions Column */}
-          <div className="md:col-span-3 space-y-4">
+          <div className="lg:col-span-3 space-y-4">
             <h4 className="text-xs font-bold text-accent uppercase tracking-widest flex items-center gap-1.5">
               <span>Core Solutions</span>
             </h4>
@@ -122,10 +128,10 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Company & Governance Column */}
-          <div className="md:col-span-4 space-y-4">
+          {/* Company Column */}
+          <div className="lg:col-span-2 space-y-4">
             <h4 className="text-xs font-bold text-secondary uppercase tracking-widest flex items-center gap-1.5">
-              <span>Company &amp; Governance</span>
+              <span>Company</span>
             </h4>
             <ul className="space-y-2.5">
               {companyLinks.map((link) => (
@@ -140,23 +146,26 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
+          </div>
 
-            <div className="pt-4 border-t border-white/10">
-              <div className="text-[11px] font-semibold text-white/40 uppercase tracking-wider mb-2">
-                Standards &amp; Privacy
-              </div>
-              <div className="flex flex-wrap gap-x-4 gap-y-1.5">
-                {legalLinks.map((link) => (
+          {/* Policies & Legal Column */}
+          <div className="lg:col-span-3 space-y-4">
+            <h4 className="text-xs font-bold text-teal-400 uppercase tracking-widest flex items-center gap-1.5">
+              <span>Policies &amp; Legal</span>
+            </h4>
+            <ul className="space-y-2">
+              {policiesAndLegalLinks.map((link) => (
+                <li key={link.label}>
                   <Link
-                    key={link.label}
                     href={link.href}
-                    className="text-white/45 text-xs hover:text-white/80 transition-colors"
+                    className="text-white/65 hover:text-white text-xs sm:text-sm transition-colors flex items-center gap-1.5 group"
                   >
-                    {link.label}
+                    <span className="text-teal-400/60 group-hover:text-teal-400 text-xs">›</span>
+                    <span>{link.label}</span>
                   </Link>
-                ))}
-              </div>
-            </div>
+                </li>
+              ))}
+            </ul>
           </div>
 
         </div>
@@ -164,8 +173,8 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-white/40 text-xs">
           <span>© 2026 TaskNera Global Operations. All rights reserved.</span>
-          <span className="text-center">One Partner · HR, Talent, Workforce &amp; Business Support — All Under One Roof</span>
-          <span>Founded by Sheetal Bedi · <a href="https://www.tasknera.com" className="text-white/60 hover:text-white">tasknera.com</a></span>
+          <span className="text-center">One Partner · HR, Talent, Workforce, Virtual Assistant &amp; Customer Support</span>
+          <span>Founded in 2026 · Led by Sheetal Bedi · <a href="https://www.tasknera.com" className="text-white/60 hover:text-white">tasknera.com</a></span>
         </div>
       </div>
     </footer>

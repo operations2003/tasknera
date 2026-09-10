@@ -53,7 +53,7 @@ const pillars = [
       'Dedicated In-House Recruitment Desks',
       'Cross-Border & Remote Global Sourcing',
     ],
-    highlight: 'Strategic talent acquisition pairing experienced domain recruiters with our proprietary JD Match Evaluator to cut time-to-hire by 60%.',
+    highlight: 'Strategic talent acquisition pairing experienced domain recruiters with our proprietary JD Match Evaluator for precision-matched candidate shortlists.',
   },
   {
     id: 'workforce',

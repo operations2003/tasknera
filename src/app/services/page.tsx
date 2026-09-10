@@ -24,7 +24,7 @@ const pillarHighlights = [
     icon: Building2,
     badge: 'Core HR',
     desc: 'Structured HR management, payroll processing, statutory compliance (PF, ESIC, TDS), and digital employee lifecycle administration.',
-    deliverables: ['100% On-time Payroll', 'Statutory Compliance Filings', 'HRMS Portal Administration', 'Onboarding & Exit SOPs'],
+    deliverables: ['On-time Payroll Execution', 'Statutory Compliance Filings', 'HRMS Portal Administration', 'Onboarding & Exit SOPs'],
     accent: 'border-secondary/30',
   },
   {

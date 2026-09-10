@@ -54,9 +54,9 @@ const models = [
   },
   {
     icon: CreditCard,
-    title: 'HR & Payroll Outsourcing',
-    desc: 'Complete HR operations including payroll processing, statutory compliance, onboarding, and portal management.',
-    tag: '100% Compliant',
+    title: 'HR Operations Outsourcing',
+    desc: 'Outsource selected HR functions or build a managed HR operations model around your business including payroll and compliance.',
+    tag: 'Compliance-Focused',
     color: 'border-emerald-500/30',
     iconBg: 'bg-emerald-500/10 text-emerald-600 border-emerald-500/20',
   },
@@ -78,8 +78,8 @@ const models = [
   },
   {
     icon: Headphones,
-    title: 'Virtual Customer Support (VCS)',
-    desc: 'Professional omnichannel customer support pods covering voice, live chat, email, WhatsApp, and ticketing.',
+    title: 'Dedicated VCS Team',
+    desc: 'Build a dedicated voice, chat, email or digital customer support team based on your required coverage and service scope.',
     tag: 'Omnichannel VCS',
     color: 'border-teal-500/30',
     iconBg: 'bg-teal-500/10 text-teal-600 border-teal-500/20',
@@ -133,8 +133,8 @@ export default function EngagementModelsSection() {
             </span>
           </div>
           <h2 className="text-section-title font-display font-bold text-foreground mb-4">
-            Our Engagement{' '}
-            <span className="gradient-text-coral">Models</span>
+            Flexible Models.{' '}
+            <span className="gradient-text-coral">Scalable Support.</span>
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
             Choose the engagement model that fits your operational stage, internal team size, and growth timelines.
