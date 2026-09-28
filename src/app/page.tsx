@@ -5,11 +5,10 @@ import HeroSection from '@/app/components/HeroSection';
 import DifferentiatorSection from '@/app/components/DifferentiatorSection';
 import TakeOffPlateSection from '@/app/components/TakeOffPlateSection';
 import ServicesSection from '@/app/components/ServicesSection';
-import AboutSection from '@/app/components/AboutSection';
+import PlatformSection from '@/app/components/PlatformSection';
+import CompanyOverviewSection from '@/app/components/CompanyOverviewSection';
 import WhoWeSupportSection from '@/app/components/WhoWeSupportSection';
-import IndustriesSection from '@/app/components/IndustriesSection';
 import EngagementModelsSection from '@/app/components/EngagementModelsSection';
-import ProcessSection from '@/app/components/ProcessSection';
 import WhyTaskNeraSection from '@/app/components/WhyTaskNeraSection';
 import CTASection from '@/app/components/CTASection';
 import ScrollRevealInit from '@/app/components/ScrollRevealInit';
@@ -32,25 +31,22 @@ export default function HomePage() {
         {/* 4. Our Solutions (5 Major Verticals) */}
         <ServicesSection />
 
-        {/* About TaskNera & Story */}
-        <AboutSection />
+        {/* 4b. Unified HireIQ™ & HRMS Platform Ecosystem */}
+        <PlatformSection />
 
-        {/* 5. Who We Support (Built for Businesses at Every Stage) */}
+        {/* 5. Merged Company Overview: About, How We Work & Industries */}
+        <CompanyOverviewSection />
+
+        {/* 6. Who We Support (Built for Businesses at Every Stage) */}
         <WhoWeSupportSection />
-
-        {/* 6. Industries & Domain Coverage */}
-        <IndustriesSection />
 
         {/* 7. Engagement Models (Flexible Models. Scalable Support.) */}
         <EngagementModelsSection />
 
-        {/* 8. How We Work (Discover → Design → Build → Deliver → Measure → Scale) */}
-        <ProcessSection />
-
-        {/* 9. Why TaskNera (5 Core Principles) */}
+        {/* 8. Why TaskNera (5 Core Principles) */}
         <WhyTaskNeraSection />
 
-        {/* 10-12. Global Delivery, FAQs & Let's Build Together */}
+        {/* 9. Global Delivery, FAQs & Let's Build Together */}
         <CTASection />
       </main>
       <Footer />

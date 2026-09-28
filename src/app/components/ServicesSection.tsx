@@ -119,9 +119,9 @@ const pillars = [
 
 const techLayerItems = [
   {
-    name: 'JD Match Evaluator',
-    desc: 'Intelligently evaluates candidate CVs against specific job specifications with deep competency scoring (not a rigid ATS).',
-    badge: 'Proprietary',
+    name: 'HireIQ Matching Engine',
+    desc: 'Proprietary JD and CV matching intelligence evaluating candidates with direct resume citations, dynamic weighting, and merit-first scoring.',
+    badge: 'HireIQ™ AI',
     accent: 'text-accent bg-accent/15 border-accent/30',
   },
   {
@@ -174,8 +174,13 @@ export default function ServicesSection() {
   const ActiveIcon = activePillar.icon;
 
   return (
-    <section id="services" className="py-20 sm:py-28 bg-muted relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="services" className="py-20 sm:py-28 bg-surface-subtle relative overflow-hidden border-b border-border">
+      {/* Ambient background light pools with subtle blue effects */}
+      <div className="absolute top-10 right-1/4 w-[600px] h-[350px] bg-sky-400/12 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-10 left-1/4 w-[500px] h-[300px] bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 scroll-reveal">
@@ -246,7 +251,7 @@ export default function ServicesSection() {
         <div className="grid lg:grid-cols-12 gap-6 scroll-reveal mb-20" style={{ transitionDelay: '0.15s' }}>
           
           {/* Active Pillar Showcase (Left - 5 Cols) */}
-          <div className="lg:col-span-5 bg-primary rounded-3xl p-7 sm:p-9 text-white shadow-2xl flex flex-col justify-between relative overflow-hidden border border-white/15">
+          <div className="lg:col-span-5 bg-gradient-to-br from-[#1e4994] to-[#255ebd] rounded-3xl p-7 sm:p-9 text-white shadow-2xl flex flex-col justify-between relative overflow-hidden border border-blue-300/30">
             <div className="relative z-10">
               <div className="flex items-center justify-between mb-5">
                 <div className="w-14 h-14 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-accent shadow-inner">
@@ -364,8 +369,10 @@ export default function ServicesSection() {
         {/* ================================================== */}
         {/* TECHNOLOGY LAYER                                  */}
         {/* ================================================== */}
-        <div id="technology" className="bg-primary rounded-3xl p-8 sm:p-12 text-white shadow-2xl relative overflow-hidden border border-white/15 scroll-reveal" style={{ transitionDelay: '0.2s' }}>
-          <div className="max-w-3xl mb-10">
+        <div id="technology" className="bg-section-dark rounded-3xl p-8 sm:p-12 text-white shadow-2xl relative overflow-hidden border border-white/15 scroll-reveal" style={{ transitionDelay: '0.2s' }}>
+          <div className="absolute top-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-80 h-80 bg-secondary/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="max-w-3xl mb-10 relative z-10">
             <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-3.5 py-1 mb-4">
               <Sparkles className="w-3.5 h-3.5 text-accent animate-pulse" />
               <span className="text-xs font-bold text-white/90 tracking-widest uppercase">
@@ -376,7 +383,7 @@ export default function ServicesSection() {
               HR Technology &amp; Digital Solutions
             </h3>
             <p className="text-white/75 text-base leading-relaxed">
-              TaskNera embeds a modern, flexible technology layer to power our delivery. We do not burden you with an overwhelming traditional ATS; instead, we deploy targeted digital tools including our proprietary JD Match Evaluator, HRMS portals, and workforce visibility dashboards.
+              TaskNera embeds a modern, flexible technology layer to power our delivery. We deploy our proprietary HireIQ matching intelligence for precision JD and CV alignment, integrated HRMS portals, and real-time workforce visibility dashboards.
             </p>
           </div>
 

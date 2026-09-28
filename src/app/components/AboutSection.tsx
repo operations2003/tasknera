@@ -30,14 +30,17 @@ const stats = [
     label: 'Industries Supported',
     desc: 'From SaaS, Tech & BFSI to Healthcare, E-commerce, Logistics, and High-Growth Startups.',
     icon: Building2,
-    color: 'bg-blue-500/10 text-blue-500 border-blue-500/20',
+    color: 'bg-primary/10 text-primary border-primary/20',
   },
 ];
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-20 sm:py-28 bg-background border-b border-border relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-20 sm:py-28 bg-surface-elevated border-b border-border relative overflow-hidden">
+      {/* Ambient background light pools */}
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
           {/* Left — Text content */}
@@ -108,30 +111,33 @@ export default function AboutSection() {
             })}
 
             {/* Core Promise Box */}
-            <div className="bg-primary rounded-3xl p-7 text-white mt-4 shadow-xl border border-white/10 relative overflow-hidden">
-              <div className="text-xs font-bold text-accent uppercase tracking-widest mb-2 flex items-center gap-1.5">
-                <ShieldCheck className="w-4 h-4" />
-                <span>Our Core Promise</span>
-              </div>
-              <p className="font-display font-bold text-xl text-white mb-4 leading-snug">
-                One Partner. HR, Talent, Workforce &amp; Business Support — All Under One Roof.
-              </p>
-              <div className="grid grid-cols-2 gap-3 text-xs text-white/80">
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-secondary" />
-                  <span>Modular Outsourcing</span>
+            <div className="bg-section-dark rounded-3xl p-7 text-white mt-4 shadow-xl border border-white/10 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-accent/10 rounded-full blur-2xl pointer-events-none" />
+              <div className="relative z-10">
+                <div className="text-xs font-bold text-accent uppercase tracking-widest mb-2 flex items-center gap-1.5">
+                  <ShieldCheck className="w-4 h-4" />
+                  <span>Our Core Promise</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-secondary" />
-                  <span>100% Vetted Human Talent</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-secondary" />
-                  <span>Technology-Enabled</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-secondary" />
-                  <span>Transparent Governance</span>
+                <p className="font-display font-bold text-xl text-white mb-4 leading-snug">
+                  One Partner. HR, Talent, Workforce &amp; Business Support — All Under One Roof.
+                </p>
+                <div className="grid grid-cols-2 gap-3 text-xs text-white/80">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-secondary" />
+                    <span>Modular Outsourcing</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-secondary" />
+                    <span>100% Vetted Human Talent</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-secondary" />
+                    <span>Technology-Enabled</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-secondary" />
+                    <span>Transparent Governance</span>
+                  </div>
                 </div>
               </div>
             </div>

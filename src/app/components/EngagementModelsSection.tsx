@@ -25,7 +25,7 @@ const models = [
     title: 'Permanent Recruitment',
     desc: 'Specialized hiring for critical and leadership roles with transparent, success-fee milestone alignment.',
     tag: 'Direct Placement',
-    color: 'border-accent/30',
+    color: 'border-accent/25 hover:border-accent/50',
     iconBg: 'bg-accent/10 text-accent border-accent/20',
   },
   {
@@ -33,7 +33,7 @@ const models = [
     title: 'Contract Staffing',
     desc: 'Flexible technical, functional, and operational talent for project-based surges and seasonal spikes.',
     tag: 'Flexible Tenure',
-    color: 'border-secondary/30',
+    color: 'border-secondary/25 hover:border-secondary/50',
     iconBg: 'bg-secondary/10 text-secondary border-secondary/20',
   },
   {
@@ -41,48 +41,48 @@ const models = [
     title: 'Dedicated Resources',
     desc: 'Full-time professionals embedded within your internal team, reporting directly into your daily workflows.',
     tag: 'Embedded Team',
-    color: 'border-blue-500/30',
-    iconBg: 'bg-blue-500/10 text-blue-500 border-blue-500/20',
+    color: 'border-primary/20 hover:border-primary/40',
+    iconBg: 'bg-primary/10 text-primary border-primary/20',
   },
   {
     icon: RefreshCw,
     title: 'RPO (Recruitment Outsourcing)',
     desc: 'End-to-end management of your entire talent acquisition lifecycle, from requisition to offer letter handoff.',
     tag: 'Full Talent Function',
-    color: 'border-purple-500/30',
-    iconBg: 'bg-purple-500/10 text-purple-600 border-purple-500/20',
+    color: 'border-accent/25 hover:border-accent/50',
+    iconBg: 'bg-accent/10 text-accent border-accent/20',
   },
   {
     icon: CreditCard,
     title: 'HR Operations Outsourcing',
     desc: 'Outsource selected HR functions or build a managed HR operations model around your business including payroll and compliance.',
     tag: 'Compliance-Focused',
-    color: 'border-emerald-500/30',
-    iconBg: 'bg-emerald-500/10 text-emerald-600 border-emerald-500/20',
+    color: 'border-secondary/25 hover:border-secondary/50',
+    iconBg: 'bg-secondary/10 text-secondary border-secondary/20',
   },
   {
     icon: Users,
     title: 'Workforce Outsourcing',
     desc: 'Turnkey workforce planning, rapid multi-location deployment, shift scheduling, and on-site governance.',
     tag: 'Operational Scale',
-    color: 'border-orange-500/30',
-    iconBg: 'bg-orange-500/10 text-orange-600 border-orange-500/20',
+    color: 'border-primary/20 hover:border-primary/40',
+    iconBg: 'bg-primary/10 text-primary border-primary/20',
   },
   {
     icon: Briefcase,
     title: 'Virtual Assistant Pods',
     desc: 'Dedicated human remote professionals handling executive assistance, CRM, admin, research, and scheduling.',
     tag: 'Human Remote Pros',
-    color: 'border-amber-500/30',
-    iconBg: 'bg-amber-500/10 text-amber-600 border-amber-500/20',
+    color: 'border-accent/25 hover:border-accent/50',
+    iconBg: 'bg-accent/10 text-accent border-accent/20',
   },
   {
     icon: Headphones,
     title: 'Dedicated VCS Team',
     desc: 'Build a dedicated voice, chat, email or digital customer support team based on your required coverage and service scope.',
     tag: 'Omnichannel VCS',
-    color: 'border-teal-500/30',
-    iconBg: 'bg-teal-500/10 text-teal-600 border-teal-500/20',
+    color: 'border-secondary/25 hover:border-secondary/50',
+    iconBg: 'bg-secondary/10 text-secondary border-secondary/20',
   },
 ];
 
@@ -121,8 +121,13 @@ const journey = [
 
 export default function EngagementModelsSection() {
   return (
-    <section id="engagement" className="py-20 sm:py-28 bg-background border-b border-border relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="engagement" className="py-20 sm:py-28 bg-surface-subtle border-b border-border relative overflow-hidden">
+      {/* Ambient background light pools with subtle blue effects */}
+      <div className="absolute top-10 right-1/3 w-[600px] h-[350px] bg-sky-400/12 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-10 left-1/3 w-[500px] h-[300px] bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 scroll-reveal">

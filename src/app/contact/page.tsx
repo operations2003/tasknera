@@ -21,7 +21,7 @@ const teamMembers = [
     bio: 'Our dedicated operations team handles all client onboarding, scoping briefs, and custom SOW structuring — with a 1-business-day response commitment.',
     email: 'operations@tasknera.com',
     initials: 'OT',
-    color: 'from-purple-500/30 to-purple-500/10',
+    color: 'from-secondary/30 to-secondary/10',
   },
   {
     name: 'Talent Desk',
@@ -29,7 +29,7 @@ const teamMembers = [
     bio: `Looking to join a client's team or explore opportunities through TaskNera? Our talent desk connects qualified candidates with vetted roles.`,
     email: 'careers@tasknera.com',
     initials: 'TD',
-    color: 'from-orange-400/30 to-orange-400/10',
+    color: 'from-accent/30 to-accent/10',
   },
   {
     name: 'Support Team',
@@ -45,7 +45,7 @@ const teamMembers = [
     bio: 'Collaborate with TaskNera as a recruitment vendor, staffing partner, HR consultant, or enterprise solutions provider.',
     email: 'partners@tasknera.com',
     initials: 'PV',
-    color: 'from-blue-500/30 to-blue-500/10',
+    color: 'from-primary/30 to-primary/10',
   },
 ];
 
@@ -91,9 +91,9 @@ export default function ContactPage() {
       <main className="bg-background min-h-screen">
 
         {/* ── Hero Banner ── */}
-        <section className="bg-primary relative overflow-hidden pt-28 pb-20 sm:pt-36 sm:pb-28 text-white">
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] blob-teal animate-pulse-slow pointer-events-none opacity-40" style={{ transform: 'translate(30%, -30%)' }} />
-          <div className="absolute bottom-0 left-0 w-96 h-96 blob-coral animate-float-delayed pointer-events-none opacity-30" style={{ transform: 'translate(-30%, 40%)' }} />
+        <section className="bg-section-dark relative overflow-hidden pt-28 pb-24 sm:pt-36 sm:pb-32 text-white border-b border-white/10">
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] blob-teal animate-pulse-slow pointer-events-none opacity-25" style={{ transform: 'translate(30%, -30%)' }} />
+          <div className="absolute bottom-0 left-0 w-96 h-96 blob-coral animate-float-delayed pointer-events-none opacity-20" style={{ transform: 'translate(-30%, 40%)' }} />
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-2xl">
               <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 mb-6">
@@ -121,8 +121,11 @@ export default function ContactPage() {
         </section>
 
         {/* ── Global Delivery Strip ── */}
-        <section className="py-20 sm:py-24 bg-background border-b border-border">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-20 sm:py-24 bg-surface-subtle border-b border-border relative overflow-hidden">
+          {/* Ambient background light pools */}
+          <div className="absolute top-0 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-3xl pointer-events-none" />
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="mb-12">
               <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/20 rounded-full px-4 py-1.5 mb-4">
                 <span className="w-1.5 h-1.5 rounded-full bg-accent" />

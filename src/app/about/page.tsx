@@ -50,8 +50,8 @@ export default function AboutPage() {
         <PrinciplesSection />
 
         {/* ── Founder & Leadership Section ── */}
-        <section className="py-20 sm:py-28 bg-hero-gradient text-white relative overflow-hidden">
-          <div className="absolute inset-0 blob-teal opacity-30 pointer-events-none" style={{ top: '10%', right: '20%', width: '600px', height: '600px' }} />
+        <section className="py-24 sm:py-32 bg-section-dark text-white relative overflow-hidden border-t border-white/10">
+          <div className="absolute inset-0 blob-teal opacity-25 pointer-events-none" style={{ top: '10%', right: '20%', width: '600px', height: '600px' }} />
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
@@ -117,7 +117,7 @@ export default function AboutPage() {
         </section>
 
         {/* ── Key Metrics Bar ── */}
-        <section className="bg-primary border-b border-white/10">
+        <section className="bg-[#1e4994]/90 border-y border-blue-300/30 relative z-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 lg:divide-x lg:divide-white/10">
               {milestones.map((m) => (
@@ -131,8 +131,11 @@ export default function AboutPage() {
         </section>
 
         {/* ── Founder Journey & Values ── */}
-        <section className="py-20 sm:py-28 bg-muted">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-20 sm:py-28 bg-surface-elevated relative overflow-hidden border-b border-border">
+          {/* Ambient background light pools */}
+          <div className="absolute top-0 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-3xl pointer-events-none" />
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="grid lg:grid-cols-12 gap-12 items-center">
 
               {/* Left Column */}

@@ -143,7 +143,8 @@ export default function VirtualCustomerSupportPage() {
       <main className="bg-background min-h-screen pt-16 sm:pt-20">
         
         {/* ── Hero Section ── */}
-        <section className="relative bg-hero-gradient text-white overflow-hidden py-20 sm:py-28 noise-overlay">
+        <section className="relative bg-section-dark text-white overflow-hidden py-20 sm:py-28 noise-overlay">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-20%,rgba(15,184,138,0.18),rgba(255,255,255,0))] pointer-events-none" />
           <div className="absolute inset-0 blob-teal opacity-20 pointer-events-none" style={{ top: '-20%', right: '10%', width: '550px', height: '550px' }} />
           <div className="absolute inset-0 blob-coral opacity-15 pointer-events-none" style={{ bottom: '-20%', left: '5%', width: '450px', height: '450px' }} />
 
@@ -203,13 +204,13 @@ export default function VirtualCustomerSupportPage() {
         </section>
 
         {/* ── 4 Strategic Value Pillars ── */}
-        <section className="py-16 sm:py-20 bg-card border-b border-border">
+        <section className="py-16 sm:py-20 bg-surface-subtle border-b border-border/60">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {vcsPillars.map((p) => {
                 const IconComp = p.icon;
                 return (
-                  <div key={p.title} className="p-6 rounded-3xl bg-muted/50 border border-border space-y-3 group hover:border-accent/40 transition-colors">
+                  <div key={p.title} className="p-6 rounded-3xl bg-card border border-border/70 space-y-3 group hover:border-accent/40 hover:shadow-md transition-all">
                     <div className="w-12 h-12 rounded-2xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-all duration-300">
                       <IconComp className="w-6 h-6" />
                     </div>
@@ -227,7 +228,7 @@ export default function VirtualCustomerSupportPage() {
         </section>
 
         {/* ── Channels Section (7 Core Channels) ── */}
-        <section id="channels" className="py-20 sm:py-28 bg-muted/30 border-b border-border">
+        <section id="channels" className="py-20 sm:py-28 bg-surface-elevated border-b border-border/60">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/20 rounded-full px-4 py-1.5 mb-4">
@@ -293,7 +294,7 @@ export default function VirtualCustomerSupportPage() {
         </section>
 
         {/* ── Functions Section (8 Core Functions) ── */}
-        <section className="py-20 sm:py-28 bg-background border-b border-border">
+        <section className="py-20 sm:py-28 bg-surface-subtle border-b border-border/60">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-flex items-center gap-2 bg-secondary/10 border border-secondary/20 rounded-full px-4 py-1.5 mb-4">
@@ -338,8 +339,10 @@ export default function VirtualCustomerSupportPage() {
         </section>
 
         {/* ── CTA Banner ── */}
-        <section className="py-20 sm:py-24 bg-primary text-white relative overflow-hidden">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+        <section className="py-20 sm:py-24 bg-section-dark text-white relative overflow-hidden border-t border-border/80">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(15,184,138,0.15),transparent_50%)] pointer-events-none" />
+
+          <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
             <h2 className="text-3xl sm:text-4xl font-display font-bold">
               Ready to elevate your customer responsiveness?
             </h2>

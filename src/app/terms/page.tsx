@@ -8,10 +8,11 @@ export default function TermsPage() {
   return (
     <>
       <Header />
-      <main className="bg-background min-h-screen pt-28 pb-20 sm:pt-36 sm:pb-28">
+      <main className="bg-surface-subtle min-h-screen pt-16 sm:pt-20 pb-20 sm:pb-28">
         {/* Hero Header */}
-        <section className="bg-primary relative overflow-hidden py-16 sm:py-20 mb-12">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] blob-teal opacity-30 pointer-events-none" />
+        <section className="bg-section-dark relative overflow-hidden py-16 sm:py-20 mb-12 noise-overlay border-b border-white/10">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-20%,rgba(15,184,138,0.18),rgba(255,255,255,0))] pointer-events-none" />
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] blob-teal opacity-20 pointer-events-none" />
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
             <div className="inline-flex items-center gap-2 bg-accent/15 border border-accent/25 rounded-full px-4 py-1.5 mb-4">
               <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
@@ -20,16 +21,16 @@ export default function TermsPage() {
             <h1 className="text-4xl sm:text-5xl font-display font-700 text-white mb-4">
               Terms of <span className="gradient-text-coral">Service</span>
             </h1>
-            <p className="text-white/60 text-sm sm:text-base max-w-xl mx-auto">
+            <p className="text-white/75 text-sm sm:text-base max-w-xl mx-auto">
               Terms and conditions governing the use of TaskNera's website, HR operations, recruitment services, and global workforce solutions.
             </p>
-            <p className="text-white/40 text-xs mt-3">Last Updated: August 2026</p>
+            <p className="text-white/45 text-xs mt-3">Last Updated: August 2026</p>
           </div>
         </section>
 
         {/* Terms Content */}
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-card border border-border rounded-3xl p-6 sm:p-12 shadow-sm space-y-10 text-foreground">
+          <div className="bg-card border border-border/70 rounded-3xl p-6 sm:p-12 shadow-sm space-y-10 text-foreground">
             
             {/* Section 1 */}
             <section className="space-y-3">

@@ -48,8 +48,8 @@ const stages = [
       'Dedicated RPO recruitment pods with structured SLA turnaround times',
       'Multichannel virtual customer care (voice, chat, email ticketing)',
     ],
-    color: 'border-blue-500/30',
-    iconBg: 'bg-blue-500/10 text-blue-500 border-blue-500/20',
+    color: 'border-primary/20 hover:border-primary/40',
+    iconBg: 'bg-primary/10 text-primary border-primary/20',
   },
   {
     stage: 'International Companies',
@@ -61,8 +61,8 @@ const stages = [
       'Multi-timezone virtual assistant pods aligned to your operating hours',
       'Strict data security, NDA governance, and remote delivery controls',
     ],
-    color: 'border-purple-500/30',
-    iconBg: 'bg-purple-500/10 text-purple-600 border-purple-500/20',
+    color: 'border-accent/20 hover:border-accent/40',
+    iconBg: 'bg-accent/10 text-accent border-accent/20',
   },
   {
     stage: 'Businesses Entering India',
@@ -74,15 +74,19 @@ const stages = [
       'Statutory compliance structuring, local employment norms & payroll',
       'Plug-and-play operational desk to launch smoothly in India',
     ],
-    color: 'border-amber-500/30',
-    iconBg: 'bg-amber-500/10 text-amber-600 border-amber-500/20',
+    color: 'border-secondary/20 hover:border-secondary/40',
+    iconBg: 'bg-secondary/10 text-secondary border-secondary/20',
   },
 ];
 
 export default function WhoWeSupportSection() {
   return (
-    <section className="py-20 sm:py-28 bg-background relative overflow-hidden border-b border-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 sm:py-28 bg-surface-subtle relative overflow-hidden border-b border-border">
+      {/* Ambient background light pools with subtle blue effects */}
+      <div className="absolute top-10 right-1/4 w-[500px] h-[350px] bg-sky-400/12 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-1/4 w-[500px] h-[350px] bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 scroll-reveal">

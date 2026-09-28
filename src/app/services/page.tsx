@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ServicesSection from '@/app/components/ServicesSection';
+import PlatformSection from '@/app/components/PlatformSection';
 import {
   Layers,
   Building2,
@@ -32,8 +33,8 @@ const pillarHighlights = [
     href: '/talent-acquisition',
     icon: Target,
     badge: 'Hiring',
-    desc: 'Specialized hiring across permanent, executive, contract, and high-volume mandates powered by domain recruiters and JD Match Evaluator scoring.',
-    deliverables: ['Permanent & Executive Search', 'High-Volume Campaign Sourcing', 'RPO Dedicated Desks', 'JD Match Evaluator Scoring'],
+    desc: 'Specialized hiring across permanent, executive, contract, and high-volume mandates powered by domain recruiters and our HireIQ matching intelligence.',
+    deliverables: ['Permanent & Executive Search', 'High-Volume Campaign Sourcing', 'RPO Dedicated Desks', 'HireIQ™ JD & CV Matching'],
     accent: 'border-accent/30',
   },
   {
@@ -43,7 +44,7 @@ const pillarHighlights = [
     badge: 'Scale Staffing',
     desc: 'Agile contract staffing and turnkey multi-location workforce deployment models built dynamically around operational surges.',
     deliverables: ['Contract Staffing Pods', 'Seasonal Surge Deployments', 'Workforce Capacity Planning', 'Turnkey Multi-Location Ops'],
-    accent: 'border-blue-500/30',
+    accent: 'border-primary/25',
   },
   {
     title: 'Virtual Assistant Services',
@@ -52,7 +53,7 @@ const pillarHighlights = [
     badge: 'Human Talent',
     desc: '100% vetted human remote professionals managing executive assistance, CRM hygiene, digital administration, scheduling, and research.',
     deliverables: ['Executive C-Suite Support', 'CRM & Pipeline Hygiene', 'Data Scraping & Research', 'Digital File Organization'],
-    accent: 'border-amber-500/30',
+    accent: 'border-accent/25',
   },
   {
     title: 'Virtual Customer Support (VCS)',
@@ -61,7 +62,7 @@ const pillarHighlights = [
     badge: 'Omnichannel Care',
     desc: 'Dedicated customer support pods managing voice, live chat, email ticketing, WhatsApp, and social media with strict SLA resolution.',
     deliverables: ['Inbound & Outbound Voice Desk', 'Sub-60s Live Chat Handling', 'SLA Ticket Management', 'WhatsApp & Social Media Care'],
-    accent: 'border-teal-500/30',
+    accent: 'border-secondary/25',
   },
 ];
 
@@ -72,7 +73,8 @@ export default function ServicesPage() {
       <main className="bg-background min-h-screen pt-16 sm:pt-20">
         
         {/* Page Hero */}
-        <section className="bg-hero-gradient text-white py-20 sm:py-28 relative overflow-hidden border-b border-white/10">
+        <section className="bg-section-dark text-white py-20 sm:py-28 relative overflow-hidden border-b border-white/10">
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/15 rounded-full blur-[100px] pointer-events-none" />
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-3xl space-y-6">
               <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 shadow-sm">
@@ -111,8 +113,11 @@ export default function ServicesPage() {
         </section>
 
         {/* 5 Pillars Showcase Cards */}
-        <section className="py-20 bg-background border-b border-border">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-20 bg-surface-subtle border-b border-border relative overflow-hidden">
+          {/* Ambient background light pools */}
+          <div className="absolute top-0 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-3xl pointer-events-none" />
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center max-w-2xl mx-auto mb-16">
               <div className="text-xs font-bold text-accent uppercase tracking-widest mb-2">
                 Integrated Architecture
@@ -179,6 +184,9 @@ export default function ServicesPage() {
 
         {/* Embedded Full Interactive Services Section */}
         <ServicesSection />
+
+        {/* Embedded Unified HireIQ™ & HRMS Platform Architecture */}
+        <PlatformSection />
 
       </main>
       <Footer />

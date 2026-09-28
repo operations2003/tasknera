@@ -38,7 +38,39 @@ const services = [
   },
 ];
 
-import { Search, Compass, Cog, GraduationCap, Rocket, RefreshCw, FileSpreadsheet, Zap, Briefcase, BarChart3, Users, Clock } from 'lucide-react';
+import { Search, Compass, Cog, GraduationCap, Rocket, RefreshCw, FileSpreadsheet, Zap, Briefcase, BarChart3, Users, Clock, CheckCircle2, Sparkles } from 'lucide-react';
+
+const hrmsCapabilities = [
+  { name: 'Complete Employee Lifecycle Management', desc: 'Manage employees smoothly from day-one onboarding through offboarding and final exit.', category: 'Core People' },
+  { name: 'Employee Database & Directory', desc: 'Centralized repository of employee profiles, organizational charts, and team designations.', category: 'Core People' },
+  { name: 'Role-Based Access Control (RBAC)', desc: 'Multi-tiered access and permissions calibrated for Admins, HR, Managers, and Employees.', category: 'Core People' },
+  { name: 'Organization Management', desc: 'Structure departments, designations, sub-teams, and multi-tier reporting hierarchies.', category: 'Core People' },
+  { name: 'Policy Management', desc: 'Publish, distribute, and manage organizational workplace policies with digital acknowledgments.', category: 'Core People' },
+  { name: 'Secure Authentication & Audit Logs', desc: 'Enterprise security mechanisms with immutable activity logs tracking administrative workflows.', category: 'Core People' },
+  { name: 'Employee Onboarding', desc: 'Structured onboarding checklist with digital document collection, forms, and IT setup tracking.', category: 'Onboarding & Docs' },
+  { name: 'Recruitment-to-HRMS Integration', desc: 'Move selected candidate information from recruitment straight into onboarding without manual data re-entry.', category: 'Onboarding & Docs' },
+  { name: 'Employee Document Management', desc: 'Centralized document repository with controlled access for contracts, NDAs, and IDs.', category: 'Onboarding & Docs' },
+  { name: 'Attendance Management', desc: 'Clock-in/clock-out, shift rosters, attendance regularizations, and multi-location tracking.', category: 'Workforce Ops' },
+  { name: 'Leave Management', desc: 'Automated leave balances, application workflows, encashment rules, and manager approvals.', category: 'Workforce Ops' },
+  { name: 'Manager Approval Workflows', desc: 'Customizable approval hierarchies for leave, expenses, letter requests, and profile updates.', category: 'Workforce Ops' },
+  { name: 'Employee Requests Management', desc: 'Structured ticketing for HR documents, address updates, bank details, and bonafide letters.', category: 'Workforce Ops' },
+  { name: 'Task Management', desc: 'Assign, monitor, and deliver departmental tasks, milestones, and project deliverables.', category: 'Workforce Ops' },
+  { name: 'Centralized Notifications', desc: 'Proactive alerts for leave requests, document renewals, company events, and milestones.', category: 'Workforce Ops' },
+  { name: 'Payroll Information Management', desc: 'Salary structures, tax declarations, statutory contributions, and secure payslip distribution.', category: 'Payroll & Claims' },
+  { name: 'Expense Management', desc: 'Digital receipt uploads, multi-currency claims, and automated manager reimbursement approvals.', category: 'Payroll & Claims' },
+  { name: 'Performance Management', desc: 'Annual and quarterly appraisal cycles, 360 feedback, OKR/KPI alignment, and rating scales.', category: 'Growth & Care' },
+  { name: 'Probation Management', desc: 'Probation milestone tracking, automated manager review alerts, confirmations, and extensions.', category: 'Growth & Care' },
+  { name: 'Training & Learning (LMS)', desc: 'Assign onboarding courses, track compliance training, and monitor professional development.', category: 'Growth & Care' },
+  { name: 'Help Desk / Service Requests', desc: 'Internal ticketing desk for IT, HR, facility, and administrative support inquiries.', category: 'Growth & Care' },
+  { name: 'Employee Engagement', desc: 'Company announcements, milestones, peer recognitions, and town hall coordination.', category: 'Growth & Care' },
+  { name: 'HR Operations Dashboard', desc: 'Command center displaying workforce metrics, pending approvals, and operational health.', category: 'Analytics & Exit' },
+  { name: 'Workforce Analytics', desc: 'Real-time reporting on attendance, leave patterns, headcount growth, attrition, and KPIs.', category: 'Analytics & Exit' },
+  { name: 'Custom Reports & Compliance', desc: 'Generate statutory compliance summaries, workforce audits, and executive MIS reports.', category: 'Analytics & Exit' },
+  { name: 'Resignation Management', desc: 'Standardized resignation submission, notice period calculations, and retention records.', category: 'Analytics & Exit' },
+  { name: 'Offboarding Management', desc: 'Multi-department clearance checklist for assets, documents, and handover sign-offs.', category: 'Analytics & Exit' },
+  { name: 'Full & Final (F&F) Settlement', desc: 'Automated settlement computation covering leaves, salary adjustments, and dues.', category: 'Analytics & Exit' },
+  { name: 'Access Deprovisioning', desc: 'Coordinated security offboarding ensuring system permissions are revoked upon exit.', category: 'Analytics & Exit' },
+];
 
 const processSteps = [
   {
@@ -103,9 +135,9 @@ export default function HRWorkforceSolutionsPage() {
       <main className="bg-background">
 
         {/* Hero */}
-        <section className="bg-hero-gradient pt-32 pb-20 sm:pt-40 sm:pb-28 relative overflow-hidden">
-          <div className="absolute inset-0 blob-coral opacity-30 pointer-events-none" style={{ top: '10%', left: '55%', width: '700px', height: '700px' }} />
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <section className="bg-section-dark pt-32 pb-24 sm:pt-40 sm:pb-32 relative overflow-hidden">
+          <div className="absolute inset-0 blob-coral opacity-25 pointer-events-none" style={{ top: '10%', left: '55%', width: '700px', height: '700px' }} />
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-3xl">
               <div className="flex flex-col items-start gap-4 mb-6">
                 <Link href="/#services" className="inline-flex items-center gap-2 text-white/50 hover:text-white/80 text-sm transition-colors group">
@@ -121,7 +153,7 @@ export default function HRWorkforceSolutionsPage() {
                 HR &amp; Workforce{' '}
                 <span className="gradient-text-coral">Solutions</span>
               </h1>
-              <p className="text-white/65 text-lg sm:text-xl leading-relaxed max-w-2xl mb-10">
+              <p className="text-white/75 text-lg sm:text-xl leading-relaxed max-w-2xl mb-10">
                 Compliant, streamlined HR operations that free your leadership team to focus on growth — not paperwork.
               </p>
               <div className="flex flex-wrap gap-4">
@@ -131,25 +163,28 @@ export default function HRWorkforceSolutionsPage() {
               </div>
             </div>
           </div>
-        </section>
 
-        {/* Metrics bar */}
-        <section className="bg-primary border-b border-white/10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 lg:divide-x lg:divide-white/10">
-              {metrics.map((m) => (
-                <div key={m.label} className="text-center lg:px-8">
-                  <div className="font-display font-700 text-2xl sm:text-3xl text-white mb-1">{m.value}</div>
-                  <div className="text-white/50 text-xs sm:text-sm">{m.label}</div>
-                </div>
-              ))}
+          {/* Integrated Metrics bar directly inside Hero */}
+          <div className="border-t border-white/10 bg-black/20 relative z-10">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 lg:divide-x lg:divide-white/10">
+                {metrics.map((m) => (
+                  <div key={m.label} className="text-center lg:px-8">
+                    <div className="font-display font-700 text-2xl sm:text-3xl text-white mb-1">{m.value}</div>
+                    <div className="text-white/60 text-xs sm:text-sm">{m.label}</div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
 
         {/* Services */}
-        <section className="py-20 sm:py-28 bg-muted">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-20 sm:py-28 bg-surface-subtle border-b border-border relative overflow-hidden">
+          {/* Ambient background light pools */}
+          <div className="absolute top-0 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-3xl pointer-events-none" />
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center max-w-2xl mx-auto mb-14">
               <div className="inline-flex items-center gap-2 bg-secondary/10 border border-secondary/20 rounded-full px-4 py-1.5 mb-5">
                 <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
@@ -271,9 +306,80 @@ export default function HRWorkforceSolutionsPage() {
           </div>
         </section>
 
+        {/* HRMS Platform Capabilities Section */}
+        <section id="hrms-platform" className="py-20 sm:py-28 bg-surface-subtle border-b border-border/80 relative overflow-hidden">
+          <div className="absolute top-0 right-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
+
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="bg-card border border-border/80 rounded-3xl p-6 sm:p-10 shadow-sm mb-12">
+              <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 mb-8 border-b border-border/60">
+                <div>
+                  <div className="inline-flex items-center gap-2 bg-secondary/10 border border-secondary/20 rounded-full px-3.5 py-1 text-xs font-bold text-secondary uppercase tracking-wider mb-2">
+                    <Sparkles className="w-3.5 h-3.5" />
+                    HRMS Platform Suite
+                  </div>
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-display font-bold text-foreground">
+                    Human Resource Management System (HRMS)
+                  </h2>
+                </div>
+                <div className="lg:max-w-md bg-surface-subtle border border-border p-4 rounded-2xl">
+                  <div className="text-[11px] font-bold text-secondary uppercase tracking-widest mb-1">
+                    Marketing Positioning
+                  </div>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    &ldquo;An end-to-end HRMS that centralizes employee management, attendance, leave, payroll information, onboarding, performance, training, help desk, analytics, and offboarding in one secure platform.&rdquo;
+                  </p>
+                </div>
+              </div>
+
+              {/* Connected Ecosystem Ribbon */}
+              <div className="bg-surface-subtle border border-border/70 rounded-2xl p-5 mb-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+                <div className="space-y-1">
+                  <div className="text-xs font-bold text-secondary uppercase tracking-widest">
+                    Connected Hiring-to-Employee Lifecycle
+                  </div>
+                  <p className="text-xs text-muted-foreground font-mono">
+                    Selection → Onboarding → Employee Management → Attendance → Leave → Payroll → Performance → Training → Help Desk → Exit
+                  </p>
+                </div>
+                <div className="flex items-center gap-2 text-xs font-semibold text-secondary flex-shrink-0">
+                  <CheckCircle2 className="w-4 h-4 text-secondary" />
+                  <span>Recruitment-to-HRMS Direct Bridge</span>
+                </div>
+              </div>
+
+              {/* HRMS Features Grid */}
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                {hrmsCapabilities.map((feat) => (
+                  <div
+                    key={feat.name}
+                    className="p-4 rounded-2xl bg-surface-subtle/50 border border-border/60 hover:border-secondary/40 hover:bg-card transition-all space-y-2 group"
+                  >
+                    <div className="flex items-center justify-between gap-2">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-0.5 rounded">
+                        {feat.category}
+                      </span>
+                      <CheckCircle2 className="w-3.5 h-3.5 text-secondary opacity-60 group-hover:opacity-100" />
+                    </div>
+                    <div className="font-semibold text-sm text-foreground group-hover:text-secondary transition-colors">
+                      {feat.name}
+                    </div>
+                    <p className="text-xs text-muted-foreground leading-relaxed">
+                      {feat.desc}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Process */}
-        <section id="process" className="py-20 sm:py-28 bg-primary overflow-hidden">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="process" className="py-24 sm:py-32 bg-section-dark overflow-hidden text-white relative border-y border-border/80">
+          <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-secondary/10 rounded-full blur-[100px] pointer-events-none" />
+
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center max-w-2xl mx-auto mb-14">
               <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 mb-5">
                 <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
@@ -309,8 +415,11 @@ export default function HRWorkforceSolutionsPage() {
         </section>
 
         {/* Industries */}
-        <section className="py-20 bg-muted">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-20 bg-surface-elevated border-b border-border relative overflow-hidden">
+          {/* Ambient background light pools */}
+          <div className="absolute top-0 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-3xl pointer-events-none" />
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center mb-12">
               <h2 className="text-section-title font-display font-700 text-foreground mb-4">
                 Industries We{' '}
@@ -329,14 +438,17 @@ export default function HRWorkforceSolutionsPage() {
         </section>
 
         {/* CTA */}
-        <section id="contact" className="py-20 sm:py-28 bg-primary">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <section id="contact" className="py-24 sm:py-32 bg-section-dark text-white relative overflow-hidden border-t border-white/10">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <h2 className="text-section-title font-display font-700 text-white mb-6">
               Let Us Handle{' '}
               <span className="gradient-text-coral">Your HR Ops</span>
             </h2>
-            <p className="text-white/60 text-lg mb-10">From payroll to performance — we manage it all so you can focus on growth.</p>
+            <p className="text-white/70 text-lg mb-10">From payroll to performance — we manage it all so you can focus on growth.</p>
             <div className="flex flex-wrap justify-center gap-4">
+              <Link href="/#contact" className="bg-accent text-accent-foreground font-bold px-8 py-3.5 rounded-full hover:brightness-110 active:scale-95 transition-all shadow-xl shadow-accent/30 text-sm">
+                Talk to an HR Expert
+              </Link>
               <Link href="/#services" className="glass-btn text-white font-semibold px-8 py-3.5 rounded-full">
                 Explore Other Services
               </Link>

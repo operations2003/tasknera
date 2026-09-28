@@ -19,8 +19,8 @@ const businessIntents = [
     desc: 'Specialized permanent hiring, contract staffing, and executive search backed by domain recruiters and JD Match scoring.',
     href: '/talent-acquisition',
     badge: 'Hiring & Sourcing',
-    color: 'border-emerald-500/30 hover:border-emerald-500/60',
-    iconBg: 'bg-emerald-500/10 text-emerald-600 border-emerald-500/20',
+    color: 'hover:border-accent/40',
+    iconBg: 'bg-accent/10 text-accent border-accent/20',
     icon: Target,
     points: ['Executive & leadership search', 'Technical & non-tech talent', 'Rapid shortlist turnaround'],
   },
@@ -30,8 +30,8 @@ const businessIntents = [
     desc: 'End-to-end employee lifecycle management, compliant onboarding, payroll execution, and structured performance frameworks.',
     href: '/hr-workforce-solutions',
     badge: 'HR Operations',
-    color: 'border-orange-500/30 hover:border-orange-500/60',
-    iconBg: 'bg-orange-500/10 text-orange-600 border-orange-500/20',
+    color: 'hover:border-secondary/40',
+    iconBg: 'bg-secondary/10 text-secondary border-secondary/20',
     icon: Building2,
     points: ['Payroll & statutory compliance', 'HR policies & handbooks', 'Employee onboarding & exits'],
   },
@@ -41,8 +41,8 @@ const businessIntents = [
     desc: 'Rapid temporary staffing, contract talent deployment, multi-location shift scheduling, and agile headcount scaling.',
     href: '/hr-workforce-solutions#workforce',
     badge: 'Flexible Staffing',
-    color: 'border-blue-500/30 hover:border-blue-500/60',
-    iconBg: 'bg-blue-500/10 text-blue-600 border-blue-500/20',
+    color: 'hover:border-primary/40',
+    iconBg: 'bg-primary/10 text-primary border-primary/20',
     icon: Users,
     points: ['Contract staffing pods', 'Seasonal & surge headcount', 'Turnkey workforce deployment'],
   },
@@ -52,8 +52,8 @@ const businessIntents = [
     desc: '100% vetted human remote professionals managing executive scheduling, administrative workflows, CRM hygiene, and research.',
     href: '/virtual-assistant-services',
     badge: 'Virtual Assistant',
-    color: 'border-amber-500/30 hover:border-amber-500/60',
-    iconBg: 'bg-amber-500/10 text-amber-600 border-amber-500/20',
+    color: 'hover:border-accent/40',
+    iconBg: 'bg-accent/10 text-accent border-accent/20',
     icon: Briefcase,
     points: ['Calendar & inbox triage', 'CRM & data operations', 'Dedicated human assistants'],
   },
@@ -63,8 +63,8 @@ const businessIntents = [
     desc: 'Omnichannel customer support teams managing voice, live chat, email ticketing, WhatsApp, and social care with strict SLAs.',
     href: '/virtual-customer-support',
     badge: 'Customer Care',
-    color: 'border-teal-500/30 hover:border-teal-500/60',
-    iconBg: 'bg-teal-500/10 text-teal-600 border-teal-500/20',
+    color: 'hover:border-secondary/40',
+    iconBg: 'bg-secondary/10 text-secondary border-secondary/20',
     icon: Headphones,
     points: ['Omnichannel voice, chat & email', 'WhatsApp & social media desks', 'Sub-60s SLA response times'],
   },
@@ -74,8 +74,8 @@ const businessIntents = [
     desc: 'Fully managed talent acquisition and HR operations pods that operate as your seamless internal people department.',
     href: '/pricing',
     badge: 'Managed Outsourcing',
-    color: 'border-purple-500/30 hover:border-purple-500/60',
-    iconBg: 'bg-purple-500/10 text-purple-600 border-purple-500/20',
+    color: 'hover:border-primary/40',
+    iconBg: 'bg-primary/10 text-primary border-primary/20',
     icon: RefreshCw,
     points: ['Full recruitment outsourcing (RPO)', 'Complete statutory HR desk', 'Predictable SLA retainer models'],
   },
@@ -83,8 +83,12 @@ const businessIntents = [
 
 export default function TakeOffPlateSection() {
   return (
-    <section className="py-20 sm:py-28 bg-muted relative overflow-hidden border-b border-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 sm:py-28 bg-surface-elevated relative overflow-hidden border-b border-border">
+      {/* Ambient background light pools with subtle blue effects */}
+      <div className="absolute top-0 right-1/4 w-[500px] h-[350px] bg-sky-400/12 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-1/4 w-[500px] h-[350px] bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-1/3 w-96 h-96 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 scroll-reveal">

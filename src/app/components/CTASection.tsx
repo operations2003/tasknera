@@ -176,23 +176,6 @@ export default function CTASection() {
     setErrors((prev) => ({ ...prev, [name]: validateField(name, value) }));
   }
 
-  const handleStartNewInquiry = () => {
-    clearLastSubmission();
-    clearFormDraft();
-    setSubmitted(false);
-    setActiveSubmission(null);
-    setForm(initialForm);
-    setErrors({});
-    setTouched({});
-    setDraftRestored(false);
-  };
-
-  const handleEditInquiry = () => {
-    clearLastSubmission();
-    setSubmitted(false);
-    setActiveSubmission(null);
-  };
-
   const handleClearDraft = () => {
     clearFormDraft();
     setForm(initialForm);
@@ -279,8 +262,11 @@ export default function CTASection() {
   return (
     <>
       {/* FAQ Section */}
-      <section className="py-20 sm:py-28 bg-background border-b border-border relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 sm:py-28 bg-surface-subtle border-b border-border relative overflow-hidden">
+        {/* Ambient background light pools */}
+        <div className="absolute top-0 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
 
             {/* Left Header */}
@@ -352,16 +338,10 @@ export default function CTASection() {
       </section>
 
       {/* Final CTA / Contact Section */}
-      <section id="contact" className="py-20 sm:py-28 bg-primary overflow-hidden relative text-white">
-        {/* Atmospheric blobs */}
-        <div
-          className="absolute top-0 right-0 w-96 h-96 blob-teal pointer-events-none opacity-40"
-          style={{ transform: 'translate(30%, -30%)' }}
-        />
-        <div
-          className="absolute bottom-0 left-0 w-80 h-80 blob-coral pointer-events-none opacity-30"
-          style={{ transform: 'translate(-30%, 30%)' }}
-        />
+      <section id="contact" className="py-24 sm:py-32 bg-section-dark overflow-hidden relative text-white border-t border-border/80">
+        {/* Atmospheric ambient lighting */}
+        <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-accent/15 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute bottom-1/4 left-0 w-[500px] h-[500px] bg-secondary/10 rounded-full blur-[100px] pointer-events-none" />
 
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start scroll-reveal">
@@ -464,7 +444,7 @@ export default function CTASection() {
               </div>
 
               {/* Right — Contact Form */}
-              <div className="lg:col-span-6 glass-card rounded-3xl p-7 sm:p-9 shadow-2xl border border-white/20 bg-slate-900/70 backdrop-blur-2xl">
+              <div className="lg:col-span-6 glass-card rounded-3xl p-7 sm:p-9 shadow-2xl border border-blue-300/30 bg-[#1a4188]/75 backdrop-blur-2xl">
                 <h3 className="text-white font-display font-bold text-xl mb-1">
                   Talk to an HR &amp; Workforce Specialist
                 </h3>
@@ -564,15 +544,15 @@ export default function CTASection() {
                       name="enquiry"
                       value={form.enquiry}
                       onChange={handleChange}
-                      className="w-full rounded-xl px-4 py-3 text-white text-sm border border-white/15 bg-slate-900 focus:border-accent focus:outline-none transition-all"
+                      className="w-full rounded-xl px-4 py-3 text-white text-sm border border-blue-300/30 bg-[#1a4188] focus:border-accent focus:outline-none transition-all"
                     >
-                      <option value="hr-ops" className="bg-slate-900 text-white">HR &amp; People Operations</option>
-                      <option value="recruitment" className="bg-slate-900 text-white">Talent Acquisition &amp; Recruitment</option>
-                      <option value="workforce" className="bg-slate-900 text-white">Contract Staffing &amp; Workforce Solutions</option>
-                      <option value="va" className="bg-slate-900 text-white">Virtual Assistant Services (Human)</option>
-                      <option value="vcs" className="bg-slate-900 text-white">Virtual Customer Support (VCS)</option>
-                      <option value="tech" className="bg-slate-900 text-white">JD Match Evaluator &amp; HR Technology</option>
-                      <option value="other" className="bg-slate-900 text-white">Comprehensive / Other Requirements</option>
+                      <option value="hr-ops" className="bg-[#1a4188] text-white">HR &amp; People Operations</option>
+                      <option value="recruitment" className="bg-[#1a4188] text-white">Talent Acquisition &amp; Recruitment</option>
+                      <option value="workforce" className="bg-[#1a4188] text-white">Contract Staffing &amp; Workforce Solutions</option>
+                      <option value="va" className="bg-[#1a4188] text-white">Virtual Assistant Services (Human)</option>
+                      <option value="vcs" className="bg-[#1a4188] text-white">Virtual Customer Support (VCS)</option>
+                      <option value="tech" className="bg-[#1a4188] text-white">JD Match Evaluator &amp; HR Technology</option>
+                      <option value="other" className="bg-[#1a4188] text-white">Comprehensive / Other Requirements</option>
                     </select>
                   </div>
 
@@ -619,14 +599,14 @@ export default function CTASection() {
       {/* ── Success Pop-up / Modal ── */}
       {showSuccessModal && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-slate-950/80 backdrop-blur-md transition-opacity animate-in fade-in duration-200"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-[#15346e]/85 backdrop-blur-md transition-opacity animate-in fade-in duration-200"
           onClick={() => setShowSuccessModal(false)}
           role="dialog"
           aria-modal="true"
           aria-labelledby="success-modal-headline"
         >
           <div
-            className="relative w-full max-w-lg bg-slate-900/95 border border-white/20 rounded-3xl p-7 sm:p-9 shadow-2xl shadow-black/80 text-center transform transition-all backdrop-blur-xl animate-in zoom-in-95 duration-200"
+            className="relative w-full max-w-lg bg-[#1e4994]/95 border border-blue-300/30 rounded-3xl p-7 sm:p-9 shadow-2xl shadow-blue-900/60 text-center transform transition-all backdrop-blur-xl animate-in zoom-in-95 duration-200"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Top Right Close 'X' Button */}

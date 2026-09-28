@@ -14,6 +14,8 @@ import {
   ArrowRight,
   Mail,
   ShieldCheck,
+  Compass,
+  Globe2,
 } from 'lucide-react';
 
 const solutionLinks = [
@@ -53,11 +55,34 @@ const solutionLinks = [
     accent: 'from-teal-500/20 to-teal-500/5 text-teal-400 border-teal-500/30',
   },
   {
-    label: 'HR Technology & Digital Solutions',
-    href: '/#technology',
-    desc: 'JD Match Evaluator, HRMS portals & workforce dashboards',
+    label: 'HireIQ™ & HRMS Platform',
+    href: '/#platform',
+    desc: 'AI resume screening, JD matching, and end-to-end lifecycle HRMS',
     icon: Sparkles,
     accent: 'from-purple-500/20 to-purple-500/5 text-purple-400 border-purple-500/30',
+  },
+];
+const aboutDropdownLinks = [
+  {
+    label: 'About TaskNera',
+    href: '/#about',
+    desc: 'Our story, 5 core pillars, global delivery architecture & leadership',
+    icon: Building2,
+    accent: 'from-accent/20 to-accent/5 text-accent border-accent/30',
+  },
+  {
+    label: 'How We Work',
+    href: '/#process',
+    desc: 'Our 6-phase predictable execution roadmap, SLAs & tech stack',
+    icon: Compass,
+    accent: 'from-orange-500/20 to-orange-500/5 text-orange-400 border-orange-500/30',
+  },
+  {
+    label: '12+ Industries & Roles',
+    href: '/#industries',
+    desc: 'Specialized domain coverage across Tech, BFSI, Healthcare & more',
+    icon: Globe2,
+    accent: 'from-blue-500/20 to-blue-500/5 text-blue-400 border-blue-500/30',
   },
 ];
 
@@ -75,9 +100,12 @@ export default function Header() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false);
   const [mobileSolutionsOpen, setMobileSolutionsOpen] = useState(false);
+  const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const solutionsRef = useRef<HTMLDivElement>(null);
+  const aboutRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -103,6 +131,9 @@ export default function Header() {
       if (solutionsRef.current && !solutionsRef.current.contains(event.target as Node)) {
         setSolutionsOpen(false);
       }
+      if (aboutRef.current && !aboutRef.current.contains(event.target as Node)) {
+        setAboutOpen(false);
+      }
     }
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
@@ -112,7 +143,14 @@ export default function Header() {
     setMenuOpen(false);
     setSolutionsOpen(false);
     setMobileSolutionsOpen(false);
+    setAboutOpen(false);
+    setMobileAboutOpen(false);
   };
+
+  const isAboutActive =
+    pathname === '/about' ||
+    pathname === '/process' ||
+    pathname === '/industries';
 
   const isSolutionsActive =
     pathname.startsWith('/hr-workforce-solutions') ||
@@ -126,8 +164,8 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-slate-950/95 backdrop-blur-xl border-b border-white/15 shadow-2xl shadow-black/40 py-0'
-          : 'bg-slate-950/90 backdrop-blur-md border-b border-white/10 py-1'
+          ? 'bg-[#1b4388]/95 backdrop-blur-xl border-b border-white/20 shadow-2xl shadow-blue-900/30 py-0'
+          : 'bg-[#1b4388]/90 backdrop-blur-md border-b border-white/15 py-1'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -147,7 +185,7 @@ export default function Header() {
                   size={38}
                   className="rounded-xl shadow-md ring-1 ring-white/20"
                 />
-                <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-accent rounded-full ring-2 ring-slate-950" />
+                <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-accent rounded-full ring-2 ring-[#12254e]" />
               </div>
               <div className="flex flex-col">
                 <span className="font-display font-bold text-xl sm:text-2xl text-white tracking-tight leading-none">
@@ -172,17 +210,107 @@ export default function Header() {
                 Home
               </Link>
 
-              {/* About - Placed next to Home */}
-              <Link
-                href="/about"
-                className={`px-2.5 xl:px-3 py-1.5 xl:py-2 text-xs xl:text-sm font-medium transition-all duration-200 rounded-lg ${
-                  pathname === '/about'
-                    ? 'text-white bg-white/15 font-semibold shadow-inner'
-                    : 'text-slate-300 hover:text-white hover:bg-white/10'
-                }`}
+              {/* Merged About & Company Dropdown (Unifies About, How We Work, Industries) */}
+              <div
+                ref={aboutRef}
+                className="relative"
+                onMouseEnter={() => setAboutOpen(true)}
+                onMouseLeave={() => setAboutOpen(false)}
               >
-                About
-              </Link>
+                <button
+                  type="button"
+                  onClick={() => setAboutOpen(!aboutOpen)}
+                  className={`flex items-center gap-1 px-2.5 xl:px-3 py-1.5 xl:py-2 text-xs xl:text-sm font-medium transition-all duration-200 rounded-lg ${
+                    isAboutActive || aboutOpen
+                      ? 'text-white bg-white/15 font-semibold shadow-inner'
+                      : 'text-slate-300 hover:text-white hover:bg-white/10'
+                  }`}
+                  aria-expanded={aboutOpen}
+                >
+                  <span>About</span>
+                  <ChevronDown
+                    className={`w-3.5 h-3.5 transition-transform duration-200 ${aboutOpen ? 'rotate-180 text-accent' : ''}`}
+                  />
+                </button>
+
+                {aboutOpen && (
+                  <div
+                    className="absolute top-full left-0 w-[420px] pt-2 z-[100] animate-in fade-in-0 slide-in-from-top-1 duration-150"
+                    style={{ filter: 'drop-shadow(0 25px 35px rgba(0, 0, 0, 0.6))' }}
+                  >
+                    <div
+                      className="rounded-2xl border border-blue-300/30 shadow-2xl overflow-hidden ring-1 ring-white/10"
+                      style={{ backgroundColor: '#1c4486' }}
+                    >
+                      {/* Top Bar */}
+                      <div
+                        className="flex items-center justify-between px-4 py-2.5 border-b border-blue-300/25"
+                        style={{ backgroundColor: '#214f9c' }}
+                      >
+                        <div className="text-[11px] font-bold text-accent uppercase tracking-wider flex items-center gap-2">
+                          <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+                          <span>Company Overview · Merged Scope</span>
+                        </div>
+                        <Link
+                          href="/#about"
+                          onClick={() => setAboutOpen(false)}
+                          className="text-xs text-slate-200 hover:text-accent font-medium flex items-center gap-1.5 transition-colors group"
+                        >
+                          <span>Full Overview</span>
+                          <ArrowRight className="w-3.5 h-3.5 transition-transform duration-150 group-hover:translate-x-0.5 text-accent" />
+                        </Link>
+                      </div>
+
+                      {/* Merged Items List */}
+                      <div className="p-2 space-y-1.5" style={{ backgroundColor: '#1c4486' }}>
+                        {aboutDropdownLinks.map((item) => {
+                          const IconComp = item.icon;
+                          return (
+                            <Link
+                              key={item.label}
+                              href={item.href}
+                              onClick={() => setAboutOpen(false)}
+                              className="flex items-start gap-3 p-2.5 rounded-xl border border-blue-300/20 bg-[#2557a6]/60 hover:border-blue-300/40 hover:bg-[#2d66be] transition-all duration-150 group"
+                            >
+                              <div
+                                className={`w-9 h-9 rounded-lg border flex items-center justify-center flex-shrink-0 mt-0.5 transition-transform duration-150 group-hover:scale-105 shadow-sm ${item.accent}`}
+                              >
+                                <IconComp className="w-4 h-4" />
+                              </div>
+                              <div className="flex-1 min-w-0">
+                                <div className="text-xs font-bold text-white group-hover:text-accent transition-colors flex items-center justify-between">
+                                  <span>{item.label}</span>
+                                  <ArrowRight className="w-3.5 h-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-accent flex-shrink-0 ml-1" />
+                                </div>
+                                <div className="text-[11px] text-slate-300 group-hover:text-slate-100 line-clamp-1 mt-0.5 leading-snug">
+                                  {item.desc}
+                                </div>
+                              </div>
+                            </Link>
+                          );
+                        })}
+                      </div>
+
+                      {/* Bottom Footer Strip */}
+                      <div
+                        className="px-4 py-2 border-t border-blue-300/25 flex items-center justify-between text-xs"
+                        style={{ backgroundColor: '#214f9c' }}
+                      >
+                        <span className="text-slate-400 text-[11px]">
+                          3-in-1 Unified Hub: Identity, Execution &amp; Coverage
+                        </span>
+                        <Link
+                          href="/#about"
+                          onClick={() => setAboutOpen(false)}
+                          className="text-accent hover:text-emerald-300 font-semibold text-xs transition-colors"
+                        >
+                          Explore →
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
 
               {/* Solutions Dropdown */}
               <div
@@ -211,16 +339,16 @@ export default function Header() {
                 {solutionsOpen && (
                   <div
                     className="absolute top-full left-0 w-[580px] pt-2 z-[100] animate-in fade-in-0 slide-in-from-top-1 duration-150"
-                    style={{ filter: 'drop-shadow(0 25px 35px rgba(0, 0, 0, 0.85))' }}
+                    style={{ filter: 'drop-shadow(0 25px 35px rgba(0, 0, 0, 0.6))' }}
                   >
                     <div
-                      className="rounded-2xl border border-slate-700/90 shadow-2xl overflow-hidden ring-1 ring-white/10"
-                      style={{ backgroundColor: '#090e1c' }}
+                      className="rounded-2xl border border-blue-300/30 shadow-2xl overflow-hidden ring-1 ring-white/10"
+                      style={{ backgroundColor: '#1c4486' }}
                     >
                       {/* Top Bar */}
                       <div
-                        className="flex items-center justify-between px-4 py-2.5 border-b border-slate-800"
-                        style={{ backgroundColor: '#0e162e' }}
+                        className="flex items-center justify-between px-4 py-2.5 border-b border-blue-300/25"
+                        style={{ backgroundColor: '#214f9c' }}
                       >
                         <div className="text-[11px] font-bold text-accent uppercase tracking-wider flex items-center gap-2">
                           <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
@@ -229,7 +357,7 @@ export default function Header() {
                         <Link
                           href="/services"
                           onClick={() => setSolutionsOpen(false)}
-                          className="text-xs text-slate-300 hover:text-accent font-medium flex items-center gap-1.5 transition-colors group"
+                          className="text-xs text-slate-200 hover:text-accent font-medium flex items-center gap-1.5 transition-colors group"
                         >
                           <span>All Solutions Hub</span>
                           <ArrowRight className="w-3.5 h-3.5 transition-transform duration-150 group-hover:translate-x-0.5 text-accent" />
@@ -237,7 +365,7 @@ export default function Header() {
                       </div>
 
                       {/* 2-Column Grid */}
-                      <div className="grid grid-cols-2 gap-2 p-3" style={{ backgroundColor: '#090e1c' }}>
+                      <div className="grid grid-cols-2 gap-2 p-3" style={{ backgroundColor: '#1c4486' }}>
                         {solutionLinks.map((sol) => {
                           const IconComp = sol.icon;
                           return (
@@ -245,7 +373,7 @@ export default function Header() {
                               key={sol.label}
                               href={sol.href}
                               onClick={() => setSolutionsOpen(false)}
-                              className="flex items-start gap-3 p-2.5 rounded-xl border border-slate-800/60 bg-slate-900/70 hover:border-slate-600 hover:bg-slate-800 transition-all duration-150 group"
+                              className="flex items-start gap-3 p-2.5 rounded-xl border border-blue-300/20 bg-[#2557a6]/60 hover:border-blue-300/40 hover:bg-[#2d66be] transition-all duration-150 group"
                             >
                               <div
                                 className={`w-9 h-9 rounded-lg border flex items-center justify-center flex-shrink-0 mt-0.5 transition-transform duration-150 group-hover:scale-105 shadow-sm ${sol.accent}`}
@@ -268,8 +396,8 @@ export default function Header() {
 
                       {/* Bottom Footer Strip */}
                       <div
-                        className="px-4 py-2.5 border-t border-slate-800 flex items-center justify-between text-xs"
-                        style={{ backgroundColor: '#0e162e' }}
+                        className="px-4 py-2.5 border-t border-blue-300/25 flex items-center justify-between text-xs"
+                        style={{ backgroundColor: '#214f9c' }}
                       >
                         <span className="flex items-center gap-2 text-slate-300 font-medium">
                           <ShieldCheck className="w-4 h-4 text-accent flex-shrink-0" />
@@ -288,26 +416,6 @@ export default function Header() {
                 )}
               </div>
 
-              <Link
-                href="/process"
-                className={`px-2.5 xl:px-3 py-1.5 xl:py-2 text-xs xl:text-sm font-medium transition-all duration-200 rounded-lg ${
-                  pathname === '/process'
-                    ? 'text-white bg-white/15 font-semibold shadow-inner'
-                    : 'text-slate-300 hover:text-white hover:bg-white/10'
-                }`}
-              >
-                How We Work
-              </Link>
-              <Link
-                href="/industries"
-                className={`px-2.5 xl:px-3 py-1.5 xl:py-2 text-xs xl:text-sm font-medium transition-all duration-200 rounded-lg ${
-                  pathname === '/industries'
-                    ? 'text-white bg-white/15 font-semibold shadow-inner'
-                    : 'text-slate-300 hover:text-white hover:bg-white/10'
-                }`}
-              >
-                Industries
-              </Link>
               <Link
                 href="/pricing"
                 className={`px-2.5 xl:px-3 py-1.5 xl:py-2 text-xs xl:text-sm font-medium transition-all duration-200 rounded-lg ${
@@ -382,7 +490,7 @@ export default function Header() {
 
       {/* Mobile Menu Overlay */}
       {menuOpen && (
-        <div className="lg:hidden fixed inset-x-0 top-16 sm:top-20 bottom-0 bg-slate-950/98 backdrop-blur-2xl z-40 flex flex-col justify-between overflow-y-auto border-t border-white/10 animate-in fade-in duration-200">
+        <div className="lg:hidden fixed inset-x-0 top-16 sm:top-20 bottom-0 bg-[#1b4388]/98 backdrop-blur-2xl z-40 flex flex-col justify-between overflow-y-auto border-t border-white/15 animate-in fade-in duration-200">
           <nav className="flex flex-col px-6 pt-6 gap-1 pb-4">
             <Link
               href="/"
@@ -397,19 +505,60 @@ export default function Header() {
               <ArrowRight className="w-4 h-4 opacity-50" />
             </Link>
 
-            {/* About - Directly after Home */}
-            <Link
-              href="/about"
-              onClick={handleNavClick}
-              className={`text-base font-semibold px-4 py-3 rounded-xl transition-colors flex items-center justify-between ${
-                pathname === '/about'
-                  ? 'bg-white/15 text-white'
-                  : 'text-slate-200 hover:text-white hover:bg-white/5'
-              }`}
-            >
-              <span>About</span>
-              <ArrowRight className="w-4 h-4 opacity-50" />
-            </Link>
+            {/* Mobile Merged About Accordion */}
+            <div className="py-1">
+              <button
+                type="button"
+                onClick={() => setMobileAboutOpen(!mobileAboutOpen)}
+                className={`w-full flex items-center justify-between text-base font-semibold px-4 py-3 rounded-xl transition-colors ${
+                  isAboutActive
+                    ? 'bg-white/15 text-white'
+                    : 'text-slate-200 hover:text-white hover:bg-white/5'
+                }`}
+              >
+                <div className="flex items-center gap-2">
+                  <span>About &amp; Overview</span>
+                  <span className="text-[10px] uppercase font-bold text-accent bg-accent/15 px-2 py-0.5 rounded-md">
+                    Overview
+                  </span>
+                </div>
+                <ChevronDown
+                  className={`w-4 h-4 transition-transform duration-200 ${
+                    mobileAboutOpen ? 'rotate-180 text-accent' : ''
+                  }`}
+                />
+              </button>
+
+              {mobileAboutOpen && (
+                <div
+                  className="p-2 space-y-1 rounded-2xl my-2 border border-blue-300/30 shadow-inner animate-in fade-in duration-150"
+                  style={{ backgroundColor: '#1c4486' }}
+                >
+                  {aboutDropdownLinks.map((item) => {
+                    const IconComp = item.icon;
+                    return (
+                      <Link
+                        key={item.label}
+                        href={item.href}
+                        onClick={handleNavClick}
+                        className="flex items-center gap-3 py-2.5 px-3 text-sm text-slate-100 hover:text-white hover:bg-[#2557a6] rounded-xl transition-colors border border-transparent hover:border-blue-300/30"
+                      >
+                        <div
+                          className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 border ${item.accent}`}
+                        >
+                          <IconComp className="w-4 h-4" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <div className="font-semibold text-white text-xs">{item.label}</div>
+                          <div className="text-[11px] text-slate-200 line-clamp-1">{item.desc}</div>
+                        </div>
+                        <ArrowRight className="w-3.5 h-3.5 text-slate-300" />
+                      </Link>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
 
             {/* Mobile Solutions Accordion */}
             <div className="py-1">
@@ -437,8 +586,8 @@ export default function Header() {
 
               {mobileSolutionsOpen && (
                 <div
-                  className="p-2 space-y-1 rounded-2xl my-2 border border-slate-800 shadow-inner animate-in fade-in duration-150"
-                  style={{ backgroundColor: '#090e1c' }}
+                  className="p-2 space-y-1 rounded-2xl my-2 border border-blue-300/30 shadow-inner animate-in fade-in duration-150"
+                  style={{ backgroundColor: '#1c4486' }}
                 >
                   {solutionLinks.map((sol) => {
                     const IconComp = sol.icon;
@@ -447,7 +596,7 @@ export default function Header() {
                         key={sol.label}
                         href={sol.href}
                         onClick={handleNavClick}
-                        className="flex items-center gap-3 py-2.5 px-3 text-sm text-slate-200 hover:text-white hover:bg-slate-800/80 rounded-xl transition-colors border border-transparent hover:border-slate-700"
+                        className="flex items-center gap-3 py-2.5 px-3 text-sm text-slate-100 hover:text-white hover:bg-[#2557a6] rounded-xl transition-colors border border-transparent hover:border-blue-300/30"
                       >
                         <div
                           className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 border ${sol.accent}`}
@@ -474,31 +623,6 @@ export default function Header() {
               )}
             </div>
 
-            <Link
-              href="/process"
-              onClick={handleNavClick}
-              className={`text-base font-semibold px-4 py-3 rounded-xl transition-colors flex items-center justify-between ${
-                pathname === '/process'
-                  ? 'bg-white/15 text-white'
-                  : 'text-slate-200 hover:text-white hover:bg-white/5'
-              }`}
-            >
-              <span>How We Work</span>
-              <ArrowRight className="w-4 h-4 opacity-50" />
-            </Link>
-
-            <Link
-              href="/industries"
-              onClick={handleNavClick}
-              className={`text-base font-semibold px-4 py-3 rounded-xl transition-colors flex items-center justify-between ${
-                pathname === '/industries'
-                  ? 'bg-white/15 text-white'
-                  : 'text-slate-200 hover:text-white hover:bg-white/5'
-              }`}
-            >
-              <span>Industries</span>
-              <ArrowRight className="w-4 h-4 opacity-50" />
-            </Link>
 
             <Link
               href="/pricing"
@@ -540,7 +664,7 @@ export default function Header() {
             </Link>
           </nav>
 
-          <div className="px-6 pb-8 pt-4 flex flex-col gap-3 border-t border-white/10 bg-slate-950">
+          <div className="px-6 pb-8 pt-4 flex flex-col gap-3 border-t border-white/15 bg-[#1b4388]">
             <Link
               href={pathname === '/' ? '/#contact' : '/contact'}
               onClick={handleNavClick}

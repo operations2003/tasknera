@@ -169,7 +169,7 @@ export default function HeroSection() {
             <div className="relative max-w-md mx-auto lg:max-w-none">
               
               {/* Main card */}
-              <div className="glass-card rounded-3xl p-6 sm:p-8 space-y-6 shadow-2xl relative z-10 border border-white/20 bg-slate-900/60 backdrop-blur-xl">
+              <div className="glass-card rounded-3xl p-6 sm:p-8 space-y-6 shadow-2xl relative z-10 border border-white/25 bg-[#1a4188]/70 backdrop-blur-xl">
                 {/* Logo mark */}
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
@@ -255,20 +255,20 @@ export default function HeroSection() {
               </div>
 
               {/* Floating badge 1 — Top Right */}
-              <div className="hidden sm:flex absolute -top-5 -right-4 glass-card rounded-2xl px-4 py-2.5 z-20 shadow-xl border border-white/25 items-center gap-2.5 hover:scale-105 transition-transform duration-300 bg-slate-950/80">
+              <div className="hidden sm:flex absolute -top-5 -right-4 glass-card rounded-2xl px-4 py-2.5 z-20 shadow-xl border border-blue-300/30 items-center gap-2.5 hover:scale-105 transition-transform duration-300 bg-[#1f4b9c]/90">
                 <Sparkles className="w-4 h-4 text-accent animate-pulse" />
                 <div>
                   <div className="text-white text-xs font-bold">Technology-Enabled</div>
-                  <div className="text-white/60 text-[10px]">JD Match Evaluator &amp; Portals</div>
+                  <div className="text-white/70 text-[10px]">JD Match Evaluator &amp; Portals</div>
                 </div>
               </div>
 
               {/* Floating badge 2 — Bottom Left */}
-              <div className="hidden sm:flex absolute -bottom-5 -left-4 glass-card rounded-2xl px-4 py-2.5 z-20 shadow-xl border border-white/25 items-center gap-2.5 hover:scale-105 transition-transform duration-300 bg-slate-950/80">
+              <div className="hidden sm:flex absolute -bottom-5 -left-4 glass-card rounded-2xl px-4 py-2.5 z-20 shadow-xl border border-blue-300/30 items-center gap-2.5 hover:scale-105 transition-transform duration-300 bg-[#1f4b9c]/90">
                 <Users className="w-4 h-4 text-secondary" />
                 <div>
                   <div className="text-white text-xs font-bold">One Partner</div>
-                  <div className="text-white/60 text-[10px]">All Capabilities Under One Roof</div>
+                  <div className="text-white/70 text-[10px]">All Capabilities Under One Roof</div>
                 </div>
               </div>
 

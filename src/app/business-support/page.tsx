@@ -64,7 +64,8 @@ export default function BusinessSupportPage() {
       <main className="bg-background min-h-screen pt-16 sm:pt-20">
 
         {/* Hero */}
-        <section className="bg-hero-gradient pt-24 pb-20 sm:pt-32 sm:pb-28 relative overflow-hidden text-white">
+        <section className="bg-section-dark pt-24 pb-20 sm:pt-32 sm:pb-28 relative overflow-hidden text-white noise-overlay">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-20%,rgba(15,184,138,0.18),rgba(255,255,255,0))] pointer-events-none" />
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-3xl space-y-6">
               <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5">
@@ -107,14 +108,15 @@ export default function BusinessSupportPage() {
               </div>
             </div>
           </div>
+
         </section>
 
         {/* Dedicated Hub Cards */}
-        <section className="py-16 bg-muted/40 border-b border-border">
+        <section className="py-16 bg-surface-subtle border-b border-border/60">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-6">
               
-              <div className="bg-card border border-border rounded-3xl p-8 space-y-4 hover:border-accent/40 transition-colors shadow-sm">
+              <div className="bg-card border border-border/70 rounded-3xl p-8 space-y-4 hover:border-accent/40 transition-colors shadow-sm">
                 <div className="text-xs font-semibold text-accent uppercase tracking-widest">
                   Specialized Solution #1
                 </div>
@@ -132,7 +134,7 @@ export default function BusinessSupportPage() {
                 </Link>
               </div>
 
-              <div className="bg-card border border-border rounded-3xl p-8 space-y-4 hover:border-accent/40 transition-colors shadow-sm">
+              <div className="bg-card border border-border/70 rounded-3xl p-8 space-y-4 hover:border-accent/40 transition-colors shadow-sm">
                 <div className="text-xs font-semibold text-accent uppercase tracking-widest">
                   Specialized Solution #2
                 </div>
@@ -155,7 +157,7 @@ export default function BusinessSupportPage() {
         </section>
 
         {/* Detailed Service Breakdown */}
-        <section className="py-20 bg-background">
+        <section className="py-20 bg-surface-elevated">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-2xl mx-auto mb-14">
               <h2 className="text-section-title font-display font-700 text-foreground mb-3">
@@ -170,7 +172,7 @@ export default function BusinessSupportPage() {
               {services.map((svc) => (
                 <div
                   key={svc.title}
-                  className="spotlight-card hover-lift bg-card border border-border rounded-2xl p-6 shadow-sm flex flex-col justify-between"
+                  className="spotlight-card hover-lift bg-card border border-border/70 rounded-2xl p-6 shadow-sm flex flex-col justify-between"
                 >
                   <div>
                     <div className="w-10 h-10 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center mb-4 text-accent">
@@ -208,7 +210,7 @@ export default function BusinessSupportPage() {
         </section>
 
         {/* Technology Layer Banner */}
-        <section className="py-16 bg-muted border-t border-border">
+        <section className="py-16 bg-surface-subtle border-t border-border/60">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
             <h3 className="font-display font-700 text-2xl text-foreground">
               Supported by Modern Digital Tools
@@ -220,7 +222,7 @@ export default function BusinessSupportPage() {
               {capabilities.map((cap) => (
                 <span
                   key={cap}
-                  className="bg-card border border-border rounded-full px-4 py-1.5 text-xs font-semibold text-foreground/85 shadow-sm"
+                  className="bg-card border border-border/70 rounded-full px-4 py-1.5 text-xs font-semibold text-foreground/85 shadow-sm"
                 >
                   {cap}
                 </span>
@@ -230,8 +232,10 @@ export default function BusinessSupportPage() {
         </section>
 
         {/* CTA */}
-        <section className="py-20 bg-primary text-white text-center">
-          <div className="max-w-3xl mx-auto px-4 space-y-6">
+        <section className="py-20 bg-section-dark text-white text-center relative overflow-hidden border-t border-white/10">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(15,184,138,0.15),transparent_50%)] pointer-events-none" />
+
+          <div className="relative z-10 max-w-3xl mx-auto px-4 space-y-6">
             <h2 className="text-3xl sm:text-4xl font-display font-bold">
               Build Your Extended Operations Team
             </h2>

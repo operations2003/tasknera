@@ -66,7 +66,7 @@ const vaPillars = [
       'Candidate sourcing',
       'Resume screening',
       'Interview scheduling',
-      'ATS updates',
+      'Recruitment pipeline updates',
       'Recruitment coordination',
     ],
   },
@@ -117,7 +117,7 @@ export default function VirtualAssistantServicesPage() {
       <main className="bg-background min-h-screen pt-16 sm:pt-20">
         
         {/* ── Hero Section ── */}
-        <section className="relative bg-hero-gradient text-white overflow-hidden py-20 sm:py-28 noise-overlay">
+        <section className="relative bg-section-dark text-white overflow-hidden py-24 sm:py-32 noise-overlay">
           <div className="absolute inset-0 blob-teal opacity-20 pointer-events-none" style={{ top: '-15%', right: '15%', width: '500px', height: '500px' }} />
           <div className="absolute inset-0 blob-coral opacity-15 pointer-events-none" style={{ bottom: '-15%', left: '10%', width: '450px', height: '450px' }} />
 
@@ -178,8 +178,11 @@ export default function VirtualAssistantServicesPage() {
         </section>
 
         {/* ── 4 Major Service Pillars ── */}
-        <section id="pillars" className="py-20 sm:py-28 bg-background border-b border-border">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="pillars" className="py-20 sm:py-28 bg-surface-subtle border-b border-border relative overflow-hidden">
+          {/* Ambient background light pools */}
+          <div className="absolute top-0 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-3xl pointer-events-none" />
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/20 rounded-full px-4 py-1.5 mb-4">
                 <span className="w-1.5 h-1.5 rounded-full bg-accent" />
@@ -250,8 +253,11 @@ export default function VirtualAssistantServicesPage() {
         </section>
 
         {/* ── Why TaskNera VAs ── */}
-        <section className="py-20 sm:py-24 bg-muted/40 border-b border-border">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-20 sm:py-24 bg-surface-elevated border-b border-border relative overflow-hidden">
+          {/* Ambient background light pools */}
+          <div className="absolute top-0 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-3xl pointer-events-none" />
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center max-w-2xl mx-auto mb-14">
               <h2 className="text-3xl font-display font-bold text-foreground mb-3">
                 Why Outsource With TaskNera?
@@ -279,8 +285,8 @@ export default function VirtualAssistantServicesPage() {
         </section>
 
         {/* ── CTA Banner ── */}
-        <section className="py-20 bg-primary text-white text-center">
-          <div className="max-w-3xl mx-auto px-4 space-y-6">
+        <section className="py-24 sm:py-32 bg-section-dark text-white text-center relative overflow-hidden border-t border-border/80">
+          <div className="max-w-3xl mx-auto px-4 space-y-6 relative z-10">
             <h2 className="text-3xl sm:text-4xl font-display font-bold">
               Ready to Extend Your Operational Capacity?
             </h2>

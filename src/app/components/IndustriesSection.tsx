@@ -55,8 +55,11 @@ export default function IndustriesSection() {
   const [tab, setTab] = useState<'industries' | 'roles'>('industries');
 
   return (
-    <section id="industries" className="py-20 sm:py-28 bg-muted relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="industries" className="py-20 sm:py-28 bg-surface-elevated relative overflow-hidden border-b border-border">
+      {/* Ambient background light pools */}
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-14 scroll-reveal">
@@ -157,7 +160,7 @@ export default function IndustriesSection() {
         )}
 
         {/* Global reach strip */}
-        <div className="mt-14 bg-primary rounded-3xl p-8 sm:p-10 text-white shadow-2xl relative overflow-hidden border border-white/10 scroll-reveal" style={{ transitionDelay: '0.2s' }}>
+        <div className="mt-14 bg-gradient-to-r from-[#1e4994] to-[#255ebd] rounded-3xl p-8 sm:p-10 text-white shadow-2xl relative overflow-hidden border border-blue-300/30 scroll-reveal" style={{ transitionDelay: '0.2s' }}>
           <div className="grid lg:grid-cols-12 gap-6 items-center">
             <div className="lg:col-span-5 space-y-2">
               <div className="inline-flex items-center gap-2 bg-white/10 px-3 py-1 rounded-full text-xs font-bold text-accent uppercase tracking-wider">

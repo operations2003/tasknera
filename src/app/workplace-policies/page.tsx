@@ -212,7 +212,8 @@ export default function WorkplacePoliciesPage() {
       <main className="bg-background min-h-screen pt-16 sm:pt-20">
         
         {/* ── Page Hero ── */}
-        <section className="bg-primary text-white py-16 sm:py-24 relative overflow-hidden">
+        <section className="bg-section-dark text-white py-16 sm:py-24 relative overflow-hidden noise-overlay border-b border-white/10">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-20%,rgba(15,184,138,0.18),rgba(255,255,255,0))] pointer-events-none" />
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-3xl space-y-5">
               <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5">
@@ -236,10 +237,11 @@ export default function WorkplacePoliciesPage() {
               </div>
             </div>
           </div>
+
         </section>
 
         {/* ── Workplace Commitments Area (Requirement 11) ── */}
-        <section className="py-16 sm:py-20 bg-muted/40 border-b border-border">
+        <section className="py-16 sm:py-20 bg-surface-subtle border-b border-border/60">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-2xl mx-auto mb-12">
               <div className="text-xs font-semibold text-accent uppercase tracking-widest mb-2">
@@ -257,7 +259,7 @@ export default function WorkplacePoliciesPage() {
               {commitments.map((c) => (
                 <div
                   key={c.title}
-                  className="bg-card border border-border rounded-2xl p-6 sm:p-7 shadow-sm flex flex-col justify-between"
+                  className="bg-card border border-border/70 rounded-2xl p-6 sm:p-7 shadow-sm flex flex-col justify-between hover:shadow-md transition-all"
                 >
                   <div>
                     <h3 className="font-display font-700 text-foreground text-lg mb-4 flex items-center gap-2">
@@ -280,7 +282,7 @@ export default function WorkplacePoliciesPage() {
         </section>
 
         {/* ── Detailed Policy Directory ── */}
-        <section className="py-16 sm:py-24 bg-background">
+        <section className="py-16 sm:py-24 bg-surface-elevated">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             {/* Category Filter */}
@@ -307,7 +309,7 @@ export default function WorkplacePoliciesPage() {
                 return (
                   <div
                     key={policy.id}
-                    className="border border-border rounded-2xl bg-card overflow-hidden shadow-sm transition-all"
+                    className="border border-border/70 rounded-2xl bg-card overflow-hidden shadow-sm transition-all"
                   >
                     <button
                       type="button"
@@ -358,7 +360,7 @@ export default function WorkplacePoliciesPage() {
         </section>
 
         {/* ── Contact / Inquiry Banner ── */}
-        <section className="py-14 bg-muted border-t border-border">
+        <section className="py-14 bg-surface-subtle border-t border-border/60">
           <div className="max-w-4xl mx-auto px-4 text-center space-y-4">
             <h3 className="font-display font-700 text-xl text-foreground">
               Questions Regarding Governance &amp; Compliance?
@@ -369,7 +371,7 @@ export default function WorkplacePoliciesPage() {
             <div className="pt-2">
               <Link
                 href="/contact"
-                className="inline-block bg-primary text-white text-xs font-semibold px-6 py-2.5 rounded-full hover:opacity-90 transition-opacity"
+                className="inline-block bg-accent text-accent-foreground text-xs font-semibold px-6 py-2.5 rounded-full hover:brightness-110 active:scale-95 transition-all shadow-md"
               >
                 Contact Operations Team
               </Link>

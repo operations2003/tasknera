@@ -65,7 +65,8 @@ export default function ProcessPage() {
       <main className="bg-background min-h-screen pt-16 sm:pt-20">
         
         {/* Page Hero */}
-        <section className="bg-hero-gradient text-white py-20 sm:py-28 relative overflow-hidden border-b border-white/10">
+        <section className="bg-section-dark text-white py-20 sm:py-28 relative overflow-hidden border-b border-white/10 noise-overlay">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-20%,rgba(15,184,138,0.18),rgba(255,255,255,0))] pointer-events-none" />
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-3xl space-y-6">
               <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 shadow-sm">
@@ -104,13 +105,13 @@ export default function ProcessPage() {
         </section>
 
         {/* 4 Guarantees Strip */}
-        <section id="guarantees" className="py-14 bg-card border-b border-border">
+        <section id="guarantees" className="py-14 bg-surface-subtle border-b border-border/60">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {guarantees.map((g) => {
                 const IconComp = g.icon;
                 return (
-                  <div key={g.title} className="p-6 rounded-2xl bg-muted/40 border border-border/80 flex items-start gap-4">
+                  <div key={g.title} className="p-6 rounded-2xl bg-card border border-border/70 flex items-start gap-4 hover:shadow-md transition-all">
                     <div className="w-10 h-10 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent flex-shrink-0">
                       <IconComp className="w-5 h-5" />
                     </div>
@@ -129,7 +130,7 @@ export default function ProcessPage() {
         <ProcessSection />
 
         {/* Communication & Governance Cadence */}
-        <section className="py-20 sm:py-28 bg-background border-b border-border">
+        <section className="py-20 sm:py-28 bg-surface-subtle border-b border-border/60">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-2xl mx-auto mb-16">
               <div className="text-xs font-bold text-accent uppercase tracking-widest mb-2">
@@ -166,8 +167,9 @@ export default function ProcessPage() {
             </div>
 
             {/* Bottom CTA Box */}
-            <div className="bg-primary rounded-3xl p-8 sm:p-12 text-white shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6 border border-white/15">
-              <div className="space-y-2 text-center sm:text-left">
+            <div className="bg-section-dark rounded-3xl p-8 sm:p-12 text-white shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6 border border-white/15 relative overflow-hidden">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(15,184,138,0.15),transparent_50%)] pointer-events-none" />
+              <div className="space-y-2 text-center sm:text-left relative z-10">
                 <h3 className="font-display font-bold text-2xl">
                   Ready to deploy a streamlined workforce process?
                 </h3>
@@ -177,7 +179,7 @@ export default function ProcessPage() {
               </div>
               <Link
                 href="/#contact"
-                className="bg-accent text-accent-foreground font-bold px-7 py-3.5 rounded-full hover:brightness-110 active:scale-95 transition-all text-sm flex-shrink-0 shadow-md"
+                className="bg-accent text-accent-foreground font-bold px-7 py-3.5 rounded-full hover:brightness-110 active:scale-95 transition-all text-sm flex-shrink-0 shadow-md relative z-10"
               >
                 Schedule Kickoff Call
               </Link>

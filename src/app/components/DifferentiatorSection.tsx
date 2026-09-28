@@ -20,8 +20,8 @@ const examples = [
     desc: 'Specialized permanent hiring with domain-focused recruitment experts across tech, finance, and operations.',
     icon: Target,
     badge: 'Talent & Recruitment',
-    badgeColor: 'text-emerald-500 bg-emerald-50 border-emerald-200',
-    iconBg: 'bg-emerald-500/10 text-emerald-600 border-emerald-200/60',
+    badgeColor: 'text-accent bg-accent/10 border-accent/25',
+    iconBg: 'bg-accent/10 text-accent border-accent/20',
     href: '/talent-acquisition',
   },
   {
@@ -30,8 +30,8 @@ const examples = [
     desc: 'Rapid volume hiring campaigns, contract staffing deployment, and scalable multi-location workforce pipelines.',
     icon: Users,
     badge: 'Workforce Scale',
-    badgeColor: 'text-blue-500 bg-blue-50 border-blue-200',
-    iconBg: 'bg-blue-500/10 text-blue-600 border-blue-200/60',
+    badgeColor: 'text-primary bg-primary/10 border-primary/20',
+    iconBg: 'bg-primary/10 text-primary border-primary/20',
     href: '/hr-workforce-solutions#workforce',
   },
   {
@@ -40,8 +40,8 @@ const examples = [
     desc: 'End-to-end HRMS setup, payroll administration, statutory compliance audits, and employee lifecycle management.',
     icon: Settings2,
     badge: 'HR & People Ops',
-    badgeColor: 'text-orange-500 bg-orange-50 border-orange-200',
-    iconBg: 'bg-orange-500/10 text-orange-600 border-orange-200/60',
+    badgeColor: 'text-secondary bg-secondary/10 border-secondary/25',
+    iconBg: 'bg-secondary/10 text-secondary border-secondary/20',
     href: '/hr-workforce-solutions',
   },
   {
@@ -50,8 +50,8 @@ const examples = [
     desc: '100% vetted human remote professionals for executive assistance, CRM hygiene, scheduling, research, and admin tasks.',
     icon: Briefcase,
     badge: 'Virtual Assistance',
-    badgeColor: 'text-amber-600 bg-amber-50 border-amber-200',
-    iconBg: 'bg-amber-500/10 text-amber-600 border-amber-200/60',
+    badgeColor: 'text-accent bg-accent/10 border-accent/25',
+    iconBg: 'bg-accent/10 text-accent border-accent/20',
     href: '/virtual-assistant-services',
   },
   {
@@ -60,8 +60,8 @@ const examples = [
     desc: 'Omnichannel virtual customer support pods handling voice, chat, email, social media, and ticketing with strict SLAs.',
     icon: Headphones,
     badge: 'Customer Support (VCS)',
-    badgeColor: 'text-teal-600 bg-teal-50 border-teal-200',
-    iconBg: 'bg-teal-500/10 text-teal-600 border-teal-200/60',
+    badgeColor: 'text-secondary bg-secondary/10 border-secondary/25',
+    iconBg: 'bg-secondary/10 text-secondary border-secondary/20',
     href: '/virtual-customer-support',
   },
   {
@@ -70,16 +70,21 @@ const examples = [
     desc: 'Fully managed talent acquisition, employee operations, payroll, and business support seamlessly under one master partner.',
     icon: Globe2,
     badge: 'Full Operations Partner',
-    badgeColor: 'text-purple-600 bg-purple-50 border-purple-200',
-    iconBg: 'bg-purple-500/10 text-purple-600 border-purple-200/60',
+    badgeColor: 'text-primary bg-primary/10 border-primary/20',
+    iconBg: 'bg-primary/10 text-primary border-primary/20',
     href: '/pricing',
   },
 ];
 
 export default function DifferentiatorSection() {
   return (
-    <section className="py-20 sm:py-28 bg-background border-b border-border relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 sm:py-28 bg-surface-subtle border-b border-border relative overflow-hidden">
+      {/* Ambient background light pools with subtle blue effects */}
+      <div className="absolute top-10 left-1/3 w-[600px] h-[350px] bg-sky-400/12 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-10 right-1/4 w-[500px] h-[300px] bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 scroll-reveal">
@@ -153,7 +158,8 @@ export default function DifferentiatorSection() {
         </div>
 
         {/* Supporting Banner */}
-        <div className="bg-primary rounded-3xl p-8 sm:p-12 text-white flex flex-col lg:flex-row items-center justify-between gap-8 shadow-2xl relative overflow-hidden scroll-reveal" style={{ transitionDelay: '0.2s' }}>
+        <div className="bg-section-dark border border-white/10 rounded-3xl p-8 sm:p-12 text-white flex flex-col lg:flex-row items-center justify-between gap-8 shadow-2xl relative overflow-hidden scroll-reveal" style={{ transitionDelay: '0.2s' }}>
+          <div className="absolute top-0 right-0 w-80 h-80 bg-accent/10 rounded-full blur-3xl pointer-events-none" />
           <div className="space-y-3 text-center lg:text-left relative z-10 max-w-2xl">
             <div className="inline-flex items-center gap-2 bg-white/10 px-3 py-1 rounded-full text-xs font-bold text-accent uppercase tracking-wider">
               <Sparkles className="w-3.5 h-3.5" />

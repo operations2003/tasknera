@@ -3,20 +3,20 @@
 @tailwind utilities;
 
 :root {
-  --background: #f8f9fc;
-  --foreground: #1a2456;
-  --primary: #1a2456;
+  --background: #f0f5fc;
+  --foreground: #0e1838;
+  --primary: #0e1838;
   --primary-foreground: #ffffff;
-  --secondary: #f47b3f;
+  --secondary: #ea580c;
   --secondary-foreground: #ffffff;
   --accent: #0fb88a;
   --accent-foreground: #ffffff;
-  --muted: #f1f4f9;
-  --muted-foreground: #6b7a9a;
+  --muted: #e6effa;
+  --muted-foreground: #475569;
   --card: #ffffff;
-  --card-foreground: #1a2456;
-  --border: #e2e8f0;
-  --input: #e2e8f0;
+  --card-foreground: #0e1838;
+  --border: #d4e4f7;
+  --input: #d4e4f7;
   --ring: #0fb88a;
   --radius: 0.75rem;
   --font-sans: var(--font-manrope), sans-serif;
@@ -63,7 +63,7 @@
   }
 
   .gradient-text-coral {
-    background: linear-gradient(135deg, #f47b3f 0%, #ff8c4b 50%, #ffa56a 100%);
+    background: linear-gradient(135deg, #ea580c 0%, #f97316 50%, #fb923c 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -71,7 +71,15 @@
   }
 
   .gradient-text-teal {
-    background: linear-gradient(135deg, #0fb88a 0%, #1dd4a2 100%);
+    background: linear-gradient(135deg, #0d9488 0%, #0fb88a 50%, #14b8a6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+  }
+
+  .gradient-text-navy {
+    background: linear-gradient(135deg, #0e1838 0%, #1e293b 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -79,53 +87,70 @@
   }
 
   .bg-hero-gradient {
-    background: linear-gradient(135deg, #080f24 0%, #0d1a3d 30%, #1a2456 70%, #0d2e40 100%);
+    background: linear-gradient(155deg, #1e4994 0%, #255ebd 45%, #2d72dd 75%, #21519e 100%);
   }
 
   .bg-navy-gradient {
-    background: linear-gradient(135deg, #1a2456 0%, #0b132b 100%);
+    background: linear-gradient(145deg, #255ebd 0%, #1e4994 100%);
+  }
+
+  .bg-surface-subtle {
+    background: linear-gradient(180deg, #f0f5fc 0%, #e6effa 50%, #f4f8fe 100%);
+  }
+
+  .bg-surface-elevated {
+    background: linear-gradient(180deg, #eaf2fb 0%, #f3f8fe 50%, #ebf3fc 100%);
+  }
+
+  .bg-section-dark {
+    background: linear-gradient(155deg, #1e4994 0%, #255ebd 50%, #2053a4 100%);
   }
 
   .blob-teal {
-    background: radial-gradient(ellipse, rgba(15, 184, 138, 0.22) 0%, transparent 70%);
+    background: radial-gradient(ellipse, rgba(15, 184, 138, 0.18) 0%, transparent 70%);
     filter: blur(60px);
   }
 
   .blob-coral {
-    background: radial-gradient(ellipse, rgba(244, 123, 63, 0.18) 0%, transparent 70%);
+    background: radial-gradient(ellipse, rgba(234, 88, 12, 0.14) 0%, transparent 70%);
     filter: blur(80px);
   }
 
   .blob-blue {
-    background: radial-gradient(ellipse, rgba(26, 36, 86, 0.12) 0%, transparent 70%);
-    filter: blur(40px);
+    background: radial-gradient(ellipse, rgba(56, 189, 248, 0.24) 0%, rgba(37, 99, 235, 0.1) 40%, transparent 70%);
+    filter: blur(60px);
+  }
+
+  .blob-sky {
+    background: radial-gradient(ellipse, rgba(14, 165, 233, 0.18) 0%, rgba(59, 130, 246, 0.08) 50%, transparent 70%);
+    filter: blur(70px);
   }
 
   .glass-card {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.12);
   }
 
   .glass-card-light {
-    background: rgba(255, 255, 255, 0.88);
+    background: rgba(255, 255, 255, 0.94);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(226, 232, 240, 0.9);
+    border: 1px solid rgba(212, 228, 247, 0.9);
   }
 
   .card-premium {
     background: #ffffff;
-    border: 1px solid #e2e8f0;
-    box-shadow: 0 4px 20px -2px rgba(11, 19, 43, 0.05);
+    border: 1px solid #d4e4f7;
+    box-shadow: 0 4px 18px -2px rgba(14, 38, 86, 0.05), 0 1px 3px rgba(14, 38, 86, 0.02);
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .card-premium:hover {
-    border-color: rgba(15, 184, 138, 0.35);
-    box-shadow: 0 16px 36px -8px rgba(11, 19, 43, 0.12);
-    transform: translateY(-3px);
+    border-color: rgba(56, 189, 248, 0.6);
+    box-shadow: 0 16px 36px -8px rgba(14, 38, 86, 0.08), 0 0 24px -2px rgba(56, 189, 248, 0.18);
+    transform: translateY(-2px);
   }
 
   .spotlight-card {

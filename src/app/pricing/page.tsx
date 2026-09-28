@@ -91,7 +91,8 @@ export default function PricingPage() {
       <main className="bg-background min-h-screen pt-16 sm:pt-20">
         
         {/* Page Hero */}
-        <section className="bg-hero-gradient text-white py-20 sm:py-28 relative overflow-hidden border-b border-white/10">
+        <section className="bg-section-dark text-white py-20 sm:py-28 relative overflow-hidden border-b border-white/10">
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/15 rounded-full blur-[100px] pointer-events-none" />
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-3xl space-y-6">
               <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 shadow-sm">
@@ -127,11 +128,15 @@ export default function PricingPage() {
               </div>
             </div>
           </div>
+
         </section>
 
         {/* 3 Core Tier Cards */}
-        <section className="py-20 sm:py-28 bg-background relative border-b border-border">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-20 sm:py-28 bg-surface-subtle relative border-b border-border overflow-hidden">
+          {/* Ambient background light pools */}
+          <div className="absolute top-0 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-3xl pointer-events-none" />
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="text-xs font-bold text-accent uppercase tracking-widest mb-2">
                 Predictable Structuring
@@ -201,7 +206,7 @@ export default function PricingPage() {
                       className={`block w-full text-center py-3.5 rounded-full font-bold text-sm transition-all shadow-md ${
                         tier.popular
                           ? 'bg-accent text-accent-foreground hover:brightness-110 shadow-accent/25'
-                          : 'bg-primary text-white hover:opacity-90'
+                          : 'bg-white/10 hover:bg-white/20 text-white border border-white/15'
                       }`}
                     >
                       {tier.cta}

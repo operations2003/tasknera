@@ -66,7 +66,7 @@ const steps = [
 ];
 
 const techCapabilities = [
-  'JD Match Evaluator',
+  'HireIQ Matching Engine',
   'HRMS Integration',
   'Employee Portals',
   'CRM Pipeline Sync',
@@ -79,7 +79,11 @@ const techCapabilities = [
 
 export default function ProcessSection() {
   return (
-    <section id="process" className="py-20 sm:py-28 bg-primary overflow-hidden text-white relative border-b border-white/10">
+    <section id="process" className="py-24 sm:py-32 bg-section-dark overflow-hidden text-white relative border-y border-border/80">
+      {/* Atmospheric ambient lighting */}
+      <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-accent/10 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-1/4 left-0 w-[500px] h-[500px] bg-secondary/10 rounded-full blur-[100px] pointer-events-none" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Header */}
@@ -108,7 +112,7 @@ export default function ProcessSection() {
             return (
               <div
                 key={step.num}
-                className="glass-card rounded-3xl p-7 sm:p-8 hover-lift group border border-white/12 hover:border-white/25 transition-all duration-300 flex flex-col justify-between relative overflow-hidden bg-slate-900/50 backdrop-blur-xl"
+                className="glass-card rounded-3xl p-7 sm:p-8 hover-lift group border border-white/20 hover:border-white/35 transition-all duration-300 flex flex-col justify-between relative overflow-hidden bg-[#1a4188]/65 backdrop-blur-xl"
                 style={{ transitionDelay: `${i * 0.04}s` }}
               >
                 <div>
@@ -142,7 +146,7 @@ export default function ProcessSection() {
 
         {/* Technology-Enabled Delivery Box */}
         <div className="scroll-reveal" style={{ transitionDelay: '0.2s' }}>
-          <div className="bg-slate-900/90 backdrop-blur-2xl border border-white/15 rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+          <div className="bg-gradient-to-br from-[#1e4994] to-[#255ebd] backdrop-blur-2xl border border-blue-300/30 rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden">
             <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               
               <div className="lg:col-span-6 space-y-5">

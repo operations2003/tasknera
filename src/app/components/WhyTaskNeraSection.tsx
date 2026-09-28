@@ -60,29 +60,34 @@ const valueProps = [
     icon: TrendingUp,
     title: 'Scalable',
     desc: 'From a single critical hire to 50+ deployed support specialists — our modular pods scale on demand.',
-    color: 'text-blue-500',
-    bg: 'bg-blue-500/10 border-blue-500/20',
+    color: 'text-primary',
+    bg: 'bg-primary/10 border-primary/20',
   },
   {
     icon: Cpu,
     title: 'Technology-Enabled',
     desc: 'JD Match Evaluator scoring, modern HRMS integration, and workforce dashboards power every delivery.',
-    color: 'text-purple-500',
-    bg: 'bg-purple-500/10 border-purple-500/20',
+    color: 'text-accent',
+    bg: 'bg-accent/10 border-accent/20',
   },
   {
     icon: HeartHandshake,
     title: 'Human-Centered',
     desc: '100% vetted human professionals bringing empathy, critical thinking, and dedicated accountability.',
-    color: 'text-emerald-500',
-    bg: 'bg-emerald-500/10 border-emerald-500/20',
+    color: 'text-secondary',
+    bg: 'bg-secondary/10 border-secondary/20',
   },
 ];
 
 export default function WhyTaskNeraSection() {
   return (
-    <section id="why" className="py-20 sm:py-28 bg-background border-b border-border relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="why" className="py-20 sm:py-28 bg-surface-subtle border-b border-border relative overflow-hidden">
+      {/* Ambient background light pools with subtle blue effects */}
+      <div className="absolute top-10 left-1/3 w-[600px] h-[350px] bg-sky-400/12 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-10 right-1/4 w-[500px] h-[300px] bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-14 scroll-reveal">
@@ -162,14 +167,17 @@ export default function WhyTaskNeraSection() {
           </div>
 
           {/* Pull quote */}
-          <div className="mt-8 bg-primary rounded-3xl p-6 sm:p-8 text-white text-center shadow-lg border border-white/10">
-            <p className="font-display text-lg sm:text-xl font-normal italic leading-relaxed max-w-2xl mx-auto text-white/90">
-              "TaskNera was built to bridge the divide between high-touch people strategy and everyday operational execution under one accountable partner."
-            </p>
-            <div className="mt-4 flex items-center justify-center gap-2">
-              <span className="text-accent text-xs font-bold tracking-wider uppercase">
-                Founded in 2026 · Led by Sheetal Bedi (8+ Years HR Strategy Experience)
-              </span>
+          <div className="mt-8 bg-section-dark rounded-3xl p-6 sm:p-8 text-white text-center shadow-xl border border-white/10 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-80 h-80 bg-accent/10 rounded-full blur-3xl pointer-events-none" />
+            <div className="relative z-10">
+              <p className="font-display text-lg sm:text-xl font-normal italic leading-relaxed max-w-2xl mx-auto text-white/90">
+                &ldquo;TaskNera was built to bridge the divide between high-touch people strategy and everyday operational execution under one accountable partner.&rdquo;
+              </p>
+              <div className="mt-4 flex items-center justify-center gap-2">
+                <span className="text-accent text-xs font-bold tracking-wider uppercase">
+                  Founded in 2026 · Led by Sheetal Bedi (8+ Years HR Strategy Experience)
+                </span>
+              </div>
             </div>
           </div>
         </div>
