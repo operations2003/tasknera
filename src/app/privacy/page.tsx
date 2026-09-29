@@ -74,7 +74,7 @@ export default function PrivacyPage() {
                 <div className="bg-muted/40 border border-border rounded-2xl p-5 space-y-2">
                   <h3 className="font-semibold text-foreground text-sm">Communication Records</h3>
                   <p className="text-muted-foreground text-xs leading-relaxed">
-                    Inquiries submitted via contact forms, emails sent to operations@tasknera.com or hello@tasknera.com, call notes, and support tickets.
+                    Inquiries submitted via contact forms, emails sent to operations@tasknera.com, call notes, and support tickets.
                   </p>
                 </div>
               </div>
@@ -127,7 +127,7 @@ export default function PrivacyPage() {
                 Your Rights &amp; Data Choices
               </h2>
               <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
-                You have the right to request access to your personal information, request corrections, ask for deletion of your candidate profile, or object to processing. To exercise any of these rights, please email us at <a href="mailto:hello@tasknera.com" className="text-accent font-semibold underline">hello@tasknera.com</a> or <a href="mailto:operations@tasknera.com" className="text-accent font-semibold underline">operations@tasknera.com</a>.
+                You have the right to request access to your personal information, request corrections, ask for deletion of your candidate profile, or object to processing. To exercise any of these rights, please email us at <a href="mailto:operations@tasknera.com" className="text-accent font-semibold underline">operations@tasknera.com</a>.
               </p>
             </section>
 
@@ -139,7 +139,7 @@ export default function PrivacyPage() {
               </p>
               <div className="bg-primary/5 border border-primary/10 rounded-2xl p-4 text-sm space-y-1">
                 <div className="font-semibold text-foreground">TaskNera Operations &amp; Privacy Officer</div>
-                <div className="text-muted-foreground">Email: <a href="mailto:hello@tasknera.com" className="text-accent hover:underline">hello@tasknera.com</a> | <a href="mailto:operations@tasknera.com" className="text-accent hover:underline">operations@tasknera.com</a></div>
+                <div className="text-muted-foreground">Email: <a href="mailto:operations@tasknera.com" className="text-accent hover:underline">operations@tasknera.com</a></div>
                 <div className="text-muted-foreground">Address: D-57 F1 Dilshad Colony, Dilshad Garden, Delhi - 110095, India</div>
               </div>
             </section>

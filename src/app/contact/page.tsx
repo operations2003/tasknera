@@ -32,14 +32,6 @@ const teamMembers = [
     color: 'from-accent/30 to-accent/10',
   },
   {
-    name: 'Support Team',
-    role: 'General Enquiries & Help',
-    bio: 'Have questions about services, portal access, or general guidance? Our support team is here to assist with prompt operational direction.',
-    email: 'hello@tasknera.com',
-    initials: 'ST',
-    color: 'from-teal-400/30 to-teal-400/10',
-  },
-  {
     name: 'Partnerships & Vendors',
     role: 'Channel & Partner Relations',
     bio: 'Collaborate with TaskNera as a recruitment vendor, staffing partner, HR consultant, or enterprise solutions provider.',
@@ -177,7 +169,7 @@ export default function ContactPage() {
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {teamMembers.map((member) => (
                 <div
                   key={member.name}

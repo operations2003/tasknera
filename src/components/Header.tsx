@@ -24,42 +24,42 @@ const solutionLinks = [
     href: '/hr-workforce-solutions',
     desc: 'HR operations, onboarding, payroll & lifecycle management',
     icon: Building2,
-    accent: 'from-orange-500/20 to-orange-500/5 text-orange-400 border-orange-500/30',
+    accent: 'bg-orange-50 text-orange-600 border-orange-200/80',
   },
   {
     label: 'Talent & Recruitment',
     href: '/talent-acquisition',
     desc: 'Permanent, contract, executive & volume hiring',
     icon: Target,
-    accent: 'from-emerald-500/20 to-emerald-500/5 text-emerald-400 border-emerald-500/30',
+    accent: 'bg-emerald-50 text-emerald-600 border-emerald-200/80',
   },
   {
     label: 'Workforce Solutions',
     href: '/hr-workforce-solutions#workforce',
     desc: 'Contract, temporary & scalable workforce deployment',
     icon: Users,
-    accent: 'from-blue-500/20 to-blue-500/5 text-blue-400 border-blue-500/30',
+    accent: 'bg-blue-50 text-blue-600 border-blue-200/80',
   },
   {
     label: 'Virtual Assistant & Business Support',
     href: '/virtual-assistant-services',
     desc: '100% human remote professionals for executive & operational tasks',
     icon: Briefcase,
-    accent: 'from-amber-500/20 to-amber-500/5 text-amber-400 border-amber-500/30',
+    accent: 'bg-amber-50 text-amber-600 border-amber-200/80',
   },
   {
     label: 'Virtual Customer Support (VCS)',
     href: '/virtual-customer-support',
     desc: 'Omnichannel voice, chat, email, social & ticketing helpdesk',
     icon: Headphones,
-    accent: 'from-teal-500/20 to-teal-500/5 text-teal-400 border-teal-500/30',
+    accent: 'bg-teal-50 text-teal-600 border-teal-200/80',
   },
   {
     label: 'HireIQ™ & HRMS Platform',
     href: '/#platform',
     desc: 'AI resume screening, JD matching, and end-to-end lifecycle HRMS',
     icon: Sparkles,
-    accent: 'from-purple-500/20 to-purple-500/5 text-purple-400 border-purple-500/30',
+    accent: 'bg-purple-50 text-purple-600 border-purple-200/80',
   },
 ];
 const aboutDropdownLinks = [
@@ -68,21 +68,21 @@ const aboutDropdownLinks = [
     href: '/#about',
     desc: 'Our story, 5 core pillars, global delivery architecture & leadership',
     icon: Building2,
-    accent: 'from-accent/20 to-accent/5 text-accent border-accent/30',
+    accent: 'bg-emerald-50 text-emerald-600 border-emerald-200/80',
   },
   {
     label: 'How We Work',
     href: '/#process',
     desc: 'Our 6-phase predictable execution roadmap, SLAs & tech stack',
     icon: Compass,
-    accent: 'from-orange-500/20 to-orange-500/5 text-orange-400 border-orange-500/30',
+    accent: 'bg-orange-50 text-orange-600 border-orange-200/80',
   },
   {
     label: '12+ Industries & Roles',
     href: '/#industries',
     desc: 'Specialized domain coverage across Tech, BFSI, Healthcare & more',
     icon: Globe2,
-    accent: 'from-blue-500/20 to-blue-500/5 text-blue-400 border-blue-500/30',
+    accent: 'bg-blue-50 text-blue-600 border-blue-200/80',
   },
 ];
 
@@ -236,33 +236,27 @@ export default function Header() {
                 {aboutOpen && (
                   <div
                     className="absolute top-full left-0 w-[420px] pt-2 z-[100] animate-in fade-in-0 slide-in-from-top-1 duration-150"
-                    style={{ filter: 'drop-shadow(0 25px 35px rgba(0, 0, 0, 0.6))' }}
+                    style={{ filter: 'drop-shadow(0 20px 30px rgba(15, 23, 42, 0.25))' }}
                   >
-                    <div
-                      className="rounded-2xl border border-blue-300/30 shadow-2xl overflow-hidden ring-1 ring-white/10"
-                      style={{ backgroundColor: '#1c4486' }}
-                    >
+                    <div className="rounded-2xl border border-slate-200/90 bg-white shadow-2xl overflow-hidden ring-1 ring-black/5">
                       {/* Top Bar */}
-                      <div
-                        className="flex items-center justify-between px-4 py-2.5 border-b border-blue-300/25"
-                        style={{ backgroundColor: '#214f9c' }}
-                      >
-                        <div className="text-[11px] font-bold text-accent uppercase tracking-wider flex items-center gap-2">
-                          <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+                      <div className="flex items-center justify-between px-4 py-2.5 bg-slate-50/90 border-b border-slate-100">
+                        <div className="text-[11px] font-bold text-emerald-600 uppercase tracking-wider flex items-center gap-2">
+                          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                           <span>Company Overview · Merged Scope</span>
                         </div>
                         <Link
                           href="/#about"
                           onClick={() => setAboutOpen(false)}
-                          className="text-xs text-slate-200 hover:text-accent font-medium flex items-center gap-1.5 transition-colors group"
+                          className="text-xs text-blue-600 hover:text-blue-800 font-semibold flex items-center gap-1.5 transition-colors group"
                         >
                           <span>Full Overview</span>
-                          <ArrowRight className="w-3.5 h-3.5 transition-transform duration-150 group-hover:translate-x-0.5 text-accent" />
+                          <ArrowRight className="w-3.5 h-3.5 transition-transform duration-150 group-hover:translate-x-0.5 text-blue-600" />
                         </Link>
                       </div>
 
                       {/* Merged Items List */}
-                      <div className="p-2 space-y-1.5" style={{ backgroundColor: '#1c4486' }}>
+                      <div className="p-2 space-y-1.5 bg-white">
                         {aboutDropdownLinks.map((item) => {
                           const IconComp = item.icon;
                           return (
@@ -270,7 +264,7 @@ export default function Header() {
                               key={item.label}
                               href={item.href}
                               onClick={() => setAboutOpen(false)}
-                              className="flex items-start gap-3 p-2.5 rounded-xl border border-blue-300/20 bg-[#2557a6]/60 hover:border-blue-300/40 hover:bg-[#2d66be] transition-all duration-150 group"
+                              className="flex items-start gap-3 p-2.5 rounded-xl border border-slate-100 bg-slate-50/70 hover:bg-blue-50/80 hover:border-blue-200/80 transition-all duration-150 group shadow-sm"
                             >
                               <div
                                 className={`w-9 h-9 rounded-lg border flex items-center justify-center flex-shrink-0 mt-0.5 transition-transform duration-150 group-hover:scale-105 shadow-sm ${item.accent}`}
@@ -278,11 +272,11 @@ export default function Header() {
                                 <IconComp className="w-4 h-4" />
                               </div>
                               <div className="flex-1 min-w-0">
-                                <div className="text-xs font-bold text-white group-hover:text-accent transition-colors flex items-center justify-between">
+                                <div className="text-xs font-bold text-slate-900 group-hover:text-blue-600 transition-colors flex items-center justify-between">
                                   <span>{item.label}</span>
-                                  <ArrowRight className="w-3.5 h-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-accent flex-shrink-0 ml-1" />
+                                  <ArrowRight className="w-3.5 h-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-blue-600 flex-shrink-0 ml-1" />
                                 </div>
-                                <div className="text-[11px] text-slate-300 group-hover:text-slate-100 line-clamp-1 mt-0.5 leading-snug">
+                                <div className="text-[11px] text-slate-500 group-hover:text-slate-700 line-clamp-1 mt-0.5 leading-snug">
                                   {item.desc}
                                 </div>
                               </div>
@@ -292,17 +286,14 @@ export default function Header() {
                       </div>
 
                       {/* Bottom Footer Strip */}
-                      <div
-                        className="px-4 py-2 border-t border-blue-300/25 flex items-center justify-between text-xs"
-                        style={{ backgroundColor: '#214f9c' }}
-                      >
-                        <span className="text-slate-400 text-[11px]">
+                      <div className="px-4 py-2 border-t border-slate-100 bg-slate-50 flex items-center justify-between text-xs">
+                        <span className="text-slate-500 text-[11px]">
                           3-in-1 Unified Hub: Identity, Execution &amp; Coverage
                         </span>
                         <Link
                           href="/#about"
                           onClick={() => setAboutOpen(false)}
-                          className="text-accent hover:text-emerald-300 font-semibold text-xs transition-colors"
+                          className="text-blue-600 hover:text-blue-800 font-semibold text-xs transition-colors"
                         >
                           Explore →
                         </Link>
@@ -335,37 +326,31 @@ export default function Header() {
                   />
                 </button>
 
-                {/* Mega Dropdown Menu - 100% Solid, High Contrast, 2-Column */}
+                {/* Mega Dropdown Menu - Clean White Elevated Card */}
                 {solutionsOpen && (
                   <div
                     className="absolute top-full left-0 w-[580px] pt-2 z-[100] animate-in fade-in-0 slide-in-from-top-1 duration-150"
-                    style={{ filter: 'drop-shadow(0 25px 35px rgba(0, 0, 0, 0.6))' }}
+                    style={{ filter: 'drop-shadow(0 20px 30px rgba(15, 23, 42, 0.25))' }}
                   >
-                    <div
-                      className="rounded-2xl border border-blue-300/30 shadow-2xl overflow-hidden ring-1 ring-white/10"
-                      style={{ backgroundColor: '#1c4486' }}
-                    >
+                    <div className="rounded-2xl border border-slate-200/90 bg-white shadow-2xl overflow-hidden ring-1 ring-black/5">
                       {/* Top Bar */}
-                      <div
-                        className="flex items-center justify-between px-4 py-2.5 border-b border-blue-300/25"
-                        style={{ backgroundColor: '#214f9c' }}
-                      >
-                        <div className="text-[11px] font-bold text-accent uppercase tracking-wider flex items-center gap-2">
-                          <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+                      <div className="flex items-center justify-between px-4 py-2.5 bg-slate-50/90 border-b border-slate-100">
+                        <div className="text-[11px] font-bold text-emerald-600 uppercase tracking-wider flex items-center gap-2">
+                          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                           <span>5 Core Pillars + Tech Layer</span>
                         </div>
                         <Link
                           href="/services"
                           onClick={() => setSolutionsOpen(false)}
-                          className="text-xs text-slate-200 hover:text-accent font-medium flex items-center gap-1.5 transition-colors group"
+                          className="text-xs text-blue-600 hover:text-blue-800 font-semibold flex items-center gap-1.5 transition-colors group"
                         >
                           <span>All Solutions Hub</span>
-                          <ArrowRight className="w-3.5 h-3.5 transition-transform duration-150 group-hover:translate-x-0.5 text-accent" />
+                          <ArrowRight className="w-3.5 h-3.5 transition-transform duration-150 group-hover:translate-x-0.5 text-blue-600" />
                         </Link>
                       </div>
 
                       {/* 2-Column Grid */}
-                      <div className="grid grid-cols-2 gap-2 p-3" style={{ backgroundColor: '#1c4486' }}>
+                      <div className="grid grid-cols-2 gap-2 p-3 bg-white">
                         {solutionLinks.map((sol) => {
                           const IconComp = sol.icon;
                           return (
@@ -373,7 +358,7 @@ export default function Header() {
                               key={sol.label}
                               href={sol.href}
                               onClick={() => setSolutionsOpen(false)}
-                              className="flex items-start gap-3 p-2.5 rounded-xl border border-blue-300/20 bg-[#2557a6]/60 hover:border-blue-300/40 hover:bg-[#2d66be] transition-all duration-150 group"
+                              className="flex items-start gap-3 p-2.5 rounded-xl border border-slate-100 bg-slate-50/70 hover:bg-blue-50/80 hover:border-blue-200/80 transition-all duration-150 group shadow-sm"
                             >
                               <div
                                 className={`w-9 h-9 rounded-lg border flex items-center justify-center flex-shrink-0 mt-0.5 transition-transform duration-150 group-hover:scale-105 shadow-sm ${sol.accent}`}
@@ -381,11 +366,11 @@ export default function Header() {
                                 <IconComp className="w-4 h-4" />
                               </div>
                               <div className="flex-1 min-w-0">
-                                <div className="text-xs font-bold text-white group-hover:text-accent transition-colors flex items-center justify-between">
+                                <div className="text-xs font-bold text-slate-900 group-hover:text-blue-600 transition-colors flex items-center justify-between">
                                   <span className="truncate">{sol.label}</span>
-                                  <ArrowRight className="w-3.5 h-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-accent flex-shrink-0 ml-1" />
+                                  <ArrowRight className="w-3.5 h-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-blue-600 flex-shrink-0 ml-1" />
                                 </div>
-                                <div className="text-[11px] text-slate-300 group-hover:text-slate-100 line-clamp-2 mt-0.5 leading-snug">
+                                <div className="text-[11px] text-slate-500 group-hover:text-slate-700 line-clamp-2 mt-0.5 leading-snug">
                                   {sol.desc}
                                 </div>
                               </div>
@@ -395,18 +380,15 @@ export default function Header() {
                       </div>
 
                       {/* Bottom Footer Strip */}
-                      <div
-                        className="px-4 py-2.5 border-t border-blue-300/25 flex items-center justify-between text-xs"
-                        style={{ backgroundColor: '#214f9c' }}
-                      >
-                        <span className="flex items-center gap-2 text-slate-300 font-medium">
-                          <ShieldCheck className="w-4 h-4 text-accent flex-shrink-0" />
+                      <div className="px-4 py-2.5 bg-slate-50 border-t border-slate-100 flex items-center justify-between text-xs">
+                        <span className="flex items-center gap-2 text-slate-600 font-medium">
+                          <ShieldCheck className="w-4 h-4 text-emerald-600 flex-shrink-0" />
                           <span>100% Vetted Human Teams &middot; SLA Backed</span>
                         </span>
                         <Link
                           href="/process"
                           onClick={() => setSolutionsOpen(false)}
-                          className="text-accent hover:text-emerald-300 font-semibold flex items-center gap-1 transition-colors"
+                          className="text-blue-600 hover:text-blue-800 font-semibold flex items-center gap-1 transition-colors"
                         >
                           <span>How We Work →</span>
                         </Link>
@@ -530,10 +512,7 @@ export default function Header() {
               </button>
 
               {mobileAboutOpen && (
-                <div
-                  className="p-2 space-y-1 rounded-2xl my-2 border border-blue-300/30 shadow-inner animate-in fade-in duration-150"
-                  style={{ backgroundColor: '#1c4486' }}
-                >
+                <div className="p-2 space-y-1 rounded-2xl my-2 border border-slate-200/90 bg-white shadow-lg animate-in fade-in duration-150">
                   {aboutDropdownLinks.map((item) => {
                     const IconComp = item.icon;
                     return (
@@ -541,7 +520,7 @@ export default function Header() {
                         key={item.label}
                         href={item.href}
                         onClick={handleNavClick}
-                        className="flex items-center gap-3 py-2.5 px-3 text-sm text-slate-100 hover:text-white hover:bg-[#2557a6] rounded-xl transition-colors border border-transparent hover:border-blue-300/30"
+                        className="flex items-center gap-3 py-2.5 px-3 text-sm rounded-xl transition-colors bg-slate-50/80 hover:bg-blue-50/80 border border-slate-100 hover:border-blue-200"
                       >
                         <div
                           className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 border ${item.accent}`}
@@ -549,10 +528,10 @@ export default function Header() {
                           <IconComp className="w-4 h-4" />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <div className="font-semibold text-white text-xs">{item.label}</div>
-                          <div className="text-[11px] text-slate-200 line-clamp-1">{item.desc}</div>
+                          <div className="font-semibold text-slate-900 text-xs">{item.label}</div>
+                          <div className="text-[11px] text-slate-500 line-clamp-1">{item.desc}</div>
                         </div>
-                        <ArrowRight className="w-3.5 h-3.5 text-slate-300" />
+                        <ArrowRight className="w-3.5 h-3.5 text-blue-600" />
                       </Link>
                     );
                   })}
@@ -585,10 +564,7 @@ export default function Header() {
               </button>
 
               {mobileSolutionsOpen && (
-                <div
-                  className="p-2 space-y-1 rounded-2xl my-2 border border-blue-300/30 shadow-inner animate-in fade-in duration-150"
-                  style={{ backgroundColor: '#1c4486' }}
-                >
+                <div className="p-2 space-y-1 rounded-2xl my-2 border border-slate-200/90 bg-white shadow-lg animate-in fade-in duration-150">
                   {solutionLinks.map((sol) => {
                     const IconComp = sol.icon;
                     return (
@@ -596,7 +572,7 @@ export default function Header() {
                         key={sol.label}
                         href={sol.href}
                         onClick={handleNavClick}
-                        className="flex items-center gap-3 py-2.5 px-3 text-sm text-slate-100 hover:text-white hover:bg-[#2557a6] rounded-xl transition-colors border border-transparent hover:border-blue-300/30"
+                        className="flex items-center gap-3 py-2.5 px-3 text-sm rounded-xl transition-colors bg-slate-50/80 hover:bg-blue-50/80 border border-slate-100 hover:border-blue-200"
                       >
                         <div
                           className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 border ${sol.accent}`}
@@ -604,20 +580,20 @@ export default function Header() {
                           <IconComp className="w-4 h-4" />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <div className="font-semibold text-white text-xs">{sol.label}</div>
-                          <div className="text-[11px] text-slate-400 line-clamp-1">{sol.desc}</div>
+                          <div className="font-semibold text-slate-900 text-xs">{sol.label}</div>
+                          <div className="text-[11px] text-slate-500 line-clamp-1">{sol.desc}</div>
                         </div>
-                        <ArrowRight className="w-3.5 h-3.5 text-slate-500" />
+                        <ArrowRight className="w-3.5 h-3.5 text-blue-600" />
                       </Link>
                     );
                   })}
                   <Link
                     href="/services"
                     onClick={handleNavClick}
-                    className="flex items-center justify-between py-2.5 px-3 text-xs font-semibold text-accent border-t border-slate-800 mt-1 hover:text-emerald-300"
+                    className="flex items-center justify-between py-2.5 px-3 text-xs font-semibold text-blue-600 border-t border-slate-100 mt-1 hover:text-blue-800"
                   >
                     <span>View All Solutions Hub</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
+                    <ArrowRight className="w-3.5 h-3.5 text-blue-600" />
                   </Link>
                 </div>
               )}

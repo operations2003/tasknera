@@ -395,23 +395,8 @@ export default function CTASection() {
                     </a>
 
                     <a
-                      href="mailto:hello@tasknera.com"
-                      className="glass-card rounded-2xl p-3.5 flex items-center gap-3.5 hover:bg-white/10 transition-all group"
-                    >
-                      <div className="w-9 h-9 rounded-xl bg-teal-500/20 border border-teal-500/30 flex items-center justify-center text-teal-400 flex-shrink-0">
-                        <HelpCircle className="w-4 h-4" />
-                      </div>
-                      <div className="overflow-hidden">
-                        <div className="text-white/50 text-[10px] font-bold uppercase tracking-wider">General Enquiries</div>
-                        <div className="text-white text-xs font-bold truncate group-hover:text-teal-400 transition-colors">
-                          hello@tasknera.com
-                        </div>
-                      </div>
-                    </a>
-
-                    <a
                       href="mailto:partners@tasknera.com"
-                      className="glass-card rounded-2xl p-3.5 flex items-center gap-3.5 hover:bg-white/10 transition-all group"
+                      className="glass-card rounded-2xl p-3.5 flex items-center gap-3.5 hover:bg-white/10 transition-all group sm:col-span-2"
                     >
                       <div className="w-9 h-9 rounded-xl bg-purple-500/20 border border-purple-500/30 flex items-center justify-center text-purple-400 flex-shrink-0">
                         <Globe className="w-4 h-4" />

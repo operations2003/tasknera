@@ -132,7 +132,7 @@ export default function TermsPage() {
               </p>
               <div className="bg-primary/5 border border-primary/10 rounded-2xl p-4 text-sm space-y-1">
                 <div className="font-semibold text-foreground">TaskNera Legal &amp; Operations Team</div>
-                <div className="text-muted-foreground">Email: <a href="mailto:hello@tasknera.com" className="text-accent hover:underline">hello@tasknera.com</a> | <a href="mailto:operations@tasknera.com" className="text-accent hover:underline">operations@tasknera.com</a></div>
+                <div className="text-muted-foreground">Email: <a href="mailto:operations@tasknera.com" className="text-accent hover:underline">operations@tasknera.com</a></div>
                 <div className="text-muted-foreground">Address: D-57 F1 Dilshad Colony, Dilshad Garden, Delhi - 110095, India</div>
               </div>
             </section>
