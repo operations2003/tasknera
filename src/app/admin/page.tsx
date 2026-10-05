@@ -415,7 +415,9 @@ function InternalNotes({ submissionId, userEmail }: { submissionId: string; user
         .from('prospect_notes')
         .update({ is_completed: updated.is_completed })
         .eq('id', note.id);
-    } catch {}
+    } catch {
+      // Ignore Supabase sync error
+    }
   };
 
   const deleteNote = async (id: string) => {
@@ -423,7 +425,9 @@ function InternalNotes({ submissionId, userEmail }: { submissionId: string; user
     setNotes((prev) => prev.filter((n) => n.id !== id));
     try {
       await supabase.from('prospect_notes').delete().eq('id', id);
-    } catch {}
+    } catch {
+      // Ignore Supabase sync error
+    }
   };
 
   const pending = notes.filter((n) => n.is_action_item && !n.is_completed);

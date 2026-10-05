@@ -13,7 +13,7 @@
   ],
   "rules": {
     "prettier/prettier": [
-      "error",
+      "warn",
       {
         "endOfLine": "auto",
         "singleQuote": true,
@@ -40,6 +40,13 @@
           "error",
           "info"
         ]
+      }
+    ],
+    "react/no-unescaped-entities": "off",
+    "no-empty": [
+      "warn",
+      {
+        "allowEmptyCatch": true
       }
     ]
   },

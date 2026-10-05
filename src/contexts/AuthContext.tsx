@@ -29,7 +29,9 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         setUser(u);
         setSession({ user: u });
       }
-    } catch {}
+    } catch {
+      // Ignore local storage read errors
+    }
 
     // Get Supabase session
     supabase.auth
@@ -98,7 +100,9 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         };
         try {
           localStorage.setItem('tasknera_admin_user', JSON.stringify(mockUser));
-        } catch {}
+        } catch {
+          // Ignore local storage write errors
+        }
         setUser(mockUser);
         setSession({ user: mockUser });
         return { user: mockUser, session: { user: mockUser } };
@@ -111,12 +115,16 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const signOut = async () => {
     try {
       localStorage.removeItem('tasknera_admin_user');
-    } catch {}
+    } catch {
+      // Ignore local storage remove errors
+    }
     setUser(null);
     setSession(null);
     try {
       await supabase.auth.signOut();
-    } catch {}
+    } catch {
+      // Ignore Supabase signout network errors
+    }
   };
 
   // Get Current User

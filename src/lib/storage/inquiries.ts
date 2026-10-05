@@ -142,7 +142,9 @@ export function clearFormDraft(): void {
   if (!isBrowser()) return;
   try {
     localStorage.removeItem(STORAGE_KEYS.FORM_DRAFT);
-  } catch {}
+  } catch {
+    // Ignore local storage error
+  }
 }
 
 // ─── Submission Management ──────────────────────────────────────────────────
@@ -204,7 +206,9 @@ export function clearLastSubmission(): void {
   try {
     localStorage.removeItem(STORAGE_KEYS.LAST_SUBMISSION);
     window.dispatchEvent(new CustomEvent('tasknera_submission_cleared'));
-  } catch {}
+  } catch {
+    // Ignore local storage error
+  }
 }
 
 export function updateStoredSubmissionStatus(id: string, newStatus: string): void {
@@ -216,7 +220,9 @@ export function updateStoredSubmissionStatus(id: string, newStatus: string): voi
     window.dispatchEvent(
       new CustomEvent('tasknera_submission_updated', { detail: { id, newStatus } })
     );
-  } catch {}
+  } catch {
+    // Ignore local storage error
+  }
 }
 
 // ─── Activities Management ──────────────────────────────────────────────────
@@ -241,7 +247,9 @@ export function saveStoredActivity(activity: StoredActivity): void {
       `${STORAGE_KEYS.ACTIVITIES_PREFIX}${activity.submission_id}`,
       JSON.stringify(updated)
     );
-  } catch {}
+  } catch {
+    // Ignore local storage error
+  }
 }
 
 // ─── Notes Management ───────────────────────────────────────────────────────
@@ -266,7 +274,9 @@ export function saveStoredNote(note: StoredProspectNote): void {
       `${STORAGE_KEYS.NOTES_PREFIX}${note.submission_id}`,
       JSON.stringify(updated)
     );
-  } catch {}
+  } catch {
+    // Ignore local storage error
+  }
 }
 
 export function updateStoredNote(note: StoredProspectNote): void {
@@ -282,5 +292,7 @@ export function deleteStoredNote(submissionId: string, noteId: string): void {
       `${STORAGE_KEYS.NOTES_PREFIX}${submissionId}`,
       JSON.stringify(updated)
     );
-  } catch {}
+  } catch {
+    // Ignore local storage error
+  }
 }
