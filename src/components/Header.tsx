@@ -84,6 +84,13 @@ const aboutDropdownLinks = [
     icon: Globe2,
     accent: 'bg-blue-50 text-blue-600 border-blue-200/80',
   },
+  {
+    label: 'Careers & Culture',
+    href: '/careers',
+    desc: 'Explore open roles, our culture, and join our global operations team',
+    icon: Users,
+    accent: 'bg-teal-50 text-teal-600 border-teal-200/80',
+  },
 ];
 
 const mainNavLinks = [
@@ -92,6 +99,7 @@ const mainNavLinks = [
   { label: 'How We Work', href: '/process' },
   { label: 'Industries', href: '/industries' },
   { label: 'Pricing', href: '/pricing' },
+  { label: 'Careers', href: '/careers' },
   { label: 'Workplace Policies', href: '/workplace-policies' },
   { label: 'Contact', href: '/contact' },
 ];
@@ -409,6 +417,16 @@ export default function Header() {
                 Pricing
               </Link>
               <Link
+                href="/careers"
+                className={`px-2.5 xl:px-3 py-1.5 xl:py-2 text-xs xl:text-sm font-medium transition-all duration-200 rounded-lg ${
+                  pathname === '/careers'
+                    ? 'text-white bg-white/15 font-semibold shadow-inner'
+                    : 'text-slate-300 hover:text-white hover:bg-white/10'
+                }`}
+              >
+                Careers
+              </Link>
+              <Link
                 href="/workplace-policies"
                 className={`px-2.5 xl:px-3 py-1.5 xl:py-2 text-xs xl:text-sm font-medium transition-all duration-200 rounded-lg ${
                   pathname === '/workplace-policies'
@@ -610,6 +628,24 @@ export default function Header() {
               }`}
             >
               <span>Engagement &amp; Pricing</span>
+              <ArrowRight className="w-4 h-4 opacity-50" />
+            </Link>
+
+            <Link
+              href="/careers"
+              onClick={handleNavClick}
+              className={`text-base font-semibold px-4 py-3 rounded-xl transition-colors flex items-center justify-between ${
+                pathname === '/careers'
+                  ? 'bg-white/15 text-white'
+                  : 'text-slate-200 hover:text-white hover:bg-white/5'
+              }`}
+            >
+              <div className="flex items-center gap-2">
+                <span>Careers</span>
+                <span className="text-[10px] uppercase font-bold text-accent bg-accent/15 px-2 py-0.5 rounded-md">
+                  We&apos;re Hiring
+                </span>
+              </div>
               <ArrowRight className="w-4 h-4 opacity-50" />
             </Link>
 

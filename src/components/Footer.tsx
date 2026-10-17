@@ -18,6 +18,7 @@ const companyLinks = [
   { label: 'How We Work (Process)', href: '/process' },
   { label: '12+ Industry Areas', href: '/industries' },
   { label: 'Engagement & Pricing', href: '/pricing' },
+  { label: 'Careers & Hiring', href: '/careers' },
   { label: 'Workplace Policies & Governance', href: '/workplace-policies' },
   { label: 'Contact Us', href: '/contact' },
 ];
