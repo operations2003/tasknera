@@ -36,134 +36,7 @@ interface JobPosition {
   requirements: string[];
 }
 
-const openPositions: JobPosition[] = [
-  {
-    id: 'recruiter-tech',
-    title: 'Senior Talent Acquisition Specialist',
-    department: 'Talent & Recruitment Desk',
-    category: 'talent',
-    location: 'Remote (India / Global)',
-    type: 'Full-Time',
-    experience: '3–6 Years',
-    summary:
-      'Lead end-to-end sourcing and full-lifecycle recruiting across high-growth Tech, BFSI, and SaaS mandates for US, UK, and APAC clients.',
-    responsibilities: [
-      'Manage full-cycle search from requirement intake to offer negotiation and onboarding.',
-      'Leverage active sourcing channels, talent pools, and HireIQ™ candidate matching tools.',
-      'Maintain submittal-to-hire ratios within strict client SLA turnaround times (48–72 hours).',
-    ],
-    requirements: [
-      'Proven track record in agency or in-house specialist recruitment.',
-      'Exceptional stakeholder communication and candidate assessment skills.',
-      'Experience with cross-border candidate management is a strong plus.',
-    ],
-  },
-  {
-    id: 'hr-ops-spec',
-    title: 'HR Operations & Compliance Specialist',
-    department: 'People Operations',
-    category: 'hr',
-    location: 'Delhi NCR / Hybrid',
-    type: 'Full-Time',
-    experience: '2–5 Years',
-    summary:
-      'Drive employee onboarding, statutory documentation, payroll inputs, and policy administration for our distributed global workforce.',
-    responsibilities: [
-      'Administer end-to-end employee lifecycle workflows: offer letters, KYC, background verification, and exit clearances.',
-      'Ensure 100% adherence to statutory labour laws, POSH policies, and GDPR/data privacy standards.',
-      'Support client HR pods with tailored attendance and performance metrics reports.',
-    ],
-    requirements: [
-      'Strong grasp of statutory compliance, payroll cycles, and labour frameworks.',
-      'Meticulous attention to detail and confidential candidate/employee record keeping.',
-      'Proficiency in HRMS platforms, Excel, and structured workforce documentation.',
-    ],
-  },
-  {
-    id: 'exec-va',
-    title: 'Executive Virtual Assistant (Dedicated Pod)',
-    department: 'Virtual Assistant Services',
-    category: 'va',
-    location: 'Remote (EST / GMT / IST overlap)',
-    type: 'Full-Time Remote',
-    experience: '2–4 Years',
-    summary:
-      'Provide dedicated operational leverage to C-suite executives, founders, and scaling teams across calendar, inbox, research, and project tasks.',
-    responsibilities: [
-      'Manage complex multi-timezone calendar scheduling, travel itineraries, and email triage.',
-      'Execute desktop market research, presentation prep, and CRM data management.',
-      'Act as the proactive gatekeeper and operational right hand for executive leadership.',
-    ],
-    requirements: [
-      'Flawless written and verbal English communication.',
-      'Demonstrated experience with Google Workspace, Slack, Notion, Asana, and Hubspot.',
-      'Exceptional proactive anticipation, time management, and discretion under NDA.',
-    ],
-  },
-  {
-    id: 'vcs-lead',
-    title: 'Virtual Customer Support Lead (Omnichannel)',
-    department: 'Customer Support Desk',
-    category: 'support',
-    location: 'Remote (Rotational / Multi-Timezone)',
-    type: 'Full-Time',
-    experience: '3–5 Years',
-    summary:
-      'Deliver world-class omnichannel customer care (email, live chat, ticketing, and voice) with empathy, resolution speed, and quality benchmarks.',
-    responsibilities: [
-      'Handle Tier-1 and Tier-2 customer enquiries, issue escalation, and ticket resolution in Zendesk/Freshdesk.',
-      'Maintain CSAT > 92% and First Response Time SLAs according to client service agreements.',
-      'Draft and refine knowledge base articles, standard operating macros, and FAQ documentation.',
-    ],
-    requirements: [
-      'Prior background in omnichannel customer success or helpdesk operations for SaaS or eCommerce.',
-      'High emotional intelligence, problem-solving speed, and polite conflict resolution skills.',
-      'Strong typing speed (>55 WPM) and comfortable in fast-paced ticket queues.',
-    ],
-  },
-  {
-    id: 'client-ops-mgr',
-    title: 'Client Operations & Account Manager',
-    department: 'Business Operations',
-    category: 'operations',
-    location: 'Hybrid / Remote',
-    type: 'Full-Time',
-    experience: '4–7 Years',
-    summary:
-      'Partner closely with enterprise and startup clients to ensure SLA compliance, manage dedicated pod renewals, and scale service deliveries.',
-    responsibilities: [
-      'Conduct regular Weekly Syncs and Monthly Business Reviews (MBR) with client HR & Operations leaders.',
-      'Monitor pod productivity, resource allocation, and talent replacement requests.',
-      'Identify opportunities to expand service offerings into recruitment, HRMS, and business support.',
-    ],
-    requirements: [
-      'Experience in BPO, RPO, HR consulting, or professional services account management.',
-      'Strong analytical capabilities and executive presentation flair.',
-      'Client-first empathy paired with structured delivery governance.',
-    ],
-  },
-  {
-    id: 'general-talent-pool',
-    title: 'General Candidate Network / Open Application',
-    department: 'Global Talent Bench',
-    category: 'talent',
-    location: 'Global Remote',
-    type: 'Full-Time / Contract Pods',
-    experience: 'All Levels',
-    summary:
-      'Don’t see your exact role listed? We are always seeking high-caliber professionals for ongoing and upcoming client placements across 12+ industries.',
-    responsibilities: [
-      'Join TaskNera’s vetted talent bench for rapid deployment into client embedded pods.',
-      'Complete proprietary skills verification and interview readiness benchmarks.',
-      'Be matched with high-impact remote or hybrid opportunities tailored to your career trajectory.',
-    ],
-    requirements: [
-      'Passion for operational excellence, professional integrity, and continuous learning.',
-      'Clear domain competence in HR, Finance, Sourcing, Operations, Tech, or Support.',
-      'Strong alignment with TaskNera’s core values of transparency and client impact.',
-    ],
-  },
-];
+const openPositions: JobPosition[] = [];
 
 const perks = [
   {
@@ -243,7 +116,7 @@ export default function CareersPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-1.5 mb-6 text-xs font-semibold text-[#E5BDB4] shadow-inner">
               <span className="w-2 h-2 rounded-full bg-[#E5BDB4] animate-pulse" />
-              <span>We&apos;re Hiring · Global Remote &amp; Hybrid Positions</span>
+              <span>Global Remote &amp; Hybrid Talent Network</span>
             </div>
 
             <h1 className="font-display font-bold text-3xl sm:text-5xl lg:text-6xl text-[#F8F4ED] tracking-tight max-w-4xl mx-auto leading-tight">
@@ -259,17 +132,17 @@ export default function CareersPage() {
 
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               <a
-                href="#open-roles"
+                href="#apply-form-section"
                 className="bg-[#FAF7F2] text-[#704A4B] font-bold px-6 py-3 rounded-full hover:bg-[#F3ECE4] active:scale-95 transition-all shadow-lg flex items-center gap-2 text-sm"
               >
-                <span>View Open Positions</span>
+                <span>Submit Open Application</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a
                 href="mailto:careers@tasknera.com"
-                className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-medium px-6 py-3 rounded-full transition-all flex items-center gap-2 backdrop-blur-sm"
+                className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-medium px-6 py-3 rounded-full transition-all flex items-center gap-2 backdrop-blur-sm text-sm"
               >
-                <Mail className="w-4 h-4 text-accent" />
+                <Mail className="w-4 h-4 text-[#E5BDB4]" />
                 <span>Email careers@tasknera.com</span>
               </a>
             </div>
@@ -277,7 +150,7 @@ export default function CareersPage() {
             {/* Fast Stats Strip */}
             <div className="mt-14 pt-10 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto text-left">
               <div className="bg-white/5 border border-white/10 rounded-2xl p-4 backdrop-blur-sm">
-                <div className="text-2xl sm:text-3xl font-display font-bold text-accent">100%</div>
+                <div className="text-2xl sm:text-3xl font-display font-bold text-[#E5BDB4]">100%</div>
                 <div className="text-xs text-slate-300 mt-1 font-medium">Vetted Human Teams</div>
               </div>
               <div className="bg-white/5 border border-white/10 rounded-2xl p-4 backdrop-blur-sm">
@@ -285,7 +158,7 @@ export default function CareersPage() {
                 <div className="text-xs text-slate-300 mt-1 font-medium">Industry Coverage Areas</div>
               </div>
               <div className="bg-white/5 border border-white/10 rounded-2xl p-4 backdrop-blur-sm">
-                <div className="text-2xl sm:text-3xl font-display font-bold text-accent">24/7</div>
+                <div className="text-2xl sm:text-3xl font-display font-bold text-[#E5BDB4]">24/7</div>
                 <div className="text-xs text-slate-300 mt-1 font-medium">Multi-Timezone Operations</div>
               </div>
               <div className="bg-white/5 border border-white/10 rounded-2xl p-4 backdrop-blur-sm">
@@ -300,7 +173,7 @@ export default function CareersPage() {
         <section className="py-20 sm:py-24 bg-white relative">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <div className="text-xs uppercase font-bold text-blue-600 tracking-wider mb-2">
+              <div className="text-xs uppercase font-bold text-[#704A4B] tracking-wider mb-2">
                 Why Choose TaskNera
               </div>
               <h2 className="font-display font-bold text-2xl sm:text-4xl text-slate-900 tracking-tight">
@@ -317,9 +190,9 @@ export default function CareersPage() {
                 return (
                   <div
                     key={perk.title}
-                    className="p-6 rounded-2xl border border-slate-200/90 bg-slate-50/60 hover:bg-white hover:border-blue-300/80 hover:shadow-xl hover:shadow-blue-900/5 transition-all duration-200 group"
+                    className="p-6 rounded-2xl border border-slate-200/90 bg-slate-50/60 hover:bg-white hover:border-[#704A4B]/40 hover:shadow-xl hover:shadow-[#704A4B]/5 transition-all duration-200 group"
                   >
-                    <div className="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:bg-accent/20 group-hover:text-emerald-700 transition-all">
+                    <div className="w-12 h-12 rounded-xl bg-[#F3ECE4] text-[#704A4B] flex items-center justify-center mb-5 group-hover:scale-110 group-hover:bg-[#E5BDB4]/40 group-hover:text-[#593A3B] transition-all">
                       <Icon className="w-6 h-6" />
                     </div>
                     <h3 className="font-bold text-lg text-slate-900 mb-2">{perk.title}</h3>
@@ -337,116 +210,141 @@ export default function CareersPage() {
             
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
               <div>
-                <div className="text-xs uppercase font-bold text-blue-600 tracking-wider mb-2">
-                  Current Openings
+                <div className="text-xs uppercase font-bold text-[#704A4B] tracking-wider mb-2">
+                  Current Opportunities
                 </div>
                 <h2 className="font-display font-bold text-2xl sm:text-4xl text-slate-900 tracking-tight">
-                  Explore Open Opportunities
+                  Explore Open Positions
                 </h2>
                 <p className="mt-2 text-slate-600 text-sm sm:text-base max-w-xl">
-                  Find the ideal role across our talent pods, HR delivery centers, and virtual support desks.
+                  {openPositions.length > 0
+                    ? 'Find the ideal role across our talent pods, HR delivery centers, and virtual support desks.'
+                    : 'We are currently accepting candidate profiles and spontaneous applications across all disciplines.'}
                 </p>
               </div>
 
               {/* Filter Tabs */}
-              <div className="flex flex-wrap gap-2">
-                {[
-                  { id: 'all', label: 'All Openings' },
-                  { id: 'talent', label: 'Recruitment & Talent' },
-                  { id: 'hr', label: 'HR Operations' },
-                  { id: 'va', label: 'Virtual Assistant' },
-                  { id: 'support', label: 'Customer Support' },
-                  { id: 'operations', label: 'Operations & Mgt' },
-                ].map((tab) => (
-                  <button
-                    key={tab.id}
-                    onClick={() => setSelectedCategory(tab.id)}
-                    className={`px-4 py-2 text-xs sm:text-sm font-semibold rounded-xl transition-all ${
-                      selectedCategory === tab.id
-                        ? 'bg-[#1b4388] text-white shadow-md'
-                        : 'bg-white border border-slate-200 text-slate-700 hover:bg-slate-100'
-                    }`}
+              {openPositions.length > 0 && (
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    { id: 'all', label: 'All Openings' },
+                    { id: 'talent', label: 'Recruitment & Talent' },
+                    { id: 'hr', label: 'HR Operations' },
+                    { id: 'va', label: 'Virtual Assistant' },
+                    { id: 'support', label: 'Customer Support' },
+                    { id: 'operations', label: 'Operations & Mgt' },
+                  ].map((tab) => (
+                    <button
+                      key={tab.id}
+                      onClick={() => setSelectedCategory(tab.id)}
+                      className={`px-4 py-2 text-xs sm:text-sm font-semibold rounded-xl transition-all ${
+                        selectedCategory === tab.id
+                          ? 'bg-[#704A4B] text-white shadow-md'
+                          : 'bg-white border border-slate-200 text-slate-700 hover:bg-slate-100'
+                      }`}
+                    >
+                      {tab.label}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Job Grid / Empty State */}
+            {filteredPositions.length > 0 ? (
+              <div className="space-y-4">
+                {filteredPositions.map((job) => (
+                  <div
+                    key={job.id}
+                    className="p-6 sm:p-7 rounded-2xl border border-slate-200/90 bg-white shadow-sm hover:shadow-md hover:border-[#704A4B]/40 transition-all flex flex-col lg:flex-row lg:items-center justify-between gap-6"
                   >
-                    {tab.label}
-                  </button>
+                    <div className="space-y-3 flex-1">
+                      <div className="flex flex-wrap items-center gap-2">
+                        <span className="text-xs font-bold uppercase tracking-wider text-[#704A4B] bg-[#F3ECE4] border border-[#DED3C7] px-2.5 py-0.5 rounded-md">
+                          {job.department}
+                        </span>
+                        <span className="text-xs font-medium text-slate-600 bg-slate-100 px-2.5 py-0.5 rounded-md flex items-center gap-1">
+                          <MapPin className="w-3 h-3 text-slate-400" />
+                          {job.location}
+                        </span>
+                        <span className="text-xs font-medium text-emerald-700 bg-emerald-50 border border-emerald-200/70 px-2.5 py-0.5 rounded-md flex items-center gap-1">
+                          <Clock className="w-3 h-3 text-emerald-600" />
+                          {job.type}
+                        </span>
+                        <span className="text-xs font-medium text-purple-700 bg-purple-50 px-2.5 py-0.5 rounded-md">
+                          Exp: {job.experience}
+                        </span>
+                      </div>
+
+                      <h3 className="text-lg sm:text-xl font-bold text-slate-900">{job.title}</h3>
+                      <p className="text-sm text-slate-600 leading-relaxed max-w-3xl">
+                        {job.summary}
+                      </p>
+
+                      <div className="pt-2 flex flex-wrap gap-x-6 gap-y-2 text-xs text-slate-500">
+                        <span className="flex items-center gap-1.5">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                          Structured compensation &amp; bonuses
+                        </span>
+                        <span className="flex items-center gap-1.5">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                          Direct mentorship &amp; training
+                        </span>
+                        <span className="flex items-center gap-1.5">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                          Fast 1–2 business day application response
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-3 lg:self-center flex-shrink-0">
+                      <button
+                        onClick={() => handleApplyClick(job)}
+                        className="w-full sm:w-auto bg-[#704A4B] hover:bg-[#593A3B] text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition-all shadow-sm flex items-center justify-center gap-2"
+                      >
+                        <span>Apply Now</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </button>
+                      <a
+                        href={`mailto:careers@tasknera.com?subject=Application for ${encodeURIComponent(
+                          job.title
+                        )} [TaskNera Careers]`}
+                        className="p-2.5 rounded-xl border border-slate-200 text-slate-600 hover:text-[#704A4B] hover:bg-[#F3ECE4] transition-colors"
+                        title="Apply directly via Email"
+                        aria-label="Apply via Email"
+                      >
+                        <Mail className="w-4 h-4" />
+                      </a>
+                    </div>
+                  </div>
                 ))}
               </div>
-            </div>
-
-            {/* Job Grid */}
-            <div className="space-y-4">
-              {filteredPositions.map((job) => (
-                <div
-                  key={job.id}
-                  className="p-6 sm:p-7 rounded-2xl border border-slate-200/90 bg-white shadow-sm hover:shadow-md hover:border-blue-300 transition-all flex flex-col lg:flex-row lg:items-center justify-between gap-6"
-                >
-                  <div className="space-y-3 flex-1">
-                    <div className="flex flex-wrap items-center gap-2">
-                      <span className="text-xs font-bold uppercase tracking-wider text-blue-700 bg-blue-50 border border-blue-200/80 px-2.5 py-0.5 rounded-md">
-                        {job.department}
-                      </span>
-                      <span className="text-xs font-medium text-slate-600 bg-slate-100 px-2.5 py-0.5 rounded-md flex items-center gap-1">
-                        <MapPin className="w-3 h-3 text-slate-400" />
-                        {job.location}
-                      </span>
-                      <span className="text-xs font-medium text-emerald-700 bg-emerald-50 border border-emerald-200/70 px-2.5 py-0.5 rounded-md flex items-center gap-1">
-                        <Clock className="w-3 h-3 text-emerald-600" />
-                        {job.type}
-                      </span>
-                      <span className="text-xs font-medium text-purple-700 bg-purple-50 px-2.5 py-0.5 rounded-md">
-                        Exp: {job.experience}
-                      </span>
-                    </div>
-
-                    <h3 className="text-lg sm:text-xl font-bold text-slate-900">{job.title}</h3>
-                    <p className="text-sm text-slate-600 leading-relaxed max-w-3xl">
-                      {job.summary}
-                    </p>
-
-                    <div className="pt-2 flex flex-wrap gap-x-6 gap-y-2 text-xs text-slate-500">
-                      <span className="flex items-center gap-1.5">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-accent" />
-                        Structured compensation &amp; bonuses
-                      </span>
-                      <span className="flex items-center gap-1.5">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-accent" />
-                        Direct mentorship &amp; training
-                      </span>
-                      <span className="flex items-center gap-1.5">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-accent" />
-                        Fast 1–2 business day application response
-                      </span>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-3 lg:self-center flex-shrink-0">
-                    <button
-                      onClick={() => handleApplyClick(job)}
-                      className="w-full sm:w-auto bg-[#1b4388] hover:bg-[#15346d] text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition-all shadow-sm flex items-center justify-center gap-2"
-                    >
-                      <span>Apply Now</span>
-                      <ArrowRight className="w-4 h-4" />
-                    </button>
-                    <a
-                      href={`mailto:careers@tasknera.com?subject=Application for ${encodeURIComponent(
-                        job.title
-                      )} [TaskNera Careers]`}
-                      className="p-2.5 rounded-xl border border-slate-200 text-slate-600 hover:text-blue-700 hover:bg-blue-50 transition-colors"
-                      title="Apply directly via Email"
-                      aria-label="Apply via Email"
-                    >
-                      <Mail className="w-4 h-4" />
-                    </a>
-                  </div>
+            ) : (
+              <div className="bg-white border border-[#DED3C7] rounded-3xl p-8 sm:p-12 text-center shadow-sm">
+                <div className="w-16 h-16 rounded-2xl bg-[#F3ECE4] text-[#704A4B] flex items-center justify-center mx-auto mb-4">
+                  <Briefcase className="w-8 h-8" />
                 </div>
-              ))}
-            </div>
+                <h3 className="text-xl sm:text-2xl font-display font-bold text-slate-900 mb-2">
+                  No Active Openings at This Moment
+                </h3>
+                <p className="text-sm text-slate-600 max-w-xl mx-auto leading-relaxed mb-6">
+                  We do not currently have published job openings. However, we are constantly expanding our global delivery pods across Talent Acquisition, HR Operations, Virtual Support, and Business Operations. Submit your details below to be considered as soon as matching opportunities open up.
+                </p>
+                <a
+                  href="#apply-form-section"
+                  className="inline-flex items-center gap-2 bg-[#704A4B] hover:bg-[#593A3B] text-white text-sm font-semibold px-6 py-3 rounded-xl transition-all shadow-sm"
+                >
+                  <span>Submit General Application</span>
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+              </div>
+            )}
 
             {/* ── Quick Application / Submission Box ── */}
             <div id="apply-form-section" className="mt-16 bg-white border border-slate-200 rounded-3xl p-8 sm:p-12 shadow-xl shadow-slate-200/50">
               <div className="max-w-3xl mx-auto">
                 <div className="text-center mb-8">
-                  <div className="inline-flex items-center gap-2 bg-accent/15 text-emerald-800 border border-accent/30 rounded-full px-3.5 py-1 text-xs font-bold uppercase tracking-wider mb-3">
+                  <div className="inline-flex items-center gap-2 bg-[#F3ECE4] text-[#704A4B] border border-[#DED3C7] rounded-full px-3.5 py-1 text-xs font-bold uppercase tracking-wider mb-3">
                     <Sparkles className="w-3.5 h-3.5" />
                     <span>Candidate Fast Track</span>
                   </div>
@@ -477,7 +375,7 @@ export default function CareersPage() {
                         href={`mailto:careers@tasknera.com?subject=Resume Attachment: ${encodeURIComponent(
                           candidateName
                         )} - ${encodeURIComponent(selectedJob ? selectedJob.title : 'General Application')}`}
-                        className="bg-emerald-700 hover:bg-emerald-800 text-white font-semibold text-xs px-4 py-2.5 rounded-xl transition-all flex items-center gap-2"
+                        className="bg-[#704A4B] hover:bg-[#593A3B] text-white font-semibold text-xs px-4 py-2.5 rounded-xl transition-all flex items-center gap-2"
                       >
                         <Mail className="w-4 h-4" />
                         <span>Send Resume Attachment via Email</span>
@@ -505,8 +403,8 @@ export default function CareersPage() {
                           required
                           value={candidateName}
                           onChange={(e) => setCandidateName(e.target.value)}
-                          placeholder="e.g. John Doe"
-                          className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-sm outline-none transition-all"
+                          placeholder="Full name"
+                          className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:border-[#704A4B] focus:ring-2 focus:ring-[#704A4B]/20 text-sm outline-none transition-all"
                         />
                       </div>
                       <div>
@@ -518,8 +416,8 @@ export default function CareersPage() {
                           required
                           value={candidateEmail}
                           onChange={(e) => setCandidateEmail(e.target.value)}
-                          placeholder="john@example.com"
-                          className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-sm outline-none transition-all"
+                          placeholder="Email address"
+                          className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:border-[#704A4B] focus:ring-2 focus:ring-[#704A4B]/20 text-sm outline-none transition-all"
                         />
                       </div>
                     </div>
@@ -533,8 +431,8 @@ export default function CareersPage() {
                           type="tel"
                           value={candidatePhone}
                           onChange={(e) => setCandidatePhone(e.target.value)}
-                          placeholder="+91 / +1 / +44 ..."
-                          className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-sm outline-none transition-all"
+                          placeholder="Phone / WhatsApp number (with country code)"
+                          className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:border-[#704A4B] focus:ring-2 focus:ring-[#704A4B]/20 text-sm outline-none transition-all"
                         />
                       </div>
                       <div>
@@ -545,8 +443,8 @@ export default function CareersPage() {
                           type="url"
                           value={candidateLinkedIn}
                           onChange={(e) => setCandidateLinkedIn(e.target.value)}
-                          placeholder="https://linkedin.com/in/..."
-                          className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-sm outline-none transition-all"
+                          placeholder="LinkedIn or portfolio URL"
+                          className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:border-[#704A4B] focus:ring-2 focus:ring-[#704A4B]/20 text-sm outline-none transition-all"
                         />
                       </div>
                     </div>
@@ -558,7 +456,7 @@ export default function CareersPage() {
                       <select
                         value={candidateExperience}
                         onChange={(e) => setCandidateExperience(e.target.value)}
-                        className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-sm outline-none transition-all bg-white"
+                        className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:border-[#704A4B] focus:ring-2 focus:ring-[#704A4B]/20 text-sm outline-none transition-all bg-white"
                       >
                         <option value="">Select experience bracket...</option>
                         <option value="0-1">0–1 Year (Entry Level / Fresher)</option>
@@ -578,14 +476,14 @@ export default function CareersPage() {
                         value={candidateNotes}
                         onChange={(e) => setCandidateNotes(e.target.value)}
                         placeholder="Briefly describe your core strengths, preferred work arrangement, and current availability..."
-                        className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-sm outline-none transition-all"
+                        className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:border-[#704A4B] focus:ring-2 focus:ring-[#704A4B]/20 text-sm outline-none transition-all"
                       />
                     </div>
 
                     <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
                       <p className="text-xs text-slate-500">
                         Protected under our{' '}
-                        <Link href="/candidate-privacy" className="text-blue-600 underline font-medium">
+                        <Link href="/candidate-privacy" className="text-[#704A4B] underline font-medium">
                           Candidate Privacy Notice
                         </Link>
                         . No spam.
@@ -594,7 +492,7 @@ export default function CareersPage() {
                       <div className="flex items-center gap-3 w-full sm:w-auto">
                         <button
                           type="submit"
-                          className="w-full sm:w-auto bg-accent text-accent-foreground font-semibold px-6 py-3 rounded-xl hover:brightness-110 active:scale-95 transition-all shadow-md shadow-accent/20 flex items-center justify-center gap-2"
+                          className="w-full sm:w-auto bg-[#704A4B] hover:bg-[#593A3B] text-white font-semibold px-6 py-3 rounded-xl active:scale-95 transition-all shadow-md flex items-center justify-center gap-2"
                         >
                           <Send className="w-4 h-4" />
                           <span>Submit Profile</span>
