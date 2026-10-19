@@ -2,7 +2,6 @@ import { imageHosts } from './image-hosts.config.mjs';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'standalone',
   productionBrowserSourceMaps: true,
   distDir: process.env.DIST_DIR || '.next',
   typescript: {
@@ -14,7 +13,6 @@ const nextConfig = {
   images: {
     remotePatterns: imageHosts,
     minimumCacheTTL: 60,
-    qualities: [75, 85, 100],
   },
   webpack(
     config,
@@ -23,13 +21,18 @@ const nextConfig = {
     }
   ) {
     if (dev) {
-      config.module.rules.push({
-        test: /\.(jsx|tsx)$/,
-        exclude: [/node_modules/],
-        use: [{
-          loader: '@dhiwise/component-tagger/nextLoader',
-        }],
-      });
+      try {
+        require.resolve('@dhiwise/component-tagger/nextLoader');
+        config.module.rules.push({
+          test: /\.(jsx|tsx)$/,
+          exclude: [/node_modules/],
+          use: [{
+            loader: '@dhiwise/component-tagger/nextLoader',
+          }],
+        });
+      } catch (_e) {
+        // component-tagger not available, skip
+      }
       const ignoredPaths = (process.env.WATCH_IGNORED_PATHS || '')
         .split(',')
         .map((p) => p.trim())
