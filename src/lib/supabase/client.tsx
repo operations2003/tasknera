@@ -1,5 +1,8 @@
 import { createBrowserClient } from '@supabase/ssr';
 
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://placeholder.supabase.co';
+const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'placeholder-anon-key';
+
 const PFX = 'sb_';
 
 const canUseCookies = (() => {
@@ -89,8 +92,8 @@ if (typeof window !== 'undefined' && !(window as unknown as Record<string, unkno
 
 export function createClient() {
   return createBrowserClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    SUPABASE_URL,
+    SUPABASE_ANON_KEY,
     {
       cookies: {
         getAll: () => (canUseCookies() ? fromCookies() : fromStorage()),
