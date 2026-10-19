@@ -8,10 +8,8 @@ import {
   Briefcase,
   Headphones,
   Sparkles,
-  Check,
   ArrowRight,
   ShieldCheck,
-  ExternalLink,
 } from 'lucide-react';
 
 const pillars = [
@@ -21,9 +19,6 @@ const pillars = [
     label: 'HR & People Operations',
     tagline: 'Your extended, high-compliance HR team.',
     href: '/hr-workforce-solutions',
-    color: 'text-[#704A4B]',
-    bg: 'bg-[#E5BDB4]/25',
-    border: 'border-[#DED3C7]',
     services: [
       'HR Operations & Governance',
       'HRMS & HR Portal Implementation',
@@ -41,9 +36,6 @@ const pillars = [
     label: 'Talent & Recruitment',
     tagline: 'Specialized hiring for every stage of organizational growth.',
     href: '/talent-acquisition',
-    color: 'text-[#754E4E]',
-    bg: 'bg-[#8E7D6E]/25',
-    border: 'border-[#DED3C7]',
     services: [
       'Specialized Permanent Hiring',
       'Contract & Temporary Talent Staffing',
@@ -61,9 +53,6 @@ const pillars = [
     label: 'Workforce Solutions',
     tagline: 'Flexible workforce architectures built dynamically around demand.',
     href: '/hr-workforce-solutions#workforce',
-    color: 'text-[#704A4B]',
-    bg: 'bg-[#E5BDB4]/25',
-    border: 'border-[#DED3C7]',
     services: [
       'Contract Staffing & Deployed Pods',
       'Seasonal & Temporary Workforce Staffing',
@@ -80,9 +69,6 @@ const pillars = [
     label: 'Virtual Assistant & Business Support',
     tagline: 'Reliable operational execution for your everyday workflows.',
     href: '/virtual-assistant-services',
-    color: 'text-[#754E4E]',
-    bg: 'bg-[#8E7D6E]/25',
-    border: 'border-[#DED3C7]',
     badge: '100% Vetted Human Remote Pros',
     services: [
       'Executive & C-Suite Calendar Assistance',
@@ -100,9 +86,6 @@ const pillars = [
     label: 'Virtual Customer Support (VCS)',
     tagline: 'Omnichannel customer support across voice, chat, email & social.',
     href: '/virtual-customer-support',
-    color: 'text-[#704A4B]',
-    bg: 'bg-[#E5BDB4]/25',
-    border: 'border-[#DED3C7]',
     badge: 'Core 5th Pillar',
     services: [
       'Inbound & Outbound Voice Support',
@@ -122,49 +105,41 @@ const techLayerItems = [
     name: 'HireIQ Matching Engine',
     desc: 'Proprietary JD and CV matching intelligence evaluating candidates with direct resume citations, dynamic weighting, and merit-first scoring.',
     badge: 'HireIQ™ AI',
-    accent: 'text-[#F8F4ED] bg-[#E5BDB4]/25 border-[#E5BDB4]/40',
   },
   {
     name: 'HRMS Platform',
     desc: 'Centralized core HR management for digital records, leave balances, compliance logs, and documentation.',
     badge: 'Core Platform',
-    accent: 'text-[#F8F4ED] bg-[#8E7D6E]/30 border-[#DED3C7]/40',
   },
   {
     name: 'Self-Service Portals',
     desc: 'Employee and management self-service portals for frictionless requests, payroll slips, and approvals.',
     badge: 'Portal',
-    accent: 'text-[#F8F4ED] bg-[#E5BDB4]/25 border-[#E5BDB4]/40',
   },
   {
     name: 'AI-Assisted Sourcing',
     desc: 'Augmented candidate sourcing pipelines and competency screening workflows across global talent pools.',
     badge: 'AI Layer',
-    accent: 'text-[#F8F4ED] bg-[#8E7D6E]/30 border-[#DED3C7]/40',
   },
   {
     name: 'Recruitment Analytics',
     desc: 'Real-time time-to-fill, source attribution, pipeline conversion rates, and diversity metrics.',
     badge: 'Analytics',
-    accent: 'text-[#F8F4ED] bg-[#E5BDB4]/25 border-[#E5BDB4]/40',
   },
   {
     name: 'Workforce Dashboards',
     desc: 'Live headcount visibility, operational shift coverage, SLA adherence, and capacity tracking.',
     badge: 'Visibility',
-    accent: 'text-[#F8F4ED] bg-[#8E7D6E]/30 border-[#DED3C7]/40',
   },
   {
     name: 'Paperless Digital HR',
     desc: 'Digital e-signatures, secure document collection, and zero-friction compliance onboarding.',
     badge: 'Digital Ops',
-    accent: 'text-[#F8F4ED] bg-[#E5BDB4]/25 border-[#E5BDB4]/40',
   },
   {
     name: 'Process Automation',
     desc: 'Automated notification pipelines, status updates, escalation matrices, and SLA triggers.',
     badge: 'Automation',
-    accent: 'text-[#F8F4ED] bg-[#8E7D6E]/30 border-[#DED3C7]/40',
   },
 ];
 
@@ -174,28 +149,28 @@ export default function ServicesSection() {
   const ActiveIcon = activePillar.icon;
 
   return (
-    <section id="services" className="py-20 sm:py-28 bg-[#F3ECE4] relative overflow-hidden border-b border-[#DED3C7]">
+    <section id="services" className="py-20 sm:py-28 bg-tn-ivory relative overflow-hidden border-b border-tn-mist">
       {/* Ambient background light pools */}
-      <div className="absolute top-10 right-1/4 w-[600px] h-[350px] bg-[#E5BDB4]/15 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 left-1/4 w-[500px] h-[300px] bg-[#8E7D6E]/15 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#E5BDB4]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-10 right-1/4 w-[600px] h-[350px] bg-tn-coral/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-10 left-1/4 w-[500px] h-[300px] bg-tn-beige/20 rounded-full blur-3xl pointer-events-none" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 scroll-reveal">
-          <div className="inline-flex items-center gap-2 bg-[#E5BDB4]/30 border border-[#DED3C7] rounded-full px-4 py-1.5 mb-5 shadow-sm">
-            <span className="w-2 h-2 rounded-full bg-[#704A4B]" />
-            <span className="text-xs font-bold text-[#704A4B] tracking-widest uppercase">
+          <div className="inline-flex items-center gap-2 bg-tn-coral/15 border border-tn-mist rounded-full px-4 py-1.5 mb-5 shadow-sm">
+            <span className="w-2 h-2 rounded-full bg-tn-coral" />
+            <span className="text-xs font-bold text-tn-charcoal tracking-widest uppercase">
               Core Solutions
             </span>
           </div>
 
-          <h2 className="text-section-title font-display font-bold text-[#423535] mb-4">
+          <h2 className="text-section-title font-display font-bold text-tn-charcoal mb-4">
             One Partner.{' '}
-            <span className="text-[#704A4B]">Your People &amp; Operations.</span>
+            <span className="text-tn-coral">Your People &amp; Operations.</span>
           </h2>
 
-          <p className="text-[#625F5F] text-base sm:text-lg leading-relaxed">
+          <p className="text-tn-slate text-base sm:text-lg leading-relaxed">
             From hiring your initial core team to managing an expanding global workforce and supporting daily operations, TaskNera delivers integrated, modular solutions that scale with you.
           </p>
         </div>
@@ -212,34 +187,38 @@ export default function ServicesSection() {
                 onClick={() => setActive(p.id)}
                 className={`text-left rounded-3xl p-5 border transition-all duration-300 flex flex-col justify-between hover-lift cursor-pointer ${
                   isSelected
-                    ? 'bg-[#FAF7F2] border-[#704A4B] shadow-lg ring-2 ring-[#704A4B]/20 -translate-y-1'
-                    : 'bg-[#FAF7F2] border-[#DED3C7] hover:border-[#704A4B]/50 shadow-sm'
+                    ? 'bg-white border-tn-coral shadow-lg ring-2 ring-tn-coral/30 -translate-y-1'
+                    : 'bg-white/80 border-tn-mist hover:border-tn-coral/40 shadow-sm'
                 }`}
               >
                 <div>
                   <div className="flex items-center justify-between mb-3">
-                    <div className={`w-10 h-10 rounded-2xl ${p.bg} border ${p.border} flex items-center justify-center ${p.color}`}>
+                    <div className={`w-10 h-10 rounded-2xl border flex items-center justify-center transition-colors ${
+                      isSelected
+                        ? 'bg-tn-coral text-tn-charcoal border-tn-coral'
+                        : 'bg-tn-ivory text-tn-charcoal border-tn-mist'
+                    }`}>
                       <IconComponent className="w-5 h-5" />
                     </div>
                     {p.badge && (
-                      <span className="text-[10px] font-bold text-[#704A4B] bg-[#E5BDB4]/30 rounded-full px-2 py-0.5 border border-[#DED3C7]">
+                      <span className="text-[10px] font-bold text-tn-charcoal bg-tn-coral/20 rounded-full px-2 py-0.5 border border-tn-coral/30">
                         {p.id === 'va' ? 'Human VAs' : 'VCS'}
                       </span>
                     )}
                   </div>
-                  <h3 className="font-display font-bold text-base text-[#423535] mb-1">
+                  <h3 className="font-display font-bold text-base text-tn-charcoal mb-1">
                     {p.label}
                   </h3>
-                  <p className="text-xs text-[#625F5F] leading-relaxed">
+                  <p className="text-xs text-tn-slate leading-relaxed">
                     {p.tagline}
                   </p>
                 </div>
 
-                <div className="mt-5 pt-3 border-t border-[#DED3C7] flex items-center justify-between w-full">
-                  <span className={`text-xs font-bold ${isSelected ? 'text-[#704A4B]' : 'text-[#625F5F]'}`}>
+                <div className="mt-5 pt-3 border-t border-tn-mist flex items-center justify-between w-full">
+                  <span className={`text-xs font-bold ${isSelected ? 'text-tn-coral' : 'text-tn-slate'}`}>
                     {isSelected ? 'Viewing Scope' : 'Explore'}
                   </span>
-                  <ArrowRight className={`w-3.5 h-3.5 transition-transform ${isSelected ? 'text-[#704A4B] translate-x-1' : 'text-[#625F5F]'}`} />
+                  <ArrowRight className={`w-3.5 h-3.5 transition-transform ${isSelected ? 'text-tn-coral translate-x-1' : 'text-tn-slate'}`} />
                 </div>
               </button>
             );
@@ -249,40 +228,40 @@ export default function ServicesSection() {
         {/* Deep Dive Panel */}
         <div className="grid lg:grid-cols-12 gap-6 scroll-reveal mb-20" style={{ transitionDelay: '0.15s' }}>
           
-          {/* Active Pillar Showcase (Left - 5 Cols) */}
-          <div className="lg:col-span-5 bg-gradient-to-br from-[#704A4B] to-[#593A3B] rounded-3xl p-7 sm:p-9 text-[#F8F4ED] shadow-xl flex flex-col justify-between relative overflow-hidden border border-[#DED3C7]/30">
+          {/* Active Pillar Showcase (Left - 5 Cols, Charcoal Anchor) */}
+          <div className="lg:col-span-5 bg-gradient-to-br from-[#242326] via-[#242326] to-[#1A191B] rounded-3xl p-7 sm:p-9 text-[#FFF8F0] shadow-2xl flex flex-col justify-between relative overflow-hidden border border-tn-mist/20">
             <div className="relative z-10">
               <div className="flex items-center justify-between mb-5">
-                <div className="w-14 h-14 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-[#E5BDB4] shadow-inner">
+                <div className="w-14 h-14 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-tn-coral shadow-inner">
                   <ActiveIcon className="w-7 h-7" />
                 </div>
                 {activePillar.badge && (
-                  <span className="text-xs font-bold bg-[#E5BDB4] text-[#423535] px-3 py-1 rounded-full shadow-sm">
+                  <span className="text-xs font-bold bg-tn-coral text-tn-charcoal px-3 py-1 rounded-full shadow-sm">
                     {activePillar.badge}
                   </span>
                 )}
               </div>
 
-              <h3 className="font-display font-bold text-2xl sm:text-3xl text-[#F8F4ED] mb-2">
+              <h3 className="font-display font-bold text-2xl sm:text-3xl text-[#FFF8F0] mb-2">
                 {activePillar.label}
               </h3>
-              <div className="text-[#E5BDB4] text-sm font-semibold mb-4">
+              <div className="text-tn-coral text-sm font-semibold mb-4">
                 {activePillar.tagline}
               </div>
-              <p className="text-[#F8F4ED]/80 text-sm leading-relaxed mb-6 font-normal">
+              <p className="text-[#FFF8F0]/80 text-sm leading-relaxed mb-6 font-normal">
                 {activePillar.highlight}
               </p>
 
               <div className="space-y-2.5 mb-8">
-                <div className="text-xs font-bold text-[#F8F4ED]/60 uppercase tracking-widest">
+                <div className="text-xs font-bold text-[#FFF8F0]/60 uppercase tracking-widest">
                   Included Capabilities:
                 </div>
                 {activePillar.services.map((svc) => (
                   <div key={svc} className="flex items-start gap-3">
-                    <span className="w-5 h-5 rounded-full bg-[#E5BDB4]/25 text-[#E5BDB4] flex items-center justify-center font-bold text-xs mt-0.5 flex-shrink-0">
+                    <span className="w-5 h-5 rounded-full bg-tn-coral/20 text-tn-coral flex items-center justify-center font-bold text-xs mt-0.5 flex-shrink-0">
                       ✓
                     </span>
-                    <span className="text-[#F8F4ED]/90 text-sm font-medium">{svc}</span>
+                    <span className="text-[#FFF8F0]/90 text-sm font-medium">{svc}</span>
                   </div>
                 ))}
               </div>
@@ -291,14 +270,14 @@ export default function ServicesSection() {
             <div className="pt-6 border-t border-white/15 flex flex-col sm:flex-row items-center justify-between gap-4 relative z-10">
               <Link
                 href={activePillar.href}
-                className="inline-flex items-center gap-2 text-sm font-bold text-[#E5BDB4] hover:text-[#F8F4ED] transition-all group"
+                className="inline-flex items-center gap-2 text-sm font-bold text-tn-coral hover:text-[#FFF8F0] transition-all group"
               >
                 <span>Full details &amp; use cases</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
                 href="/#contact"
-                className="bg-[#FAF7F2] text-[#704A4B] hover:bg-white text-xs font-semibold px-5 py-2.5 rounded-full transition-colors border border-[#DED3C7] text-center w-full sm:w-auto shadow-sm"
+                className="bg-tn-coral text-tn-charcoal hover:bg-[#F28B6A] text-xs font-bold px-5 py-2.5 rounded-full transition-colors text-center w-full sm:w-auto shadow-md"
               >
                 Inquire for {activePillar.label.split(' ')[0]}
               </Link>
@@ -316,47 +295,47 @@ export default function ServicesSection() {
                   onClick={() => setActive(p.id)}
                   className={`cursor-pointer rounded-3xl p-6 border transition-all duration-300 flex flex-col justify-between ${
                     isCurrent
-                      ? 'bg-[#FAF7F2] border-[#704A4B] shadow-lg ring-2 ring-[#704A4B]/20'
-                      : 'bg-[#FAF7F2] border-[#DED3C7] hover:border-[#704A4B]/50 shadow-sm'
+                      ? 'bg-white border-tn-coral shadow-lg ring-2 ring-tn-coral/30'
+                      : 'bg-white border-tn-mist hover:border-tn-coral/50 shadow-sm'
                   }`}
                 >
                   <div>
                     <div className="flex items-center justify-between mb-3">
-                      <div className={`w-9 h-9 rounded-xl ${p.bg} border ${p.border} flex items-center justify-center ${p.color}`}>
+                      <div className="w-9 h-9 rounded-xl bg-tn-ivory border border-tn-mist flex items-center justify-center text-tn-charcoal">
                         <IconComp className="w-4 h-4" />
                       </div>
-                      <span className="text-[11px] text-muted-foreground font-semibold bg-muted px-2 py-0.5 rounded-md">
+                      <span className="text-[11px] text-tn-slate font-semibold bg-tn-ivory border border-tn-mist px-2 py-0.5 rounded-md">
                         {p.services.length} services
                       </span>
                     </div>
 
-                    <h4 className="font-bold text-foreground text-base mb-1">
+                    <h4 className="font-bold text-tn-charcoal text-base mb-1">
                       {p.label}
                     </h4>
-                    <p className="text-xs text-muted-foreground mb-4 leading-relaxed">
+                    <p className="text-xs text-tn-slate mb-4 leading-relaxed">
                       {p.tagline}
                     </p>
 
                     <div className="space-y-1.5">
                       {p.services.slice(0, 3).map((item) => (
-                        <div key={item} className="text-xs text-[#423535] flex items-center gap-2">
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#704A4B] flex-shrink-0" />
+                        <div key={item} className="text-xs text-tn-charcoal flex items-center gap-2">
+                          <span className="w-1.5 h-1.5 rounded-full bg-tn-coral flex-shrink-0" />
                           <span className="truncate">{item}</span>
                         </div>
                       ))}
                     </div>
                   </div>
 
-                  <div className="mt-5 pt-3 border-t border-[#DED3C7] flex items-center justify-between">
+                  <div className="mt-5 pt-3 border-t border-tn-mist flex items-center justify-between">
                     <Link
                       href={p.href}
                       onClick={(e) => e.stopPropagation()}
-                      className="text-xs font-bold text-[#704A4B] hover:text-[#593A3B] flex items-center gap-1"
+                      className="text-xs font-bold text-tn-charcoal hover:text-tn-coral flex items-center gap-1"
                     >
                       <span>Dedicated Page</span>
                       <ArrowRight className="w-3 h-3" />
                     </Link>
-                    <span className="text-[11px] text-[#625F5F] font-medium">Click to preview</span>
+                    <span className="text-[11px] text-tn-slate font-medium">Click to preview</span>
                   </div>
                 </div>
               );
@@ -366,22 +345,21 @@ export default function ServicesSection() {
         </div>
 
         {/* ================================================== */}
-        {/* TECHNOLOGY LAYER                                  */}
+        {/* TECHNOLOGY LAYER (Charcoal Anchor Background)       */}
         {/* ================================================== */}
-        <div id="technology" className="bg-[#704A4B] rounded-3xl p-8 sm:p-12 text-[#F8F4ED] shadow-xl relative overflow-hidden border border-[#DED3C7]/30 scroll-reveal" style={{ transitionDelay: '0.2s' }}>
-          <div className="absolute top-0 right-0 w-96 h-96 bg-[#E5BDB4]/15 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#8E7D6E]/15 rounded-full blur-3xl pointer-events-none" />
+        <div id="technology" className="bg-[#242326] rounded-3xl p-8 sm:p-12 text-[#FFF8F0] shadow-2xl relative overflow-hidden border border-tn-mist/20 scroll-reveal" style={{ transitionDelay: '0.2s' }}>
+          <div className="absolute top-0 right-0 w-96 h-96 bg-tn-coral/10 rounded-full blur-3xl pointer-events-none" />
           <div className="max-w-3xl mb-10 relative z-10">
             <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-3.5 py-1 mb-4">
-              <Sparkles className="w-3.5 h-3.5 text-[#E5BDB4] animate-pulse" />
-              <span className="text-xs font-bold text-[#F8F4ED] tracking-widest uppercase">
+              <Sparkles className="w-3.5 h-3.5 text-tn-coral animate-pulse" />
+              <span className="text-xs font-bold text-[#FFF8F0] tracking-widest uppercase">
                 Digital &amp; Technology Layer
               </span>
             </div>
-            <h3 className="font-display font-bold text-2xl sm:text-4xl text-[#F8F4ED] mb-3 leading-tight">
+            <h3 className="font-display font-bold text-2xl sm:text-4xl text-[#FFF8F0] mb-3 leading-tight">
               HR Technology &amp; Digital Solutions
             </h3>
-            <p className="text-[#F8F4ED]/80 text-base leading-relaxed">
+            <p className="text-[#FFF8F0]/80 text-base leading-relaxed">
               TaskNera embeds a modern, flexible technology layer to power our delivery. We deploy our proprietary HireIQ matching intelligence for precision JD and CV alignment, integrated HRMS portals, and real-time workforce visibility dashboards.
             </p>
           </div>
@@ -390,34 +368,34 @@ export default function ServicesSection() {
             {techLayerItems.map((tech) => (
               <div
                 key={tech.name}
-                className="bg-white/5 rounded-2xl p-5 border border-white/15 hover:border-white/30 hover:bg-white/10 transition-all duration-200 group"
+                className="bg-white/5 rounded-2xl p-5 border border-white/10 hover:border-tn-coral/50 hover:bg-white/10 transition-all duration-200 group"
               >
                 <div className="flex items-center justify-between mb-3">
-                  <span className={`text-[11px] font-bold px-2.5 py-0.5 rounded-full border ${tech.accent}`}>
+                  <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full border text-tn-coral bg-tn-coral/15 border-tn-coral/30">
                     {tech.badge}
                   </span>
-                  <span className="text-[#F8F4ED]/40 text-[10px] uppercase font-semibold">Capability</span>
+                  <span className="text-[#FFF8F0]/40 text-[10px] uppercase font-semibold">Capability</span>
                 </div>
-                <div className="font-bold text-[#F8F4ED] text-base mb-1.5 group-hover:text-[#E5BDB4] transition-colors">
+                <div className="font-bold text-[#FFF8F0] text-base mb-1.5 group-hover:text-tn-coral transition-colors">
                   {tech.name}
                 </div>
-                <p className="text-[#F8F4ED]/70 text-xs leading-relaxed">
+                <p className="text-[#FFF8F0]/70 text-xs leading-relaxed">
                   {tech.desc}
                 </p>
               </div>
             ))}
           </div>
 
-          <div className="mt-10 pt-6 border-t border-white/15 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#F8F4ED]/80">
+          <div className="mt-10 pt-6 border-t border-white/15 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#FFF8F0]/80">
             <div className="flex items-center gap-2">
-              <ShieldCheck className="w-4 h-4 text-[#E5BDB4] flex-shrink-0" />
+              <ShieldCheck className="w-4 h-4 text-tn-coral flex-shrink-0" />
               <span>
-                <strong className="text-[#F8F4ED]">The Human + Tech Advantage:</strong> Technology powers speed and accuracy — while our vetted human specialists manage every relationship.
+                <strong className="text-[#FFF8F0]">The Human + Tech Advantage:</strong> Technology powers speed and accuracy — while our vetted human specialists manage every relationship.
               </span>
             </div>
             <Link
               href="/#contact"
-              className="text-[#E5BDB4] hover:text-[#F8F4ED] font-bold flex items-center gap-1.5 flex-shrink-0"
+              className="text-tn-coral hover:text-[#FFF8F0] font-bold flex items-center gap-1.5 flex-shrink-0"
             >
               <span>Discuss Technology Setup</span>
               <ArrowRight className="w-3.5 h-3.5" />

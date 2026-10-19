@@ -5,26 +5,7 @@ import Link from 'next/link';
 import {
   Sparkles,
   Users,
-  Layers,
-  ArrowRight,
   CheckCircle2,
-  FileSearch,
-  Sliders,
-  Database,
-  ShieldCheck,
-  BarChart3,
-  Calendar,
-  Clock,
-  Briefcase,
-  GraduationCap,
-  HelpCircle,
-  Receipt,
-  FileCheck,
-  UserX,
-  Lock,
-  Workflow,
-  Cpu,
-  ChevronRight,
 } from 'lucide-react';
 
 export default function PlatformSection() {
@@ -86,48 +67,46 @@ export default function PlatformSection() {
   ];
 
   return (
-    <section id="platform" className="py-20 sm:py-28 bg-surface-subtle border-y border-border/80 relative overflow-hidden">
-      {/* Background Ambience with subtle warm effects */}
-      <div className="absolute top-10 left-1/3 w-[600px] h-[350px] bg-accent/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 right-1/4 w-[500px] h-[300px] bg-primary/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-3xl pointer-events-none" />
+    <section id="platform" className="py-20 sm:py-28 bg-white border-y border-tn-mist relative overflow-hidden">
+      {/* Background Ambience */}
+      <div className="absolute top-10 left-1/3 w-[600px] h-[350px] bg-tn-coral/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-10 right-1/4 w-[500px] h-[300px] bg-tn-beige/20 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 bg-[#704A4B]/10 border border-[#704A4B]/20 rounded-full px-4 py-1.5 mb-4">
-            <Sparkles className="w-3.5 h-3.5 text-[#704A4B]" />
-            <span className="text-xs font-bold text-[#704A4B] tracking-widest uppercase">
+          <div className="inline-flex items-center gap-2 bg-tn-coral/15 border border-tn-mist rounded-full px-4 py-1.5 mb-4 shadow-sm">
+            <Sparkles className="w-3.5 h-3.5 text-tn-coral" />
+            <span className="text-xs font-bold text-tn-charcoal tracking-widest uppercase">
               Unified People &amp; Operations Platform
             </span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-foreground leading-tight mb-6">
-            Connected <span className="gradient-text-coral">HireIQ™ &amp; HRMS</span> Ecosystem
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-tn-charcoal leading-tight mb-6">
+            Connected <span className="text-tn-coral">HireIQ™ &amp; HRMS</span> Ecosystem
           </h2>
 
           {/* One-Line Product Pitch */}
-          <div className="bg-card border border-[#DED3C7] rounded-2xl p-6 sm:p-7 shadow-sm text-left sm:text-center relative overflow-hidden group hover:border-[#704A4B] transition-colors">
-            <div className="absolute top-0 left-0 h-full w-1.5 bg-[#704A4B]" />
-            <p className="text-base sm:text-lg lg:text-xl font-medium text-foreground leading-relaxed">
+          <div className="bg-tn-ivory border border-tn-mist rounded-2xl p-6 sm:p-7 shadow-sm text-left sm:text-center relative overflow-hidden group hover:border-tn-coral transition-colors">
+            <div className="absolute top-0 left-0 h-full w-1.5 bg-tn-coral" />
+            <p className="text-base sm:text-lg lg:text-xl font-medium text-tn-charcoal leading-relaxed">
               &ldquo;AI-powered recruitment and end-to-end HR management, connecting hiring, onboarding, workforce operations, performance, and the complete employee lifecycle in one unified platform.&rdquo;
             </p>
           </div>
         </div>
 
         {/* Complete Hiring-to-Employee Lifecycle Visual Bar */}
-        <div className="mb-16 bg-card border border-border/80 rounded-3xl p-6 sm:p-8 shadow-sm">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-6 border-b border-border/60">
+        <div className="mb-16 bg-white border border-tn-mist rounded-3xl p-6 sm:p-8 shadow-sm">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-6 border-b border-tn-mist">
             <div>
-              <div className="text-xs font-bold text-[#704A4B] uppercase tracking-widest mb-1">End-to-End Pipeline</div>
-              <h3 className="text-xl sm:text-2xl font-display font-bold text-foreground">
+              <div className="text-xs font-bold text-tn-coral uppercase tracking-widest mb-1">End-to-End Pipeline</div>
+              <h3 className="text-xl sm:text-2xl font-display font-bold text-tn-charcoal">
                 Complete Hiring-to-Employee Lifecycle
               </h3>
             </div>
-            <div className="text-xs text-muted-foreground font-mono bg-surface-subtle border border-border px-3 py-1.5 rounded-full inline-flex items-center gap-1.5 self-start md:self-auto">
-              <span className="w-2 h-2 rounded-full bg-[#704A4B] animate-pulse" />
+            <div className="text-xs text-tn-slate font-mono bg-tn-ivory border border-tn-mist px-3 py-1.5 rounded-full inline-flex items-center gap-1.5 self-start md:self-auto">
+              <span className="w-2 h-2 rounded-full bg-tn-coral animate-pulse" />
               Connected Recruitment &amp; HRMS Engine
             </div>
           </div>
@@ -135,17 +114,17 @@ export default function PlatformSection() {
           {/* The 6 Master Pillars */}
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mb-8">
             {[
-              { step: '01', title: 'Hire', sub: 'AI Screening & Match', color: 'border-[#704A4B]/30 text-[#704A4B] bg-[#704A4B]/5' },
-              { step: '02', title: 'Onboard', sub: 'Digital Setup & Docs', color: 'border-[#754E4E]/30 text-[#754E4E] bg-[#754E4E]/5' },
-              { step: '03', title: 'Manage', sub: 'Attendance & Payroll', color: 'border-[#805D5A]/30 text-[#805D5A] bg-[#805D5A]/5' },
-              { step: '04', title: 'Develop', sub: 'Appraisals & Training', color: 'border-[#704A4B]/30 text-[#704A4B] bg-[#704A4B]/5' },
-              { step: '05', title: 'Retain', sub: 'Help Desk & Growth', color: 'border-[#754E4E]/30 text-[#754E4E] bg-[#754E4E]/5' },
-              { step: '06', title: 'Exit', sub: 'Clearance & F&F', color: 'border-[#805D5A]/30 text-[#805D5A] bg-[#805D5A]/5' },
+              { step: '01', title: 'Hire', sub: 'AI Screening & Match' },
+              { step: '02', title: 'Onboard', sub: 'Digital Setup & Docs' },
+              { step: '03', title: 'Manage', sub: 'Attendance & Payroll' },
+              { step: '04', title: 'Develop', sub: 'Appraisals & Training' },
+              { step: '05', title: 'Retain', sub: 'Help Desk & Growth' },
+              { step: '06', title: 'Exit', sub: 'Clearance & F&F' },
             ].map((pillar) => (
-              <div key={pillar.title} className={`border rounded-2xl p-4 transition-all hover:scale-[1.02] ${pillar.color}`}>
-                <div className="text-xs font-bold tracking-wider mb-1 opacity-70">STAGE {pillar.step}</div>
-                <div className="font-display font-bold text-base sm:text-lg text-foreground">{pillar.title}</div>
-                <div className="text-xs text-muted-foreground mt-0.5">{pillar.sub}</div>
+              <div key={pillar.title} className="border border-tn-mist rounded-2xl p-4 transition-all hover:scale-[1.02] hover:border-tn-coral bg-tn-ivory/60">
+                <div className="text-xs font-bold tracking-wider mb-1 text-tn-coral">STAGE {pillar.step}</div>
+                <div className="font-display font-bold text-base sm:text-lg text-tn-charcoal">{pillar.title}</div>
+                <div className="text-xs text-tn-slate mt-0.5">{pillar.sub}</div>
               </div>
             ))}
           </div>
@@ -153,25 +132,25 @@ export default function PlatformSection() {
           {/* Detailed Dual-Engine Flows */}
           <div className="grid lg:grid-cols-2 gap-4">
             {/* Recruitment Workflow */}
-            <div className="bg-surface-subtle border border-border/70 rounded-2xl p-5 space-y-3">
+            <div className="bg-tn-ivory border border-tn-mist rounded-2xl p-5 space-y-3">
               <div className="flex items-center gap-2">
-                <span className="px-2 py-0.5 rounded text-[11px] font-bold bg-[#704A4B]/10 text-[#704A4B] border border-[#704A4B]/20 uppercase">
+                <span className="px-2 py-0.5 rounded text-[11px] font-bold bg-tn-coral/20 text-tn-charcoal border border-tn-coral/30 uppercase">
                   Recruitment &amp; Sourcing Workflow (HireIQ™)
                 </span>
               </div>
-              <p className="text-xs text-muted-foreground leading-relaxed font-mono">
+              <p className="text-xs text-tn-slate leading-relaxed font-mono">
                 Job Creation → JD Analysis → Resume Upload → AI Screening → Match Score → Candidate Ranking → Selection
               </p>
             </div>
 
             {/* HRMS Workflow */}
-            <div className="bg-surface-subtle border border-border/70 rounded-2xl p-5 space-y-3">
+            <div className="bg-tn-ivory border border-tn-mist rounded-2xl p-5 space-y-3">
               <div className="flex items-center gap-2">
-                <span className="px-2 py-0.5 rounded text-[11px] font-bold bg-[#754E4E]/10 text-[#754E4E] border border-[#754E4E]/20 uppercase">
+                <span className="px-2 py-0.5 rounded text-[11px] font-bold bg-tn-beige/40 text-tn-charcoal border border-tn-mist uppercase">
                   Workforce Operations (HRMS)
                 </span>
               </div>
-              <p className="text-xs text-muted-foreground leading-relaxed font-mono">
+              <p className="text-xs text-tn-slate leading-relaxed font-mono">
                 Selection → Onboarding → Employee Management → Attendance → Leave → Payroll → Performance → Training → Help Desk → Exit
               </p>
             </div>
@@ -184,8 +163,8 @@ export default function PlatformSection() {
             onClick={() => setActiveTab('all')}
             className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all ${
               activeTab === 'all'
-                ? 'bg-[#704A4B] text-[#F8F4ED] shadow-md'
-                : 'bg-card border border-border text-foreground hover:border-[#704A4B]/40'
+                ? 'bg-[#242326] text-[#FFF8F0] shadow-md'
+                : 'bg-white border border-tn-mist text-tn-charcoal hover:border-tn-coral'
             }`}
           >
             All Platform Features
@@ -194,11 +173,11 @@ export default function PlatformSection() {
             onClick={() => setActiveTab('recruitment')}
             className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all flex items-center gap-2 ${
               activeTab === 'recruitment'
-                ? 'bg-[#704A4B] text-[#F8F4ED] shadow-md'
-                : 'bg-card border border-border text-foreground hover:border-[#704A4B]/40'
+                ? 'bg-[#242326] text-[#FFF8F0] shadow-md'
+                : 'bg-white border border-tn-mist text-tn-charcoal hover:border-tn-coral'
             }`}
           >
-            <Sparkles className="w-4 h-4" />
+            <Sparkles className="w-4 h-4 text-tn-coral" />
             <span>1. HireIQ™ — AI Recruitment Platform</span>
             <span className="text-xs bg-white/20 px-2 py-0.5 rounded-full">{recruitmentFeatures.length}</span>
           </button>
@@ -206,11 +185,11 @@ export default function PlatformSection() {
             onClick={() => setActiveTab('hrms')}
             className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all flex items-center gap-2 ${
               activeTab === 'hrms'
-                ? 'bg-[#754E4E] text-[#F8F4ED] shadow-md'
-                : 'bg-card border border-border text-foreground hover:border-[#754E4E]/40'
+                ? 'bg-[#242326] text-[#FFF8F0] shadow-md'
+                : 'bg-white border border-tn-mist text-tn-charcoal hover:border-tn-coral'
             }`}
           >
-            <Users className="w-4 h-4" />
+            <Users className="w-4 h-4 text-tn-coral" />
             <span>2. HRMS — Workforce Management</span>
             <span className="text-xs bg-white/20 px-2 py-0.5 rounded-full">{hrmsFeatures.length}</span>
           </button>
@@ -219,22 +198,22 @@ export default function PlatformSection() {
         {/* Tab 1: HireIQ Section */}
         {(activeTab === 'all' || activeTab === 'recruitment') && (
           <div className="mb-14">
-            <div className="bg-card border border-border/80 rounded-3xl p-6 sm:p-10 shadow-sm mb-6">
-              <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 mb-8 border-b border-border/60">
+            <div className="bg-white border border-tn-mist rounded-3xl p-6 sm:p-10 shadow-sm mb-6">
+              <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 mb-8 border-b border-tn-mist">
                 <div>
-                  <div className="inline-flex items-center gap-2 bg-[#704A4B]/10 text-[#704A4B] border border-[#704A4B]/20 rounded-full px-3.5 py-1 text-xs font-bold uppercase tracking-wider mb-2">
-                    <Sparkles className="w-3.5 h-3.5" />
+                  <div className="inline-flex items-center gap-2 bg-tn-coral/15 text-tn-charcoal border border-tn-coral/30 rounded-full px-3.5 py-1 text-xs font-bold uppercase tracking-wider mb-2">
+                    <Sparkles className="w-3.5 h-3.5 text-tn-coral" />
                     HireIQ™ System Architecture
                   </div>
-                  <h3 className="text-2xl sm:text-3xl font-display font-bold text-foreground">
+                  <h3 className="text-2xl sm:text-3xl font-display font-bold text-tn-charcoal">
                     HireIQ™ — AI Recruitment Platform
                   </h3>
                 </div>
-                <div className="lg:max-w-md bg-surface-subtle border border-border p-4 rounded-2xl">
-                  <div className="text-[11px] font-bold text-[#704A4B] uppercase tracking-widest mb-1">
+                <div className="lg:max-w-md bg-tn-ivory border border-tn-mist p-4 rounded-2xl">
+                  <div className="text-[11px] font-bold text-tn-coral uppercase tracking-widest mb-1">
                     Marketing Positioning
                   </div>
-                  <p className="text-xs text-muted-foreground leading-relaxed">
+                  <p className="text-xs text-tn-slate leading-relaxed">
                     &ldquo;AI-powered recruitment platform that transforms resumes into actionable candidate insights — from intelligent resume parsing and JD understanding to precision scoring, candidate ranking, comparison, and detailed evaluation.&rdquo;
                   </p>
                 </div>
@@ -245,18 +224,18 @@ export default function PlatformSection() {
                 {recruitmentFeatures.map((feat) => (
                   <div
                     key={feat.name}
-                    className="p-4 rounded-2xl bg-surface-subtle/50 border border-border/60 hover:border-[#704A4B]/40 hover:bg-card transition-all space-y-2 group"
+                    className="p-4 rounded-2xl bg-tn-ivory/50 border border-tn-mist hover:border-tn-coral hover:bg-white transition-all space-y-2 group shadow-sm hover:shadow"
                   >
                     <div className="flex items-center justify-between gap-2">
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-[#704A4B] bg-[#704A4B]/10 px-2 py-0.5 rounded">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-tn-charcoal bg-tn-coral/15 px-2 py-0.5 rounded">
                         {feat.category}
                       </span>
-                      <CheckCircle2 className="w-3.5 h-3.5 text-[#704A4B] opacity-60 group-hover:opacity-100" />
+                      <CheckCircle2 className="w-3.5 h-3.5 text-tn-coral opacity-70 group-hover:opacity-100" />
                     </div>
-                    <div className="font-semibold text-sm text-foreground group-hover:text-[#704A4B] transition-colors">
+                    <div className="font-semibold text-sm text-tn-charcoal group-hover:text-tn-coral transition-colors">
                       {feat.name}
                     </div>
-                    <p className="text-xs text-muted-foreground leading-relaxed">
+                    <p className="text-xs text-tn-slate leading-relaxed">
                       {feat.desc}
                     </p>
                   </div>
@@ -269,22 +248,22 @@ export default function PlatformSection() {
         {/* Tab 2: HRMS Section */}
         {(activeTab === 'all' || activeTab === 'hrms') && (
           <div className="mb-14">
-            <div className="bg-card border border-border/80 rounded-3xl p-6 sm:p-10 shadow-sm mb-6">
-              <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 mb-8 border-b border-border/60">
+            <div className="bg-white border border-tn-mist rounded-3xl p-6 sm:p-10 shadow-sm mb-6">
+              <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 mb-8 border-b border-tn-mist">
                 <div>
-                  <div className="inline-flex items-center gap-2 bg-[#754E4E]/10 text-[#754E4E] border border-[#754E4E]/20 rounded-full px-3.5 py-1 text-xs font-bold uppercase tracking-wider mb-2">
-                    <Users className="w-3.5 h-3.5" />
+                  <div className="inline-flex items-center gap-2 bg-tn-beige/40 text-tn-charcoal border border-tn-mist rounded-full px-3.5 py-1 text-xs font-bold uppercase tracking-wider mb-2">
+                    <Users className="w-3.5 h-3.5 text-tn-charcoal" />
                     HRMS Platform Suite
                   </div>
-                  <h3 className="text-2xl sm:text-3xl font-display font-bold text-foreground">
+                  <h3 className="text-2xl sm:text-3xl font-display font-bold text-tn-charcoal">
                     HRMS — Human Resource Management System
                   </h3>
                 </div>
-                <div className="lg:max-w-md bg-surface-subtle border border-border p-4 rounded-2xl">
-                  <div className="text-[11px] font-bold text-[#754E4E] uppercase tracking-widest mb-1">
+                <div className="lg:max-w-md bg-tn-ivory border border-tn-mist p-4 rounded-2xl">
+                  <div className="text-[11px] font-bold text-tn-coral uppercase tracking-widest mb-1">
                     Marketing Positioning
                   </div>
-                  <p className="text-xs text-muted-foreground leading-relaxed">
+                  <p className="text-xs text-tn-slate leading-relaxed">
                     &ldquo;An end-to-end HRMS that centralizes employee management, attendance, leave, payroll information, onboarding, performance, training, help desk, analytics, and offboarding in one secure platform.&rdquo;
                   </p>
                 </div>
@@ -295,18 +274,18 @@ export default function PlatformSection() {
                 {hrmsFeatures.map((feat) => (
                   <div
                     key={feat.name}
-                    className="p-4 rounded-2xl bg-surface-subtle/50 border border-border/60 hover:border-[#754E4E]/40 hover:bg-card transition-all space-y-2 group"
+                    className="p-4 rounded-2xl bg-tn-ivory/50 border border-tn-mist hover:border-tn-coral hover:bg-white transition-all space-y-2 group shadow-sm hover:shadow"
                   >
                     <div className="flex items-center justify-between gap-2">
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-[#754E4E] bg-[#754E4E]/10 px-2 py-0.5 rounded">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-tn-charcoal bg-tn-beige/30 px-2 py-0.5 rounded">
                         {feat.category}
                       </span>
-                      <CheckCircle2 className="w-3.5 h-3.5 text-[#754E4E] opacity-60 group-hover:opacity-100" />
+                      <CheckCircle2 className="w-3.5 h-3.5 text-tn-coral opacity-70 group-hover:opacity-100" />
                     </div>
-                    <div className="font-semibold text-sm text-foreground group-hover:text-[#754E4E] transition-colors">
+                    <div className="font-semibold text-sm text-tn-charcoal group-hover:text-tn-coral transition-colors">
                       {feat.name}
                     </div>
-                    <p className="text-xs text-muted-foreground leading-relaxed">
+                    <p className="text-xs text-tn-slate leading-relaxed">
                       {feat.desc}
                     </p>
                   </div>
@@ -316,17 +295,18 @@ export default function PlatformSection() {
           </div>
         )}
 
-        {/* Combined Value Proposition Highlights */}
-        <div className="bg-gradient-to-br from-[#704A4B] via-[#613D3E] to-[#4F3031] text-[#F8F4ED] rounded-3xl p-8 sm:p-12 relative overflow-hidden border border-[#DED3C7]/20 shadow-xl">
+        {/* Combined Value Proposition Highlights (Charcoal Anchor Background) */}
+        <div className="bg-[#242326] text-[#FFF8F0] rounded-3xl p-8 sm:p-12 relative overflow-hidden border border-tn-mist/20 shadow-2xl">
+          <div className="absolute top-0 right-0 w-80 h-80 bg-tn-coral/10 rounded-full blur-3xl pointer-events-none" />
           <div className="relative z-10">
             <div className="max-w-3xl mb-8">
-              <span className="text-xs font-bold text-[#E5BDB4] uppercase tracking-widest mb-2 block">
+              <span className="text-xs font-bold text-tn-coral uppercase tracking-widest mb-2 block">
                 The Multiplier Effect
               </span>
-              <h3 className="text-2xl sm:text-3xl font-display font-bold text-[#F8F4ED] mb-3">
+              <h3 className="text-2xl sm:text-3xl font-display font-bold text-[#FFF8F0] mb-3">
                 Why a Connected Recruitment + HRMS Ecosystem Matters
               </h3>
-              <p className="text-[#F8F4ED]/80 text-sm sm:text-base leading-relaxed">
+              <p className="text-[#FFF8F0]/80 text-sm sm:text-base leading-relaxed">
                 By uniting talent acquisition intelligence with ongoing workforce operations, your organization eliminates data silos, cuts administrative latency, and creates a seamless experience from initial candidate outreach to long-term career growth.
               </p>
             </div>
@@ -338,31 +318,31 @@ export default function PlatformSection() {
                 { title: 'Data-Driven HR Analytics', desc: 'Correlate interview match scoring against subsequent employee performance reviews to refine hiring models.' },
                 { title: 'Enterprise Security & RBAC', desc: 'Multi-tenant authorization, strict statutory data protections, and immutable administrative audit trails.' },
               ].map((val) => (
-                <div key={val.title} className="bg-white/5 border border-white/10 rounded-2xl p-5 hover:border-[#E5BDB4]/40 transition-colors">
-                  <div className="w-8 h-8 rounded-lg bg-[#E5BDB4]/20 flex items-center justify-center mb-3">
-                    <CheckCircle2 className="w-4 h-4 text-[#E5BDB4]" />
+                <div key={val.title} className="bg-white/5 border border-white/10 rounded-2xl p-5 hover:border-tn-coral/50 transition-colors">
+                  <div className="w-8 h-8 rounded-lg bg-tn-coral/20 flex items-center justify-center mb-3">
+                    <CheckCircle2 className="w-4 h-4 text-tn-coral" />
                   </div>
-                  <h4 className="font-semibold text-[#F8F4ED] text-sm mb-1.5">{val.title}</h4>
-                  <p className="text-[#F8F4ED]/70 text-xs leading-relaxed">{val.desc}</p>
+                  <h4 className="font-semibold text-[#FFF8F0] text-sm mb-1.5">{val.title}</h4>
+                  <p className="text-[#FFF8F0]/70 text-xs leading-relaxed">{val.desc}</p>
                 </div>
               ))}
             </div>
 
             <div className="mt-10 pt-8 border-t border-white/10 flex flex-wrap items-center justify-between gap-4">
-              <div className="text-xs text-[#F8F4ED]/70">
+              <div className="text-xs text-[#FFF8F0]/70">
                 Explore custom deployment models, private cloud configurations, or fully managed pods.
               </div>
               <div className="flex items-center gap-3">
                 <Link
                   href="/talent-acquisition"
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#E5BDB4] hover:underline"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-tn-coral hover:text-[#FFF8F0] transition-colors"
                 >
                   Explore Talent Acquisition &amp; HireIQ™ →
                 </Link>
-                <span className="text-[#F8F4ED]/30">|</span>
+                <span className="text-[#FFF8F0]/30">|</span>
                 <Link
                   href="/hr-workforce-solutions"
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#E5BDB4] hover:underline"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-tn-coral hover:text-[#FFF8F0] transition-colors"
                 >
                   Explore HRMS Solutions →
                 </Link>

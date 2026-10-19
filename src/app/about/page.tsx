@@ -117,13 +117,13 @@ export default function AboutPage() {
         </section>
 
         {/* ── Key Metrics Bar ── */}
-        <section className="bg-[#704A4B] border-y border-[#DED3C7]/20 relative z-10 text-[#F8F4ED]">
+        <section className="bg-[#242326] border-y border-tn-mist/20 relative z-10 text-[#FFF8F0]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 lg:divide-x lg:divide-white/10">
               {milestones.map((m) => (
                 <div key={m.label} className="text-center lg:px-8">
-                  <div className="font-display font-700 text-2xl sm:text-3xl text-[#F8F4ED] mb-1">{m.year}</div>
-                  <div className="text-[#F8F4ED]/60 text-xs sm:text-sm">{m.label}</div>
+                  <div className="font-display font-bold text-2xl sm:text-3xl text-tn-coral mb-1">{m.year}</div>
+                  <div className="text-[#FFF8F0]/70 text-xs sm:text-sm">{m.label}</div>
                 </div>
               ))}
             </div>

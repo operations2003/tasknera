@@ -24,42 +24,42 @@ const solutionLinks = [
     href: '/hr-workforce-solutions',
     desc: 'HR operations, onboarding, payroll & lifecycle management',
     icon: Building2,
-    accent: 'bg-[#E5BDB4]/25 text-[#704A4B] border-[#DED3C7]',
+    accent: 'bg-tn-coral/15 text-tn-coral border-tn-coral/30',
   },
   {
     label: 'Talent & Recruitment',
     href: '/talent-acquisition',
     desc: 'Permanent, contract, executive & volume hiring',
     icon: Target,
-    accent: 'bg-[#E5BDB4]/30 text-[#754E4E] border-[#DED3C7]',
+    accent: 'bg-tn-coral/15 text-tn-coral border-tn-coral/30',
   },
   {
     label: 'Workforce Solutions',
     href: '/hr-workforce-solutions#workforce',
     desc: 'Contract, temporary & scalable workforce deployment',
     icon: Users,
-    accent: 'bg-[#8E7D6E]/25 text-[#704A4B] border-[#DED3C7]',
+    accent: 'bg-tn-coral/15 text-tn-coral border-tn-coral/30',
   },
   {
     label: 'Virtual Assistant & Business Support',
     href: '/virtual-assistant-services',
     desc: '100% human remote professionals for executive & operational tasks',
     icon: Briefcase,
-    accent: 'bg-[#E5BDB4]/25 text-[#704A4B] border-[#DED3C7]',
+    accent: 'bg-tn-coral/15 text-tn-coral border-tn-coral/30',
   },
   {
     label: 'Virtual Customer Support (VCS)',
     href: '/virtual-customer-support',
     desc: 'Omnichannel voice, chat, email, social & ticketing helpdesk',
     icon: Headphones,
-    accent: 'bg-[#8E7D6E]/25 text-[#754E4E] border-[#DED3C7]',
+    accent: 'bg-tn-coral/15 text-tn-coral border-tn-coral/30',
   },
   {
     label: 'HireIQ™ & HRMS Platform',
     href: '/#platform',
     desc: 'AI resume screening, JD matching, and end-to-end lifecycle HRMS',
     icon: Sparkles,
-    accent: 'bg-[#E5BDB4]/30 text-[#704A4B] border-[#DED3C7]',
+    accent: 'bg-tn-coral/15 text-tn-coral border-tn-coral/30',
   },
 ];
 const aboutDropdownLinks = [
@@ -68,21 +68,21 @@ const aboutDropdownLinks = [
     href: '/#about',
     desc: 'Our story, 5 core pillars, global delivery architecture & leadership',
     icon: Building2,
-    accent: 'bg-[#E5BDB4]/30 text-[#704A4B] border-[#DED3C7]',
+    accent: 'bg-tn-coral/15 text-tn-coral border-tn-coral/30',
   },
   {
     label: 'How We Work',
     href: '/#process',
     desc: 'Our 6-phase predictable execution roadmap, SLAs & tech stack',
     icon: Compass,
-    accent: 'bg-[#8E7D6E]/25 text-[#704A4B] border-[#DED3C7]',
+    accent: 'bg-tn-coral/15 text-tn-coral border-tn-coral/30',
   },
   {
     label: '12+ Industries & Roles',
     href: '/#industries',
     desc: 'Specialized domain coverage across Tech, BFSI, Healthcare & more',
     icon: Globe2,
-    accent: 'bg-[#E5BDB4]/25 text-[#754E4E] border-[#DED3C7]',
+    accent: 'bg-tn-coral/15 text-tn-coral border-tn-coral/30',
   },
   {
     label: 'Careers at TaskNera',
@@ -172,8 +172,8 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-[#F3ECE4]/95 backdrop-blur-xl border-b border-[#DED3C7] shadow-sm py-0'
-          : 'bg-[#F3ECE4]/95 backdrop-blur-md border-b border-[#DED3C7] py-1'
+          ? 'bg-[#242326]/95 backdrop-blur-xl border-b border-[#353338] shadow-md py-0'
+          : 'bg-[#242326]/95 backdrop-blur-md border-b border-[#353338] py-1'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -191,15 +191,15 @@ export default function Header() {
                 <AppLogo
                   src="/assets/images/logo_1-1786267820748.png"
                   size={38}
-                  className="rounded-xl shadow-sm ring-1 ring-[#DED3C7]"
+                  className="rounded-xl shadow-sm ring-1 ring-[#3E3C42]"
                 />
-                <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-[#704A4B] rounded-full ring-2 ring-[#F3ECE4]" />
+                <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-[#F49A7D] rounded-full ring-2 ring-[#242326]" />
               </div>
               <div className="flex flex-col">
-                <span className="font-display font-bold text-xl sm:text-2xl text-[#704A4B] tracking-tight leading-none">
+                <span className="font-display font-bold text-xl sm:text-2xl text-[#FFF8F0] tracking-tight leading-none">
                   TaskNera
                 </span>
-                <span className="text-[10px] text-[#805D5A] tracking-wider uppercase font-semibold mt-1 flex items-center gap-1">
+                <span className="text-[10px] text-[#DCC6B8] tracking-wider uppercase font-semibold mt-1 flex items-center gap-1">
                   <span>Global HR &amp; Operations</span>
                 </span>
               </div>
@@ -211,8 +211,8 @@ export default function Header() {
                 href="/"
                 className={`px-2.5 xl:px-3 py-1.5 xl:py-2 text-xs xl:text-sm transition-all duration-200 rounded-lg ${
                   pathname === '/'
-                    ? 'text-[#704A4B] bg-[#8E7D6E]/25 font-semibold shadow-inner border-b-2 border-[#704A4B]'
-                    : 'text-[#805D5A] hover:text-[#704A4B] hover:bg-[#8E7D6E]/15 font-medium'
+                    ? 'text-[#FFF8F0] bg-white/10 font-semibold shadow-inner border-b-2 border-[#F49A7D]'
+                    : 'text-[#DCC6B8] hover:text-[#FFF8F0] hover:bg-white/5 font-medium'
                 }`}
               >
                 Home
@@ -230,41 +230,41 @@ export default function Header() {
                   onClick={() => setAboutOpen(!aboutOpen)}
                   className={`flex items-center gap-1 px-2.5 xl:px-3 py-1.5 xl:py-2 text-xs xl:text-sm transition-all duration-200 rounded-lg ${
                     isAboutActive || aboutOpen
-                      ? 'text-[#704A4B] bg-[#8E7D6E]/25 font-semibold shadow-inner border-b-2 border-[#704A4B]'
-                      : 'text-[#805D5A] hover:text-[#704A4B] hover:bg-[#8E7D6E]/15 font-medium'
+                      ? 'text-[#FFF8F0] bg-white/10 font-semibold shadow-inner border-b-2 border-[#F49A7D]'
+                      : 'text-[#DCC6B8] hover:text-[#FFF8F0] hover:bg-white/5 font-medium'
                   }`}
                   aria-expanded={aboutOpen}
                 >
                   <span>About</span>
                   <ChevronDown
-                    className={`w-3.5 h-3.5 transition-transform duration-200 ${aboutOpen ? 'rotate-180 text-[#704A4B]' : 'text-[#805D5A]'}`}
+                    className={`w-3.5 h-3.5 transition-transform duration-200 ${aboutOpen ? 'rotate-180 text-[#F49A7D]' : 'text-[#DCC6B8]'}`}
                   />
                 </button>
 
                 {aboutOpen && (
                   <div
                     className="absolute top-full left-0 w-[420px] pt-2 z-[100] animate-in fade-in-0 slide-in-from-top-1 duration-150"
-                    style={{ filter: 'drop-shadow(0 20px 30px rgba(112, 74, 75, 0.12))' }}
+                    style={{ filter: 'drop-shadow(0 20px 30px rgba(0, 0, 0, 0.4))' }}
                   >
-                    <div className="rounded-2xl border border-[#DED3C7] bg-[#FAF7F2] shadow-2xl overflow-hidden ring-1 ring-black/5">
+                    <div className="rounded-2xl border border-[#3E3C42] bg-[#242326] shadow-2xl overflow-hidden ring-1 ring-black/20">
                       {/* Top Bar */}
-                      <div className="flex items-center justify-between px-4 py-2.5 bg-[#F3ECE4] border-b border-[#DED3C7]">
-                        <div className="text-[11px] font-bold text-[#704A4B] uppercase tracking-wider flex items-center gap-2">
-                          <span className="w-2 h-2 rounded-full bg-[#704A4B] animate-pulse" />
+                      <div className="flex items-center justify-between px-4 py-2.5 bg-[#1C1B1D] border-b border-[#3E3C42]">
+                        <div className="text-[11px] font-bold text-[#FFF8F0] uppercase tracking-wider flex items-center gap-2">
+                          <span className="w-2 h-2 rounded-full bg-[#F49A7D] animate-pulse" />
                           <span>Company Overview · Merged Scope</span>
                         </div>
                         <Link
                           href="/#about"
                           onClick={() => setAboutOpen(false)}
-                          className="text-xs text-[#704A4B] hover:text-[#593A3B] font-semibold flex items-center gap-1.5 transition-colors group"
+                          className="text-xs text-[#F49A7D] hover:text-[#E28567] font-semibold flex items-center gap-1.5 transition-colors group"
                         >
                           <span>Full Overview</span>
-                          <ArrowRight className="w-3.5 h-3.5 transition-transform duration-150 group-hover:translate-x-0.5 text-[#704A4B]" />
+                          <ArrowRight className="w-3.5 h-3.5 transition-transform duration-150 group-hover:translate-x-0.5 text-[#F49A7D]" />
                         </Link>
                       </div>
 
                       {/* Merged Items List */}
-                      <div className="p-2 space-y-1.5 bg-[#FAF7F2]">
+                      <div className="p-2 space-y-1.5 bg-[#242326]">
                         {aboutDropdownLinks.map((item) => {
                           const IconComp = item.icon;
                           return (
@@ -272,19 +272,19 @@ export default function Header() {
                               key={item.label}
                               href={item.href}
                               onClick={() => setAboutOpen(false)}
-                              className="flex items-start gap-3 p-2.5 rounded-xl border border-[#DED3C7] bg-[#FAF7F2] hover:bg-[#F3ECE4] hover:border-[#704A4B]/40 transition-all duration-150 group shadow-sm"
+                              className="flex items-start gap-3 p-2.5 rounded-xl border border-[#353338] bg-[#2B2A2E] hover:bg-[#343238] hover:border-[#F49A7D]/40 transition-all duration-150 group shadow-sm"
                             >
                               <div
-                                className={`w-9 h-9 rounded-lg border flex items-center justify-center flex-shrink-0 mt-0.5 transition-transform duration-150 group-hover:scale-105 shadow-sm ${item.accent}`}
+                                className="w-9 h-9 rounded-lg border border-[#F49A7D]/25 bg-[#F49A7D]/15 text-[#F49A7D] flex items-center justify-center flex-shrink-0 mt-0.5 transition-transform duration-150 group-hover:scale-105 shadow-sm"
                               >
                                 <IconComp className="w-4 h-4" />
                               </div>
                               <div className="flex-1 min-w-0">
-                                <div className="text-xs font-bold text-[#423535] group-hover:text-[#704A4B] transition-colors flex items-center justify-between">
+                                <div className="text-xs font-bold text-[#FFF8F0] group-hover:text-[#F49A7D] transition-colors flex items-center justify-between">
                                   <span>{item.label}</span>
-                                  <ArrowRight className="w-3.5 h-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-[#704A4B] flex-shrink-0 ml-1" />
+                                  <ArrowRight className="w-3.5 h-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-[#F49A7D] flex-shrink-0 ml-1" />
                                 </div>
-                                <div className="text-[11px] text-[#625F5F] group-hover:text-[#423535] line-clamp-1 mt-0.5 leading-snug">
+                                <div className="text-[11px] text-[#DCC6B8] group-hover:text-[#FFF8F0] line-clamp-1 mt-0.5 leading-snug">
                                   {item.desc}
                                 </div>
                               </div>
@@ -294,14 +294,14 @@ export default function Header() {
                       </div>
 
                       {/* Bottom Footer Strip */}
-                      <div className="px-4 py-2 border-t border-[#DED3C7] bg-[#F3ECE4] flex items-center justify-between text-xs">
-                        <span className="text-[#625F5F] text-[11px]">
+                      <div className="px-4 py-2 border-t border-[#3E3C42] bg-[#1C1B1D] flex items-center justify-between text-xs">
+                        <span className="text-[#DCC6B8] text-[11px]">
                           3-in-1 Unified Hub: Identity, Execution &amp; Coverage
                         </span>
                         <Link
                           href="/#about"
                           onClick={() => setAboutOpen(false)}
-                          className="text-[#704A4B] hover:text-[#593A3B] font-semibold text-xs transition-colors"
+                          className="text-[#F49A7D] hover:text-[#E28567] font-semibold text-xs transition-colors"
                         >
                           Explore →
                         </Link>
@@ -323,42 +323,42 @@ export default function Header() {
                   onClick={() => setSolutionsOpen(!solutionsOpen)}
                   className={`flex items-center gap-1 px-2.5 xl:px-3 py-1.5 xl:py-2 text-xs xl:text-sm transition-all duration-200 rounded-lg ${
                     isSolutionsActive || solutionsOpen
-                      ? 'text-[#704A4B] bg-[#8E7D6E]/25 font-semibold shadow-inner border-b-2 border-[#704A4B]'
-                      : 'text-[#805D5A] hover:text-[#704A4B] hover:bg-[#8E7D6E]/15 font-medium'
+                      ? 'text-[#FFF8F0] bg-white/10 font-semibold shadow-inner border-b-2 border-[#F49A7D]'
+                      : 'text-[#DCC6B8] hover:text-[#FFF8F0] hover:bg-white/5 font-medium'
                   }`}
                   aria-expanded={solutionsOpen}
                 >
                   <span>Solutions</span>
                   <ChevronDown
-                    className={`w-3.5 h-3.5 transition-transform duration-200 ${solutionsOpen ? 'rotate-180 text-[#704A4B]' : 'text-[#805D5A]'}`}
+                    className={`w-3.5 h-3.5 transition-transform duration-200 ${solutionsOpen ? 'rotate-180 text-[#F49A7D]' : 'text-[#DCC6B8]'}`}
                   />
                 </button>
 
-                {/* Mega Dropdown Menu - Clean Ivory Elevated Card */}
+                {/* Mega Dropdown Menu - Charcoal Elevated Card */}
                 {solutionsOpen && (
                   <div
                     className="absolute top-full left-0 w-[580px] pt-2 z-[100] animate-in fade-in-0 slide-in-from-top-1 duration-150"
-                    style={{ filter: 'drop-shadow(0 20px 30px rgba(112, 74, 75, 0.12))' }}
+                    style={{ filter: 'drop-shadow(0 20px 30px rgba(0, 0, 0, 0.4))' }}
                   >
-                    <div className="rounded-2xl border border-[#DED3C7] bg-[#FAF7F2] shadow-2xl overflow-hidden ring-1 ring-black/5">
+                    <div className="rounded-2xl border border-[#3E3C42] bg-[#242326] shadow-2xl overflow-hidden ring-1 ring-black/20">
                       {/* Top Bar */}
-                      <div className="flex items-center justify-between px-4 py-2.5 bg-[#F3ECE4] border-b border-[#DED3C7]">
-                        <div className="text-[11px] font-bold text-[#704A4B] uppercase tracking-wider flex items-center gap-2">
-                          <span className="w-2 h-2 rounded-full bg-[#704A4B] animate-pulse" />
+                      <div className="flex items-center justify-between px-4 py-2.5 bg-[#1C1B1D] border-b border-[#3E3C42]">
+                        <div className="text-[11px] font-bold text-[#FFF8F0] uppercase tracking-wider flex items-center gap-2">
+                          <span className="w-2 h-2 rounded-full bg-[#F49A7D] animate-pulse" />
                           <span>5 Core Pillars + Tech Layer</span>
                         </div>
                         <Link
                           href="/services"
                           onClick={() => setSolutionsOpen(false)}
-                          className="text-xs text-[#704A4B] hover:text-[#593A3B] font-semibold flex items-center gap-1.5 transition-colors group"
+                          className="text-xs text-[#F49A7D] hover:text-[#E28567] font-semibold flex items-center gap-1.5 transition-colors group"
                         >
                           <span>All Solutions Hub</span>
-                          <ArrowRight className="w-3.5 h-3.5 transition-transform duration-150 group-hover:translate-x-0.5 text-[#704A4B]" />
+                          <ArrowRight className="w-3.5 h-3.5 transition-transform duration-150 group-hover:translate-x-0.5 text-[#F49A7D]" />
                         </Link>
                       </div>
 
                       {/* 2-Column Grid */}
-                      <div className="grid grid-cols-2 gap-2 p-3 bg-[#FAF7F2]">
+                      <div className="grid grid-cols-2 gap-2 p-3 bg-[#242326]">
                         {solutionLinks.map((sol) => {
                           const IconComp = sol.icon;
                           return (
@@ -366,19 +366,19 @@ export default function Header() {
                               key={sol.label}
                               href={sol.href}
                               onClick={() => setSolutionsOpen(false)}
-                              className="flex items-start gap-3 p-2.5 rounded-xl border border-[#DED3C7] bg-[#FAF7F2] hover:bg-[#F3ECE4] hover:border-[#704A4B]/40 transition-all duration-150 group shadow-sm"
+                              className="flex items-start gap-3 p-2.5 rounded-xl border border-[#353338] bg-[#2B2A2E] hover:bg-[#343238] hover:border-[#F49A7D]/40 transition-all duration-150 group shadow-sm"
                             >
                               <div
-                                className={`w-9 h-9 rounded-lg border flex items-center justify-center flex-shrink-0 mt-0.5 transition-transform duration-150 group-hover:scale-105 shadow-sm ${sol.accent}`}
+                                className="w-9 h-9 rounded-lg border border-[#F49A7D]/25 bg-[#F49A7D]/15 text-[#F49A7D] flex items-center justify-center flex-shrink-0 mt-0.5 transition-transform duration-150 group-hover:scale-105 shadow-sm"
                               >
                                 <IconComp className="w-4 h-4" />
                               </div>
                               <div className="flex-1 min-w-0">
-                                <div className="text-xs font-bold text-[#423535] group-hover:text-[#704A4B] transition-colors flex items-center justify-between">
+                                <div className="text-xs font-bold text-[#FFF8F0] group-hover:text-[#F49A7D] transition-colors flex items-center justify-between">
                                   <span className="truncate">{sol.label}</span>
-                                  <ArrowRight className="w-3.5 h-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-[#704A4B] flex-shrink-0 ml-1" />
+                                  <ArrowRight className="w-3.5 h-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-[#F49A7D] flex-shrink-0 ml-1" />
                                 </div>
-                                <div className="text-[11px] text-[#625F5F] group-hover:text-[#423535] line-clamp-2 mt-0.5 leading-snug">
+                                <div className="text-[11px] text-[#DCC6B8] group-hover:text-[#FFF8F0] line-clamp-2 mt-0.5 leading-snug">
                                   {sol.desc}
                                 </div>
                               </div>
@@ -388,15 +388,15 @@ export default function Header() {
                       </div>
 
                       {/* Bottom Footer Strip */}
-                      <div className="px-4 py-2.5 bg-[#F3ECE4] border-t border-[#DED3C7] flex items-center justify-between text-xs">
-                        <span className="flex items-center gap-2 text-[#625F5F] font-medium">
-                          <ShieldCheck className="w-4 h-4 text-[#704A4B] flex-shrink-0" />
+                      <div className="px-4 py-2.5 bg-[#1C1B1D] border-t border-[#3E3C42] flex items-center justify-between text-xs">
+                        <span className="flex items-center gap-2 text-[#DCC6B8] font-medium">
+                          <ShieldCheck className="w-4 h-4 text-[#F49A7D] flex-shrink-0" />
                           <span>100% Vetted Human Teams &middot; SLA Backed</span>
                         </span>
                         <Link
                           href="/process"
                           onClick={() => setSolutionsOpen(false)}
-                          className="text-[#704A4B] hover:text-[#593A3B] font-semibold flex items-center gap-1 transition-colors"
+                          className="text-[#F49A7D] hover:text-[#E28567] font-semibold flex items-center gap-1 transition-colors"
                         >
                           <span>How We Work →</span>
                         </Link>
@@ -410,8 +410,8 @@ export default function Header() {
                 href="/pricing"
                 className={`px-2.5 xl:px-3 py-1.5 xl:py-2 text-xs xl:text-sm transition-all duration-200 rounded-lg ${
                   pathname === '/pricing' || pathname === '/engagement'
-                    ? 'text-[#704A4B] bg-[#8E7D6E]/25 font-semibold shadow-inner border-b-2 border-[#704A4B]'
-                    : 'text-[#805D5A] hover:text-[#704A4B] hover:bg-[#8E7D6E]/15 font-medium'
+                    ? 'text-[#FFF8F0] bg-white/10 font-semibold shadow-inner border-b-2 border-[#F49A7D]'
+                    : 'text-[#DCC6B8] hover:text-[#FFF8F0] hover:bg-white/5 font-medium'
                 }`}
               >
                 Pricing
@@ -433,8 +433,8 @@ export default function Header() {
                 href="/workplace-policies"
                 className={`px-2.5 xl:px-3 py-1.5 xl:py-2 text-xs xl:text-sm transition-all duration-200 rounded-lg ${
                   pathname === '/workplace-policies'
-                    ? 'text-[#704A4B] bg-[#8E7D6E]/25 font-semibold shadow-inner border-b-2 border-[#704A4B]'
-                    : 'text-[#805D5A] hover:text-[#704A4B] hover:bg-[#8E7D6E]/15 font-medium'
+                    ? 'text-[#FFF8F0] bg-white/10 font-semibold shadow-inner border-b-2 border-[#F49A7D]'
+                    : 'text-[#DCC6B8] hover:text-[#FFF8F0] hover:bg-white/5 font-medium'
                 }`}
               >
                 Policies
@@ -443,8 +443,8 @@ export default function Header() {
                 href="/contact"
                 className={`px-2.5 xl:px-3 py-1.5 xl:py-2 text-xs xl:text-sm transition-all duration-200 rounded-lg ${
                   pathname === '/contact'
-                    ? 'text-[#704A4B] bg-[#8E7D6E]/25 font-semibold shadow-inner border-b-2 border-[#704A4B]'
-                    : 'text-[#805D5A] hover:text-[#704A4B] hover:bg-[#8E7D6E]/15 font-medium'
+                    ? 'text-[#FFF8F0] bg-white/10 font-semibold shadow-inner border-b-2 border-[#F49A7D]'
+                    : 'text-[#DCC6B8] hover:text-[#FFF8F0] hover:bg-white/5 font-medium'
                 }`}
               >
                 Contact
@@ -457,7 +457,7 @@ export default function Header() {
             <div className="hidden lg:flex items-center gap-3">
               <Link
                 href="/contact"
-                className="bg-[#704A4B] text-[#F8F4ED] text-xs xl:text-sm font-semibold px-4 xl:px-5 py-2 xl:py-2.5 rounded-full hover:bg-[#593A3B] active:scale-95 transition-all duration-200 shadow-md shadow-[#704A4B]/20 flex items-center gap-2 flex-shrink-0"
+                className="bg-[#F49A7D] text-[#242326] text-xs xl:text-sm font-bold px-4 xl:px-5 py-2 xl:py-2.5 rounded-full hover:bg-[#E28567] active:scale-95 transition-all duration-200 shadow-md shadow-[#F49A7D]/25 flex items-center gap-2 flex-shrink-0"
               >
                 <span>Talk to an Expert</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -466,23 +466,23 @@ export default function Header() {
 
             {/* Mobile Hamburger */}
             <button
-              className="lg:hidden flex flex-col justify-center items-center w-10 h-10 rounded-xl bg-[#FAF7F2] hover:bg-[#F3ECE4] border border-[#DED3C7] transition-colors"
+              className="lg:hidden flex flex-col justify-center items-center w-10 h-10 rounded-xl bg-[#2E2D32] hover:bg-[#38363D] border border-[#3E3C42] transition-colors"
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label={menuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={menuOpen}
             >
               <span
-                className={`block w-5 h-0.5 bg-[#704A4B] transition-transform duration-300 ease-in-out ${
+                className={`block w-5 h-0.5 bg-[#FFF8F0] transition-transform duration-300 ease-in-out ${
                   menuOpen ? 'rotate-45 translate-y-1' : '-translate-y-1'
                 }`}
               />
               <span
-                className={`block w-5 h-0.5 bg-[#704A4B] transition-opacity duration-300 ${
+                className={`block w-5 h-0.5 bg-[#FFF8F0] transition-opacity duration-300 ${
                   menuOpen ? 'opacity-0' : 'opacity-100'
                 }`}
               />
               <span
-                className={`block w-5 h-0.5 bg-[#704A4B] transition-transform duration-300 ease-in-out ${
+                className={`block w-5 h-0.5 bg-[#FFF8F0] transition-transform duration-300 ease-in-out ${
                   menuOpen ? '-rotate-45 -translate-y-1' : 'translate-y-1'
                 }`}
               />
@@ -493,15 +493,15 @@ export default function Header() {
 
       {/* Mobile Menu Overlay */}
       {menuOpen && (
-        <div className="lg:hidden fixed inset-x-0 top-16 sm:top-20 bottom-0 bg-[#F3ECE4] backdrop-blur-2xl z-40 flex flex-col justify-between overflow-y-auto border-t border-[#DED3C7] animate-in fade-in duration-200">
+        <div className="lg:hidden fixed inset-x-0 top-16 sm:top-20 bottom-0 bg-[#242326] backdrop-blur-2xl z-40 flex flex-col justify-between overflow-y-auto border-t border-[#3E3C42] animate-in fade-in duration-200">
           <nav className="flex flex-col px-6 pt-6 gap-1 pb-4">
             <Link
               href="/"
               onClick={handleNavClick}
               className={`text-base font-semibold px-4 py-3 rounded-xl transition-colors flex items-center justify-between ${
                 pathname === '/'
-                  ? 'bg-[#8E7D6E]/25 text-[#704A4B] border-l-4 border-[#704A4B]'
-                  : 'text-[#805D5A] hover:text-[#704A4B] hover:bg-[#8E7D6E]/15'
+                  ? 'bg-white/10 text-[#F49A7D] border-l-4 border-[#F49A7D]'
+                  : 'text-[#DCC6B8] hover:text-[#FFF8F0] hover:bg-white/5'
               }`}
             >
               <span>Home</span>
@@ -515,25 +515,25 @@ export default function Header() {
                 onClick={() => setMobileAboutOpen(!mobileAboutOpen)}
                 className={`w-full flex items-center justify-between text-base font-semibold px-4 py-3 rounded-xl transition-colors ${
                   isAboutActive
-                    ? 'bg-[#8E7D6E]/25 text-[#704A4B] border-l-4 border-[#704A4B]'
-                    : 'text-[#805D5A] hover:text-[#704A4B] hover:bg-[#8E7D6E]/15'
+                    ? 'bg-white/10 text-[#F49A7D] border-l-4 border-[#F49A7D]'
+                    : 'text-[#DCC6B8] hover:text-[#FFF8F0] hover:bg-white/5'
                 }`}
               >
                 <div className="flex items-center gap-2">
                   <span>About &amp; Overview</span>
-                  <span className="text-[10px] uppercase font-bold text-[#704A4B] bg-[#E5BDB4]/40 px-2 py-0.5 rounded-md">
+                  <span className="text-[10px] uppercase font-bold text-[#F49A7D] bg-[#F49A7D]/20 px-2 py-0.5 rounded-md">
                     Overview
                   </span>
                 </div>
                 <ChevronDown
                   className={`w-4 h-4 transition-transform duration-200 ${
-                    mobileAboutOpen ? 'rotate-180 text-[#704A4B]' : 'text-[#805D5A]'
+                    mobileAboutOpen ? 'rotate-180 text-[#F49A7D]' : 'text-[#DCC6B8]'
                   }`}
                 />
               </button>
 
               {mobileAboutOpen && (
-                <div className="p-2 space-y-1 rounded-2xl my-2 border border-[#DED3C7] bg-[#FAF7F2] shadow-sm animate-in fade-in duration-150">
+                <div className="p-2 space-y-1 rounded-2xl my-2 border border-[#3E3C42] bg-[#2B2A2E] shadow-sm animate-in fade-in duration-150">
                   {aboutDropdownLinks.map((item) => {
                     const IconComp = item.icon;
                     return (
@@ -541,18 +541,18 @@ export default function Header() {
                         key={item.label}
                         href={item.href}
                         onClick={handleNavClick}
-                        className="flex items-center gap-3 py-2.5 px-3 text-sm rounded-xl transition-colors bg-[#FAF7F2] hover:bg-[#F3ECE4] border border-[#DED3C7]"
+                        className="flex items-center gap-3 py-2.5 px-3 text-sm rounded-xl transition-colors bg-[#242326] hover:bg-[#343238] border border-[#3E3C42]"
                       >
                         <div
-                          className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 border ${item.accent}`}
+                          className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 border border-[#F49A7D]/25 bg-[#F49A7D]/15 text-[#F49A7D]"
                         >
                           <IconComp className="w-4 h-4" />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <div className="font-semibold text-[#423535] text-xs">{item.label}</div>
-                          <div className="text-[11px] text-[#625F5F] line-clamp-1">{item.desc}</div>
+                          <div className="font-semibold text-[#FFF8F0] text-xs">{item.label}</div>
+                          <div className="text-[11px] text-[#DCC6B8] line-clamp-1">{item.desc}</div>
                         </div>
-                        <ArrowRight className="w-3.5 h-3.5 text-[#704A4B]" />
+                        <ArrowRight className="w-3.5 h-3.5 text-[#F49A7D]" />
                       </Link>
                     );
                   })}
@@ -567,25 +567,25 @@ export default function Header() {
                 onClick={() => setMobileSolutionsOpen(!mobileSolutionsOpen)}
                 className={`w-full flex items-center justify-between text-base font-semibold px-4 py-3 rounded-xl transition-colors ${
                   isSolutionsActive
-                    ? 'bg-[#8E7D6E]/25 text-[#704A4B] border-l-4 border-[#704A4B]'
-                    : 'text-[#805D5A] hover:text-[#704A4B] hover:bg-[#8E7D6E]/15'
+                    ? 'bg-white/10 text-[#F49A7D] border-l-4 border-[#F49A7D]'
+                    : 'text-[#DCC6B8] hover:text-[#FFF8F0] hover:bg-white/5'
                 }`}
               >
                 <div className="flex items-center gap-2">
                   <span>Solutions</span>
-                  <span className="text-[10px] uppercase font-bold text-[#704A4B] bg-[#E5BDB4]/40 px-2 py-0.5 rounded-md">
+                  <span className="text-[10px] uppercase font-bold text-[#F49A7D] bg-[#F49A7D]/20 px-2 py-0.5 rounded-md">
                     5 Pillars
                   </span>
                 </div>
                 <ChevronDown
                   className={`w-4 h-4 transition-transform duration-200 ${
-                    mobileSolutionsOpen ? 'rotate-180 text-[#704A4B]' : 'text-[#805D5A]'
+                    mobileSolutionsOpen ? 'rotate-180 text-[#F49A7D]' : 'text-[#DCC6B8]'
                   }`}
                 />
               </button>
 
               {mobileSolutionsOpen && (
-                <div className="p-2 space-y-1 rounded-2xl my-2 border border-[#DED3C7] bg-[#FAF7F2] shadow-sm animate-in fade-in duration-150">
+                <div className="p-2 space-y-1 rounded-2xl my-2 border border-[#3E3C42] bg-[#2B2A2E] shadow-sm animate-in fade-in duration-150">
                   {solutionLinks.map((sol) => {
                     const IconComp = sol.icon;
                     return (
@@ -593,28 +593,28 @@ export default function Header() {
                         key={sol.label}
                         href={sol.href}
                         onClick={handleNavClick}
-                        className="flex items-center gap-3 py-2.5 px-3 text-sm rounded-xl transition-colors bg-[#FAF7F2] hover:bg-[#F3ECE4] border border-[#DED3C7]"
+                        className="flex items-center gap-3 py-2.5 px-3 text-sm rounded-xl transition-colors bg-[#242326] hover:bg-[#343238] border border-[#3E3C42]"
                       >
                         <div
-                          className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 border ${sol.accent}`}
+                          className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 border border-[#F49A7D]/25 bg-[#F49A7D]/15 text-[#F49A7D]"
                         >
                           <IconComp className="w-4 h-4" />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <div className="font-semibold text-[#423535] text-xs">{sol.label}</div>
-                          <div className="text-[11px] text-[#625F5F] line-clamp-1">{sol.desc}</div>
+                          <div className="font-semibold text-[#FFF8F0] text-xs">{sol.label}</div>
+                          <div className="text-[11px] text-[#DCC6B8] line-clamp-1">{sol.desc}</div>
                         </div>
-                        <ArrowRight className="w-3.5 h-3.5 text-[#704A4B]" />
+                        <ArrowRight className="w-3.5 h-3.5 text-[#F49A7D]" />
                       </Link>
                     );
                   })}
                   <Link
                     href="/services"
                     onClick={handleNavClick}
-                    className="flex items-center justify-between py-2.5 px-3 text-xs font-semibold text-[#704A4B] border-t border-[#DED3C7] mt-1 hover:text-[#593A3B]"
+                    className="flex items-center justify-between py-2.5 px-3 text-xs font-semibold text-[#F49A7D] border-t border-[#3E3C42] mt-1 hover:text-[#E28567]"
                   >
                     <span>View All Solutions Hub</span>
-                    <ArrowRight className="w-3.5 h-3.5 text-[#704A4B]" />
+                    <ArrowRight className="w-3.5 h-3.5 text-[#F49A7D]" />
                   </Link>
                 </div>
               )}
@@ -625,8 +625,8 @@ export default function Header() {
               onClick={handleNavClick}
               className={`text-base font-semibold px-4 py-3 rounded-xl transition-colors flex items-center justify-between ${
                 pathname === '/pricing' || pathname === '/engagement'
-                  ? 'bg-[#8E7D6E]/25 text-[#704A4B] border-l-4 border-[#704A4B]'
-                  : 'text-[#805D5A] hover:text-[#704A4B] hover:bg-[#8E7D6E]/15'
+                  ? 'bg-white/10 text-[#F49A7D] border-l-4 border-[#F49A7D]'
+                  : 'text-[#DCC6B8] hover:text-[#FFF8F0] hover:bg-white/5'
               }`}
             >
               <span>Engagement &amp; Pricing</span>
@@ -656,8 +656,8 @@ export default function Header() {
               onClick={handleNavClick}
               className={`text-base font-semibold px-4 py-3 rounded-xl transition-colors flex items-center justify-between ${
                 pathname === '/workplace-policies'
-                  ? 'bg-[#8E7D6E]/25 text-[#704A4B] border-l-4 border-[#704A4B]'
-                  : 'text-[#805D5A] hover:text-[#704A4B] hover:bg-[#8E7D6E]/15'
+                  ? 'bg-white/10 text-[#F49A7D] border-l-4 border-[#F49A7D]'
+                  : 'text-[#DCC6B8] hover:text-[#FFF8F0] hover:bg-white/5'
               }`}
             >
               <span>Workplace Policies</span>
@@ -669,8 +669,8 @@ export default function Header() {
               onClick={handleNavClick}
               className={`text-base font-semibold px-4 py-3 rounded-xl transition-colors flex items-center justify-between ${
                 pathname === '/contact'
-                  ? 'bg-[#8E7D6E]/25 text-[#704A4B] border-l-4 border-[#704A4B]'
-                  : 'text-[#805D5A] hover:text-[#704A4B] hover:bg-[#8E7D6E]/15'
+                  ? 'bg-white/10 text-[#F49A7D] border-l-4 border-[#F49A7D]'
+                  : 'text-[#DCC6B8] hover:text-[#FFF8F0] hover:bg-white/5'
               }`}
             >
               <span>Contact</span>
@@ -678,11 +678,11 @@ export default function Header() {
             </Link>
           </nav>
 
-          <div className="px-6 pb-8 pt-4 flex flex-col gap-3 border-t border-[#DED3C7] bg-[#F3ECE4]">
+          <div className="px-6 pb-8 pt-4 flex flex-col gap-3 border-t border-[#3E3C42] bg-[#1C1B1D]">
             <Link
               href="/contact"
               onClick={handleNavClick}
-              className="bg-[#704A4B] text-[#F8F4ED] text-base font-semibold px-6 py-3.5 rounded-full text-center hover:bg-[#593A3B] active:scale-95 transition-all shadow-md shadow-[#704A4B]/20 flex items-center justify-center gap-2"
+              className="bg-[#F49A7D] text-[#242326] text-base font-bold px-6 py-3.5 rounded-full text-center hover:bg-[#E28567] active:scale-95 transition-all shadow-md shadow-[#F49A7D]/25 flex items-center justify-center gap-2"
             >
               <span>Talk to an Expert</span>
               <ArrowRight className="w-4 h-4" />
@@ -690,9 +690,9 @@ export default function Header() {
             <a
               href="mailto:operations@tasknera.com"
               onClick={handleNavClick}
-              className="text-[#805D5A] hover:text-[#704A4B] text-xs text-center transition-colors flex items-center justify-center gap-2 py-1"
+              className="text-[#DCC6B8] hover:text-[#FFF8F0] text-xs text-center transition-colors flex items-center justify-center gap-2 py-1"
             >
-              <Mail className="w-3.5 h-3.5" />
+              <Mail className="w-3.5 h-3.5 text-[#F49A7D]" />
               <span>operations@tasknera.com</span>
             </a>
           </div>

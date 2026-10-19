@@ -112,31 +112,31 @@ export default function ProcessSection() {
             return (
               <div
                 key={step.num}
-                className="glass-card rounded-3xl p-7 sm:p-8 hover-lift group border border-[#DED3C7]/20 hover:border-[#E5BDB4]/40 transition-all duration-300 flex flex-col justify-between relative overflow-hidden bg-[#704A4B]/70 backdrop-blur-xl"
+                className="rounded-3xl p-7 sm:p-8 hover-lift group border border-tn-mist/20 hover:border-tn-coral/50 transition-all duration-300 flex flex-col justify-between relative overflow-hidden bg-[#242326] text-[#FFF8F0]"
                 style={{ transitionDelay: `${i * 0.04}s` }}
               >
                 <div>
                   <div className="flex items-start justify-between mb-5">
-                    <span className="text-3xl font-display font-bold text-[#F8F4ED]/50 group-hover:text-[#F8F4ED]/80 transition-colors leading-none">
+                    <span className="text-3xl font-display font-bold text-[#FFF8F0]/40 group-hover:text-tn-coral transition-colors leading-none">
                       {step.num}
                     </span>
-                    <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/15 flex items-center justify-center text-[#E5BDB4] group-hover:scale-110 transition-transform">
+                    <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/15 flex items-center justify-center text-tn-coral group-hover:scale-110 transition-transform">
                       <IconComp className="w-6 h-6" />
                     </div>
                   </div>
 
-                  <div className="w-8 h-0.5 bg-[#E5BDB4] mb-4 transition-all duration-300 group-hover:w-16" />
+                  <div className="w-8 h-0.5 bg-tn-coral mb-4 transition-all duration-300 group-hover:w-16" />
 
-                  <h3 className="font-display font-bold text-[#F8F4ED] text-xl mb-2.5">
+                  <h3 className="font-display font-bold text-[#FFF8F0] text-xl mb-2.5">
                     {step.title}
                   </h3>
 
-                  <p className="text-[#F8F4ED]/80 text-sm leading-relaxed mb-6 font-normal">
+                  <p className="text-[#FFF8F0]/80 text-sm leading-relaxed mb-6 font-normal">
                     {step.desc}
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-white/10 text-xs text-[#F8F4ED]/70 font-medium tracking-wide flex items-center justify-between">
+                <div className="pt-4 border-t border-white/10 text-xs text-[#FFF8F0]/70 font-medium tracking-wide flex items-center justify-between">
                   <span>{step.applicable}</span>
                 </div>
               </div>
@@ -146,33 +146,33 @@ export default function ProcessSection() {
 
         {/* Technology-Enabled Delivery Box */}
         <div className="scroll-reveal" style={{ transitionDelay: '0.2s' }}>
-          <div className="bg-gradient-to-br from-[#704A4B] via-[#613D3E] to-[#4F3031] backdrop-blur-2xl border border-[#DED3C7]/20 rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+          <div className="bg-gradient-to-br from-[#242326] via-[#242326] to-[#1A191B] border border-tn-mist/20 rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden text-[#FFF8F0]">
             <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               
               <div className="lg:col-span-6 space-y-5">
-                <div className="inline-flex items-center gap-2 bg-[#E5BDB4]/15 border border-[#E5BDB4]/30 rounded-full px-3.5 py-1">
-                  <Sparkles className="w-3.5 h-3.5 text-[#E5BDB4]" />
-                  <span className="text-xs font-bold text-[#E5BDB4] tracking-widest uppercase">
+                <div className="inline-flex items-center gap-2 bg-tn-coral/15 border border-tn-coral/30 rounded-full px-3.5 py-1">
+                  <Sparkles className="w-3.5 h-3.5 text-tn-coral" />
+                  <span className="text-xs font-bold text-tn-coral tracking-widest uppercase">
                     Delivery Architecture
                   </span>
                 </div>
 
-                <h3 className="font-display font-bold text-2xl sm:text-3xl text-[#F8F4ED] leading-tight">
+                <h3 className="font-display font-bold text-2xl sm:text-3xl text-[#FFF8F0] leading-tight">
                   Modern Technology Meets Human Expertise
                 </h3>
 
-                <p className="text-[#F8F4ED]/80 text-sm sm:text-base leading-relaxed">
+                <p className="text-[#FFF8F0]/80 text-sm sm:text-base leading-relaxed">
                   TaskNera combines experienced professionals with targeted HR and workforce technology to deliver faster, more transparent, and fully scalable operations.
                 </p>
 
-                <p className="text-[#F8F4ED]/70 text-xs sm:text-sm leading-relaxed">
+                <p className="text-[#FFF8F0]/70 text-xs sm:text-sm leading-relaxed">
                   We never replace people with generic bots; we empower vetted human teams with specialized tools like our JD Match Evaluator, real-time analytics dashboards, and automated workflows to deliver quality and consistency at every stage.
                 </p>
 
                 <div className="pt-2 flex flex-wrap gap-3">
                   <Link
                     href="/#contact"
-                    className="inline-flex items-center gap-2 bg-[#FAF7F2] text-[#704A4B] font-bold px-7 py-3 rounded-full text-xs hover:bg-[#F3ECE4] transition-all shadow-lg"
+                    className="inline-flex items-center gap-2 bg-tn-coral text-tn-charcoal font-bold px-7 py-3 rounded-full text-xs hover:bg-[#F28B6A] transition-all shadow-lg"
                   >
                     <span>Discuss Your Operational Model</span>
                     <ArrowRight className="w-3.5 h-3.5" />
