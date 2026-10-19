@@ -67,7 +67,7 @@ const processSteps = [
     desc: 'Deep-dive intake to analyze your organizational dynamics, operational scope, skills matrix, and timeline requirements.',
     icon: Compass,
     applicable: 'HR Ops · Talent · Workforce · Virtual Support',
-    accent: 'text-accent',
+    accent: 'text-[#704A4B]',
   },
   {
     num: '02',
@@ -75,7 +75,7 @@ const processSteps = [
     desc: 'We architect the optimal pod structure, role competencies, SLAs, and commercial engagement model tailored to your budget.',
     icon: Layers,
     applicable: 'Custom SOW · Transparent SLAs · No Hidden Fees',
-    accent: 'text-secondary',
+    accent: 'text-[#754E4E]',
   },
   {
     num: '03',
@@ -83,7 +83,7 @@ const processSteps = [
     desc: 'We source, pre-vet, and onboard dedicated human professionals paired with our HireIQ matching engine and digital portal setup.',
     icon: Rocket,
     applicable: 'Vetted Talent Matching · Tech Onboarding',
-    accent: 'text-blue-500',
+    accent: 'text-[#704A4B]',
   },
   {
     num: '04',
@@ -91,7 +91,7 @@ const processSteps = [
     desc: 'Our embedded pods manage your agreed workflows daily with active supervision, documentation, and continuous communication.',
     icon: Settings,
     applicable: 'Day-to-Day Execution · Agile Coordination',
-    accent: 'text-amber-500',
+    accent: 'text-[#754E4E]',
   },
   {
     num: '05',
@@ -99,7 +99,7 @@ const processSteps = [
     desc: 'Transparent real-time reporting, QA auditing, monthly performance scorecard reviews, and feedback cadences.',
     icon: BarChart3,
     applicable: 'Weekly / Monthly Scorecards · QA Reviews',
-    accent: 'text-teal-500',
+    accent: 'text-[#805D5A]',
   },
   {
     num: '06',
@@ -107,7 +107,7 @@ const processSteps = [
     desc: 'As your business evolves, seamlessly expand pod capacity, add functional capabilities, or adjust shift coverage on-demand.',
     icon: TrendingUp,
     applicable: 'Flexible Scaling · Zero Friction Expansion',
-    accent: 'text-purple-500',
+    accent: 'text-[#704A4B]',
   },
 ];
 
@@ -177,9 +177,9 @@ export default function CompanyOverviewSection() {
       <div id="process" className="relative -top-28 pointer-events-none" />
       <div id="industries" className="relative -top-28 pointer-events-none" />
 
-      {/* Ambient background light pools with subtle blue effects */}
-      <div className="absolute top-10 right-1/3 w-[600px] h-[350px] bg-sky-400/12 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 left-1/3 w-[500px] h-[300px] bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
+      {/* Ambient background light pools with subtle warm effects */}
+      <div className="absolute top-10 right-1/3 w-[600px] h-[350px] bg-[#E5BDB4]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-10 left-1/3 w-[500px] h-[300px] bg-[#704A4B]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -187,9 +187,9 @@ export default function CompanyOverviewSection() {
 
         {/* Unified Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/20 rounded-full px-4 py-1.5 mb-4 shadow-sm">
-            <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-            <span className="text-xs font-bold text-accent tracking-widest uppercase">
+          <div className="inline-flex items-center gap-2 bg-[#704A4B]/10 border border-[#704A4B]/20 rounded-full px-4 py-1.5 mb-4 shadow-sm">
+            <span className="w-2 h-2 rounded-full bg-[#704A4B] animate-pulse" />
+            <span className="text-xs font-bold text-[#704A4B] tracking-widest uppercase">
               Company · Methodology · Domain Reach
             </span>
           </div>
@@ -211,7 +211,7 @@ export default function CompanyOverviewSection() {
               onClick={() => setActiveTab('about')}
               className={`px-6 py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all duration-300 flex items-center gap-2 ${
                 activeTab === 'about'
-                  ? 'bg-accent text-accent-foreground shadow-md'
+                  ? 'bg-[#704A4B] text-[#F8F4ED] shadow-md'
                   : 'text-muted-foreground hover:text-foreground hover:bg-muted'
               }`}
             >
@@ -222,7 +222,7 @@ export default function CompanyOverviewSection() {
               onClick={() => setActiveTab('process')}
               className={`px-6 py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all duration-300 flex items-center gap-2 ${
                 activeTab === 'process'
-                  ? 'bg-accent text-accent-foreground shadow-md'
+                  ? 'bg-[#704A4B] text-[#F8F4ED] shadow-md'
                   : 'text-muted-foreground hover:text-foreground hover:bg-muted'
               }`}
             >
@@ -233,7 +233,7 @@ export default function CompanyOverviewSection() {
               onClick={() => setActiveTab('industries')}
               className={`px-6 py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all duration-300 flex items-center gap-2 ${
                 activeTab === 'industries'
-                  ? 'bg-accent text-accent-foreground shadow-md'
+                  ? 'bg-[#704A4B] text-[#F8F4ED] shadow-md'
                   : 'text-muted-foreground hover:text-foreground hover:bg-muted'
               }`}
             >
@@ -250,7 +250,7 @@ export default function CompanyOverviewSection() {
               
               {/* Left Column: Story & Philosophy */}
               <div className="lg:col-span-6 space-y-6">
-                <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/20 rounded-full px-3.5 py-1 text-xs font-bold text-accent uppercase tracking-wider">
+                <div className="inline-flex items-center gap-2 bg-[#704A4B]/10 border border-[#704A4B]/20 rounded-full px-3.5 py-1 text-xs font-bold text-[#704A4B] uppercase tracking-wider">
                   Our Identity
                 </div>
                 <h3 className="text-2xl sm:text-3xl font-display font-bold text-foreground leading-tight">
@@ -269,7 +269,7 @@ export default function CompanyOverviewSection() {
                 <div className="flex flex-wrap gap-3.5 pt-2">
                   <Link
                     href="/about"
-                    className="bg-accent text-accent-foreground text-xs sm:text-sm font-semibold px-6 py-3 rounded-full hover:brightness-110 transition-all shadow-md flex items-center gap-2"
+                    className="bg-[#704A4B] text-[#F8F4ED] text-xs sm:text-sm font-semibold px-6 py-3 rounded-full hover:bg-[#805D5A] transition-all shadow-md flex items-center gap-2"
                   >
                     <span>Our Full Story &amp; Leadership</span>
                     <ArrowRight className="w-4 h-4" />
@@ -324,7 +324,7 @@ export default function CompanyOverviewSection() {
             <div className="bg-card border border-border/80 rounded-3xl p-6 sm:p-10 shadow-sm">
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 mb-8 border-b border-border/60">
                 <div>
-                  <div className="inline-flex items-center gap-2 bg-orange-500/10 text-orange-600 border border-orange-500/20 rounded-full px-3.5 py-1 text-xs font-bold uppercase tracking-wider mb-2">
+                  <div className="inline-flex items-center gap-2 bg-[#704A4B]/10 text-[#704A4B] border border-[#704A4B]/20 rounded-full px-3.5 py-1 text-xs font-bold uppercase tracking-wider mb-2">
                     <Compass className="w-3.5 h-3.5" />
                     Structured Delivery
                   </div>
@@ -334,7 +334,7 @@ export default function CompanyOverviewSection() {
                 </div>
                 <Link
                   href="/process"
-                  className="inline-flex items-center gap-2 text-xs font-semibold text-accent hover:underline self-start md:self-auto"
+                  className="inline-flex items-center gap-2 text-xs font-semibold text-[#704A4B] hover:underline self-start md:self-auto"
                 >
                   <span>View Comprehensive Process Deep-Dive</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -348,10 +348,10 @@ export default function CompanyOverviewSection() {
                   return (
                     <div
                       key={step.num}
-                      className="p-5 rounded-2xl bg-surface-subtle border border-border/70 hover:border-accent/40 hover:bg-card transition-all space-y-3 group"
+                      className="p-5 rounded-2xl bg-surface-subtle border border-border/70 hover:border-[#704A4B]/40 hover:bg-card transition-all space-y-3 group"
                     >
                       <div className="flex items-center justify-between">
-                        <span className="text-2xl font-display font-bold text-foreground/40 group-hover:text-accent transition-colors">
+                        <span className="text-2xl font-display font-bold text-foreground/40 group-hover:text-[#704A4B] transition-colors">
                           {step.num}
                         </span>
                         <div className="w-9 h-9 rounded-xl bg-card border border-border flex items-center justify-center">
@@ -364,8 +364,8 @@ export default function CompanyOverviewSection() {
                       <p className="text-xs text-muted-foreground leading-relaxed">
                         {step.desc}
                       </p>
-                      <div className="pt-2 text-[11px] font-semibold text-accent flex items-center gap-1.5 border-t border-border/50">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0" />
+                      <div className="pt-2 text-[11px] font-semibold text-[#704A4B] flex items-center gap-1.5 border-t border-border/50">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#704A4B] flex-shrink-0" />
                         <span className="truncate">{step.applicable}</span>
                       </div>
                     </div>
@@ -377,7 +377,7 @@ export default function CompanyOverviewSection() {
               <div className="bg-surface-subtle border border-border/70 rounded-2xl p-5">
                 <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
                   <div className="flex items-center gap-2.5">
-                    <Sparkles className="w-4 h-4 text-accent" />
+                    <Sparkles className="w-4 h-4 text-[#704A4B]" />
                     <span className="text-xs font-bold text-foreground uppercase tracking-wider">
                       Technology &amp; Tooling Integration:
                     </span>
@@ -405,7 +405,7 @@ export default function CompanyOverviewSection() {
             <div className="bg-card border border-border/80 rounded-3xl p-6 sm:p-10 shadow-sm">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 mb-8 border-b border-border/60">
                 <div>
-                  <div className="inline-flex items-center gap-2 bg-teal-500/10 text-teal-600 border border-teal-500/20 rounded-full px-3.5 py-1 text-xs font-bold uppercase tracking-wider mb-2">
+                  <div className="inline-flex items-center gap-2 bg-[#704A4B]/10 text-[#704A4B] border border-[#704A4B]/20 rounded-full px-3.5 py-1 text-xs font-bold uppercase tracking-wider mb-2">
                     <Globe2 className="w-3.5 h-3.5" />
                     Domain Breadth
                   </div>
@@ -420,7 +420,7 @@ export default function CompanyOverviewSection() {
                     onClick={() => setIndustrySubTab('industries')}
                     className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all ${
                       industrySubTab === 'industries'
-                        ? 'bg-accent text-accent-foreground shadow-sm'
+                        ? 'bg-[#704A4B] text-[#F8F4ED] shadow-sm'
                         : 'text-muted-foreground hover:text-foreground'
                     }`}
                   >
@@ -430,7 +430,7 @@ export default function CompanyOverviewSection() {
                     onClick={() => setIndustrySubTab('roles')}
                     className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all ${
                       industrySubTab === 'roles'
-                        ? 'bg-accent text-accent-foreground shadow-sm'
+                        ? 'bg-[#704A4B] text-[#F8F4ED] shadow-sm'
                         : 'text-muted-foreground hover:text-foreground'
                     }`}
                   >
@@ -447,12 +447,12 @@ export default function CompanyOverviewSection() {
                     return (
                       <div
                         key={ind.label}
-                        className="p-4 rounded-2xl bg-surface-subtle border border-border/60 hover:border-teal-500/40 hover:bg-card transition-all space-y-2 group"
+                        className="p-4 rounded-2xl bg-surface-subtle border border-border/60 hover:border-[#704A4B]/40 hover:bg-card transition-all space-y-2 group"
                       >
-                        <div className="w-9 h-9 rounded-xl bg-teal-500/10 border border-teal-500/20 text-teal-600 flex items-center justify-center">
+                        <div className="w-9 h-9 rounded-xl bg-[#704A4B]/10 border border-[#704A4B]/20 text-[#704A4B] flex items-center justify-center">
                           <IconComp className="w-4 h-4" />
                         </div>
-                        <div className="font-semibold text-sm text-foreground group-hover:text-teal-600 transition-colors">
+                        <div className="font-semibold text-sm text-foreground group-hover:text-[#704A4B] transition-colors">
                           {ind.label}
                         </div>
                         <div className="text-xs text-muted-foreground leading-relaxed">

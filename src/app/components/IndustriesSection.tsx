@@ -160,17 +160,17 @@ export default function IndustriesSection() {
         )}
 
         {/* Global reach strip */}
-        <div className="mt-14 bg-gradient-to-r from-[#1e4994] to-[#255ebd] rounded-3xl p-8 sm:p-10 text-white shadow-2xl relative overflow-hidden border border-blue-300/30 scroll-reveal" style={{ transitionDelay: '0.2s' }}>
+        <div className="mt-14 bg-gradient-to-r from-[#704A4B] via-[#613D3E] to-[#4F3031] rounded-3xl p-8 sm:p-10 text-[#F8F4ED] shadow-2xl relative overflow-hidden border border-[#DED3C7]/20 scroll-reveal" style={{ transitionDelay: '0.2s' }}>
           <div className="grid lg:grid-cols-12 gap-6 items-center">
             <div className="lg:col-span-5 space-y-2">
-              <div className="inline-flex items-center gap-2 bg-white/10 px-3 py-1 rounded-full text-xs font-bold text-accent uppercase tracking-wider">
+              <div className="inline-flex items-center gap-2 bg-white/10 px-3 py-1 rounded-full text-xs font-bold text-[#E5BDB4] uppercase tracking-wider">
                 <Globe2 className="w-3.5 h-3.5" />
                 <span>Global Sourcing Coverage</span>
               </div>
-              <h3 className="font-display font-bold text-2xl sm:text-3xl text-white">
+              <h3 className="font-display font-bold text-2xl sm:text-3xl text-[#F8F4ED]">
                 Sourcing Across 5 Continents &amp; Hubs
               </h3>
-              <p className="text-white/70 text-sm">
+              <p className="text-[#F8F4ED]/75 text-sm">
                 We source, pre-vet, and place talent across local and international timezones.
               </p>
             </div>
@@ -184,10 +184,10 @@ export default function IndustriesSection() {
               ].map((region) => (
                 <div
                   key={region.name}
-                  className="glass-card rounded-2xl px-4 py-2.5 text-white flex flex-col justify-center border border-white/15"
+                  className="glass-card rounded-2xl px-4 py-2.5 text-[#F8F4ED] flex flex-col justify-center border border-white/15"
                 >
-                  <span className="text-sm font-bold text-white">{region.name}</span>
-                  <span className="text-[10px] text-accent font-semibold">{region.tag}</span>
+                  <span className="text-sm font-bold text-[#F8F4ED]">{region.name}</span>
+                  <span className="text-[10px] text-[#E5BDB4] font-semibold">{region.tag}</span>
                 </div>
               ))}
             </div>

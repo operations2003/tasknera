@@ -82,17 +82,17 @@ const stages = [
 export default function WhoWeSupportSection() {
   return (
     <section className="py-20 sm:py-28 bg-surface-subtle relative overflow-hidden border-b border-border">
-      {/* Ambient background light pools with subtle blue effects */}
-      <div className="absolute top-10 right-1/4 w-[500px] h-[350px] bg-sky-400/12 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-1/4 w-[500px] h-[350px] bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
+      {/* Ambient background light pools with subtle warm effects */}
+      <div className="absolute top-10 right-1/4 w-[500px] h-[350px] bg-[#E5BDB4]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-1/4 w-[500px] h-[350px] bg-[#704A4B]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 scroll-reveal">
-          <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/20 rounded-full px-4 py-1.5 mb-5 shadow-sm">
-            <span className="w-2 h-2 rounded-full bg-accent" />
-            <span className="text-xs font-bold text-accent tracking-widest uppercase">
+          <div className="inline-flex items-center gap-2 bg-[#704A4B]/10 border border-[#704A4B]/20 rounded-full px-4 py-1.5 mb-5 shadow-sm">
+            <span className="w-2 h-2 rounded-full bg-[#704A4B]" />
+            <span className="text-xs font-bold text-[#704A4B] tracking-widest uppercase">
               Who We Serve
             </span>
           </div>
@@ -114,13 +114,13 @@ export default function WhoWeSupportSection() {
             return (
               <div
                 key={st.stage}
-                className={`card-premium rounded-3xl p-7 sm:p-8 flex flex-col justify-between group ${
+                className={`card-premium rounded-3xl p-7 sm:p-8 flex flex-col justify-between group bg-card border border-border/80 hover:border-[#704A4B]/40 transition-all ${
                   idx === 4 ? 'md:col-span-2 lg:col-span-1' : ''
                 }`}
               >
                 <div>
                   <div className="flex items-center justify-between mb-5">
-                    <div className={`w-12 h-12 rounded-2xl border flex items-center justify-center ${st.iconBg} shadow-sm group-hover:scale-110 transition-transform`}>
+                    <div className="w-12 h-12 rounded-2xl border flex items-center justify-center bg-[#704A4B]/10 text-[#704A4B] border-[#704A4B]/20 shadow-sm group-hover:scale-110 transition-transform">
                       <IconComp className="w-6 h-6" />
                     </div>
                     <span className="text-xs font-bold text-muted-foreground bg-muted border border-border rounded-full px-3 py-1">
@@ -128,7 +128,7 @@ export default function WhoWeSupportSection() {
                     </span>
                   </div>
 
-                  <h3 className="font-display font-bold text-foreground text-xl mb-2 group-hover:text-accent transition-colors">
+                  <h3 className="font-display font-bold text-foreground text-xl mb-2 group-hover:text-[#704A4B] transition-colors">
                     {st.stage}
                   </h3>
 
@@ -139,7 +139,7 @@ export default function WhoWeSupportSection() {
                   <div className="space-y-2.5 pt-4 border-t border-border/70">
                     {st.benefits.map((b) => (
                       <div key={b} className="flex items-start gap-2.5 text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                        <CheckCircle2 className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 className="w-4 h-4 text-[#704A4B] mt-0.5 flex-shrink-0" />
                         <span>{b}</span>
                       </div>
                     ))}
@@ -149,7 +149,7 @@ export default function WhoWeSupportSection() {
                 <div className="mt-8 pt-4 border-t border-border/70">
                   <Link
                     href="/#contact"
-                    className="text-xs font-bold text-foreground group-hover:text-accent flex items-center gap-1.5 transition-colors"
+                    className="text-xs font-bold text-foreground group-hover:text-[#704A4B] flex items-center gap-1.5 transition-colors"
                   >
                     <span>Explore support for {st.stage}</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />

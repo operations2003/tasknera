@@ -34,6 +34,18 @@ module.exports = {
         border: 'var(--border)',
         input: 'var(--input)',
         ring: 'var(--ring)',
+        tn: {
+          ivory: '#F3ECE4',
+          taupe: '#8E7D6E',
+          dusty: '#754E4E',
+          burgundy: '#704A4B',
+          'burgundy-hover': '#593A3B',
+          cream: '#F8F4ED',
+          nav: '#805D5A',
+          charcoal: '#625F5F',
+          blush: '#E5BDB4',
+          beige: '#DED3C7',
+        },
       },
       borderRadius: {
         DEFAULT: 'var(--radius)',

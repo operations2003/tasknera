@@ -87,9 +87,9 @@ export default function PlatformSection() {
 
   return (
     <section id="platform" className="py-20 sm:py-28 bg-surface-subtle border-y border-border/80 relative overflow-hidden">
-      {/* Background Ambience with subtle blue effects */}
-      <div className="absolute top-10 left-1/3 w-[600px] h-[350px] bg-sky-400/12 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 right-1/4 w-[500px] h-[300px] bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
+      {/* Background Ambience with subtle warm effects */}
+      <div className="absolute top-10 left-1/3 w-[600px] h-[350px] bg-accent/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-10 right-1/4 w-[500px] h-[300px] bg-primary/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -97,9 +97,9 @@ export default function PlatformSection() {
 
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/20 rounded-full px-4 py-1.5 mb-4">
-            <Sparkles className="w-3.5 h-3.5 text-accent animate-pulse" />
-            <span className="text-xs font-bold text-accent tracking-widest uppercase">
+          <div className="inline-flex items-center gap-2 bg-[#704A4B]/10 border border-[#704A4B]/20 rounded-full px-4 py-1.5 mb-4">
+            <Sparkles className="w-3.5 h-3.5 text-[#704A4B]" />
+            <span className="text-xs font-bold text-[#704A4B] tracking-widest uppercase">
               Unified People &amp; Operations Platform
             </span>
           </div>
@@ -109,8 +109,8 @@ export default function PlatformSection() {
           </h2>
 
           {/* One-Line Product Pitch */}
-          <div className="bg-card border border-accent/30 rounded-2xl p-6 sm:p-7 shadow-sm text-left sm:text-center relative overflow-hidden group hover:border-accent transition-colors">
-            <div className="absolute top-0 left-0 h-full w-1.5 bg-accent" />
+          <div className="bg-card border border-[#DED3C7] rounded-2xl p-6 sm:p-7 shadow-sm text-left sm:text-center relative overflow-hidden group hover:border-[#704A4B] transition-colors">
+            <div className="absolute top-0 left-0 h-full w-1.5 bg-[#704A4B]" />
             <p className="text-base sm:text-lg lg:text-xl font-medium text-foreground leading-relaxed">
               &ldquo;AI-powered recruitment and end-to-end HR management, connecting hiring, onboarding, workforce operations, performance, and the complete employee lifecycle in one unified platform.&rdquo;
             </p>
@@ -121,13 +121,13 @@ export default function PlatformSection() {
         <div className="mb-16 bg-card border border-border/80 rounded-3xl p-6 sm:p-8 shadow-sm">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-6 border-b border-border/60">
             <div>
-              <div className="text-xs font-bold text-accent uppercase tracking-widest mb-1">End-to-End Pipeline</div>
+              <div className="text-xs font-bold text-[#704A4B] uppercase tracking-widest mb-1">End-to-End Pipeline</div>
               <h3 className="text-xl sm:text-2xl font-display font-bold text-foreground">
                 Complete Hiring-to-Employee Lifecycle
               </h3>
             </div>
             <div className="text-xs text-muted-foreground font-mono bg-surface-subtle border border-border px-3 py-1.5 rounded-full inline-flex items-center gap-1.5 self-start md:self-auto">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-[#704A4B] animate-pulse" />
               Connected Recruitment &amp; HRMS Engine
             </div>
           </div>
@@ -135,12 +135,12 @@ export default function PlatformSection() {
           {/* The 6 Master Pillars */}
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mb-8">
             {[
-              { step: '01', title: 'Hire', sub: 'AI Screening & Match', color: 'border-orange-500/40 text-orange-600 bg-orange-500/5' },
-              { step: '02', title: 'Onboard', sub: 'Digital Setup & Docs', color: 'border-amber-500/40 text-amber-600 bg-amber-500/5' },
-              { step: '03', title: 'Manage', sub: 'Attendance & Payroll', color: 'border-teal-500/40 text-teal-600 bg-teal-500/5' },
-              { step: '04', title: 'Develop', sub: 'Appraisals & Training', color: 'border-blue-500/40 text-blue-600 bg-blue-500/5' },
-              { step: '05', title: 'Retain', sub: 'Help Desk & Growth', color: 'border-purple-500/40 text-purple-600 bg-purple-500/5' },
-              { step: '06', title: 'Exit', sub: 'Clearance & F&F', color: 'border-slate-500/40 text-slate-600 bg-slate-500/5' },
+              { step: '01', title: 'Hire', sub: 'AI Screening & Match', color: 'border-[#704A4B]/30 text-[#704A4B] bg-[#704A4B]/5' },
+              { step: '02', title: 'Onboard', sub: 'Digital Setup & Docs', color: 'border-[#754E4E]/30 text-[#754E4E] bg-[#754E4E]/5' },
+              { step: '03', title: 'Manage', sub: 'Attendance & Payroll', color: 'border-[#805D5A]/30 text-[#805D5A] bg-[#805D5A]/5' },
+              { step: '04', title: 'Develop', sub: 'Appraisals & Training', color: 'border-[#704A4B]/30 text-[#704A4B] bg-[#704A4B]/5' },
+              { step: '05', title: 'Retain', sub: 'Help Desk & Growth', color: 'border-[#754E4E]/30 text-[#754E4E] bg-[#754E4E]/5' },
+              { step: '06', title: 'Exit', sub: 'Clearance & F&F', color: 'border-[#805D5A]/30 text-[#805D5A] bg-[#805D5A]/5' },
             ].map((pillar) => (
               <div key={pillar.title} className={`border rounded-2xl p-4 transition-all hover:scale-[1.02] ${pillar.color}`}>
                 <div className="text-xs font-bold tracking-wider mb-1 opacity-70">STAGE {pillar.step}</div>
@@ -155,7 +155,7 @@ export default function PlatformSection() {
             {/* Recruitment Workflow */}
             <div className="bg-surface-subtle border border-border/70 rounded-2xl p-5 space-y-3">
               <div className="flex items-center gap-2">
-                <span className="px-2 py-0.5 rounded text-[11px] font-bold bg-orange-500/10 text-orange-600 border border-orange-500/20 uppercase">
+                <span className="px-2 py-0.5 rounded text-[11px] font-bold bg-[#704A4B]/10 text-[#704A4B] border border-[#704A4B]/20 uppercase">
                   Recruitment &amp; Sourcing Workflow (HireIQ™)
                 </span>
               </div>
@@ -167,7 +167,7 @@ export default function PlatformSection() {
             {/* HRMS Workflow */}
             <div className="bg-surface-subtle border border-border/70 rounded-2xl p-5 space-y-3">
               <div className="flex items-center gap-2">
-                <span className="px-2 py-0.5 rounded text-[11px] font-bold bg-teal-500/10 text-teal-600 border border-teal-500/20 uppercase">
+                <span className="px-2 py-0.5 rounded text-[11px] font-bold bg-[#754E4E]/10 text-[#754E4E] border border-[#754E4E]/20 uppercase">
                   Workforce Operations (HRMS)
                 </span>
               </div>
@@ -184,8 +184,8 @@ export default function PlatformSection() {
             onClick={() => setActiveTab('all')}
             className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all ${
               activeTab === 'all'
-                ? 'bg-primary text-white shadow-md'
-                : 'bg-card border border-border text-foreground hover:border-accent/40'
+                ? 'bg-[#704A4B] text-[#F8F4ED] shadow-md'
+                : 'bg-card border border-border text-foreground hover:border-[#704A4B]/40'
             }`}
           >
             All Platform Features
@@ -194,8 +194,8 @@ export default function PlatformSection() {
             onClick={() => setActiveTab('recruitment')}
             className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all flex items-center gap-2 ${
               activeTab === 'recruitment'
-                ? 'bg-orange-600 text-white shadow-md'
-                : 'bg-card border border-border text-foreground hover:border-orange-500/40'
+                ? 'bg-[#704A4B] text-[#F8F4ED] shadow-md'
+                : 'bg-card border border-border text-foreground hover:border-[#704A4B]/40'
             }`}
           >
             <Sparkles className="w-4 h-4" />
@@ -206,8 +206,8 @@ export default function PlatformSection() {
             onClick={() => setActiveTab('hrms')}
             className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all flex items-center gap-2 ${
               activeTab === 'hrms'
-                ? 'bg-teal-600 text-white shadow-md'
-                : 'bg-card border border-border text-foreground hover:border-teal-500/40'
+                ? 'bg-[#754E4E] text-[#F8F4ED] shadow-md'
+                : 'bg-card border border-border text-foreground hover:border-[#754E4E]/40'
             }`}
           >
             <Users className="w-4 h-4" />
@@ -222,7 +222,7 @@ export default function PlatformSection() {
             <div className="bg-card border border-border/80 rounded-3xl p-6 sm:p-10 shadow-sm mb-6">
               <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 mb-8 border-b border-border/60">
                 <div>
-                  <div className="inline-flex items-center gap-2 bg-orange-500/10 text-orange-600 border border-orange-500/20 rounded-full px-3.5 py-1 text-xs font-bold uppercase tracking-wider mb-2">
+                  <div className="inline-flex items-center gap-2 bg-[#704A4B]/10 text-[#704A4B] border border-[#704A4B]/20 rounded-full px-3.5 py-1 text-xs font-bold uppercase tracking-wider mb-2">
                     <Sparkles className="w-3.5 h-3.5" />
                     HireIQ™ System Architecture
                   </div>
@@ -231,7 +231,7 @@ export default function PlatformSection() {
                   </h3>
                 </div>
                 <div className="lg:max-w-md bg-surface-subtle border border-border p-4 rounded-2xl">
-                  <div className="text-[11px] font-bold text-orange-600 uppercase tracking-widest mb-1">
+                  <div className="text-[11px] font-bold text-[#704A4B] uppercase tracking-widest mb-1">
                     Marketing Positioning
                   </div>
                   <p className="text-xs text-muted-foreground leading-relaxed">
@@ -245,15 +245,15 @@ export default function PlatformSection() {
                 {recruitmentFeatures.map((feat) => (
                   <div
                     key={feat.name}
-                    className="p-4 rounded-2xl bg-surface-subtle/50 border border-border/60 hover:border-orange-500/40 hover:bg-card transition-all space-y-2 group"
+                    className="p-4 rounded-2xl bg-surface-subtle/50 border border-border/60 hover:border-[#704A4B]/40 hover:bg-card transition-all space-y-2 group"
                   >
                     <div className="flex items-center justify-between gap-2">
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-orange-600/80 bg-orange-500/10 px-2 py-0.5 rounded">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-[#704A4B] bg-[#704A4B]/10 px-2 py-0.5 rounded">
                         {feat.category}
                       </span>
-                      <CheckCircle2 className="w-3.5 h-3.5 text-orange-500 opacity-60 group-hover:opacity-100" />
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#704A4B] opacity-60 group-hover:opacity-100" />
                     </div>
-                    <div className="font-semibold text-sm text-foreground group-hover:text-orange-600 transition-colors">
+                    <div className="font-semibold text-sm text-foreground group-hover:text-[#704A4B] transition-colors">
                       {feat.name}
                     </div>
                     <p className="text-xs text-muted-foreground leading-relaxed">
@@ -272,7 +272,7 @@ export default function PlatformSection() {
             <div className="bg-card border border-border/80 rounded-3xl p-6 sm:p-10 shadow-sm mb-6">
               <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 mb-8 border-b border-border/60">
                 <div>
-                  <div className="inline-flex items-center gap-2 bg-teal-500/10 text-teal-600 border border-teal-500/20 rounded-full px-3.5 py-1 text-xs font-bold uppercase tracking-wider mb-2">
+                  <div className="inline-flex items-center gap-2 bg-[#754E4E]/10 text-[#754E4E] border border-[#754E4E]/20 rounded-full px-3.5 py-1 text-xs font-bold uppercase tracking-wider mb-2">
                     <Users className="w-3.5 h-3.5" />
                     HRMS Platform Suite
                   </div>
@@ -281,7 +281,7 @@ export default function PlatformSection() {
                   </h3>
                 </div>
                 <div className="lg:max-w-md bg-surface-subtle border border-border p-4 rounded-2xl">
-                  <div className="text-[11px] font-bold text-teal-600 uppercase tracking-widest mb-1">
+                  <div className="text-[11px] font-bold text-[#754E4E] uppercase tracking-widest mb-1">
                     Marketing Positioning
                   </div>
                   <p className="text-xs text-muted-foreground leading-relaxed">
@@ -295,15 +295,15 @@ export default function PlatformSection() {
                 {hrmsFeatures.map((feat) => (
                   <div
                     key={feat.name}
-                    className="p-4 rounded-2xl bg-surface-subtle/50 border border-border/60 hover:border-teal-500/40 hover:bg-card transition-all space-y-2 group"
+                    className="p-4 rounded-2xl bg-surface-subtle/50 border border-border/60 hover:border-[#754E4E]/40 hover:bg-card transition-all space-y-2 group"
                   >
                     <div className="flex items-center justify-between gap-2">
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-teal-600/80 bg-teal-500/10 px-2 py-0.5 rounded">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-[#754E4E] bg-[#754E4E]/10 px-2 py-0.5 rounded">
                         {feat.category}
                       </span>
-                      <CheckCircle2 className="w-3.5 h-3.5 text-teal-500 opacity-60 group-hover:opacity-100" />
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#754E4E] opacity-60 group-hover:opacity-100" />
                     </div>
-                    <div className="font-semibold text-sm text-foreground group-hover:text-teal-600 transition-colors">
+                    <div className="font-semibold text-sm text-foreground group-hover:text-[#754E4E] transition-colors">
                       {feat.name}
                     </div>
                     <p className="text-xs text-muted-foreground leading-relaxed">
@@ -317,16 +317,16 @@ export default function PlatformSection() {
         )}
 
         {/* Combined Value Proposition Highlights */}
-        <div className="bg-gradient-to-br from-[#1e4994] to-[#255ebd] text-white rounded-3xl p-8 sm:p-12 relative overflow-hidden border border-blue-300/30 shadow-xl">
+        <div className="bg-gradient-to-br from-[#704A4B] via-[#613D3E] to-[#4F3031] text-[#F8F4ED] rounded-3xl p-8 sm:p-12 relative overflow-hidden border border-[#DED3C7]/20 shadow-xl">
           <div className="relative z-10">
             <div className="max-w-3xl mb-8">
-              <span className="text-xs font-bold text-accent uppercase tracking-widest mb-2 block">
+              <span className="text-xs font-bold text-[#E5BDB4] uppercase tracking-widest mb-2 block">
                 The Multiplier Effect
               </span>
-              <h3 className="text-2xl sm:text-3xl font-display font-bold text-white mb-3">
+              <h3 className="text-2xl sm:text-3xl font-display font-bold text-[#F8F4ED] mb-3">
                 Why a Connected Recruitment + HRMS Ecosystem Matters
               </h3>
-              <p className="text-white/75 text-sm sm:text-base leading-relaxed">
+              <p className="text-[#F8F4ED]/80 text-sm sm:text-base leading-relaxed">
                 By uniting talent acquisition intelligence with ongoing workforce operations, your organization eliminates data silos, cuts administrative latency, and creates a seamless experience from initial candidate outreach to long-term career growth.
               </p>
             </div>
@@ -338,31 +338,31 @@ export default function PlatformSection() {
                 { title: 'Data-Driven HR Analytics', desc: 'Correlate interview match scoring against subsequent employee performance reviews to refine hiring models.' },
                 { title: 'Enterprise Security & RBAC', desc: 'Multi-tenant authorization, strict statutory data protections, and immutable administrative audit trails.' },
               ].map((val) => (
-                <div key={val.title} className="bg-white/5 border border-white/10 rounded-2xl p-5 hover:border-accent/40 transition-colors">
-                  <div className="w-8 h-8 rounded-lg bg-accent/20 flex items-center justify-center mb-3">
-                    <CheckCircle2 className="w-4 h-4 text-accent" />
+                <div key={val.title} className="bg-white/5 border border-white/10 rounded-2xl p-5 hover:border-[#E5BDB4]/40 transition-colors">
+                  <div className="w-8 h-8 rounded-lg bg-[#E5BDB4]/20 flex items-center justify-center mb-3">
+                    <CheckCircle2 className="w-4 h-4 text-[#E5BDB4]" />
                   </div>
-                  <h4 className="font-semibold text-white text-sm mb-1.5">{val.title}</h4>
-                  <p className="text-white/70 text-xs leading-relaxed">{val.desc}</p>
+                  <h4 className="font-semibold text-[#F8F4ED] text-sm mb-1.5">{val.title}</h4>
+                  <p className="text-[#F8F4ED]/70 text-xs leading-relaxed">{val.desc}</p>
                 </div>
               ))}
             </div>
 
             <div className="mt-10 pt-8 border-t border-white/10 flex flex-wrap items-center justify-between gap-4">
-              <div className="text-xs text-white/70">
+              <div className="text-xs text-[#F8F4ED]/70">
                 Explore custom deployment models, private cloud configurations, or fully managed pods.
               </div>
               <div className="flex items-center gap-3">
                 <Link
                   href="/talent-acquisition"
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-accent hover:underline"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#E5BDB4] hover:underline"
                 >
                   Explore Talent Acquisition &amp; HireIQ™ →
                 </Link>
-                <span className="text-white/30">|</span>
+                <span className="text-[#F8F4ED]/30">|</span>
                 <Link
                   href="/hr-workforce-solutions"
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-accent hover:underline"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#E5BDB4] hover:underline"
                 >
                   Explore HRMS Solutions →
                 </Link>

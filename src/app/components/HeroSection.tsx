@@ -39,22 +39,19 @@ export default function HeroSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-[92vh] flex items-center bg-hero-gradient overflow-hidden noise-overlay"
+      className="relative min-h-[92vh] flex items-center bg-[#8E7D6E] overflow-hidden noise-overlay"
       style={{ paddingTop: '80px' }}
     >
-      {/* Atmospheric background layers */}
-      <div className="absolute inset-0 pointer-events-none">
-        {/* Animated gradient mesh */}
-        <div
-          className="absolute inset-0 animate-gradient-shift"
-          style={{
-            background:
-              'radial-gradient(ellipse 80% 60% at 20% 40%, rgba(15,184,138,0.18) 0%, transparent 60%), radial-gradient(ellipse 60% 80% at 80% 60%, rgba(244,123,63,0.14) 0%, transparent 60%), radial-gradient(ellipse 100% 100% at 50% 100%, rgba(11,19,43,0.6) 0%, transparent 70%)',
-            backgroundSize: '200% 200%',
-          }}
-        />
+      {/* Background image with warm taupe overlay */}
+      <div
+        className="absolute inset-0 bg-cover bg-center pointer-events-none opacity-35 mix-blend-multiply"
+        style={{ backgroundImage: "url('/assets/images/hero-warm-bg.jpg')" }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#8E7D6E]/95 via-[#8E7D6E]/85 to-[#8E7D6E]/75 pointer-events-none" />
 
-        {/* Blob 1 — teal */}
+      {/* Atmospheric ambient lighting & subtle warm blobs */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {/* Blob 1 — soft blush pink */}
         <div
           ref={blobRef1}
           className="absolute morph-blob animate-pulse-slow"
@@ -63,13 +60,13 @@ export default function HeroSection() {
             height: '520px',
             top: '-80px',
             right: '-100px',
-            background: 'radial-gradient(ellipse, rgba(15,184,138,0.22) 0%, transparent 70%)',
+            background: 'radial-gradient(ellipse, rgba(229,189,180,0.3) 0%, transparent 70%)',
             filter: 'blur(70px)',
             transition: 'transform 0.8s cubic-bezier(0.25, 1, 0.5, 1)',
           }}
         />
 
-        {/* Blob 2 — coral */}
+        {/* Blob 2 — warm ivory */}
         <div
           ref={blobRef2}
           className="absolute morph-blob animate-float-delayed"
@@ -78,18 +75,18 @@ export default function HeroSection() {
             height: '420px',
             bottom: '40px',
             left: '-80px',
-            background: 'radial-gradient(ellipse, rgba(244,123,63,0.16) 0%, transparent 70%)',
+            background: 'radial-gradient(ellipse, rgba(243,236,228,0.3) 0%, transparent 70%)',
             filter: 'blur(80px)',
             transition: 'transform 1s cubic-bezier(0.25, 1, 0.5, 1)',
           }}
         />
 
-        {/* Grid pattern overlay */}
+        {/* Subtle grid pattern overlay */}
         <div
-          className="absolute inset-0 opacity-10"
+          className="absolute inset-0 opacity-5"
           style={{
             backgroundImage:
-              'linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px)',
+              'linear-gradient(rgba(112,74,75,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(112,74,75,0.2) 1px, transparent 1px)',
             backgroundSize: '48px 48px',
           }}
         />
@@ -102,46 +99,46 @@ export default function HeroSection() {
           {/* Left — Main content */}
           <div className="lg:col-span-7 space-y-8">
             {/* Eyebrow badge */}
-            <div className="clip-in stagger-1 inline-flex items-center gap-2.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-2 shadow-lg shadow-black/10">
-              <span className="w-2 h-2 rounded-full bg-accent animate-ping" />
-              <span className="text-xs font-bold text-white tracking-wider uppercase">
+            <div className="clip-in stagger-1 inline-flex items-center gap-2.5 bg-[#F3ECE4]/90 backdrop-blur-md border border-[#DED3C7] rounded-full px-4 py-2 shadow-sm">
+              <span className="w-2 h-2 rounded-full bg-[#704A4B] animate-pulse" />
+              <span className="text-xs font-bold text-[#704A4B] tracking-wider uppercase">
                 Your Global HR, Workforce &amp; Business Support Partner
               </span>
             </div>
 
-            {/* Main headline */}
-            <h1 className="clip-in stagger-2 text-hero font-display font-bold text-white leading-[1.12]">
+            {/* Main headline - Creamy white text on warm taupe background */}
+            <h1 className="clip-in stagger-2 text-hero font-display font-bold text-[#F8F4ED] leading-[1.12] drop-shadow-sm">
               Build. Manage. Scale.{' '}
-              <span className="gradient-text-coral block sm:inline">
+              <span className="text-[#FAF7F2] block sm:inline">
                 Your People &amp; Operations.
               </span>
             </h1>
 
             {/* Description */}
-            <p className="fade-up stagger-3 text-lg sm:text-xl text-white/85 leading-relaxed max-w-2xl font-normal">
+            <p className="fade-up stagger-3 text-lg sm:text-xl text-[#F8F4ED]/90 leading-relaxed max-w-2xl font-normal">
               TaskNera helps startups, SMEs and enterprises build their teams, manage their people and scale their operations through integrated HR, Talent, Workforce, Virtual Assistant and Virtual Customer Support solutions.
             </p>
 
             {/* Supporting capability pills */}
-            <div className="fade-up stagger-3 flex flex-wrap items-center gap-2 text-xs sm:text-sm font-medium text-white/75">
-              <span className="inline-flex items-center gap-1.5 bg-white/10 px-3 py-1 rounded-full border border-white/10">
-                <CheckCircle2 className="w-3.5 h-3.5 text-accent" />
+            <div className="fade-up stagger-3 flex flex-wrap items-center gap-2 text-xs sm:text-sm font-medium">
+              <span className="inline-flex items-center gap-1.5 bg-[#F3ECE4]/85 text-[#423535] px-3.5 py-1.5 rounded-full border border-[#DED3C7] shadow-sm">
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#704A4B]" />
                 <span>HR Operations</span>
               </span>
-              <span className="inline-flex items-center gap-1.5 bg-white/10 px-3 py-1 rounded-full border border-white/10">
-                <CheckCircle2 className="w-3.5 h-3.5 text-secondary" />
+              <span className="inline-flex items-center gap-1.5 bg-[#F3ECE4]/85 text-[#423535] px-3.5 py-1.5 rounded-full border border-[#DED3C7] shadow-sm">
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#704A4B]" />
                 <span>Talent Acquisition</span>
               </span>
-              <span className="inline-flex items-center gap-1.5 bg-white/10 px-3 py-1 rounded-full border border-white/10">
-                <CheckCircle2 className="w-3.5 h-3.5 text-blue-400" />
+              <span className="inline-flex items-center gap-1.5 bg-[#F3ECE4]/85 text-[#423535] px-3.5 py-1.5 rounded-full border border-[#DED3C7] shadow-sm">
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#704A4B]" />
                 <span>Workforce Solutions</span>
               </span>
-              <span className="inline-flex items-center gap-1.5 bg-white/10 px-3 py-1 rounded-full border border-white/10">
-                <CheckCircle2 className="w-3.5 h-3.5 text-amber-400" />
+              <span className="inline-flex items-center gap-1.5 bg-[#F3ECE4]/85 text-[#423535] px-3.5 py-1.5 rounded-full border border-[#DED3C7] shadow-sm">
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#704A4B]" />
                 <span>Human Virtual Assistants</span>
               </span>
-              <span className="inline-flex items-center gap-1.5 bg-white/10 px-3 py-1 rounded-full border border-white/10">
-                <CheckCircle2 className="w-3.5 h-3.5 text-teal-400" />
+              <span className="inline-flex items-center gap-1.5 bg-[#F3ECE4]/85 text-[#423535] px-3.5 py-1.5 rounded-full border border-[#DED3C7] shadow-sm">
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#704A4B]" />
                 <span>Omnichannel VCS</span>
               </span>
             </div>
@@ -150,14 +147,14 @@ export default function HeroSection() {
             <div className="fade-up stagger-4 flex flex-wrap gap-4 items-center pt-2">
               <Link
                 href="/#contact"
-                className="bg-accent text-accent-foreground font-semibold px-8 py-4 rounded-full hover:brightness-110 active:scale-95 transition-all shadow-xl shadow-accent/30 text-base flex items-center gap-2 group"
+                className="bg-[#704A4B] text-[#F8F4ED] font-semibold px-8 py-4 rounded-full hover:bg-[#593A3B] active:scale-95 transition-all shadow-lg shadow-[#704A4B]/25 text-base flex items-center gap-2 group"
               >
                 <span>Talk to an HR &amp; Workforce Expert</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
                 href="/services"
-                className="glass-btn text-white font-semibold px-7 py-4 rounded-full text-base hover:bg-white/15 transition-all flex items-center gap-2"
+                className="bg-[#F3ECE4] text-[#704A4B] font-semibold px-7 py-4 rounded-full text-base hover:bg-white border border-[#DED3C7] shadow-sm transition-all flex items-center gap-2"
               >
                 <span>Explore All Solutions</span>
               </Link>
@@ -169,7 +166,7 @@ export default function HeroSection() {
             <div className="relative max-w-md mx-auto lg:max-w-none">
               
               {/* Main card */}
-              <div className="glass-card rounded-3xl p-6 sm:p-8 space-y-6 shadow-2xl relative z-10 border border-white/25 bg-[#1a4188]/70 backdrop-blur-xl">
+              <div className="rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl relative z-10 border border-[#DED3C7] bg-[#F3ECE4]/95 backdrop-blur-xl">
                 {/* Logo mark */}
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
@@ -178,18 +175,18 @@ export default function HeroSection() {
                       alt="TaskNera logo mark"
                       width={46}
                       height={46}
-                      className="rounded-xl shadow-md ring-1 ring-white/20"
+                      className="rounded-xl shadow-sm ring-1 ring-[#DED3C7]"
                     />
                     <div>
-                      <div className="text-white font-display font-bold text-xl leading-tight">
+                      <div className="text-[#704A4B] font-display font-bold text-xl leading-tight">
                         TaskNera
                       </div>
-                      <div className="text-accent text-xs font-semibold">
+                      <div className="text-[#805D5A] text-xs font-semibold">
                         Integrated People &amp; Operations
                       </div>
                     </div>
                   </div>
-                  <span className="text-[10px] font-bold tracking-wider uppercase text-white/70 bg-white/10 px-2.5 py-1 rounded-full border border-white/10">
+                  <span className="text-[10px] font-bold tracking-wider uppercase text-[#704A4B] bg-[#E5BDB4]/30 px-2.5 py-1 rounded-full border border-[#DED3C7]">
                     Enterprise Grade
                   </span>
                 </div>
@@ -203,12 +200,12 @@ export default function HeroSection() {
                   ].map((stat) => (
                     <div
                       key={stat.label}
-                      className="bg-white/5 hover:bg-white/10 transition-colors rounded-2xl p-3 text-center border border-white/10"
+                      className="bg-[#FAF7F2] hover:bg-white transition-colors rounded-2xl p-3 text-center border border-[#DED3C7]"
                     >
-                      <div className="text-base sm:text-lg font-display font-bold gradient-text-coral">
+                      <div className="text-base sm:text-lg font-display font-bold text-[#704A4B]">
                         {stat.value}
                       </div>
-                      <div className="text-white/65 text-[11px] mt-0.5 leading-tight font-medium">
+                      <div className="text-[#625F5F] text-[11px] mt-0.5 leading-tight font-medium">
                         {stat.label}
                       </div>
                     </div>
@@ -216,10 +213,10 @@ export default function HeroSection() {
                 </div>
 
                 {/* Service tags */}
-                <div className="space-y-2.5 pt-2 border-t border-white/10">
-                  <div className="text-[11px] font-bold text-white/50 uppercase tracking-widest flex items-center justify-between">
+                <div className="space-y-2.5 pt-2 border-t border-[#DED3C7]">
+                  <div className="text-[11px] font-bold text-[#625F5F] uppercase tracking-widest flex items-center justify-between">
                     <span>Full-Spectrum Scope</span>
-                    <span className="text-accent text-[10px] font-semibold">One Contract</span>
+                    <span className="text-[#704A4B] text-[10px] font-semibold">One Contract</span>
                   </div>
                   <div className="flex flex-wrap gap-1.5">
                     {[
@@ -232,7 +229,7 @@ export default function HeroSection() {
                     ].map((tag) => (
                       <span
                         key={tag}
-                        className="text-xs font-medium text-white/90 bg-white/10 border border-white/15 rounded-full px-3 py-1 hover:border-accent/40 transition-colors"
+                        className="text-xs font-medium text-[#423535] bg-[#FAF7F2] border border-[#DED3C7] rounded-full px-3 py-1 hover:border-[#704A4B] transition-colors"
                       >
                         {tag}
                       </span>
@@ -241,12 +238,12 @@ export default function HeroSection() {
                 </div>
 
                 {/* Sub-card: One Partner Guarantee */}
-                <div className="p-3.5 rounded-2xl bg-gradient-to-r from-accent/20 to-teal-500/10 border border-accent/30 flex items-center justify-between gap-3">
+                <div className="p-3.5 rounded-2xl bg-[#E5BDB4]/25 border border-[#E5BDB4] flex items-center justify-between gap-3">
                   <div className="flex items-center gap-2.5">
-                    <ShieldCheck className="w-5 h-5 text-accent flex-shrink-0" />
-                    <div className="text-xs font-semibold text-white">
+                    <ShieldCheck className="w-5 h-5 text-[#704A4B] flex-shrink-0" />
+                    <div className="text-xs font-semibold text-[#423535]">
                       <div>Compliance-Focused &amp; SLA Backed</div>
-                      <div className="text-[11px] text-white/60 font-normal">
+                      <div className="text-[11px] text-[#625F5F] font-normal">
                         Transparent governance &amp; dedicated account managers
                       </div>
                     </div>
@@ -255,20 +252,20 @@ export default function HeroSection() {
               </div>
 
               {/* Floating badge 1 — Top Right */}
-              <div className="hidden sm:flex absolute -top-5 -right-4 glass-card rounded-2xl px-4 py-2.5 z-20 shadow-xl border border-blue-300/30 items-center gap-2.5 hover:scale-105 transition-transform duration-300 bg-[#1f4b9c]/90">
-                <Sparkles className="w-4 h-4 text-accent animate-pulse" />
+              <div className="hidden sm:flex absolute -top-5 -right-4 rounded-2xl px-4 py-2.5 z-20 shadow-lg border border-[#DED3C7] items-center gap-2.5 hover:scale-105 transition-transform duration-300 bg-[#F3ECE4]/95 backdrop-blur-md">
+                <Sparkles className="w-4 h-4 text-[#704A4B] animate-pulse" />
                 <div>
-                  <div className="text-white text-xs font-bold">Technology-Enabled</div>
-                  <div className="text-white/70 text-[10px]">JD Match Evaluator &amp; Portals</div>
+                  <div className="text-[#704A4B] text-xs font-bold">Technology-Enabled</div>
+                  <div className="text-[#625F5F] text-[10px]">JD Match Evaluator &amp; Portals</div>
                 </div>
               </div>
 
               {/* Floating badge 2 — Bottom Left */}
-              <div className="hidden sm:flex absolute -bottom-5 -left-4 glass-card rounded-2xl px-4 py-2.5 z-20 shadow-xl border border-blue-300/30 items-center gap-2.5 hover:scale-105 transition-transform duration-300 bg-[#1f4b9c]/90">
-                <Users className="w-4 h-4 text-secondary" />
+              <div className="hidden sm:flex absolute -bottom-5 -left-4 rounded-2xl px-4 py-2.5 z-20 shadow-lg border border-[#DED3C7] items-center gap-2.5 hover:scale-105 transition-transform duration-300 bg-[#F3ECE4]/95 backdrop-blur-md">
+                <Users className="w-4 h-4 text-[#754E4E]" />
                 <div>
-                  <div className="text-white text-xs font-bold">One Partner</div>
-                  <div className="text-white/70 text-[10px]">All Capabilities Under One Roof</div>
+                  <div className="text-[#704A4B] text-xs font-bold">One Partner</div>
+                  <div className="text-[#625F5F] text-[10px]">All Capabilities Under One Roof</div>
                 </div>
               </div>
 

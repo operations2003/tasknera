@@ -46,54 +46,54 @@ const valueProps = [
     icon: MessagesSquare,
     title: 'Consultative',
     desc: 'We analyze your operational bottlenecks and business context before designing custom workforce solutions.',
-    color: 'text-accent',
-    bg: 'bg-accent/10 border-accent/20',
+    color: 'text-[#704A4B]',
+    bg: 'bg-[#704A4B]/10 border-[#704A4B]/20',
   },
   {
     icon: Eye,
     title: 'Transparent',
     desc: 'Clear SLAs, milestone pricing, scorecard reviews, and complete visibility across all active pods.',
-    color: 'text-secondary',
-    bg: 'bg-secondary/10 border-secondary/20',
+    color: 'text-[#754E4E]',
+    bg: 'bg-[#754E4E]/10 border-[#754E4E]/20',
   },
   {
     icon: TrendingUp,
     title: 'Scalable',
     desc: 'From a single critical hire to 50+ deployed support specialists — our modular pods scale on demand.',
-    color: 'text-primary',
-    bg: 'bg-primary/10 border-primary/20',
+    color: 'text-[#805D5A]',
+    bg: 'bg-[#805D5A]/10 border-[#805D5A]/20',
   },
   {
     icon: Cpu,
     title: 'Technology-Enabled',
     desc: 'JD Match Evaluator scoring, modern HRMS integration, and workforce dashboards power every delivery.',
-    color: 'text-accent',
-    bg: 'bg-accent/10 border-accent/20',
+    color: 'text-[#704A4B]',
+    bg: 'bg-[#704A4B]/10 border-[#704A4B]/20',
   },
   {
     icon: HeartHandshake,
     title: 'Human-Centered',
     desc: '100% vetted human professionals bringing empathy, critical thinking, and dedicated accountability.',
-    color: 'text-secondary',
-    bg: 'bg-secondary/10 border-secondary/20',
+    color: 'text-[#754E4E]',
+    bg: 'bg-[#754E4E]/10 border-[#754E4E]/20',
   },
 ];
 
 export default function WhyTaskNeraSection() {
   return (
     <section id="why" className="py-20 sm:py-28 bg-surface-subtle border-b border-border relative overflow-hidden">
-      {/* Ambient background light pools with subtle blue effects */}
-      <div className="absolute top-10 left-1/3 w-[600px] h-[350px] bg-sky-400/12 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-10 right-1/4 w-[500px] h-[300px] bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
+      {/* Ambient background light pools with subtle warm effects */}
+      <div className="absolute top-10 left-1/3 w-[600px] h-[350px] bg-[#E5BDB4]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-10 right-1/4 w-[500px] h-[300px] bg-[#704A4B]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-3xl pointer-events-none" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-14 scroll-reveal">
-          <div className="inline-flex items-center gap-2 bg-secondary/10 border border-secondary/20 rounded-full px-4 py-1.5 mb-5 shadow-sm">
-            <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
-            <span className="text-xs font-bold text-secondary tracking-widest uppercase">Why TaskNera</span>
+          <div className="inline-flex items-center gap-2 bg-[#704A4B]/10 border border-[#704A4B]/20 rounded-full px-4 py-1.5 mb-5 shadow-sm">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#704A4B]" />
+            <span className="text-xs font-bold text-[#704A4B] tracking-widest uppercase">Why TaskNera</span>
           </div>
           <h2 className="text-section-title font-display font-bold text-foreground mb-4">
             Not Just a Vendor.{' '}
@@ -111,7 +111,7 @@ export default function WhyTaskNeraSection() {
             return (
               <div
                 key={vp.title}
-                className="card-premium rounded-3xl p-6 shadow-sm flex flex-col justify-between group hover:border-accent/40 transition-colors"
+                className="card-premium rounded-3xl p-6 shadow-sm flex flex-col justify-between group hover:border-[#704A4B]/40 transition-colors bg-card border border-border/80"
                 style={{ transitionDelay: `${idx * 0.03}s` }}
               >
                 <div>
@@ -135,10 +135,10 @@ export default function WhyTaskNeraSection() {
               <div className="px-6 py-4 text-xs font-bold text-muted-foreground uppercase tracking-widest border-l border-border">
                 Traditional Staffing &amp; BPO
               </div>
-              <div className="px-6 py-4 border-l border-border bg-accent/5">
+              <div className="px-6 py-4 border-l border-border bg-[#704A4B]/5">
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-                  <span className="text-xs font-bold text-accent uppercase tracking-widest">The TaskNera Way</span>
+                  <span className="w-2 h-2 rounded-full bg-[#704A4B] animate-pulse" />
+                  <span className="text-xs font-bold text-[#704A4B] uppercase tracking-widest">The TaskNera Way</span>
                 </div>
               </div>
             </div>
@@ -158,8 +158,8 @@ export default function WhyTaskNeraSection() {
                   <span className="text-red-500 font-bold text-xs mt-0.5">✕</span>
                   <span>{row.traditional}</span>
                 </div>
-                <div className="px-6 py-4 text-xs sm:text-sm text-foreground font-medium border-l border-border bg-accent/5 flex items-start gap-2.5">
-                  <span className="text-accent font-bold text-xs mt-0.5">✓</span>
+                <div className="px-6 py-4 text-xs sm:text-sm text-foreground font-medium border-l border-border bg-[#704A4B]/5 flex items-start gap-2.5">
+                  <span className="text-[#704A4B] font-bold text-xs mt-0.5">✓</span>
                   <span>{row.tasknera}</span>
                 </div>
               </div>
@@ -167,14 +167,14 @@ export default function WhyTaskNeraSection() {
           </div>
 
           {/* Pull quote */}
-          <div className="mt-8 bg-section-dark rounded-3xl p-6 sm:p-8 text-white text-center shadow-xl border border-white/10 relative overflow-hidden">
+          <div className="mt-8 bg-gradient-to-br from-[#704A4B] via-[#613D3E] to-[#4F3031] rounded-3xl p-6 sm:p-8 text-[#F8F4ED] text-center shadow-xl border border-[#DED3C7]/20 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-80 h-80 bg-accent/10 rounded-full blur-3xl pointer-events-none" />
             <div className="relative z-10">
-              <p className="font-display text-lg sm:text-xl font-normal italic leading-relaxed max-w-2xl mx-auto text-white/90">
+              <p className="font-display text-lg sm:text-xl font-normal italic leading-relaxed max-w-2xl mx-auto text-[#F8F4ED]">
                 &ldquo;TaskNera was built to bridge the divide between high-touch people strategy and everyday operational execution under one accountable partner.&rdquo;
               </p>
               <div className="mt-4 flex items-center justify-center gap-2">
-                <span className="text-accent text-xs font-bold tracking-wider uppercase">
+                <span className="text-[#E5BDB4] text-xs font-bold tracking-wider uppercase">
                   Founded in 2026 · Led by Sheetal Bedi (8+ Years HR Strategy Experience)
                 </span>
               </div>

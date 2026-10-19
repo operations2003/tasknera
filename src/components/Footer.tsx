@@ -37,11 +37,11 @@ const policiesAndLegalLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-b from-[#f2f7ff] via-white to-[#ebf4ff] border-t border-blue-200/80 text-slate-900 relative overflow-hidden shadow-[0_-10px_30px_rgba(59,130,246,0.06)]">
-      {/* Background ambient blue shading & lighting pools */}
-      <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-sky-400/12 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-10 left-10 w-[450px] h-[450px] bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute top-1/2 left-1/3 w-[600px] h-[300px] bg-indigo-400/8 rounded-full blur-3xl pointer-events-none" />
+    <footer className="bg-gradient-to-b from-[#F3ECE4] via-[#FAF7F2] to-[#F3ECE4] border-t border-[#DED3C7] text-[#423535] relative overflow-hidden shadow-sm">
+      {/* Background ambient warm pools */}
+      <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-[#E5BDB4]/15 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-10 left-10 w-[450px] h-[450px] bg-[#8E7D6E]/15 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 left-1/3 w-[600px] h-[300px] bg-[#F3ECE4]/20 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 relative z-10">
         
@@ -54,29 +54,29 @@ export default function Footer() {
               <AppLogo
                 src="/assets/images/logo_1-1786267820748.png"
                 size={40}
-                className="rounded-xl ring-1 ring-blue-200 shadow-sm"
+                className="rounded-xl ring-1 ring-[#DED3C7] shadow-sm"
               />
               <div className="flex flex-col">
-                <span className="font-display font-bold text-2xl text-slate-900 tracking-tight">
+                <span className="font-display font-bold text-2xl text-[#704A4B] tracking-tight">
                   TaskNera
                 </span>
-                <span className="text-[10px] text-blue-700 tracking-wider uppercase font-bold">
+                <span className="text-[10px] text-[#805D5A] tracking-wider uppercase font-bold">
                   Global HR, Workforce &amp; Business Support Partner
                 </span>
               </div>
             </div>
 
-            <p className="text-slate-600 text-sm leading-relaxed max-w-sm">
+            <p className="text-[#625F5F] text-sm leading-relaxed max-w-sm">
               TaskNera helps startups, SMEs and enterprises build their teams, manage their people and scale their operations through integrated HR, Talent, Workforce, Virtual Assistant and Virtual Customer Support solutions.
             </p>
 
             {/* Operational badge */}
-            <div className="inline-flex items-center gap-2.5 bg-blue-50/90 border border-blue-200/80 rounded-full px-3.5 py-1.5 text-xs text-blue-950 shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+            <div className="inline-flex items-center gap-2.5 bg-[#FAF7F2] border border-[#DED3C7] rounded-full px-3.5 py-1.5 text-xs text-[#423535] shadow-sm">
+              <span className="w-2 h-2 rounded-full bg-[#704A4B] animate-pulse" />
               <span className="font-semibold">Global Delivery Active · 24/7 Multi-Timezone Coverage</span>
             </div>
 
-            <div className="space-y-1 text-xs text-slate-500">
+            <div className="space-y-1 text-xs text-[#625F5F]">
               <p>Corporate Office: D-57 F1 Dilshad Colony, Dilshad Garden, Delhi - 110095, East Delhi, India.</p>
               <p>Global Delivery: India | US | UK | Europe | Remote Global.</p>
             </div>
@@ -88,7 +88,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="TaskNera on LinkedIn"
-                className="w-9 h-9 rounded-xl bg-white border border-blue-200/80 shadow-sm flex items-center justify-center text-slate-600 hover:text-blue-700 hover:bg-blue-50 hover:border-blue-300 transition-all"
+                className="w-9 h-9 rounded-xl bg-[#FAF7F2] border border-[#DED3C7] shadow-sm flex items-center justify-center text-[#625F5F] hover:text-[#704A4B] hover:bg-[#F3ECE4] hover:border-[#704A4B]/40 transition-all"
               >
                 <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
@@ -97,13 +97,13 @@ export default function Footer() {
               <a
                 href="mailto:operations@tasknera.com"
                 aria-label="Email TaskNera Operations"
-                className="w-9 h-9 rounded-xl bg-white border border-blue-200/80 shadow-sm flex items-center justify-center text-slate-600 hover:text-blue-700 hover:bg-blue-50 hover:border-blue-300 transition-all"
+                className="w-9 h-9 rounded-xl bg-[#FAF7F2] border border-[#DED3C7] shadow-sm flex items-center justify-center text-[#625F5F] hover:text-[#704A4B] hover:bg-[#F3ECE4] hover:border-[#704A4B]/40 transition-all"
               >
                 <Mail className="w-4 h-4" />
               </a>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-1.5 text-xs font-bold text-blue-700 hover:text-blue-900 hover:underline pl-2"
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-[#704A4B] hover:text-[#593A3B] hover:underline pl-2"
               >
                 <span>Inquiry Portal</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -113,8 +113,8 @@ export default function Footer() {
 
           {/* Solutions Column */}
           <div className="lg:col-span-3 space-y-4">
-            <h4 className="text-xs font-bold text-blue-900 uppercase tracking-widest flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+            <h4 className="text-xs font-bold text-[#704A4B] uppercase tracking-widest flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#704A4B]" />
               <span>Core Solutions</span>
             </h4>
             <ul className="space-y-2.5">
@@ -122,9 +122,9 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-slate-600 hover:text-blue-700 text-sm transition-colors flex items-center gap-1.5 group"
+                    className="text-[#625F5F] hover:text-[#704A4B] text-sm transition-colors flex items-center gap-1.5 group"
                   >
-                    <span className="text-blue-400 group-hover:text-blue-600 text-xs transition-colors">›</span>
+                    <span className="text-[#8E7D6E] group-hover:text-[#704A4B] text-xs transition-colors">›</span>
                     <span>{link.label}</span>
                   </Link>
                 </li>
@@ -134,8 +134,8 @@ export default function Footer() {
 
           {/* Company Column */}
           <div className="lg:col-span-2 space-y-4">
-            <h4 className="text-xs font-bold text-blue-900 uppercase tracking-widest flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
+            <h4 className="text-xs font-bold text-[#704A4B] uppercase tracking-widest flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#E5BDB4]" />
               <span>Company</span>
             </h4>
             <ul className="space-y-2.5">
@@ -143,9 +143,9 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-slate-600 hover:text-blue-700 text-sm transition-colors flex items-center gap-1.5 group"
+                    className="text-[#625F5F] hover:text-[#704A4B] text-sm transition-colors flex items-center gap-1.5 group"
                   >
-                    <span className="text-blue-400 group-hover:text-blue-600 text-xs transition-colors">›</span>
+                    <span className="text-[#8E7D6E] group-hover:text-[#704A4B] text-xs transition-colors">›</span>
                     <span>{link.label}</span>
                   </Link>
                 </li>
@@ -155,8 +155,8 @@ export default function Footer() {
 
           {/* Policies & Legal Column */}
           <div className="lg:col-span-3 space-y-4">
-            <h4 className="text-xs font-bold text-blue-900 uppercase tracking-widest flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-blue-600" />
+            <h4 className="text-xs font-bold text-[#704A4B] uppercase tracking-widest flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#754E4E]" />
               <span>Policies &amp; Legal</span>
             </h4>
             <ul className="space-y-2">
@@ -164,9 +164,9 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-slate-600 hover:text-blue-700 text-xs sm:text-sm transition-colors flex items-center gap-1.5 group"
+                    className="text-[#625F5F] hover:text-[#704A4B] text-xs sm:text-sm transition-colors flex items-center gap-1.5 group"
                   >
-                    <span className="text-blue-400 group-hover:text-blue-600 text-xs transition-colors">›</span>
+                    <span className="text-[#8E7D6E] group-hover:text-[#704A4B] text-xs transition-colors">›</span>
                     <span>{link.label}</span>
                   </Link>
                 </li>
@@ -177,10 +177,10 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-8 border-t border-blue-200/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-500 text-xs">
+        <div className="pt-8 border-t border-[#DED3C7] flex flex-col sm:flex-row items-center justify-between gap-4 text-[#625F5F] text-xs">
           <span>© 2026 TaskNera Global Operations. All rights reserved.</span>
           <span className="text-center font-medium">One Partner · HR, Talent, Workforce, Virtual Assistant &amp; Customer Support</span>
-          <span>Founded in 2026 · Led by Sheetal Bedi · <a href="https://www.tasknera.com" className="text-blue-700 hover:text-blue-900 font-semibold underline">tasknera.com</a></span>
+          <span>Founded in 2026 · Led by Sheetal Bedi · <a href="https://www.tasknera.com" className="text-[#704A4B] hover:text-[#593A3B] font-semibold underline">tasknera.com</a></span>
         </div>
       </div>
     </footer>
