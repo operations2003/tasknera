@@ -456,7 +456,7 @@ export default function Header() {
           <div className="flex items-center gap-3">
             <div className="hidden lg:flex items-center gap-3">
               <Link
-                href={pathname === '/' ? '/#contact' : '/contact'}
+                href="/contact"
                 className="bg-[#704A4B] text-[#F8F4ED] text-xs xl:text-sm font-semibold px-4 xl:px-5 py-2 xl:py-2.5 rounded-full hover:bg-[#593A3B] active:scale-95 transition-all duration-200 shadow-md shadow-[#704A4B]/20 flex items-center gap-2 flex-shrink-0"
               >
                 <span>Talk to an Expert</span>
@@ -680,7 +680,7 @@ export default function Header() {
 
           <div className="px-6 pb-8 pt-4 flex flex-col gap-3 border-t border-[#DED3C7] bg-[#F3ECE4]">
             <Link
-              href={pathname === '/' ? '/#contact' : '/contact'}
+              href="/contact"
               onClick={handleNavClick}
               className="bg-[#704A4B] text-[#F8F4ED] text-base font-semibold px-6 py-3.5 rounded-full text-center hover:bg-[#593A3B] active:scale-95 transition-all shadow-md shadow-[#704A4B]/20 flex items-center justify-center gap-2"
             >

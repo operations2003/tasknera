@@ -64,11 +64,25 @@
   }
 
   .gradient-text-coral {
-    background: linear-gradient(135deg, #704A4B 0%, #805D5A 50%, #754E4E 100%);
+    background: linear-gradient(135deg, #704A4B 0%, #8A5254 50%, #704A4B 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     display: inline-block;
+  }
+
+  /* When inside dark sections (e.g. .bg-section-dark, text-white, #contact, etc.), render luminous warm coral/blush so text is high contrast and clearly readable */
+  .bg-section-dark .gradient-text-coral,
+  .text-white .gradient-text-coral,
+  .text-\[\#F8F4ED\] .gradient-text-coral,
+  [class*="bg-section-dark"] .gradient-text-coral,
+  [class*="text-[#F8F4ED]"] .gradient-text-coral,
+  [class*="bg-[#704A4B]"] .gradient-text-coral,
+  #contact .gradient-text-coral {
+    background: linear-gradient(135deg, #E5BDB4 0%, #F8E8E3 50%, #ECC5BC 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .gradient-text-teal {

@@ -355,7 +355,7 @@ export default function CTASection() {
                 </div>
                 <h2 className="text-section-title font-display font-bold text-[#F8F4ED] leading-tight">
                   Tell Us What You Need.{' '}
-                  <span className="gradient-text-coral block">We'll Build the Right Support Model.</span>
+                  <span className="gradient-text-coral block text-[#E5BDB4]">We'll Build the Right Support Model.</span>
                 </h2>
                 <p className="text-[#F8F4ED]/80 text-base sm:text-lg leading-relaxed font-normal">
                   From talent acquisition and HR operations to workforce management, virtual assistance, and customer support, TaskNera provides flexible, SLA-backed solutions designed to scale your business with confidence.

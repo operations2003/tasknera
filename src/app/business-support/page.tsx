@@ -244,7 +244,7 @@ export default function BusinessSupportPage() {
             </p>
             <div className="pt-2">
               <Link
-                href="/#contact"
+                href="/contact"
                 className="inline-block bg-accent text-accent-foreground font-semibold px-8 py-3.5 rounded-full hover:brightness-110 active:scale-95 transition-all text-sm shadow-xl shadow-accent/25"
               >
                 Talk to an Expert

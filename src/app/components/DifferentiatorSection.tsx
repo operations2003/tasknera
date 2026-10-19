@@ -180,7 +180,7 @@ export default function DifferentiatorSection() {
               Compare Engagement Models
             </Link>
             <Link
-              href="/#contact"
+              href="/contact"
               className="bg-[#F8F4ED] text-[#704A4B] font-semibold px-7 py-3.5 rounded-full hover:bg-white active:scale-95 transition-all shadow-md shadow-black/10 text-sm flex items-center gap-2"
             >
               <span>Talk to an Expert</span>

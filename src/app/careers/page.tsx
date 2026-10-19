@@ -21,13 +21,15 @@ import {
   DollarSign,
   AlertCircle,
   ExternalLink,
+  ChevronDown,
+  ChevronUp,
 } from 'lucide-react';
 
 interface JobPosition {
   id: string;
   title: string;
   department: string;
-  category: 'talent' | 'hr' | 'va' | 'support' | 'operations';
+  category: 'talent' | 'hr' | 'va' | 'support' | 'operations' | 'engineering';
   location: string;
   type: string;
   experience: string;
@@ -36,7 +38,39 @@ interface JobPosition {
   requirements: string[];
 }
 
-const openPositions: JobPosition[] = [];
+const openPositions: JobPosition[] = [
+  {
+    id: 'gcp-cloud-engineer-iam-infra',
+    title: 'GCP Cloud Engineer – IAM & Infrastructure Automation',
+    department: 'Cloud & Infrastructure Engineering',
+    category: 'engineering',
+    location: 'Pan India',
+    type: 'Full-time · Hybrid',
+    experience: '5+ Years',
+    summary:
+      'We are seeking an experienced GCP Cloud Engineer (5+ years) specializing in Identity & Access Management (IAM), Security Architecture, and Infrastructure as Code (IaC) automation. You will architect enterprise Google Cloud landing zones, build automated Terraform workflows, enforce least-privilege IAM policies, and ensure secure, reliable cloud infrastructure across multi-project environments.',
+    responsibilities: [
+      'Architect, implement, and audit centralized GCP IAM policies, Custom Roles, Service Accounts, and Organization Policy constraints under strict least-privilege principles.',
+      'Design and deploy Workload Identity Federation for seamless, keyless authentication between CI/CD pipelines, Kubernetes, and GCP APIs.',
+      'Develop, test, and maintain reusable Infrastructure as Code (IaC) modules using Terraform and Terragrunt for multi-region landing zones and automated VPC networks.',
+      'Integrate cloud security posture management and automated compliance using Google Cloud Security Command Center (SCC), Cloud KMS, Secret Manager, and VPC Service Controls.',
+      'Design, configure, and manage enterprise hybrid networking infrastructure, including Shared VPCs, Cloud Interconnect, Cloud VPN, Cloud NAT, and Cloud Armor security policies.',
+      'Build resilient CI/CD deployment pipelines (Cloud Build, GitHub Actions, GitLab CI) with automated Policy-as-Code checks (OPA, Conftest, tfsec, Checkov).',
+      'Implement enterprise observability, audit trail tracking, and automated alerting using Google Cloud Operations Suite (Cloud Monitoring, Cloud Logging, Cloud Audit Logs) integrated with SIEM platforms.',
+      'Collaborate with DevOps, security compliance, and engineering pods to conduct cloud architecture reviews, eliminate operational toil, and optimize cloud infrastructure costs (FinOps).',
+    ],
+    requirements: [
+      '5+ years of dedicated professional experience architecting and operating Google Cloud Platform (GCP) enterprise infrastructure.',
+      'Deep expertise in GCP IAM architecture, fine-grained access control, conditional bindings, and identity governance.',
+      'Advanced proficiency in Terraform / Terragrunt, infrastructure state management, and GitOps automated delivery workflows.',
+      'Solid programming and automation scripting capabilities in Python, Bash, or Go.',
+      'Strong hands-on background in GCP enterprise networking (Shared VPCs, firewall rules, Private Service Connect, DNS, and peering).',
+      'Working knowledge of containerized workloads (GKE / Cloud Run) and microservices security.',
+      'Google Cloud Certified Professional Cloud Architect or Professional Cloud Security Engineer is strongly preferred.',
+      'Bachelor’s or Master’s degree in Computer Science, Information Technology, or equivalent practical experience.',
+    ],
+  },
+];
 
 const perks = [
   {
@@ -81,6 +115,7 @@ export default function CareersPage() {
   const [candidateLinkedIn, setCandidateLinkedIn] = useState('');
   const [candidateExperience, setCandidateExperience] = useState('');
   const [candidateNotes, setCandidateNotes] = useState('');
+  const [expandedJobId, setExpandedJobId] = useState<string | null>('gcp-cloud-engineer-iam-infra');
 
   const filteredPositions =
     selectedCategory === 'all'
@@ -228,11 +263,12 @@ export default function CareersPage() {
                 <div className="flex flex-wrap gap-2">
                   {[
                     { id: 'all', label: 'All Openings' },
+                    { id: 'engineering', label: 'Cloud & Engineering' },
+                    { id: 'operations', label: 'Operations & Mgt' },
                     { id: 'talent', label: 'Recruitment & Talent' },
                     { id: 'hr', label: 'HR Operations' },
                     { id: 'va', label: 'Virtual Assistant' },
                     { id: 'support', label: 'Customer Support' },
-                    { id: 'operations', label: 'Operations & Mgt' },
                   ].map((tab) => (
                     <button
                       key={tab.id}
@@ -256,9 +292,9 @@ export default function CareersPage() {
                 {filteredPositions.map((job) => (
                   <div
                     key={job.id}
-                    className="p-6 sm:p-7 rounded-2xl border border-slate-200/90 bg-white shadow-sm hover:shadow-md hover:border-[#704A4B]/40 transition-all flex flex-col lg:flex-row lg:items-center justify-between gap-6"
+                    className="p-6 sm:p-7 rounded-2xl border border-slate-200/90 bg-white shadow-sm hover:shadow-md hover:border-[#704A4B]/40 transition-all flex flex-col lg:flex-row lg:items-start justify-between gap-6"
                   >
-                    <div className="space-y-3 flex-1">
+                    <div className="space-y-3.5 flex-1">
                       <div className="flex flex-wrap items-center gap-2">
                         <span className="text-xs font-bold uppercase tracking-wider text-[#704A4B] bg-[#F3ECE4] border border-[#DED3C7] px-2.5 py-0.5 rounded-md">
                           {job.department}
@@ -276,10 +312,71 @@ export default function CareersPage() {
                         </span>
                       </div>
 
-                      <h3 className="text-lg sm:text-xl font-bold text-slate-900">{job.title}</h3>
+                      <h3 className="text-lg sm:text-2xl font-bold text-slate-900">{job.title}</h3>
                       <p className="text-sm text-slate-600 leading-relaxed max-w-3xl">
                         {job.summary}
                       </p>
+
+                      {/* Toggle button for Key Responsibilities & Requirements */}
+                      <div className="pt-1">
+                        <button
+                          type="button"
+                          onClick={() => setExpandedJobId(expandedJobId === job.id ? null : job.id)}
+                          className="inline-flex items-center gap-1.5 text-xs font-bold text-[#704A4B] hover:text-[#593A3B] transition-colors py-1 cursor-pointer"
+                        >
+                          <span>
+                            {expandedJobId === job.id
+                              ? 'Hide Key Responsibilities & Requirements'
+                              : 'View Key Responsibilities & Requirements'}
+                          </span>
+                          {expandedJobId === job.id ? (
+                            <ChevronUp className="w-4 h-4" />
+                          ) : (
+                            <ChevronDown className="w-4 h-4" />
+                          )}
+                        </button>
+                      </div>
+
+                      {/* Expanded Section */}
+                      {expandedJobId === job.id && (
+                        <div className="pt-4 border-t border-slate-100 space-y-5 animate-in fade-in duration-200">
+                          {/* Key Responsibilities */}
+                          {job.responsibilities && job.responsibilities.length > 0 && (
+                            <div>
+                              <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-2.5 flex items-center gap-1.5">
+                                <Sparkles className="w-3.5 h-3.5 text-[#704A4B]" />
+                                <span>Key Responsibilities</span>
+                              </h4>
+                              <ul className="space-y-2 text-xs text-slate-600">
+                                {job.responsibilities.map((resp, i) => (
+                                  <li key={i} className="flex items-start gap-2.5 leading-relaxed">
+                                    <CheckCircle2 className="w-4 h-4 text-[#704A4B] flex-shrink-0 mt-0.5" />
+                                    <span>{resp}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          )}
+
+                          {/* Key Qualifications & Skills */}
+                          {job.requirements && job.requirements.length > 0 && (
+                            <div>
+                              <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-2.5 flex items-center gap-1.5">
+                                <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+                                <span>Key Qualifications &amp; Skills</span>
+                              </h4>
+                              <ul className="space-y-2 text-xs text-slate-600">
+                                {job.requirements.map((req, i) => (
+                                  <li key={i} className="flex items-start gap-2.5 leading-relaxed">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 flex-shrink-0 mt-1.5" />
+                                    <span>{req}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          )}
+                        </div>
+                      )}
 
                       <div className="pt-2 flex flex-wrap gap-x-6 gap-y-2 text-xs text-slate-500">
                         <span className="flex items-center gap-1.5">
