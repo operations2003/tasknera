@@ -108,41 +108,41 @@ export default function CareersPage() {
       <main className="pt-16 sm:pt-20 bg-background min-h-screen text-slate-900">
         
         {/* ── Hero Section ── */}
-        <section className="relative overflow-hidden bg-gradient-to-b from-[#704A4B] via-[#613D3E] to-[#4F3031] text-[#F8F4ED] py-20 sm:py-28">
+        <section className="relative overflow-hidden bg-gradient-to-b from-[#242326] via-[#242326] to-[#1A191B] text-[#FFF8F0] py-20 sm:py-28">
           <div className="absolute inset-0 bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
-          <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-accent/15 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute -bottom-10 left-10 w-[400px] h-[400px] bg-primary/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-tn-coral/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-10 left-10 w-[400px] h-[400px] bg-tn-beige/10 rounded-full blur-3xl pointer-events-none" />
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-1.5 mb-6 text-xs font-semibold text-[#E5BDB4] shadow-inner">
-              <span className="w-2 h-2 rounded-full bg-[#E5BDB4] animate-pulse" />
-              <span>Global Remote &amp; Hybrid Talent Network</span>
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-1.5 mb-6 text-xs font-semibold text-tn-coral shadow-inner">
+              <span className="w-2 h-2 rounded-full bg-tn-coral animate-pulse" />
+              <span>We&apos;re Hiring · Global Remote &amp; Hybrid Positions</span>
             </div>
 
-            <h1 className="font-display font-bold text-3xl sm:text-5xl lg:text-6xl text-[#F8F4ED] tracking-tight max-w-4xl mx-auto leading-tight">
+            <h1 className="font-display font-bold text-3xl sm:text-5xl lg:text-6xl text-[#FFF8F0] tracking-tight max-w-4xl mx-auto leading-tight">
               Build Your Career with{' '}
-              <span className="text-[#E5BDB4]">
+              <span className="text-tn-coral">
                 TaskNera
               </span>
             </h1>
 
-            <p className="mt-6 text-base sm:text-xl text-[#F8F4ED]/80 max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-6 text-base sm:text-xl text-[#FFF8F0]/80 max-w-2xl mx-auto leading-relaxed">
               Join a high-growth global workforce partner delivering talent acquisition, HR operations, and virtual business support to top companies worldwide.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               <a
                 href="#apply-form-section"
-                className="bg-[#FAF7F2] text-[#704A4B] font-bold px-6 py-3 rounded-full hover:bg-[#F3ECE4] active:scale-95 transition-all shadow-lg flex items-center gap-2 text-sm"
+                className="bg-tn-coral text-tn-charcoal font-bold px-6 py-3 rounded-full hover:bg-[#F28B6A] active:scale-95 transition-all shadow-lg flex items-center gap-2 text-sm"
               >
-                <span>Submit Open Application</span>
+                <span>Submit Application / View Roles</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a
                 href="mailto:careers@tasknera.com"
                 className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-medium px-6 py-3 rounded-full transition-all flex items-center gap-2 backdrop-blur-sm text-sm"
               >
-                <Mail className="w-4 h-4 text-[#E5BDB4]" />
+                <Mail className="w-4 h-4 text-tn-coral" />
                 <span>Email careers@tasknera.com</span>
               </a>
             </div>

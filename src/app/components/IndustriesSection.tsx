@@ -160,17 +160,17 @@ export default function IndustriesSection() {
         )}
 
         {/* Global reach strip */}
-        <div className="mt-14 bg-gradient-to-r from-[#704A4B] via-[#613D3E] to-[#4F3031] rounded-3xl p-8 sm:p-10 text-[#F8F4ED] shadow-2xl relative overflow-hidden border border-[#DED3C7]/20 scroll-reveal" style={{ transitionDelay: '0.2s' }}>
+        <div className="mt-14 bg-gradient-to-r from-[#242326] via-[#242326] to-[#1A191B] rounded-3xl p-8 sm:p-10 text-[#FFF8F0] shadow-2xl relative overflow-hidden border border-tn-mist/20 scroll-reveal" style={{ transitionDelay: '0.2s' }}>
           <div className="grid lg:grid-cols-12 gap-6 items-center">
             <div className="lg:col-span-5 space-y-2">
-              <div className="inline-flex items-center gap-2 bg-white/10 px-3 py-1 rounded-full text-xs font-bold text-[#E5BDB4] uppercase tracking-wider">
+              <div className="inline-flex items-center gap-2 bg-white/10 px-3 py-1 rounded-full text-xs font-bold text-tn-coral uppercase tracking-wider">
                 <Globe2 className="w-3.5 h-3.5" />
                 <span>Global Sourcing Coverage</span>
               </div>
-              <h3 className="font-display font-bold text-2xl sm:text-3xl text-[#F8F4ED]">
+              <h3 className="font-display font-bold text-2xl sm:text-3xl text-[#FFF8F0]">
                 Sourcing Across 5 Continents &amp; Hubs
               </h3>
-              <p className="text-[#F8F4ED]/75 text-sm">
+              <p className="text-[#FFF8F0]/75 text-sm">
                 We source, pre-vet, and place talent across local and international timezones.
               </p>
             </div>
