@@ -84,6 +84,13 @@ const aboutDropdownLinks = [
     icon: Globe2,
     accent: 'bg-[#E5BDB4]/25 text-[#754E4E] border-[#DED3C7]',
   },
+  {
+    label: 'Careers at TaskNera',
+    href: '/careers',
+    desc: 'Explore open roles & join our high-growth global delivery operations',
+    icon: Briefcase,
+    accent: 'bg-[#8E7D6E]/25 text-[#704A4B] border-[#DED3C7]',
+  },
 ];
 
 const mainNavLinks = [
@@ -92,6 +99,7 @@ const mainNavLinks = [
   { label: 'How We Work', href: '/process' },
   { label: 'Industries', href: '/industries' },
   { label: 'Pricing', href: '/pricing' },
+  { label: 'Careers', href: '/careers' },
   { label: 'Workplace Policies', href: '/workplace-policies' },
   { label: 'Contact', href: '/contact' },
 ];
@@ -409,6 +417,19 @@ export default function Header() {
                 Pricing
               </Link>
               <Link
+                href="/careers"
+                className={`px-2.5 xl:px-3 py-1.5 xl:py-2 text-xs xl:text-sm transition-all duration-200 rounded-lg flex items-center gap-1.5 ${
+                  pathname === '/careers'
+                    ? 'text-[#704A4B] bg-[#8E7D6E]/25 font-semibold shadow-inner border-b-2 border-[#704A4B]'
+                    : 'text-[#805D5A] hover:text-[#704A4B] hover:bg-[#8E7D6E]/15 font-medium'
+                }`}
+              >
+                <span>Careers</span>
+                <span className="inline-flex items-center px-1.5 py-0.5 rounded-full text-[10px] font-bold bg-[#E5BDB4]/50 text-[#704A4B] border border-[#704A4B]/20 leading-none">
+                  Hiring
+                </span>
+              </Link>
+              <Link
                 href="/workplace-policies"
                 className={`px-2.5 xl:px-3 py-1.5 xl:py-2 text-xs xl:text-sm transition-all duration-200 rounded-lg ${
                   pathname === '/workplace-policies'
@@ -609,6 +630,24 @@ export default function Header() {
               }`}
             >
               <span>Engagement &amp; Pricing</span>
+              <ArrowRight className="w-4 h-4 opacity-50" />
+            </Link>
+
+            <Link
+              href="/careers"
+              onClick={handleNavClick}
+              className={`text-base font-semibold px-4 py-3 rounded-xl transition-colors flex items-center justify-between ${
+                pathname === '/careers'
+                  ? 'bg-[#8E7D6E]/25 text-[#704A4B] border-l-4 border-[#704A4B]'
+                  : 'text-[#805D5A] hover:text-[#704A4B] hover:bg-[#8E7D6E]/15'
+              }`}
+            >
+              <div className="flex items-center gap-2">
+                <span>Careers</span>
+                <span className="text-[10px] uppercase font-bold text-[#704A4B] bg-[#E5BDB4]/50 px-2 py-0.5 rounded-md border border-[#704A4B]/20">
+                  Hiring
+                </span>
+              </div>
               <ArrowRight className="w-4 h-4 opacity-50" />
             </Link>
 
