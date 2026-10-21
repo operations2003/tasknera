@@ -190,7 +190,7 @@ const openPositions: JobPosition[] = [
       'Strong analytical and quantitative modeling skills (advanced Excel, financial analysis, BI tools like Tableau/PowerBI).',
       'Exceptional executive communication, storytelling, stakeholder management, and pitch presentation skills.',
     ],
-    email: 'rashmikotekar@tasknera.com',
+    email: 'swati@tasknera.com',
   },
   {
     id: 'sales-executive-hyd',
@@ -212,7 +212,7 @@ const openPositions: JobPosition[] = [
       'Exceptional communication, negotiation, active listening, and relationship-building skills in English and regional languages.',
       'Self-motivated, goal-oriented mindset with comfort in meeting outbound call and revenue conversion KPIs.',
     ],
-    email: 'rashmikotekar@tasknera.com',
+    email: 'nabila@tasknera.com',
   },
   {
     id: 'customer-support-fresher',
@@ -234,7 +234,7 @@ const openPositions: JobPosition[] = [
       'Excellent verbal and written English communication skills with clear, courteous telephone and chat etiquette.',
       'Basic computer proficiency, fast typing speed (30+ WPM), and comfort using web-based tools and Google Workspace / MS Office.',
     ],
-    email: 'rashmikotekar@tasknera.com',
+    email: 'nabila@tasknera.com',
   },
 ];
 
