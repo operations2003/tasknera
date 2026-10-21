@@ -5,8 +5,10 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import AboutSection from '@/app/components/AboutSection';
 import PrinciplesSection from '@/app/components/PrinciplesSection';
+import ProcessSection from '@/app/components/ProcessSection';
+import IndustriesSection from '@/app/components/IndustriesSection';
 
-import { Zap, Globe, ShieldCheck, Handshake } from 'lucide-react';
+import { Zap, Globe, ShieldCheck, Handshake, ArrowRight } from 'lucide-react';
 
 const corePillars = [
   {
@@ -47,10 +49,12 @@ export default function AboutPage() {
         <AboutSection />
 
         {/* ── Principles Behind Tasknera Section ── */}
-        <PrinciplesSection />
+        <div id="principles">
+          <PrinciplesSection />
+        </div>
 
         {/* ── Founder & Leadership Section ── */}
-        <section className="py-24 sm:py-32 bg-section-dark text-white relative overflow-hidden border-t border-white/10">
+        <section id="leadership" className="py-24 sm:py-32 bg-section-dark text-white relative overflow-hidden border-t border-white/10">
           <div className="absolute inset-0 blob-teal opacity-25 pointer-events-none" style={{ top: '10%', right: '20%', width: '600px', height: '600px' }} />
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -131,7 +135,7 @@ export default function AboutPage() {
         </section>
 
         {/* ── Founder Journey & Values ── */}
-        <section className="py-20 sm:py-28 bg-surface-elevated relative overflow-hidden border-b border-border">
+        <section id="story" className="py-20 sm:py-28 bg-surface-elevated relative overflow-hidden border-b border-border">
           {/* Ambient background light pools */}
           <div className="absolute top-0 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-3xl pointer-events-none" />
@@ -189,8 +193,14 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* ── Remote Transparency & Workplace Policies Banner (Requirement 11) ── */}
-        <section className="py-16 bg-card border-t border-border">
+        {/* ── How We Work (Execution Roadmap & Cadence) ── */}
+        <ProcessSection />
+
+        {/* ── 12+ Industry Domains & Functional Roles ── */}
+        <IndustriesSection />
+
+        {/* ── Remote Transparency & Workplace Policies Banner ── */}
+        <section id="policies" className="py-16 bg-card border-t border-border">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-5">
             <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/20 rounded-full px-4 py-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-accent" />
@@ -207,12 +217,19 @@ export default function AboutPage() {
               Because our team and client engagements operate in a remote-first and distributed environment, we maintain complete transparency regarding our remote work standards, cybersecurity safeguards, employee protections, and ethical commitments.
             </p>
 
-            <div className="pt-2">
+            <div className="pt-2 flex flex-wrap items-center justify-center gap-4">
               <Link
                 href="/workplace-policies"
                 className="inline-flex items-center gap-2 bg-primary text-white font-semibold px-7 py-3 rounded-full hover:opacity-90 transition-opacity text-sm shadow-sm"
               >
-                View Workplace Policies &amp; Commitments
+                <span>View Workplace Policies</span>
+                <span>→</span>
+              </Link>
+              <Link
+                href="/careers"
+                className="inline-flex items-center gap-2 bg-accent/15 hover:bg-accent/25 border border-accent/30 text-accent font-semibold px-6 py-3 rounded-full transition-all text-sm"
+              >
+                <span>Explore Careers &amp; Open Roles</span>
                 <span>→</span>
               </Link>
             </div>

@@ -62,36 +62,6 @@ const solutionLinks = [
     accent: 'bg-tn-coral/15 text-tn-coral border-tn-coral/30',
   },
 ];
-const aboutDropdownLinks = [
-  {
-    label: 'About TaskNera',
-    href: '/#about',
-    desc: 'Our story, 5 core pillars, global delivery architecture & leadership',
-    icon: Building2,
-    accent: 'bg-tn-coral/15 text-tn-coral border-tn-coral/30',
-  },
-  {
-    label: 'How We Work',
-    href: '/#process',
-    desc: 'Our 6-phase predictable execution roadmap, SLAs & tech stack',
-    icon: Compass,
-    accent: 'bg-tn-coral/15 text-tn-coral border-tn-coral/30',
-  },
-  {
-    label: '12+ Industries & Roles',
-    href: '/#industries',
-    desc: 'Specialized domain coverage across Tech, BFSI, Healthcare & more',
-    icon: Globe2,
-    accent: 'bg-tn-coral/15 text-tn-coral border-tn-coral/30',
-  },
-  {
-    label: 'Careers at TaskNera',
-    href: '/careers',
-    desc: 'Explore open roles & join our high-growth global delivery operations',
-    icon: Briefcase,
-    accent: 'bg-tn-coral/15 text-tn-coral border-tn-coral/30',
-  },
-];
 
 const mainNavLinks = [
   { label: 'Home', href: '/' },
@@ -108,12 +78,9 @@ export default function Header() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
-  const [aboutOpen, setAboutOpen] = useState(false);
   const [mobileSolutionsOpen, setMobileSolutionsOpen] = useState(false);
-  const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const solutionsRef = useRef<HTMLDivElement>(null);
-  const aboutRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -139,9 +106,6 @@ export default function Header() {
       if (solutionsRef.current && !solutionsRef.current.contains(event.target as Node)) {
         setSolutionsOpen(false);
       }
-      if (aboutRef.current && !aboutRef.current.contains(event.target as Node)) {
-        setAboutOpen(false);
-      }
     }
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
@@ -151,14 +115,7 @@ export default function Header() {
     setMenuOpen(false);
     setSolutionsOpen(false);
     setMobileSolutionsOpen(false);
-    setAboutOpen(false);
-    setMobileAboutOpen(false);
   };
-
-  const isAboutActive =
-    pathname === '/about' ||
-    pathname === '/process' ||
-    pathname === '/industries';
 
   const isSolutionsActive =
     pathname.startsWith('/hr-workforce-solutions') ||
@@ -218,98 +175,16 @@ export default function Header() {
                 Home
               </Link>
 
-              {/* Merged About & Company Dropdown (Unifies About, How We Work, Industries) */}
-              <div
-                ref={aboutRef}
-                className="relative"
-                onMouseEnter={() => setAboutOpen(true)}
-                onMouseLeave={() => setAboutOpen(false)}
+              <Link
+                href="/about"
+                className={`px-2.5 xl:px-3 py-1.5 xl:py-2 text-xs xl:text-sm transition-all duration-200 rounded-lg ${
+                  pathname === '/about'
+                    ? 'text-[#FFF8F0] bg-white/10 font-semibold shadow-inner border-b-2 border-[#F49A7D]'
+                    : 'text-[#DCC6B8] hover:text-[#FFF8F0] hover:bg-white/5 font-medium'
+                }`}
               >
-                <button
-                  type="button"
-                  onClick={() => setAboutOpen(!aboutOpen)}
-                  className={`flex items-center gap-1 px-2.5 xl:px-3 py-1.5 xl:py-2 text-xs xl:text-sm transition-all duration-200 rounded-lg ${
-                    isAboutActive || aboutOpen
-                      ? 'text-[#FFF8F0] bg-white/10 font-semibold shadow-inner border-b-2 border-[#F49A7D]'
-                      : 'text-[#DCC6B8] hover:text-[#FFF8F0] hover:bg-white/5 font-medium'
-                  }`}
-                  aria-expanded={aboutOpen}
-                >
-                  <span>About</span>
-                  <ChevronDown
-                    className={`w-3.5 h-3.5 transition-transform duration-200 ${aboutOpen ? 'rotate-180 text-[#F49A7D]' : 'text-[#DCC6B8]'}`}
-                  />
-                </button>
-
-                {aboutOpen && (
-                  <div
-                    className="absolute top-full left-0 w-[420px] pt-2 z-[100] animate-in fade-in-0 slide-in-from-top-1 duration-150"
-                    style={{ filter: 'drop-shadow(0 20px 30px rgba(0, 0, 0, 0.4))' }}
-                  >
-                    <div className="rounded-2xl border border-[#3E3C42] bg-[#242326] shadow-2xl overflow-hidden ring-1 ring-black/20">
-                      {/* Top Bar */}
-                      <div className="flex items-center justify-between px-4 py-2.5 bg-[#1C1B1D] border-b border-[#3E3C42]">
-                        <div className="text-[11px] font-bold text-[#FFF8F0] uppercase tracking-wider flex items-center gap-2">
-                          <span className="w-2 h-2 rounded-full bg-[#F49A7D] animate-pulse" />
-                          <span>Company Overview · Merged Scope</span>
-                        </div>
-                        <Link
-                          href="/#about"
-                          onClick={() => setAboutOpen(false)}
-                          className="text-xs text-[#F49A7D] hover:text-[#E28567] font-semibold flex items-center gap-1.5 transition-colors group"
-                        >
-                          <span>Full Overview</span>
-                          <ArrowRight className="w-3.5 h-3.5 transition-transform duration-150 group-hover:translate-x-0.5 text-[#F49A7D]" />
-                        </Link>
-                      </div>
-
-                      {/* Merged Items List */}
-                      <div className="p-2 space-y-1.5 bg-[#242326]">
-                        {aboutDropdownLinks.map((item) => {
-                          const IconComp = item.icon;
-                          return (
-                            <Link
-                              key={item.label}
-                              href={item.href}
-                              onClick={() => setAboutOpen(false)}
-                              className="flex items-start gap-3 p-2.5 rounded-xl border border-[#353338] bg-[#2B2A2E] hover:bg-[#343238] hover:border-[#F49A7D]/40 transition-all duration-150 group shadow-sm"
-                            >
-                              <div
-                                className="w-9 h-9 rounded-lg border border-[#F49A7D]/25 bg-[#F49A7D]/15 text-[#F49A7D] flex items-center justify-center flex-shrink-0 mt-0.5 transition-transform duration-150 group-hover:scale-105 shadow-sm"
-                              >
-                                <IconComp className="w-4 h-4" />
-                              </div>
-                              <div className="flex-1 min-w-0">
-                                <div className="text-xs font-bold text-[#FFF8F0] group-hover:text-[#F49A7D] transition-colors flex items-center justify-between">
-                                  <span>{item.label}</span>
-                                  <ArrowRight className="w-3.5 h-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-[#F49A7D] flex-shrink-0 ml-1" />
-                                </div>
-                                <div className="text-[11px] text-[#DCC6B8] group-hover:text-[#FFF8F0] line-clamp-1 mt-0.5 leading-snug">
-                                  {item.desc}
-                                </div>
-                              </div>
-                            </Link>
-                          );
-                        })}
-                      </div>
-
-                      {/* Bottom Footer Strip */}
-                      <div className="px-4 py-2 border-t border-[#3E3C42] bg-[#1C1B1D] flex items-center justify-between text-xs">
-                        <span className="text-[#DCC6B8] text-[11px]">
-                          3-in-1 Unified Hub: Identity, Execution &amp; Coverage
-                        </span>
-                        <Link
-                          href="/#about"
-                          onClick={() => setAboutOpen(false)}
-                          className="text-[#F49A7D] hover:text-[#E28567] font-semibold text-xs transition-colors"
-                        >
-                          Explore →
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </div>
+                About
+              </Link>
 
               {/* Solutions Dropdown */}
               <div
@@ -514,57 +389,18 @@ export default function Header() {
               <ArrowRight className="w-4 h-4 opacity-50" />
             </Link>
 
-            {/* Mobile Merged About Accordion */}
-            <div className="py-1">
-              <button
-                type="button"
-                onClick={() => setMobileAboutOpen(!mobileAboutOpen)}
-                className={`w-full flex items-center justify-between text-base font-semibold px-4 py-3 rounded-xl transition-colors ${
-                  isAboutActive
-                    ? 'bg-white/10 text-[#F49A7D] border-l-4 border-[#F49A7D]'
-                    : 'text-[#DCC6B8] hover:text-[#FFF8F0] hover:bg-white/5'
-                }`}
-              >
-                <div className="flex items-center gap-2">
-                  <span>About &amp; Overview</span>
-                  <span className="text-[10px] uppercase font-bold text-[#F49A7D] bg-[#F49A7D]/20 px-2 py-0.5 rounded-md">
-                    Overview
-                  </span>
-                </div>
-                <ChevronDown
-                  className={`w-4 h-4 transition-transform duration-200 ${
-                    mobileAboutOpen ? 'rotate-180 text-[#F49A7D]' : 'text-[#DCC6B8]'
-                  }`}
-                />
-              </button>
-
-              {mobileAboutOpen && (
-                <div className="p-2 space-y-1 rounded-2xl my-2 border border-[#3E3C42] bg-[#2B2A2E] shadow-sm animate-in fade-in duration-150">
-                  {aboutDropdownLinks.map((item) => {
-                    const IconComp = item.icon;
-                    return (
-                      <Link
-                        key={item.label}
-                        href={item.href}
-                        onClick={handleNavClick}
-                        className="flex items-center gap-3 py-2.5 px-3 text-sm rounded-xl transition-colors bg-[#242326] hover:bg-[#343238] border border-[#3E3C42]"
-                      >
-                        <div
-                          className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 border border-[#F49A7D]/25 bg-[#F49A7D]/15 text-[#F49A7D]"
-                        >
-                          <IconComp className="w-4 h-4" />
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <div className="font-semibold text-[#FFF8F0] text-xs">{item.label}</div>
-                          <div className="text-[11px] text-[#DCC6B8] line-clamp-1">{item.desc}</div>
-                        </div>
-                        <ArrowRight className="w-3.5 h-3.5 text-[#F49A7D]" />
-                      </Link>
-                    );
-                  })}
-                </div>
-              )}
-            </div>
+            <Link
+              href="/about"
+              onClick={handleNavClick}
+              className={`text-base font-semibold px-4 py-3 rounded-xl transition-colors flex items-center justify-between ${
+                pathname === '/about'
+                  ? 'bg-white/10 text-[#F49A7D] border-l-4 border-[#F49A7D]'
+                  : 'text-[#DCC6B8] hover:text-[#FFF8F0] hover:bg-white/5'
+              }`}
+            >
+              <span>About</span>
+              <ArrowRight className="w-4 h-4 opacity-50" />
+            </Link>
 
             {/* Mobile Solutions Accordion */}
             <div className="py-1">

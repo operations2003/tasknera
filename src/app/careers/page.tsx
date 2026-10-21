@@ -426,9 +426,9 @@ export default function CareersPage() {
                 {filteredPositions.map((job) => (
                   <div
                     key={job.id}
-                    className="p-6 sm:p-7 rounded-2xl border border-slate-200/90 bg-white shadow-sm hover:shadow-md hover:border-[#704A4B]/40 transition-all flex flex-col lg:flex-row lg:items-start justify-between gap-6"
+                    className="p-6 sm:p-7 rounded-2xl border border-slate-200/90 bg-white shadow-sm hover:shadow-md hover:border-[#704A4B]/40 transition-all flex flex-col justify-between"
                   >
-                    <div className="space-y-3.5 flex-1">
+                    <div className="space-y-3.5">
                       <div className="flex flex-wrap items-center gap-2">
                         <span className="text-xs font-bold uppercase tracking-wider text-[#704A4B] bg-[#F3ECE4] border border-[#DED3C7] px-2.5 py-0.5 rounded-md">
                           {job.department}
@@ -528,16 +528,20 @@ export default function CareersPage() {
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-3 lg:self-center flex-shrink-0">
-                      <a
-                        href={`mailto:careers@tasknera.com?subject=Application for ${encodeURIComponent(
-                          job.title
-                        )} [TaskNera Careers]`}
-                        className="w-full sm:w-auto bg-[#704A4B] hover:bg-[#593A3B] text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition-all shadow-sm flex items-center justify-center gap-2"
-                      >
-                        <Mail className="w-4 h-4" />
-                        <span>Apply via Email</span>
-                      </a>
+                    {/* Instruction line after the JD: Drop your CV at this email ID */}
+                    <div className="mt-5 pt-3.5 border-t border-slate-100 flex items-center gap-2.5 bg-[#F3ECE4]/60 border border-[#DED3C7]/80 rounded-xl px-4 py-3 text-xs sm:text-sm text-slate-800">
+                      <Mail className="w-4 h-4 text-[#704A4B] flex-shrink-0" />
+                      <span>
+                        Drop your CV at this email ID:{' '}
+                        <a
+                          href={`mailto:careers@tasknera.com?subject=Application for ${encodeURIComponent(
+                            job.title
+                          )} [TaskNera Careers]`}
+                          className="font-bold text-[#704A4B] hover:underline"
+                        >
+                          careers@tasknera.com
+                        </a>
+                      </span>
                     </div>
                   </div>
                 ))}
@@ -551,15 +555,17 @@ export default function CareersPage() {
                   No Active Openings at This Moment
                 </h3>
                 <p className="text-sm text-slate-600 max-w-xl mx-auto leading-relaxed mb-6">
-                  We do not currently have published job openings. However, we are constantly expanding our global delivery pods across Talent Acquisition, HR Operations, Virtual Support, and Business Operations. Submit your details below to be considered as soon as matching opportunities open up.
+                  We do not currently have published job openings. However, we are constantly expanding our global delivery pods across Talent Acquisition, HR Operations, Virtual Support, and Business Operations.
                 </p>
-                <a
-                  href="mailto:careers@tasknera.com?subject=General Application [TaskNera Careers]"
-                  className="inline-flex items-center gap-2 bg-[#704A4B] hover:bg-[#593A3B] text-white text-sm font-semibold px-6 py-3 rounded-xl transition-all shadow-sm"
-                >
-                  <Mail className="w-4 h-4" />
-                  <span>Submit General Application via Email</span>
-                </a>
+                <div className="inline-flex items-center gap-2.5 bg-[#F3ECE4]/60 border border-[#DED3C7]/80 rounded-xl px-4 py-3 text-xs sm:text-sm text-slate-800">
+                  <Mail className="w-4 h-4 text-[#704A4B] flex-shrink-0" />
+                  <span>
+                    Drop your CV at this email ID:{' '}
+                    <a href="mailto:careers@tasknera.com?subject=General Application [TaskNera Careers]" className="font-bold text-[#704A4B] hover:underline">
+                      careers@tasknera.com
+                    </a>
+                  </span>
+                </div>
               </div>
             )}
 
