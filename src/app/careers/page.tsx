@@ -39,7 +39,16 @@ interface JobPosition {
   secondarySkills?: string[];
   quickScreening?: string;
   email?: string;
+  company?: string;
+  client?: string;
+  jobCode?: string;
+  budget?: string;
+  shift?: string;
+  workMode?: string;
+  vendorPayout?: string;
 }
+
+import { getRecruiterEmail } from '@/lib/recruiter';
 
 const openPositions: JobPosition[] = [
   {
@@ -76,14 +85,14 @@ const openPositions: JobPosition[] = [
   },
   {
     id: 'senior-salesforce-lwc-developer-ltm',
-    title: 'Senior Salesforce LWC Developer – LTM',
+    title: 'Senior Salesforce LWC Developer',
     department: 'Enterprise Applications & CRM Solutions',
     category: 'engineering',
     location: 'Hyderabad',
     type: 'Full-Time (FTE) · Hybrid (3 Days WFO)',
     experience: '7+ Years',
     summary:
-      'LTM is seeking a Senior Salesforce LWC Developer to develop and optimize Sales Cloud solutions, build custom Lightning Web Components, and integrate external JavaScript libraries for advanced data visualization.',
+      'We are seeking a Senior Salesforce LWC Developer to develop and optimize Sales Cloud solutions, build custom Lightning Web Components, and integrate external JavaScript libraries for advanced data visualization.',
     responsibilities: [
       'Build and maintain custom applications using Lightning Web Components (LWC).',
       'Integrate external libraries such as AG Grid, AG Charts, or Chart.js through Salesforce Static Resources.',
@@ -201,7 +210,7 @@ const openPositions: JobPosition[] = [
     department: 'Cloud Data Architecture & Warehousing',
     category: 'engineering',
     location: 'PAN India',
-    type: 'Full-Time (FTE)',
+    type: 'Position: FTE',
     experience: '8+ Years',
     summary:
       'We are looking for an experienced Data Architect / Snowflake Administrator with strong hands-on expertise in Snowflake Administration, SnowSQL, Snowpipe, Data Architecture, and Data Warehousing. Retail domain experience and a strong understanding of modern data models are required.',
@@ -215,21 +224,14 @@ const openPositions: JobPosition[] = [
       'Contribute to long-term data platform architecture and strategy while mentoring team members.',
     ],
     requirements: [
-      '8+ years of relevant experience in data architecture and database administration.',
-      'Hands-on Snowflake Administration and Snowflake Architecture expertise.',
-      'Proven hands-on experience with SnowSQL and Snowpipe.',
-      'In-depth knowledge of Data Architecture and enterprise Data Warehousing.',
-      'Expertise in OLAP/OLTP and Dimensional Modelling.',
-      'Demonstrated mastery of Star Schema, Snowflake Schema, and Data Vault architectures.',
-      'Experience leading Data Migration, Integration, Data Profiling, and Quality Analysis.',
-      'Strong understanding of Snowflake use cases and data patterns in the Retail domain.',
-    ],
-    secondarySkills: [
-      'Retail domain data models and analytics',
-      'Legacy data warehouse migration to Snowflake (Teradata/Netezza/Oracle/SQL Server)',
-      'Data quality frameworks, testing automation, and CI/CD for data pipelines',
-      'Performance tuning, virtual warehouse optimization, and FinOps governance',
-      'Technical mentorship and long-term data strategy',
+      '8+ years of relevant experience.',
+      'Snowflake Administration and Snowflake Architecture.',
+      'Hands-on experience with SnowSQL and Snowpipe.',
+      'Data Architecture and Data Warehousing.',
+      'OLAP/OLTP and Dimensional Modelling.',
+      'Star Schema, Snowflake Schema, and Data Vault.',
+      'Data Migration, Integration, Profiling, and Quality Analysis.',
+      'Strong understanding of Snowflake use cases in the Retail domain.',
     ],
     quickScreening:
       'Snowflake Administration | Snowflake Architecture | SnowSQL | Snowpipe | Data Architecture | Data Warehousing | OLAP/OLTP | Dimensional Modelling | Star Schema | Snowflake Schema | Data Vault | Data Migration & Integration | Retail Domain',
@@ -360,6 +362,485 @@ const openPositions: JobPosition[] = [
       'Basic computer proficiency, fast typing speed (30+ WPM), and comfort using web-based tools and Google Workspace / MS Office.',
     ],
     email: 'nabila@tasknera.com',
+  },
+  {
+    id: 'content-moderation-unitech',
+    title: 'Content Moderation',
+    company: 'UniTech Solutions',
+    department: 'Trust & Safety / Content Moderation',
+    category: 'support',
+    location: 'PAN India',
+    type: 'Full-Time · WFH',
+    experience: 'Max 1 Year',
+    workMode: 'WFH',
+    summary:
+      'UniTech Solutions is hiring Content Moderation specialists across PAN India for a 100% remote (WFH) role. You will review and moderate digital user-generated content, enforce community safety guidelines, and ensure platform integrity.',
+    responsibilities: [
+      'Review, evaluate, and moderate user-generated digital content (text, image, audio, video) according to strict trust and safety policies.',
+      'Identify, tag, and escalate abusive, violating, copyrighted, or sensitive content swiftly.',
+      'Maintain high quality scores, speed, and accuracy across daily review workflows.',
+      'Collaborate with quality auditors and team supervisors to address nuanced edge cases and policy updates.',
+    ],
+    requirements: [
+      '0 to 1 year of experience in content moderation, digital review, customer support, or online community management (Freshers with strong analytical judgment welcome).',
+      'Strong eye for detail, emotional resilience, and objective judgment.',
+      'Proficiency in English; regional language comprehension is an advantage.',
+      'Dedicated work-from-home setup with stable high-speed broadband connection.',
+    ],
+    quickScreening:
+      'Content Moderation | Digital Trust & Safety | Policy Enforcement | Queue Review | Quality Assurance | WFH',
+    email: 'nabila@tasknera.com',
+  },
+  {
+    id: 'trx-26052-sr-data-engineer',
+    title: 'Senior Data Engineer – Azure & Databricks',
+    jobCode: 'TRX-26052',
+    company: 'TrinexGlobal',
+    client: 'LTM',
+    department: 'Data Engineering & Cloud Platforms',
+    category: 'engineering',
+    location: 'Bangalore',
+    workMode: 'Onsite (WFO)',
+    shift: '1:30 PM – 11:00 PM IST',
+    type: 'Full-Time (FTE) · WFO',
+    experience: '7+ Years',
+    vendorPayout: '₹50,000 per successful joining',
+    summary:
+      'We are looking for an experienced Senior Data Engineer to design, develop, and optimize scalable data pipelines and data platforms using Apache Spark, Databricks, SQL, Python, and Azure data services.',
+    responsibilities: [
+      'Design, develop, and optimize ETL/ELT pipelines for large-scale data processing.',
+      'Build data solutions using Apache Spark, Databricks, SQL, and Python.',
+      'Develop batch and real-time data ingestion and streaming frameworks.',
+      'Design and maintain data warehouses, data marts, lakehouse architectures, and data models.',
+      'Work with Azure Data Factory (ADF), Azure Synapse Analytics, and Azure Data Lake Storage (ADLS).',
+      'Ensure data quality, governance, security, and compliance.',
+      'Monitor, troubleshoot, and optimize data pipeline performance and reliability.',
+      'Collaborate with data scientists, analysts, and business stakeholders.',
+    ],
+    requirements: [
+      '7+ years of relevant Data Engineering experience.',
+      'Strong expertise in Apache Spark, Databricks, SQL, and Python.',
+      'Hands-on experience in ETL/ELT pipeline development and data architecture.',
+      'Knowledge of data warehousing, data modelling, and lakehouse concepts.',
+      'Experience with batch and streaming data processing.',
+      'Hands-on knowledge of Azure Data Factory (ADF), Azure Synapse Analytics, and ADLS.',
+      'Experience in data quality, governance, performance tuning, and optimization.',
+    ],
+    secondarySkills: [
+      "Bachelor's or Master's degree in Computer Science, Engineering, Data Science, or a related field",
+      'Experience with CI/CD, DevOps, and cloud-based data platforms',
+      'Azure Data Engineer Associate certification',
+      'Strong analytical, problem-solving, and stakeholder-management skills',
+    ],
+    quickScreening:
+      'Data Engineering | Apache Spark | Databricks | SQL | Python | ETL/ELT | Azure Data Factory | Azure Synapse Analytics | ADLS | Data Modelling | Batch & Streaming',
+    email: 'rashmikotekar@tasknera.com',
+  },
+  {
+    id: 'trx-26051-sr-integration-engineer',
+    title: 'Senior Integration Engineer – Azure & API Integration',
+    jobCode: 'TRX-26051',
+    company: 'TrinexGlobal',
+    client: 'LTM',
+    department: 'Enterprise Integration & Cloud APIs',
+    category: 'engineering',
+    location: 'Bangalore',
+    workMode: 'Work From Office (WFO)',
+    shift: '1:30 PM – 11:00 PM IST',
+    budget: 'Up to ₹15 LPA',
+    type: 'Full-Time (FTE) · WFO',
+    experience: '8+ Years',
+    vendorPayout: '₹50,000 per successful joining',
+    summary:
+      'We are seeking a Senior Integration Engineer to design and implement enterprise integrations using REST APIs, Azure cloud services, API Management, microservices, and event-driven architectures. The role includes integrating third-party platforms, including robotics, drones, Industrial IoT, and AI/ML solutions.',
+    responsibilities: [
+      'Design, develop, and maintain RESTful APIs and third-party/vendor integrations.',
+      'Configure and manage Azure API Management (APIM), API security, versioning, and access controls.',
+      'Implement event-driven integrations using Azure Service Bus, Event Hubs, Event Grid, or equivalent technologies.',
+      'Develop integration services, reusable connectors, and microservices.',
+      'Handle authentication, data transformation, retries, error handling, and asynchronous messaging.',
+      'Troubleshoot production integration issues and coordinate with external vendor teams.',
+      'Develop CI/CD pipelines using Azure DevOps or GitHub Actions.',
+    ],
+    requirements: [
+      '8+ years in software integration, API development, cloud integration, or enterprise application development.',
+      'Strong hands-on experience with RESTful APIs and third-party API integrations.',
+      'Expertise in Azure API Management (APIM).',
+      'Experience with event-driven architecture and message queues.',
+      'Knowledge of Azure Service Bus, Event Hubs, or equivalent messaging technologies.',
+      'Strong programming skills in Python or C#/.NET.',
+      'Understanding of API security, OAuth 2.0, JWT, Microsoft Entra ID, and authentication mechanisms.',
+      'Experience in cloud-native application development and production troubleshooting.',
+    ],
+    secondarySkills: [
+      'Skydio APIs/SDKs and Boston Dynamics Spot/robot APIs',
+      'Robotics, drone, Industrial IoT, computer vision, or edge computing integrations',
+      'Docker, Kubernetes/AKS, Infrastructure as Code, and CI/CD',
+      'Experience in Oil & Gas, Energy, Manufacturing, or Utilities',
+    ],
+    quickScreening:
+      'REST APIs | Azure API Management (APIM) | Azure Service Bus | Event Hubs | Event-Driven Architecture | Python/C#/.NET | OAuth 2.0 | JWT | Microsoft Entra ID | Microservices | CI/CD',
+    email: 'rashmikotekar@tasknera.com',
+  },
+  {
+    id: 'trx-26050-data-analyst-powerbi',
+    title: 'Data Analyst – Power BI & Azure',
+    jobCode: 'TRX-26050',
+    company: 'TrinexGlobal',
+    client: 'LTM',
+    department: 'Business Intelligence & Analytics',
+    category: 'engineering',
+    location: 'Bangalore',
+    workMode: 'Work From Office (WFO)',
+    shift: '1:30 PM – 11:00 PM IST',
+    budget: 'Up to ₹6 LPA',
+    type: 'Full-Time (FTE) · WFO',
+    experience: '2+ Years',
+    vendorPayout: '₹20,000 per successful joining',
+    summary:
+      'We are looking for a Data Analyst – Power BI & Azure with hands-on Power BI experience and knowledge of Microsoft Azure services to analyze data, develop dashboards, and support data-driven business decisions.',
+    responsibilities: [
+      'Analyze data to identify trends, patterns, and actionable insights.',
+      'Develop and maintain Power BI dashboards and reports.',
+      'Work with Azure Synapse Analytics, Azure Data Lake, and Azure SQL Database.',
+      'Perform data cleaning, preparation, transformation, and integration using SQL.',
+      'Collaborate with data engineers, business stakeholders, and IT teams.',
+      'Use Power Platform tools to automate workflows and improve reporting processes.',
+      'Maintain documentation for reports, dashboards, and data processes.',
+    ],
+    requirements: [
+      '2+ years of overall experience, including at least 2 years of hands-on Power BI reporting and dashboard development.',
+      'Strong SQL skills, including data manipulation and query optimization.',
+      'Knowledge of Azure Synapse Analytics, Azure Data Lake, and Azure SQL Database.',
+      'Familiarity with Microsoft Power Platform: Power BI, Power Apps, and Power Automate.',
+      'Strong data analysis and data visualization skills.',
+    ],
+    secondarySkills: [
+      'Experience in OT/IoT projects',
+      'Exposure to Oil & Gas, Manufacturing, or related industries',
+      'Total Experience & Hands-on Power BI Experience details required with CV submission',
+    ],
+    quickScreening:
+      'Power BI | Dashboard Development | SQL | Azure Synapse Analytics | Azure Data Lake | Azure SQL Database | Power Apps | Power Automate | Data Analysis',
+    email: 'rashmikotekar@tasknera.com',
+  },
+  {
+    id: 'trx-26057-salesforce-revenue-cloud',
+    title: 'Salesforce Revenue Cloud / CPQ Consultant',
+    jobCode: 'TRX-26057',
+    company: 'TrinexGlobal',
+    client: 'LTIMindtree Locations',
+    department: 'CRM & Revenue Cloud Solutions',
+    category: 'engineering',
+    location: 'PAN India',
+    workMode: 'WFO (Monday–Friday | 8 Hours/Day)',
+    budget: '₹19 LPA',
+    type: 'Full-Time (FTE) · WFO',
+    experience: '5–7 Years',
+    summary:
+      'We are seeking an experienced Salesforce Revenue Cloud Consultant with strong hands-on expertise in Salesforce CPQ and Billing to design, develop, and implement solutions across the sales and revenue lifecycle.',
+    responsibilities: [
+      'Develop and configure Salesforce Revenue Cloud, CPQ, and Billing solutions.',
+      'Customize functionality using Apex, Lightning Web Components (LWC), and Flows.',
+      'Integrate Salesforce with third-party applications using APIs and middleware.',
+      'Gather business requirements and translate them into technical solutions.',
+      'Handle data migration, validation, and automation.',
+      'Troubleshoot CPQ rules, pricing, discounting, and invoicing issues.',
+      'Follow Salesforce development, security, and deployment best practices.',
+    ],
+    requirements: [
+      'Strong hands-on expertise in Salesforce CPQ and/or Revenue Cloud.',
+      'Experience with CPQ, Billing, pricing structures, and Revenue Cloud data modelling.',
+      'Proficiency in Apex, LWC, Flows, and Process Builder.',
+      'Experience with Sales Cloud, Service Cloud, and Experience Cloud.',
+      'Knowledge of REST/SOAP APIs, web services, and middleware tools.',
+      'Familiarity with Approval Processes, Workflows, and Scheduled Jobs.',
+    ],
+    secondarySkills: ['Salesforce Revenue Cloud certifications'],
+    quickScreening:
+      'Salesforce CPQ | Revenue Cloud | Billing | Apex | LWC | Flows | REST/SOAP APIs | Pricing Rules | Quote-to-Cash',
+    email: 'rashmikotekar@tasknera.com',
+  },
+  {
+    id: 'trx-26058-ba-ormb-technical',
+    title: 'BA ORMB Technical Consultant',
+    jobCode: 'TRX-26058',
+    company: 'TrinexGlobal',
+    client: 'LTIMindtree',
+    department: 'Oracle Revenue & Billing (ORMB)',
+    category: 'engineering',
+    location: 'PAN India',
+    workMode: 'WFO',
+    shift: 'Second Shift',
+    budget: 'Up to ₹24 LPA',
+    type: 'Full-Time (FTE) · WFO',
+    experience: '5+ Years',
+    summary:
+      'We are seeking an ORMB Technical Consultant with 5+ years of hands-on ORMB implementation experience, strong OUAF expertise, and experience in integrations, database performance optimization, application customization, and production support.',
+    responsibilities: [
+      'Develop and customize ORMB components, including Batch Programs, Algorithms, Business Services, UI Maps, Zones, and Portals.',
+      'Build integrations using REST/SOAP Web Services, Inbound Web Services (IWS), and Outbound Messages.',
+      'Develop 4GL scripts, Service Scripts, BPA scripts, and Java-based customizations.',
+      'Write and optimize complex SQL/PLSQL queries and troubleshoot database performance issues.',
+      'Handle production support, billing job-stream issues, UAT defects, smoke testing, and cutovers.',
+      'Collaborate with functional and technical teams to deliver ORMB implementation solutions.',
+    ],
+    requirements: [
+      '5+ years of hands-on ORMB technical implementation experience.',
+      'Strong understanding of ORMB architecture and the OUAF framework.',
+      'Expertise in OUAF components, including Batch Programs, Business Services, Algorithms, UI Maps, and Zones.',
+      'Programming skills in Core Java, J2EE, JavaScript, Hibernate, 4GL, and XPath scripting.',
+      'Strong knowledge of Oracle RDBMS, advanced SQL, and PL/SQL query optimization.',
+      'REST/SOAP integrations and testing using SOAP UI or Postman.',
+      'Experience in application customization, debugging, and production support.',
+    ],
+    secondarySkills: [
+      'Functional exposure to Customer Setup, Billing, Payments, Transaction Feed Management (TFM), Pricing, Rates, and General Ledger (GL)',
+    ],
+    quickScreening:
+      'ORMB | OUAF Framework | Core Java | J2EE | SQL/PLSQL | REST/SOAP Web Services | IWS | Batch Programs | Algorithms | UI Maps | Production Support',
+    email: 'rashmikotekar@tasknera.com',
+  },
+  {
+    id: 'trx-26060-oracle-epcm',
+    title: 'Oracle EPCM Techno-Functional Consultant',
+    jobCode: 'TRX-26060',
+    company: 'TrinexGlobal',
+    client: 'LTM Locations',
+    department: 'Enterprise Performance Management (EPM)',
+    category: 'engineering',
+    location: 'PAN India',
+    workMode: 'Work From Office (WFO) · Monday–Friday',
+    shift: 'Rotational',
+    budget: 'Up to ₹21.5 LPA',
+    type: 'Full-Time (FTE) · WFO',
+    experience: '7–10 Years',
+    summary:
+      'We are seeking an Oracle EPCM Techno-Functional Consultant with strong expertise in profitability analysis, cost allocation, financial planning, and Oracle EPM Cloud solutions.',
+    responsibilities: [
+      'Lead Oracle EPCM implementation and enhancement projects.',
+      'Gather business requirements for cost allocation, profitability, and management reporting.',
+      'Design allocation methodologies, driver-based calculations, and profitability models.',
+      'Configure EPCM applications, business rules, forms, dashboards, and reports.',
+      'Develop metadata, dimensions, integrations, and calculation logic.',
+      'Support data validation, SIT, UAT, deployment, and production troubleshooting.',
+      'Collaborate with finance stakeholders to optimize profitability processes.',
+    ],
+    requirements: [
+      '7–10 years of Oracle EPM experience.',
+      'Minimum 3 years of Oracle EPCM Cloud implementation experience.',
+      'Strong understanding of cost allocation, profitability analysis, and financial planning.',
+      'Hands-on experience with Oracle EPCM Cloud, EPBCS/PBCS, Data Management/Data Integration, Calculation Manager, and Smart View.',
+      'Groovy scripting and knowledge of Essbase concepts and business rules.',
+      'Experience integrating ERP systems with Oracle EPM.',
+    ],
+    secondarySkills: [
+      'CA / MBA Finance',
+      'Oracle EPM Cloud certifications',
+      'Domain experience in Retail, Utilities, Manufacturing, or Financial Services',
+    ],
+    quickScreening:
+      'Oracle EPCM Cloud | EPBCS/PBCS | Cost Allocation | Profitability Models | Groovy Scripting | Calculation Manager | Essbase | Data Integration',
+    email: 'rashmikotekar@tasknera.com',
+  },
+  {
+    id: 'trx-26059-pdm-migration',
+    title: 'PDM Migration Engineer',
+    jobCode: 'TRX-26059',
+    company: 'TrinexGlobal',
+    department: 'Engineering Data & PDM Infrastructure',
+    category: 'engineering',
+    location: 'PAN India',
+    workMode: 'WFO',
+    budget: 'Up to ₹9.6 LPA',
+    type: 'Full-Time (FTE) · WFO',
+    experience: '3+ Years',
+    summary:
+      'We are looking for a PDM Migration Engineer with hands-on experience in PDM/Vault migration, Autodesk applications, and PDM infrastructure.',
+    responsibilities: [
+      'Execute PDM and Autodesk Vault migrations for enterprise engineering environments.',
+      'Perform Autodesk application installation and configuration across client workstations and servers.',
+      'Administer and configure Autodesk Data Management Server (ADMS).',
+      'Maintain and monitor PDM infrastructure, storage, and connectivity.',
+      'Perform Vault server upgrades, patch management, and data integrity checks.',
+    ],
+    requirements: [
+      'Clearly documented hands-on experience in PDM and Autodesk Vault.',
+      'Hands-on experience in Autodesk Application Installation.',
+      'Demonstrated experience with Autodesk Data Management Server (ADMS).',
+      'Hands-on experience in PDM Infrastructure administration.',
+      'Proven hands-on experience in Vault Server Upgrade.',
+      'Critical requirement: This is a PDM Migration role, NOT a PLM Migration role.',
+    ],
+    quickScreening:
+      'PDM | Autodesk Vault | Autodesk Installation | ADMS | PDM Infrastructure | Vault Server Upgrade',
+    email: 'rashmikotekar@tasknera.com',
+  },
+  {
+    id: 'trx-26061-oracle-arcs-fccs',
+    title: 'Oracle ARCS / FCCS Consultant',
+    jobCode: 'TRX-26061',
+    company: 'TrinexGlobal',
+    client: 'LTM Locations',
+    department: 'Financial Close & Reconciliation (EPM)',
+    category: 'engineering',
+    location: 'PAN India',
+    workMode: 'Work From Office (WFO) · Monday–Friday',
+    shift: 'Rotational',
+    budget: 'Up to ₹21.5 LPA',
+    type: 'Full-Time (FTE) · WFO',
+    experience: '7–10 Years',
+    summary:
+      'We are seeking an experienced Oracle EPM Consultant with strong expertise in Oracle Account Reconciliation Cloud Service (ARCS), Transaction Matching, and reconciliation transformation for global finance operations.',
+    responsibilities: [
+      'Implement and configure Oracle ARCS modules.',
+      'Design account reconciliation workflows, certification processes, and approval controls.',
+      'Configure Transaction Matching rules, matching types, and automated reconciliation processes.',
+      'Develop integrations with ERP and source systems.',
+      'Manage data migration, testing, training, and deployment.',
+      'Support month-end close, reconciliation optimization, and production issue resolution.',
+    ],
+    requirements: [
+      '7–10 years of Oracle EPM experience.',
+      'Minimum 3 years of Oracle ARCS implementation/support experience.',
+      'Strong hands-on expertise in Reconciliation Compliance and Transaction Matching, Profiles, and Matches.',
+      'Hands-on expertise in Data Integration / Data Management, Reports and Dashboards.',
+      'Strong accounting and reconciliation knowledge.',
+      'Experience integrating Oracle EPM with Oracle ERP, SAP, or other ERP systems.',
+    ],
+    secondarySkills: [
+      'CA / CMA / CPA / MBA Finance',
+      'Experience supporting global financial close processes',
+      'Oracle ARCS Cloud certification',
+    ],
+    quickScreening:
+      'Oracle ARCS | Transaction Matching | Reconciliation Compliance | Oracle EPM | Data Integration | FCCS | Oracle ERP / SAP Integration',
+    email: 'rashmikotekar@tasknera.com',
+  },
+  {
+    id: 'trx-26062-oracle-epbcs-capital',
+    title: 'Oracle EPBCS Capital Planning Consultant',
+    jobCode: 'TRX-26062',
+    company: 'TrinexGlobal',
+    client: 'LTM Locations',
+    department: 'Enterprise Planning & Budgeting (EPM)',
+    category: 'engineering',
+    location: 'PAN India',
+    workMode: 'Work From Office (WFO) · Monday–Friday',
+    shift: 'Rotational',
+    budget: 'Up to ₹21.5 LPA',
+    type: 'Full-Time (FTE) · WFO',
+    experience: '7–10 Years',
+    summary:
+      'We are seeking an Oracle EPM Consultant with strong expertise in EPBCS Capital Planning, Capex budgeting, fixed asset planning, and depreciation modelling.',
+    responsibilities: [
+      'Design and implement Oracle EPBCS Capital Planning solutions.',
+      'Gather requirements for Capex budgeting, capital investments, and asset management.',
+      'Configure Capital Planning modules, business rules, forms, dashboards, and reports.',
+      'Develop models for depreciation, asset acquisition, transfers, and retirement.',
+      'Build integrations with ERP Fixed Asset systems.',
+      'Support testing, deployment, training, hypercare, and ongoing process improvements.',
+    ],
+    requirements: [
+      '7–10 years of Oracle EPM experience.',
+      'Minimum 3 years of EPBCS/PBCS implementation experience.',
+      'Hands-on expertise in Oracle EPBCS Capital Planning, Capex budgeting, and fixed asset planning.',
+      'Depreciation modelling and Data Integration / Data Management.',
+      'Groovy scripting, Business Rules, Calculation Manager, and Smart View.',
+      'Understanding of capital budgeting, fixed assets, and project investments.',
+      'Experience with Oracle ERP, SAP, or other ERP platforms.',
+    ],
+    secondarySkills: [
+      'CA / MBA Finance',
+      'Oracle EPM Cloud certification',
+      'Experience in large enterprise planning transformations',
+    ],
+    quickScreening:
+      'Oracle EPBCS | Capital Planning | Capex Budgeting | Depreciation Modelling | Groovy | Business Rules | Calculation Manager | Smart View',
+    email: 'rashmikotekar@tasknera.com',
+  },
+  {
+    id: 'trx-26101-salesforce-cpq-rca',
+    title: 'Senior Salesforce CPQ / RCA Developer',
+    jobCode: 'TRX-26101',
+    company: 'TrinexGlobal',
+    client: 'LTM',
+    department: 'CRM & Revenue Cloud Architecture',
+    category: 'engineering',
+    location: 'PAN India',
+    workMode: 'WFO',
+    type: 'Full-Time (FTE) · WFO',
+    experience: '7+ Years',
+    summary:
+      'We are looking for a seasoned Senior Salesforce CPQ / RCA Developer (7+ years) to design, customize, and optimize enterprise Quote-to-Cash architectures. You will lead complex product catalog configurations, pricing and discounting engines, advanced approval matrices, and third-party ERP integrations while conducting deep root-cause analysis (RCA) to maximize billing integrity and revenue efficiency.',
+    responsibilities: [
+      'Design, configure, and customize Salesforce CPQ and Revenue Cloud solutions, including complex Product Bundles, Option Constraints, Configuration Rules, and Custom Actions.',
+      'Build and optimize advanced Pricing Rules, Discount Schedules, Block/Tiered Pricing, Cost & Markup rules, and Custom Script (QCP) pricing plugins.',
+      'Architect and map end-to-end Quote-to-Cash (Q2C) lifecycle processes covering opportunity management, quoting, contract amendments, renewals, and asset management.',
+      'Develop custom components and automation using Apex, Lightning Web Components (LWC), Flow Builder, and advanced approval rules.',
+      'Lead integration analysis and connect Salesforce CPQ with enterprise billing, ERP (SAP / NetSuite / Oracle), and financial downstream systems via REST/SOAP APIs.',
+      'Perform rigorous Root Cause Analysis (RCA) on pricing discrepancies, quote line calculation failures, and deployment or synchronization defects.',
+      'Collaborate with business stakeholders, functional architects, and Agile engineering pods to translate complex commercial pricing models into scalable technical solutions.',
+    ],
+    requirements: [
+      '7+ years of professional Salesforce software development experience, with at least 4+ years of dedicated hands-on Salesforce CPQ / Revenue Cloud engineering.',
+      'Deep architectural mastery of Salesforce CPQ: Product Catalog, Product Rules, Pricing Rules, Discount Schedules, Contract Amendments, and Renewal lifecycles.',
+      'Strong programming proficiency in Apex (triggers, batch, asynchronous), Lightning Web Components (LWC), and Quote Calculator Plugin (QCP) JavaScript.',
+      'Extensive experience in Business Process Analysis, Requirements Gathering, and workflow definition across Quote-to-Cash operations.',
+      'Proven hands-on experience in Integration Analysis, enterprise API design, and middleware connectivity.',
+      'Demonstrated expertise in systematic Root Cause Analysis (RCA), troubleshooting complex calculation matrices and transaction rollbacks.',
+      'Strong understanding of Salesforce security models, permission sets, sharing rules, and deployment best practices.',
+    ],
+    secondarySkills: [
+      'Salesforce Certified CPQ Specialist or Salesforce Revenue Cloud Consultant certification',
+      'Integration experience with SAP, Oracle ERP, NetSuite, or Stripe billing engines',
+      'Familiarity with DevOps / CI/CD pipelines (Copado, Gearset, GitLab CI, AutoRabbit)',
+      'Agile/Scrum delivery experience in global enterprise environments',
+    ],
+    quickScreening:
+      'Salesforce CPQ | Revenue Cloud | Quote-to-Cash (Q2C) | Product Bundles | Pricing Rules | QCP JavaScript | Apex | LWC | Advanced Approvals | Integration Analysis | Root Cause Analysis (RCA)',
+    email: 'rashmikotekar@tasknera.com',
+  },
+  {
+    id: 'trx-26056-geotechnical-engineer',
+    title: 'Geotechnical Engineer',
+    jobCode: 'TRX-26056',
+    company: 'TrinexGlobal',
+    client: 'LTM',
+    department: 'Civil & Geotechnical Engineering',
+    category: 'engineering',
+    location: 'Pune',
+    workMode: 'WFO',
+    budget: 'Up to ₹8.4 LPA',
+    type: 'Full-Time (FTE) · WFO',
+    experience: '1–4 Years',
+    summary:
+      'We are hiring a Geotechnical Engineer to support international projects across India, the Middle East, London, and New York. The role involves geotechnical investigations, engineering analysis, foundation design, field inspections, and technical report preparation.',
+    responsibilities: [
+      'Coordinate subsurface investigations, field observations, and geotechnical reporting.',
+      'Prepare drilling logs, test pit logs, field reports, and investigation documentation.',
+      'Assist with deep foundation design, retaining structures, and excavation support systems.',
+      'Perform settlement analysis, liquefaction assessments, and lateral pile analysis.',
+      'Support proposals, project coordination, and construction inspections.',
+      'Coordinate with international project teams and undertake fieldwork in India.',
+      'Travel as required for site investigations and project activities.',
+    ],
+    requirements: [
+      "Bachelor's degree in Civil Engineering or Geotechnical Engineering.",
+      '1–4 years of experience in geotechnical investigations, design, or construction inspections.',
+      'Experience in fieldwork coordination, geotechnical reporting, and technical documentation.',
+      'Strong analytical, communication, and problem-solving skills.',
+      'Willingness to undertake fieldwork in India and travel as required.',
+    ],
+    secondarySkills: [
+      "Master's degree in Geotechnical Engineering",
+      'Field experience in pile foundations, load testing, earthwork, ground improvement, retaining walls, and excavation support',
+      'Familiarity with gINT, SLOPE/W, PLAXIS, LPILE, GRLWEAP, MSEW, or SHAKE',
+      'Experience working with international project teams',
+    ],
+    quickScreening:
+      'Geotechnical Engineering | Foundation Design | Subsurface Investigation | Drilling Logs | Settlement Analysis | PLAXIS / gINT | WFO Pune',
+    email: 'rashmikotekar@tasknera.com',
   },
 ];
 
@@ -708,14 +1189,19 @@ export default function CareersPage() {
                       <Mail className="w-4 h-4 text-[#704A4B] flex-shrink-0" />
                       <span>
                         Drop your CV at this email ID:{' '}
-                        <a
-                          href={`mailto:${job.email || 'rashmikotekar@tasknera.com'}?subject=Application for ${encodeURIComponent(
-                            job.title
-                          )} [TaskNera Careers]`}
-                          className="font-bold text-[#704A4B] hover:underline"
-                        >
-                          {job.email || 'rashmikotekar@tasknera.com'}
-                        </a>
+                        {(() => {
+                          const recruiterEmail = getRecruiterEmail(job.company, job.email);
+                          return (
+                            <a
+                              href={`mailto:${recruiterEmail}?subject=Application for ${encodeURIComponent(
+                                job.title
+                              )}${job.jobCode ? ` [${job.jobCode}]` : ''} [TaskNera Careers]`}
+                              className="font-bold text-[#704A4B] hover:underline"
+                            >
+                              {recruiterEmail}
+                            </a>
+                          );
+                        })()}
                       </span>
                     </div>
                   </div>
