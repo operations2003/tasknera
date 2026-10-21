@@ -990,11 +990,11 @@ export default function CareersPage() {
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a
-                href="mailto:rashmikotekar@tasknera.com"
+                href="mailto:careers@tasknera.com"
                 className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-medium px-6 py-3 rounded-full transition-all flex items-center gap-2 backdrop-blur-sm text-sm"
               >
                 <Mail className="w-4 h-4 text-tn-coral" />
-                <span>Email rashmikotekar@tasknera.com</span>
+                <span>Email careers@tasknera.com</span>
               </a>
             </div>
 
@@ -1366,8 +1366,8 @@ export default function CareersPage() {
                   <Mail className="w-4 h-4 text-[#704A4B] flex-shrink-0" />
                   <span>
                     Drop your CV at this email ID:{' '}
-                    <a href="mailto:rashmikotekar@tasknera.com?subject=General Application [TaskNera Careers]" className="font-bold text-[#704A4B] hover:underline">
-                      rashmikotekar@tasknera.com
+                    <a href="mailto:careers@tasknera.com?subject=General Application [TaskNera Careers]" className="font-bold text-[#704A4B] hover:underline">
+                      careers@tasknera.com
                     </a>
                   </span>
                 </div>
