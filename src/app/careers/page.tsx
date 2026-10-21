@@ -21,6 +21,8 @@ import {
   ExternalLink,
   ChevronDown,
   ChevronUp,
+  Cpu,
+  Award,
 } from 'lucide-react';
 
 interface JobPosition {
@@ -34,6 +36,8 @@ interface JobPosition {
   summary: string;
   responsibilities: string[];
   requirements: string[];
+  secondarySkills?: string[];
+  quickScreening?: string;
   email?: string;
 }
 
@@ -43,21 +47,31 @@ const openPositions: JobPosition[] = [
     title: 'GCP Cloud Engineer – IAM & Infrastructure Automation',
     department: 'Cloud & Infrastructure Engineering',
     category: 'engineering',
-    location: 'Pan India',
-    type: 'Full-time · Hybrid',
+    location: 'PAN India',
+    type: 'Full-Time (FTE) · Hybrid',
     experience: '5+ Years',
     summary:
-      'We are seeking an experienced GCP Cloud Engineer (5+ years) specializing in Identity & Access Management (IAM), Security Architecture, and Infrastructure as Code (IaC) automation. You will architect enterprise Google Cloud landing zones, build automated Terraform workflows, enforce least-privilege IAM policies, and ensure secure, reliable cloud infrastructure across multi-project environments.',
+      'We are looking for an experienced GCP Cloud Engineer with strong expertise in Cloud IAM, access governance, and infrastructure automation to implement secure, scalable, and repeatable cloud access management practices.',
     responsibilities: [
-      'Architect, implement, and audit centralized GCP IAM policies, Custom Roles, Service Accounts, and Organization Policy constraints under strict least-privilege principles.',
-      'Develop, test, and maintain reusable Infrastructure as Code (IaC) modules using Terraform and Terragrunt for multi-region landing zones and automated VPC networks.',
-      'Integrate cloud security posture management, automated compliance, and CI/CD pipelines using Security Command Center (SCC), KMS, and automated Policy-as-Code checks.',
+      'Manage GCP IAM, resource hierarchy, service accounts, custom roles, conditional access, and organization policies.',
+      'Implement least-privilege access, access governance, privileged access management, and identity risk remediation.',
+      'Analyze audit logs, access usage, permissions, role recommendations, and policy impacts before implementing changes.',
+      'Automate IAM remediation and infrastructure management using scripting and Infrastructure as Code (IaC).',
+      'Maintain remediation documentation, change records, exception reports, and status updates.',
+      'Support cloud infrastructure deployment, CI/CD, containerization, monitoring, and operational improvements.',
     ],
     requirements: [
-      '5+ years of dedicated professional experience architecting and operating Google Cloud Platform (GCP) enterprise infrastructure.',
-      'Deep expertise in GCP IAM architecture, fine-grained access control, conditional bindings, and identity governance.',
-      'Advanced proficiency in Terraform / Terragrunt, infrastructure state management, and GitOps automated delivery workflows.',
+      'GCP Cloud IAM: Resource hierarchy, service accounts, custom roles, conditional access, and organization policies.',
+      'Least-privilege principles, access governance, privileged access management, and IAM risk remediation.',
+      'Audit log analysis, permissions assessment, and policy impact analysis.',
+      'Terraform, Docker, Kubernetes, GitLab CI/CD and Repositories, Ansible, and Azure DevOps.',
+      'Python, Bash, Shell Scripting, and Helm Charts.',
+      'Prometheus and Grafana for monitoring and observability.',
+      'Infrastructure automation and repeatable remediation at scale.',
     ],
+    secondarySkills: ['AWS Cloud'],
+    quickScreening:
+      'GCP IAM | Access Governance | Least Privilege | Privileged Access Management | IAM Risk Remediation | Audit Logs | Terraform | Docker | Kubernetes | GitLab CI/CD | Ansible | Azure DevOps | Python | Bash | Helm | Prometheus | Grafana',
     email: 'rashmikotekar@tasknera.com',
   },
   {
@@ -66,20 +80,32 @@ const openPositions: JobPosition[] = [
     department: 'Enterprise Applications & CRM Solutions',
     category: 'engineering',
     location: 'Hyderabad',
-    type: 'Full-time · Hybrid',
+    type: 'Full-Time (FTE) · Hybrid (3 Days WFO)',
     experience: '7+ Years',
     summary:
-      'We are looking for a Senior Salesforce LWC Developer (7+ years) specializing in Lightning Web Components (LWC), Apex development, and complex enterprise CRM integrations. You will architect and implement scalable, high-performance UI components, streamline business logic using advanced asynchronous Apex, integrate third-party REST/SOAP APIs, and drive lifecycle transition management (LTM) for large-scale enterprise deployments.',
+      'LTM is seeking a Senior Salesforce LWC Developer to develop and optimize Sales Cloud solutions, build custom Lightning Web Components, and integrate external JavaScript libraries for advanced data visualization.',
     responsibilities: [
-      'Architect and build sophisticated, high-performance Lightning Web Components (LWC) with custom designs, SLDS styling, and reactive state management.',
-      'Develop scalable, bulkified backend Apex services, triggers, batch classes, queueable Apex, and platform events with optimal governor limit utilization.',
-      'Drive end-to-end Lifecycle Transition Management (LTM), leading the modernization of legacy Visualforce and Aura components into modern LWC frameworks.',
+      'Build and maintain custom applications using Lightning Web Components (LWC).',
+      'Integrate external libraries such as AG Grid, AG Charts, or Chart.js through Salesforce Static Resources.',
+      'Develop and enhance Sales Cloud features supporting sales processes and lead management.',
+      'Write and optimize Apex classes, triggers, and batch processes.',
+      'Implement secure data access using permission sets and sharing rules.',
+      'Manage development, testing, debugging, and deployments while following Salesforce best practices.',
+      'Collaborate with stakeholders and Agile teams to deliver scalable solutions.',
     ],
     requirements: [
-      '7+ years of hands-on technical development experience on the Salesforce platform, with a minimum of 4+ years specializing in Lightning Web Components (LWC) and modern JavaScript (ES6+).',
-      'Advanced proficiency in Apex programming, design patterns, asynchronous processing, and unit testing frameworks.',
-      'Demonstrated experience leading enterprise-scale component refactoring, Visualforce/Aura-to-LWC migrations, and release governance.',
+      '7+ years of Salesforce development experience.',
+      'Minimum 3 years of hands-on LWC development.',
+      'Strong expertise in Sales Cloud, Apex, and JavaScript.',
+      'Experience integrating external JavaScript libraries through Static Resources, particularly AG Grid, AG Charts, or Chart.js.',
+      'Strong understanding of Salesforce standard objects, platform architecture, and development practices.',
     ],
+    secondarySkills: [
+      'Salesforce DX, VS Code, Git, and AutoRabbit',
+      'Agile/Scrum and Salesforce deployment practices',
+    ],
+    quickScreening:
+      'Salesforce Development | LWC | Sales Cloud | Apex | JavaScript | AG Grid / AG Charts / Chart.js | Static Resources | Salesforce Platform Architecture',
     email: 'rashmikotekar@tasknera.com',
   },
   {
@@ -87,43 +113,86 @@ const openPositions: JobPosition[] = [
     title: 'AWS Agentic AI Architect – AWS Bedrock Specialist',
     department: 'AI & Emerging Technologies',
     category: 'engineering',
-    location: 'Hyd (PAN India)',
-    type: 'Full-time · Hybrid',
+    location: 'Hyderabad Preferred (PAN India)',
+    type: 'Full-Time (FTE) · Hybrid (3 Days WFO) · 3 Open Positions',
     experience: '6+ Years',
     summary:
-      'We are seeking a visionary AWS Agentic AI Architect & AWS Bedrock Specialist (6+ years) to architect, deploy, and scale multi-agent GenAI architectures and autonomous workflows. You will pioneer enterprise LLM orchestration using Amazon Bedrock, Bedrock Agents, Knowledge Bases (RAG), and vector databases, integrating sovereign enterprise data into production-grade autonomous agentic systems with strict safety guardrails.',
+      'Seeking an experienced AWS Agentic AI Architect to design and implement enterprise-grade Agentic AI solutions using Amazon Bedrock, AWS AgentCore, Knowledge Bases, and RAG architectures. The role involves solution architecture, intelligent agent development, cloud integration, security, and performance optimization.',
     responsibilities: [
-      'Architect and implement multi-agent systems and autonomous workflows utilizing Amazon Bedrock Agents, LangGraph, AutoGen, or CrewAI.',
-      'Design enterprise-grade Retrieval-Augmented Generation (RAG) pipelines leveraging Amazon Bedrock Knowledge Bases, OpenSearch Serverless, Pinecone, or pgvector.',
-      'Implement automated Guardrails for Amazon Bedrock to enforce strict PII redaction, toxic content filtering, prompt injection defense, and hallucinations mitigation.',
+      'Design and implement Agentic AI solutions using Amazon Bedrock Foundation Models, Agents, Guardrails, and Knowledge Bases.',
+      'Develop intelligent agents using AgentCore, including orchestration, planning, memory, and tool integration.',
+      'Build RAG-based applications using vector databases and integrate AI agents with enterprise APIs, databases, and business systems.',
+      'Architect scalable, secure, and cost-optimized AI solutions using AWS services.',
+      'Implement AI governance, security, compliance, and responsible AI practices.',
+      'Define solution architecture, conduct technical assessments, guide implementation, and collaborate with stakeholders.',
     ],
     requirements: [
-      '6+ years of cloud architecture and software engineering experience, with 2+ years of dedicated production experience in Generative AI, LLMs, and agentic workflows.',
-      'Deep hands-on expertise with Amazon Bedrock, Bedrock Agents, Action Groups, Knowledge Bases, and Guardrails.',
-      'Advanced proficiency in Python, modern AI frameworks (LangChain, LlamaIndex, LangGraph), and asynchronous programming.',
+      '6+ years of relevant experience in cloud, AI architecture, or solution development.',
+      'Hands-on experience designing and implementing Agentic AI solutions on AWS.',
+      'Strong expertise in Amazon Bedrock, including Foundation Models, Agents, Guardrails, and Knowledge Bases.',
+      'Knowledge of AWS AgentCore, agent orchestration, planning, memory, and tool integration.',
+      'Experience building RAG applications using vector databases.',
+      'Strong understanding of LLM architectures, prompt engineering, agent workflows, and autonomous AI systems.',
+      'Experience integrating AI agents with enterprise systems, APIs, and databases.',
+      'Knowledge of AWS Lambda, API Gateway, S3, DynamoDB, OpenSearch, ECS/EKS, IAM, and Step Functions.',
+      'Expertise in cloud-native AI architecture, security, governance, and cost optimization.',
+      'Strong analytical, problem-solving, communication, and stakeholder-management skills.',
+      'Mandatory AWS certification: AWS Certified Solutions Architect, AWS Certified AI Practitioner, AWS Certified Machine Learning – Specialty, or equivalent certification.',
     ],
+    secondarySkills: [
+      'Multi-agent systems & frameworks: LangChain, LangGraph, CrewAI, Semantic Kernel, or AutoGen',
+      'Enterprise RAG solutions using Amazon OpenSearch, Pinecone, Weaviate, or similar vector databases',
+      'Model evaluation, AI observability, monitoring, performance optimization, and prompt tuning',
+      'LLM fine-tuning, MLOps, CI/CD, and AI application deployment',
+      'Data engineering and integration of structured and unstructured data',
+      'Responsible AI, AI governance, and compliance frameworks',
+      'Exposure to Azure OpenAI, Google Vertex AI, conversational AI, chatbots, or virtual assistants',
+      'Experience leading architecture discussions, technical workshops, and mentoring teams',
+      'Preferred Certifications: AWS Certified AI Practitioner, AWS Certified Machine Learning – Specialty, AWS Certified Solutions Architect (Associate/Professional), AWS Certified Developer – Associate',
+    ],
+    quickScreening:
+      'AWS Bedrock | AgentCore | Agentic AI | RAG | Foundation Models | Bedrock Agents | Guardrails | Knowledge Bases | Vector Databases | AWS Cloud Architecture | AWS Certification',
     email: 'rashmikotekar@tasknera.com',
   },
   {
     id: 'databricks-platform-engineer-admin',
     title: 'Databricks Platform Engineer / Administrator',
-    department: 'Data Platforms & Cloud Analytics',
+    department: 'Data Platform Engineering & Cloud Operations',
     category: 'engineering',
-    location: 'Chennai, Bangalore, Hyderabad, Noida, Mumbai, Kolkata, Nagpur, Warangal, Bhubaneswar',
-    type: 'Full-time · Hybrid',
-    experience: '5+ Years',
+    location:
+      'PAN India – Hybrid (Chennai, Bangalore, Hyderabad, Noida, Mumbai, Kolkata, Nagpur, Warangal, Bhubaneswar)',
+    type: 'Full-Time (FTE) · Hybrid',
+    experience: '5+ Years (3+ Years in Databricks Admin)',
     summary:
-      'We are looking for an experienced Databricks Platform Engineer / Administrator (5+ years) to manage, govern, and optimize enterprise multi-workspace Databricks environments across cloud platforms. You will lead Unity Catalog governance, automated cluster provisioning, Lakehouse performance tuning, CI/CD with Databricks Asset Bundles (DABs), and platform FinOps.',
+      'We are looking for an experienced Databricks Platform Engineer / Administrator to manage and optimize enterprise Databricks environments on AWS, focusing on platform administration, governance, automation, security, cost optimization, and production support.',
     responsibilities: [
-      'Administer and govern enterprise Databricks multi-workspace platforms, including Unity Catalog, metastore federation, access controls, and data lineage.',
-      'Automate workspace provisioning, cluster policies, and resource lifecycles using Terraform, Databricks REST APIs, and Databricks CLI.',
-      'Optimize compute clusters (All-Purpose, Job Clusters, and SQL Warehouses) for high throughput, low latency, auto-scaling efficiency, and cost control (FinOps).',
+      'Administer Databricks workspaces, clusters, compute policies, jobs, and access controls.',
+      'Manage Unity Catalog, data governance, workspace security, and permissions.',
+      'Support AWS-based platform operations, monitoring, incident management, troubleshooting, and root cause analysis.',
+      'Automate provisioning and operations using Terraform, Databricks REST APIs/CLI, Python, and shell scripting.',
+      'Optimize platform performance, resource utilization, and cloud costs.',
+      'Support deployments, CI/CD, capacity planning, and operational documentation.',
     ],
     requirements: [
-      '5+ years of dedicated experience in cloud data platform administration with 3+ years hands-on specializing in Databricks (Azure Databricks or AWS Databricks).',
-      'Deep expertise in Unity Catalog administration, access control lists (ACLs), data sharing (Delta Sharing), and data governance frameworks.',
-      'Proficiency in Infrastructure as Code (IaC) using Terraform for Databricks automation and cluster policy configurations.',
+      '5+ years overall experience, including 3+ years of hands-on Databricks Administration.',
+      'Databricks Account/Workspace Administration and platform operations.',
+      'Unity Catalog, cluster management, compute policies, and access governance.',
+      'AWS: IAM, S3, VPC, KMS, CloudWatch, security controls, and networking.',
+      'Terraform / Infrastructure as Code (IaC).',
+      'Databricks REST APIs, CLI, Python automation, and shell scripting.',
+      'Production support, monitoring, incident management, and troubleshooting.',
+      'Cost optimization, platform governance, and cloud security.',
+      'Working knowledge of SQL, ETL pipelines, and workflow scheduling.',
     ],
+    secondarySkills: [
+      'Databricks Administrator / Data Engineer certification',
+      'AWS Associate-level certification or above',
+      'CI/CD tools: GitHub Actions, Jenkins, or Azure DevOps',
+      'Apache Spark, Kafka/streaming, Lakehouse architecture, and observability tools',
+      "Education: Bachelor's degree in Computer Science, IT, Engineering, or a related field",
+    ],
+    quickScreening:
+      'Databricks Administration | Workspace Management | Unity Catalog | AWS | IAM | S3 | VPC | KMS | Terraform | REST APIs / CLI | Python | Shell Scripting | Production Support | Cost Optimization | Cloud Security',
     email: 'rashmikotekar@tasknera.com',
   },
   {
@@ -132,20 +201,38 @@ const openPositions: JobPosition[] = [
     department: 'Cloud Data Architecture & Warehousing',
     category: 'engineering',
     location: 'PAN India',
-    type: 'Full-time · Hybrid',
+    type: 'Full-Time (FTE)',
     experience: '8+ Years',
     summary:
-      'We are seeking a seasoned Snowflake Admin / Architect (8+ years) to lead enterprise cloud data warehouse architecture, database administration, security governance, and workload optimization. You will architect multi-region Snowflake deployments, enforce role-based access control (RBAC), configure data sharing and replication, and implement FinOps cost-governance frameworks across multi-terabyte data estates.',
+      'We are looking for an experienced Data Architect / Snowflake Administrator with strong hands-on expertise in Snowflake Administration, SnowSQL, Snowpipe, Data Architecture, and Data Warehousing. Retail domain experience and a strong understanding of modern data models are required.',
     responsibilities: [
-      'Architect, configure, and administer enterprise-grade Snowflake data warehouses, multi-cluster virtual warehouses, and cloud storage integrations.',
-      'Design and enforce comprehensive security and governance models: custom RBAC hierarchies, dynamic data masking, row access policies, object tagging, and network policies.',
-      'Establish FinOps governance: monitor credit consumption, resource monitors, auto-suspend/resume tuning, and warehouse sizing optimization to maximize ROI.',
+      'Design and implement scalable Snowflake database and data warehouse solutions for retail data.',
+      'Perform Snowflake administration, data migration, data integration, and performance optimization.',
+      'Build data warehouses and data marts; support data profiling and quality analysis.',
+      'Design and work with OLAP/OLTP, Dimensional Modelling, Star Schema, Snowflake Schema, and Data Vault.',
+      'Develop data extraction and integration modules and collaborate with Data Engineering and Testing teams.',
+      'Support legacy-to-Snowflake migrations and recommend improvements to existing data platforms.',
+      'Contribute to long-term data platform architecture and strategy while mentoring team members.',
     ],
     requirements: [
-      '8+ years of total data engineering / database administration experience, with 4+ years of dedicated Snowflake architecture and administration.',
-      'Mastery of Snowflake internals: Virtual Warehouses, Storage layer, Micro-partitioning, Metadata caching, and Query Profiler.',
-      'Deep understanding of enterprise RBAC, Snowflake Secure Views, Data Masking, SCIM provisioning, and Okta/Azure AD SSO federation.',
+      '8+ years of relevant experience in data architecture and database administration.',
+      'Hands-on Snowflake Administration and Snowflake Architecture expertise.',
+      'Proven hands-on experience with SnowSQL and Snowpipe.',
+      'In-depth knowledge of Data Architecture and enterprise Data Warehousing.',
+      'Expertise in OLAP/OLTP and Dimensional Modelling.',
+      'Demonstrated mastery of Star Schema, Snowflake Schema, and Data Vault architectures.',
+      'Experience leading Data Migration, Integration, Data Profiling, and Quality Analysis.',
+      'Strong understanding of Snowflake use cases and data patterns in the Retail domain.',
     ],
+    secondarySkills: [
+      'Retail domain data models and analytics',
+      'Legacy data warehouse migration to Snowflake (Teradata/Netezza/Oracle/SQL Server)',
+      'Data quality frameworks, testing automation, and CI/CD for data pipelines',
+      'Performance tuning, virtual warehouse optimization, and FinOps governance',
+      'Technical mentorship and long-term data strategy',
+    ],
+    quickScreening:
+      'Snowflake Administration | Snowflake Architecture | SnowSQL | Snowpipe | Data Architecture | Data Warehousing | OLAP/OLTP | Dimensional Modelling | Star Schema | Snowflake Schema | Data Vault | Data Migration & Integration | Retail Domain',
     email: 'rashmikotekar@tasknera.com',
   },
   {
@@ -154,42 +241,80 @@ const openPositions: JobPosition[] = [
     department: 'Enterprise Data Management & Governance',
     category: 'engineering',
     location: 'Hyderabad / Chennai',
-    type: 'Full-time · On-site (WFO)',
+    type: 'Full-Time (FTE)',
     experience: '8+ Years',
     summary:
-      'We are hiring an experienced IDMC MDM Consultant (8+ years) specializing in Informatica Intelligent Data Management Cloud (IDMC) and Master Data Management (MDM SaaS). You will architect and implement customer/product master data models, configure match/merge rules, design data quality (CDQ) pipelines, and integrate enterprise ERP/CRM ecosystems to deliver high-integrity golden customer records.',
+      'We are looking for an experienced IDMC MDM Consultant with strong hands-on expertise in Informatica SaaS MDM, IDMC, Customer 360, CDI, CAI, and MDM integrations. The role involves designing, developing, testing, and supporting complex MDM solutions.',
     responsibilities: [
-      'Architect and implement end-to-end Master Data Management solutions using Informatica IDMC MDM SaaS, Cloud Data Integration (CDI), and Cloud Data Quality (CDQ).',
-      'Design robust data models (Party/Customer, Product, Vendor, Supplier) and entity relationship schemas in Business 360 / Customer 360 console.',
-      'Configure, tune, and test complex Match & Merge rules, survivorship rules, and trust score metrics to produce high-confidence golden records.',
+      'Design and implement Informatica MDM Customer 360 solutions using IDMC.',
+      'Configure and work extensively with MDM Hub, Hub Store, Hub Server, Cleanse/Match Server, and Cleanse Adaptor.',
+      'Develop integrations using SIF, Business Entity Services (BES), CDI, and CAI.',
+      'Build CAI workflows and integrations with D&B, ERP, SFDC, and downstream systems.',
+      'Perform data profiling across heterogeneous data sources and support data quality initiatives.',
+      'Lead application enhancements, testing, releases, production support, and performance optimization.',
+      'Collaborate with Business Analysts, customers, IT teams, and stakeholders to deliver MDM solutions.',
     ],
     requirements: [
-      '8+ years of total IT experience with 5+ years dedicated to Informatica MDM (Multidomain MDM, C360, P360) and minimum 2+ years in Informatica IDMC / MDM SaaS.',
-      'Deep expertise in IDMC Business 360 architecture, Match & Merge tuning, Survivorship, and Hierarchies.',
-      'Strong hands-on background in Cloud Data Integration (CDI) and Cloud Data Quality (CDQ) rule creation.',
+      '8+ years of relevant experience in enterprise data and MDM architecture.',
+      'Informatica IDMC / Informatica SaaS MDM — mandatory hands-on experience.',
+      'IDMC MDM and Customer 360 implementation expertise.',
+      'Informatica Cloud Data Integration (CDI) and Cloud Application Integration (CAI).',
+      'SIF and Business Entity Services (BES).',
+      'MDM Hub components and configuration (Hub Store, Hub Server, Cleanse/Match Server, Cleanse Adaptor).',
+      'Data Profiling, integration, and Informatica REF360.',
+      'Hands-on experience with on-premises Informatica tools: IDQ and MDM.',
+      'Strong database experience and advanced SQL.',
+      'Strong SDLC, troubleshooting, and production support experience.',
+      "Bachelor's degree in Computer Science, IT, Engineering, or a related discipline.",
     ],
+    secondarySkills: [
+      'Third-party integrations: Dun & Bradstreet (D&B), Salesforce (SFDC), SAP/ERP',
+      'Informatica Reference 360 (REF360) and Business 360 console',
+      'Data governance, data stewardship workflows, and survivorship modeling',
+      'Performance tuning of cleanse/match jobs and batch load processes',
+    ],
+    quickScreening:
+      'IDMC | Informatica SaaS MDM | Customer 360 | CDI | CAI | SIF | BES | MDM Hub | Data Profiling | Informatica REF360 | IDQ | On-Prem MDM | Database | SDLC & Production Support',
     email: 'rashmikotekar@tasknera.com',
   },
   {
     id: 'strategy-growth-manager',
-    title: 'Strategy Growth Manager',
+    title: 'Growth Strategy Manager',
     department: 'Corporate Strategy & Growth',
     category: 'operations',
     location: 'Hyderabad',
     type: 'Full-time · In Person',
-    experience: '3–4+ Years',
+    experience: '4–6 Years',
     summary:
-      'TaskNera is seeking an energetic, analytical Strategy Growth Manager (3–4+ years) based in Hyderabad to drive business scaling, client acquisition initiatives, market expansion, and strategic operational partnerships. You will work closely with leadership to identify high-impact market opportunities, optimize go-to-market (GTM) execution, and build scalable revenue engines.',
+      "Join the founding team and take ownership of building Bozzo's brand, marketing engine, and customer base from the ground up. Work closely with the founders to develop growth ideas, lead digital and performance marketing, execute Hyderabad launch strategies, and turn growth strategies into measurable outcomes.",
     responsibilities: [
-      'Formulate and execute data-driven growth strategies, GTM frameworks, and client acquisition plans across North America, UK, Europe, and India markets.',
-      'Analyze sales funnel metrics, customer lifetime value (LTV), acquisition costs (CAC), and churn to identify expansion levers and pipeline acceleration opportunities.',
-      'Collaborate directly with executive leadership, sales heads, and service pod leads to structure high-value enterprise proposals, SLAs, and commercial pricing models.',
+      'Digital & Performance Marketing: Plan and manage Google Ads, Meta Ads, paid campaigns, and customer acquisition initiatives.',
+      'SEO & Content Marketing: Improve search rankings, organic traffic, website visibility, and online presence.',
+      'Brand Marketing: Build brand awareness through social media, content, influencers, Reels, and creative campaigns.',
+      'GTM & Customer Acquisition: Develop and execute Hyderabad launch strategies to drive app installs, first rides, repeat bookings, and referrals.',
+      'Growth & Pricing Strategy: Identify target customers, growth opportunities, competitive pricing, promotional offers, and innovative customer acquisition ideas.',
+      'Analytics & Optimization: Track CAC, conversions, retention, referrals, and campaign ROI to improve marketing performance.',
+      'Partnerships: Develop collaborations with colleges, offices, PGs, apartments, local businesses, and communities to acquire customers.',
+      'Competitor Analysis: Study Uber, Rapido, Ola, and market trends to identify pricing gaps, customer needs, and growth opportunities.',
+      'Growth Experiments: Test new marketing channels, referral programs, viral campaigns, and creative strategies to accelerate customer growth.',
     ],
     requirements: [
-      '3–4+ years of proven experience in growth strategy, corporate development, management consulting, or strategic sales operations in B2B / workforce / tech services.',
-      'Strong analytical and quantitative modeling skills (advanced Excel, financial analysis, BI tools like Tableau/PowerBI).',
-      'Exceptional executive communication, storytelling, stakeholder management, and pitch presentation skills.',
+      '4–6 years of relevant experience in growth, digital marketing, performance marketing, SEO, or GTM.',
+      'Hands-on experience with Google Ads, Meta Ads, SEO, and campaign analytics.',
+      'Strong understanding of customer acquisition, branding, CAC, conversions, and ROI.',
+      'Creative, analytical, entrepreneurial, and execution-oriented mindset.',
+      'Ability to develop growth ideas, analyze results, and turn strategies into measurable outcomes.',
+      'Startup, consumer internet, marketplace, or mobility experience is a strong advantage.',
+      'Familiarity with the Hyderabad market is preferred.',
     ],
+    secondarySkills: [
+      'Performance marketing: Google Ads, Meta Ads Manager, GA4, Firebase Analytics',
+      'Mobility, ride-hailing & hyper-local marketplace growth frameworks',
+      'Influencer & viral social media campaign execution (Reels, creative campaigns)',
+      'Offline hyper-local activation: BTL activations, college/corporate tie-ups, PG/community partnerships',
+    ],
+    quickScreening:
+      'Growth Strategy | Performance Marketing | Google Ads | Meta Ads | SEO | GTM | Hyderabad Market | CAC & ROI Optimization | App Installs | Customer Acquisition | Mobility / Ride-Hailing | Hyperlocal Partnerships',
     email: 'swati@tasknera.com',
   },
   {
@@ -492,7 +617,7 @@ export default function CareersPage() {
                                 <span>Key Responsibilities</span>
                               </h4>
                               <ul className="space-y-2 text-xs text-slate-600">
-                                {job.responsibilities.slice(0, 3).map((resp, i) => (
+                                {job.responsibilities.map((resp, i) => (
                                   <li key={i} className="flex items-start gap-2.5 leading-relaxed">
                                     <CheckCircle2 className="w-4 h-4 text-[#704A4B] flex-shrink-0 mt-0.5" />
                                     <span>{resp}</span>
@@ -502,21 +627,61 @@ export default function CareersPage() {
                             </div>
                           )}
 
-                          {/* Key Qualifications & Skills */}
+                          {/* Key Qualifications & Mandatory Skills */}
                           {job.requirements && job.requirements.length > 0 && (
                             <div>
                               <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-2.5 flex items-center gap-1.5">
                                 <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
-                                <span>Key Qualifications &amp; Skills</span>
+                                <span>Mandatory Skills &amp; Qualifications</span>
                               </h4>
                               <ul className="space-y-2 text-xs text-slate-600">
-                                {job.requirements.slice(0, 3).map((req, i) => (
+                                {job.requirements.map((req, i) => (
                                   <li key={i} className="flex items-start gap-2.5 leading-relaxed">
                                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 flex-shrink-0 mt-1.5" />
                                     <span>{req}</span>
                                   </li>
                                 ))}
                               </ul>
+                            </div>
+                          )}
+
+                          {/* Secondary Skills */}
+                          {job.secondarySkills && job.secondarySkills.length > 0 && (
+                            <div>
+                              <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-2 flex items-center gap-1.5">
+                                <Award className="w-3.5 h-3.5 text-blue-600" />
+                                <span>Secondary Skills</span>
+                              </h4>
+                              <div className="flex flex-wrap gap-2">
+                                {job.secondarySkills.map((skill, i) => (
+                                  <span
+                                    key={i}
+                                    className="text-xs font-semibold text-blue-800 bg-blue-50 border border-blue-200 rounded-lg px-3 py-1"
+                                  >
+                                    {skill}
+                                  </span>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+
+                          {/* Mandatory Skills – Quick Screening */}
+                          {job.quickScreening && (
+                            <div className="pt-2 border-t border-slate-100">
+                              <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-2 flex items-center gap-1.5">
+                                <Cpu className="w-3.5 h-3.5 text-[#704A4B]" />
+                                <span>Mandatory Skills – Quick Screening</span>
+                              </h4>
+                              <div className="flex flex-wrap gap-1.5">
+                                {job.quickScreening.split(' | ').map((skill) => (
+                                  <span
+                                    key={skill}
+                                    className="text-[11px] font-semibold bg-[#F3ECE4] text-[#704A4B] border border-[#DED3C7] rounded-md px-2.5 py-1"
+                                  >
+                                    {skill}
+                                  </span>
+                                ))}
+                              </div>
                             </div>
                           )}
                         </div>
