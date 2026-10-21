@@ -139,20 +139,9 @@ export default function TakeOffPlateSection() {
                   </div>
                 </div>
 
-                <div className="mt-7 pt-4 border-t border-tn-mist flex items-center justify-between">
-                  <Link
-                    href={item.href}
-                    className="text-xs font-bold text-tn-charcoal hover:text-tn-coral flex items-center gap-1.5 transition-colors"
-                  >
-                    <span>Explore solution</span>
-                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                  <Link
-                    href="/#contact"
-                    className="text-xs font-semibold text-tn-slate hover:text-tn-charcoal"
-                  >
-                    Get started →
-                  </Link>
+                <div className="mt-5 pt-3 border-t border-tn-mist flex items-center justify-between text-xs text-tn-slate">
+                  <span className="font-medium">Operational Pod</span>
+                  <span className="font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded text-[11px]">Fully Managed</span>
                 </div>
               </div>
             );

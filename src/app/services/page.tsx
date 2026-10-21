@@ -165,16 +165,6 @@ export default function ServicesPage() {
                         ))}
                       </div>
                     </div>
-
-                    <div className="pt-4 border-t border-border">
-                      <Link
-                        href={pillar.href}
-                        className="text-xs font-bold text-accent hover:underline flex items-center justify-between"
-                      >
-                        <span>Dedicated Pillar Page</span>
-                        <ArrowRight className="w-3.5 h-3.5" />
-                      </Link>
-                    </div>
                   </div>
                 );
               })}

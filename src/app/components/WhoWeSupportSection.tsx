@@ -135,16 +135,6 @@ export default function WhoWeSupportSection() {
                     ))}
                   </div>
                 </div>
-
-                <div className="mt-8 pt-4 border-t border-tn-mist">
-                  <Link
-                    href="/#contact"
-                    className="text-xs font-bold text-tn-charcoal group-hover:text-tn-coral flex items-center gap-1.5 transition-colors"
-                  >
-                    <span>Explore support for {st.stage}</span>
-                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                </div>
               </div>
             );
           })}

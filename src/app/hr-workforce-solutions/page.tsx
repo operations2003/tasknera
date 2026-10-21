@@ -445,12 +445,9 @@ export default function HRWorkforceSolutionsPage() {
               <span className="gradient-text-coral">Your HR Ops</span>
             </h2>
             <p className="text-white/70 text-lg mb-10">From payroll to performance — we manage it all so you can focus on growth.</p>
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex justify-center">
               <Link href="/#contact" className="bg-accent text-accent-foreground font-bold px-8 py-3.5 rounded-full hover:brightness-110 active:scale-95 transition-all shadow-xl shadow-accent/30 text-sm">
                 Talk to an HR Expert
-              </Link>
-              <Link href="/#services" className="glass-btn text-white font-semibold px-8 py-3.5 rounded-full">
-                Explore Other Services
               </Link>
             </div>
           </div>

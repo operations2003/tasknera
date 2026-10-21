@@ -94,16 +94,16 @@ export default function BusinessSupportPage() {
 
               <div className="flex flex-wrap gap-4 pt-2">
                 <Link
-                  href="/virtual-assistant-services"
+                  href="/#contact"
                   className="bg-accent text-accent-foreground font-semibold px-6 py-3 rounded-full hover:brightness-110 transition-all text-sm shadow-lg shadow-accent/25"
                 >
-                  Explore Virtual Assistant Services →
+                  Deploy Business Support Pod →
                 </Link>
                 <Link
-                  href="/virtual-customer-support"
+                  href="/#contact"
                   className="glass-btn text-white font-semibold px-6 py-3 rounded-full text-sm"
                 >
-                  Explore Virtual Customer Support (VCS) →
+                  Schedule Operations Intake
                 </Link>
               </div>
             </div>
@@ -126,12 +126,12 @@ export default function BusinessSupportPage() {
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   Your remote team for executive support, administration, HR coordination, sales prospecting, data entry, and project workflows.
                 </p>
-                <Link
-                  href="/virtual-assistant-services"
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline"
-                >
-                  View Virtual Assistant Services Page →
-                </Link>
+                <div className="pt-2 flex items-center justify-between">
+                  <span className="text-xs font-semibold text-accent">Dedicated Human Team</span>
+                  <Link href="/#contact" className="text-xs font-bold text-foreground hover:text-accent underline underline-offset-4">
+                    Inquire Pod →
+                  </Link>
+                </div>
               </div>
 
               <div className="bg-card border border-border/70 rounded-3xl p-8 space-y-4 hover:border-accent/40 transition-colors shadow-sm">
@@ -144,12 +144,12 @@ export default function BusinessSupportPage() {
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   Omnichannel voice, live chat, email, social media, and WhatsApp customer service desks designed for professional brand continuity.
                 </p>
-                <Link
-                  href="/virtual-customer-support"
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline"
-                >
-                  View Virtual Customer Support Page →
-                </Link>
+                <div className="pt-2 flex items-center justify-between">
+                  <span className="text-xs font-semibold text-accent">Omnichannel Support Desk</span>
+                  <Link href="/#contact" className="text-xs font-bold text-foreground hover:text-accent underline underline-offset-4">
+                    Inquire Pod →
+                  </Link>
+                </div>
               </div>
 
             </div>
@@ -194,14 +194,9 @@ export default function BusinessSupportPage() {
                     </div>
                   </div>
 
-                  <div className="mt-6 pt-3 border-t border-border">
-                    <Link
-                      href={svc.link}
-                      className="text-xs font-semibold text-accent hover:underline flex items-center justify-between"
-                    >
-                      <span>Explore {svc.title.split('&')[0]}</span>
-                      <span>→</span>
-                    </Link>
+                  <div className="mt-6 pt-3 border-t border-border flex items-center justify-between">
+                    <span className="text-xs font-medium text-muted-foreground">Dedicated Operational Pod</span>
+                    <span className="text-xs font-semibold text-accent">SLA Backed</span>
                   </div>
                 </div>
               ))}

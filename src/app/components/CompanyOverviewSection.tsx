@@ -319,13 +319,9 @@ export default function CompanyOverviewSection() {
                     Our 6-Phase Execution Roadmap
                   </h3>
                 </div>
-                <Link
-                  href="/process"
-                  className="inline-flex items-center gap-2 text-xs font-bold text-tn-coral hover:underline self-start md:self-auto"
-                >
-                  <span>View Comprehensive Process Deep-Dive</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
+                <span className="text-xs font-semibold text-tn-slate bg-tn-ivory px-3 py-1.5 rounded-full border border-tn-mist self-start md:self-auto">
+                  End-to-End Governance
+                </span>
               </div>
 
               {/* 6 Step Cards Grid */}
@@ -482,10 +478,10 @@ export default function CompanyOverviewSection() {
                   Need specialist pods in another niche domain? We deploy custom recruiter desks and candidate matching models for specialized markets.
                 </p>
                 <Link
-                  href="/industries"
+                  href="/#contact"
                   className="inline-flex items-center gap-1.5 text-xs font-bold text-tn-coral hover:underline flex-shrink-0"
                 >
-                  Explore All Industry Playbooks →
+                  Request Domain Intake →
                 </Link>
               </div>
 

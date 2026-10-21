@@ -216,7 +216,7 @@ export default function ServicesSection() {
 
                 <div className="mt-5 pt-3 border-t border-tn-mist flex items-center justify-between w-full">
                   <span className={`text-xs font-bold ${isSelected ? 'text-tn-coral' : 'text-tn-slate'}`}>
-                    {isSelected ? 'Viewing Scope' : 'Explore'}
+                    {isSelected ? 'Active Scope' : 'Select Scope'}
                   </span>
                   <ArrowRight className={`w-3.5 h-3.5 transition-transform ${isSelected ? 'text-tn-coral translate-x-1' : 'text-tn-slate'}`} />
                 </div>
@@ -267,17 +267,13 @@ export default function ServicesSection() {
               </div>
             </div>
 
-            <div className="pt-6 border-t border-white/15 flex flex-col sm:flex-row items-center justify-between gap-4 relative z-10">
-              <Link
-                href={activePillar.href}
-                className="inline-flex items-center gap-2 text-sm font-bold text-tn-coral hover:text-[#FFF8F0] transition-all group"
-              >
-                <span>Full details &amp; use cases</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
+            <div className="pt-6 border-t border-white/15 flex items-center justify-between gap-4 relative z-10">
+              <div className="text-xs text-[#FFF8F0]/70">
+                Custom scope &amp; SLA deployment
+              </div>
               <Link
                 href="/#contact"
-                className="bg-tn-coral text-tn-charcoal hover:bg-[#F28B6A] text-xs font-bold px-5 py-2.5 rounded-full transition-colors text-center w-full sm:w-auto shadow-md"
+                className="bg-tn-coral text-tn-charcoal hover:bg-[#F28B6A] text-xs font-bold px-6 py-2.5 rounded-full transition-colors text-center shadow-md"
               >
                 Inquire for {activePillar.label.split(' ')[0]}
               </Link>
@@ -327,15 +323,12 @@ export default function ServicesSection() {
                   </div>
 
                   <div className="mt-5 pt-3 border-t border-tn-mist flex items-center justify-between">
-                    <Link
-                      href={p.href}
-                      onClick={(e) => e.stopPropagation()}
-                      className="text-xs font-bold text-tn-charcoal hover:text-tn-coral flex items-center gap-1"
-                    >
-                      <span>Dedicated Page</span>
-                      <ArrowRight className="w-3 h-3" />
-                    </Link>
-                    <span className="text-[11px] text-tn-slate font-medium">Click to preview</span>
+                    <span className="text-[11px] font-semibold text-tn-charcoal">
+                      {active ? '✓ Active View' : 'Dedicated Team'}
+                    </span>
+                    <span className="text-[11px] text-tn-slate font-medium">
+                      {active ? 'Currently displaying' : 'Click to preview'}
+                    </span>
                   </div>
                 </div>
               );

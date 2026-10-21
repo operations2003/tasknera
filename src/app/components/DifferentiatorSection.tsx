@@ -128,15 +128,9 @@ export default function DifferentiatorSection() {
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-tn-mist flex items-center justify-between">
-                  <span className="text-xs text-tn-slate font-medium">Modular Model</span>
-                  <Link
-                    href={item.href}
-                    className="text-xs font-bold text-tn-charcoal hover:text-tn-coral flex items-center gap-1.5 transition-colors"
-                  >
-                    <span>Explore solution</span>
-                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                  </Link>
+                <div className="mt-5 pt-3 border-t border-tn-mist flex items-center justify-between text-xs text-tn-slate font-medium">
+                  <span>TaskNera Capability</span>
+                  <span className="text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded font-semibold text-[11px]">SLA Backed</span>
                 </div>
               </div>
             );

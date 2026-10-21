@@ -56,7 +56,7 @@ const solutionLinks = [
   },
   {
     label: 'HireIQ™ & HRMS Platform',
-    href: '/#platform',
+    href: '/services#platform',
     desc: 'AI resume screening, JD matching, and end-to-end lifecycle HRMS',
     icon: Sparkles,
     accent: 'bg-tn-coral/15 text-tn-coral border-tn-coral/30',

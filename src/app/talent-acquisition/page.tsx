@@ -505,12 +505,9 @@ export default function TalentAcquisitionPage() {
               <span className="gradient-text-coral">Next Role?</span>
             </h2>
             <p className="text-white/70 text-lg mb-10">Tell us about the position. We'll have a shortlist ready within 72 hours.</p>
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex justify-center">
               <Link href="/#contact" className="bg-accent text-accent-foreground font-bold px-8 py-3.5 rounded-full hover:brightness-110 active:scale-95 transition-all shadow-xl shadow-accent/30 text-sm">
                 Talk to a Talent Specialist
-              </Link>
-              <Link href="/#services" className="glass-btn text-white font-semibold px-8 py-3.5 rounded-full">
-                Explore Other Services
               </Link>
             </div>
           </div>
