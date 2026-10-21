@@ -1109,7 +1109,8 @@ export default function CareersPage() {
                 {filteredPositions.map((job) => (
                   <div
                     key={job.id}
-                    className="p-6 sm:p-7 rounded-2xl border border-slate-200/90 bg-white shadow-sm hover:shadow-md hover:border-[#704A4B]/40 transition-all flex flex-col justify-between"
+                    id={job.id}
+                    className="p-6 sm:p-7 rounded-2xl border border-slate-200/90 bg-white shadow-sm hover:shadow-md hover:border-[#704A4B]/40 transition-all flex flex-col justify-between scroll-mt-28"
                   >
                     <div className="space-y-3.5">
                       <div className="flex flex-wrap items-center gap-2">
