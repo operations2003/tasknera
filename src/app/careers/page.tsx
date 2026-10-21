@@ -34,6 +34,7 @@ interface JobPosition {
   summary: string;
   responsibilities: string[];
   requirements: string[];
+  email?: string;
 }
 
 const openPositions: JobPosition[] = [
@@ -57,6 +58,7 @@ const openPositions: JobPosition[] = [
       'Deep expertise in GCP IAM architecture, fine-grained access control, conditional bindings, and identity governance.',
       'Advanced proficiency in Terraform / Terragrunt, infrastructure state management, and GitOps automated delivery workflows.',
     ],
+    email: 'rashmikotekar@tasknera.com',
   },
   {
     id: 'senior-salesforce-lwc-developer-ltm',
@@ -78,6 +80,7 @@ const openPositions: JobPosition[] = [
       'Advanced proficiency in Apex programming, design patterns, asynchronous processing, and unit testing frameworks.',
       'Demonstrated experience leading enterprise-scale component refactoring, Visualforce/Aura-to-LWC migrations, and release governance.',
     ],
+    email: 'rashmikotekar@tasknera.com',
   },
   {
     id: 'aws-agentic-ai-architect-bedrock',
@@ -99,6 +102,7 @@ const openPositions: JobPosition[] = [
       'Deep hands-on expertise with Amazon Bedrock, Bedrock Agents, Action Groups, Knowledge Bases, and Guardrails.',
       'Advanced proficiency in Python, modern AI frameworks (LangChain, LlamaIndex, LangGraph), and asynchronous programming.',
     ],
+    email: 'rashmikotekar@tasknera.com',
   },
   {
     id: 'databricks-platform-engineer-admin',
@@ -120,6 +124,7 @@ const openPositions: JobPosition[] = [
       'Deep expertise in Unity Catalog administration, access control lists (ACLs), data sharing (Delta Sharing), and data governance frameworks.',
       'Proficiency in Infrastructure as Code (IaC) using Terraform for Databricks automation and cluster policy configurations.',
     ],
+    email: 'rashmikotekar@tasknera.com',
   },
   {
     id: 'snowflake-admin-architect',
@@ -141,6 +146,7 @@ const openPositions: JobPosition[] = [
       'Mastery of Snowflake internals: Virtual Warehouses, Storage layer, Micro-partitioning, Metadata caching, and Query Profiler.',
       'Deep understanding of enterprise RBAC, Snowflake Secure Views, Data Masking, SCIM provisioning, and Okta/Azure AD SSO federation.',
     ],
+    email: 'rashmikotekar@tasknera.com',
   },
   {
     id: 'idmc-mdm-consultant',
@@ -162,6 +168,7 @@ const openPositions: JobPosition[] = [
       'Deep expertise in IDMC Business 360 architecture, Match & Merge tuning, Survivorship, and Hierarchies.',
       'Strong hands-on background in Cloud Data Integration (CDI) and Cloud Data Quality (CDQ) rule creation.',
     ],
+    email: 'rashmikotekar@tasknera.com',
   },
   {
     id: 'strategy-growth-manager',
@@ -183,6 +190,7 @@ const openPositions: JobPosition[] = [
       'Strong analytical and quantitative modeling skills (advanced Excel, financial analysis, BI tools like Tableau/PowerBI).',
       'Exceptional executive communication, storytelling, stakeholder management, and pitch presentation skills.',
     ],
+    email: 'rashmikotekar@tasknera.com',
   },
   {
     id: 'sales-executive-hyd',
@@ -204,6 +212,7 @@ const openPositions: JobPosition[] = [
       'Exceptional communication, negotiation, active listening, and relationship-building skills in English and regional languages.',
       'Self-motivated, goal-oriented mindset with comfort in meeting outbound call and revenue conversion KPIs.',
     ],
+    email: 'rashmikotekar@tasknera.com',
   },
   {
     id: 'customer-support-fresher',
@@ -225,6 +234,7 @@ const openPositions: JobPosition[] = [
       'Excellent verbal and written English communication skills with clear, courteous telephone and chat etiquette.',
       'Basic computer proficiency, fast typing speed (30+ WPM), and comfort using web-based tools and Google Workspace / MS Office.',
     ],
+    email: 'rashmikotekar@tasknera.com',
   },
 ];
 
@@ -307,11 +317,11 @@ export default function CareersPage() {
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a
-                href="mailto:careers@tasknera.com"
+                href="mailto:rashmikotekar@tasknera.com"
                 className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-medium px-6 py-3 rounded-full transition-all flex items-center gap-2 backdrop-blur-sm text-sm"
               >
                 <Mail className="w-4 h-4 text-tn-coral" />
-                <span>Email careers@tasknera.com</span>
+                <span>Email rashmikotekar@tasknera.com</span>
               </a>
             </div>
 
@@ -534,12 +544,12 @@ export default function CareersPage() {
                       <span>
                         Drop your CV at this email ID:{' '}
                         <a
-                          href={`mailto:careers@tasknera.com?subject=Application for ${encodeURIComponent(
+                          href={`mailto:${job.email || 'rashmikotekar@tasknera.com'}?subject=Application for ${encodeURIComponent(
                             job.title
                           )} [TaskNera Careers]`}
                           className="font-bold text-[#704A4B] hover:underline"
                         >
-                          careers@tasknera.com
+                          {job.email || 'rashmikotekar@tasknera.com'}
                         </a>
                       </span>
                     </div>
@@ -561,8 +571,8 @@ export default function CareersPage() {
                   <Mail className="w-4 h-4 text-[#704A4B] flex-shrink-0" />
                   <span>
                     Drop your CV at this email ID:{' '}
-                    <a href="mailto:careers@tasknera.com?subject=General Application [TaskNera Careers]" className="font-bold text-[#704A4B] hover:underline">
-                      careers@tasknera.com
+                    <a href="mailto:rashmikotekar@tasknera.com?subject=General Application [TaskNera Careers]" className="font-bold text-[#704A4B] hover:underline">
+                      rashmikotekar@tasknera.com
                     </a>
                   </span>
                 </div>
