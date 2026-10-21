@@ -18,69 +18,10 @@ import {
   Globe2,
 } from 'lucide-react';
 
-const solutionLinks = [
-  {
-    label: 'HR & People Operations',
-    href: '/hr-workforce-solutions',
-    desc: 'HR operations, onboarding, payroll & lifecycle management',
-    icon: Building2,
-    accent: 'bg-tn-coral/15 text-tn-coral border-tn-coral/30',
-  },
-  {
-    label: 'Talent & Recruitment',
-    href: '/talent-acquisition',
-    desc: 'Permanent, contract, executive & volume hiring',
-    icon: Target,
-    accent: 'bg-tn-coral/15 text-tn-coral border-tn-coral/30',
-  },
-  {
-    label: 'Workforce Solutions',
-    href: '/hr-workforce-solutions#workforce',
-    desc: 'Contract, temporary & scalable workforce deployment',
-    icon: Users,
-    accent: 'bg-tn-coral/15 text-tn-coral border-tn-coral/30',
-  },
-  {
-    label: 'Virtual Assistant & Business Support',
-    href: '/virtual-assistant-services',
-    desc: '100% human remote professionals for executive & operational tasks',
-    icon: Briefcase,
-    accent: 'bg-tn-coral/15 text-tn-coral border-tn-coral/30',
-  },
-  {
-    label: 'Virtual Customer Support (VCS)',
-    href: '/virtual-customer-support',
-    desc: 'Omnichannel voice, chat, email, social & ticketing helpdesk',
-    icon: Headphones,
-    accent: 'bg-tn-coral/15 text-tn-coral border-tn-coral/30',
-  },
-  {
-    label: 'HireIQ™ & HRMS Platform',
-    href: '/services#platform',
-    desc: 'AI resume screening, JD matching, and end-to-end lifecycle HRMS',
-    icon: Sparkles,
-    accent: 'bg-tn-coral/15 text-tn-coral border-tn-coral/30',
-  },
-];
-
-const mainNavLinks = [
-  { label: 'Home', href: '/' },
-  { label: 'About', href: '/about' },
-  { label: 'How We Work', href: '/process' },
-  { label: 'Industries', href: '/industries' },
-  { label: 'Pricing', href: '/pricing' },
-  { label: 'Careers', href: '/careers' },
-  { label: 'Workplace Policies', href: '/workplace-policies' },
-  { label: 'Contact', href: '/contact' },
-];
-
 export default function Header() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
-  const [solutionsOpen, setSolutionsOpen] = useState(false);
-  const [mobileSolutionsOpen, setMobileSolutionsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const solutionsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -101,28 +42,19 @@ export default function Header() {
     };
   }, [menuOpen]);
 
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (solutionsRef.current && !solutionsRef.current.contains(event.target as Node)) {
-        setSolutionsOpen(false);
-      }
-    }
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
-
   const handleNavClick = () => {
     setMenuOpen(false);
-    setSolutionsOpen(false);
-    setMobileSolutionsOpen(false);
   };
 
   const isSolutionsActive =
+    pathname === '/services' ||
+    pathname === '/solutions' ||
+    pathname.startsWith('/services') ||
+    pathname.startsWith('/solutions') ||
     pathname.startsWith('/hr-workforce-solutions') ||
     pathname.startsWith('/talent-acquisition') ||
     pathname.startsWith('/virtual-assistant-services') ||
     pathname.startsWith('/virtual-customer-support') ||
-    pathname.startsWith('/services') ||
     pathname.startsWith('/business-support');
 
   return (
@@ -186,100 +118,16 @@ export default function Header() {
                 About
               </Link>
 
-              {/* Solutions Dropdown */}
-              <div
-                ref={solutionsRef}
-                className="relative"
-                onMouseEnter={() => setSolutionsOpen(true)}
-                onMouseLeave={() => setSolutionsOpen(false)}
+              <Link
+                href="/services"
+                className={`px-2.5 xl:px-3 py-1.5 xl:py-2 text-xs xl:text-sm transition-all duration-200 rounded-lg ${
+                  isSolutionsActive
+                    ? 'text-[#FFF8F0] bg-white/10 font-semibold shadow-inner border-b-2 border-[#F49A7D]'
+                    : 'text-[#DCC6B8] hover:text-[#FFF8F0] hover:bg-white/5 font-medium'
+                }`}
               >
-                <button
-                  type="button"
-                  onClick={() => setSolutionsOpen(!solutionsOpen)}
-                  className={`flex items-center gap-1 px-2.5 xl:px-3 py-1.5 xl:py-2 text-xs xl:text-sm transition-all duration-200 rounded-lg ${
-                    isSolutionsActive || solutionsOpen
-                      ? 'text-[#FFF8F0] bg-white/10 font-semibold shadow-inner border-b-2 border-[#F49A7D]'
-                      : 'text-[#DCC6B8] hover:text-[#FFF8F0] hover:bg-white/5 font-medium'
-                  }`}
-                  aria-expanded={solutionsOpen}
-                >
-                  <span>Solutions</span>
-                  <ChevronDown
-                    className={`w-3.5 h-3.5 transition-transform duration-200 ${solutionsOpen ? 'rotate-180 text-[#F49A7D]' : 'text-[#DCC6B8]'}`}
-                  />
-                </button>
-
-                {/* Mega Dropdown Menu - Charcoal Elevated Card */}
-                {solutionsOpen && (
-                  <div
-                    className="absolute top-full left-0 w-[580px] pt-2 z-[100] animate-in fade-in-0 slide-in-from-top-1 duration-150"
-                    style={{ filter: 'drop-shadow(0 20px 30px rgba(0, 0, 0, 0.4))' }}
-                  >
-                    <div className="rounded-2xl border border-[#3E3C42] bg-[#242326] shadow-2xl overflow-hidden ring-1 ring-black/20">
-                      {/* Top Bar */}
-                      <div className="flex items-center justify-between px-4 py-2.5 bg-[#1C1B1D] border-b border-[#3E3C42]">
-                        <div className="text-[11px] font-bold text-[#FFF8F0] uppercase tracking-wider flex items-center gap-2">
-                          <span className="w-2 h-2 rounded-full bg-[#F49A7D] animate-pulse" />
-                          <span>5 Core Pillars + Tech Layer</span>
-                        </div>
-                        <Link
-                          href="/services"
-                          onClick={() => setSolutionsOpen(false)}
-                          className="text-xs text-[#F49A7D] hover:text-[#E28567] font-semibold flex items-center gap-1.5 transition-colors group"
-                        >
-                          <span>All Solutions Hub</span>
-                          <ArrowRight className="w-3.5 h-3.5 transition-transform duration-150 group-hover:translate-x-0.5 text-[#F49A7D]" />
-                        </Link>
-                      </div>
-
-                      {/* 2-Column Grid */}
-                      <div className="grid grid-cols-2 gap-2 p-3 bg-[#242326]">
-                        {solutionLinks.map((sol) => {
-                          const IconComp = sol.icon;
-                          return (
-                            <Link
-                              key={sol.label}
-                              href={sol.href}
-                              onClick={() => setSolutionsOpen(false)}
-                              className="flex items-start gap-3 p-2.5 rounded-xl border border-[#353338] bg-[#2B2A2E] hover:bg-[#343238] hover:border-[#F49A7D]/40 transition-all duration-150 group shadow-sm"
-                            >
-                              <div
-                                className="w-9 h-9 rounded-lg border border-[#F49A7D]/25 bg-[#F49A7D]/15 text-[#F49A7D] flex items-center justify-center flex-shrink-0 mt-0.5 transition-transform duration-150 group-hover:scale-105 shadow-sm"
-                              >
-                                <IconComp className="w-4 h-4" />
-                              </div>
-                              <div className="flex-1 min-w-0">
-                                <div className="text-xs font-bold text-[#FFF8F0] group-hover:text-[#F49A7D] transition-colors flex items-center justify-between">
-                                  <span className="truncate">{sol.label}</span>
-                                  <ArrowRight className="w-3.5 h-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-[#F49A7D] flex-shrink-0 ml-1" />
-                                </div>
-                                <div className="text-[11px] text-[#DCC6B8] group-hover:text-[#FFF8F0] line-clamp-2 mt-0.5 leading-snug">
-                                  {sol.desc}
-                                </div>
-                              </div>
-                            </Link>
-                          );
-                        })}
-                      </div>
-
-                      {/* Bottom Footer Strip */}
-                      <div className="px-4 py-2.5 bg-[#1C1B1D] border-t border-[#3E3C42] flex items-center justify-between text-xs">
-                        <span className="flex items-center gap-2 text-[#DCC6B8] font-medium">
-                          <ShieldCheck className="w-4 h-4 text-[#F49A7D] flex-shrink-0" />
-                          <span>100% Vetted Human Teams &middot; SLA Backed</span>
-                        </span>
-                        <Link
-                          href="/process"
-                          onClick={() => setSolutionsOpen(false)}
-                          className="text-[#F49A7D] hover:text-[#E28567] font-semibold flex items-center gap-1 transition-colors"
-                        >
-                          <span>How We Work →</span>
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </div>
+                Solutions
+              </Link>
 
               <Link
                 href="/pricing"
@@ -402,65 +250,18 @@ export default function Header() {
               <ArrowRight className="w-4 h-4 opacity-50" />
             </Link>
 
-            {/* Mobile Solutions Accordion */}
-            <div className="py-1">
-              <button
-                type="button"
-                onClick={() => setMobileSolutionsOpen(!mobileSolutionsOpen)}
-                className={`w-full flex items-center justify-between text-base font-semibold px-4 py-3 rounded-xl transition-colors ${
-                  isSolutionsActive
-                    ? 'bg-white/10 text-[#F49A7D] border-l-4 border-[#F49A7D]'
-                    : 'text-[#DCC6B8] hover:text-[#FFF8F0] hover:bg-white/5'
-                }`}
-              >
-                <div className="flex items-center gap-2">
-                  <span>Solutions</span>
-                  <span className="text-[10px] uppercase font-bold text-[#F49A7D] bg-[#F49A7D]/20 px-2 py-0.5 rounded-md">
-                    5 Pillars
-                  </span>
-                </div>
-                <ChevronDown
-                  className={`w-4 h-4 transition-transform duration-200 ${
-                    mobileSolutionsOpen ? 'rotate-180 text-[#F49A7D]' : 'text-[#DCC6B8]'
-                  }`}
-                />
-              </button>
-
-              {mobileSolutionsOpen && (
-                <div className="p-2 space-y-1 rounded-2xl my-2 border border-[#3E3C42] bg-[#2B2A2E] shadow-sm animate-in fade-in duration-150">
-                  {solutionLinks.map((sol) => {
-                    const IconComp = sol.icon;
-                    return (
-                      <Link
-                        key={sol.label}
-                        href={sol.href}
-                        onClick={handleNavClick}
-                        className="flex items-center gap-3 py-2.5 px-3 text-sm rounded-xl transition-colors bg-[#242326] hover:bg-[#343238] border border-[#3E3C42]"
-                      >
-                        <div
-                          className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 border border-[#F49A7D]/25 bg-[#F49A7D]/15 text-[#F49A7D]"
-                        >
-                          <IconComp className="w-4 h-4" />
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <div className="font-semibold text-[#FFF8F0] text-xs">{sol.label}</div>
-                          <div className="text-[11px] text-[#DCC6B8] line-clamp-1">{sol.desc}</div>
-                        </div>
-                        <ArrowRight className="w-3.5 h-3.5 text-[#F49A7D]" />
-                      </Link>
-                    );
-                  })}
-                  <Link
-                    href="/services"
-                    onClick={handleNavClick}
-                    className="flex items-center justify-between py-2.5 px-3 text-xs font-semibold text-[#F49A7D] border-t border-[#3E3C42] mt-1 hover:text-[#E28567]"
-                  >
-                    <span>View All Solutions Hub</span>
-                    <ArrowRight className="w-3.5 h-3.5 text-[#F49A7D]" />
-                  </Link>
-                </div>
-              )}
-            </div>
+            <Link
+              href="/services"
+              onClick={handleNavClick}
+              className={`text-base font-semibold px-4 py-3 rounded-xl transition-colors flex items-center justify-between ${
+                isSolutionsActive
+                  ? 'bg-white/10 text-[#F49A7D] border-l-4 border-[#F49A7D]'
+                  : 'text-[#DCC6B8] hover:text-[#FFF8F0] hover:bg-white/5'
+              }`}
+            >
+              <span>Solutions</span>
+              <ArrowRight className="w-4 h-4 opacity-50" />
+            </Link>
 
             <Link
               href="/pricing"
