@@ -46,11 +46,78 @@ interface JobPosition {
   shift?: string;
   workMode?: string;
   vendorPayout?: string;
+  compensationDetails?: string[];
+  whyWorkWithUs?: string[];
+  howToApplyDetails?: string[];
+  applySubject?: string;
+  applyBody?: string;
 }
 
 import { getRecruiterEmail } from '@/lib/recruiter';
 
 const openPositions: JobPosition[] = [
+  {
+    id: 'freelance-recruiter-remote-pan-india',
+    title: 'Experienced Freelance Recruiter',
+    department: 'Talent Acquisition & Sourcing Solutions',
+    category: 'talent',
+    location: 'Pan India (Work From Home)',
+    type: 'Freelance / Commission-Based · Remote',
+    experience: 'Prior Recruitment Experience Mandatory',
+    workMode: 'Remote / Work From Home',
+    budget: 'Commission-Based (Per Successful Placement)',
+    summary:
+      'Tasknera Global HR Solutions is expanding our freelance recruitment network. We are seeking experienced recruiters who can independently source, screen, and shortlist qualified candidates against client requirements across IT, non-IT, and niche industries.',
+    responsibilities: [
+      'Source qualified candidates through LinkedIn, Naukri, job portals, professional networks, and other sourcing channels.',
+      'Review resumes and match candidate profiles against job descriptions and client requirements.',
+      'Conduct initial screening calls and assess candidate suitability.',
+      'Submit relevant, pre-screened profiles within agreed timelines.',
+      'Coordinate interviews and follow up with candidates throughout the hiring process.',
+      'Maintain accurate candidate records and provide regular recruitment updates.',
+      'Work on assigned vacancies and manage recruitment pipelines independently.',
+    ],
+    requirements: [
+      'Prior experience in recruitment or talent acquisition is mandatory.',
+      'Proven experience in candidate sourcing, screening, and profile shortlisting.',
+      'Ability to understand job descriptions and identify suitable candidates.',
+      'Strong communication, coordination, and follow-up skills.',
+      'Ability to work independently and meet agreed recruitment targets.',
+      'Experience recruiting for IT, non-IT, or niche positions is an advantage.',
+      'Freshers and candidates without prior recruitment experience are not eligible for this opportunity.',
+    ],
+    secondarySkills: [
+      'LinkedIn Recruiter & Boolean Search',
+      'Naukri / Leading Job Portals',
+      'Candidate Screening & Profile Matching',
+      'Interview Coordination & Follow-up',
+      'Recruitment Pipeline Management',
+    ],
+    quickScreening:
+      'Freelance Recruiter | Remote WFH | LinkedIn Recruiter | Naukri | Talent Sourcing | Candidate Screening | Profile Shortlisting | Commission-Based | Pan India',
+    compensationDetails: [
+      'Performance-based compensation for successful placements.',
+      'Commission structure and payment terms will be discussed and mutually agreed upon before assignments begin.',
+      'Opportunity to work on multiple recruitment assignments across industries.',
+      'This is a freelance, commission-based opportunity. It does not offer a fixed monthly salary.',
+    ],
+    whyWorkWithUs: [
+      'Flexible working hours and remote work freedom.',
+      'Access to recruitment assignments across different industries.',
+      'Opportunity to build long-term professional collaboration with Tasknera Global HR Solutions.',
+      'Work independently while expanding your recruitment network.',
+    ],
+    howToApplyDetails: [
+      'Total recruitment experience',
+      'Industries and job roles handled',
+      'Sourcing platforms used',
+      'Average number of profiles submitted per day',
+      'Current availability for freelance assignments',
+    ],
+    email: 'aakanksha@tasknera.com',
+    applySubject: 'Application for Experienced Freelance Recruiter [TaskNera Careers]',
+    applyBody: `Hi Aakanksha,\n\nI am interested in collaborating with Tasknera Global HR Solutions as an Experienced Freelance Recruiter.\n\nHere are my professional details:\n1. Total recruitment experience: \n2. Industries and job roles handled: \n3. Sourcing platforms used: \n4. Average number of profiles submitted per day: \n5. Current availability for freelance assignments: \n\nPlease find my updated resume attached.\n\nBest regards,`,
+  },
   {
     id: 'gcp-cloud-engineer-iam-infra',
     title: 'GCP Cloud Engineer – IAM & Infrastructure Automation',
@@ -879,7 +946,7 @@ const perks = [
 
 export default function CareersPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
-  const [expandedJobId, setExpandedJobId] = useState<string | null>('gcp-cloud-engineer-iam-infra');
+  const [expandedJobId, setExpandedJobId] = useState<string | null>('freelance-recruiter-remote-pan-india');
 
   const filteredPositions =
     selectedCategory === 'all'
@@ -1060,6 +1127,12 @@ export default function CareersPage() {
                         <span className="text-xs font-medium text-purple-700 bg-purple-50 px-2.5 py-0.5 rounded-md">
                           Exp: {job.experience}
                         </span>
+                        {job.budget && (
+                          <span className="text-xs font-semibold text-amber-800 bg-amber-50 border border-amber-200/80 px-2.5 py-0.5 rounded-md flex items-center gap-1">
+                            <DollarSign className="w-3 h-3 text-amber-600" />
+                            {job.budget}
+                          </span>
+                        )}
                       </div>
 
                       <h3 className="text-lg sm:text-2xl font-bold text-slate-900">{job.title}</h3>
@@ -1165,6 +1238,60 @@ export default function CareersPage() {
                               </div>
                             </div>
                           )}
+
+                          {/* Compensation & Structure */}
+                          {job.compensationDetails && job.compensationDetails.length > 0 && (
+                            <div className="pt-2 border-t border-slate-100">
+                              <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-2.5 flex items-center gap-1.5">
+                                <DollarSign className="w-3.5 h-3.5 text-emerald-600" />
+                                <span>Compensation &amp; Payout Terms</span>
+                              </h4>
+                              <ul className="space-y-2 text-xs text-slate-600">
+                                {job.compensationDetails.map((comp, i) => (
+                                  <li key={i} className="flex items-start gap-2.5 leading-relaxed">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 flex-shrink-0 mt-1.5" />
+                                    <span>{comp}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          )}
+
+                          {/* Why Work With Tasknera */}
+                          {job.whyWorkWithUs && job.whyWorkWithUs.length > 0 && (
+                            <div className="pt-2 border-t border-slate-100">
+                              <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-2.5 flex items-center gap-1.5">
+                                <HeartHandshake className="w-3.5 h-3.5 text-[#704A4B]" />
+                                <span>Why Work With Tasknera?</span>
+                              </h4>
+                              <ul className="space-y-2 text-xs text-slate-600">
+                                {job.whyWorkWithUs.map((item, i) => (
+                                  <li key={i} className="flex items-start gap-2.5 leading-relaxed">
+                                    <CheckCircle2 className="w-4 h-4 text-[#704A4B] flex-shrink-0 mt-0.5" />
+                                    <span>{item}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          )}
+
+                          {/* How to Apply Details */}
+                          {job.howToApplyDetails && job.howToApplyDetails.length > 0 && (
+                            <div className="pt-2 border-t border-slate-100 bg-[#F3ECE4]/40 border border-[#DED3C7] rounded-xl p-3.5">
+                              <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-2 flex items-center gap-1.5">
+                                <Users className="w-3.5 h-3.5 text-[#704A4B]" />
+                                <span>How to Apply — Details to Include with Your Resume</span>
+                              </h4>
+                              <ul className="space-y-1.5 text-xs text-slate-700">
+                                {job.howToApplyDetails.map((detail, i) => (
+                                  <li key={i} className="flex items-start gap-2 leading-relaxed">
+                                    <span className="font-semibold text-[#704A4B]">•</span>
+                                    <span>{detail}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          )}
                         </div>
                       )}
 
@@ -1185,24 +1312,40 @@ export default function CareersPage() {
                     </div>
 
                     {/* Instruction line after the JD: Drop your CV at this email ID */}
-                    <div className="mt-5 pt-3.5 border-t border-slate-100 flex items-center gap-2.5 bg-[#F3ECE4]/60 border border-[#DED3C7]/80 rounded-xl px-4 py-3 text-xs sm:text-sm text-slate-800">
-                      <Mail className="w-4 h-4 text-[#704A4B] flex-shrink-0" />
-                      <span>
-                        Drop your CV at this email ID:{' '}
-                        {(() => {
-                          const recruiterEmail = getRecruiterEmail(job.company, job.email);
-                          return (
-                            <a
-                              href={`mailto:${recruiterEmail}?subject=Application for ${encodeURIComponent(
-                                job.title
-                              )}${job.jobCode ? ` [${job.jobCode}]` : ''} [TaskNera Careers]`}
-                              className="font-bold text-[#704A4B] hover:underline"
-                            >
-                              {recruiterEmail}
-                            </a>
-                          );
-                        })()}
-                      </span>
+                    <div className="mt-5 pt-3.5 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-[#F3ECE4]/60 border border-[#DED3C7]/80 rounded-xl px-4 py-3 text-xs sm:text-sm text-slate-800">
+                      <div className="flex items-center gap-2.5">
+                        <Mail className="w-4 h-4 text-[#704A4B] flex-shrink-0" />
+                        <span>
+                          Drop your CV at this email ID:{' '}
+                          {(() => {
+                            const recruiterEmail = getRecruiterEmail(job.company, job.email);
+                            const subject = job.applySubject || `Application for ${job.title}${job.jobCode ? ` [${job.jobCode}]` : ''} [TaskNera Careers]`;
+                            const bodyParam = job.applyBody ? `&body=${encodeURIComponent(job.applyBody)}` : '';
+                            return (
+                              <a
+                                href={`mailto:${recruiterEmail}?subject=${encodeURIComponent(subject)}${bodyParam}`}
+                                className="font-bold text-[#704A4B] hover:underline"
+                              >
+                                {recruiterEmail}
+                              </a>
+                            );
+                          })()}
+                        </span>
+                      </div>
+                      {(() => {
+                        const recruiterEmail = getRecruiterEmail(job.company, job.email);
+                        const subject = job.applySubject || `Application for ${job.title}${job.jobCode ? ` [${job.jobCode}]` : ''} [TaskNera Careers]`;
+                        const bodyParam = job.applyBody ? `&body=${encodeURIComponent(job.applyBody)}` : '';
+                        return (
+                          <a
+                            href={`mailto:${recruiterEmail}?subject=${encodeURIComponent(subject)}${bodyParam}`}
+                            className="inline-flex items-center justify-center gap-1.5 bg-[#704A4B] hover:bg-[#593A3B] text-white px-4 py-2 rounded-lg font-bold text-xs shadow-sm transition-all self-start sm:self-auto"
+                          >
+                            <Mail className="w-3.5 h-3.5" />
+                            <span>Apply via Email</span>
+                          </a>
+                        );
+                      })()}
                     </div>
                   </div>
                 ))}
