@@ -89,7 +89,7 @@ const aboutDropdownLinks = [
     href: '/careers',
     desc: 'Explore open roles & join our high-growth global delivery operations',
     icon: Briefcase,
-    accent: 'bg-[#8E7D6E]/25 text-[#704A4B] border-[#DED3C7]',
+    accent: 'bg-tn-coral/15 text-tn-coral border-tn-coral/30',
   },
 ];
 
@@ -420,12 +420,18 @@ export default function Header() {
                 href="/careers"
                 className={`px-2.5 xl:px-3 py-1.5 xl:py-2 text-xs xl:text-sm transition-all duration-200 rounded-lg flex items-center gap-1.5 ${
                   pathname === '/careers'
-                    ? 'text-[#704A4B] bg-[#8E7D6E]/25 font-semibold shadow-inner border-b-2 border-[#704A4B]'
-                    : 'text-[#805D5A] hover:text-[#704A4B] hover:bg-[#8E7D6E]/15 font-medium'
+                    ? 'text-[#FFF8F0] bg-white/10 font-semibold shadow-inner border-b-2 border-[#F49A7D]'
+                    : 'text-[#DCC6B8] hover:text-[#FFF8F0] hover:bg-white/5 font-medium'
                 }`}
               >
                 <span>Careers</span>
-                <span className="inline-flex items-center px-1.5 py-0.5 rounded-full text-[10px] font-bold bg-[#E5BDB4]/50 text-[#704A4B] border border-[#704A4B]/20 leading-none">
+                <span
+                  className={`inline-flex items-center px-1.5 py-0.5 rounded-full text-[10px] font-bold leading-none transition-colors ${
+                    pathname === '/careers'
+                      ? 'bg-[#F49A7D] text-[#242326]'
+                      : 'bg-[#F49A7D]/20 text-[#F49A7D] border border-[#F49A7D]/30'
+                  }`}
+                >
                   Hiring
                 </span>
               </Link>
@@ -638,13 +644,19 @@ export default function Header() {
               onClick={handleNavClick}
               className={`text-base font-semibold px-4 py-3 rounded-xl transition-colors flex items-center justify-between ${
                 pathname === '/careers'
-                  ? 'bg-[#8E7D6E]/25 text-[#704A4B] border-l-4 border-[#704A4B]'
-                  : 'text-[#805D5A] hover:text-[#704A4B] hover:bg-[#8E7D6E]/15'
+                  ? 'bg-white/10 text-[#F49A7D] border-l-4 border-[#F49A7D]'
+                  : 'text-[#DCC6B8] hover:text-[#FFF8F0] hover:bg-white/5'
               }`}
             >
               <div className="flex items-center gap-2">
                 <span>Careers</span>
-                <span className="text-[10px] uppercase font-bold text-[#704A4B] bg-[#E5BDB4]/50 px-2 py-0.5 rounded-md border border-[#704A4B]/20">
+                <span
+                  className={`text-[10px] uppercase font-bold px-2 py-0.5 rounded-md ${
+                    pathname === '/careers'
+                      ? 'bg-[#F49A7D] text-[#242326]'
+                      : 'text-[#F49A7D] bg-[#F49A7D]/20 border border-[#F49A7D]/30'
+                  }`}
+                >
                   Hiring
                 </span>
               </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import AppLogo from '@/components/ui/AppLogo';
-import { Mail, ArrowRight } from 'lucide-react';
+import { Mail } from 'lucide-react';
 
 const solutionsLinks = [
   { label: 'HR & People Operations', href: '/hr-workforce-solutions' },
@@ -100,13 +100,6 @@ export default function Footer() {
               >
                 <Mail className="w-4 h-4" />
               </a>
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-1.5 text-xs font-bold text-[#F49A7D] hover:text-[#FFF8F0] hover:underline pl-2 transition-colors"
-              >
-                <span>Inquiry Portal</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
             </div>
           </div>
 

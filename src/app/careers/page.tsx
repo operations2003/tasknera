@@ -13,13 +13,11 @@ import {
   Mail,
   MapPin,
   Clock,
-  Send,
   Building2,
   Globe2,
   GraduationCap,
   HeartHandshake,
   DollarSign,
-  AlertCircle,
   ExternalLink,
   ChevronDown,
   ChevronUp,
@@ -51,23 +49,13 @@ const openPositions: JobPosition[] = [
       'We are seeking an experienced GCP Cloud Engineer (5+ years) specializing in Identity & Access Management (IAM), Security Architecture, and Infrastructure as Code (IaC) automation. You will architect enterprise Google Cloud landing zones, build automated Terraform workflows, enforce least-privilege IAM policies, and ensure secure, reliable cloud infrastructure across multi-project environments.',
     responsibilities: [
       'Architect, implement, and audit centralized GCP IAM policies, Custom Roles, Service Accounts, and Organization Policy constraints under strict least-privilege principles.',
-      'Design and deploy Workload Identity Federation for seamless, keyless authentication between CI/CD pipelines, Kubernetes, and GCP APIs.',
       'Develop, test, and maintain reusable Infrastructure as Code (IaC) modules using Terraform and Terragrunt for multi-region landing zones and automated VPC networks.',
-      'Integrate cloud security posture management and automated compliance using Google Cloud Security Command Center (SCC), Cloud KMS, Secret Manager, and VPC Service Controls.',
-      'Design, configure, and manage enterprise hybrid networking infrastructure, including Shared VPCs, Cloud Interconnect, Cloud VPN, Cloud NAT, and Cloud Armor security policies.',
-      'Build resilient CI/CD deployment pipelines (Cloud Build, GitHub Actions, GitLab CI) with automated Policy-as-Code checks (OPA, Conftest, tfsec, Checkov).',
-      'Implement enterprise observability, audit trail tracking, and automated alerting using Google Cloud Operations Suite (Cloud Monitoring, Cloud Logging, Cloud Audit Logs) integrated with SIEM platforms.',
-      'Collaborate with DevOps, security compliance, and engineering pods to conduct cloud architecture reviews, eliminate operational toil, and optimize cloud infrastructure costs (FinOps).',
+      'Integrate cloud security posture management, automated compliance, and CI/CD pipelines using Security Command Center (SCC), KMS, and automated Policy-as-Code checks.',
     ],
     requirements: [
       '5+ years of dedicated professional experience architecting and operating Google Cloud Platform (GCP) enterprise infrastructure.',
       'Deep expertise in GCP IAM architecture, fine-grained access control, conditional bindings, and identity governance.',
       'Advanced proficiency in Terraform / Terragrunt, infrastructure state management, and GitOps automated delivery workflows.',
-      'Solid programming and automation scripting capabilities in Python, Bash, or Go.',
-      'Strong hands-on background in GCP enterprise networking (Shared VPCs, firewall rules, Private Service Connect, DNS, and peering).',
-      'Working knowledge of containerized workloads (GKE / Cloud Run) and microservices security.',
-      'Google Cloud Certified Professional Cloud Architect or Professional Cloud Security Engineer is strongly preferred.',
-      'Bachelor’s or Master’s degree in Computer Science, Information Technology, or equivalent practical experience.',
     ],
   },
   {
@@ -84,19 +72,11 @@ const openPositions: JobPosition[] = [
       'Architect and build sophisticated, high-performance Lightning Web Components (LWC) with custom designs, SLDS styling, and reactive state management.',
       'Develop scalable, bulkified backend Apex services, triggers, batch classes, queueable Apex, and platform events with optimal governor limit utilization.',
       'Drive end-to-end Lifecycle Transition Management (LTM), leading the modernization of legacy Visualforce and Aura components into modern LWC frameworks.',
-      'Design and execute secure REST/SOAP integrations with external enterprise systems, ERPs, payment gateways, and custom middleware using Named Credentials and OAuth 2.0.',
-      'Implement automated CI/CD release management pipelines using Salesforce DX (SFDX), Git, and packaging (Unlocked/Managed packages) with comprehensive automated test suites (>85% coverage).',
-      'Collaborate with Solution Architects and Product Owners to translate complex enterprise business requirements into robust Salesforce technical specifications.',
-      'Optimize database queries (SOQL/SOSL), index tuning, and data modeling to manage large data volumes (LDV) with zero degradation in UX performance.',
     ],
     requirements: [
       '7+ years of hands-on technical development experience on the Salesforce platform, with a minimum of 4+ years specializing in Lightning Web Components (LWC) and modern JavaScript (ES6+).',
       'Advanced proficiency in Apex programming, design patterns, asynchronous processing, and unit testing frameworks.',
       'Demonstrated experience leading enterprise-scale component refactoring, Visualforce/Aura-to-LWC migrations, and release governance.',
-      'Hands-on expertise in Salesforce DX, scratch orgs, metadata deployment, and CI/CD tools (GitHub Actions, Copado, or GitLab CI).',
-      'Strong knowledge of Salesforce Security Models: Sharing Rules, Field-Level Security, Permission Sets, and Shield Platform Encryption.',
-      'Salesforce Certified Platform Developer I & II (PD1 / PD2) or JavaScript Developer I certification is highly preferred.',
-      'Bachelor’s or Master’s degree in Computer Science, Software Engineering, or equivalent practical experience.',
     ],
   },
   {
@@ -112,20 +92,12 @@ const openPositions: JobPosition[] = [
     responsibilities: [
       'Architect and implement multi-agent systems and autonomous workflows utilizing Amazon Bedrock Agents, LangGraph, AutoGen, or CrewAI.',
       'Design enterprise-grade Retrieval-Augmented Generation (RAG) pipelines leveraging Amazon Bedrock Knowledge Bases, OpenSearch Serverless, Pinecone, or pgvector.',
-      'Evaluate, benchmark, and fine-tune foundation models (Claude 3.5 Sonnet, Llama 3, Amazon Titan, Mistral) on Bedrock for latency, cost, and reasoning accuracy.',
       'Implement automated Guardrails for Amazon Bedrock to enforce strict PII redaction, toxic content filtering, prompt injection defense, and hallucinations mitigation.',
-      'Develop serverless agentic backend microservices using AWS Lambda, Amazon ECS/Fargate, Step Functions, API Gateway, and EventBridge.',
-      'Build end-to-end LLMOps pipelines for continuous model evaluation, prompt versioning, semantic caching, and token usage optimization (FinOps for GenAI).',
-      'Integrate enterprise security postures including AWS KMS encryption, IAM permission boundaries, VPC private endpoints (PrivateLink), and compliance auditing (CloudWatch, CloudTrail).',
     ],
     requirements: [
       '6+ years of cloud architecture and software engineering experience, with 2+ years of dedicated production experience in Generative AI, LLMs, and agentic workflows.',
       'Deep hands-on expertise with Amazon Bedrock, Bedrock Agents, Action Groups, Knowledge Bases, and Guardrails.',
       'Advanced proficiency in Python, modern AI frameworks (LangChain, LlamaIndex, LangGraph), and asynchronous programming.',
-      'Demonstrated background in vector search, semantic embeddings, hybrid retrieval, and vector database optimization (OpenSearch, Pinecone, pgvector).',
-      'Strong architectural knowledge of AWS serverless services (Lambda, DynamoDB, Step Functions, SQS/SNS, S3, IAM).',
-      'AWS Certified Solutions Architect – Professional or AWS Certified Machine Learning / AI Practitioner is strongly preferred.',
-      'Bachelor’s or Master’s degree in Computer Science, Artificial Intelligence, Data Science, or equivalent engineering discipline.',
     ],
   },
   {
@@ -140,21 +112,13 @@ const openPositions: JobPosition[] = [
       'We are looking for an experienced Databricks Platform Engineer / Administrator (5+ years) to manage, govern, and optimize enterprise multi-workspace Databricks environments across cloud platforms. You will lead Unity Catalog governance, automated cluster provisioning, Lakehouse performance tuning, CI/CD with Databricks Asset Bundles (DABs), and platform FinOps.',
     responsibilities: [
       'Administer and govern enterprise Databricks multi-workspace platforms, including Unity Catalog, metastore federation, access controls, and data lineage.',
-      'Architect and enforce fine-grained security policies, Row and Column level masking, Identity Management (SCIM), and SSO integrations across enterprise identity providers.',
       'Automate workspace provisioning, cluster policies, and resource lifecycles using Terraform, Databricks REST APIs, and Databricks CLI.',
       'Optimize compute clusters (All-Purpose, Job Clusters, and SQL Warehouses) for high throughput, low latency, auto-scaling efficiency, and cost control (FinOps).',
-      'Implement CI/CD deployment pipelines for data engineering workflows using Databricks Asset Bundles (DABs), GitHub Actions, and MLflow.',
-      'Monitor platform health, diagnostic logs, audit events, and performance bottlenecks using cloud-native monitoring (Azure Monitor / AWS CloudWatch) and Databricks System Tables.',
-      'Collaborate with Data Engineers, Data Scientists, and Governance teams to enforce best practices for Delta Lake, Delta Live Tables (DLT), and data lakehouse operations.',
     ],
     requirements: [
       '5+ years of dedicated experience in cloud data platform administration with 3+ years hands-on specializing in Databricks (Azure Databricks or AWS Databricks).',
       'Deep expertise in Unity Catalog administration, access control lists (ACLs), data sharing (Delta Sharing), and data governance frameworks.',
       'Proficiency in Infrastructure as Code (IaC) using Terraform for Databricks automation and cluster policy configurations.',
-      'Strong background in Python, PySpark, SQL, and shell scripting.',
-      'Hands-on experience with Delta Lake, Delta Live Tables (DLT), and Databricks SQL Warehouses.',
-      'Databricks Certified Associate / Professional Platform Administrator or Data Engineer certification is strongly preferred.',
-      'Bachelor’s degree in Computer Science, Information Technology, or equivalent practical experience.',
     ],
   },
   {
@@ -170,20 +134,12 @@ const openPositions: JobPosition[] = [
     responsibilities: [
       'Architect, configure, and administer enterprise-grade Snowflake data warehouses, multi-cluster virtual warehouses, and cloud storage integrations.',
       'Design and enforce comprehensive security and governance models: custom RBAC hierarchies, dynamic data masking, row access policies, object tagging, and network policies.',
-      'Architect disaster recovery and business continuity strategies using Snowflake Fail-safe, Time Travel, Zero-Copy Cloning, and cross-cloud / cross-region account replication.',
       'Establish FinOps governance: monitor credit consumption, resource monitors, auto-suspend/resume tuning, and warehouse sizing optimization to maximize ROI.',
-      'Build automated CI/CD schema and data pipeline deployment workflows using SnowSQL, Schema Change (Flyway/dbt), Python, and Terraform.',
-      'Drive data sharing architectures: direct data shares, Snowflake Data Clean Rooms, and Snowflake Marketplace integrations.',
-      'Partner with enterprise analytics, data modeling, and engineering leaders to optimize micro-partitioning, search optimization service, and clustering keys for large data volumes.',
     ],
     requirements: [
       '8+ years of total data engineering / database administration experience, with 4+ years of dedicated Snowflake architecture and administration.',
       'Mastery of Snowflake internals: Virtual Warehouses, Storage layer, Micro-partitioning, Metadata caching, and Query Profiler.',
       'Deep understanding of enterprise RBAC, Snowflake Secure Views, Data Masking, SCIM provisioning, and Okta/Azure AD SSO federation.',
-      'Strong proficiency in SQL, Python, Stored Procedures, Tasks, Streams, and Snowpipe.',
-      'Proven experience managing enterprise Snowflake budgets, credit allocation, and workload isolation.',
-      'Snowflake SnowPro Core and SnowPro Advanced Administrator or Architect certification is strongly preferred.',
-      'Bachelor’s or Master’s degree in Computer Science, Data Engineering, or equivalent discipline.',
     ],
   },
   {
@@ -200,19 +156,11 @@ const openPositions: JobPosition[] = [
       'Architect and implement end-to-end Master Data Management solutions using Informatica IDMC MDM SaaS, Cloud Data Integration (CDI), and Cloud Data Quality (CDQ).',
       'Design robust data models (Party/Customer, Product, Vendor, Supplier) and entity relationship schemas in Business 360 / Customer 360 console.',
       'Configure, tune, and test complex Match & Merge rules, survivorship rules, and trust score metrics to produce high-confidence golden records.',
-      'Develop and orchestrate data cleansing, standardization, address validation, and deduplication workflows using Informatica CDQ.',
-      'Build real-time and batch integration interfaces (REST APIs, Kafka, message queues) between IDMC MDM and downstream enterprise ERP, CRM, and data lake systems.',
-      'Implement data governance workflows, task triggers, human-in-the-loop exception handling, and data stewardship dashboards in Business 360.',
-      'Conduct architecture review sessions, write technical design documents (TDD), and mentor junior data management specialists.',
     ],
     requirements: [
       '8+ years of total IT experience with 5+ years dedicated to Informatica MDM (Multidomain MDM, C360, P360) and minimum 2+ years in Informatica IDMC / MDM SaaS.',
       'Deep expertise in IDMC Business 360 architecture, Match & Merge tuning, Survivorship, and Hierarchies.',
       'Strong hands-on background in Cloud Data Integration (CDI) and Cloud Data Quality (CDQ) rule creation.',
-      'Proficiency in relational databases (Oracle, SQL Server, PostgreSQL), complex SQL queries, and data profiling.',
-      'Experience with REST API integrations, JSON/XML payloads, and web service consumers.',
-      'Informatica Certified IDMC / MDM Professional certification is highly desirable.',
-      'Bachelor’s or Master’s degree in Computer Science, Information Systems, or equivalent engineering stream.',
     ],
   },
   {
@@ -229,18 +177,11 @@ const openPositions: JobPosition[] = [
       'Formulate and execute data-driven growth strategies, GTM frameworks, and client acquisition plans across North America, UK, Europe, and India markets.',
       'Analyze sales funnel metrics, customer lifetime value (LTV), acquisition costs (CAC), and churn to identify expansion levers and pipeline acceleration opportunities.',
       'Collaborate directly with executive leadership, sales heads, and service pod leads to structure high-value enterprise proposals, SLAs, and commercial pricing models.',
-      'Lead market intelligence and competitive benchmarking across HR solutions, RPO, virtual staffing, and global workforce outsourcing.',
-      'Drive key strategic partnerships, vendor alliances, and institutional channel networks to unlock recurring B2B pipelines.',
-      'Design, test, and scale new service offerings and cross-selling campaigns to increase wallet share from existing enterprise accounts.',
-      'Prepare executive growth dashboards, board presentations, and quarterly strategic review reports.',
     ],
     requirements: [
       '3–4+ years of proven experience in growth strategy, corporate development, management consulting, or strategic sales operations in B2B / workforce / tech services.',
       'Strong analytical and quantitative modeling skills (advanced Excel, financial analysis, BI tools like Tableau/PowerBI).',
       'Exceptional executive communication, storytelling, stakeholder management, and pitch presentation skills.',
-      'Demonstrated track record of delivering measurable revenue growth, partnership closures, or successful GTM market entries.',
-      'Thrives in a fast-paced, high-accountability in-person environment in Hyderabad.',
-      'MBA or Master’s in Business, Strategy, Economics, or related fields from a reputed institution preferred.',
     ],
   },
   {
@@ -257,18 +198,11 @@ const openPositions: JobPosition[] = [
       'Generate high-quality sales-qualified leads (SQLs) through outbound cold outreach, LinkedIn Sales Navigator, email sequences, and phone discovery calls.',
       'Qualify prospective SME and enterprise clients to understand their hiring bottlenecks, operational scope, and budget requirements.',
       'Deliver compelling presentations and introductory demos showcasing TaskNera’s integrated workforce and virtual support solutions.',
-      'Maintain active sales pipeline hygiene, lead tracking, and conversion stages in CRM (HubSpot / Salesforce).',
-      'Collaborate with delivery heads to draft customized service proposals, scope of work (SOW) documents, and commercial agreements.',
-      'Follow up consistently with leads to overcome objections, negotiate commercial terms, and achieve monthly/quarterly sales targets.',
-      'Attend industry events, networking forums, and client pitch meetings as needed.',
     ],
     requirements: [
       '0–2 years of experience in B2B sales, inside sales, business development, or lead generation (freshers with strong communication and sales drive welcome).',
       'Exceptional communication, negotiation, active listening, and relationship-building skills in English and regional languages.',
       'Self-motivated, goal-oriented mindset with comfort in meeting outbound call and revenue conversion KPIs.',
-      'Familiarity with CRM tools (HubSpot, Salesforce, Zoho) and lead generation platforms is a plus.',
-      'Based in Hyderabad with flexibility for hybrid work (mix of office collaboration and remote outreach).',
-      'Bachelor’s degree in Business, Marketing, Communications, or any relevant discipline.',
     ],
   },
   {
@@ -285,17 +219,11 @@ const openPositions: JobPosition[] = [
       'Handle inbound client and customer inquiries across live chat, ticketing systems (Zendesk / Freshdesk), and email with prompt, professional responses.',
       'Troubleshoot common product, order, service, or account issues using standardized knowledge bases and operational playbooks.',
       'Maintain high First Contact Resolution (FCR) rates, average handle times (AHT), and customer satisfaction (CSAT) scores.',
-      'Escalate complex technical or billing issues to Tier-2 support and pod leads with detailed diagnostic notes.',
-      'Log, tag, and accurately categorize all customer interactions in CRM platforms following privacy and data security guidelines.',
-      'Participate in regular quality assurance (QA) audits, coaching sessions, and process refinement training.',
     ],
     requirements: [
       'Fresher or 0–1 year of experience in customer care, BPO, client services, or front-desk communication.',
       'Excellent verbal and written English communication skills with clear, courteous telephone and chat etiquette.',
       'Basic computer proficiency, fast typing speed (30+ WPM), and comfort using web-based tools and Google Workspace / MS Office.',
-      'Empathetic problem-solver with a strong willingness to learn, adapt, and handle customer queries calmly under pressure.',
-      'Dedicated quiet home workspace with stable high-speed broadband internet for remote work.',
-      'Graduate degree in any stream (BA, B.Com, B.Sc, B.Tech, or equivalent).',
     ],
   },
 ];
@@ -335,35 +263,12 @@ const perks = [
 
 export default function CareersPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
-  const [selectedJob, setSelectedJob] = useState<JobPosition | null>(null);
-  const [formSubmitted, setFormSubmitted] = useState(false);
-  const [candidateName, setCandidateName] = useState('');
-  const [candidateEmail, setCandidateEmail] = useState('');
-  const [candidatePhone, setCandidatePhone] = useState('');
-  const [candidateLinkedIn, setCandidateLinkedIn] = useState('');
-  const [candidateExperience, setCandidateExperience] = useState('');
-  const [candidateNotes, setCandidateNotes] = useState('');
   const [expandedJobId, setExpandedJobId] = useState<string | null>('gcp-cloud-engineer-iam-infra');
 
   const filteredPositions =
     selectedCategory === 'all'
       ? openPositions
       : openPositions.filter((job) => job.category === selectedCategory);
-
-  const handleApplyClick = (job: JobPosition) => {
-    setSelectedJob(job);
-    setFormSubmitted(false);
-    // Smooth scroll to form if needed
-    const formEl = document.getElementById('apply-form-section');
-    if (formEl) {
-      formEl.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  const handleQuickSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setFormSubmitted(true);
-  };
 
   return (
     <>
@@ -395,10 +300,10 @@ export default function CareersPage() {
 
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               <a
-                href="#apply-form-section"
+                href="#open-roles"
                 className="bg-tn-coral text-tn-charcoal font-bold px-6 py-3 rounded-full hover:bg-[#F28B6A] active:scale-95 transition-all shadow-lg flex items-center gap-2 text-sm"
               >
-                <span>Submit Application / View Roles</span>
+                <span>Explore Open Roles</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a
@@ -577,7 +482,7 @@ export default function CareersPage() {
                                 <span>Key Responsibilities</span>
                               </h4>
                               <ul className="space-y-2 text-xs text-slate-600">
-                                {job.responsibilities.map((resp, i) => (
+                                {job.responsibilities.slice(0, 3).map((resp, i) => (
                                   <li key={i} className="flex items-start gap-2.5 leading-relaxed">
                                     <CheckCircle2 className="w-4 h-4 text-[#704A4B] flex-shrink-0 mt-0.5" />
                                     <span>{resp}</span>
@@ -595,7 +500,7 @@ export default function CareersPage() {
                                 <span>Key Qualifications &amp; Skills</span>
                               </h4>
                               <ul className="space-y-2 text-xs text-slate-600">
-                                {job.requirements.map((req, i) => (
+                                {job.requirements.slice(0, 3).map((req, i) => (
                                   <li key={i} className="flex items-start gap-2.5 leading-relaxed">
                                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 flex-shrink-0 mt-1.5" />
                                     <span>{req}</span>
@@ -624,22 +529,14 @@ export default function CareersPage() {
                     </div>
 
                     <div className="flex items-center gap-3 lg:self-center flex-shrink-0">
-                      <button
-                        onClick={() => handleApplyClick(job)}
-                        className="w-full sm:w-auto bg-[#704A4B] hover:bg-[#593A3B] text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition-all shadow-sm flex items-center justify-center gap-2"
-                      >
-                        <span>Apply Now</span>
-                        <ArrowRight className="w-4 h-4" />
-                      </button>
                       <a
                         href={`mailto:careers@tasknera.com?subject=Application for ${encodeURIComponent(
                           job.title
                         )} [TaskNera Careers]`}
-                        className="p-2.5 rounded-xl border border-slate-200 text-slate-600 hover:text-[#704A4B] hover:bg-[#F3ECE4] transition-colors"
-                        title="Apply directly via Email"
-                        aria-label="Apply via Email"
+                        className="w-full sm:w-auto bg-[#704A4B] hover:bg-[#593A3B] text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition-all shadow-sm flex items-center justify-center gap-2"
                       >
                         <Mail className="w-4 h-4" />
+                        <span>Apply via Email</span>
                       </a>
                     </div>
                   </div>
@@ -657,206 +554,14 @@ export default function CareersPage() {
                   We do not currently have published job openings. However, we are constantly expanding our global delivery pods across Talent Acquisition, HR Operations, Virtual Support, and Business Operations. Submit your details below to be considered as soon as matching opportunities open up.
                 </p>
                 <a
-                  href="#apply-form-section"
+                  href="mailto:careers@tasknera.com?subject=General Application [TaskNera Careers]"
                   className="inline-flex items-center gap-2 bg-[#704A4B] hover:bg-[#593A3B] text-white text-sm font-semibold px-6 py-3 rounded-xl transition-all shadow-sm"
                 >
-                  <span>Submit General Application</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <Mail className="w-4 h-4" />
+                  <span>Submit General Application via Email</span>
                 </a>
               </div>
             )}
-
-            {/* ── Quick Application / Submission Box ── */}
-            <div id="apply-form-section" className="mt-16 bg-white border border-slate-200 rounded-3xl p-8 sm:p-12 shadow-xl shadow-slate-200/50">
-              <div className="max-w-3xl mx-auto">
-                <div className="text-center mb-8">
-                  <div className="inline-flex items-center gap-2 bg-[#F3ECE4] text-[#704A4B] border border-[#DED3C7] rounded-full px-3.5 py-1 text-xs font-bold uppercase tracking-wider mb-3">
-                    <Sparkles className="w-3.5 h-3.5" />
-                    <span>Candidate Fast Track</span>
-                  </div>
-                  <h3 className="font-display font-bold text-2xl sm:text-3xl text-slate-900">
-                    {selectedJob
-                      ? `Apply for ${selectedJob.title}`
-                      : 'Submit Your Application to TaskNera Talent Desk'}
-                  </h3>
-                  <p className="mt-2 text-sm text-slate-600">
-                    {selectedJob
-                      ? `Department: ${selectedJob.department} · ${selectedJob.location}`
-                      : 'Fill in your details or send your CV directly to careers@tasknera.com.'}
-                  </p>
-                </div>
-
-                {formSubmitted ? (
-                  <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-8 text-center animate-in fade-in">
-                    <div className="w-14 h-14 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <CheckCircle2 className="w-8 h-8" />
-                    </div>
-                    <h4 className="font-bold text-xl text-emerald-950">Thank You, {candidateName}!</h4>
-                    <p className="mt-2 text-sm text-emerald-800 max-w-lg mx-auto">
-                      Your application profile for{' '}
-                      <strong>{selectedJob ? selectedJob.title : 'TaskNera Talent Desk'}</strong> has been received. Our talent acquisition specialist will review your details and reach out within 1–2 business days.
-                    </p>
-                    <div className="mt-6 flex justify-center gap-4">
-                      <a
-                        href={`mailto:careers@tasknera.com?subject=Resume Attachment: ${encodeURIComponent(
-                          candidateName
-                        )} - ${encodeURIComponent(selectedJob ? selectedJob.title : 'General Application')}`}
-                        className="bg-[#704A4B] hover:bg-[#593A3B] text-white font-semibold text-xs px-4 py-2.5 rounded-xl transition-all flex items-center gap-2"
-                      >
-                        <Mail className="w-4 h-4" />
-                        <span>Send Resume Attachment via Email</span>
-                      </a>
-                      <button
-                        onClick={() => {
-                          setFormSubmitted(false);
-                          setSelectedJob(null);
-                        }}
-                        className="text-xs font-semibold text-emerald-800 underline hover:text-emerald-950"
-                      >
-                        Submit Another Role
-                      </button>
-                    </div>
-                  </div>
-                ) : (
-                  <form onSubmit={handleQuickSubmit} className="space-y-4">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div>
-                        <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
-                          Full Name *
-                        </label>
-                        <input
-                          type="text"
-                          required
-                          value={candidateName}
-                          onChange={(e) => setCandidateName(e.target.value)}
-                          placeholder="Full name"
-                          className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:border-[#704A4B] focus:ring-2 focus:ring-[#704A4B]/20 text-sm outline-none transition-all"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
-                          Email Address *
-                        </label>
-                        <input
-                          type="email"
-                          required
-                          value={candidateEmail}
-                          onChange={(e) => setCandidateEmail(e.target.value)}
-                          placeholder="Email address"
-                          className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:border-[#704A4B] focus:ring-2 focus:ring-[#704A4B]/20 text-sm outline-none transition-all"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div>
-                        <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
-                          Phone / WhatsApp Number
-                        </label>
-                        <input
-                          type="tel"
-                          value={candidatePhone}
-                          onChange={(e) => setCandidatePhone(e.target.value)}
-                          placeholder="Phone / WhatsApp number (with country code)"
-                          className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:border-[#704A4B] focus:ring-2 focus:ring-[#704A4B]/20 text-sm outline-none transition-all"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
-                          LinkedIn or Portfolio Profile
-                        </label>
-                        <input
-                          type="url"
-                          value={candidateLinkedIn}
-                          onChange={(e) => setCandidateLinkedIn(e.target.value)}
-                          placeholder="LinkedIn or portfolio URL"
-                          className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:border-[#704A4B] focus:ring-2 focus:ring-[#704A4B]/20 text-sm outline-none transition-all"
-                        />
-                      </div>
-                    </div>
-
-                    <div>
-                      <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
-                        Years of Relevant Experience
-                      </label>
-                      <select
-                        value={candidateExperience}
-                        onChange={(e) => setCandidateExperience(e.target.value)}
-                        className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:border-[#704A4B] focus:ring-2 focus:ring-[#704A4B]/20 text-sm outline-none transition-all bg-white"
-                      >
-                        <option value="">Select experience bracket...</option>
-                        <option value="0-1">0–1 Year (Entry Level / Fresher)</option>
-                        <option value="1-3">1–3 Years (Junior Specialist)</option>
-                        <option value="3-5">3–5 Years (Mid-Level Professional)</option>
-                        <option value="5-8">5–8 Years (Senior Specialist / Pod Lead)</option>
-                        <option value="8+">8+ Years (Lead / Director / Executive)</option>
-                      </select>
-                    </div>
-
-                    <div>
-                      <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
-                        Key Skills, Current Notice Period &amp; Cover Note
-                      </label>
-                      <textarea
-                        rows={3}
-                        value={candidateNotes}
-                        onChange={(e) => setCandidateNotes(e.target.value)}
-                        placeholder="Briefly describe your core strengths, preferred work arrangement, and current availability..."
-                        className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:border-[#704A4B] focus:ring-2 focus:ring-[#704A4B]/20 text-sm outline-none transition-all"
-                      />
-                    </div>
-
-                    <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
-                      <p className="text-xs text-slate-500">
-                        Protected under our{' '}
-                        <Link href="/candidate-privacy" className="text-[#704A4B] underline font-medium">
-                          Candidate Privacy Notice
-                        </Link>
-                        . No spam.
-                      </p>
-
-                      <div className="flex items-center gap-3 w-full sm:w-auto">
-                        <button
-                          type="submit"
-                          className="w-full sm:w-auto bg-[#704A4B] hover:bg-[#593A3B] text-white font-semibold px-6 py-3 rounded-xl active:scale-95 transition-all shadow-md flex items-center justify-center gap-2"
-                        >
-                          <Send className="w-4 h-4" />
-                          <span>Submit Profile</span>
-                        </button>
-                      </div>
-                    </div>
-                  </form>
-                )}
-              </div>
-            </div>
-
-            {/* Safe Hiring & Anti-Fraud Advisory */}
-            <div className="mt-12 bg-amber-50/80 border border-amber-200/90 rounded-2xl p-6 sm:p-7 flex flex-col sm:flex-row items-start gap-4">
-              <div className="w-10 h-10 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center flex-shrink-0">
-                <AlertCircle className="w-5 h-5" />
-              </div>
-              <div className="space-y-1 text-xs text-amber-950">
-                <div className="font-bold text-sm text-amber-900">
-                  TaskNera Safe Hiring &amp; Candidate Transparency Notice
-                </div>
-                <p className="leading-relaxed">
-                  TaskNera strictly adheres to transparent, ethical hiring practices. Official recruitment communications are exclusively sent from verified{' '}
-                  <strong className="text-amber-950">@tasknera.com</strong> email addresses. We never charge candidates any application fees, deposit requests, or equipment charges at any stage of hiring. If you suspect fraudulent outreach, report it directly to{' '}
-                  <a href="mailto:grievance@tasknera.com" className="underline font-bold text-amber-950">
-                    grievance@tasknera.com
-                  </a>
-                  .
-                </p>
-                <div className="pt-1 flex gap-4 text-[11px] font-semibold text-amber-800">
-                  <Link href="/candidate-privacy" className="underline hover:text-amber-950">
-                    Read Candidate Privacy Policy →
-                  </Link>
-                  <Link href="/workplace-policies" className="underline hover:text-amber-950">
-                    Review Workplace Policies →
-                  </Link>
-                </div>
-              </div>
-            </div>
 
           </div>
         </section>
