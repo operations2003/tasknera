@@ -29,7 +29,7 @@ interface JobPosition {
   id: string;
   title: string;
   department: string;
-  category: 'talent' | 'hr' | 'va' | 'support' | 'operations' | 'engineering' | 'sales';
+  category: 'talent' | 'hr' | 'va' | 'support' | 'operations' | 'engineering' | 'sales' | 'software-sales';
   location: string;
   type: string;
   experience: string;
@@ -56,6 +56,66 @@ interface JobPosition {
 import { getRecruiterEmail } from '@/lib/recruiter';
 
 const openPositions: JobPosition[] = [
+  {
+    id: 'software-sales-executive',
+    title: 'Software Sales Executive',
+    department: 'Software Sales & Business Development',
+    category: 'software-sales',
+    company: 'TaskNera',
+    location: 'Remote / Hybrid (Global)',
+    type: 'Full-Time / Part-Time · Commission-Based',
+    experience: '2–4 Years',
+    workMode: 'Remote / Hybrid',
+    budget: 'Commission-Based',
+    summary:
+      'TaskNera is looking for a driven Software Sales Executive with experience in B2B or SaaS sales to drive software sales, acquire new clients, and build strong business relationships. The ideal candidate should be skilled in lead generation, client engagement, product presentations, and deal closure, with a strong focus on revenue growth.',
+    responsibilities: [
+      'Identify and acquire potential clients through cold calling, LinkedIn, email outreach, and networking.',
+      'Generate qualified leads and build a strong sales pipeline.',
+      'Present software solutions and demonstrate product value to prospective customers.',
+      'Understand client requirements and recommend suitable software products.',
+      'Manage the complete sales cycle, from prospecting and follow-ups to negotiation and deal closure.',
+      'Build long-term client relationships and identify opportunities for repeat business.',
+      'Track sales activities, maintain CRM records, and work toward agreed sales targets.',
+    ],
+    requirements: [
+      '2–4 years of experience in software sales, SaaS sales, IT sales, or B2B sales.',
+      'Strong communication, presentation, negotiation, and closing skills.',
+      'Experience in lead generation, client acquisition, and pipeline management.',
+      'Ability to understand software products and communicate their business value.',
+      'Self-motivated, target-oriented, and comfortable with performance-based earnings.',
+    ],
+    secondarySkills: [
+      'B2B / SaaS Software Sales',
+      'Lead Generation & Cold Outreach',
+      'Product Presentations & Demos',
+      'Client Relationship Management',
+      'CRM Tracking & Pipeline Management',
+    ],
+    quickScreening:
+      'Software Sales Executive | SaaS Sales | B2B Sales | Lead Generation | Cold Calling | Product Demonstrations | Deal Closure | Commission-Based | 2-4 Years Exp',
+    compensationDetails: [
+      'Commission-Based: Earnings will be linked to successful sales and revenue generated.',
+      'Commission rates and payment terms will be communicated and agreed upon before joining.',
+      'Uncapped earning potential tied directly to sales performance.',
+    ],
+    whyWorkWithUs: [
+      'High-growth software & workforce solutions portfolio with strong market demand.',
+      'Flexible full-time or part-time engagement models.',
+      'Direct leadership collaboration and clear revenue-sharing terms.',
+      'Ideal for proactive sales professionals passionate about tech and business development.',
+    ],
+    howToApplyDetails: [
+      'Total software / B2B sales experience (in years)',
+      'Key products or SaaS solutions sold previously',
+      'Proven track record or sales achievements / quotas met',
+      'Preferred engagement (Full-Time or Part-Time)',
+      'Earliest availability to commence sales outreach',
+    ],
+    email: 'careers@tasknera.com',
+    applySubject: 'Application for Software Sales Executive [TaskNera Careers]',
+    applyBody: `Hi TaskNera Recruitment Team,\n\nI am applying for the Software Sales Executive position.\n\nHere are my professional details:\n1. Total Software/B2B Sales Experience: \n2. Key SaaS/Products Sold: \n3. Sales Achievements / Quota Track Record: \n4. Availability (Full-Time / Part-Time): \n5. Contact Number: \n\nPlease find my updated resume attached.\n\nBest regards,`,
+  },
   {
     id: 'freelance-recruiter-remote-pan-india',
     title: 'Experienced Freelance Recruiter',
@@ -1079,8 +1139,9 @@ export default function CareersPage() {
                 <div className="flex flex-wrap gap-2">
                   {[
                     { id: 'all', label: 'All Openings' },
-                    { id: 'engineering', label: 'Cloud & Engineering' },
+                    { id: 'software-sales', label: 'Software Sales' },
                     { id: 'sales', label: 'Sales & Growth' },
+                    { id: 'engineering', label: 'Cloud & Engineering' },
                     { id: 'support', label: 'Customer Support' },
                     { id: 'operations', label: 'Operations & Mgt' },
                     { id: 'talent', label: 'Recruitment & Talent' },
