@@ -147,7 +147,7 @@ export default function HeroSection() {
                 <span>Explore All Solutions</span>
               </Link>
               <Link
-                href="/careers#freelance-recruiter-remote-pan-india"
+                href="/careers"
                 className="bg-white text-[#242326] font-semibold px-7 py-4 rounded-full text-base hover:bg-[#FFF8F0] border border-[#E9E4DF] hover:border-[#F49A7D] shadow-sm transition-all flex items-center gap-2 group"
               >
                 <Briefcase className="w-4 h-4 text-[#F49A7D] group-hover:scale-110 transition-transform" />
