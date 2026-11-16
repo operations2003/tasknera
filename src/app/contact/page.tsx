@@ -70,12 +70,6 @@ const contactDesks = [
     sla: 'Candidate support desk',
   },
   {
-    title: 'Partnerships & Alliances',
-    email: 'partners@tasknera.com',
-    desc: 'For enterprise channel relations, vendor partnerships and cross-border delivery.',
-    sla: 'Direct partner desk',
-  },
-  {
     title: 'Executive Office & Founder',
     email: 'sheetalbedi@tasknera.com',
     desc: 'Direct executive oversight from Sheetal Bedi, Founder & CEO.',

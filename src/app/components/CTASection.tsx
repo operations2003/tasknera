@@ -397,20 +397,7 @@ export default function CTASection() {
                     </div>
                   </a>
 
-                  <a
-                    href="mailto:partners@tasknera.com"
-                    className="sm:col-span-2 bg-[#2B2A2E] hover:bg-[#343238] border border-[#3E3C42] hover:border-[#3478F6]/40 rounded-2xl p-3.5 flex items-center gap-3.5 transition-all duration-200 group shadow-sm"
-                  >
-                    <div className="w-9 h-9 rounded-xl bg-[#3478F6]/20 border border-[#3478F6]/30 flex items-center justify-center text-[#3478F6] flex-shrink-0 group-hover:scale-105 transition-transform">
-                      <Globe className="w-4 h-4" />
-                    </div>
-                    <div className="overflow-hidden">
-                      <div className="text-[#E5EBF3] text-[10px] font-bold uppercase tracking-wider">Partners &amp; Vendors</div>
-                      <div className="text-[#F3F6FA] text-xs font-semibold truncate group-hover:text-[#3478F6] transition-colors">
-                        partners@tasknera.com
-                      </div>
-                    </div>
-                  </a>
+
                 </div>
 
                 {/* Global Coverage & Assurance Strip */}
