@@ -198,7 +198,7 @@ export default function CompanyOverviewSection() {
               onClick={() => setActiveTab('about')}
               className={`px-6 py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all duration-300 flex items-center gap-2 ${
                 activeTab === 'about'
-                  ? 'bg-[#242326] text-[#FFF8F0] shadow-md'
+                  ? 'bg-[#101D35] text-[#F3F6FA] shadow-md'
                   : 'text-tn-slate hover:text-tn-charcoal hover:bg-tn-ivory'
               }`}
             >
@@ -209,7 +209,7 @@ export default function CompanyOverviewSection() {
               onClick={() => setActiveTab('process')}
               className={`px-6 py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all duration-300 flex items-center gap-2 ${
                 activeTab === 'process'
-                  ? 'bg-[#242326] text-[#FFF8F0] shadow-md'
+                  ? 'bg-[#101D35] text-[#F3F6FA] shadow-md'
                   : 'text-tn-slate hover:text-tn-charcoal hover:bg-tn-ivory'
               }`}
             >
@@ -220,7 +220,7 @@ export default function CompanyOverviewSection() {
               onClick={() => setActiveTab('industries')}
               className={`px-6 py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all duration-300 flex items-center gap-2 ${
                 activeTab === 'industries'
-                  ? 'bg-[#242326] text-[#FFF8F0] shadow-md'
+                  ? 'bg-[#101D35] text-[#F3F6FA] shadow-md'
                   : 'text-tn-slate hover:text-tn-charcoal hover:bg-tn-ivory'
               }`}
             >
@@ -403,7 +403,7 @@ export default function CompanyOverviewSection() {
                     onClick={() => setIndustrySubTab('industries')}
                     className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all ${
                       industrySubTab === 'industries'
-                        ? 'bg-[#242326] text-[#FFF8F0] shadow-sm'
+                        ? 'bg-[#101D35] text-[#F3F6FA] shadow-sm'
                         : 'text-tn-slate hover:text-tn-charcoal'
                     }`}
                   >
@@ -413,7 +413,7 @@ export default function CompanyOverviewSection() {
                     onClick={() => setIndustrySubTab('roles')}
                     className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all ${
                       industrySubTab === 'roles'
-                        ? 'bg-[#242326] text-[#FFF8F0] shadow-sm'
+                        ? 'bg-[#101D35] text-[#F3F6FA] shadow-sm'
                         : 'text-tn-slate hover:text-tn-charcoal'
                     }`}
                   >

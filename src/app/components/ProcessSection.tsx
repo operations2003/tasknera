@@ -112,12 +112,12 @@ export default function ProcessSection() {
             return (
               <div
                 key={step.num}
-                className="rounded-3xl p-7 sm:p-8 hover-lift group border border-tn-mist/20 hover:border-tn-coral/50 transition-all duration-300 flex flex-col justify-between relative overflow-hidden bg-[#242326] text-[#FFF8F0]"
+                className="rounded-3xl p-7 sm:p-8 hover-lift group border border-tn-mist/20 hover:border-tn-coral/50 transition-all duration-300 flex flex-col justify-between relative overflow-hidden bg-[#101D35] text-[#F3F6FA]"
                 style={{ transitionDelay: `${i * 0.04}s` }}
               >
                 <div>
                   <div className="flex items-start justify-between mb-5">
-                    <span className="text-3xl font-display font-bold text-[#FFF8F0]/40 group-hover:text-tn-coral transition-colors leading-none">
+                    <span className="text-3xl font-display font-bold text-[#F3F6FA]/40 group-hover:text-tn-coral transition-colors leading-none">
                       {step.num}
                     </span>
                     <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/15 flex items-center justify-center text-tn-coral group-hover:scale-110 transition-transform">
@@ -127,16 +127,16 @@ export default function ProcessSection() {
 
                   <div className="w-8 h-0.5 bg-tn-coral mb-4 transition-all duration-300 group-hover:w-16" />
 
-                  <h3 className="font-display font-bold text-[#FFF8F0] text-xl mb-2.5">
+                  <h3 className="font-display font-bold text-[#F3F6FA] text-xl mb-2.5">
                     {step.title}
                   </h3>
 
-                  <p className="text-[#FFF8F0]/80 text-sm leading-relaxed mb-6 font-normal">
+                  <p className="text-[#F3F6FA]/80 text-sm leading-relaxed mb-6 font-normal">
                     {step.desc}
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-white/10 text-xs text-[#FFF8F0]/70 font-medium tracking-wide flex items-center justify-between">
+                <div className="pt-4 border-t border-white/10 text-xs text-[#F3F6FA]/70 font-medium tracking-wide flex items-center justify-between">
                   <span>{step.applicable}</span>
                 </div>
               </div>
@@ -146,7 +146,7 @@ export default function ProcessSection() {
 
         {/* Technology-Enabled Delivery Box */}
         <div className="scroll-reveal" style={{ transitionDelay: '0.2s' }}>
-          <div className="bg-gradient-to-br from-[#242326] via-[#242326] to-[#1A191B] border border-tn-mist/20 rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden text-[#FFF8F0]">
+          <div className="bg-gradient-to-br from-[#101D35] via-[#101D35] to-[#1A191B] border border-tn-mist/20 rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden text-[#F3F6FA]">
             <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               
               <div className="lg:col-span-6 space-y-5">
@@ -157,15 +157,15 @@ export default function ProcessSection() {
                   </span>
                 </div>
 
-                <h3 className="font-display font-bold text-2xl sm:text-3xl text-[#FFF8F0] leading-tight">
+                <h3 className="font-display font-bold text-2xl sm:text-3xl text-[#F3F6FA] leading-tight">
                   Modern Technology Meets Human Expertise
                 </h3>
 
-                <p className="text-[#FFF8F0]/80 text-sm sm:text-base leading-relaxed">
+                <p className="text-[#F3F6FA]/80 text-sm sm:text-base leading-relaxed">
                   TaskNera combines experienced professionals with targeted HR and workforce technology to deliver faster, more transparent, and fully scalable operations.
                 </p>
 
-                <p className="text-[#FFF8F0]/70 text-xs sm:text-sm leading-relaxed">
+                <p className="text-[#F3F6FA]/70 text-xs sm:text-sm leading-relaxed">
                   We never replace people with generic bots; we empower vetted human teams with specialized tools like our JD Match Evaluator, real-time analytics dashboards, and automated workflows to deliver quality and consistency at every stage.
                 </p>
 

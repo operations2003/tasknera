@@ -41,15 +41,20 @@ export default function AdminLoginPage() {
       <div className="relative z-10 w-full max-w-md">
         {/* Logo */}
         <div className="flex items-center justify-center gap-3 mb-10">
-          <Link href="/" className="flex items-center gap-2.5 group">
+          <Link href="/" className="flex items-center gap-3 group">
             <AppLogo
-              src="/assets/images/logo_1-1786267820748.png"
+              src="/assets/images/tasknera-logo.png"
               size={36}
               className="rounded-lg"
             />
-            <span className="font-display font-700 text-xl text-white tracking-tight">
-              TaskNera
-            </span>
+            <div className="flex flex-col leading-none text-left">
+              <span className="font-heading text-xl font-medium tracking-tight text-white">
+                TaskNera
+              </span>
+              <span className="mt-1 text-[8px] font-semibold uppercase tracking-[0.24em] text-white/50">
+                People · Process · Performance
+              </span>
+            </div>
           </Link>
         </div>
 

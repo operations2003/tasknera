@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
-import PricingPage from '../pricing/page';
+import EngagementModelsPage from '../engagement-models/page';
 
 export default function EngagementAliasPage() {
-  return <PricingPage />;
+  return <EngagementModelsPage />;
 }

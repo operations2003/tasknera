@@ -1,23 +1,8 @@
 import React from 'react';
 import type { Metadata, Viewport } from 'next';
-import { Fraunces, Manrope } from 'next/font/google';
 import '../styles/tailwind.css';
 import { AuthProvider } from '@/contexts/AuthContext';
 import ScrollRevealInit from '@/app/components/ScrollRevealInit';
-
-const manrope = Manrope({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800'],
-  variable: '--font-manrope',
-  display: 'swap',
-});
-
-const fraunces = Fraunces({
-  subsets: ['latin'],
-  weight: ['300', '400', '600', '700', '900'],
-  variable: '--font-fraunces',
-  display: 'swap',
-});
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -26,18 +11,18 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
-  title: 'TaskNera | Your Global HR, Workforce & Business Support Partner',
+  title: 'TaskNera | Global HR, Recruitment, Technology & Business Operations Partner',
   description:
-    'TaskNera helps startups, SMEs and enterprises build their teams, manage their people and scale their operations through integrated HR, Workforce, Talent, Virtual Assistant and Customer Support solutions.',
+    'Build your team. Strengthen operations. Scale without limits. TaskNera is your strategic partner for global talent acquisition, HR operations, workforce solutions, technology and customer support.',
   icons: {
     icon: [
-      { 
-        url: '/assets/images/logo_1-1786267820748.png', 
-        type: 'image/png' // Fixed: Changed from image/x-icon to image/png
-      }
+      {
+        url: '/assets/images/tasknera-icon.png',
+        type: 'image/png',
+      },
     ],
-    shortcut: '/assets/images/logo_1-1786267820748.png',
-    apple: '/assets/images/logo_1-1786267820748.png',
+    shortcut: '/assets/images/tasknera-icon.png',
+    apple: '/assets/images/tasknera-icon.png',
   },
 };
 
@@ -45,8 +30,16 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${manrope.variable} ${fraunces.variable}`}>
-      <body className={manrope.className}>
+    <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..500&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className="font-sans antialiased text-[#26211E] bg-[#FAF7F2]">
         <AuthProvider>
           <ScrollRevealInit />
           {children}

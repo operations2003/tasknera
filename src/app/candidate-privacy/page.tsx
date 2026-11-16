@@ -9,29 +9,30 @@ export default function CandidatePrivacyPage() {
   return (
     <>
       <Header />
-      <main className="bg-surface-subtle min-h-screen pt-16 sm:pt-20 pb-20 sm:pb-28">
+      <main className="bg-[#FAF7F2] min-h-screen">
         {/* Hero Header */}
-        <section className="bg-section-dark relative overflow-hidden py-16 sm:py-20 mb-12 noise-overlay border-b border-white/10">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-20%,rgba(15,184,138,0.18),rgba(255,255,255,0))] pointer-events-none" />
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] blob-teal opacity-20 pointer-events-none" />
+        <section className="relative overflow-hidden bg-brand-navy text-white py-20 lg:py-24">
+          <div
+            className="grain pointer-events-none absolute inset-0 opacity-[0.16] mix-blend-soft-light"
+            aria-hidden="true"
+          />
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <div className="inline-flex items-center gap-2 bg-accent/15 border border-accent/25 rounded-full px-4 py-1.5 mb-4">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-              <span className="text-xs font-semibold text-accent tracking-widest uppercase">Candidate Rights &amp; Data</span>
-            </div>
-            <h1 className="text-4xl sm:text-5xl font-display font-bold text-white mb-4">
-              Candidate <span className="gradient-text-coral">Privacy Notice</span>
+            <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-teal mb-3 inline-block">
+              Candidate Rights &amp; Data Ethics
+            </span>
+            <h1 className="text-4xl sm:text-5xl font-heading font-normal text-white mb-4">
+              Candidate <span className="italic text-brand-teal">Privacy Notice</span>
             </h1>
-            <p className="text-white/75 text-sm sm:text-base max-w-2xl mx-auto">
+            <p className="text-white/70 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
               How TaskNera securely collects, evaluates, stores, and protects job applicant CVs, professional profiles, and candidate information.
             </p>
-            <p className="text-white/45 text-xs mt-3">Effective Date: September 2026</p>
+            <p className="text-white/40 text-xs mt-3 font-mono">Last Updated: November 2026</p>
           </div>
         </section>
 
         {/* Policy Content */}
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-card border border-border/70 rounded-3xl p-6 sm:p-12 shadow-sm space-y-10 text-foreground">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="bg-white border border-brand-navy/10 rounded-2xl p-7 sm:p-12 shadow-sm space-y-10 text-brand-ink">
             
             <section className="space-y-3">
               <h2 className="text-xl sm:text-2xl font-display font-bold text-foreground flex items-center gap-3">

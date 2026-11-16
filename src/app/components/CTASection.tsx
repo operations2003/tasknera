@@ -338,25 +338,25 @@ export default function CTASection() {
       </section>
 
       {/* Final CTA / Contact Section */}
-      <section id="contact" className="py-20 sm:py-28 bg-[#242326] overflow-hidden relative text-[#FFF8F0] border-t border-[#353338]">
+      <section id="contact" className="py-20 sm:py-28 bg-[#101D35] overflow-hidden relative text-[#F3F6FA] border-t border-[#353338]">
         {/* Atmospheric ambient lighting */}
-        <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-[#F49A7D]/10 rounded-full blur-[100px] pointer-events-none" />
-        <div className="absolute bottom-1/4 left-0 w-[500px] h-[500px] bg-[#DCC6B8]/10 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-[#3478F6]/10 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute bottom-1/4 left-0 w-[500px] h-[500px] bg-[#E5EBF3]/10 rounded-full blur-[100px] pointer-events-none" />
 
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center scroll-reveal">
               {/* Left — Headline & Inquiries */}
               <div className="lg:col-span-6 space-y-6">
                 <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 shadow-sm">
-                  <span className="w-2 h-2 rounded-full bg-[#F49A7D] animate-pulse" />
-                  <span className="text-xs font-bold text-[#FFF8F0] tracking-widest uppercase">
+                  <span className="w-2 h-2 rounded-full bg-[#3478F6] animate-pulse" />
+                  <span className="text-xs font-bold text-[#F3F6FA] tracking-widest uppercase">
                     Let's Build Together
                   </span>
                 </div>
 
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-[#FFF8F0] leading-[1.18] tracking-tight">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-[#F3F6FA] leading-[1.18] tracking-tight">
                   Tell Us What You Need.{' '}
-                  <span className="text-[#F49A7D] block mt-1.5">
+                  <span className="text-[#3478F6] block mt-1.5">
                     We'll Build the Right Support Model.
                   </span>
                 </h2>
@@ -369,14 +369,14 @@ export default function CTASection() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
                   <a
                     href="mailto:operations@tasknera.com"
-                    className="bg-[#2B2A2E] hover:bg-[#343238] border border-[#3E3C42] hover:border-[#F49A7D]/40 rounded-2xl p-3.5 flex items-center gap-3.5 transition-all duration-200 group shadow-sm"
+                    className="bg-[#2B2A2E] hover:bg-[#343238] border border-[#3E3C42] hover:border-[#3478F6]/40 rounded-2xl p-3.5 flex items-center gap-3.5 transition-all duration-200 group shadow-sm"
                   >
-                    <div className="w-9 h-9 rounded-xl bg-[#F49A7D]/20 border border-[#F49A7D]/30 flex items-center justify-center text-[#F49A7D] flex-shrink-0 group-hover:scale-105 transition-transform">
+                    <div className="w-9 h-9 rounded-xl bg-[#3478F6]/20 border border-[#3478F6]/30 flex items-center justify-center text-[#3478F6] flex-shrink-0 group-hover:scale-105 transition-transform">
                       <Mail className="w-4 h-4" />
                     </div>
                     <div className="overflow-hidden">
-                      <div className="text-[#DCC6B8] text-[10px] font-bold uppercase tracking-wider">Business Enquiries</div>
-                      <div className="text-[#FFF8F0] text-xs font-semibold truncate group-hover:text-[#F49A7D] transition-colors">
+                      <div className="text-[#E5EBF3] text-[10px] font-bold uppercase tracking-wider">Business Enquiries</div>
+                      <div className="text-[#F3F6FA] text-xs font-semibold truncate group-hover:text-[#3478F6] transition-colors">
                         operations@tasknera.com
                       </div>
                     </div>
@@ -384,14 +384,14 @@ export default function CTASection() {
 
                   <a
                     href="mailto:careers@tasknera.com"
-                    className="bg-[#2B2A2E] hover:bg-[#343238] border border-[#3E3C42] hover:border-[#F49A7D]/40 rounded-2xl p-3.5 flex items-center gap-3.5 transition-all duration-200 group shadow-sm"
+                    className="bg-[#2B2A2E] hover:bg-[#343238] border border-[#3E3C42] hover:border-[#3478F6]/40 rounded-2xl p-3.5 flex items-center gap-3.5 transition-all duration-200 group shadow-sm"
                   >
-                    <div className="w-9 h-9 rounded-xl bg-[#F49A7D]/20 border border-[#F49A7D]/30 flex items-center justify-center text-[#F49A7D] flex-shrink-0 group-hover:scale-105 transition-transform">
+                    <div className="w-9 h-9 rounded-xl bg-[#3478F6]/20 border border-[#3478F6]/30 flex items-center justify-center text-[#3478F6] flex-shrink-0 group-hover:scale-105 transition-transform">
                       <Briefcase className="w-4 h-4" />
                     </div>
                     <div className="overflow-hidden">
-                      <div className="text-[#DCC6B8] text-[10px] font-bold uppercase tracking-wider">Careers &amp; Candidates</div>
-                      <div className="text-[#FFF8F0] text-xs font-semibold truncate group-hover:text-[#F49A7D] transition-colors">
+                      <div className="text-[#E5EBF3] text-[10px] font-bold uppercase tracking-wider">Careers &amp; Candidates</div>
+                      <div className="text-[#F3F6FA] text-xs font-semibold truncate group-hover:text-[#3478F6] transition-colors">
                         careers@tasknera.com
                       </div>
                     </div>
@@ -399,14 +399,14 @@ export default function CTASection() {
 
                   <a
                     href="mailto:partners@tasknera.com"
-                    className="sm:col-span-2 bg-[#2B2A2E] hover:bg-[#343238] border border-[#3E3C42] hover:border-[#F49A7D]/40 rounded-2xl p-3.5 flex items-center gap-3.5 transition-all duration-200 group shadow-sm"
+                    className="sm:col-span-2 bg-[#2B2A2E] hover:bg-[#343238] border border-[#3E3C42] hover:border-[#3478F6]/40 rounded-2xl p-3.5 flex items-center gap-3.5 transition-all duration-200 group shadow-sm"
                   >
-                    <div className="w-9 h-9 rounded-xl bg-[#F49A7D]/20 border border-[#F49A7D]/30 flex items-center justify-center text-[#F49A7D] flex-shrink-0 group-hover:scale-105 transition-transform">
+                    <div className="w-9 h-9 rounded-xl bg-[#3478F6]/20 border border-[#3478F6]/30 flex items-center justify-center text-[#3478F6] flex-shrink-0 group-hover:scale-105 transition-transform">
                       <Globe className="w-4 h-4" />
                     </div>
                     <div className="overflow-hidden">
-                      <div className="text-[#DCC6B8] text-[10px] font-bold uppercase tracking-wider">Partners &amp; Vendors</div>
-                      <div className="text-[#FFF8F0] text-xs font-semibold truncate group-hover:text-[#F49A7D] transition-colors">
+                      <div className="text-[#E5EBF3] text-[10px] font-bold uppercase tracking-wider">Partners &amp; Vendors</div>
+                      <div className="text-[#F3F6FA] text-xs font-semibold truncate group-hover:text-[#3478F6] transition-colors">
                         partners@tasknera.com
                       </div>
                     </div>
@@ -415,11 +415,11 @@ export default function CTASection() {
 
                 {/* Global Coverage & Assurance Strip */}
                 <div className="bg-[#2B2A2E] border border-[#3E3C42] rounded-2xl p-3.5 sm:p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
-                  <div className="flex items-center gap-2.5 text-[#FFF8F0]">
-                    <Globe className="w-4 h-4 text-[#F49A7D] flex-shrink-0" />
+                  <div className="flex items-center gap-2.5 text-[#F3F6FA]">
+                    <Globe className="w-4 h-4 text-[#3478F6] flex-shrink-0" />
                     <span className="font-medium text-xs">Global: India • US • UK • Europe • Remote</span>
                   </div>
-                  <div className="inline-flex items-center gap-1.5 text-[#F49A7D] font-semibold text-[11px] bg-white/10 px-2.5 py-1 rounded-full w-fit">
+                  <div className="inline-flex items-center gap-1.5 text-[#3478F6] font-semibold text-[11px] bg-white/10 px-2.5 py-1 rounded-full w-fit">
                     <Clock className="w-3.5 h-3.5" />
                     <span>24h SLA Intake</span>
                   </div>
@@ -429,25 +429,25 @@ export default function CTASection() {
               {/* Right — Contact Form Card */}
               <div className="lg:col-span-6 bg-[#1E1D20]/95 border border-[#3E3C42] rounded-3xl p-6 sm:p-8 shadow-2xl shadow-black/40 backdrop-blur-2xl relative overflow-hidden">
                 {/* Subtle top card glow */}
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#F49A7D]/60 to-transparent" />
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#3478F6]/60 to-transparent" />
 
-                <h3 className="text-[#FFF8F0] font-display font-bold text-xl sm:text-2xl mb-1.5">
+                <h3 className="text-[#F3F6FA] font-display font-bold text-xl sm:text-2xl mb-1.5">
                   Talk to an HR &amp; Workforce Specialist
                 </h3>
-                <p className="text-[#DCC6B8] text-xs sm:text-sm mb-6 leading-relaxed">
+                <p className="text-[#E5EBF3] text-xs sm:text-sm mb-6 leading-relaxed">
                   Tell us about your team, workforce, or operations support needs. We respond within 1 business day.
                 </p>
 
                 {draftRestored && (
-                  <div className="flex items-center justify-between bg-white/10 border border-white/20 rounded-2xl px-4 py-2.5 mb-4 text-xs text-[#FFF8F0]">
+                  <div className="flex items-center justify-between bg-white/10 border border-white/20 rounded-2xl px-4 py-2.5 mb-4 text-xs text-[#F3F6FA]">
                     <div className="flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-[#F49A7D] animate-pulse" />
+                      <span className="w-2 h-2 rounded-full bg-[#3478F6] animate-pulse" />
                       <span>Restored your saved inquiry draft from this session.</span>
                     </div>
                     <button
                       type="button"
                       onClick={handleClearDraft}
-                      className="text-[#DCC6B8] hover:text-[#FFF8F0] underline text-xs font-semibold ml-3"
+                      className="text-[#E5EBF3] hover:text-[#F3F6FA] underline text-xs font-semibold ml-3"
                     >
                       Clear draft
                     </button>
@@ -457,8 +457,8 @@ export default function CTASection() {
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-[#FFF8F0]/90 text-xs font-semibold mb-1.5">
-                        Full Name <span className="text-[#F49A7D]">*</span>
+                      <label className="block text-[#F3F6FA]/90 text-xs font-semibold mb-1.5">
+                        Full Name <span className="text-[#3478F6]">*</span>
                       </label>
                       <input
                         type="text"
@@ -467,10 +467,10 @@ export default function CTASection() {
                         onChange={handleChange}
                         onBlur={handleBlur}
                         placeholder="Jane Smith"
-                        className={`w-full rounded-xl px-3.5 py-2.5 text-[#FFF8F0] text-sm placeholder-[#DCC6B8]/40 focus:outline-none transition-all ${
+                        className={`w-full rounded-xl px-3.5 py-2.5 text-[#F3F6FA] text-sm placeholder-[#E5EBF3]/40 focus:outline-none transition-all ${
                           errors.name && touched.name
                             ? 'border border-red-400 bg-red-500/10'
-                            : 'border border-[#3E3C42] bg-[#2B2A2E] hover:bg-[#343238] focus:border-[#F49A7D] focus:ring-2 focus:ring-[#F49A7D]/20 focus:bg-[#2B2A2E]'
+                            : 'border border-[#3E3C42] bg-[#2B2A2E] hover:bg-[#343238] focus:border-[#3478F6] focus:ring-2 focus:ring-[#3478F6]/20 focus:bg-[#2B2A2E]'
                         }`}
                       />
                       {errors.name && touched.name && (
@@ -482,8 +482,8 @@ export default function CTASection() {
                     </div>
 
                     <div>
-                      <label className="block text-[#FFF8F0]/90 text-xs font-semibold mb-1.5">
-                        Work Email <span className="text-[#F49A7D]">*</span>
+                      <label className="block text-[#F3F6FA]/90 text-xs font-semibold mb-1.5">
+                        Work Email <span className="text-[#3478F6]">*</span>
                       </label>
                       <input
                         type="email"
@@ -492,10 +492,10 @@ export default function CTASection() {
                         onChange={handleChange}
                         onBlur={handleBlur}
                         placeholder="jane@company.com"
-                        className={`w-full rounded-xl px-3.5 py-2.5 text-[#FFF8F0] text-sm placeholder-[#DCC6B8]/40 focus:outline-none transition-all ${
+                        className={`w-full rounded-xl px-3.5 py-2.5 text-[#F3F6FA] text-sm placeholder-[#E5EBF3]/40 focus:outline-none transition-all ${
                           errors.email && touched.email
                             ? 'border border-red-400 bg-red-500/10'
-                            : 'border border-[#3E3C42] bg-[#2B2A2E] hover:bg-[#343238] focus:border-[#F49A7D] focus:ring-2 focus:ring-[#F49A7D]/20 focus:bg-[#2B2A2E]'
+                            : 'border border-[#3E3C42] bg-[#2B2A2E] hover:bg-[#343238] focus:border-[#3478F6] focus:ring-2 focus:ring-[#3478F6]/20 focus:bg-[#2B2A2E]'
                         }`}
                       />
                       {errors.email && touched.email && (
@@ -508,7 +508,7 @@ export default function CTASection() {
                   </div>
 
                   <div>
-                    <label className="block text-[#FFF8F0]/90 text-xs font-semibold mb-1.5">
+                    <label className="block text-[#F3F6FA]/90 text-xs font-semibold mb-1.5">
                       Company Name
                     </label>
                     <input
@@ -518,33 +518,33 @@ export default function CTASection() {
                       onChange={handleChange}
                       onBlur={handleBlur}
                       placeholder="Acme Corporation"
-                      className="w-full rounded-xl px-3.5 py-2.5 text-[#FFF8F0] text-sm placeholder-[#DCC6B8]/40 border border-[#3E3C42] bg-[#2B2A2E] hover:bg-[#343238] focus:border-[#F49A7D] focus:ring-2 focus:ring-[#F49A7D]/20 focus:bg-[#2B2A2E] focus:outline-none transition-all"
+                      className="w-full rounded-xl px-3.5 py-2.5 text-[#F3F6FA] text-sm placeholder-[#E5EBF3]/40 border border-[#3E3C42] bg-[#2B2A2E] hover:bg-[#343238] focus:border-[#3478F6] focus:ring-2 focus:ring-[#3478F6]/20 focus:bg-[#2B2A2E] focus:outline-none transition-all"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-[#FFF8F0]/90 text-xs font-semibold mb-1.5">
+                    <label className="block text-[#F3F6FA]/90 text-xs font-semibold mb-1.5">
                       Enquiry Focus Area
                     </label>
                     <select
                       name="enquiry"
                       value={form.enquiry}
                       onChange={handleChange}
-                      className="w-full rounded-xl px-3.5 py-2.5 text-[#FFF8F0] text-sm border border-[#3E3C42] bg-[#2B2A2E] focus:border-[#F49A7D] focus:ring-2 focus:ring-[#F49A7D]/20 focus:outline-none transition-all cursor-pointer"
+                      className="w-full rounded-xl px-3.5 py-2.5 text-[#F3F6FA] text-sm border border-[#3E3C42] bg-[#2B2A2E] focus:border-[#3478F6] focus:ring-2 focus:ring-[#3478F6]/20 focus:outline-none transition-all cursor-pointer"
                     >
-                      <option value="hr-ops" className="bg-[#242326] text-[#FFF8F0]">HR &amp; People Operations</option>
-                      <option value="recruitment" className="bg-[#242326] text-[#FFF8F0]">Talent Acquisition &amp; Recruitment</option>
-                      <option value="workforce" className="bg-[#242326] text-[#FFF8F0]">Contract Staffing &amp; Workforce Solutions</option>
-                      <option value="va" className="bg-[#242326] text-[#FFF8F0]">Virtual Assistant Services (Human)</option>
-                      <option value="vcs" className="bg-[#242326] text-[#FFF8F0]">Virtual Customer Support (VCS)</option>
-                      <option value="tech" className="bg-[#242326] text-[#FFF8F0]">JD Match Evaluator &amp; HR Technology</option>
-                      <option value="other" className="bg-[#242326] text-[#FFF8F0]">Comprehensive / Other Requirements</option>
+                      <option value="hr-ops" className="bg-[#101D35] text-[#F3F6FA]">HR &amp; People Operations</option>
+                      <option value="recruitment" className="bg-[#101D35] text-[#F3F6FA]">Talent Acquisition &amp; Recruitment</option>
+                      <option value="workforce" className="bg-[#101D35] text-[#F3F6FA]">Contract Staffing &amp; Workforce Solutions</option>
+                      <option value="va" className="bg-[#101D35] text-[#F3F6FA]">Virtual Assistant Services (Human)</option>
+                      <option value="vcs" className="bg-[#101D35] text-[#F3F6FA]">Virtual Customer Support (VCS)</option>
+                      <option value="tech" className="bg-[#101D35] text-[#F3F6FA]">JD Match Evaluator &amp; HR Technology</option>
+                      <option value="other" className="bg-[#101D35] text-[#F3F6FA]">Comprehensive / Other Requirements</option>
                     </select>
                   </div>
 
                   <div>
-                    <label className="block text-[#FFF8F0]/90 text-xs font-semibold mb-1.5">
-                      Project or Role Requirements <span className="text-[#F49A7D]">*</span>
+                    <label className="block text-[#F3F6FA]/90 text-xs font-semibold mb-1.5">
+                      Project or Role Requirements <span className="text-[#3478F6]">*</span>
                     </label>
                     <textarea
                       name="message"
@@ -553,14 +553,14 @@ export default function CTASection() {
                       onChange={handleChange}
                       rows={3}
                       placeholder="Tell us about the roles, team size, timeline, or operational functions you want to support..."
-                      className="w-full rounded-xl px-3.5 py-2.5 text-[#FFF8F0] text-sm placeholder-[#DCC6B8]/40 border border-[#3E3C42] bg-[#2B2A2E] hover:bg-[#343238] focus:border-[#F49A7D] focus:ring-2 focus:ring-[#F49A7D]/20 focus:bg-[#2B2A2E] focus:outline-none transition-all resize-none"
+                      className="w-full rounded-xl px-3.5 py-2.5 text-[#F3F6FA] text-sm placeholder-[#E5EBF3]/40 border border-[#3E3C42] bg-[#2B2A2E] hover:bg-[#343238] focus:border-[#3478F6] focus:ring-2 focus:ring-[#3478F6]/20 focus:bg-[#2B2A2E] focus:outline-none transition-all resize-none"
                     />
                   </div>
 
                   <button
                     type="submit"
                     disabled={submitting}
-                    className="w-full bg-[#F49A7D] text-[#242326] font-bold py-3.5 rounded-xl hover:bg-[#E28567] active:scale-[0.99] transition-all shadow-xl text-sm disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2 mt-2 group"
+                    className="w-full bg-[#3478F6] text-[#101D35] font-bold py-3.5 rounded-xl hover:bg-[#2563EB] active:scale-[0.99] transition-all shadow-xl text-sm disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2 mt-2 group"
                   >
                     {submitting ? (
                       <span>Saving &amp; Submitting inquiry…</span>
@@ -572,8 +572,8 @@ export default function CTASection() {
                     )}
                   </button>
 
-                  <div className="flex items-center justify-center gap-2 text-[11px] text-[#DCC6B8] pt-1">
-                    <ShieldCheck className="w-3.5 h-3.5 text-[#F49A7D]" />
+                  <div className="flex items-center justify-center gap-2 text-[11px] text-[#E5EBF3] pt-1">
+                    <ShieldCheck className="w-3.5 h-3.5 text-[#3478F6]" />
                     <span>Strict NDA &amp; confidentiality guaranteed. Zero spam.</span>
                   </div>
                 </form>
@@ -592,7 +592,7 @@ export default function CTASection() {
           aria-labelledby="success-modal-headline"
         >
           <div
-            className="relative w-full max-w-lg bg-[#242326] border border-[#3E3C42] rounded-3xl p-7 sm:p-9 shadow-2xl shadow-black/60 text-center transform transition-all backdrop-blur-xl animate-in zoom-in-95 duration-200"
+            className="relative w-full max-w-lg bg-[#101D35] border border-[#3E3C42] rounded-3xl p-7 sm:p-9 shadow-2xl shadow-black/60 text-center transform transition-all backdrop-blur-xl animate-in zoom-in-95 duration-200"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Top Right Close 'X' Button */}
@@ -606,14 +606,14 @@ export default function CTASection() {
             </button>
 
             {/* Checkmark Icon Circle */}
-            <div className="w-16 h-16 rounded-2xl bg-[#F49A7D]/20 border border-[#F49A7D]/40 flex items-center justify-center mx-auto mb-5 text-[#F49A7D] shadow-lg">
+            <div className="w-16 h-16 rounded-2xl bg-[#3478F6]/20 border border-[#3478F6]/40 flex items-center justify-center mx-auto mb-5 text-[#3478F6] shadow-lg">
               <CheckCircle2 className="w-9 h-9" />
             </div>
 
             {/* Title */}
             <h3
               id="success-modal-headline"
-              className="text-2xl sm:text-3xl font-display font-bold text-[#FFF8F0] mb-3 tracking-tight"
+              className="text-2xl sm:text-3xl font-display font-bold text-[#F3F6FA] mb-3 tracking-tight"
             >
               Thank you for submitting the form!
             </h3>
@@ -626,8 +626,8 @@ export default function CTASection() {
             {/* Reference Badge */}
             {submittedReference && (
               <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 mb-7 text-xs text-[#E9E4DF]/80">
-                <span className="text-[#DCC6B8]">Inquiry Reference:</span>
-                <span className="font-mono font-bold text-[#F49A7D]">
+                <span className="text-[#E5EBF3]">Inquiry Reference:</span>
+                <span className="font-mono font-bold text-[#3478F6]">
                   #TN-{submittedReference.slice(-6).toUpperCase()}
                 </span>
               </div>
@@ -638,7 +638,7 @@ export default function CTASection() {
               <button
                 type="button"
                 onClick={handleCloseModal}
-                className="w-full bg-[#F49A7D] text-[#242326] font-bold py-3.5 px-6 rounded-xl hover:bg-[#E28567] active:scale-98 transition-all shadow-xl text-sm"
+                className="w-full bg-[#3478F6] text-[#101D35] font-bold py-3.5 px-6 rounded-xl hover:bg-[#2563EB] active:scale-98 transition-all shadow-xl text-sm"
               >
                 Close
               </button>

@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { saveStoredApplication } from '@/lib/storage/inquiries';
 import {
   Briefcase,
   Users,
@@ -1008,6 +1009,45 @@ export default function CareersPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [expandedJobId, setExpandedJobId] = useState<string | null>('freelance-recruiter-remote-pan-india');
 
+  const [applyingJob, setApplyingJob] = useState<JobPosition | null>(null);
+  const [candidateForm, setCandidateForm] = useState({
+    fullName: '',
+    email: '',
+    phone: '',
+    currentLocation: '',
+    totalExperience: '',
+    relevantExperience: '',
+    resumeName: '',
+    linkedinUrl: '',
+    additionalInfo: '',
+  });
+  const [applicationSubmitted, setApplicationSubmitted] = useState(false);
+
+  const handleCandidateSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!applyingJob || !candidateForm.fullName || !candidateForm.email) return;
+
+    saveStoredApplication({
+      id: `app-${Date.now()}`,
+      job_id: applyingJob.id,
+      job_title: applyingJob.title,
+      full_name: candidateForm.fullName.trim(),
+      email: candidateForm.email.trim(),
+      phone: candidateForm.phone.trim(),
+      current_location: candidateForm.currentLocation.trim(),
+      total_experience: candidateForm.totalExperience.trim() || '2+ Years',
+      relevant_experience: candidateForm.relevantExperience.trim() || 'Demonstrated Domain Experience',
+      resume_name: candidateForm.resumeName.trim() || `${candidateForm.fullName.replace(/\s+/g, '_')}_CV.pdf`,
+      linkedin_url: candidateForm.linkedinUrl.trim() || undefined,
+      additional_info: candidateForm.additionalInfo.trim() || undefined,
+      hireiq_score: Math.floor(88 + Math.random() * 10),
+      status: 'Received',
+      applied_at: new Date().toISOString(),
+    });
+
+    setApplicationSubmitted(true);
+  };
+
   const filteredPositions =
     selectedCategory === 'all'
       ? openPositions
@@ -1016,65 +1056,62 @@ export default function CareersPage() {
   return (
     <>
       <Header />
-      <main className="pt-16 sm:pt-20 bg-background min-h-screen text-slate-900">
+      <main className="bg-[#FAF7F2] min-h-screen text-brand-ink">
         
         {/* ── Hero Section ── */}
-        <section className="relative overflow-hidden bg-gradient-to-b from-[#242326] via-[#242326] to-[#1A191B] text-[#FFF8F0] py-20 sm:py-28">
-          <div className="absolute inset-0 bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
-          <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-tn-coral/10 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute -bottom-10 left-10 w-[400px] h-[400px] bg-tn-beige/10 rounded-full blur-3xl pointer-events-none" />
+        <section className="relative overflow-hidden bg-brand-navy text-white py-20 lg:py-24">
+          <div
+            className="grain pointer-events-none absolute inset-0 opacity-[0.16] mix-blend-soft-light"
+            aria-hidden="true"
+          />
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-1.5 mb-6 text-xs font-semibold text-tn-coral shadow-inner">
-              <span className="w-2 h-2 rounded-full bg-tn-coral animate-pulse" />
-              <span>We&apos;re Hiring · Global Remote &amp; Hybrid Positions</span>
-            </div>
+            <span className="inline-block text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-teal mb-4">
+              We&apos;re Hiring · Global Remote &amp; Hybrid Positions
+            </span>
 
-            <h1 className="font-display font-bold text-3xl sm:text-5xl lg:text-6xl text-[#FFF8F0] tracking-tight max-w-4xl mx-auto leading-tight">
-              Build Your Career with{' '}
-              <span className="text-tn-coral">
-                TaskNera
-              </span>
+            <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-normal leading-[1.05] tracking-tight max-w-4xl mx-auto">
+              Build your career with <span className="italic text-brand-teal">TaskNera</span>
             </h1>
 
-            <p className="mt-6 text-base sm:text-xl text-[#FFF8F0]/80 max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-5 text-base sm:text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
               Join a high-growth global workforce partner delivering talent acquisition, HR operations, and virtual business support to top companies worldwide.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               <a
                 href="#open-roles"
-                className="bg-tn-coral text-tn-charcoal font-bold px-6 py-3 rounded-full hover:bg-[#F28B6A] active:scale-95 transition-all shadow-lg flex items-center gap-2 text-sm"
+                className="bg-white text-brand-navy font-semibold px-6 py-3 rounded-[3px] hover:bg-white/90 active:scale-95 transition-all shadow-sm flex items-center gap-2 text-[13.5px]"
               >
                 <span>Explore Open Roles</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a
                 href="mailto:careers@tasknera.com"
-                className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-medium px-6 py-3 rounded-full transition-all flex items-center gap-2 backdrop-blur-sm text-sm"
+                className="border border-white/20 text-white font-medium px-6 py-3 rounded-[3px] hover:bg-white/10 transition-all flex items-center gap-2 text-[13.5px]"
               >
-                <Mail className="w-4 h-4 text-tn-coral" />
+                <Mail className="w-4 h-4 text-brand-teal" />
                 <span>Email careers@tasknera.com</span>
               </a>
             </div>
 
             {/* Fast Stats Strip */}
             <div className="mt-14 pt-10 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto text-left">
-              <div className="bg-white/5 border border-white/10 rounded-2xl p-4 backdrop-blur-sm">
-                <div className="text-2xl sm:text-3xl font-display font-bold text-[#E5BDB4]">100%</div>
-                <div className="text-xs text-slate-300 mt-1 font-medium">Vetted Human Teams</div>
+              <div className="bg-white/5 border border-white/10 rounded-xl p-4 backdrop-blur-sm">
+                <div className="text-2xl sm:text-3xl font-heading font-bold text-brand-teal">100%</div>
+                <div className="text-xs text-white/60 mt-1 font-medium">Vetted Human Teams</div>
               </div>
-              <div className="bg-white/5 border border-white/10 rounded-2xl p-4 backdrop-blur-sm">
-                <div className="text-2xl sm:text-3xl font-display font-bold text-white">12+</div>
-                <div className="text-xs text-slate-300 mt-1 font-medium">Industry Coverage Areas</div>
+              <div className="bg-white/5 border border-white/10 rounded-xl p-4 backdrop-blur-sm">
+                <div className="text-2xl sm:text-3xl font-heading font-bold text-white">12+</div>
+                <div className="text-xs text-white/60 mt-1 font-medium">Industry Coverage Areas</div>
               </div>
-              <div className="bg-white/5 border border-white/10 rounded-2xl p-4 backdrop-blur-sm">
-                <div className="text-2xl sm:text-3xl font-display font-bold text-[#E5BDB4]">24/7</div>
-                <div className="text-xs text-slate-300 mt-1 font-medium">Multi-Timezone Operations</div>
+              <div className="bg-white/5 border border-white/10 rounded-xl p-4 backdrop-blur-sm">
+                <div className="text-2xl sm:text-3xl font-heading font-bold text-brand-teal">24/7</div>
+                <div className="text-xs text-white/60 mt-1 font-medium">Multi-Timezone Operations</div>
               </div>
-              <div className="bg-white/5 border border-white/10 rounded-2xl p-4 backdrop-blur-sm">
-                <div className="text-2xl sm:text-3xl font-display font-bold text-white">Zero Fee</div>
-                <div className="text-xs text-slate-300 mt-1 font-medium">Safe Candidate Hiring Policy</div>
+              <div className="bg-white/5 border border-white/10 rounded-xl p-4 backdrop-blur-sm">
+                <div className="text-2xl sm:text-3xl font-heading font-bold text-white">Zero Fee</div>
+                <div className="text-xs text-white/60 mt-1 font-medium">Safe Candidate Hiring Policy</div>
               </div>
             </div>
           </div>
@@ -1084,7 +1121,7 @@ export default function CareersPage() {
         <section className="py-20 sm:py-24 bg-white relative">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <div className="text-xs uppercase font-bold text-[#704A4B] tracking-wider mb-2">
+              <div className="text-xs uppercase font-bold text-[#101D35] tracking-wider mb-2">
                 Why Choose TaskNera
               </div>
               <h2 className="font-display font-bold text-2xl sm:text-4xl text-slate-900 tracking-tight">
@@ -1101,9 +1138,9 @@ export default function CareersPage() {
                 return (
                   <div
                     key={perk.title}
-                    className="p-6 rounded-2xl border border-slate-200/90 bg-slate-50/60 hover:bg-white hover:border-[#704A4B]/40 hover:shadow-xl hover:shadow-[#704A4B]/5 transition-all duration-200 group"
+                    className="p-6 rounded-2xl border border-slate-200/90 bg-slate-50/60 hover:bg-white hover:border-[#101D35]/40 hover:shadow-xl hover:shadow-[#101D35]/5 transition-all duration-200 group"
                   >
-                    <div className="w-12 h-12 rounded-xl bg-[#F3ECE4] text-[#704A4B] flex items-center justify-center mb-5 group-hover:scale-110 group-hover:bg-[#E5BDB4]/40 group-hover:text-[#593A3B] transition-all">
+                    <div className="w-12 h-12 rounded-xl bg-[#F3F6FA] text-[#101D35] flex items-center justify-center mb-5 group-hover:scale-110 group-hover:bg-[#3478F6]/40 group-hover:text-[#1E3A5F] transition-all">
                       <Icon className="w-6 h-6" />
                     </div>
                     <h3 className="font-bold text-lg text-slate-900 mb-2">{perk.title}</h3>
@@ -1121,7 +1158,7 @@ export default function CareersPage() {
             
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
               <div>
-                <div className="text-xs uppercase font-bold text-[#704A4B] tracking-wider mb-2">
+                <div className="text-xs uppercase font-bold text-[#101D35] tracking-wider mb-2">
                   Current Opportunities
                 </div>
                 <h2 className="font-display font-bold text-2xl sm:text-4xl text-slate-900 tracking-tight">
@@ -1153,7 +1190,7 @@ export default function CareersPage() {
                       onClick={() => setSelectedCategory(tab.id)}
                       className={`px-4 py-2 text-xs sm:text-sm font-semibold rounded-xl transition-all ${
                         selectedCategory === tab.id
-                          ? 'bg-[#704A4B] text-white shadow-md'
+                          ? 'bg-[#101D35] text-white shadow-md'
                           : 'bg-white border border-slate-200 text-slate-700 hover:bg-slate-100'
                       }`}
                     >
@@ -1171,11 +1208,11 @@ export default function CareersPage() {
                   <div
                     key={job.id}
                     id={job.id}
-                    className="p-6 sm:p-7 rounded-2xl border border-slate-200/90 bg-white shadow-sm hover:shadow-md hover:border-[#704A4B]/40 transition-all flex flex-col justify-between scroll-mt-28"
+                    className="p-6 sm:p-7 rounded-2xl border border-slate-200/90 bg-white shadow-sm hover:shadow-md hover:border-[#101D35]/40 transition-all flex flex-col justify-between scroll-mt-28"
                   >
                     <div className="space-y-3.5">
                       <div className="flex flex-wrap items-center gap-2">
-                        <span className="text-xs font-bold uppercase tracking-wider text-[#704A4B] bg-[#F3ECE4] border border-[#DED3C7] px-2.5 py-0.5 rounded-md">
+                        <span className="text-xs font-bold uppercase tracking-wider text-[#101D35] bg-[#F3F6FA] border border-[#E5EBF3] px-2.5 py-0.5 rounded-md">
                           {job.department}
                         </span>
                         <span className="text-xs font-medium text-slate-600 bg-slate-100 px-2.5 py-0.5 rounded-md flex items-center gap-1">
@@ -1207,7 +1244,7 @@ export default function CareersPage() {
                         <button
                           type="button"
                           onClick={() => setExpandedJobId(expandedJobId === job.id ? null : job.id)}
-                          className="inline-flex items-center gap-1.5 text-xs font-bold text-[#704A4B] hover:text-[#593A3B] transition-colors py-1 cursor-pointer"
+                          className="inline-flex items-center gap-1.5 text-xs font-bold text-[#101D35] hover:text-[#1E3A5F] transition-colors py-1 cursor-pointer"
                         >
                           <span>
                             {expandedJobId === job.id
@@ -1229,13 +1266,13 @@ export default function CareersPage() {
                           {job.responsibilities && job.responsibilities.length > 0 && (
                             <div>
                               <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-2.5 flex items-center gap-1.5">
-                                <Sparkles className="w-3.5 h-3.5 text-[#704A4B]" />
+                                <Sparkles className="w-3.5 h-3.5 text-[#101D35]" />
                                 <span>Key Responsibilities</span>
                               </h4>
                               <ul className="space-y-2 text-xs text-slate-600">
                                 {job.responsibilities.map((resp, i) => (
                                   <li key={i} className="flex items-start gap-2.5 leading-relaxed">
-                                    <CheckCircle2 className="w-4 h-4 text-[#704A4B] flex-shrink-0 mt-0.5" />
+                                    <CheckCircle2 className="w-4 h-4 text-[#101D35] flex-shrink-0 mt-0.5" />
                                     <span>{resp}</span>
                                   </li>
                                 ))}
@@ -1285,14 +1322,14 @@ export default function CareersPage() {
                           {job.quickScreening && (
                             <div className="pt-2 border-t border-slate-100">
                               <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-2 flex items-center gap-1.5">
-                                <Cpu className="w-3.5 h-3.5 text-[#704A4B]" />
+                                <Cpu className="w-3.5 h-3.5 text-[#101D35]" />
                                 <span>Mandatory Skills – Quick Screening</span>
                               </h4>
                               <div className="flex flex-wrap gap-1.5">
                                 {job.quickScreening.split(' | ').map((skill) => (
                                   <span
                                     key={skill}
-                                    className="text-[11px] font-semibold bg-[#F3ECE4] text-[#704A4B] border border-[#DED3C7] rounded-md px-2.5 py-1"
+                                    className="text-[11px] font-semibold bg-[#F3F6FA] text-[#101D35] border border-[#E5EBF3] rounded-md px-2.5 py-1"
                                   >
                                     {skill}
                                   </span>
@@ -1323,13 +1360,13 @@ export default function CareersPage() {
                           {job.whyWorkWithUs && job.whyWorkWithUs.length > 0 && (
                             <div className="pt-2 border-t border-slate-100">
                               <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-2.5 flex items-center gap-1.5">
-                                <HeartHandshake className="w-3.5 h-3.5 text-[#704A4B]" />
+                                <HeartHandshake className="w-3.5 h-3.5 text-[#101D35]" />
                                 <span>Why Work With Tasknera?</span>
                               </h4>
                               <ul className="space-y-2 text-xs text-slate-600">
                                 {job.whyWorkWithUs.map((item, i) => (
                                   <li key={i} className="flex items-start gap-2.5 leading-relaxed">
-                                    <CheckCircle2 className="w-4 h-4 text-[#704A4B] flex-shrink-0 mt-0.5" />
+                                    <CheckCircle2 className="w-4 h-4 text-[#101D35] flex-shrink-0 mt-0.5" />
                                     <span>{item}</span>
                                   </li>
                                 ))}
@@ -1339,15 +1376,15 @@ export default function CareersPage() {
 
                           {/* How to Apply Details */}
                           {job.howToApplyDetails && job.howToApplyDetails.length > 0 && (
-                            <div className="pt-2 border-t border-slate-100 bg-[#F3ECE4]/40 border border-[#DED3C7] rounded-xl p-3.5">
+                            <div className="pt-2 border-t border-slate-100 bg-[#F3F6FA]/40 border border-[#E5EBF3] rounded-xl p-3.5">
                               <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-2 flex items-center gap-1.5">
-                                <Users className="w-3.5 h-3.5 text-[#704A4B]" />
+                                <Users className="w-3.5 h-3.5 text-[#101D35]" />
                                 <span>How to Apply — Details to Include with Your Resume</span>
                               </h4>
                               <ul className="space-y-1.5 text-xs text-slate-700">
                                 {job.howToApplyDetails.map((detail, i) => (
                                   <li key={i} className="flex items-start gap-2 leading-relaxed">
-                                    <span className="font-semibold text-[#704A4B]">•</span>
+                                    <span className="font-semibold text-[#101D35]">•</span>
                                     <span>{detail}</span>
                                   </li>
                                 ))}
@@ -1374,9 +1411,9 @@ export default function CareersPage() {
                     </div>
 
                     {/* Instruction line after the JD: Drop your CV at this email ID */}
-                    <div className="mt-5 pt-3.5 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-[#F3ECE4]/60 border border-[#DED3C7]/80 rounded-xl px-4 py-3 text-xs sm:text-sm text-slate-800">
+                    <div className="mt-5 pt-3.5 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-[#F3F6FA]/60 border border-[#E5EBF3]/80 rounded-xl px-4 py-3 text-xs sm:text-sm text-slate-800">
                       <div className="flex items-center gap-2.5">
-                        <Mail className="w-4 h-4 text-[#704A4B] flex-shrink-0" />
+                        <Mail className="w-4 h-4 text-[#101D35] flex-shrink-0" />
                         <span>
                           Drop your CV at this email ID:{' '}
                           {(() => {
@@ -1386,7 +1423,7 @@ export default function CareersPage() {
                             return (
                               <a
                                 href={`mailto:${recruiterEmail}?subject=${encodeURIComponent(subject)}${bodyParam}`}
-                                className="font-bold text-[#704A4B] hover:underline"
+                                className="font-bold text-[#101D35] hover:underline"
                               >
                                 {recruiterEmail}
                               </a>
@@ -1394,27 +1431,51 @@ export default function CareersPage() {
                           })()}
                         </span>
                       </div>
-                      {(() => {
-                        const recruiterEmail = getRecruiterEmail(job.company, job.email);
-                        const subject = job.applySubject || `Application for ${job.title}${job.jobCode ? ` [${job.jobCode}]` : ''} [TaskNera Careers]`;
-                        const bodyParam = job.applyBody ? `&body=${encodeURIComponent(job.applyBody)}` : '';
-                        return (
-                          <a
-                            href={`mailto:${recruiterEmail}?subject=${encodeURIComponent(subject)}${bodyParam}`}
-                            className="inline-flex items-center justify-center gap-1.5 bg-[#704A4B] hover:bg-[#593A3B] text-white px-4 py-2 rounded-lg font-bold text-xs shadow-sm transition-all self-start sm:self-auto"
-                          >
-                            <Mail className="w-3.5 h-3.5" />
-                            <span>Apply via Email</span>
-                          </a>
-                        );
-                      })()}
+                      <div className="flex items-center gap-2 self-start sm:self-auto">
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setApplyingJob(job);
+                            setApplicationSubmitted(false);
+                            setCandidateForm({
+                              fullName: '',
+                              email: '',
+                              phone: '',
+                              currentLocation: '',
+                              totalExperience: job.experience,
+                              relevantExperience: '',
+                              resumeName: '',
+                              linkedinUrl: '',
+                              additionalInfo: '',
+                            });
+                          }}
+                          className="inline-flex items-center justify-center gap-1.5 bg-[#3478F6] hover:bg-[#2563EB] text-white px-4 py-2 rounded-lg font-bold text-xs shadow-sm transition-all"
+                        >
+                          <Briefcase className="w-3.5 h-3.5" />
+                          <span>Apply Online</span>
+                        </button>
+                        {(() => {
+                          const recruiterEmail = getRecruiterEmail(job.company, job.email);
+                          const subject = job.applySubject || `Application for ${job.title}${job.jobCode ? ` [${job.jobCode}]` : ''} [TaskNera Careers]`;
+                          const bodyParam = job.applyBody ? `&body=${encodeURIComponent(job.applyBody)}` : '';
+                          return (
+                            <a
+                              href={`mailto:${recruiterEmail}?subject=${encodeURIComponent(subject)}${bodyParam}`}
+                              className="inline-flex items-center justify-center gap-1.5 bg-[#101D35] hover:bg-[#1E3A5F] text-white px-4 py-2 rounded-lg font-bold text-xs shadow-sm transition-all"
+                            >
+                              <Mail className="w-3.5 h-3.5" />
+                              <span>Apply via Email</span>
+                            </a>
+                          );
+                        })()}
+                      </div>
                     </div>
                   </div>
                 ))}
               </div>
             ) : (
-              <div className="bg-white border border-[#DED3C7] rounded-3xl p-8 sm:p-12 text-center shadow-sm">
-                <div className="w-16 h-16 rounded-2xl bg-[#F3ECE4] text-[#704A4B] flex items-center justify-center mx-auto mb-4">
+              <div className="bg-white border border-[#E5EBF3] rounded-3xl p-8 sm:p-12 text-center shadow-sm">
+                <div className="w-16 h-16 rounded-2xl bg-[#F3F6FA] text-[#101D35] flex items-center justify-center mx-auto mb-4">
                   <Briefcase className="w-8 h-8" />
                 </div>
                 <h3 className="text-xl sm:text-2xl font-display font-bold text-slate-900 mb-2">
@@ -1423,11 +1484,11 @@ export default function CareersPage() {
                 <p className="text-sm text-slate-600 max-w-xl mx-auto leading-relaxed mb-6">
                   We do not currently have published job openings. However, we are constantly expanding our global delivery pods across Talent Acquisition, HR Operations, Virtual Support, and Business Operations.
                 </p>
-                <div className="inline-flex items-center gap-2.5 bg-[#F3ECE4]/60 border border-[#DED3C7]/80 rounded-xl px-4 py-3 text-xs sm:text-sm text-slate-800">
-                  <Mail className="w-4 h-4 text-[#704A4B] flex-shrink-0" />
+                <div className="inline-flex items-center gap-2.5 bg-[#F3F6FA]/60 border border-[#E5EBF3]/80 rounded-xl px-4 py-3 text-xs sm:text-sm text-slate-800">
+                  <Mail className="w-4 h-4 text-[#101D35] flex-shrink-0" />
                   <span>
                     Drop your CV at this email ID:{' '}
-                    <a href="mailto:careers@tasknera.com?subject=General Application [TaskNera Careers]" className="font-bold text-[#704A4B] hover:underline">
+                    <a href="mailto:careers@tasknera.com?subject=General Application [TaskNera Careers]" className="font-bold text-[#101D35] hover:underline">
                       careers@tasknera.com
                     </a>
                   </span>
@@ -1437,6 +1498,206 @@ export default function CareersPage() {
 
           </div>
         </section>
+
+        {/* Application Modal */}
+        {applyingJob && (
+          <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 overflow-y-auto">
+            <div className="bg-white rounded-3xl p-6 sm:p-8 max-w-xl w-full shadow-2xl border border-[#E5EBF3] my-8 animate-in fade-in duration-200">
+              <div className="flex items-start justify-between pb-4 border-b border-[#E5EBF3]">
+                <div>
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#3478F6] bg-[#3478F6]/10 px-2.5 py-0.5 rounded-full inline-block mb-1">
+                    Direct Application
+                  </span>
+                  <h3 className="text-xl font-bold text-[#101D35]">{applyingJob.title}</h3>
+                  <p className="text-xs text-[#64748B] mt-0.5">
+                    {applyingJob.department} &bull; {applyingJob.location}
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setApplyingJob(null)}
+                  className="text-slate-400 hover:text-slate-600 text-lg font-bold p-1"
+                >
+                  &times;
+                </button>
+              </div>
+
+              {applicationSubmitted ? (
+                <div className="py-8 text-center space-y-4">
+                  <div className="w-14 h-14 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
+                    <CheckCircle2 className="w-8 h-8" />
+                  </div>
+                  <h4 className="text-xl font-bold text-[#101D35]">
+                    Application Submitted Successfully!
+                  </h4>
+                  <p className="text-xs sm:text-sm text-[#334155] max-w-md mx-auto leading-relaxed">
+                    Thank you, <strong>{candidateForm.fullName}</strong>. Your profile has been received and indexed by our Talent Desk. A confirmation email has been logged to <strong>{candidateForm.email}</strong>.
+                  </p>
+                  <div className="pt-2">
+                    <button
+                      type="button"
+                      onClick={() => setApplyingJob(null)}
+                      className="bg-[#101D35] text-white text-xs font-semibold px-6 py-2.5 rounded-xl hover:bg-[#1E3A5F]"
+                    >
+                      Close Window
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                <form onSubmit={handleCandidateSubmit} className="space-y-4 pt-4 text-xs">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                      <label className="block font-bold text-[#101D35] mb-1">Full Name *</label>
+                      <input
+                        type="text"
+                        required
+                        placeholder="Aditya Sharma"
+                        value={candidateForm.fullName}
+                        onChange={(e) =>
+                          setCandidateForm({ ...candidateForm, fullName: e.target.value })
+                        }
+                        className="w-full bg-[#F3F6FA] border border-[#E5EBF3] rounded-xl px-3 py-2 text-[#101D35] focus:outline-none focus:ring-2 focus:ring-[#3478F6]"
+                      />
+                    </div>
+                    <div>
+                      <label className="block font-bold text-[#101D35] mb-1">Email Address *</label>
+                      <input
+                        type="email"
+                        required
+                        placeholder="aditya@example.com"
+                        value={candidateForm.email}
+                        onChange={(e) =>
+                          setCandidateForm({ ...candidateForm, email: e.target.value })
+                        }
+                        className="w-full bg-[#F3F6FA] border border-[#E5EBF3] rounded-xl px-3 py-2 text-[#101D35] focus:outline-none focus:ring-2 focus:ring-[#3478F6]"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                      <label className="block font-bold text-[#101D35] mb-1">Phone Number *</label>
+                      <input
+                        type="tel"
+                        required
+                        placeholder="+91 98765 43210"
+                        value={candidateForm.phone}
+                        onChange={(e) =>
+                          setCandidateForm({ ...candidateForm, phone: e.target.value })
+                        }
+                        className="w-full bg-[#F3F6FA] border border-[#E5EBF3] rounded-xl px-3 py-2 text-[#101D35] focus:outline-none focus:ring-2 focus:ring-[#3478F6]"
+                      />
+                    </div>
+                    <div>
+                      <label className="block font-bold text-[#101D35] mb-1">Current Location *</label>
+                      <input
+                        type="text"
+                        required
+                        placeholder="New Delhi, Bengaluru, London..."
+                        value={candidateForm.currentLocation}
+                        onChange={(e) =>
+                          setCandidateForm({ ...candidateForm, currentLocation: e.target.value })
+                        }
+                        className="w-full bg-[#F3F6FA] border border-[#E5EBF3] rounded-xl px-3 py-2 text-[#101D35] focus:outline-none focus:ring-2 focus:ring-[#3478F6]"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                      <label className="block font-bold text-[#101D35] mb-1">Total Experience</label>
+                      <input
+                        type="text"
+                        placeholder="e.g. 4 Years"
+                        value={candidateForm.totalExperience}
+                        onChange={(e) =>
+                          setCandidateForm({ ...candidateForm, totalExperience: e.target.value })
+                        }
+                        className="w-full bg-[#F3F6FA] border border-[#E5EBF3] rounded-xl px-3 py-2 text-[#101D35]"
+                      />
+                    </div>
+                    <div>
+                      <label className="block font-bold text-[#101D35] mb-1">LinkedIn Profile</label>
+                      <input
+                        type="url"
+                        placeholder="https://linkedin.com/in/username"
+                        value={candidateForm.linkedinUrl}
+                        onChange={(e) =>
+                          setCandidateForm({ ...candidateForm, linkedinUrl: e.target.value })
+                        }
+                        className="w-full bg-[#F3F6FA] border border-[#E5EBF3] rounded-xl px-3 py-2 text-[#101D35]"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block font-bold text-[#101D35] mb-1">
+                      Relevant Domain Experience
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="Briefly highlight your key skills matching this role..."
+                      value={candidateForm.relevantExperience}
+                      onChange={(e) =>
+                        setCandidateForm({ ...candidateForm, relevantExperience: e.target.value })
+                      }
+                      className="w-full bg-[#F3F6FA] border border-[#E5EBF3] rounded-xl px-3 py-2 text-[#101D35]"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block font-bold text-[#101D35] mb-1">
+                      Resume File Name or Cloud Link
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="e.g. Aditya_Resume_2026.pdf or Google Drive link"
+                      value={candidateForm.resumeName}
+                      onChange={(e) =>
+                        setCandidateForm({ ...candidateForm, resumeName: e.target.value })
+                      }
+                      className="w-full bg-[#F3F6FA] border border-[#E5EBF3] rounded-xl px-3 py-2 text-[#101D35]"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block font-bold text-[#101D35] mb-1">Additional Notes</label>
+                    <textarea
+                      rows={2}
+                      placeholder="Notice period, expected CTC, or specific strengths..."
+                      value={candidateForm.additionalInfo}
+                      onChange={(e) =>
+                        setCandidateForm({ ...candidateForm, additionalInfo: e.target.value })
+                      }
+                      className="w-full bg-[#F3F6FA] border border-[#E5EBF3] rounded-xl px-3 py-2 text-[#101D35]"
+                    />
+                  </div>
+
+                  <div className="pt-2 flex items-center justify-between">
+                    <p className="text-[10px] text-slate-400">
+                      TaskNera charges 0 recruitment fees to candidates.
+                    </p>
+                    <div className="flex gap-2">
+                      <button
+                        type="button"
+                        onClick={() => setApplyingJob(null)}
+                        className="px-4 py-2 rounded-xl text-slate-500 hover:bg-slate-100"
+                      >
+                        Cancel
+                      </button>
+                      <button
+                        type="submit"
+                        className="bg-[#3478F6] hover:bg-[#2563EB] text-white font-semibold px-5 py-2 rounded-xl shadow-md"
+                      >
+                        Submit Application
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              )}
+            </div>
+          </div>
+        )}
 
       </main>
       <Footer />

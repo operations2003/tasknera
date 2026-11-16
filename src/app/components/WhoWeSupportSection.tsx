@@ -1,143 +1,74 @@
 'use client';
 import React from 'react';
 import Link from 'next/link';
-import {
-  Rocket,
-  TrendingUp,
-  Building,
-  Globe2,
-  MapPin,
-  CheckCircle2,
-  ArrowRight,
-} from 'lucide-react';
-
-const stages = [
-  {
-    stage: 'Startups',
-    subtitle: 'Build & Establish',
-    icon: Rocket,
-    desc: 'Build your first team and establish a reliable HR foundation.',
-    benefits: [
-      'Contingent success-fee hiring for critical founding talent',
-      'Structured offer letters, compliant agreements & onboarding',
-      'Fractional virtual assistant support for founders & leadership',
-    ],
-  },
-  {
-    stage: 'Growing SMEs',
-    subtitle: 'Scale with Agility',
-    icon: TrendingUp,
-    desc: 'Scale hiring and HR operations without building huge internal overhead.',
-    benefits: [
-      'Payroll execution & statutory compliance support (PF, ESIC, TDS)',
-      'Structured performance frameworks, HR policies & employee records',
-      'Omnichannel virtual customer support pods & CRM management',
-    ],
-  },
-  {
-    stage: 'Enterprises',
-    subtitle: 'Managed Operational Scale',
-    icon: Building,
-    desc: 'Add specialized recruitment, contract workforce, or managed support capacity.',
-    benefits: [
-      'High-volume contract staffing and turnkey workforce deployment',
-      'Dedicated RPO recruitment pods with structured SLA turnaround times',
-      'Multichannel virtual customer care (voice, chat, email ticketing)',
-    ],
-  },
-  {
-    stage: 'International Companies',
-    subtitle: 'Cross-Border Delivery',
-    icon: Globe2,
-    desc: 'Access talent and remote operational support across global markets.',
-    benefits: [
-      'Remote talent sourcing across India, US, UK, Europe and global pools',
-      'Multi-timezone virtual assistant pods aligned to your operating hours',
-      'Strict data security, NDA governance, and remote delivery controls',
-    ],
-  },
-  {
-    stage: 'Businesses Entering India',
-    subtitle: 'India Market Entry',
-    icon: MapPin,
-    desc: 'Get support with talent acquisition, HR operations, and workforce setup in India.',
-    benefits: [
-      'In-country talent mapping and executive candidate acquisition',
-      'Statutory compliance structuring, local employment norms & payroll',
-      'Plug-and-play operational desk to launch smoothly in India',
-    ],
-  },
-];
+import { Check, ArrowRight } from 'lucide-react';
+import { audiences } from '@/lib/base44_content';
 
 export default function WhoWeSupportSection() {
   return (
-    <section className="py-20 sm:py-28 bg-white relative overflow-hidden border-b border-tn-mist">
-      {/* Ambient background light pools */}
-      <div className="absolute top-10 right-1/4 w-[500px] h-[350px] bg-tn-coral/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-1/4 w-[500px] h-[350px] bg-tn-beige/20 rounded-full blur-3xl pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section className="bg-white py-20 lg:py-28">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 scroll-reveal">
-          <div className="inline-flex items-center gap-2 bg-tn-coral/15 border border-tn-mist rounded-full px-4 py-1.5 mb-5 shadow-sm">
-            <span className="w-2 h-2 rounded-full bg-tn-coral" />
-            <span className="text-xs font-bold text-tn-charcoal tracking-widest uppercase">
-              Who We Serve
-            </span>
-          </div>
-
-          <h2 className="text-section-title font-display font-bold text-tn-charcoal mb-4">
-            Built For Businesses At{' '}
-            <span className="text-tn-coral">Every Stage</span>
+        <div>
+          <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-blue">
+            Who we serve
+          </span>
+          <h2 className="mt-4 font-heading text-3xl sm:text-4xl text-brand-navy tracking-tight">
+            Built for businesses at every stage.
           </h2>
-
-          <p className="text-tn-slate text-base sm:text-lg leading-relaxed">
-            Whether building your initial core team, scaling operations without overhead, or expanding across borders, TaskNera delivers the right people, structure, and operational capability.
+          <p className="mt-3 max-w-[62ch] text-[15px] leading-relaxed text-brand-ink/70">
+            Each segment brings a different operational problem. We scope the model around where you are now, not a fixed package.
           </p>
         </div>
 
-        {/* 5 Stages Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 scroll-reveal" style={{ transitionDelay: '0.1s' }}>
-          {stages.map((st, idx) => {
-            const IconComp = st.icon;
+        {/* Audience Grid */}
+        <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-6">
+          {audiences.map((aud, idx) => {
+            const isWide = idx >= 3;
             return (
               <div
-                key={st.stage}
-                className={`rounded-3xl p-7 sm:p-8 flex flex-col justify-between group bg-white border border-tn-mist hover:border-tn-coral transition-all shadow-sm hover:shadow-xl ${
-                  idx === 4 ? 'md:col-span-2 lg:col-span-1' : ''
-                }`}
+                key={aud.key}
+                className={isWide ? 'lg:col-span-3' : 'lg:col-span-2'}
               >
-                <div>
-                  <div className="flex items-center justify-between mb-5">
-                    <div className="w-12 h-12 rounded-2xl border border-tn-mist flex items-center justify-center bg-tn-ivory text-tn-charcoal shadow-sm group-hover:bg-tn-coral group-hover:border-tn-coral transition-all duration-300">
-                      <IconComp className="w-6 h-6" />
-                    </div>
-                    <span className="text-xs font-bold text-tn-slate bg-tn-ivory border border-tn-mist rounded-full px-3 py-1">
-                      {st.subtitle}
-                    </span>
-                  </div>
-
-                  <h3 className="font-display font-bold text-tn-charcoal text-xl mb-2 group-hover:text-tn-coral transition-colors">
-                    {st.stage}
-                  </h3>
-
-                  <p className="text-tn-slate font-medium text-sm mb-6 leading-relaxed">
-                    {st.desc}
+                <article className="group flex h-full flex-col rounded-2xl border border-brand-navy/10 bg-white p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-blue/40 hover:shadow-[0_24px_50px_-34px_rgba(16,28,53,0.45)] lg:p-7">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-brand-blue font-mono">
+                    {aud.kicker}
                   </p>
-
-                  <div className="space-y-2.5 pt-4 border-t border-tn-mist">
-                    {st.benefits.map((b) => (
-                      <div key={b} className="flex items-start gap-2.5 text-xs sm:text-sm text-tn-slate leading-relaxed">
-                        <CheckCircle2 className="w-4 h-4 text-tn-coral mt-0.5 flex-shrink-0" />
-                        <span>{b}</span>
-                      </div>
+                  <h3 className="mt-3 font-heading text-[20px] font-bold leading-tight text-brand-navy">
+                    {aud.title}
+                  </h3>
+                  <p className="mt-3 text-[13px] leading-relaxed text-brand-ink/65">
+                    {aud.challenge}
+                  </p>
+                  <ul className="mt-5 flex flex-col gap-2 border-t border-brand-navy/8 pt-5">
+                    {aud.help.map((item) => (
+                      <li key={item} className="flex items-start gap-2 text-[12.5px] leading-snug text-brand-ink/75">
+                        <Check className="mt-[3px] h-3 w-3 flex-none text-brand-blue" />
+                        <span>{item}</span>
+                      </li>
                     ))}
-                  </div>
-                </div>
+                  </ul>
+                </article>
               </div>
             );
           })}
+
+          {/* Consultation CTA Card */}
+          <div className="lg:col-span-6">
+            <div className="flex flex-col items-start justify-between gap-5 rounded-2xl bg-brand-mist p-6 sm:flex-row sm:items-center lg:px-8 border border-brand-navy/10">
+              <p className="max-w-[62ch] text-[14px] leading-relaxed text-brand-ink/75">
+                Not sure which model fits? Tell us the business problem and we will recommend the structure — including where TaskNera should not be the answer.
+              </p>
+              <Link
+                href="/contact"
+                className="group inline-flex flex-none items-center gap-2 text-[13px] font-semibold text-brand-blue hover:underline"
+              >
+                <span>Talk to our team</span>
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </div>
+          </div>
         </div>
 
       </div>

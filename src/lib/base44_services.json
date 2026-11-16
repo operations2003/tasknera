@@ -1,0 +1,830 @@
+[
+  {
+    "slug": "hr-operations",
+    "name": "HR & People Operations",
+    "navLabel": "HR & People Operations",
+    "tag": "Core service",
+    "tagline": "Your extended HR department — compliant, documented and accountable.",
+    "summary": "HR outsourcing, employee lifecycle administration, HR documentation, HRMS implementation and payroll coordination from one accountable team.",
+    "heroTitle": "HR operations that hold up as your headcount grows.",
+    "heroBody": "TaskNera runs HR as a structured function inside your business — documented processes, clean employee records and one team accountable for the day-to-day.",
+    "metaTitle": "HR Outsourcing & People Operations | TaskNera",
+    "metaDescription": "HR outsourcing, employee lifecycle administration, onboarding, HR documentation, HRMS implementation and payroll coordination from TaskNera's global HR operations team.",
+    "intro": [
+      "Growing companies rarely have the HR infrastructure their headcount demands. Onboarding documents sit in inboxes, leave balances live in spreadsheets, and leadership ends up managing compliance instead of the business.",
+      "We take ownership of the operational layer of HR: documented processes, accurate records, structured onboarding and exits, and systems that people actually use. Your team keeps the people decisions; we make them executable."
+    ],
+    "problems": [
+      {
+        "title": "Administrative drag on leadership",
+        "text": "Founders and managers lose hours every week to documentation, payroll inputs, policy questions and follow-ups."
+      },
+      {
+        "title": "Compliance exposure",
+        "text": "Contracts, statutory documentation and employee records fall behind as the team grows faster than process."
+      },
+      {
+        "title": "No single source of truth",
+        "text": "Employee data is spread across spreadsheets, email threads and tools that don't talk to each other."
+      }
+    ],
+    "capabilities": [
+      "HR outsourcing and day-to-day HR administration",
+      "Employee lifecycle management from offer to exit",
+      "Structured onboarding and offboarding programmes",
+      "HR documentation, handbooks and policy frameworks",
+      "HRMS implementation and employee self-service portals",
+      "Payroll coordination, inputs and validation",
+      "Attendance, leave and employee records administration"
+    ],
+    "benefits": [
+      "A structured HR function without building internal overhead",
+      "Audit-ready employee records and documented processes",
+      "Consistent onboarding and exit experiences for every hire",
+      "HR systems implemented properly and actually adopted"
+    ],
+    "engagement": [
+      {
+        "title": "Managed HR retainer",
+        "text": "An ongoing monthly engagement covering agreed HR operations, reporting and employee support."
+      },
+      {
+        "title": "Dedicated HR pod",
+        "text": "A named HR professional or small team embedded in your business, working to your policies and calendar."
+      },
+      {
+        "title": "HRMS implementation project",
+        "text": "A defined project to configure, migrate and roll out TaskNera HRMS or your chosen platform."
+      }
+    ],
+    "process": [
+      {
+        "step": "01",
+        "title": "HR audit",
+        "text": "We review records, documentation and current processes to identify gaps and risk."
+      },
+      {
+        "step": "02",
+        "title": "Structure",
+        "text": "Policies, templates and flows are written to match how your business actually operates."
+      },
+      {
+        "step": "03",
+        "title": "Implement",
+        "text": "The HRMS, employee records and workflows go live with your team trained on them."
+      },
+      {
+        "step": "04",
+        "title": "Operate",
+        "text": "We run the agreed HR operations with reporting and periodic review."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Can you support a company with fewer than 20 employees?",
+        "a": "Yes. For smaller teams we typically start with a fractional or managed HR retainer that covers documentation, onboarding and payroll inputs, then expand as headcount grows."
+      },
+      {
+        "q": "Do you process payroll or only coordinate it?",
+        "a": "We coordinate payroll inputs, validate calculations and maintain the supporting documentation. The exact execution scope — including statutory filings — is defined in the engagement agreement."
+      },
+      {
+        "q": "Will you work inside our existing HRMS?",
+        "a": "Yes. We work in your current systems where they serve the business, and recommend TaskNera HRMS only where a change delivers a clear operational benefit."
+      },
+      {
+        "q": "How quickly can HR operations go live?",
+        "a": "A managed HR engagement typically goes live within two to four weeks of discovery, depending on the quality of existing records."
+      }
+    ],
+    "poweredBy": {
+      "label": "TaskNera HRMS",
+      "to": "/services/hrms",
+      "text": "Employee records, attendance, leave and org dashboards in one workforce system."
+    }
+  },
+  {
+    "slug": "talent-acquisition",
+    "name": "Talent Acquisition & Recruitment",
+    "navLabel": "Talent Acquisition",
+    "tag": "Core service",
+    "tagline": "Structured hiring that stands up to scrutiny.",
+    "summary": "Permanent recruitment, contract hiring, executive search, recruitment process outsourcing, technical hiring and bulk recruitment.",
+    "heroTitle": "Hire the right people, with evidence behind every shortlist.",
+    "heroBody": "From a single specialist role to a full recruitment function, we run defined, documented hiring processes that respect your time and your standards.",
+    "metaTitle": "Talent Acquisition & Recruitment Services | TaskNera",
+    "metaDescription": "Permanent recruitment, executive search, technical hiring, contract recruitment, RPO and bulk hiring delivered by TaskNera with evidence-based candidate screening.",
+    "intro": [
+      "Hiring breaks down in predictable ways: intake is vague, shortlists are volume rather than calibration, and nobody can explain why a candidate was rejected. The cost shows up as vacancies that stay open and offers that fall through.",
+      "We run recruitment as a process. Every mandate starts with a calibration conversation, every shortlist is screened against agreed criteria, and every candidate evaluation is documented so hiring decisions are defensible."
+    ],
+    "problems": [
+      {
+        "title": "Roles open for months",
+        "text": "Critical positions stay vacant while applications pile up without a clear screening standard."
+      },
+      {
+        "title": "Inconsistent candidate quality",
+        "text": "Shortlists arrive as resume dumps with no evidence of skills, motivation or requirement fit."
+      },
+      {
+        "title": "Volume spikes with no capacity",
+        "text": "Seasonal or expansion hiring overwhelms a small internal team and pushes out day-to-day work."
+      }
+    ],
+    "capabilities": [
+      "Permanent recruitment across functions and seniority",
+      "Contract and temporary hiring for project demand",
+      "Executive search for leadership and specialist mandates",
+      "Recruitment process outsourcing (RPO) pods",
+      "Technical and engineering hiring",
+      "Bulk and volume recruitment campaigns"
+    ],
+    "benefits": [
+      "Calibrated, documented shortlists instead of resume floods",
+      "Screening evidence you can take into an interview panel",
+      "Recruitment capacity that flexes with hiring demand",
+      "One consistent process across roles, functions and regions"
+    ],
+    "engagement": [
+      {
+        "title": "Success-fee recruitment",
+        "text": "You pay on confirmed placement, with a defined replacement commitment and no upfront retainer."
+      },
+      {
+        "title": "Dedicated recruiter pod",
+        "text": "An embedded recruitment team working your requisitions, your ATS and your interview process."
+      },
+      {
+        "title": "Campaign hiring",
+        "text": "A scoped project for volume, seasonal or expansion hiring with agreed milestones and reporting."
+      }
+    ],
+    "process": [
+      {
+        "step": "01",
+        "title": "Intake & calibration",
+        "text": "We define the role, must-haves and deal-breakers with the hiring manager."
+      },
+      {
+        "step": "02",
+        "title": "Sourcing & screening",
+        "text": "Targeted search, structured screening and evidence capture per candidate."
+      },
+      {
+        "step": "03",
+        "title": "Interview support",
+        "text": "Coordination, scheduling and structured feedback through your panel process."
+      },
+      {
+        "step": "04",
+        "title": "Offer & onboarding",
+        "text": "Offer management, documentation support and handover into onboarding."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How quickly do we receive the first shortlist?",
+        "a": "For standard roles, a calibrated first shortlist typically follows within 48–72 hours of intake. Specialist or leadership mandates depend on market depth and are scoped at intake."
+      },
+      {
+        "q": "Do you charge upfront for recruitment?",
+        "a": "Our standard model is success-fee recruitment. Retained or pod-based engagements are available where a role is confidential, senior or part of a volume campaign."
+      },
+      {
+        "q": "Can you hire outside India?",
+        "a": "Yes. We source across India, the US, the UK, Europe and distributed global talent pools, and align screening and communication to the client's working hours."
+      },
+      {
+        "q": "Do you handle technical hiring?",
+        "a": "Yes — engineering, product, data and cloud roles are a core part of our delivery, with screening designed around the technical competencies of the role."
+      }
+    ],
+    "poweredBy": {
+      "label": "HireIQ — AI Recruitment Intelligence",
+      "to": "/services/hireiq",
+      "text": "Deterministic 100-point candidate scoring with resume evidence on every shortlist."
+    }
+  },
+  {
+    "slug": "workforce-solutions",
+    "name": "Workforce Solutions",
+    "navLabel": "Workforce Solutions",
+    "tag": "Core service",
+    "tagline": "Flexible workforce capacity, deployed and managed.",
+    "summary": "Contract staffing, remote workforce deployment, dedicated teams, workforce planning and operational management.",
+    "heroTitle": "Workforce capacity that matches demand, not headcount policy.",
+    "heroBody": "Deploy pre-vetted professionals and managed teams for a project, a season or a permanent function — with TaskNera handling employment and operations.",
+    "metaTitle": "Contract Staffing & Workforce Solutions | TaskNera",
+    "metaDescription": "Contract staffing, remote workforce deployment, dedicated teams, workforce planning and operational management from TaskNera's workforce solutions team.",
+    "intro": [
+      "Demand is rarely flat. Projects start, seasons peak, new markets open — and headcount planning lags behind all of it. Hiring permanent staff for temporary demand creates cost you cannot reverse.",
+      "Our workforce solutions give you deployable capacity: professionals who are pre-vetted, onboarded and supervised, with the employment, documentation and operational management sitting with TaskNera."
+    ],
+    "problems": [
+      {
+        "title": "Demand spikes without headcount approval",
+        "text": "A launch or seasonal peak needs people now, but permanent hiring moves at a different speed."
+      },
+      {
+        "title": "Long hiring cycles for temporary needs",
+        "text": "Contract roles go through the same slow process as permanent ones, and the need passes before the hire lands."
+      },
+      {
+        "title": "Distributed workers, no infrastructure",
+        "text": "Remote and multi-location teams need scheduling, supervision and reporting that nobody internally owns."
+      }
+    ],
+    "capabilities": [
+      "Contract staffing across technical, functional and operational roles",
+      "Remote workforce deployment with timezone alignment",
+      "Dedicated teams and pods working to your processes",
+      "Workforce planning and capacity modelling",
+      "Shift scheduling, supervision and attendance governance",
+      "Multi-location and multi-country deployment"
+    ],
+    "benefits": [
+      "Capacity in place without permanent headcount obligations",
+      "Employment, documentation and compliance managed for you",
+      "Supervised teams with attendance and performance visibility",
+      "Scale up or down as demand changes, without restructuring"
+    ],
+    "engagement": [
+      {
+        "title": "Contract staffing",
+        "text": "Individual professionals deployed for a defined period, with TaskNera as the employer of record for the engagement."
+      },
+      {
+        "title": "Dedicated team",
+        "text": "A managed pod — for example five support specialists plus a team lead — operating as one unit."
+      },
+      {
+        "title": "Managed workforce",
+        "text": "TaskNera plans, deploys and operates an entire workforce function against agreed service levels."
+      }
+    ],
+    "process": [
+      {
+        "step": "01",
+        "title": "Workforce plan",
+        "text": "We map the roles, volumes, shifts and timeline your operation actually needs."
+      },
+      {
+        "step": "02",
+        "title": "Deploy",
+        "text": "Pre-vetted professionals are onboarded into your tools and workflows."
+      },
+      {
+        "step": "03",
+        "title": "Operate",
+        "text": "Scheduling, supervision and attendance run through TaskNera with regular reporting."
+      },
+      {
+        "step": "04",
+        "title": "Review & scale",
+        "text": "Capacity and role mix are adjusted against actual demand and performance."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Who employs the deployed professionals?",
+        "a": "TaskNera employs and manages the deployed professionals for the duration of the engagement, including contracts, documentation and payroll coordination. The commercial and legal structure is confirmed in writing before deployment."
+      },
+      {
+        "q": "How fast can a team be deployed?",
+        "a": "Individual roles can often be deployed within days of a confirmed brief. Larger pods need a short mobilisation period for sourcing, vetting and onboarding."
+      },
+      {
+        "q": "Can deployed staff work in our timezone?",
+        "a": "Yes. Shift patterns are aligned to your operating hours, including overlaps for US, UK and European business days."
+      },
+      {
+        "q": "What happens at the end of a contract period?",
+        "a": "Engagements can be extended, converted or closed at the end of the agreed term. Conversion terms are documented in the engagement agreement."
+      }
+    ],
+    "poweredBy": {
+      "label": "TaskNera HRMS",
+      "to": "/services/hrms",
+      "text": "Attendance, leave and workforce visibility for every deployed team."
+    }
+  },
+  {
+    "slug": "virtual-assistants",
+    "name": "Virtual Assistant & Business Support",
+    "navLabel": "Virtual Assistant",
+    "tag": "Core service",
+    "tagline": "Reliable human support for the work that slows you down.",
+    "summary": "Executive assistance, administrative support, research, data management, calendar management and business operations.",
+    "heroTitle": "A dependable assistant who already knows how you work.",
+    "heroBody": "Vetted human professionals who take ownership of calendars, inboxes, research, data and recurring operations — trained on your processes, not a generic playbook.",
+    "metaTitle": "Virtual Assistant Services & Business Support | TaskNera",
+    "metaDescription": "Dedicated virtual assistants for executive support, administration, research, data management, calendar management and business operations from TaskNera.",
+    "intro": [
+      "The work that slows growing companies down is rarely strategic. It is scheduling, follow-ups, data entry, research and coordination — important, repetitive and endlessly deferred.",
+      "TaskNera virtual assistants are vetted professionals who work inside your tools and follow your processes. They are supported by a team lead, covered by confidentiality agreements, and measured on the work you actually need done."
+    ],
+    "problems": [
+      {
+        "title": "Leadership time absorbed by admin",
+        "text": "Founders and executives spend hours on scheduling, inbox triage and follow-ups that don't need their judgement."
+      },
+      {
+        "title": "Operations work with no owner",
+        "text": "Research, CRM hygiene, reporting and vendor coordination fall between roles and never get finished."
+      },
+      {
+        "title": "Hiring locally is slow and expensive",
+        "text": "A full-time local hire for support work carries overhead that the workload doesn't justify."
+      }
+    ],
+    "capabilities": [
+      "Executive and C-suite assistance",
+      "Day-to-day administrative and operations support",
+      "Market research and competitor tracking",
+      "Data management, cleanup and CRM hygiene",
+      "Calendar, inbox and travel coordination",
+      "Recurring business operations run to your SOPs"
+    ],
+    "benefits": [
+      "Senior time returned to revenue and strategy work",
+      "One accountable professional instead of scattered freelancers",
+      "Documented processes so support doesn't depend on memory",
+      "Flexible hours across timezones, including part-time"
+    ],
+    "engagement": [
+      {
+        "title": "Full-time dedicated assistant",
+        "text": "A named professional working 40 hours per week within your team and tools."
+      },
+      {
+        "title": "Part-time assistant",
+        "text": "A defined weekly allocation for lighter or seasonal workloads."
+      },
+      {
+        "title": "Project support",
+        "text": "A scoped assignment for research, data cleanup, migration or event coordination."
+      }
+    ],
+    "process": [
+      {
+        "step": "01",
+        "title": "Task mapping",
+        "text": "We document the work to hand over, the tools involved and the expected output."
+      },
+      {
+        "step": "02",
+        "title": "Match",
+        "text": "We shortlist assistants with relevant experience and confirm fit with you."
+      },
+      {
+        "step": "03",
+        "title": "Onboard",
+        "text": "Your assistant is onboarded to your systems, SOPs and communication rhythm."
+      },
+      {
+        "step": "04",
+        "title": "Support & review",
+        "text": "A team lead oversees quality, with regular check-ins and scope adjustments."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Are these real people or AI bots?",
+        "a": "TaskNera virtual assistants are vetted human professionals. We use technology to support their work, but the accountability and judgement sit with people."
+      },
+      {
+        "q": "Can my assistant work in my timezone?",
+        "a": "Yes. We align working hours to your business day, with overlap options for teams spread across multiple timezones."
+      },
+      {
+        "q": "Which tools can they work in?",
+        "a": "Assistants work in the tools you already use — email, calendars, CRM, spreadsheets, project management and documentation platforms — after onboarding to your access rules."
+      },
+      {
+        "q": "How is confidentiality handled?",
+        "a": "Confidentiality and non-disclosure terms are agreed before onboarding, and access is limited to what the role requires."
+      }
+    ],
+    "poweredBy": {
+      "label": "TaskNera HRMS",
+      "to": "/services/hrms",
+      "text": "Task assignment and tracking for every support function you delegate."
+    }
+  },
+  {
+    "slug": "customer-support",
+    "name": "Virtual Customer Support",
+    "navLabel": "Virtual Customer Support",
+    "tag": "Core service",
+    "tagline": "Omnichannel support that protects your brand.",
+    "summary": "Inbound and outbound voice, live chat, email support, social media support and omnichannel customer service.",
+    "heroTitle": "Customer support your customers would never guess is outsourced.",
+    "heroBody": "Trained support professionals working voice, chat, email and social channels — with defined service levels, quality review and clear reporting.",
+    "metaTitle": "Virtual Customer Support & Omnichannel Outsourcing | TaskNera",
+    "metaDescription": "Inbound and outbound voice support, live chat, email and ticket management, social media support and omnichannel customer service from TaskNera.",
+    "intro": [
+      "Support quality is brand perception. A slow first response, an unhelpful reply or a missed message costs more than the ticket itself — and support volume rarely arrives in a predictable line.",
+      "We build support teams around your channels, tone and escalation rules. Agents are trained on your product, supervised for quality, and reported against agreed service levels so you can see exactly how customers are being handled."
+    ],
+    "problems": [
+      {
+        "title": "Response times slip under volume",
+        "text": "Peaks in tickets or calls leave customers waiting and agents firefighting instead of resolving."
+      },
+      {
+        "title": "Fragmented channels",
+        "text": "Voice, chat, email and social are handled by different people with no shared view of the customer."
+      },
+      {
+        "title": "Cost of in-house coverage",
+        "text": "Extended hours, weekends and multiple timezones require shift coverage that is hard to staff internally."
+      }
+    ],
+    "capabilities": [
+      "Inbound voice support and call handling",
+      "Outbound calling and follow-up campaigns",
+      "Live chat support",
+      "Email and ticket queue management",
+      "Social media and messaging support",
+      "Omnichannel service design and escalation rules"
+    ],
+    "benefits": [
+      "Consistent response times across every channel",
+      "Trained agents who represent your brand accurately",
+      "Coverage across timezones and peak periods",
+      "Quality monitoring with regular performance reporting"
+    ],
+    "engagement": [
+      {
+        "title": "Dedicated support pod",
+        "text": "A named team — agents plus a team lead — assigned exclusively to your business."
+      },
+      {
+        "title": "Shared support desk",
+        "text": "Coverage during defined hours for lower, variable or after-hours volume."
+      },
+      {
+        "title": "Managed support function",
+        "text": "TaskNera owns the entire support operation, including quality, reporting and improvements."
+      }
+    ],
+    "process": [
+      {
+        "step": "01",
+        "title": "Channel audit",
+        "text": "We review current volumes, channels, tools and response expectations."
+      },
+      {
+        "step": "02",
+        "title": "Design",
+        "text": "Coverage hours, escalation paths, SLAs and tone guidelines are agreed."
+      },
+      {
+        "step": "03",
+        "title": "Train & launch",
+        "text": "Agents are trained on your product and live in your helpdesk."
+      },
+      {
+        "step": "04",
+        "title": "Monitor",
+        "text": "Quality reviews, SLA tracking and monthly reporting drive improvement."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "What hours can you cover?",
+        "a": "Coverage is designed around your customers — business hours, extended hours, weekends or multi-timezone shifts. The exact roster is agreed during scoping."
+      },
+      {
+        "q": "Which helpdesk tools do you use?",
+        "a": "We work in your existing helpdesk and telephony tools wherever possible, and recommend changes only where they clearly improve response quality."
+      },
+      {
+        "q": "How do you maintain quality?",
+        "a": "Agents follow agreed scripts and tone guidelines, with supervisory review, quality sampling and reporting against service levels."
+      },
+      {
+        "q": "Can you scale for seasonal peaks?",
+        "a": "Yes. Support pods are built to flex, and additional agents are onboarded ahead of known peaks such as launches and festive periods."
+      }
+    ],
+    "poweredBy": {
+      "label": "TaskNera HRMS",
+      "to": "/services/hrms",
+      "text": "Shift coverage, attendance and capacity visibility for your support desk."
+    }
+  },
+  {
+    "slug": "technology",
+    "name": "Technology & Software Development",
+    "navLabel": "Technology & Software",
+    "tag": "Core service",
+    "tagline": "Business systems built around how you actually operate.",
+    "summary": "Custom software development, web applications, internal business systems, automation and technology consulting.",
+    "heroTitle": "Software that removes operational friction, not adds to it.",
+    "heroBody": "We design and build the internal systems, portals and automations that growing businesses run on — scoped tightly, delivered in stages, built to be maintained.",
+    "metaTitle": "Custom Software Development & Technology Services | TaskNera",
+    "metaDescription": "Custom software development, web applications, internal business systems, workflow automation and technology consulting from TaskNera.",
+    "intro": [
+      "Off-the-shelf tools get a business to a certain size, then become the constraint: workarounds, duplicate entry and reporting that has to be assembled by hand every month.",
+      "TaskNera builds the systems that close those gaps — internal portals, operational dashboards, workflow automation and customer-facing applications — with the same delivery discipline we apply to HR and workforce engagements."
+    ],
+    "problems": [
+      {
+        "title": "Process runs on spreadsheets",
+        "text": "Critical operations live in files that only one person understands and nobody can audit."
+      },
+      {
+        "title": "Disconnected tools",
+        "text": "Data is re-entered between systems, and reporting takes days of manual reconciliation."
+      },
+      {
+        "title": "Software projects that stall",
+        "text": "Broad scopes, unclear ownership and no maintenance plan leave builds unfinished."
+      }
+    ],
+    "capabilities": [
+      "Custom software and internal business systems",
+      "Web application design and development",
+      "Workflow automation and system integrations",
+      "Operational dashboards and reporting tools",
+      "Technology consulting and system audits",
+      "Ongoing maintenance and product support"
+    ],
+    "benefits": [
+      "Systems shaped to your process instead of the reverse",
+      "Fewer manual handoffs and less duplicate data entry",
+      "A staged delivery plan with visible progress",
+      "Documented, maintainable code with support after launch"
+    ],
+    "engagement": [
+      {
+        "title": "Fixed-scope build",
+        "text": "A defined application or module delivered against agreed milestones and acceptance criteria."
+      },
+      {
+        "title": "Dedicated engineering pod",
+        "text": "A named development team working continuously on your product roadmap."
+      },
+      {
+        "title": "Automation sprint",
+        "text": "A short, focused engagement to automate a specific workflow or integrate two systems."
+      }
+    ],
+    "process": [
+      {
+        "step": "01",
+        "title": "Discovery",
+        "text": "We map the process, users, data and constraints before proposing a build."
+      },
+      {
+        "step": "02",
+        "title": "Architecture",
+        "text": "Scope, stack, milestones and acceptance criteria are agreed in writing."
+      },
+      {
+        "step": "03",
+        "title": "Build & review",
+        "text": "Delivery happens in stages with review points and working software early."
+      },
+      {
+        "step": "04",
+        "title": "Launch & support",
+        "text": "Rollout, documentation and an agreed support arrangement after go-live."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "What technology stack do you use?",
+        "a": "The stack is chosen per project based on your existing systems, team skills and long-term maintenance needs. We favour widely adopted technologies that are easy to hire for."
+      },
+      {
+        "q": "Do we own the code?",
+        "a": "Ownership and licensing are defined in the engagement agreement. Standard engagements transfer ownership of custom-built code to the client on completion and payment."
+      },
+      {
+        "q": "How long does a typical build take?",
+        "a": "Automation sprints can complete in weeks; internal systems typically run across one to three months depending on scope. Timelines are set after discovery, not before."
+      },
+      {
+        "q": "Can you maintain a system someone else built?",
+        "a": "Yes. We start with a technical audit, document the risks and then propose a stabilisation and support plan before any new feature work."
+      }
+    ],
+    "poweredBy": {
+      "label": "HireIQ — AI Recruitment Intelligence",
+      "to": "/services/hireiq",
+      "text": "Our own recruitment platform — proof of how we build and operate software."
+    }
+  },
+  {
+    "slug": "hireiq",
+    "name": "HireIQ",
+    "fullName": "HireIQ — AI Recruitment Intelligence",
+    "navLabel": "HireIQ",
+    "tag": "Platform",
+    "tagline": "Recruit smarter. Evaluate better. Hire with confidence.",
+    "summary": "An intelligent ATS platform that evaluates resumes against job descriptions using evidence-based matching and deterministic candidate scoring.",
+    "heroTitle": "Recruit smarter. Evaluate better. Hire with confidence.",
+    "heroBody": "HireIQ reads the job description, reads the resume, and produces a 100-point score with the evidence behind it — so every shortlist can be explained.",
+    "metaTitle": "HireIQ — AI Resume Screening & Recruitment Intelligence | TaskNera",
+    "metaDescription": "HireIQ by TaskNera evaluates resumes against job descriptions with deterministic 100-point scoring, mandatory requirement validation and evidence-backed candidate evaluation.",
+    "intro": [
+      "Most screening tools rank candidates with a single opaque confidence number. Recruiters cannot explain it to a hiring manager, and hiring managers cannot defend it to anyone else.",
+      "HireIQ takes a different approach. Matching is deterministic: the same job description and the same resume always produce the same score, calculated against weighted, visible criteria and supported by citations from the candidate's own resume."
+    ],
+    "problems": [
+      {
+        "title": "Opaque candidate ranking",
+        "text": "Black-box scores give recruiters no way to justify why one candidate ranked above another."
+      },
+      {
+        "title": "Missed mandatory requirements",
+        "text": "Candidates without a non-negotiable qualification still reach shortlists because nothing validated it."
+      },
+      {
+        "title": "Slow, inconsistent screening",
+        "text": "Screening quality depends on who reviews the resume and how much time they have that day."
+      }
+    ],
+    "capabilities": [
+      "AI-assisted resume parsing into structured candidate data",
+      "Job description intelligence and requirement extraction",
+      "Deterministic 100-point candidate scoring",
+      "Mandatory requirement validation before ranking",
+      "Evidence-backed evaluation with resume citations",
+      "Side-by-side candidate comparison",
+      "Recruitment analytics and pipeline reporting"
+    ],
+    "benefits": [
+      "Shortlists a hiring manager can review and trust",
+      "The same criteria applied to every candidate, every time",
+      "Less time spent on manual resume screening",
+      "Clear reporting on pipeline quality and progress"
+    ],
+    "engagement": [
+      {
+        "title": "Platform demonstration",
+        "text": "A guided walkthrough using a role and resumes relevant to your business."
+      },
+      {
+        "title": "Recruitment engagement",
+        "text": "HireIQ powers screening inside a TaskNera recruitment or RPO engagement."
+      },
+      {
+        "title": "Enterprise rollout",
+        "text": "Scoped implementation, configuration and adoption support for internal talent teams."
+      }
+    ],
+    "process": [
+      {
+        "step": "01",
+        "title": "Configure",
+        "text": "Job descriptions, mandatory requirements and scoring weights are set up."
+      },
+      {
+        "step": "02",
+        "title": "Ingest",
+        "text": "Resumes are parsed into structured, searchable candidate profiles."
+      },
+      {
+        "step": "03",
+        "title": "Evaluate",
+        "text": "Each candidate is validated and scored, with evidence captured per criterion."
+      },
+      {
+        "step": "04",
+        "title": "Review",
+        "text": "Recruiters compare candidates, review evidence and progress the shortlist."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How does the 100-point score work?",
+        "a": "Each job description is broken into weighted criteria. Candidate evidence is matched against those criteria, with mandatory requirements validated first, producing a score out of 100 with the supporting resume evidence attached."
+      },
+      {
+        "q": "Is the scoring deterministic?",
+        "a": "Yes. The same job description and resume combination produces the same score, which is what makes the result reviewable and comparable across a pipeline."
+      },
+      {
+        "q": "Does HireIQ replace recruiters?",
+        "a": "No. It replaces manual first-pass screening and inconsistent ranking. Recruiters still own calibration, conversation, assessment and the hiring decision."
+      },
+      {
+        "q": "How do we see HireIQ in practice?",
+        "a": "Request a demonstration through the enquiry form and we will walk through screening a live role with sample resumes."
+      }
+    ],
+    "poweredBy": {
+      "label": "Talent Acquisition & Recruitment",
+      "to": "/services/talent-acquisition",
+      "text": "HireIQ powers screening inside TaskNera's recruitment and RPO engagements."
+    }
+  },
+  {
+    "slug": "hrms",
+    "name": "TaskNera HRMS",
+    "fullName": "TaskNera HRMS — Workforce Management",
+    "navLabel": "TaskNera HRMS",
+    "tag": "Platform",
+    "tagline": "Manage your people. Simplify your operations.",
+    "summary": "A workforce management platform for employee records, attendance, leave, payroll information, tasks and organizational management.",
+    "heroTitle": "Manage your people. Simplify your operations.",
+    "heroBody": "One system for employee records, attendance and leave, tasks and organizational visibility — so HR stops living in spreadsheets.",
+    "metaTitle": "TaskNera HRMS — Workforce Management Platform",
+    "metaDescription": "TaskNera HRMS brings employee records, attendance and leave, workforce management, task tracking, HR operations and organizational dashboards into one platform.",
+    "intro": [
+      "Once a company passes a certain size, HR data stops fitting in spreadsheets. Leave balances get queried, documents go missing and nobody can answer a simple headcount question without a manual count.",
+      "TaskNera HRMS centralises employee records and daily workforce operations in one place, giving HR teams and managers a shared view without building a reporting project around it."
+    ],
+    "problems": [
+      {
+        "title": "Employee records scattered",
+        "text": "Contracts, documents and personal details sit in folders that only one person can navigate."
+      },
+      {
+        "title": "Attendance and leave disputes",
+        "text": "Balances and attendance are tracked manually, and every query becomes an investigation."
+      },
+      {
+        "title": "No organizational visibility",
+        "text": "Headcount, reporting lines and workload distribution are unclear without manual compilation."
+      }
+    ],
+    "capabilities": [
+      "Centralised employee records and documents",
+      "Attendance tracking and leave management",
+      "Workforce management and shift visibility",
+      "Task assignment and progress tracking",
+      "HR operations workflows and approvals",
+      "Organizational structure and dashboards"
+    ],
+    "benefits": [
+      "One reliable source for employee information",
+      "Fewer manual HR queries and less spreadsheet maintenance",
+      "Faster approvals for leave, attendance and HR requests",
+      "Clear organizational visibility for managers and leadership"
+    ],
+    "engagement": [
+      {
+        "title": "Guided demonstration",
+        "text": "A walkthrough of records, attendance, leave and dashboards against your current process."
+      },
+      {
+        "title": "Implementation project",
+        "text": "Scoped configuration, data migration and rollout with your HR team trained on the system."
+      },
+      {
+        "title": "Managed HR operations",
+        "text": "TaskNera operates the platform and the underlying HR administration on your behalf."
+      }
+    ],
+    "process": [
+      {
+        "step": "01",
+        "title": "Assess",
+        "text": "We review your current records, policies and approval flows."
+      },
+      {
+        "step": "02",
+        "title": "Configure",
+        "text": "Org structure, leave policies and workflows are configured to match."
+      },
+      {
+        "step": "03",
+        "title": "Migrate",
+        "text": "Employee data is cleaned, migrated and validated with your HR team."
+      },
+      {
+        "step": "04",
+        "title": "Adopt",
+        "text": "Training, rollout and ongoing support so the system is actually used."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Can HRMS handle multiple locations?",
+        "a": "Yes. Organizational structure, attendance and leave policies can be configured across locations, teams and reporting lines."
+      },
+      {
+        "q": "Does it process payroll?",
+        "a": "HRMS holds payroll information and provides the inputs payroll needs. Payroll processing and statutory filing scope is defined in the engagement."
+      },
+      {
+        "q": "How long does implementation take?",
+        "a": "A typical implementation — configuration, data migration and rollout — runs across a few weeks, depending on headcount and data quality."
+      },
+      {
+        "q": "Can we keep our existing HR processes?",
+        "a": "Where your processes work, we configure the platform around them. Where they create avoidable manual work, we propose a simpler flow."
+      }
+    ],
+    "poweredBy": {
+      "label": "HR & People Operations",
+      "to": "/services/hr-operations",
+      "text": "Pair the platform with a TaskNera HR team to run the operations behind it."
+    }
+  }
+]

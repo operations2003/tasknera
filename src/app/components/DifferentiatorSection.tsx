@@ -138,17 +138,17 @@ export default function DifferentiatorSection() {
         </div>
 
         {/* Supporting Banner (Dark Charcoal Anchor) */}
-        <div className="bg-[#242326] border border-tn-mist/20 rounded-3xl p-8 sm:p-12 text-[#FFF8F0] flex flex-col lg:flex-row items-center justify-between gap-8 shadow-2xl relative overflow-hidden scroll-reveal" style={{ transitionDelay: '0.2s' }}>
+        <div className="bg-[#101D35] border border-tn-mist/20 rounded-3xl p-8 sm:p-12 text-[#F3F6FA] flex flex-col lg:flex-row items-center justify-between gap-8 shadow-2xl relative overflow-hidden scroll-reveal" style={{ transitionDelay: '0.2s' }}>
           <div className="absolute top-0 right-0 w-80 h-80 bg-tn-coral/10 rounded-full blur-3xl pointer-events-none" />
           <div className="space-y-3 text-center lg:text-left relative z-10 max-w-2xl">
             <div className="inline-flex items-center gap-2 bg-white/10 border border-white/15 px-3 py-1 rounded-full text-xs font-bold text-tn-coral uppercase tracking-wider">
               <Sparkles className="w-3.5 h-3.5" />
               <span>Modular &amp; Scalable Execution</span>
             </div>
-            <h4 className="text-2xl sm:text-3xl font-display font-bold leading-snug text-[#FFF8F0]">
+            <h4 className="text-2xl sm:text-3xl font-display font-bold leading-snug text-[#F3F6FA]">
               Outsource one function, multiple pods, or your entire operations.
             </h4>
-            <p className="text-[#FFF8F0]/80 text-sm sm:text-base leading-relaxed">
+            <p className="text-[#F3F6FA]/80 text-sm sm:text-base leading-relaxed">
               From an on-demand virtual assistant to full HR outsourcing and high-volume workforce staffing, TaskNera adapts around your evolving business roadmap.
             </p>
           </div>
@@ -156,7 +156,7 @@ export default function DifferentiatorSection() {
           <div className="flex flex-col sm:flex-row items-center gap-4 relative z-10 flex-shrink-0">
             <Link
               href="/pricing"
-              className="bg-white/10 hover:bg-white/20 text-[#FFF8F0] font-semibold px-6 py-3.5 rounded-full text-sm transition-all border border-white/20 text-center"
+              className="bg-white/10 hover:bg-white/20 text-[#F3F6FA] font-semibold px-6 py-3.5 rounded-full text-sm transition-all border border-white/20 text-center"
             >
               Compare Engagement Models
             </Link>

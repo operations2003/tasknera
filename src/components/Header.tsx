@@ -1,349 +1,312 @@
 'use client';
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import AppLogo from '@/components/ui/AppLogo';
 import {
-  Building2,
-  Target,
   Users,
-  Briefcase,
+  Search,
+  Layers,
+  Bot,
   Headphones,
-  Sparkles,
+  CodeXml,
+  ScanSearch,
+  LayoutDashboard,
   ChevronDown,
   ArrowRight,
-  Mail,
-  ShieldCheck,
-  Compass,
-  Globe2,
+  Menu,
+  X,
 } from 'lucide-react';
+import { companyInfo } from '@/lib/base44_content';
+
+const navigationLinks = [
+  { label: 'Home', href: '/' },
+  { label: 'About Us', href: '/about' },
+  { label: 'Services', href: '/services', dropdown: true },
+  { label: 'Careers', href: '/careers' },
+  { label: 'Contact', href: '/contact' },
+];
+
+const serviceMenuItems = [
+  {
+    slug: 'hr-operations',
+    name: 'HR & People Operations',
+    tagline: 'Your extended HR department — compliant, documented and accountable.',
+    icon: Users,
+    href: '/services/hr-operations',
+  },
+  {
+    slug: 'talent-acquisition',
+    name: 'Talent Acquisition & Recruitment',
+    tagline: 'Structured hiring that stands up to scrutiny.',
+    icon: Search,
+    href: '/services/talent-acquisition',
+  },
+  {
+    slug: 'workforce-solutions',
+    name: 'Workforce Solutions',
+    tagline: 'Staffing that flexes with real business demand.',
+    icon: Layers,
+    href: '/services/workforce-solutions',
+  },
+  {
+    slug: 'virtual-assistants',
+    name: 'Virtual Assistant & Business Support',
+    tagline: 'Reliable operational support so founders and teams stay focused.',
+    icon: Bot,
+    href: '/services/virtual-assistants',
+  },
+  {
+    slug: 'customer-support',
+    name: 'Virtual Customer Support',
+    tagline: 'Customer care that protects your brand around the clock.',
+    icon: Headphones,
+    href: '/services/customer-support',
+  },
+  {
+    slug: 'technology',
+    name: 'Technology & Software Development',
+    tagline: 'Full-stack engineering and automation built for production.',
+    icon: CodeXml,
+    href: '/services/technology',
+  },
+  {
+    slug: 'hireiq',
+    name: 'HireIQ',
+    tagline: 'Recruit smarter. Evaluate better. Hire with confidence.',
+    icon: ScanSearch,
+    href: '/services/hireiq',
+  },
+  {
+    slug: 'hrms',
+    name: 'TaskNera HRMS',
+    tagline: 'Manage your people. Simplify your operations.',
+    icon: LayoutDashboard,
+    href: '/services/hrms',
+  },
+];
 
 export default function Header() {
   const pathname = usePathname();
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+    setMobileMenuOpen(false);
+    setServicesDropdownOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    const handleOutsideClick = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setServicesDropdownOpen(false);
+      }
     };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    document.addEventListener('mousedown', handleOutsideClick);
+    return () => document.removeEventListener('mousedown', handleOutsideClick);
   }, []);
 
-  useEffect(() => {
-    if (menuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [menuOpen]);
-
-  const handleNavClick = () => {
-    setMenuOpen(false);
-  };
-
-  const isSolutionsActive =
-    pathname === '/services' ||
-    pathname === '/solutions' ||
-    pathname.startsWith('/services') ||
-    pathname.startsWith('/solutions') ||
-    pathname.startsWith('/hr-workforce-solutions') ||
-    pathname.startsWith('/talent-acquisition') ||
-    pathname.startsWith('/virtual-assistant-services') ||
-    pathname.startsWith('/virtual-customer-support') ||
-    pathname.startsWith('/business-support');
-
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-[#242326]/95 backdrop-blur-xl border-b border-[#353338] shadow-md py-0'
-          : 'bg-[#242326]/95 backdrop-blur-md border-b border-[#353338] py-1'
-      }`}
-    >
+    <header className="sticky top-0 z-50 border-b border-brand-navy/10 bg-[#FAF7F2]/95 backdrop-blur-xl">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 sm:h-20">
+        <div className="flex h-[70px] items-center justify-between gap-6">
           
-          {/* Left: Logo + Desktop Nav directly next to it */}
-          <div className="flex items-center gap-3 xl:gap-6">
-            {/* Logo */}
-            <Link
-              href="/"
-              onClick={handleNavClick}
-              className="flex items-center gap-3 group transition-transform duration-200 hover:scale-[1.02] flex-shrink-0"
-            >
-              <div className="relative">
-                <AppLogo
-                  src="/assets/images/logo_1-1786267820748.png"
-                  size={38}
-                  className="rounded-xl shadow-sm ring-1 ring-[#3E3C42]"
-                />
-                <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-[#F49A7D] rounded-full ring-2 ring-[#242326]" />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-display font-bold text-xl sm:text-2xl text-[#FFF8F0] tracking-tight leading-none">
-                  TaskNera
-                </span>
-                <span className="text-[10px] text-[#DCC6B8] tracking-wider uppercase font-semibold mt-1 flex items-center gap-1">
-                  <span>Global HR &amp; Operations</span>
-                </span>
-              </div>
-            </Link>
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-3 group flex-none">
+            <div className="relative grid h-9 w-9 flex-none place-items-center overflow-hidden rounded-[4px] bg-[#14110F] ring-1 ring-brand-navy/10 shadow-sm p-1">
+              <Image
+                src="/assets/images/tasknera-logo.png"
+                alt="TaskNera"
+                width={36}
+                height={36}
+                className="h-full w-full object-contain"
+                priority
+              />
+            </div>
+            <div className="flex flex-col leading-none">
+              <span className="font-heading text-[21px] font-medium tracking-[-0.01em] text-brand-navy group-hover:text-black transition-colors">
+                TaskNera
+              </span>
+              <span className="mt-1.5 text-[8px] font-semibold uppercase tracking-[0.24em] text-brand-ink/50">
+                People · Process · Performance
+              </span>
+            </div>
+          </Link>
 
-            {/* Desktop Nav - Positioned right next to Home/Logo */}
-            <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1">
-              <Link
-                href="/"
-                className={`px-2.5 xl:px-3 py-1.5 xl:py-2 text-xs xl:text-sm transition-all duration-200 rounded-lg ${
-                  pathname === '/'
-                    ? 'text-[#FFF8F0] bg-white/10 font-semibold shadow-inner border-b-2 border-[#F49A7D]'
-                    : 'text-[#DCC6B8] hover:text-[#FFF8F0] hover:bg-white/5 font-medium'
-                }`}
-              >
-                Home
-              </Link>
+          {/* Desktop Primary Nav */}
+          <nav className="hidden items-center gap-7 xl:flex" aria-label="Primary">
+            {navigationLinks.map((item) => {
+              const isServices = item.dropdown;
+              const isActive = isServices
+                ? pathname.startsWith('/services')
+                : pathname === item.href;
 
-              <Link
-                href="/about"
-                className={`px-2.5 xl:px-3 py-1.5 xl:py-2 text-xs xl:text-sm transition-all duration-200 rounded-lg ${
-                  pathname === '/about'
-                    ? 'text-[#FFF8F0] bg-white/10 font-semibold shadow-inner border-b-2 border-[#F49A7D]'
-                    : 'text-[#DCC6B8] hover:text-[#FFF8F0] hover:bg-white/5 font-medium'
-                }`}
-              >
-                About
-              </Link>
+              if (isServices) {
+                return (
+                  <div
+                    key={item.label}
+                    ref={dropdownRef}
+                    className="relative"
+                    onMouseEnter={() => setServicesDropdownOpen(true)}
+                    onMouseLeave={() => setServicesDropdownOpen(false)}
+                  >
+                    <button
+                      type="button"
+                      onClick={() => setServicesDropdownOpen((prev) => !prev)}
+                      aria-expanded={servicesDropdownOpen}
+                      className={`flex items-center gap-1.5 py-2 text-[12.5px] font-medium tracking-[0.01em] transition-colors ${
+                        isActive
+                          ? 'text-brand-blue font-semibold'
+                          : 'text-brand-ink/75 hover:text-brand-navy'
+                      }`}
+                    >
+                      <span>{item.label}</span>
+                      <ChevronDown
+                        className={`h-3 w-3 transition-transform duration-200 ${
+                          servicesDropdownOpen ? 'rotate-180' : ''
+                        }`}
+                      />
+                    </button>
 
-              <Link
-                href="/services"
-                className={`px-2.5 xl:px-3 py-1.5 xl:py-2 text-xs xl:text-sm transition-all duration-200 rounded-lg ${
-                  isSolutionsActive
-                    ? 'text-[#FFF8F0] bg-white/10 font-semibold shadow-inner border-b-2 border-[#F49A7D]'
-                    : 'text-[#DCC6B8] hover:text-[#FFF8F0] hover:bg-white/5 font-medium'
-                }`}
-              >
-                Solutions
-              </Link>
+                    {/* Services Dropdown Panel */}
+                    {servicesDropdownOpen && (
+                      <div className="absolute left-1/2 top-full w-[620px] -translate-x-1/2 pt-2 animate-in fade-in duration-150">
+                        <div className="overflow-hidden rounded-[4px] border border-brand-navy/12 bg-[#FFFDFB] p-2 shadow-[0_24px_60px_-34px_rgba(20,17,16,0.45)]">
+                          <div className="grid grid-cols-2 gap-0.5">
+                            {serviceMenuItems.map((svc) => {
+                              const Icon = svc.icon;
+                              return (
+                                <Link
+                                  key={svc.slug}
+                                  href={svc.href}
+                                  className="group flex gap-3 rounded-[3px] p-3 transition-colors hover:bg-brand-mist"
+                                >
+                                  <div className="mt-0.5 grid h-8 w-8 flex-none place-items-center rounded-[3px] bg-brand-navy/[0.05] text-brand-blue transition-colors group-hover:bg-brand-navy group-hover:text-brand-teal">
+                                    <Icon className="h-4 w-4" />
+                                  </div>
+                                  <div className="flex flex-col">
+                                    <div className="flex items-center gap-1 text-[13px] font-semibold text-brand-navy">
+                                      <span>{svc.name}</span>
+                                      <ArrowRight className="h-3 w-3 opacity-0 transition-opacity group-hover:opacity-60" />
+                                    </div>
+                                    <span className="mt-0.5 block text-[11.5px] leading-snug text-brand-ink/55">
+                                      {svc.tagline}
+                                    </span>
+                                  </div>
+                                </Link>
+                              );
+                            })}
+                          </div>
 
-              <Link
-                href="/pricing"
-                className={`px-2.5 xl:px-3 py-1.5 xl:py-2 text-xs xl:text-sm transition-all duration-200 rounded-lg ${
-                  pathname === '/pricing' || pathname === '/engagement'
-                    ? 'text-[#FFF8F0] bg-white/10 font-semibold shadow-inner border-b-2 border-[#F49A7D]'
-                    : 'text-[#DCC6B8] hover:text-[#FFF8F0] hover:bg-white/5 font-medium'
-                }`}
-              >
-                Pricing
-              </Link>
-              <Link
-                href="/careers"
-                className={`px-2.5 xl:px-3 py-1.5 xl:py-2 text-xs xl:text-sm transition-all duration-200 rounded-lg flex items-center gap-1.5 ${
-                  pathname === '/careers'
-                    ? 'text-[#FFF8F0] bg-white/10 font-semibold shadow-inner border-b-2 border-[#F49A7D]'
-                    : 'text-[#DCC6B8] hover:text-[#FFF8F0] hover:bg-white/5 font-medium'
-                }`}
-              >
-                <span>Careers</span>
-                <span
-                  className={`inline-flex items-center px-1.5 py-0.5 rounded-full text-[10px] font-bold leading-none transition-colors ${
-                    pathname === '/careers'
-                      ? 'bg-[#F49A7D] text-[#242326]'
-                      : 'bg-[#F49A7D]/20 text-[#F49A7D] border border-[#F49A7D]/30'
+                          <div className="mt-1 flex items-center justify-between rounded-[3px] bg-brand-navy px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-white">
+                            <span>One partner · Eight disciplines</span>
+                            <Link
+                              href="/services"
+                              className="text-brand-teal hover:underline flex items-center gap-1"
+                            >
+                              <span>View all solutions</span>
+                              <ArrowRight className="h-3 w-3" />
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                );
+              }
+
+              return (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className={`py-2 text-[12.5px] font-medium tracking-[0.01em] transition-colors ${
+                    isActive
+                      ? 'text-brand-blue font-semibold'
+                      : 'text-brand-ink/75 hover:text-brand-navy'
                   }`}
                 >
-                  Hiring
-                </span>
-              </Link>
-              <Link
-                href="/workplace-policies"
-                className={`px-2.5 xl:px-3 py-1.5 xl:py-2 text-xs xl:text-sm transition-all duration-200 rounded-lg ${
-                  pathname === '/workplace-policies'
-                    ? 'text-[#FFF8F0] bg-white/10 font-semibold shadow-inner border-b-2 border-[#F49A7D]'
-                    : 'text-[#DCC6B8] hover:text-[#FFF8F0] hover:bg-white/5 font-medium'
-                }`}
-              >
-                Policies
-              </Link>
-              <Link
-                href="/contact"
-                className={`px-2.5 xl:px-3 py-1.5 xl:py-2 text-xs xl:text-sm transition-all duration-200 rounded-lg ${
-                  pathname === '/contact'
-                    ? 'text-[#FFF8F0] bg-white/10 font-semibold shadow-inner border-b-2 border-[#F49A7D]'
-                    : 'text-[#DCC6B8] hover:text-[#FFF8F0] hover:bg-white/5 font-medium'
-                }`}
-              >
-                Contact
-              </Link>
-            </nav>
-          </div>
+                  {item.label}
+                </Link>
+              );
+            })}
+          </nav>
 
-          {/* Right: Desktop CTA + Mobile Hamburger */}
-          <div className="flex items-center gap-3">
-            <div className="hidden lg:flex items-center gap-3">
-              <Link
-                href="/contact"
-                className="bg-[#F49A7D] text-[#242326] text-xs xl:text-sm font-bold px-4 xl:px-5 py-2 xl:py-2.5 rounded-full hover:bg-[#E28567] active:scale-95 transition-all duration-200 shadow-md shadow-[#F49A7D]/25 flex items-center gap-2 flex-shrink-0"
-              >
-                <span>Talk to an Expert</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
-            </div>
-
-            {/* Mobile Hamburger */}
-            <button
-              className="lg:hidden flex flex-col justify-center items-center w-10 h-10 rounded-xl bg-[#2E2D32] hover:bg-[#38363D] border border-[#3E3C42] transition-colors"
-              onClick={() => setMenuOpen(!menuOpen)}
-              aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-              aria-expanded={menuOpen}
+          {/* Desktop Right Side CTAs */}
+          <div className="hidden items-center gap-6 lg:flex">
+            <Link
+              href="/admin"
+              className="text-[10.5px] font-semibold uppercase tracking-[0.18em] text-brand-ink/55 transition-colors hover:text-brand-navy"
             >
-              <span
-                className={`block w-5 h-0.5 bg-[#FFF8F0] transition-transform duration-300 ease-in-out ${
-                  menuOpen ? 'rotate-45 translate-y-1' : '-translate-y-1'
-                }`}
-              />
-              <span
-                className={`block w-5 h-0.5 bg-[#FFF8F0] transition-opacity duration-300 ${
-                  menuOpen ? 'opacity-0' : 'opacity-100'
-                }`}
-              />
-              <span
-                className={`block w-5 h-0.5 bg-[#FFF8F0] transition-transform duration-300 ease-in-out ${
-                  menuOpen ? '-rotate-45 -translate-y-1' : 'translate-y-1'
-                }`}
-              />
-            </button>
+              Client portal
+            </Link>
+            <Link
+              href="/contact"
+              className="bg-brand-navy text-white hover:bg-black font-medium text-[12.5px] px-4 py-2 rounded-[3px] transition-colors shadow-sm"
+            >
+              Book a free consultation
+            </Link>
           </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            type="button"
+            onClick={() => setMobileMenuOpen((prev) => !prev)}
+            aria-label="Toggle navigation menu"
+            className="grid h-9 w-9 place-items-center rounded-[3px] border border-brand-navy/20 text-brand-navy lg:hidden"
+          >
+            {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
         </div>
       </div>
 
-      {/* Mobile Menu Overlay */}
-      {menuOpen && (
-        <div className="lg:hidden fixed inset-x-0 top-16 sm:top-20 bottom-0 bg-[#242326] backdrop-blur-2xl z-40 flex flex-col justify-between overflow-y-auto border-t border-[#3E3C42] animate-in fade-in duration-200">
-          <nav className="flex flex-col px-6 pt-6 gap-1 pb-4">
-            <Link
-              href="/"
-              onClick={handleNavClick}
-              className={`text-base font-semibold px-4 py-3 rounded-xl transition-colors flex items-center justify-between ${
-                pathname === '/'
-                  ? 'bg-white/10 text-[#F49A7D] border-l-4 border-[#F49A7D]'
-                  : 'text-[#DCC6B8] hover:text-[#FFF8F0] hover:bg-white/5'
-              }`}
-            >
-              <span>Home</span>
-              <ArrowRight className="w-4 h-4 opacity-50" />
-            </Link>
+      {/* Mobile Drawer */}
+      {mobileMenuOpen && (
+        <div className="max-h-[calc(100vh-70px)] overflow-y-auto border-t border-brand-navy/10 bg-[#FAF7F2] lg:hidden animate-in slide-in-from-top-2 duration-200">
+          <div className="px-4 py-5 flex flex-col gap-1">
+            {navigationLinks.map((item) => (
+              <Link
+                key={item.label}
+                href={item.href}
+                className="border-b border-brand-navy/[0.07] py-3 text-[15px] font-medium text-brand-navy flex items-center justify-between"
+              >
+                <span>{item.label}</span>
+                <ArrowRight className="h-4 w-4 text-brand-blue opacity-50" />
+              </Link>
+            ))}
 
-            <Link
-              href="/about"
-              onClick={handleNavClick}
-              className={`text-base font-semibold px-4 py-3 rounded-xl transition-colors flex items-center justify-between ${
-                pathname === '/about'
-                  ? 'bg-white/10 text-[#F49A7D] border-l-4 border-[#F49A7D]'
-                  : 'text-[#DCC6B8] hover:text-[#FFF8F0] hover:bg-white/5'
-              }`}
-            >
-              <span>About</span>
-              <ArrowRight className="w-4 h-4 opacity-50" />
-            </Link>
-
-            <Link
-              href="/services"
-              onClick={handleNavClick}
-              className={`text-base font-semibold px-4 py-3 rounded-xl transition-colors flex items-center justify-between ${
-                isSolutionsActive
-                  ? 'bg-white/10 text-[#F49A7D] border-l-4 border-[#F49A7D]'
-                  : 'text-[#DCC6B8] hover:text-[#FFF8F0] hover:bg-white/5'
-              }`}
-            >
-              <span>Solutions</span>
-              <ArrowRight className="w-4 h-4 opacity-50" />
-            </Link>
-
-            <Link
-              href="/pricing"
-              onClick={handleNavClick}
-              className={`text-base font-semibold px-4 py-3 rounded-xl transition-colors flex items-center justify-between ${
-                pathname === '/pricing' || pathname === '/engagement'
-                  ? 'bg-white/10 text-[#F49A7D] border-l-4 border-[#F49A7D]'
-                  : 'text-[#DCC6B8] hover:text-[#FFF8F0] hover:bg-white/5'
-              }`}
-            >
-              <span>Engagement &amp; Pricing</span>
-              <ArrowRight className="w-4 h-4 opacity-50" />
-            </Link>
-
-            <Link
-              href="/careers"
-              onClick={handleNavClick}
-              className={`text-base font-semibold px-4 py-3 rounded-xl transition-colors flex items-center justify-between ${
-                pathname === '/careers'
-                  ? 'bg-white/10 text-[#F49A7D] border-l-4 border-[#F49A7D]'
-                  : 'text-[#DCC6B8] hover:text-[#FFF8F0] hover:bg-white/5'
-              }`}
-            >
-              <div className="flex items-center gap-2">
-                <span>Careers</span>
-                <span
-                  className={`text-[10px] uppercase font-bold px-2 py-0.5 rounded-md ${
-                    pathname === '/careers'
-                      ? 'bg-[#F49A7D] text-[#242326]'
-                      : 'text-[#F49A7D] bg-[#F49A7D]/20 border border-[#F49A7D]/30'
-                  }`}
-                >
-                  Hiring
-                </span>
+            <div className="mt-4 pt-3">
+              <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-brand-ink/40">
+                Core Disciplines
+              </span>
+              <div className="grid grid-cols-1 gap-1.5 mt-2">
+                {serviceMenuItems.map((svc) => (
+                  <Link
+                    key={svc.slug}
+                    href={svc.href}
+                    className="flex items-center gap-3 py-2 text-[13.5px] text-brand-ink/80 hover:text-brand-navy"
+                  >
+                    <svc.icon className="h-4 w-4 text-brand-blue" />
+                    <span>{svc.name}</span>
+                  </Link>
+                ))}
               </div>
-              <ArrowRight className="w-4 h-4 opacity-50" />
-            </Link>
+            </div>
 
-            <Link
-              href="/workplace-policies"
-              onClick={handleNavClick}
-              className={`text-base font-semibold px-4 py-3 rounded-xl transition-colors flex items-center justify-between ${
-                pathname === '/workplace-policies'
-                  ? 'bg-white/10 text-[#F49A7D] border-l-4 border-[#F49A7D]'
-                  : 'text-[#DCC6B8] hover:text-[#FFF8F0] hover:bg-white/5'
-              }`}
-            >
-              <span>Workplace Policies</span>
-              <ArrowRight className="w-4 h-4 opacity-50" />
-            </Link>
-
-            <Link
-              href="/contact"
-              onClick={handleNavClick}
-              className={`text-base font-semibold px-4 py-3 rounded-xl transition-colors flex items-center justify-between ${
-                pathname === '/contact'
-                  ? 'bg-white/10 text-[#F49A7D] border-l-4 border-[#F49A7D]'
-                  : 'text-[#DCC6B8] hover:text-[#FFF8F0] hover:bg-white/5'
-              }`}
-            >
-              <span>Contact</span>
-              <ArrowRight className="w-4 h-4 opacity-50" />
-            </Link>
-          </nav>
-
-          <div className="px-6 pb-8 pt-4 flex flex-col gap-3 border-t border-[#3E3C42] bg-[#1C1B1D]">
-            <Link
-              href="/contact"
-              onClick={handleNavClick}
-              className="bg-[#F49A7D] text-[#242326] text-base font-bold px-6 py-3.5 rounded-full text-center hover:bg-[#E28567] active:scale-95 transition-all shadow-md shadow-[#F49A7D]/25 flex items-center justify-center gap-2"
-            >
-              <span>Talk to an Expert</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-            <a
-              href="mailto:operations@tasknera.com"
-              onClick={handleNavClick}
-              className="text-[#DCC6B8] hover:text-[#FFF8F0] text-xs text-center transition-colors flex items-center justify-center gap-2 py-1"
-            >
-              <Mail className="w-3.5 h-3.5 text-[#F49A7D]" />
-              <span>operations@tasknera.com</span>
-            </a>
+            <div className="mt-6 flex flex-col gap-3 border-t border-brand-navy/10 pt-6">
+              <Link
+                href="/contact"
+                className="bg-brand-navy text-white text-center py-3 rounded-[3px] font-medium text-[13.5px]"
+              >
+                Book a free consultation
+              </Link>
+              <a
+                href={`mailto:${companyInfo.emailOperations}`}
+                className="pt-1 text-center text-[12.5px] font-medium text-brand-ink/60"
+              >
+                {companyInfo.emailOperations}
+              </a>
+            </div>
           </div>
         </div>
       )}

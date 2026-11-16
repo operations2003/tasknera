@@ -1,0 +1,139 @@
+{
+  "howWeWork": null,
+  "engagement": null,
+  "faqs": null,
+  "policies": {
+    "privacy": {
+      "title": "Privacy Policy",
+      "updated": "Last updated November 2026",
+      "intro": "This policy explains what information TaskNera collects through this website and our services, why we collect it, and how it is handled.",
+      "sections": [
+        {
+          "h": "Information we collect",
+          "p": [
+            "Information you submit through our enquiry and application forms, including your name, work email, company, country, phone number, service interest, company size, requirement details and expected start date.",
+            "Candidate information you submit when applying for a role, including your resume, contact details, experience and compensation expectations.",
+            "Basic technical information generated when you use the website, such as pages viewed, approximate location and device type."
+          ]
+        },
+        {
+          "h": "How we use information",
+          "p": [
+            "To respond to business enquiries, prepare proposals and deliver services you have requested.",
+            "To assess applications and communicate with candidates about relevant opportunities.",
+            "To meet legal, contractual and compliance obligations, and to improve the quality of our services."
+          ]
+        },
+        {
+          "h": "Sharing and retention",
+          "p": [
+            "We share information with client organisations only in the context of a service you have asked us to deliver — for example, presenting a candidate for a role.",
+            "We do not sell personal information. Information is retained only as long as needed for the purpose it was collected for, or as required by law."
+          ]
+        },
+        {
+          "h": "Your choices",
+          "p": [
+            "You can request access, correction or deletion of your information, or withdraw consent for future contact, by writing to operations@tasknera.com."
+          ]
+        }
+      ]
+    },
+    "terms": {
+      "title": "Terms and Conditions",
+      "updated": "Last updated November 2026",
+      "intro": "These terms govern your use of the TaskNera website. Service engagements are governed by the specific agreement and statement of work signed with TaskNera.",
+      "sections": [
+        {
+          "h": "Use of this website",
+          "p": [
+            "The content on this website is provided for general information about TaskNera's services. You agree not to misuse the site, attempt unauthorised access, or submit false or misleading information through our forms."
+          ]
+        },
+        {
+          "h": "Service engagements",
+          "p": [
+            "Scope, deliverables, service levels, commercials and confidentiality obligations are defined in a written proposal or statement of work. Nothing on this website constitutes an offer or a guarantee of specific outcomes.",
+            "Engagement models, turnaround expectations and capability descriptions on this site are indicative and subject to confirmation during scoping."
+          ]
+        },
+        {
+          "h": "Intellectual property",
+          "p": [
+            "Website content, brand assets and platform materials belong to TaskNera or its licensors and may not be reproduced commercially without written permission."
+          ]
+        },
+        {
+          "h": "Governing law",
+          "p": [
+            "These terms are governed by the laws applicable in India, with courts in Delhi having jurisdiction, unless a signed engagement agreement states otherwise."
+          ]
+        }
+      ]
+    },
+    "cookie-policy": {
+      "title": "Cookie Policy",
+      "updated": "Last updated November 2026",
+      "intro": "This policy explains how cookies and similar technologies are used on the TaskNera website.",
+      "sections": [
+        {
+          "h": "What cookies we use",
+          "p": [
+            "Essential cookies required for the site to function, such as remembering form state during a session.",
+            "Where enabled, limited analytics cookies that help us understand which pages are useful so we can improve them."
+          ]
+        },
+        {
+          "h": "What we do not do",
+          "p": [
+            "We do not use cookies to build advertising profiles of visitors or to sell data to third parties."
+          ]
+        },
+        {
+          "h": "Managing cookies",
+          "p": [
+            "You can clear or block cookies in your browser settings. Blocking essential cookies may affect how parts of the site behave."
+          ]
+        }
+      ]
+    },
+    "candidate-privacy": {
+      "title": "Candidate Privacy Notice",
+      "updated": "Last updated November 2026",
+      "intro": "This notice explains how TaskNera handles personal information provided by candidates who apply to roles with TaskNera or through TaskNera for a client organisation.",
+      "sections": [
+        {
+          "h": "What we collect",
+          "p": [
+            "Your resume and the details you include in your application — contact information, work history, education, skills, current and expected compensation, notice period and location.",
+            "Notes and assessments created during screening, interviews and reference checks."
+          ]
+        },
+        {
+          "h": "How your information is used",
+          "p": [
+            "To assess your application for the role you applied to and for other roles that match your experience.",
+            "To share your profile with a client organisation where you have applied for, or been considered for, a role with that client."
+          ]
+        },
+        {
+          "h": "Confidentiality and retention",
+          "p": [
+            "Applications are handled confidentially and shared only with the parties involved in the hiring process. TaskNera does not charge candidates any fee at any stage of recruitment.",
+            "Candidate records are retained for as long as needed for active recruitment and legitimate follow-up, unless you ask us to delete them."
+          ]
+        },
+        {
+          "h": "Your rights",
+          "p": [
+            "You can request access, correction or deletion of your candidate record at any time by emailing careers@tasknera.com."
+          ]
+        }
+      ]
+    }
+  },
+  "capabilities": null,
+  "audiences": null,
+  "whyTaskNera": null,
+  "globalDelivery": null
+}

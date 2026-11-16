@@ -1,178 +1,195 @@
+'use client';
 import React from 'react';
 import Link from 'next/link';
-import AppLogo from '@/components/ui/AppLogo';
-import { Mail } from 'lucide-react';
+import Image from 'next/image';
+import { Mail, MapPin, ShieldCheck } from 'lucide-react';
+import { companyInfo } from '@/lib/base44_content';
 
-const solutionsLinks = [
-  { label: 'HR & People Operations', href: '/hr-workforce-solutions' },
-  { label: 'Talent & Recruitment', href: '/talent-acquisition' },
-  { label: 'HireIQ™ & HRMS Platform', href: '/#platform' },
-  { label: 'Workforce Solutions', href: '/hr-workforce-solutions#workforce' },
-  { label: 'Virtual Assistant Services', href: '/virtual-assistant-services' },
-  { label: 'Virtual Customer Support (VCS)', href: '/virtual-customer-support' },
-  { label: 'All Solutions Hub', href: '/services' },
+const footerServices = [
+  { name: 'HR & People Operations', href: '/services/hr-operations' },
+  { name: 'Talent Acquisition & Recruitment', href: '/services/talent-acquisition' },
+  { name: 'Workforce Solutions', href: '/services/workforce-solutions' },
+  { name: 'Virtual Assistant & Business Support', href: '/services/virtual-assistants' },
+  { name: 'Virtual Customer Support', href: '/services/customer-support' },
+  { name: 'Technology & Software Development', href: '/services/technology' },
+  { name: 'HireIQ', href: '/services/hireiq' },
+  { name: 'TaskNera HRMS', href: '/services/hrms' },
 ];
 
-const companyLinks = [
-  { label: 'About TaskNera', href: '/about' },
-  { label: 'How We Work (Process)', href: '/process' },
-  { label: '12+ Industry Areas', href: '/industries' },
-  { label: 'Engagement & Pricing', href: '/pricing' },
-  { label: 'Careers & Hiring', href: '/careers' },
-  { label: 'Workplace Policies & Governance', href: '/workplace-policies' },
-  { label: 'Contact Us', href: '/contact' },
-];
-
-const policiesAndLegalLinks = [
-  { label: 'Privacy Policy', href: '/privacy' },
-  { label: 'Cookie Policy', href: '/cookie-policy' },
-  { label: 'Terms & Conditions', href: '/terms' },
-  { label: 'Candidate Privacy Notice', href: '/candidate-privacy' },
-  { label: 'Client / Service Disclaimer', href: '/service-disclaimer' },
-  { label: 'Data Security & Confidentiality', href: '/data-security' },
-  { label: 'Refund & Cancellation Policy', href: '/refund-cancellation' },
-  { label: 'Grievance / Complaints', href: '/grievance-policy' },
-  { label: 'Accessibility Statement', href: '/accessibility' },
+const footerCompany = [
+  { name: 'About Us', href: '/about' },
+  { name: 'Engagement Models', href: '/engagement-models' },
+  { name: 'Careers & Hiring', href: '/careers' },
+  { name: 'Contact & Scoping', href: '/contact' },
+  { name: 'Client Portal', href: '/admin' },
 ];
 
 export default function Footer() {
   return (
-    <footer className="bg-[#242326] border-t border-[#353338] text-[#E9E4DF] relative overflow-hidden">
-      {/* Ambient background subtle glow */}
-      <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-[#F49A7D]/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-10 left-10 w-[450px] h-[450px] bg-[#DCC6B8]/5 rounded-full blur-3xl pointer-events-none" />
+    <footer className="relative overflow-hidden bg-brand-navy text-white border-t border-white/10">
+      {/* Subtle grain texture overlay */}
+      <div
+        className="grain pointer-events-none absolute inset-0 opacity-[0.14] mix-blend-soft-light"
+        aria-hidden="true"
+      />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 relative z-10">
-        
-        {/* Upper Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 mb-16">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid gap-12 py-16 lg:grid-cols-[1.5fr_1fr_1fr_1.3fr] lg:gap-10 lg:py-20">
           
-          {/* Brand Col */}
-          <div className="lg:col-span-4 space-y-5">
-            <div className="flex items-center gap-3">
-              <AppLogo
-                src="/assets/images/logo_1-1786267820748.png"
-                size={40}
-                className="rounded-xl ring-1 ring-[#3E3C42] shadow-sm"
-              />
-              <div className="flex flex-col">
-                <span className="font-display font-bold text-2xl text-[#FFF8F0] tracking-tight">
+          {/* Column 1: Brand & Positioning */}
+          <div>
+            <Link href="/" className="flex items-center gap-3 group">
+              <div className="relative grid h-9 w-9 flex-none place-items-center overflow-hidden rounded-[4px] bg-white/10 p-1 ring-1 ring-white/20">
+                <Image
+                  src="/assets/images/tasknera-logo.png"
+                  alt="TaskNera"
+                  width={36}
+                  height={36}
+                  className="h-full w-full object-contain"
+                />
+              </div>
+              <div className="flex flex-col leading-none">
+                <span className="font-heading text-[21px] font-medium tracking-[-0.01em] text-white">
                   TaskNera
                 </span>
-                <span className="text-[10px] text-[#DCC6B8] tracking-wider uppercase font-bold">
-                  Global HR, Workforce &amp; Business Support Partner
+                <span className="mt-1.5 text-[8px] font-semibold uppercase tracking-[0.24em] text-white/40">
+                  People · Process · Performance
+                </span>
+              </div>
+            </Link>
+
+            <p className="mt-6 max-w-[34ch] text-[14px] leading-relaxed text-white/60">
+              TaskNera is a global HR, recruitment, technology and business operations partner. We help companies build dependable teams and the operational foundation for sustainable growth.
+            </p>
+
+            <p className="mt-6 font-heading text-[13px] font-semibold uppercase tracking-[0.16em] text-brand-teal">
+              Build. Manage. Scale.
+            </p>
+
+            <div className="mt-7 flex items-center gap-3">
+              <a
+                href={companyInfo.linkedin}
+                target="_blank"
+                rel="noreferrer noopener"
+                aria-label="TaskNera on LinkedIn"
+                className="grid h-10 w-10 place-items-center rounded-full border border-white/15 text-white/70 transition-colors hover:border-white/40 hover:text-white"
+              >
+                <svg className="h-4 w-4 fill-current" viewBox="0 0 24 24">
+                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          {/* Column 2: Solutions */}
+          <div>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/40">
+              Solutions
+            </p>
+            <ul className="mt-6 flex flex-col gap-3">
+              {footerServices.map((svc) => (
+                <li key={svc.name}>
+                  <Link
+                    href={svc.href}
+                    className="text-[13px] text-white/65 transition-colors hover:text-white hover:underline"
+                  >
+                    {svc.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 3: Company */}
+          <div>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/40">
+              Company
+            </p>
+            <ul className="mt-6 flex flex-col gap-3">
+              {footerCompany.map((item) => (
+                <li key={item.name}>
+                  <Link
+                    href={item.href}
+                    className="text-[13px] text-white/65 transition-colors hover:text-white hover:underline"
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 4: Contact & Direct Desks */}
+          <div>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/40">
+              Direct Contact
+            </p>
+
+            <div className="mt-6 flex flex-col gap-4 text-[13px]">
+              <div>
+                <span className="block text-[11px] uppercase tracking-wider text-white/40 mb-1">
+                  Business Enquiries
+                </span>
+                <a
+                  href={`mailto:${companyInfo.emailOperations}`}
+                  className="font-medium text-brand-teal hover:underline flex items-center gap-1.5"
+                >
+                  <Mail className="h-3.5 w-3.5" />
+                  <span>{companyInfo.emailOperations}</span>
+                </a>
+              </div>
+
+              <div>
+                <span className="block text-[11px] uppercase tracking-wider text-white/40 mb-1">
+                  Careers &amp; Candidate Verification
+                </span>
+                <a
+                  href={`mailto:${companyInfo.emailCareers}`}
+                  className="font-medium text-white/80 hover:text-white hover:underline flex items-center gap-1.5"
+                >
+                  <Mail className="h-3.5 w-3.5" />
+                  <span>{companyInfo.emailCareers}</span>
+                </a>
+              </div>
+
+              <div>
+                <span className="block text-[11px] uppercase tracking-wider text-white/40 mb-1">
+                  Headquarters
+                </span>
+                <p className="text-white/65 leading-relaxed flex items-start gap-1.5">
+                  <MapPin className="h-4 w-4 flex-none mt-0.5 text-brand-teal" />
+                  <span>{companyInfo.address}</span>
+                </p>
+              </div>
+
+              <div className="pt-2 border-t border-white/10">
+                <span className="inline-flex items-center gap-1 text-[11px] text-emerald-300">
+                  <ShieldCheck className="h-3.5 w-3.5" />
+                  <span>Zero recruitment fees for job candidates guarantee</span>
                 </span>
               </div>
             </div>
-
-            <p className="text-[#E9E4DF]/75 text-sm leading-relaxed max-w-sm">
-              TaskNera helps startups, SMEs and enterprises build their teams, manage their people and scale their operations through integrated HR, Talent, Workforce, Virtual Assistant and Virtual Customer Support solutions.
-            </p>
-
-            {/* Operational badge */}
-            <div className="inline-flex items-center gap-2.5 bg-[#2B2A2E] border border-[#3E3C42] rounded-full px-3.5 py-1.5 text-xs text-[#E9E4DF] shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-[#F49A7D] animate-pulse" />
-              <span className="font-semibold">Global Delivery Active · 24/7 Multi-Timezone Coverage</span>
-            </div>
-
-            <div className="space-y-1 text-xs text-[#DCC6B8]/80">
-              <p>Corporate Office: D-57 F1 Dilshad Colony, Dilshad Garden, Delhi - 110095, East Delhi, India.</p>
-              <p>Global Delivery: India | US | UK | Europe | Remote Global.</p>
-            </div>
-
-            {/* Social & Contact */}
-            <div className="flex items-center gap-3 pt-2">
-              <a
-                href="https://linkedin.com/company/tasknera"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="TaskNera on LinkedIn"
-                className="w-9 h-9 rounded-xl bg-[#2B2A2E] border border-[#3E3C42] shadow-sm flex items-center justify-center text-[#DCC6B8] hover:text-[#242326] hover:bg-[#F49A7D] hover:border-[#F49A7D] transition-all"
-              >
-                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                </svg>
-              </a>
-              <a
-                href="mailto:operations@tasknera.com"
-                aria-label="Email TaskNera Operations"
-                className="w-9 h-9 rounded-xl bg-[#2B2A2E] border border-[#3E3C42] shadow-sm flex items-center justify-center text-[#DCC6B8] hover:text-[#242326] hover:bg-[#F49A7D] hover:border-[#F49A7D] transition-all"
-              >
-                <Mail className="w-4 h-4" />
-              </a>
-            </div>
           </div>
-
-          {/* Solutions Column */}
-          <div className="lg:col-span-3 space-y-4">
-            <h4 className="text-xs font-bold text-[#FFF8F0] uppercase tracking-widest flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#F49A7D]" />
-              <span>Core Solutions</span>
-            </h4>
-            <ul className="space-y-2.5">
-              {solutionsLinks.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-[#E9E4DF]/80 hover:text-[#F49A7D] text-sm transition-colors flex items-center gap-1.5 group"
-                  >
-                    <span className="text-[#DCC6B8] group-hover:text-[#F49A7D] text-xs transition-colors">›</span>
-                    <span>{link.label}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Company Column */}
-          <div className="lg:col-span-2 space-y-4">
-            <h4 className="text-xs font-bold text-[#FFF8F0] uppercase tracking-widest flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#F49A7D]" />
-              <span>Company</span>
-            </h4>
-            <ul className="space-y-2.5">
-              {companyLinks.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-[#E9E4DF]/80 hover:text-[#F49A7D] text-sm transition-colors flex items-center gap-1.5 group"
-                  >
-                    <span className="text-[#DCC6B8] group-hover:text-[#F49A7D] text-xs transition-colors">›</span>
-                    <span>{link.label}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Policies & Legal Column */}
-          <div className="lg:col-span-3 space-y-4">
-            <h4 className="text-xs font-bold text-[#FFF8F0] uppercase tracking-widest flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#F49A7D]" />
-              <span>Policies &amp; Legal</span>
-            </h4>
-            <ul className="space-y-2">
-              {policiesAndLegalLinks.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-[#E9E4DF]/80 hover:text-[#F49A7D] text-xs sm:text-sm transition-colors flex items-center gap-1.5 group"
-                  >
-                    <span className="text-[#DCC6B8] group-hover:text-[#F49A7D] text-xs transition-colors">›</span>
-                    <span>{link.label}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
         </div>
 
-        {/* Bottom bar */}
-        <div className="pt-8 border-t border-[#353338] flex flex-col sm:flex-row items-center justify-between gap-4 text-[#DCC6B8] text-xs">
-          <span>© 2026 TaskNera Global Operations. All rights reserved.</span>
-          <span className="text-center font-medium">One Partner · HR, Talent, Workforce, Virtual Assistant &amp; Customer Support</span>
-          <span>Founded in 2026 · Led by Sheetal Bedi · <a href="https://www.tasknera.com" className="text-[#F49A7D] hover:text-[#FFF8F0] font-semibold underline">tasknera.com</a></span>
+        {/* Bottom Legal & Copyright Bar */}
+        <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 py-8 sm:flex-row text-[12px] text-white/45">
+          <p>© {new Date().getFullYear()} TaskNera. All rights reserved.</p>
+
+          <div className="flex flex-wrap items-center gap-6">
+            <Link href="/privacy" className="hover:text-white transition-colors">
+              Privacy Policy
+            </Link>
+            <Link href="/terms" className="hover:text-white transition-colors">
+              Terms and Conditions
+            </Link>
+            <Link href="/cookie-policy" className="hover:text-white transition-colors">
+              Cookie Policy
+            </Link>
+            <Link href="/candidate-privacy" className="hover:text-white transition-colors">
+              Candidate Privacy Notice
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
