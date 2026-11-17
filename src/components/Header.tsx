@@ -106,22 +106,23 @@ export default function Header() {
         <div className="flex h-[70px] items-center justify-between gap-6">
           
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group flex-none">
-            <div className="relative grid h-9 w-9 flex-none place-items-center overflow-hidden rounded-[4px] bg-[#14110F] ring-1 ring-brand-navy/10 shadow-sm p-1">
-              <Image
-                src="/assets/images/tasknera-logo.png"
-                alt="TaskNera"
-                width={36}
-                height={36}
-                className="h-full w-full object-contain"
-                priority
-              />
-            </div>
-            <div className="flex flex-col leading-none">
-              <span className="font-heading text-[21px] font-medium tracking-[-0.01em] text-brand-navy group-hover:text-black transition-colors">
+          <Link
+            href="/"
+            className="group flex flex-none items-center gap-3 py-1 transition-opacity duration-200 hover:opacity-85"
+          >
+            <Image
+              src="/assets/images/tasknera-logo.png"
+              alt="TaskNera"
+              width={38}
+              height={38}
+              className="h-9 w-auto object-contain flex-none transition-transform duration-200 group-hover:scale-105"
+              priority
+            />
+            <div className="flex flex-col justify-center">
+              <span className="font-heading text-[22px] font-medium tracking-[-0.015em] text-brand-navy transition-colors group-hover:text-black leading-none">
                 TaskNera
               </span>
-              <span className="mt-1.5 text-[8px] font-semibold uppercase tracking-[0.24em] text-brand-ink/50">
+              <span className="mt-1.5 text-[8.5px] font-medium uppercase tracking-[0.22em] text-[#6B655F] transition-colors group-hover:text-[#423C37] leading-none">
                 People · Process · Performance
               </span>
             </div>

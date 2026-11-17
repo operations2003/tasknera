@@ -36,21 +36,22 @@ export default function Footer() {
           
           {/* Column 1: Brand & Positioning */}
           <div>
-            <Link href="/" className="flex items-center gap-3 group">
-              <div className="relative grid h-9 w-9 flex-none place-items-center overflow-hidden rounded-[4px] bg-white/10 p-1 ring-1 ring-white/20">
-                <Image
-                  src="/assets/images/tasknera-logo.png"
-                  alt="TaskNera"
-                  width={36}
-                  height={36}
-                  className="h-full w-full object-contain"
-                />
-              </div>
-              <div className="flex flex-col leading-none">
-                <span className="font-heading text-[21px] font-medium tracking-[-0.01em] text-white">
+            <Link
+              href="/"
+              className="group flex items-center gap-3 transition-opacity duration-200 hover:opacity-85"
+            >
+              <Image
+                src="/assets/images/tasknera-logo.png"
+                alt="TaskNera"
+                width={38}
+                height={38}
+                className="h-9 w-auto object-contain flex-none transition-transform duration-200 group-hover:scale-105"
+              />
+              <div className="flex flex-col justify-center">
+                <span className="font-heading text-[22px] font-medium tracking-[-0.015em] text-white leading-none">
                   TaskNera
                 </span>
-                <span className="mt-1.5 text-[8px] font-semibold uppercase tracking-[0.24em] text-white/40">
+                <span className="mt-1.5 text-[8.5px] font-medium uppercase tracking-[0.22em] text-white/50 leading-none">
                   People · Process · Performance
                 </span>
               </div>
