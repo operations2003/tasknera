@@ -129,7 +129,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Primary Nav */}
-          <nav className="hidden items-center gap-7 xl:flex" aria-label="Primary">
+          <nav className="hidden items-center gap-6 lg:flex xl:gap-8" aria-label="Primary">
             {navigationLinks.map((item) => {
               const isServices = item.dropdown;
               const isActive = isServices

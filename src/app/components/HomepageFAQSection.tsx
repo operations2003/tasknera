@@ -8,7 +8,7 @@ export default function HomepageFAQSection() {
   const [openIdx, setOpenIdx] = useState<number | null>(0);
 
   return (
-    <section className="border-t border-brand-navy/10 bg-brand-mist py-20 lg:py-28">
+    <section className="border-t border-brand-navy/10 bg-brand-mist py-14 sm:py-16 lg:py-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}

@@ -106,20 +106,32 @@ export default function AboutPage() {
                   </p>
                 </div>
 
-                <div className="mt-8 flex items-center gap-6">
+                <div className="mt-8 flex flex-wrap items-center gap-6 sm:gap-8">
                   <div>
-                    <span className="block font-heading text-2xl font-bold text-brand-navy">Zero</span>
-                    <span className="text-xs text-brand-ink/60">Candidate recruitment fees</span>
+                    <span className="block font-heading text-2xl sm:text-3xl font-bold text-brand-navy">
+                      40%+
+                    </span>
+                    <span className="text-xs font-medium text-brand-ink/65">
+                      Cost efficiency vs traditional agencies
+                    </span>
                   </div>
-                  <div className="h-8 w-px bg-brand-navy/10" />
+                  <div className="h-9 w-px bg-brand-navy/15 hidden sm:block" />
                   <div>
-                    <span className="block font-heading text-2xl font-bold text-brand-blue">100-Pt</span>
-                    <span className="text-xs text-brand-ink/60">Deterministic HireIQ rubric</span>
+                    <span className="block font-heading text-2xl sm:text-3xl font-bold text-brand-blue">
+                      3–5 Days
+                    </span>
+                    <span className="text-xs font-medium text-brand-ink/65">
+                      Vetted shortlist turnaround SLA
+                    </span>
                   </div>
-                  <div className="h-8 w-px bg-brand-navy/10" />
+                  <div className="h-9 w-px bg-brand-navy/15 hidden sm:block" />
                   <div>
-                    <span className="block font-heading text-2xl font-bold text-brand-navy">4 Hubs</span>
-                    <span className="text-xs text-brand-ink/60">India, US, UK &amp; Europe</span>
+                    <span className="block font-heading text-2xl sm:text-3xl font-bold text-brand-navy">
+                      100-Pt
+                    </span>
+                    <span className="text-xs font-medium text-brand-ink/65">
+                      Deterministic HireIQ rubric
+                    </span>
                   </div>
                 </div>
               </div>

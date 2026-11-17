@@ -13,7 +13,7 @@ const regions = [
 
 export default function GlobalDeliveryAndMetricsSection() {
   return (
-    <section className="relative overflow-hidden bg-brand-navy py-20 text-white lg:py-28">
+    <section className="relative overflow-hidden bg-brand-navy py-14 text-white sm:py-16 lg:py-20">
       {/* Subtle grain texture overlay */}
       <div
         className="grain pointer-events-none absolute inset-0 opacity-[0.15] mix-blend-soft-light"

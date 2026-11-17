@@ -161,7 +161,7 @@ function ServiceCard({ sol, featured = false }: { sol: (typeof solutionsList)[0]
 
 export default function ServicesSection() {
   return (
-    <section id="solutions" className="relative bg-brand-mist py-20 lg:py-28">
+    <section id="solutions" className="relative bg-brand-mist py-14 sm:py-16 lg:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}

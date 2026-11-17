@@ -6,7 +6,7 @@ import { howWeWorkSteps } from '@/lib/base44_content';
 
 export default function HowWeWorkSection() {
   return (
-    <section className="bg-white py-20 lg:py-28">
+    <section className="bg-white py-14 sm:py-16 lg:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
