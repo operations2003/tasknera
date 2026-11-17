@@ -1063,7 +1063,7 @@ export default function AdminPortalPage() {
                           <option>Technology &amp; Cloud Engineering</option>
                           <option>HR &amp; People Operations</option>
                           <option>Talent Acquisition &amp; Recruitment</option>
-                          <option>Virtual Customer Support</option>
+                          <option>Virtual &amp; Business Support</option>
                           <option>Software Sales &amp; Growth</option>
                           <option>Executive Operations</option>
                         </select>

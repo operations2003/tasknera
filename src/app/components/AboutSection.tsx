@@ -12,9 +12,9 @@ import {
 
 const stats = [
   {
-    value: '5 Pillars',
+    value: '4 Disciplines',
     label: 'Integrated Scope',
-    desc: 'HR Operations, Talent Acquisition, Workforce Solutions, Virtual Assistance & Customer Support.',
+    desc: 'HR Operations, Talent Acquisition, Workforce Solutions, and Virtual Assistance.',
     icon: Layers,
     color: 'bg-accent/10 text-accent border-accent/20',
   },
@@ -58,11 +58,11 @@ export default function AboutSection() {
             </h2>
 
             <p className="text-muted-foreground text-lg leading-relaxed font-normal">
-              TaskNera helps startups, SMEs and enterprises build their teams, manage their people and scale their operations through integrated HR, Workforce, Talent, Virtual Assistant and Customer Support solutions.
+              TaskNera helps startups, SMEs and enterprises build their teams, manage their people and scale their operations through integrated HR, Workforce, Talent, and Virtual Assistant solutions.
             </p>
 
             <p className="text-muted-foreground text-base leading-relaxed">
-              Instead of coordinating between fragmented recruitment consultancies, disparate BPO call centres, and disjointed freelance assistants, TaskNera unites people operations, staffing, virtual assistance, and customer experience under one strategic, accountability-driven partner.
+              Instead of coordinating between fragmented recruitment consultancies, disparate staffing agencies, and disjointed freelance assistants, TaskNera unites people operations, staffing, and virtual assistance under one strategic, accountability-driven partner.
             </p>
 
             <div className="flex flex-wrap gap-4 pt-2">

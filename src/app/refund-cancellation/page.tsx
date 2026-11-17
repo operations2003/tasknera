@@ -48,7 +48,7 @@ export default function RefundCancellationPage() {
                 Dedicated Virtual Pods &amp; Monthly Retainers
               </h2>
               <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
-                For monthly embedded pods (Virtual Assistants, Virtual Customer Support, and HR operations desks), services can be adjusted or cancelled with written notice as defined in your Master Services Agreement (typically 15 to 30 days notice). Unutilized upfront setup deposits, where applicable, are calculated and reconciled transparently.
+                For monthly embedded pods (Virtual Assistants, operations pods, and HR operations desks), services can be adjusted or cancelled with written notice as defined in your Master Services Agreement (typically 15 to 30 days notice). Unutilized upfront setup deposits, where applicable, are calculated and reconciled transparently.
               </p>
             </section>
 

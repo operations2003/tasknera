@@ -53,11 +53,6 @@ const pillars = [
     desc: 'Dedicated executive virtual assistance, calendar management, and operational SOP execution.',
     icon: Bot,
   },
-  {
-    title: 'Customer Experience',
-    desc: '24/7 omnichannel customer care specialists across live chat, helpdesks and email.',
-    icon: Headphones,
-  },
 ];
 
 export default function AboutPage() {
@@ -161,7 +156,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* 4 Pillars Section */}
+        {/* 3 Pillars Section */}
         <section className="py-20 lg:py-28 bg-brand-mist border-b border-brand-navy/10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-2xl mb-12">
@@ -169,11 +164,11 @@ export default function AboutPage() {
                 Core architecture
               </span>
               <h2 className="mt-3 font-heading text-3xl sm:text-4xl text-brand-navy font-bold">
-                The four operational pillars
+                The three operational pillars
               </h2>
             </div>
 
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="grid gap-6 md:grid-cols-3">
               {pillars.map((pil) => {
                 const Icon = pil.icon;
                 return (

@@ -33,7 +33,7 @@ export default function HeroSection() {
 
             <div className="flex flex-col gap-6 pt-2">
               <p className="max-w-[48ch] text-[15px] leading-[1.75] text-white/60">
-                Your strategic partner for global talent acquisition, HR operations, workforce solutions, technology and customer support. We help businesses build dependable teams and create the operational foundation for sustainable growth.
+                Your strategic partner for global talent acquisition, HR operations, workforce solutions, virtual assistance and technology. We help businesses build dependable teams and create the operational foundation for sustainable growth.
               </p>
 
               <div className="flex flex-wrap items-center gap-3">

@@ -23,7 +23,7 @@ export default function ServiceDisclaimerPage() {
               Service <span className="gradient-text-coral">Disclaimer</span>
             </h1>
             <p className="text-white/75 text-sm sm:text-base max-w-xl mx-auto">
-              Important legal parameters governing recruitment, HR operations, virtual assistance, and customer support engagements.
+              Important legal parameters governing recruitment, HR operations, virtual assistance, and workforce solutions engagements.
             </p>
             <p className="text-white/45 text-xs mt-3">Last Updated: September 2026</p>
           </div>

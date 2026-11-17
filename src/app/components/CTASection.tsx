@@ -58,7 +58,7 @@ const faqs = [
   },
   {
     q: 'Are your Virtual Assistants real people or AI bots?',
-    a: '100% vetted human remote professionals. Every TaskNera virtual assistant and customer support specialist is an educated, interviewed, and trained professional dedicated to your exact workflows.',
+    a: '100% vetted human remote professionals. Every TaskNera virtual assistant and operational specialist is an educated, interviewed, and trained professional dedicated to your exact workflows.',
   },
 ];
 
@@ -362,7 +362,7 @@ export default function CTASection() {
                 </h2>
 
                 <p className="text-[#E9E4DF]/80 text-base sm:text-lg leading-relaxed font-normal">
-                  From talent acquisition and HR operations to workforce management, virtual assistance, and customer support, TaskNera provides flexible, SLA-backed solutions designed to scale your business with confidence.
+                  From talent acquisition and HR operations to workforce management, virtual assistance, and technology solutions, TaskNera provides flexible, SLA-backed solutions designed to scale your business with confidence.
                 </p>
 
                 {/* Contact Cards Grid */}
@@ -522,8 +522,7 @@ export default function CTASection() {
                       <option value="hr-ops" className="bg-[#101D35] text-[#F3F6FA]">HR &amp; People Operations</option>
                       <option value="recruitment" className="bg-[#101D35] text-[#F3F6FA]">Talent Acquisition &amp; Recruitment</option>
                       <option value="workforce" className="bg-[#101D35] text-[#F3F6FA]">Contract Staffing &amp; Workforce Solutions</option>
-                      <option value="va" className="bg-[#101D35] text-[#F3F6FA]">Virtual Assistant Services (Human)</option>
-                      <option value="vcs" className="bg-[#101D35] text-[#F3F6FA]">Virtual Customer Support (VCS)</option>
+                      <option value="va" className="bg-[#101D35] text-[#F3F6FA]">Virtual Assistant &amp; Business Support</option>
                       <option value="tech" className="bg-[#101D35] text-[#F3F6FA]">JD Match Evaluator &amp; HR Technology</option>
                       <option value="other" className="bg-[#101D35] text-[#F3F6FA]">Comprehensive / Other Requirements</option>
                     </select>

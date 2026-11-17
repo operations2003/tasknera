@@ -39,7 +39,7 @@ export default function DataSecurityPage() {
                 Security Architecture &amp; Baseline Controls
               </h2>
               <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
-                TaskNera treats client confidentiality and employee data integrity as non-negotiable operational priorities. Every deployed pod, virtual assistant, and customer support specialist operates under strict security baselines designed to prevent unauthorized disclosure or breach.
+                TaskNera treats client confidentiality and employee data integrity as non-negotiable operational priorities. Every deployed pod, virtual assistant, and operational specialist operates under strict security baselines designed to prevent unauthorized disclosure or breach.
               </p>
             </section>
 

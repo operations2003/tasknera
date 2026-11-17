@@ -39,7 +39,7 @@ const tiers = [
   {
     name: 'Dedicated Embedded Pods',
     tag: 'Most Popular for Scaling',
-    desc: 'Dedicated full-time remote professionals embedded directly into your team for HR, Virtual Assistance, or VCS.',
+    desc: 'Dedicated full-time remote professionals embedded directly into your team for HR, Virtual Assistance, or Operations.',
     billing: 'Transparent Monthly Pod Rate',
     idealFor: 'Growing teams needing predictable operational headcount',
     sla: 'Dedicated 40 hrs/week · Overlapping Timezones',
@@ -57,7 +57,7 @@ const tiers = [
   {
     name: 'Managed RPO & Operations',
     tag: 'Enterprise Scale',
-    desc: 'End-to-end management of your recruitment, HR operations, payroll, and omnichannel customer support.',
+    desc: 'End-to-end management of your talent acquisition, HR operations, payroll, and back-office delivery.',
     billing: 'Blended SLA Retainer + Volume Milestones',
     idealFor: 'Enterprises and scale-ups managing 50+ headcount',
     sla: 'Strict SLA benchmarks & dedicated Account Director',
@@ -65,7 +65,7 @@ const tiers = [
     features: [
       'End-to-end recruitment process outsourcing (RPO)',
       'Complete statutory payroll & HR compliance audit and execution',
-      '24/7 omnichannel virtual customer care desk (voice, chat, email)',
+      'Dedicated back-office workflow execution and operations pod',
       'Custom dashboards, executive reporting & monthly business reviews',
     ],
     cta: 'Structure an Enterprise Agreement',

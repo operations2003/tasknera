@@ -79,7 +79,7 @@ export default function EngagementModelsPage() {
                 Need a hybrid or custom enterprise structure?
               </h3>
               <p className="mt-3 text-[14.5px] text-brand-ink/70 leading-relaxed max-w-xl mx-auto">
-                We frequently combine recruitment sprints with dedicated HR operations and customer care desks into a single master services agreement.
+                We frequently combine recruitment sprints with dedicated HR operations and virtual assistant desks into a single master services agreement.
               </p>
               <div className="mt-6">
                 <Link

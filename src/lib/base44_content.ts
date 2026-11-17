@@ -64,7 +64,7 @@ export const capabilities: CapabilityItem[] = [
   },
   {
     title: "Dedicated Business Support",
-    text: "Executive assistance, customer support and operations handled by trained, accountable professionals.",
+    text: "Executive assistance, back-office operations and administrative leverage handled by trained, accountable professionals.",
   },
 ];
 
@@ -98,7 +98,7 @@ export const audiences: AudienceItem[] = [
     help: [
       "Managed HR operations and payroll coordination",
       "HR policies, records and performance frameworks",
-      "Customer support and virtual assistant pods",
+      "Executive administration and virtual assistant pods",
     ],
   },
   {
@@ -110,7 +110,7 @@ export const audiences: AudienceItem[] = [
     help: [
       "Dedicated recruiter pods and RPO engagements",
       "Contract and volume workforce deployment",
-      "Omnichannel customer support teams",
+      "Specialized operations and administrative teams",
     ],
   },
   {
@@ -143,7 +143,7 @@ export const industriesList = [
   { name: "IT, SaaS & Technology", sub: "Engineering, product, QA, DevOps" },
   { name: "Healthcare & Life Sciences", sub: "Clinical operations, billing, patient support" },
   { name: "Manufacturing", sub: "Supply chain, plant operations, procurement" },
-  { name: "Retail & E-commerce", sub: "Catalog, customer care, operations" },
+  { name: "Retail & E-commerce", sub: "Catalog, supply chain, store operations" },
   { name: "BFSI & Fintech", sub: "Risk, compliance, financial operations" },
   { name: "Logistics & Supply Chain", sub: "Dispatch, fleet, freight operations" },
   { name: "EdTech & Education", sub: "Admissions, student support, counselling" },
@@ -231,7 +231,7 @@ export interface FaqItem {
 export const homepageFaqs: FaqItem[] = [
   {
     q: "What services does TaskNera provide?",
-    a: "TaskNera delivers HR and people operations, talent acquisition and recruitment, workforce solutions, virtual assistant and business support, virtual customer support, technology and software development, plus our HireIQ recruitment intelligence and TaskNera HRMS platforms. Engagements can be single-service or fully integrated under one partner.",
+    a: "TaskNera delivers HR and people operations, talent acquisition and recruitment, workforce solutions, virtual assistant and business support, technology and software development, plus our HireIQ recruitment intelligence and TaskNera HRMS platforms. Engagements can be single-service or fully integrated under one partner.",
   },
   {
     q: "Does TaskNera work with international companies?",
@@ -247,7 +247,7 @@ export const homepageFaqs: FaqItem[] = [
   },
   {
     q: "Does TaskNera provide remote employees?",
-    a: "Yes. We deploy dedicated remote professionals for HR, virtual assistance, customer support, recruitment and technology roles. They work full-time or part-time against your processes and are supported by a TaskNera team lead.",
+    a: "Yes. We deploy dedicated remote professionals for HR, virtual assistance, operations, recruitment and technology roles. They work full-time or part-time against your processes and are supported by a TaskNera team lead.",
   },
   {
     q: "What is HireIQ?",

@@ -4,9 +4,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.tasknera.com';
   const routes = [
     '',
+    '/services',
     '/hr-workforce-solutions',
     '/talent-acquisition',
-    '/virtual-customer-support',
     '/virtual-assistant-services',
     '/workplace-policies',
     '/business-support',

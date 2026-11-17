@@ -26,7 +26,6 @@ import {
   Coins,
   Code2,
   Megaphone,
-  Headphones,
   RotateCw,
   Crown,
   Users,
@@ -36,9 +35,9 @@ import {
 /* ── 1. About Stats ── */
 const aboutStats = [
   {
-    value: '5 Pillars',
+    value: '4 Disciplines',
     label: 'Integrated Scope',
-    desc: 'HR Operations, Talent Acquisition, Workforce Solutions, Virtual Assistance & Customer Support.',
+    desc: 'Talent Acquisition, HR Operations, Workforce Solutions, and Virtual Assistance.',
     icon: Layers,
   },
   {
@@ -118,7 +117,7 @@ const industriesList = [
   { icon: Laptop, label: 'IT, SaaS & Tech', roles: 'Full-stack, QA, DevOps, Product' },
   { icon: Activity, label: 'Healthcare & Biotech', roles: 'Clinical, medical billing, support' },
   { icon: Factory, label: 'Manufacturing', roles: 'Supply chain, plant ops, procurement' },
-  { icon: ShoppingBag, label: 'Retail & E-commerce', roles: 'Catalog, customer care, ops' },
+  { icon: ShoppingBag, label: 'Retail & E-commerce', roles: 'Catalog, inventory, merchandising ops' },
   { icon: Landmark, label: 'BFSI & Fintech', roles: 'Risk, compliance, financial ops' },
   { icon: Truck, label: 'Logistics & Supply Chain', roles: 'Dispatch, fleet, freight ops' },
   { icon: GraduationCap, label: 'EdTech & Education', roles: 'Admissions, student support, counselors' },
@@ -133,7 +132,7 @@ const functionalRolesList = [
   { icon: Code2, label: 'IT & Engineering', desc: 'Software engineers, architects, cloud, QA' },
   { icon: Coins, label: 'Finance & Accounting', desc: 'Accountants, controllers, financial analysts' },
   { icon: Megaphone, label: 'Sales & Marketing', desc: 'SDRs, AEs, demand gen, CRM specialists' },
-  { icon: Headphones, label: 'Customer Support (VCS)', desc: 'Omnichannel voice, live chat, ticket pods' },
+  { icon: Layers, label: 'Virtual & Executive Assistance', desc: 'Calendar, inbox triage, CRM hygiene, research' },
   { icon: RotateCw, label: 'Operations & Supply Chain', desc: 'Inventory managers, logisticians, coordinators' },
   { icon: Crown, label: 'Executive & Leadership', desc: 'C-suite, VPs, country & regional directors' },
   { icon: Users, label: 'HR & Administration', desc: 'HR generalists, recruiters, executive VAs' },
@@ -246,11 +245,11 @@ export default function CompanyOverviewSection() {
                 </h3>
 
                 <p className="text-tn-slate text-base sm:text-lg leading-relaxed">
-                  TaskNera helps startups, SMEs and enterprises build their teams, manage their people and scale their operations through integrated HR, Workforce, Talent, Virtual Assistant and Customer Support solutions.
+                  TaskNera helps startups, SMEs and enterprises build their teams, manage their people and scale their operations through integrated HR, Workforce, Talent, and Virtual Assistant solutions.
                 </p>
 
                 <p className="text-tn-slate text-sm sm:text-base leading-relaxed">
-                  Instead of coordinating between fragmented recruitment consultancies, disparate BPO call centres, and disjointed freelance assistants, TaskNera unites people operations, staffing, virtual assistance, and customer experience under one strategic, accountability-driven partner.
+                  Instead of coordinating between fragmented recruitment consultancies, disparate staffing agencies, and disjointed freelance assistants, TaskNera unites people operations, staffing, and virtual assistance under one strategic, accountability-driven partner.
                 </p>
 
                 <div className="flex flex-wrap gap-3.5 pt-2">

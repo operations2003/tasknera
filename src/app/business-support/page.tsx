@@ -34,13 +34,6 @@ const services = [
     useCases: ['Lead outreach & follow-up coordination', 'Sales reporting & pipeline tracking', 'Operations process documentation'],
     link: '/virtual-assistant-services',
   },
-  {
-    title: 'Virtual Customer Support (VCS)',
-    desc: 'Dedicated virtual customer support teams handling voice, chat, email, social media, and WhatsApp — delivering seamless customer retention at scale.',
-    icon: 'PhoneIcon',
-    useCases: ['Voice, chat & email support operations', 'Social media & WhatsApp customer care', 'Helpdesk, ticket management & back-office support'],
-    link: '/virtual-customer-support',
-  },
 ];
 
 const capabilities = [
@@ -115,7 +108,7 @@ export default function BusinessSupportPage() {
         <section className="py-16 bg-surface-subtle border-b border-border/60">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-6">
-              
+
               <div className="bg-card border border-border/70 rounded-3xl p-8 space-y-4 hover:border-accent/40 transition-colors shadow-sm">
                 <div className="text-xs font-semibold text-accent uppercase tracking-widest">
                   Specialized Solution #1

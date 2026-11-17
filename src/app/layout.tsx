@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
   title: 'TaskNera | Global HR, Recruitment, Technology & Business Operations Partner',
   description:
-    'Build your team. Strengthen operations. Scale without limits. TaskNera is your strategic partner for global talent acquisition, HR operations, workforce solutions, technology and customer support.',
+    'Build your team. Strengthen operations. Scale without limits. TaskNera is your strategic partner for global talent acquisition, HR operations, workforce solutions, virtual assistance and technology.',
   icons: {
     icon: [
       {

@@ -57,7 +57,7 @@ export default function ServicesPage() {
         <section className="py-20 lg:py-28 bg-[#FAF7F2]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {(() => {
-              const activeServices = rawServices.filter((svc: any) => svc.slug !== 'customer-support');
+              const activeServices = rawServices;
               const tier1 = activeServices.slice(0, 2);
               const tier2 = activeServices.slice(2, 5);
               const tier3 = activeServices.slice(5, 7);

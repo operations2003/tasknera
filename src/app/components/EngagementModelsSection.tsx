@@ -63,10 +63,10 @@ const models = [
     tag: 'Human Remote Pros',
   },
   {
-    icon: Headphones,
-    title: 'Dedicated VCS Team',
-    desc: 'Build a dedicated voice, chat, email or digital customer support team based on your required coverage and service scope.',
-    tag: 'Omnichannel VCS',
+    icon: ShieldCheck,
+    title: 'Back-Office Operations Pods',
+    desc: 'Dedicated managed teams for transactional processing, CRM hygiene, documentation, and operational SLAs.',
+    tag: 'Managed Pods',
   },
 ];
 
