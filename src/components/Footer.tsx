@@ -10,7 +10,6 @@ const footerServices = [
   { name: 'Talent Acquisition & Recruitment', href: '/services/talent-acquisition' },
   { name: 'Workforce Solutions', href: '/services/workforce-solutions' },
   { name: 'Virtual Assistant & Business Support', href: '/services/virtual-assistants' },
-  { name: 'Virtual Customer Support', href: '/services/customer-support' },
   { name: 'Technology & Software Development', href: '/services/technology' },
   { name: 'HireIQ', href: '/services/hireiq' },
   { name: 'TaskNera HRMS', href: '/services/hrms' },
@@ -21,7 +20,6 @@ const footerCompany = [
   { name: 'Engagement Models', href: '/engagement-models' },
   { name: 'Careers & Hiring', href: '/careers' },
   { name: 'Contact & Scoping', href: '/contact' },
-  { name: 'Client Portal', href: '/admin' },
 ];
 
 export default function Footer() {
@@ -160,13 +158,6 @@ export default function Footer() {
                   <MapPin className="h-4 w-4 flex-none mt-0.5 text-brand-teal" />
                   <span>{companyInfo.address}</span>
                 </p>
-              </div>
-
-              <div className="pt-2 border-t border-white/10">
-                <span className="inline-flex items-center gap-1 text-[11px] text-emerald-300">
-                  <ShieldCheck className="h-3.5 w-3.5" />
-                  <span>Zero recruitment fees for job candidates guarantee</span>
-                </span>
               </div>
             </div>
           </div>

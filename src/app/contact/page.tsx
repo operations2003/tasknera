@@ -35,7 +35,6 @@ const serviceOptions = [
   'Talent Acquisition & Recruitment',
   'Workforce Solutions',
   'Virtual Assistant & Business Support',
-  'Virtual Customer Support',
   'Technology & Software Development',
   'HireIQ ATS Platform',
   'TaskNera HRMS',

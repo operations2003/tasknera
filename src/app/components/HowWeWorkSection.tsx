@@ -37,15 +37,18 @@ export default function HowWeWorkSection() {
           {howWeWorkSteps.map((step) => (
             <div
               key={step.step}
-              className="relative flex flex-col rounded-2xl border border-brand-navy/10 bg-brand-mist p-6 lg:p-7"
+              className="group relative flex flex-col rounded-2xl border border-[#E7E2DA] bg-[#FAF8F5] p-7 transition-all duration-300 hover:-translate-y-1 hover:border-brand-navy hover:bg-white hover:shadow-[0_20px_40px_-20px_rgba(20,17,15,0.25)]"
             >
-              <span className="font-mono text-[11px] font-bold tracking-[0.2em] text-brand-blue">
-                STAGE {step.step}
-              </span>
-              <h3 className="mt-4 font-heading text-[20px] font-bold text-brand-navy">
+              <div className="flex items-center justify-between">
+                <span className="font-mono text-[11px] font-bold tracking-[0.2em] text-brand-blue">
+                  STAGE {step.step}
+                </span>
+                <span className="h-2 w-2 rounded-full bg-brand-blue/30 group-hover:bg-brand-blue transition-colors" />
+              </div>
+              <h3 className="mt-5 font-heading text-[21px] font-medium tracking-tight text-brand-navy">
                 {step.title}
               </h3>
-              <p className="mt-2.5 text-[13px] leading-relaxed text-brand-ink/65">
+              <p className="mt-3 text-[13.5px] leading-relaxed text-brand-ink/70">
                 {step.text}
               </p>
             </div>

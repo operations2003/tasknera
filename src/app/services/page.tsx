@@ -45,7 +45,7 @@ export default function ServicesPage() {
               Modular solutions
             </span>
             <h1 className="mt-4 font-heading text-4xl sm:text-5xl lg:text-6xl font-normal leading-[1.05] tracking-tight">
-              Eight disciplines. One accountable partner.
+              Modular disciplines. One accountable partner.
             </h1>
             <p className="mt-5 text-base sm:text-lg text-white/70 leading-relaxed max-w-2xl mx-auto">
               Engage a single specialist, deploy a dedicated pod or hand over an entire operational function. Every solution is delivered with documented processes and clear ownership.
@@ -53,63 +53,82 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        {/* 8 Disciplines Grid */}
+        {/* Disciplines Grid */}
         <section className="py-20 lg:py-28 bg-[#FAF7F2]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-              {rawServices.map((svc: any, idx: number) => {
-                const Icon = iconMap[svc.slug] || Users;
-                const isLarge = idx < 2 || svc.tag === 'Platform';
+            {(() => {
+              const activeServices = rawServices.filter((svc: any) => svc.slug !== 'customer-support');
+              const tier1 = activeServices.slice(0, 2);
+              const tier2 = activeServices.slice(2, 5);
+              const tier3 = activeServices.slice(5, 7);
 
+              const renderCard = (svc: any, featured = false) => {
+                const Icon = iconMap[svc.slug] || Users;
                 return (
-                  <div
-                    key={svc.slug}
-                    className={isLarge ? 'lg:col-span-2' : 'lg:col-span-1'}
-                  >
+                  <div key={svc.slug}>
                     <Link
                       href={`/services/${svc.slug}`}
-                      className={`group flex h-full flex-col rounded-2xl border border-brand-navy/10 bg-white p-6 transition-all duration-300 hover:border-brand-navy hover:bg-brand-navy hover:shadow-[0_24px_50px_-30px_rgba(16,28,53,0.5)] ${
-                        idx < 2 ? 'lg:p-8' : ''
+                      className={`group relative flex h-full flex-col rounded-2xl border border-[#E7E2DA] bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-brand-navy hover:bg-brand-navy hover:shadow-[0_26px_50px_-24px_rgba(20,17,15,0.45)] ${
+                        featured ? 'lg:p-8' : ''
                       }`}
                     >
                       <div className="flex items-start justify-between gap-4">
-                        <span className="grid h-11 w-11 place-items-center rounded-xl bg-brand-navy/[0.05] text-brand-blue transition-colors duration-300 group-hover:bg-white/10 group-hover:text-brand-teal">
+                        <span className="grid h-12 w-12 place-items-center rounded-[8px] bg-[#FAF3EC] border border-[#EBD9CC] text-brand-blue transition-all duration-300 group-hover:bg-white/10 group-hover:border-white/20 group-hover:text-brand-teal">
                           <Icon className="h-5 w-5" />
                         </span>
-                        <span className="text-[9.5px] font-semibold uppercase tracking-[0.18em] text-brand-navy/35 transition-colors group-hover:text-white/35">
+                        <span className="rounded-full bg-[#FAF3EC] px-3 py-1 text-[9.5px] font-semibold uppercase tracking-[0.18em] text-brand-blue font-mono transition-colors group-hover:bg-white/10 group-hover:text-brand-teal">
                           {svc.tag}
                         </span>
                       </div>
 
-                      <h2 className="mt-5 text-[17px] font-bold leading-snug text-brand-navy transition-colors group-hover:text-white">
+                      <h2 className="mt-6 font-heading text-[21px] sm:text-[23px] font-medium leading-snug tracking-[-0.015em] text-brand-navy transition-colors group-hover:text-white">
                         {svc.name}
                       </h2>
 
-                      <p className="mt-2.5 text-[13px] leading-relaxed text-brand-ink/65 transition-colors group-hover:text-white/60">
+                      <p className="mt-3 text-[14px] leading-relaxed text-brand-ink/70 transition-colors group-hover:text-white/70">
                         {svc.summary}
                       </p>
 
-                      <ul className="mt-5 flex flex-col gap-2">
+                      <ul className="mt-6 flex flex-col gap-2.5 border-t border-brand-navy/[0.08] pt-6 group-hover:border-white/10">
                         {svc.capabilities.slice(0, 3).map((cap: string) => (
                           <li
                             key={cap}
-                            className="flex items-start gap-2 text-[12px] leading-snug text-brand-ink/60 transition-colors group-hover:text-white/60"
+                            className="flex items-start gap-2.5 text-[12.5px] leading-snug text-brand-ink/75 transition-colors group-hover:text-white/70"
                           >
-                            <Check className="mt-[3px] h-3 w-3 flex-none text-brand-blue group-hover:text-brand-teal" />
+                            <Check className="mt-[3px] h-3.5 w-3.5 flex-none text-brand-blue group-hover:text-brand-teal" />
                             <span>{cap}</span>
                           </li>
                         ))}
                       </ul>
 
-                      <span className="mt-auto flex items-center gap-2 pt-6 text-[12.5px] font-semibold text-brand-blue transition-colors group-hover:text-brand-teal">
+                      <span className="mt-auto flex items-center gap-2 pt-7 text-[13px] font-semibold text-brand-blue transition-colors group-hover:text-brand-teal">
                         <span>Explore solution</span>
-                        <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+                        <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />
                       </span>
                     </Link>
                   </div>
                 );
-              })}
-            </div>
+              };
+
+              return (
+                <div className="space-y-5">
+                  {/* Tier 1: Two Primary Disciplines */}
+                  <div className="grid gap-5 lg:grid-cols-2">
+                    {tier1.map((svc: any) => renderCard(svc, true))}
+                  </div>
+
+                  {/* Tier 2: Operational Capacity & Engineering (3 Columns) */}
+                  <div className="grid gap-5 md:grid-cols-3">
+                    {tier2.map((svc: any) => renderCard(svc, false))}
+                  </div>
+
+                  {/* Tier 3: Proprietary Platforms (2 Columns) */}
+                  <div className="grid gap-5 lg:grid-cols-2">
+                    {tier3.map((svc: any) => renderCard(svc, true))}
+                  </div>
+                </div>
+              );
+            })()}
           </div>
         </section>
 

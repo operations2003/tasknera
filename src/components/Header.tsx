@@ -57,13 +57,6 @@ const serviceMenuItems = [
     href: '/services/virtual-assistants',
   },
   {
-    slug: 'customer-support',
-    name: 'Virtual Customer Support',
-    tagline: 'Customer care that protects your brand around the clock.',
-    icon: Headphones,
-    href: '/services/customer-support',
-  },
-  {
     slug: 'technology',
     name: 'Technology & Software Development',
     tagline: 'Full-stack engineering and automation built for production.',
@@ -234,12 +227,6 @@ export default function Header() {
 
           {/* Desktop Right Side CTAs */}
           <div className="hidden items-center gap-6 lg:flex">
-            <Link
-              href="/admin"
-              className="text-[10.5px] font-semibold uppercase tracking-[0.18em] text-brand-ink/55 transition-colors hover:text-brand-navy"
-            >
-              Client portal
-            </Link>
             <Link
               href="/contact"
               className="bg-brand-navy text-white hover:bg-black font-medium text-[12.5px] px-4 py-2 rounded-[3px] transition-colors shadow-sm"
