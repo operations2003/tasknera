@@ -73,6 +73,9 @@ export async function generateMetadata({
   return {
     title: service.metaTitle || `${service.name} | Tasknera`,
     description: service.metaDescription || service.summary,
+    alternates: {
+      canonical: `https://tasknera.com/services/${service.slug}`,
+    },
   };
 }
 

@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { saveSubmission } from '@/lib/storage/inquiries';
@@ -75,6 +75,65 @@ const contactDesks = [
     sla: 'Executive leadership',
   },
 ];
+
+const queryTitles: Record<string, string> = {
+  'service:Workforce Solutions': 'Workforce Solutions Consultation | Tasknera',
+  'model:Recruitment Success Fee': 'Recruitment Success Fee Consultation | Tasknera',
+  'model:Custom Enterprise Engagement': 'Custom Enterprise Hiring Consultation | Tasknera',
+  'model:Dedicated Resource': 'Dedicated Resource Hiring Consultation | Tasknera',
+  'industry:Hospitality & Real Estate': 'Hospitality & Real Estate Staffing | Tasknera',
+  'industry:Startups & Scale-ups': 'Startup & Scale-Up Hiring Consultation | Tasknera',
+  'industry:Retail & E-commerce': 'Retail & E-Commerce Staffing Consultation | Tasknera',
+  'model:Project-Based': 'Project-Based Hiring Consultation | Tasknera',
+  'industry:EdTech & Education': 'EdTech & Education Staffing Consultation | Tasknera',
+  'service:Technology & Software Development': 'Tech & Software Team Consultation | Tasknera',
+  'industry:Healthcare & Life Sciences': 'Healthcare & Life Sciences Staffing | Tasknera',
+};
+
+function ContactFormSync({
+  setFormData,
+}: {
+  setFormData: React.Dispatch<React.SetStateAction<ContactFormData>>;
+}) {
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const searchParams = new URLSearchParams(window.location.search);
+    const serviceParam = searchParams.get('service');
+    const modelParam = searchParams.get('model');
+    const industryParam = searchParams.get('industry');
+
+    let dynamicTitle = 'Contact Tasknera & Scope Your Consultation';
+
+    if (serviceParam) {
+      const key = `service:${serviceParam}`;
+      if (queryTitles[key]) dynamicTitle = queryTitles[key];
+      setFormData((prev) => ({
+        ...prev,
+        serviceRequired: serviceOptions.includes(serviceParam) ? serviceParam : prev.serviceRequired,
+      }));
+    } else if (modelParam) {
+      const key = `model:${modelParam}`;
+      if (queryTitles[key]) dynamicTitle = queryTitles[key];
+      setFormData((prev) => ({
+        ...prev,
+        businessRequirement: prev.businessRequirement || `Interested in engagement model: ${modelParam}`,
+      }));
+    } else if (industryParam) {
+      const key = `industry:${industryParam}`;
+      if (queryTitles[key]) dynamicTitle = queryTitles[key];
+      setFormData((prev) => ({
+        ...prev,
+        businessRequirement: prev.businessRequirement || `Industry focus: ${industryParam}`,
+      }));
+    }
+
+    if (typeof document !== 'undefined') {
+      document.title = dynamicTitle;
+    }
+  }, [setFormData]);
+
+  return null;
+}
 
 export default function ContactPage() {
   const [formData, setFormData] = useState<ContactFormData>({
@@ -170,6 +229,7 @@ export default function ContactPage() {
 
   return (
     <>
+      <ContactFormSync setFormData={setFormData} />
       <Header />
       <main className="min-h-screen bg-[#FAF7F2]">
         {/* Contact Hero */}

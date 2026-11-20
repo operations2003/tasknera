@@ -73,7 +73,7 @@ export const contactPageSchema = {
   '@type': 'ContactPage',
   '@id': 'https://tasknera.com/contact#webpage',
   url: 'https://tasknera.com/contact',
-  name: 'Contact Us & Consultation Scoping | Tasknera',
+  name: 'Contact Tasknera & Scope Your Consultation',
   description:
     'Contact Tasknera to schedule a strategic consultation, scope operational headcount requirements, or evaluate our recruitment and HR software solutions.',
   isPartOf: {
