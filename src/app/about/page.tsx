@@ -3,6 +3,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import JsonLd from '@/components/JsonLd';
+import { aboutPageSchema } from '@/lib/schema';
 import {
   Users,
   Search,
@@ -66,6 +68,7 @@ const pillars = [
 export default function AboutPage() {
   return (
     <>
+      <JsonLd data={aboutPageSchema} />
       <Header />
       <main className="min-h-screen bg-[#FAF7F2]">
         

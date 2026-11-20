@@ -4,6 +4,8 @@ import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Eye, CheckCircle2 } from 'lucide-react';
+import JsonLd from '@/components/JsonLd';
+import { buildWebPageSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'Accessibility Statement | Tasknera',
@@ -11,9 +13,17 @@ export const metadata: Metadata = {
     'Read the Tasknera Accessibility Statement outlining our ongoing commitment to digital inclusion, assistive technologies, and WCAG 2.1 AA conformance standards.',
 };
 
+const accessibilitySchema = buildWebPageSchema({
+  name: 'Accessibility Statement | Tasknera',
+  description:
+    'Read the Tasknera Accessibility Statement outlining our ongoing commitment to digital inclusion, assistive technologies, and WCAG 2.1 AA conformance standards.',
+  url: 'https://tasknera.com/accessibility',
+});
+
 export default function AccessibilityPage() {
   return (
     <>
+      <JsonLd data={accessibilitySchema} />
       <Header />
       <main className="bg-surface-subtle min-h-screen pt-16 sm:pt-20 pb-20 sm:pb-28">
         {/* Hero Header */}

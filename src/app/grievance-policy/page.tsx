@@ -4,6 +4,8 @@ import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { AlertCircle, Clock, ShieldCheck, Mail } from 'lucide-react';
+import JsonLd from '@/components/JsonLd';
+import { buildWebPageSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'Grievance Redressal Policy | Tasknera',
@@ -11,9 +13,17 @@ export const metadata: Metadata = {
     'Learn about Tasknera structured grievance redressal mechanism, formal dispute escalation pathways, investigation steps, and resolution SLA commitments.',
 };
 
+const grievanceSchema = buildWebPageSchema({
+  name: 'Grievance Redressal Policy | Tasknera',
+  description:
+    'Learn about Tasknera structured grievance redressal mechanism, formal dispute escalation pathways, investigation steps, and resolution SLA commitments.',
+  url: 'https://tasknera.com/grievance-policy',
+});
+
 export default function GrievancePolicyPage() {
   return (
     <>
+      <JsonLd data={grievanceSchema} />
       <Header />
       <main className="bg-surface-subtle min-h-screen pt-16 sm:pt-20 pb-20 sm:pb-28">
         {/* Hero Header */}

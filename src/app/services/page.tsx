@@ -3,6 +3,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import JsonLd from '@/components/JsonLd';
+import { servicesOverviewSchema } from '@/lib/schema';
 import {
   Users,
   Search,
@@ -37,6 +39,7 @@ const iconMap: Record<string, any> = {
 export default function ServicesPage() {
   return (
     <>
+      <JsonLd data={servicesOverviewSchema} />
       <Header />
       <main className="min-h-screen bg-[#FAF7F2]">
         

@@ -1,5 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
+import { contactPageSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'Contact Us & Consultation Scoping | Tasknera',
@@ -8,5 +10,10 @@ export const metadata: Metadata = {
 };
 
 export default function ContactLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return (
+    <>
+      <JsonLd data={contactPageSchema} />
+      {children}
+    </>
+  );
 }

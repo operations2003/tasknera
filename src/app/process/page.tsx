@@ -4,12 +4,21 @@ import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ProcessSection from '@/app/components/ProcessSection';
+import JsonLd from '@/components/JsonLd';
+import { buildWebPageSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'Our Delivery Process & Methodology | Tasknera',
   description:
     'Discover Tasknera structured 4-step operational delivery process, rigorous SLA benchmarks, and governance frameworks designed for enterprise accountability.',
 };
+
+const processSchema = buildWebPageSchema({
+  name: 'Our Delivery Process & Methodology | Tasknera',
+  description:
+    'Discover Tasknera structured 4-step operational delivery process, rigorous SLA benchmarks, and governance frameworks designed for enterprise accountability.',
+  url: 'https://tasknera.com/process',
+});
 import {
   Compass,
   CheckCircle2,
@@ -67,6 +76,7 @@ const cadenceRhythms = [
 export default function ProcessPage() {
   return (
     <>
+      <JsonLd data={processSchema} />
       <Header />
       <main className="bg-background min-h-screen pt-16 sm:pt-20">
         

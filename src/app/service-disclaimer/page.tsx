@@ -4,6 +4,8 @@ import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { AlertCircle, FileText, CheckCircle2 } from 'lucide-react';
+import JsonLd from '@/components/JsonLd';
+import { buildWebPageSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'Service Disclaimer | Tasknera',
@@ -11,9 +13,17 @@ export const metadata: Metadata = {
     'Read important legal parameters and service disclaimers governing Tasknera recruitment outcomes, client hiring decisions, and operational platform scope.',
 };
 
+const serviceDisclaimerSchema = buildWebPageSchema({
+  name: 'Service Disclaimer | Tasknera',
+  description:
+    'Read important legal parameters and service disclaimers governing Tasknera recruitment outcomes, client hiring decisions, and operational platform scope.',
+  url: 'https://tasknera.com/service-disclaimer',
+});
+
 export default function ServiceDisclaimerPage() {
   return (
     <>
+      <JsonLd data={serviceDisclaimerSchema} />
       <Header />
       <main className="bg-surface-subtle min-h-screen pt-16 sm:pt-20 pb-20 sm:pb-28">
         {/* Hero Header */}

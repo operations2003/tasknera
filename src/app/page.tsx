@@ -11,6 +11,9 @@ import GlobalDeliveryAndMetricsSection from '@/app/components/GlobalDeliveryAndM
 import LeadershipSection from '@/app/components/LeadershipSection';
 import HomepageFAQSection from '@/app/components/HomepageFAQSection';
 import FinalCTASection from '@/app/components/FinalCTASection';
+import JsonLd from '@/components/JsonLd';
+import { organizationSchema, websiteSchema, buildFaqSchema } from '@/lib/schema';
+import { homepageFaqs } from '@/lib/base44_content';
 
 export const metadata = {
   title: 'TaskNera | Global HR, Recruitment, Technology & Business Operations Partner',
@@ -21,6 +24,7 @@ export const metadata = {
 export default function HomePage() {
   return (
     <>
+      <JsonLd data={[organizationSchema, websiteSchema, buildFaqSchema(homepageFaqs)]} />
       <Header />
       <main className="min-h-screen">
         {/* Section 1: Hero */}

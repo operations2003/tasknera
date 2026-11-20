@@ -3,6 +3,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import JsonLd from '@/components/JsonLd';
+import { buildWebPageSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'Terms and Conditions | Tasknera',
@@ -10,9 +12,17 @@ export const metadata: Metadata = {
     'Review the official Terms and Conditions governing the use of Tasknera website, recruitment services, workforce operations, and proprietary software platforms.',
 };
 
+const termsSchema = buildWebPageSchema({
+  name: 'Terms and Conditions | Tasknera',
+  description:
+    'Review the official Terms and Conditions governing the use of Tasknera website, recruitment services, workforce operations, and proprietary software platforms.',
+  url: 'https://tasknera.com/terms',
+});
+
 export default function TermsPage() {
   return (
     <>
+      <JsonLd data={termsSchema} />
       <Header />
       <main className="bg-[#FAF7F2] min-h-screen">
         {/* Hero Header */}
@@ -38,7 +48,7 @@ export default function TermsPage() {
         {/* Terms Content */}
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="bg-white border border-brand-navy/10 rounded-2xl p-7 sm:p-12 shadow-sm space-y-10 text-brand-ink">
-            
+
             {/* Section 1 */}
             <section className="space-y-3">
               <h2 className="text-xl sm:text-2xl font-display font-700 text-foreground flex items-center gap-3">

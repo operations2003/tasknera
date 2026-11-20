@@ -4,6 +4,8 @@ import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { ShieldCheck, FileCheck, Lock, UserCheck, CheckCircle2 } from 'lucide-react';
+import JsonLd from '@/components/JsonLd';
+import { buildWebPageSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'Candidate Privacy Policy | Tasknera',
@@ -11,9 +13,17 @@ export const metadata: Metadata = {
     'Understand how Tasknera collects, protects, processes, and stores candidate personal data throughout recruitment screening, evaluation, and hiring stages.',
 };
 
+const candidatePrivacySchema = buildWebPageSchema({
+  name: 'Candidate Privacy Policy | Tasknera',
+  description:
+    'Understand how Tasknera collects, protects, processes, and stores candidate personal data throughout recruitment screening, evaluation, and hiring stages.',
+  url: 'https://tasknera.com/candidate-privacy',
+});
+
 export default function CandidatePrivacyPage() {
   return (
     <>
+      <JsonLd data={candidatePrivacySchema} />
       <Header />
       <main className="bg-[#FAF7F2] min-h-screen">
         {/* Hero Header */}

@@ -3,6 +3,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import JsonLd from '@/components/JsonLd';
+import { buildWebPageSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'Refund & Cancellation Policy | Tasknera',
@@ -10,9 +12,17 @@ export const metadata: Metadata = {
     'Read Tasknera commercial guidelines governing service terminations, contract billing reconciliations, candidate replacements, and refund request protocols.',
 };
 
+const refundSchema = buildWebPageSchema({
+  name: 'Refund & Cancellation Policy | Tasknera',
+  description:
+    'Read Tasknera commercial guidelines governing service terminations, contract billing reconciliations, candidate replacements, and refund request protocols.',
+  url: 'https://tasknera.com/refund-cancellation',
+});
+
 export default function RefundCancellationPage() {
   return (
     <>
+      <JsonLd data={refundSchema} />
       <Header />
       <main className="bg-surface-subtle min-h-screen pt-16 sm:pt-20 pb-20 sm:pb-28">
         {/* Hero Header */}

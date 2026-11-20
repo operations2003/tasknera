@@ -4,6 +4,12 @@ import { notFound } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
+import JsonLd from '@/components/JsonLd';
+import {
+  buildServiceSchema,
+  buildSoftwareAppSchema,
+  buildFaqSchema,
+} from '@/lib/schema';
 import {
   Users,
   Search,
@@ -87,8 +93,35 @@ export default async function ServiceDetailPage({
 
   const otherServices = servicesList.filter((s) => s.slug !== normalizedSlug).slice(0, 3);
 
+  const schemas: any[] = [];
+  const canonicalUrl = `https://tasknera.com/services/${service.slug}`;
+  const desc = service.metaDescription || service.summary;
+
+  if (service.slug === 'hireiq' || service.slug === 'hrms') {
+    schemas.push(
+      buildSoftwareAppSchema({
+        name: service.name,
+        description: desc,
+        url: canonicalUrl,
+      })
+    );
+  }
+
+  schemas.push(
+    buildServiceSchema({
+      name: service.name,
+      description: desc,
+      url: canonicalUrl,
+    })
+  );
+
+  if (service.faqs && service.faqs.length > 0) {
+    schemas.push(buildFaqSchema(service.faqs));
+  }
+
   return (
     <>
+      <JsonLd data={schemas} />
       <Header />
       <main className="min-h-screen bg-[#FAF7F2]">
         

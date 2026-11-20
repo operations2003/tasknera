@@ -3,6 +3,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import JsonLd from '@/components/JsonLd';
+import { buildWebPageSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy | Tasknera',
@@ -10,9 +12,17 @@ export const metadata: Metadata = {
     'Read the Tasknera Privacy Policy to understand how we collect, safeguard, and process personal data across our HR platforms, recruitment tools, and website.',
 };
 
+const privacySchema = buildWebPageSchema({
+  name: 'Privacy Policy | Tasknera',
+  description:
+    'Read the Tasknera Privacy Policy to understand how we collect, safeguard, and process personal data across our HR platforms, recruitment tools, and website.',
+  url: 'https://tasknera.com/privacy',
+});
+
 export default function PrivacyPage() {
   return (
     <>
+      <JsonLd data={privacySchema} />
       <Header />
       <main className="bg-[#FAF7F2] min-h-screen">
         {/* Hero Header */}

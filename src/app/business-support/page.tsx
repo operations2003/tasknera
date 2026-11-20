@@ -4,6 +4,8 @@ import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Icon from '@/components/ui/AppIcon';
+import JsonLd from '@/components/JsonLd';
+import { buildServiceSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'Business Support & Virtual Assistant Services | TaskNera',
@@ -54,9 +56,18 @@ const capabilities = [
   'Reporting & MIS',
 ];
 
+const businessSupportSchema = buildServiceSchema({
+  name: 'Business Support & Virtual Assistant Services',
+  description:
+    'Explore TaskNera business support services. We help organizations scale with dedicated back-office workflows, administrative talent, and operational execution.',
+  url: 'https://tasknera.com/business-support',
+  serviceType: 'Business Support & Virtual Assistance',
+});
+
 export default function BusinessSupportPage() {
   return (
     <>
+      <JsonLd data={businessSupportSchema} />
       <Header />
       <main className="bg-background min-h-screen pt-16 sm:pt-20">
 

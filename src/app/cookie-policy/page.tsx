@@ -3,6 +3,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import JsonLd from '@/components/JsonLd';
+import { buildWebPageSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'Cookie Policy | Tasknera',
@@ -10,9 +12,17 @@ export const metadata: Metadata = {
     'Read the Tasknera Cookie Policy to learn how cookies and tracking technologies are used to secure, optimize, and enhance your digital browsing experience.',
 };
 
+const cookieSchema = buildWebPageSchema({
+  name: 'Cookie Policy | Tasknera',
+  description:
+    'Read the Tasknera Cookie Policy to learn how cookies and tracking technologies are used to secure, optimize, and enhance your digital browsing experience.',
+  url: 'https://tasknera.com/cookie-policy',
+});
+
 export default function CookiePolicyPage() {
   return (
     <>
+      <JsonLd data={cookieSchema} />
       <Header />
       <main className="bg-[#FAF7F2] min-h-screen">
         {/* Hero Header */}

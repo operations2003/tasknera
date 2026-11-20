@@ -2,6 +2,8 @@ import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
+import JsonLd from '@/components/JsonLd';
+import { buildWebPageSchema, buildSoftwareAppSchema } from '@/lib/schema';
 import {
   ScanSearch,
   LayoutDashboard,
@@ -17,6 +19,29 @@ export const metadata = {
   description:
     'Explore TaskNera proprietary technology platforms, featuring HireIQ AI candidate screening intelligence and TaskNera HRMS unified workforce management.',
 };
+
+const technologySchema = buildWebPageSchema({
+  name: 'Technology & Platforms | HireIQ & TaskNera HRMS',
+  description:
+    'Explore TaskNera proprietary technology platforms, featuring HireIQ AI candidate screening intelligence and TaskNera HRMS unified workforce management.',
+  url: 'https://tasknera.com/technology',
+});
+
+const hireIqSchema = buildSoftwareAppSchema({
+  name: 'HireIQ',
+  description:
+    'AI-powered resume parsing, JD matching, and automated candidate ranking intelligence platform.',
+  url: 'https://tasknera.com/services/hireiq',
+  applicationCategory: 'BusinessApplication',
+});
+
+const hrmsSchema = buildSoftwareAppSchema({
+  name: 'TaskNera HRMS',
+  description:
+    'Comprehensive Human Resource Management System for employee records, attendance, tasks, and workforce operations.',
+  url: 'https://tasknera.com/services/hrms',
+  applicationCategory: 'BusinessApplication',
+});
 
 const hireIqFeatures = [
   'AI-assisted resume parsing',
@@ -40,6 +65,7 @@ const hrmsModules = [
 export default function TechnologyPage() {
   return (
     <>
+      <JsonLd data={[technologySchema, hireIqSchema, hrmsSchema]} />
       <Header />
       <main className="min-h-screen bg-[#FAF7F2]">
         

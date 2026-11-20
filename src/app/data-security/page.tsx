@@ -4,6 +4,8 @@ import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { ShieldCheck, Lock, Server, Key, EyeOff, CheckCircle2 } from 'lucide-react';
+import JsonLd from '@/components/JsonLd';
+import { buildWebPageSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'Data Security Policy | Tasknera',
@@ -11,9 +13,17 @@ export const metadata: Metadata = {
     'Learn about Tasknera enterprise data security protocols, encryption standards, role-based access controls, and client confidentiality protection safeguards.',
 };
 
+const dataSecuritySchema = buildWebPageSchema({
+  name: 'Data Security Policy | Tasknera',
+  description:
+    'Learn about Tasknera enterprise data security protocols, encryption standards, role-based access controls, and client confidentiality protection safeguards.',
+  url: 'https://tasknera.com/data-security',
+});
+
 export default function DataSecurityPage() {
   return (
     <>
+      <JsonLd data={dataSecuritySchema} />
       <Header />
       <main className="bg-surface-subtle min-h-screen pt-16 sm:pt-20 pb-20 sm:pb-28">
         {/* Hero Header */}
