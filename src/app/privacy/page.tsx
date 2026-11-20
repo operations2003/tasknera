@@ -1,8 +1,14 @@
-'use client';
 import React from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy | Tasknera',
+  description:
+    'Read the Tasknera Privacy Policy to understand how we collect, safeguard, and process personal data across our HR platforms, recruitment tools, and website.',
+};
 
 export default function PrivacyPage() {
   return (

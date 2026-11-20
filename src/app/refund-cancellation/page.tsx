@@ -1,8 +1,14 @@
-'use client';
 import React from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+
+export const metadata: Metadata = {
+  title: 'Refund & Cancellation Policy | Tasknera',
+  description:
+    'Read Tasknera commercial guidelines governing service terminations, contract billing reconciliations, candidate replacements, and refund request protocols.',
+};
 
 export default function RefundCancellationPage() {
   return (

@@ -158,7 +158,7 @@ export default function EngagementModelsSection() {
 
                 <div className="mt-6 pt-3 border-t border-tn-mist">
                   <Link
-                    href="/#contact"
+                    href="/contact"
                     className="text-xs font-bold text-tn-charcoal hover:text-tn-coral flex items-center gap-1 transition-colors"
                   >
                     <span>Request Model Pricing</span>

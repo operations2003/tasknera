@@ -171,7 +171,7 @@ export default function ProcessSection() {
 
                 <div className="pt-2 flex flex-wrap gap-3">
                   <Link
-                    href="/#contact"
+                    href="/contact"
                     className="inline-flex items-center gap-2 bg-tn-coral text-tn-charcoal font-bold px-7 py-3 rounded-full text-xs hover:bg-[#F28B6A] transition-all shadow-lg"
                   >
                     <span>Discuss Your Operational Model</span>

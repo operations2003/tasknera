@@ -477,7 +477,7 @@ export default function CompanyOverviewSection() {
                   Need specialist pods in another niche domain? We deploy custom recruiter desks and candidate matching models for specialized markets.
                 </p>
                 <Link
-                  href="/#contact"
+                  href="/contact"
                   className="inline-flex items-center gap-1.5 text-xs font-bold text-tn-coral hover:underline flex-shrink-0"
                 >
                   Request Domain Intake →

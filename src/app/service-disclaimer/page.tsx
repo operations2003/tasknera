@@ -1,9 +1,15 @@
-'use client';
 import React from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { AlertCircle, FileText, CheckCircle2 } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Service Disclaimer | Tasknera',
+  description:
+    'Read important legal parameters and service disclaimers governing Tasknera recruitment outcomes, client hiring decisions, and operational platform scope.',
+};
 
 export default function ServiceDisclaimerPage() {
   return (

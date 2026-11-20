@@ -62,7 +62,7 @@ export default function IndustriesPage() {
               Domain expertise
             </span>
             <h1 className="mt-4 font-heading text-4xl sm:text-5xl lg:text-6xl font-normal leading-[1.05] tracking-tight">
-              Twelve industries. Tailored operational models.
+              Industry Solutions &amp; Operational Delivery
             </h1>
             <p className="mt-5 text-base sm:text-lg text-white/70 leading-relaxed max-w-2xl mx-auto">
               Every sector operates with specific compliance standards, talent profiles and volume cycles. We deploy specialists who understand the mechanics of your industry.

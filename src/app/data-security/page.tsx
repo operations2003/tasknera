@@ -1,9 +1,15 @@
-'use client';
 import React from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { ShieldCheck, Lock, Server, Key, EyeOff, CheckCircle2 } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Data Security Policy | Tasknera',
+  description:
+    'Learn about Tasknera enterprise data security protocols, encryption standards, role-based access controls, and client confidentiality protection safeguards.',
+};
 
 export default function DataSecurityPage() {
   return (
@@ -20,7 +26,7 @@ export default function DataSecurityPage() {
               <span className="text-xs font-semibold text-accent tracking-widest uppercase">Information Governance</span>
             </div>
             <h1 className="text-4xl sm:text-5xl font-display font-bold text-white mb-4">
-              Data Security &amp; <span className="gradient-text-coral">Confidentiality</span>
+              Data Security <span className="gradient-text-coral">Policy</span>
             </h1>
             <p className="text-white/75 text-sm sm:text-base max-w-xl mx-auto">
               Our enterprise protocols protecting client proprietary information, employee payroll records, and candidate data.

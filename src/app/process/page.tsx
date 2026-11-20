@@ -1,9 +1,15 @@
-'use client';
 import React from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ProcessSection from '@/app/components/ProcessSection';
+
+export const metadata: Metadata = {
+  title: 'Our Delivery Process & Methodology | Tasknera',
+  description:
+    'Discover Tasknera structured 4-step operational delivery process, rigorous SLA benchmarks, and governance frameworks designed for enterprise accountability.',
+};
 import {
   Compass,
   CheckCircle2,
@@ -77,8 +83,8 @@ export default function ProcessPage() {
               </div>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-white leading-tight">
-                How TaskNera{' '}
-                <span className="gradient-text-coral">Delivers Operational Excellence.</span>
+                Our Delivery Process &amp;{' '}
+                <span className="gradient-text-coral">Operational Methodology</span>
               </h1>
 
               <p className="text-white/80 text-lg sm:text-xl leading-relaxed">
@@ -87,7 +93,7 @@ export default function ProcessPage() {
 
               <div className="flex flex-wrap gap-4 pt-2">
                 <Link
-                  href="/#contact"
+                  href="/contact"
                   className="bg-accent text-accent-foreground font-bold px-8 py-3.5 rounded-full hover:brightness-110 active:scale-95 transition-all shadow-xl shadow-accent/30 text-sm flex items-center gap-2"
                 >
                   <span>Start Your Operational Kickoff</span>
@@ -178,7 +184,7 @@ export default function ProcessPage() {
                 </p>
               </div>
               <Link
-                href="/#contact"
+                href="/contact"
                 className="bg-accent text-accent-foreground font-bold px-7 py-3.5 rounded-full hover:brightness-110 active:scale-95 transition-all text-sm flex-shrink-0 shadow-md relative z-10"
               >
                 Schedule Kickoff Call

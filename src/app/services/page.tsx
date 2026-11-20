@@ -1,5 +1,5 @@
-'use client';
 import React from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -16,6 +16,12 @@ import {
   ArrowRight,
 } from 'lucide-react';
 import rawServices from '@/lib/base44_services.json';
+
+export const metadata: Metadata = {
+  title: 'HRMS & Recruitment Services | Tasknera',
+  description:
+    'Explore Tasknera comprehensive services across HR operations, talent acquisition, contract staffing, virtual assistance, and modern HRMS technology platforms.',
+};
 
 const iconMap: Record<string, any> = {
   'hr-operations': Users,
@@ -45,7 +51,7 @@ export default function ServicesPage() {
               Modular solutions
             </span>
             <h1 className="mt-4 font-heading text-4xl sm:text-5xl lg:text-6xl font-normal leading-[1.05] tracking-tight">
-              Modular disciplines. One accountable partner.
+              HRMS &amp; Recruitment Services
             </h1>
             <p className="mt-5 text-base sm:text-lg text-white/70 leading-relaxed max-w-2xl mx-auto">
               Engage a single specialist, deploy a dedicated pod or hand over an entire operational function. Every solution is delivered with documented processes and clear ownership.
@@ -129,6 +135,32 @@ export default function ServicesPage() {
                 </div>
               );
             })()}
+          </div>
+        </section>
+
+        {/* Contextual Business Support Callout */}
+        <section className="py-14 bg-white border-y border-[#E7E2DA]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="rounded-2xl border border-brand-navy/10 bg-brand-mist p-8 sm:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+              <div className="max-w-2xl">
+                <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-blue font-mono">
+                  Operational Leverage &amp; Back-Office Pods
+                </span>
+                <h2 className="mt-2 font-heading text-2xl sm:text-3xl text-brand-navy font-bold">
+                  Looking for dedicated business support and virtual assistants?
+                </h2>
+                <p className="mt-2 text-sm text-brand-ink/75 leading-relaxed">
+                  Beyond talent acquisition and software, TaskNera provides managed human virtual assistants and back-office pods dedicated to calendar triage, CRM hygiene, desk research, and daily operations.
+                </p>
+              </div>
+              <Link
+                href="/business-support"
+                className="flex-none inline-flex items-center gap-2 rounded-xl bg-brand-navy px-6 py-3.5 text-xs font-semibold text-white shadow-sm transition-all hover:bg-brand-blue"
+              >
+                <span>Explore Our Business Support Solutions</span>
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
           </div>
         </section>
 

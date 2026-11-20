@@ -183,7 +183,7 @@ export default function ContactPage() {
               Get in touch
             </span>
             <h1 className="mt-4 font-heading text-4xl sm:text-5xl lg:text-6xl font-normal leading-[1.05] tracking-tight">
-              Book a consultation or business enquiry.
+              Contact Us &amp; Consultation Scoping
             </h1>
             <p className="mt-5 text-base sm:text-lg text-white/70 leading-relaxed max-w-2xl mx-auto">
               Whether you need to hire specialists, outsource HR compliance, deploy virtual support or evaluate our software platforms, our team responds within one business day.

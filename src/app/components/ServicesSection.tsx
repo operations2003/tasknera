@@ -178,13 +178,23 @@ export default function ServicesSection() {
             </p>
           </div>
 
-          <Link
-            href="/services"
-            className="mb-1 flex-none text-[13px] font-semibold text-brand-blue hover:underline inline-flex items-center gap-1.5"
-          >
-            <span>View all solutions</span>
-            <ArrowRight className="h-4 w-4" />
-          </Link>
+          <div className="mb-1 flex-none flex flex-wrap items-center gap-3.5 sm:gap-5 text-[13px] font-semibold">
+            <Link
+              href="/business-support"
+              className="text-brand-blue hover:underline inline-flex items-center gap-1.5"
+            >
+              <span>Business Support Services</span>
+              <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
+            <span className="text-brand-ink/25 hidden sm:inline">|</span>
+            <Link
+              href="/services"
+              className="text-brand-blue hover:underline inline-flex items-center gap-1.5"
+            >
+              <span>View all solutions</span>
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
         </div>
 
         {/* Tier 1: Two Primary Disciplines */}

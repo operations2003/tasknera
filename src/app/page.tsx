@@ -15,7 +15,7 @@ import FinalCTASection from '@/app/components/FinalCTASection';
 export const metadata = {
   title: 'TaskNera | Global HR, Recruitment, Technology & Business Operations Partner',
   description:
-    'Build your team. Strengthen operations. Scale without limits. TaskNera is your strategic partner for talent acquisition, HR operations, workforce solutions, virtual assistance and technology.',
+    'TaskNera is your global partner for talent acquisition, HR operations, workforce solutions, and virtual assistance. Build your team and scale with confidence.',
 };
 
 export default function HomePage() {

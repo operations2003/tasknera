@@ -1,9 +1,15 @@
-'use client';
-import React, { useState } from 'react';
+import React from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Icon from '@/components/ui/AppIcon';
+
+export const metadata: Metadata = {
+  title: 'Business Support & Virtual Assistant Services | TaskNera',
+  description:
+    'Explore TaskNera business support services. We help organizations scale with dedicated back-office workflows, administrative talent, and operational execution.',
+};
 
 const services = [
   {
@@ -11,28 +17,28 @@ const services = [
     desc: 'Dedicated human virtual assistants for administrative execution, executive support, scheduling, and email management — freeing your leadership team for core priorities.',
     icon: 'BriefcaseIcon',
     useCases: ['Executive calendar & travel management', 'Email inbox management & triage', 'Document preparation, minutes & formatting'],
-    link: '/virtual-assistant-services',
+    link: '/services/virtual-assistants',
   },
   {
     title: 'Data Entry & Research',
     desc: 'Accurate, timely data entry and research support by vetted remote specialists to keep your databases clean, current, and actionable.',
     icon: 'TableCellsIcon',
     useCases: ['CRM data entry & enrichment', 'Market & competitor research dossiers', 'Lead list building & verification'],
-    link: '/virtual-assistant-services',
+    link: '/services/virtual-assistants',
   },
   {
     title: 'CRM & Database Management',
     desc: 'End-to-end CRM management to ensure your customer data is organized, up-to-date, and driving pipeline conversions.',
     icon: 'ServerStackIcon',
     useCases: ['CRM setup, configuration & hygiene', 'Contact & deal stage updates', 'Pipeline reporting & dashboards'],
-    link: '/virtual-assistant-services',
+    link: '/services/virtual-assistants',
   },
   {
     title: 'Sales & Operations Support',
     desc: 'Virtual support for sales teams and operations — from lead follow-up and appointment setting to process coordination.',
     icon: 'ChartBarIcon',
     useCases: ['Lead outreach & follow-up coordination', 'Sales reporting & pipeline tracking', 'Operations process documentation'],
-    link: '/virtual-assistant-services',
+    link: '/services/virtual-assistants',
   },
 ];
 
@@ -49,8 +55,6 @@ const capabilities = [
 ];
 
 export default function BusinessSupportPage() {
-  const [activeService, setActiveService] = useState(0);
-
   return (
     <>
       <Header />
@@ -64,36 +68,36 @@ export default function BusinessSupportPage() {
               <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
                 <span className="text-xs font-semibold text-white/90 tracking-widest uppercase">
-                  Virtual Assistance &amp; Customer Support
+                  Virtual Assistance &amp; Operational Pods
                 </span>
               </div>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-700 text-white leading-tight">
-                Operational &amp; Customer Support{' '}
-                <span className="gradient-text-coral">Built for Scale</span>
+                Business Support &amp;{' '}
+                <span className="gradient-text-coral">Virtual Assistant Services</span>
               </h1>
 
               <p className="text-white/80 text-lg leading-relaxed">
-                TaskNera provides reliable business support, human virtual assistants, and omnichannel customer care to keep your operations running smoothly every day.
+                TaskNera provides reliable business support, human virtual assistants, and dedicated back-office operational pods to keep your workflows running smoothly every day.
               </p>
 
               {/* Notice Banner */}
               <div className="bg-white/10 border border-white/20 rounded-2xl p-4 flex items-start gap-3 backdrop-blur-md">
                 <span className="text-xl">👤</span>
                 <p className="text-xs sm:text-sm text-white/80 leading-relaxed">
-                  <strong>Human Remote Professionals:</strong> All virtual assistants and customer support pods are managed, trained human professionals dedicated to your workflows — never an automated bot.
+                  <strong>Human Remote Professionals:</strong> All virtual assistants and operational pods are managed, trained human professionals dedicated to your workflows — never an automated bot.
                 </p>
               </div>
 
               <div className="flex flex-wrap gap-4 pt-2">
                 <Link
-                  href="/#contact"
+                  href="/contact"
                   className="bg-accent text-accent-foreground font-semibold px-6 py-3 rounded-full hover:brightness-110 transition-all text-sm shadow-lg shadow-accent/25"
                 >
                   Deploy Business Support Pod →
                 </Link>
                 <Link
-                  href="/#contact"
+                  href="/contact"
                   className="glass-btn text-white font-semibold px-6 py-3 rounded-full text-sm"
                 >
                   Schedule Operations Intake
@@ -121,7 +125,7 @@ export default function BusinessSupportPage() {
                 </p>
                 <div className="pt-2 flex items-center justify-between">
                   <span className="text-xs font-semibold text-accent">Dedicated Human Team</span>
-                  <Link href="/#contact" className="text-xs font-bold text-foreground hover:text-accent underline underline-offset-4">
+                  <Link href="/contact" className="text-xs font-bold text-foreground hover:text-accent underline underline-offset-4">
                     Inquire Pod →
                   </Link>
                 </div>
@@ -132,14 +136,14 @@ export default function BusinessSupportPage() {
                   Specialized Solution #2
                 </div>
                 <h2 className="text-2xl font-display font-700 text-foreground">
-                  Virtual Customer Support (VCS)
+                  Back-Office &amp; Operations Pods
                 </h2>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  Omnichannel voice, live chat, email, social media, and WhatsApp customer service desks designed for professional brand continuity.
+                  Dedicated operational teams for documentation, workflow triage, CRM administration, data processing, and business reporting.
                 </p>
                 <div className="pt-2 flex items-center justify-between">
-                  <span className="text-xs font-semibold text-accent">Omnichannel Support Desk</span>
-                  <Link href="/#contact" className="text-xs font-bold text-foreground hover:text-accent underline underline-offset-4">
+                  <span className="text-xs font-semibold text-accent">Managed Operations Desk</span>
+                  <Link href="/contact" className="text-xs font-bold text-foreground hover:text-accent underline underline-offset-4">
                     Inquire Pod →
                   </Link>
                 </div>

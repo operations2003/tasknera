@@ -15,7 +15,7 @@ import {
 export const metadata = {
   title: 'Technology & Platforms | HireIQ & TaskNera HRMS',
   description:
-    'Explore TaskNera proprietary recruitment intelligence (HireIQ) and workforce management (TaskNera HRMS) platforms.',
+    'Explore TaskNera proprietary technology platforms, featuring HireIQ AI candidate screening intelligence and TaskNera HRMS unified workforce management.',
 };
 
 const hireIqFeatures = [

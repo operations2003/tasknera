@@ -27,7 +27,7 @@ const examples = [
     desc: 'Rapid volume hiring campaigns, contract staffing deployment, and scalable multi-location workforce pipelines.',
     icon: Users,
     badge: 'Workforce Scale',
-    href: '/hr-workforce-solutions#workforce',
+    href: '/services/workforce-solutions',
   },
   {
     need: 'Need an HR operations team?',
@@ -51,7 +51,7 @@ const examples = [
     desc: 'Dedicated web development, API automation, workflow pipelines, and technical team augmentation deployed rapidly.',
     icon: Code2,
     badge: 'Technology & Engineering',
-    href: '/services/technology-and-software-development',
+    href: '/services/technology',
   },
   {
     need: 'Need an end-to-end workforce partner?',

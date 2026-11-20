@@ -161,7 +161,7 @@ export default function VirtualAssistantServicesPage() {
 
               <div className="flex flex-wrap gap-4 pt-2">
                 <Link
-                  href="/#contact"
+                  href="/contact"
                   className="bg-accent text-accent-foreground font-bold px-8 py-3.5 rounded-full hover:brightness-110 active:scale-95 transition-all shadow-xl shadow-accent/30 text-sm sm:text-base"
                 >
                   Build My Virtual Support Team
@@ -237,7 +237,7 @@ export default function VirtualAssistantServicesPage() {
 
                     <div className="mt-8 pt-4 border-t border-border flex items-center justify-between">
                       <Link
-                        href="/#contact"
+                        href="/contact"
                         className="text-xs font-bold text-accent hover:underline flex items-center gap-1.5"
                       >
                         <span>Deploy {pillar.title}</span>
@@ -295,7 +295,7 @@ export default function VirtualAssistantServicesPage() {
             </p>
             <div className="pt-2">
               <Link
-                href="/#contact"
+                href="/contact"
                 className="inline-block bg-accent text-accent-foreground font-bold px-8 py-3.5 rounded-full hover:brightness-110 active:scale-95 transition-all text-sm shadow-xl shadow-accent/25"
               >
                 Hire Your Virtual Assistant Pod

@@ -1,8 +1,14 @@
-'use client';
 import React from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+
+export const metadata: Metadata = {
+  title: 'Terms and Conditions | Tasknera',
+  description:
+    'Review the official Terms and Conditions governing the use of Tasknera website, recruitment services, workforce operations, and proprietary software platforms.',
+};
 
 export default function TermsPage() {
   return (

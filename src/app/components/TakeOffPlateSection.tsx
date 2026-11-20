@@ -35,7 +35,7 @@ const businessIntents = [
     intent: 'I need flexible manpower',
     solution: 'Workforce Solutions',
     desc: 'Rapid temporary staffing, contract talent deployment, multi-location shift scheduling, and agile headcount scaling.',
-    href: '/hr-workforce-solutions#workforce',
+    href: '/services/workforce-solutions',
     badge: 'Flexible Staffing',
     icon: Users,
     points: ['Contract staffing pods', 'Seasonal & surge headcount', 'Turnkey workforce deployment'],
@@ -53,7 +53,7 @@ const businessIntents = [
     intent: 'I need software or tech pods',
     solution: 'Technology & Software Development',
     desc: 'Full-stack web application development, workflow automation, API integration, and dedicated engineering pods.',
-    href: '/services/technology-and-software-development',
+    href: '/services/technology',
     badge: 'Technology & Tech Pods',
     icon: Code2,
     points: ['Full-stack Next.js & React web apps', 'Operational workflows & API pipelines', 'Dedicated engineering pods'],
@@ -155,7 +155,7 @@ export default function TakeOffPlateSection() {
               Need a blended operational pod or custom people solution?
             </span>
             <Link
-              href="/#contact"
+              href="/contact"
               className="bg-tn-coral text-tn-charcoal font-bold px-6 py-2.5 rounded-full text-xs hover:bg-[#F28B6A] transition-all shadow-md flex items-center gap-1.5 flex-shrink-0"
             >
               <span>Tell Us What You Need</span>

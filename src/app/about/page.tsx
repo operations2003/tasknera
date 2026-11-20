@@ -1,5 +1,5 @@
-'use client';
 import React from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -17,6 +17,12 @@ import {
   ShieldCheck,
 } from 'lucide-react';
 import { companyInfo } from '@/lib/base44_content';
+
+export const metadata: Metadata = {
+  title: 'About TaskNera | HR Technology & Recruitment Solutions',
+  description:
+    'Learn about TaskNera, our mission, and our modern HR technology solutions designed to streamline talent acquisition, workforce operations, and team growth.',
+};
 
 const values = [
   {
@@ -52,6 +58,8 @@ const pillars = [
     title: 'Operations',
     desc: 'Dedicated executive virtual assistance, calendar management, and operational SOP execution.',
     icon: Bot,
+    href: '/business-support',
+    linkText: 'Business Support Services',
   },
 ];
 
@@ -69,13 +77,13 @@ export default function AboutPage() {
           />
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
             <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-teal">
-              About TaskNera
+              People · Process · Performance
             </span>
-            <h1 className="mt-4 font-heading text-4xl sm:text-5xl lg:text-6xl font-normal leading-[1.05] tracking-tight">
-              A partner for the operational side of growth.
+            <h1 className="mt-4 font-heading text-4xl sm:text-5xl lg:text-6xl font-normal leading-[1.1] tracking-tight">
+              About TaskNera – <span className="text-brand-teal">Simplifying HR and Recruitment Management</span>
             </h1>
             <p className="mt-5 text-base sm:text-lg text-white/70 leading-relaxed max-w-2xl mx-auto">
-              We help ambitious businesses build dependable teams, streamline HR compliance, and scale operations without friction through integrated people, technology, and execution.
+              A partner for the operational side of growth. We help ambitious businesses build dependable teams, streamline HR compliance, and scale operations without friction through integrated people, technology, and execution.
             </p>
           </div>
         </section>
@@ -97,7 +105,7 @@ export default function AboutPage() {
                     Most businesses struggle with an agonizing fragmentation in their operational stack. When founders need to hire, they talk to transactional agencies. When they need payroll or HR policies, they scramble for ad-hoc consultants. When executives drown in calendar chaos, they search freelance portals.
                   </p>
                   <p>
-                    TaskNera was created to solve this fragmentation. Founded by HR leadership with deep expertise across talent acquisition, workforce deployment, and people operations, TaskNera operates as one integrated partner that handles talent, HR governance, virtual support, and software systems.
+                    TaskNera was created to solve this fragmentation. Founded by HR leadership with deep expertise across talent acquisition, workforce deployment, and people operations, TaskNera operates as one integrated partner that handles talent, HR governance, <Link href="/business-support" className="text-brand-blue font-semibold hover:underline">business support services</Link>, and software systems.
                   </p>
                 </div>
 
@@ -185,6 +193,17 @@ export default function AboutPage() {
                     <p className="mt-2 text-[13px] leading-relaxed text-brand-ink/65">
                       {pil.desc}
                     </p>
+                    {pil.href && (
+                      <div className="mt-4 pt-3 border-t border-brand-navy/10">
+                        <Link
+                          href={pil.href}
+                          className="inline-flex items-center gap-1.5 text-[12.5px] font-semibold text-brand-blue hover:underline"
+                        >
+                          <span>{pil.linkText}</span>
+                          <ArrowRight className="h-3.5 w-3.5" />
+                        </Link>
+                      </div>
+                    )}
                   </div>
                 );
               })}

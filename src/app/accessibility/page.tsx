@@ -1,9 +1,15 @@
-'use client';
 import React from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Eye, CheckCircle2 } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Accessibility Statement | Tasknera',
+  description:
+    'Read the Tasknera Accessibility Statement outlining our ongoing commitment to digital inclusion, assistive technologies, and WCAG 2.1 AA conformance standards.',
+};
 
 export default function AccessibilityPage() {
   return (

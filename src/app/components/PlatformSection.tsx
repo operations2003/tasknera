@@ -656,7 +656,7 @@ export default function PlatformSection() {
                 Custom deployment models, private cloud configurations, and fully managed pods available.
               </div>
               <Link
-                href="/#contact"
+                href="/contact"
                 className="bg-tn-coral text-tn-charcoal hover:bg-[#F28B6A] text-xs font-bold px-6 py-2.5 rounded-full transition-colors text-center shadow-md"
               >
                 Schedule Technical Architecture Demo

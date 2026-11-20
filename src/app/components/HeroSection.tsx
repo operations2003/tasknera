@@ -25,9 +25,9 @@ export default function HeroSection() {
               </span>
 
               <h1 className="mt-5 font-heading text-[clamp(2.35rem,4.5vw,3.75rem)] font-normal leading-[1.02] tracking-[-0.022em]">
-                <span className="block">Build your team.</span>
-                <span className="block">Strengthen operations.</span>
-                <span className="block italic text-brand-teal">Scale without limits.</span>
+                <span className="block">Global HR, Recruitment &amp;</span>
+                <span className="block">Business Operations Partner</span>
+                <span className="block italic text-brand-teal text-[clamp(1.75rem,3.2vw,2.5rem)] mt-2">Build your team. Scale without limits.</span>
               </h1>
             </div>
 

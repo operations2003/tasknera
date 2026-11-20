@@ -10,10 +10,13 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://tasknera.com'),
+  alternates: {
+    canonical: './',
+  },
   title: 'TaskNera | Global HR, Recruitment, Technology & Business Operations Partner',
   description:
-    'Build your team. Strengthen operations. Scale without limits. TaskNera is your strategic partner for global talent acquisition, HR operations, workforce solutions, virtual assistance and technology.',
+    'TaskNera is your global partner for talent acquisition, HR operations, workforce solutions, and virtual assistance. Build your team and scale with confidence.',
   icons: {
     icon: [
       {

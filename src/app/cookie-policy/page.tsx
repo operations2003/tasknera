@@ -1,8 +1,14 @@
-'use client';
 import React from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+
+export const metadata: Metadata = {
+  title: 'Cookie Policy | Tasknera',
+  description:
+    'Read the Tasknera Cookie Policy to learn how cookies and tracking technologies are used to secure, optimize, and enhance your digital browsing experience.',
+};
 
 export default function CookiePolicyPage() {
   return (

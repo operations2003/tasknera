@@ -137,7 +137,7 @@ export default function TalentAcquisitionPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 sm:pb-24 relative z-10">
             <div className="max-w-3xl">
               <div className="flex flex-col items-start gap-4 mb-6">
-                <Link href="/#services" className="inline-flex items-center gap-2 text-white/50 hover:text-white/80 text-sm transition-colors group">
+                <Link href="/services" className="inline-flex items-center gap-2 text-white/50 hover:text-white/80 text-sm transition-colors group">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="m15 18-6-6 6-6" /></svg>
                   Back to Services
                 </Link>
@@ -148,7 +148,7 @@ export default function TalentAcquisitionPage() {
               </div>
               <h1 className="text-hero font-display font-700 text-white mb-6">
                 Talent Acquisition{' '}
-                <span className="gradient-text-coral">&amp; Recruitment</span>
+                <span className="gradient-text-coral">&amp; Recruitment Services</span>
               </h1>
               <p className="text-white/75 text-lg sm:text-xl leading-relaxed max-w-2xl mb-10">
                 Specialized hiring for every stage of growth. As a core pillar of TaskNera&apos;s People &amp; Operations platform, we manage end-to-end recruitment with HireIQ precision matching and dedicated domain recruiters.
@@ -157,7 +157,7 @@ export default function TalentAcquisitionPage() {
                 <a href="#process" className="bg-accent text-accent-foreground font-semibold px-6 py-3 rounded-full hover:opacity-90 transition-all hover:-translate-y-0.5 shadow-lg shadow-accent/30">
                   See Our Process
                 </a>
-                <Link href="/#contact" className="glass-btn text-white font-semibold px-6 py-3 rounded-full hover:bg-white/15 transition-all">
+                <Link href="/contact" className="glass-btn text-white font-semibold px-6 py-3 rounded-full hover:bg-white/15 transition-all">
                   Talk to a Talent Specialist
                 </Link>
               </div>
@@ -506,7 +506,7 @@ export default function TalentAcquisitionPage() {
             </h2>
             <p className="text-white/70 text-lg mb-10">Tell us about the position. We'll have a shortlist ready within 72 hours.</p>
             <div className="flex justify-center">
-              <Link href="/#contact" className="bg-accent text-accent-foreground font-bold px-8 py-3.5 rounded-full hover:brightness-110 active:scale-95 transition-all shadow-xl shadow-accent/30 text-sm">
+              <Link href="/contact" className="bg-accent text-accent-foreground font-bold px-8 py-3.5 rounded-full hover:brightness-110 active:scale-95 transition-all shadow-xl shadow-accent/30 text-sm">
                 Talk to a Talent Specialist
               </Link>
             </div>

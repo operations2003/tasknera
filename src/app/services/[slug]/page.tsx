@@ -1,4 +1,5 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -45,6 +46,28 @@ const servicesList = rawServices as ServiceItem[];
 
 export function generateStaticParams() {
   return servicesList.map((s) => ({ slug: s.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const resolvedParams = await params;
+  const rawSlug = resolvedParams.slug;
+  const normalizedSlug = rawSlug === 'virtual-assistant' ? 'virtual-assistants' : rawSlug;
+  const service = servicesList.find((s) => s.slug === normalizedSlug);
+
+  if (!service) {
+    return {
+      title: 'Service Not Found | Tasknera',
+    };
+  }
+
+  return {
+    title: service.metaTitle || `${service.name} | Tasknera`,
+    description: service.metaDescription || service.summary,
+  };
 }
 
 export default async function ServiceDetailPage({
@@ -314,10 +337,11 @@ export default async function ServiceDetailPage({
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
-                href="/services"
-                className="border border-white/20 text-white font-medium px-6 py-3 rounded-[3px] hover:bg-white/10 text-[13.5px]"
+                href={service.slug === 'virtual-assistants' ? '/business-support' : '/services'}
+                className="border border-white/20 text-white font-medium px-6 py-3 rounded-[3px] hover:bg-white/10 text-[13.5px] inline-flex items-center gap-2"
               >
-                Explore other solutions
+                <span>{service.slug === 'virtual-assistants' ? 'Business Support Services' : 'Explore other solutions'}</span>
+                <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
           </div>

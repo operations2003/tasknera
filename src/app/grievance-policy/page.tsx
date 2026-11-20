@@ -1,9 +1,15 @@
-'use client';
 import React from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { AlertCircle, Clock, ShieldCheck, Mail } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Grievance Redressal Policy | Tasknera',
+  description:
+    'Learn about Tasknera structured grievance redressal mechanism, formal dispute escalation pathways, investigation steps, and resolution SLA commitments.',
+};
 
 export default function GrievancePolicyPage() {
   return (
@@ -20,7 +26,7 @@ export default function GrievancePolicyPage() {
               <span className="text-xs font-semibold text-accent tracking-widest uppercase">Ethics &amp; Accountability</span>
             </div>
             <h1 className="text-4xl sm:text-5xl font-display font-bold text-white mb-4">
-              Grievance &amp; <span className="gradient-text-coral">Complaints Policy</span>
+              Grievance <span className="gradient-text-coral">Redressal Policy</span>
             </h1>
             <p className="text-white/75 text-sm sm:text-base max-w-xl mx-auto">
               Our formal framework for reporting, investigating, and swiftly resolving operational, ethical, or service concerns.

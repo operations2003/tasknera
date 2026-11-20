@@ -140,7 +140,7 @@ export default function HRWorkforceSolutionsPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-3xl">
               <div className="flex flex-col items-start gap-4 mb-6">
-                <Link href="/#services" className="inline-flex items-center gap-2 text-white/50 hover:text-white/80 text-sm transition-colors group">
+                <Link href="/services" className="inline-flex items-center gap-2 text-white/50 hover:text-white/80 text-sm transition-colors group">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="m15 18-6-6 6-6" /></svg>
                   Back to Services
                 </Link>
@@ -284,7 +284,7 @@ export default function HRWorkforceSolutionsPage() {
                       <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed">{wf.desc}</p>
                     </div>
                     <div className="mt-5 pt-3 border-t border-border/60">
-                      <Link href="/#contact" className="text-xs font-semibold text-secondary hover:underline flex items-center gap-1">
+                      <Link href="/contact" className="text-xs font-semibold text-secondary hover:underline flex items-center gap-1">
                         <span>Request deployment</span>
                         <span>→</span>
                       </Link>
@@ -299,7 +299,7 @@ export default function HRWorkforceSolutionsPage() {
                 <h3 className="font-display font-bold text-xl">Need a custom contract staffing or workforce model?</h3>
                 <p className="text-white/70 text-sm">Our workforce consultants design customized headcount solutions tailored to your operational SLA.</p>
               </div>
-              <Link href="/#contact" className="bg-accent text-accent-foreground font-semibold px-6 py-3 rounded-full hover:brightness-110 transition-all text-xs flex-shrink-0 shadow-md">
+              <Link href="/contact" className="bg-accent text-accent-foreground font-semibold px-6 py-3 rounded-full hover:brightness-110 transition-all text-xs flex-shrink-0 shadow-md">
                 Talk to a Workforce Specialist
               </Link>
             </div>
@@ -446,7 +446,7 @@ export default function HRWorkforceSolutionsPage() {
             </h2>
             <p className="text-white/70 text-lg mb-10">From payroll to performance — we manage it all so you can focus on growth.</p>
             <div className="flex justify-center">
-              <Link href="/#contact" className="bg-accent text-accent-foreground font-bold px-8 py-3.5 rounded-full hover:brightness-110 active:scale-95 transition-all shadow-xl shadow-accent/30 text-sm">
+              <Link href="/contact" className="bg-accent text-accent-foreground font-bold px-8 py-3.5 rounded-full hover:brightness-110 active:scale-95 transition-all shadow-xl shadow-accent/30 text-sm">
                 Talk to an HR Expert
               </Link>
             </div>

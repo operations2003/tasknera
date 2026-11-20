@@ -1,9 +1,15 @@
-'use client';
 import React from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { ShieldCheck, FileCheck, Lock, UserCheck, CheckCircle2 } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Candidate Privacy Policy | Tasknera',
+  description:
+    'Understand how Tasknera collects, protects, processes, and stores candidate personal data throughout recruitment screening, evaluation, and hiring stages.',
+};
 
 export default function CandidatePrivacyPage() {
   return (
@@ -21,7 +27,7 @@ export default function CandidatePrivacyPage() {
               Candidate Rights &amp; Data Ethics
             </span>
             <h1 className="text-4xl sm:text-5xl font-heading font-normal text-white mb-4">
-              Candidate <span className="italic text-brand-teal">Privacy Notice</span>
+              Candidate <span className="italic text-brand-teal">Privacy Policy</span>
             </h1>
             <p className="text-white/70 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
               How TaskNera securely collects, evaluates, stores, and protects job applicant CVs, professional profiles, and candidate information.

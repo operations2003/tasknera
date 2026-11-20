@@ -103,8 +103,8 @@ export default function PricingPage() {
               </div>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-white leading-tight">
-                Flexible Models.{' '}
-                <span className="gradient-text-coral">Scalable Support.</span>
+                Pricing &amp;{' '}
+                <span className="gradient-text-coral">Engagement Models</span>
               </h1>
 
               <p className="text-white/80 text-lg sm:text-xl leading-relaxed">
@@ -113,7 +113,7 @@ export default function PricingPage() {
 
               <div className="flex flex-wrap gap-4 pt-2">
                 <Link
-                  href="/#contact"
+                  href="/contact"
                   className="bg-accent text-accent-foreground font-bold px-8 py-3.5 rounded-full hover:brightness-110 active:scale-95 transition-all shadow-xl shadow-accent/30 text-sm flex items-center gap-2"
                 >
                   <span>Request a Custom Quote</span>
@@ -202,7 +202,7 @@ export default function PricingPage() {
 
                   <div className="pt-6 border-t border-border">
                     <Link
-                      href="/#contact"
+                      href="/contact"
                       className={`block w-full text-center py-3.5 rounded-full font-bold text-sm transition-all shadow-md ${
                         tier.popular
                           ? 'bg-accent text-accent-foreground hover:brightness-110 shadow-accent/25'
