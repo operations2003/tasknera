@@ -77,17 +77,93 @@ const contactDesks = [
 ];
 
 const queryTitles: Record<string, string> = {
-  'service:Workforce Solutions': 'Workforce Solutions Consultation | Tasknera',
+  // Services
+  'service:Technology & Software Development': 'Tech & Software Development Scoping | Tasknera',
+  'service:Talent Acquisition & Recruitment': 'Talent Acquisition & Hiring Scoping | Tasknera',
+  'service:HireIQ': 'HireIQ ATS Platform Demo & Scoping | Tasknera',
+  'service:TaskNera HRMS': 'TaskNera HRMS Demo & Consultation | Tasknera',
+  'service:HR & People Operations': 'HR & People Operations Scoping | Tasknera',
+  'service:Virtual Assistant & Business Support': 'Virtual Assistant & Support Scoping | Tasknera',
+  'service:Workforce Solutions': 'Workforce Solutions Scoping | Tasknera',
+  // Models
   'model:Recruitment Success Fee': 'Recruitment Success Fee Consultation | Tasknera',
-  'model:Custom Enterprise Engagement': 'Custom Enterprise Hiring Consultation | Tasknera',
+  'model:Custom Enterprise Engagement': 'Custom Enterprise Hiring Scoping | Tasknera',
+  'model:Monthly Retainer': 'Monthly Retainer Staffing Scoping | Tasknera',
+  'model:Managed Service': 'Managed Operations Pod Consultation | Tasknera',
   'model:Dedicated Resource': 'Dedicated Resource Hiring Consultation | Tasknera',
+  'model:Contract Staffing': 'Contract Staffing Consultation | Tasknera',
+  'model:Project-Based': 'Project-Based Hiring Consultation | Tasknera',
+  // Industries
+  'industry:Digital Media & Agencies': 'Digital Media & Agency Staffing | Tasknera',
+  'industry:Manufacturing': 'Manufacturing Workforce Scoping | Tasknera',
+  'industry:EdTech & Education': 'EdTech & Education Staffing Scoping | Tasknera',
+  'industry:Healthcare & Life Sciences': 'Healthcare & Life Sciences Staffing | Tasknera',
+  'industry:Logistics & Supply Chain': 'Logistics & Supply Chain Staffing | Tasknera',
+  'industry:Retail & E-commerce': 'Retail & E-Commerce Staffing Consultation | Tasknera',
+  'industry:Professional Consulting': 'Professional Consulting Staffing | Tasknera',
+  'industry:IT, SaaS & Technology': 'IT, SaaS & Tech Staffing Scoping | Tasknera',
+  'industry:BFSI & Fintech': 'BFSI & Fintech Staffing Consultation | Tasknera',
   'industry:Hospitality & Real Estate': 'Hospitality & Real Estate Staffing | Tasknera',
   'industry:Startups & Scale-ups': 'Startup & Scale-Up Hiring Consultation | Tasknera',
-  'industry:Retail & E-commerce': 'Retail & E-Commerce Staffing Consultation | Tasknera',
-  'model:Project-Based': 'Project-Based Hiring Consultation | Tasknera',
-  'industry:EdTech & Education': 'EdTech & Education Staffing Consultation | Tasknera',
-  'service:Technology & Software Development': 'Tech & Software Team Consultation | Tasknera',
-  'industry:Healthcare & Life Sciences': 'Healthcare & Life Sciences Staffing | Tasknera',
+  'industry:Finance & Accounting': 'Finance & Accounting Staffing | Tasknera',
+};
+
+const queryDescriptions: Record<string, string> = {
+  // Services
+  'service:Technology & Software Development':
+    'Scope dedicated engineering pods, software developers, and technical architecture teams with Tasknera. Schedule your technology consultation today.',
+  'service:Talent Acquisition & Recruitment':
+    'Partner with Tasknera for permanent recruitment, executive search, and volume hiring powered by HireIQ candidate screening intelligence.',
+  'service:HireIQ':
+    'Schedule a live platform demo and consultation for HireIQ, Tasknera proprietary AI-powered resume screening and candidate ranking software.',
+  'service:TaskNera HRMS':
+    'Request a demo and consultation for TaskNera HRMS, our unified employee management, attendance tracking, and HR operations system.',
+  'service:HR & People Operations':
+    'Outsource payroll coordination, onboarding workflows, compliance audits, and employee lifecycle operations to Tasknera HR specialists.',
+  'service:Virtual Assistant & Business Support':
+    'Engage bilingual executive virtual assistants and operational back-office support pods to streamline administrative business tasks.',
+  'service:Workforce Solutions':
+    'Scale multi-disciplinary workforce pods and flexible staffing operations managed under strict enterprise service agreements.',
+  // Models
+  'model:Recruitment Success Fee':
+    'Consult with Tasknera on our performance-based recruitment success fee model. Pay only upon successful placement with zero upfront financial commitment.',
+  'model:Custom Enterprise Engagement':
+    'Design custom enterprise workforce solutions tailored to your operational scale, SLAs, and security standards with Tasknera leadership.',
+  'model:Monthly Retainer':
+    'Evaluate Tasknera monthly retainer engagement models for ongoing HR operations, recruiter allocations, and flexible team scalability.',
+  'model:Managed Service':
+    'Deploy fully managed operational pods with end-to-end SLA governance, management oversight, and defined KPIs through Tasknera.',
+  'model:Dedicated Resource':
+    'Hire dedicated full-time remote or on-site resources integrated directly into your internal workflows and daily communication channels.',
+  'model:Contract Staffing':
+    'Deploy agile contract professionals and contingent project specialists to meet seasonal peaks and project milestones without overhead.',
+  'model:Project-Based':
+    'Scope fixed-deliverable project engagements with clearly defined milestones, technical deliverables, and SLA accountability.',
+  // Industries
+  'industry:Digital Media & Agencies':
+    'Scale creative, media buying, and account management teams with Tasknera specialized digital agency and media staffing solutions.',
+  'industry:Manufacturing':
+    'Scope plant-level, supply, engineering, and workforce operational headcount for industrial and manufacturing organizations with Tasknera.',
+  'industry:EdTech & Education':
+    'Source academic coordinators, subject matter experts, engineers, and admissions staff with Tasknera EdTech staffing services.',
+  'industry:Healthcare & Life Sciences':
+    'Consult on specialized healthcare administration, life sciences staffing, and clinical operations talent acquisition with Tasknera.',
+  'industry:Logistics & Supply Chain':
+    'Strengthen your distribution, freight, fleet, and supply chain operations with vetted operational specialists from Tasknera.',
+  'industry:Retail & E-commerce':
+    'Hire high-performing e-commerce specialists, catalog managers, customer support agents, and retail talent with Tasknera.',
+  'industry:Professional Consulting':
+    'Build research, analytical, and operational delivery pods for management consultancies, legal firms, and professional advisory practices.',
+  'industry:IT, SaaS & Technology':
+    'Accelerate technical product development, QA testing, and DevOps deployment with Tasknera vetted IT and SaaS hiring solutions.',
+  'industry:BFSI & Fintech':
+    'Consult on compliant banking, financial services, risk management, and fintech operations staffing with Tasknera domain recruiters.',
+  'industry:Hospitality & Real Estate':
+    'Source guest experience managers, property coordinators, leasing specialists, and facility operations talent through Tasknera.',
+  'industry:Startups & Scale-ups':
+    'Build founding engineering teams and rapid go-to-market operational pods tailored for seed to Series B venture-backed startups.',
+  'industry:Finance & Accounting':
+    'Hire verified accountants, financial analysts, tax specialists, and payroll controllers with Tasknera financial staffing services.',
 };
 
 function ContactFormSync({
@@ -103,10 +179,13 @@ function ContactFormSync({
     const industryParam = searchParams.get('industry');
 
     let dynamicTitle = 'Contact Tasknera & Scope Your Consultation';
+    let dynamicDescription =
+      'Contact Tasknera to schedule a strategic consultation, scope headcount requirements, or evaluate our recruitment and HR software solutions.';
 
     if (serviceParam) {
       const key = `service:${serviceParam}`;
       if (queryTitles[key]) dynamicTitle = queryTitles[key];
+      if (queryDescriptions[key]) dynamicDescription = queryDescriptions[key];
       setFormData((prev) => ({
         ...prev,
         serviceRequired: serviceOptions.includes(serviceParam) ? serviceParam : prev.serviceRequired,
@@ -114,6 +193,7 @@ function ContactFormSync({
     } else if (modelParam) {
       const key = `model:${modelParam}`;
       if (queryTitles[key]) dynamicTitle = queryTitles[key];
+      if (queryDescriptions[key]) dynamicDescription = queryDescriptions[key];
       setFormData((prev) => ({
         ...prev,
         businessRequirement: prev.businessRequirement || `Interested in engagement model: ${modelParam}`,
@@ -121,6 +201,7 @@ function ContactFormSync({
     } else if (industryParam) {
       const key = `industry:${industryParam}`;
       if (queryTitles[key]) dynamicTitle = queryTitles[key];
+      if (queryDescriptions[key]) dynamicDescription = queryDescriptions[key];
       setFormData((prev) => ({
         ...prev,
         businessRequirement: prev.businessRequirement || `Industry focus: ${industryParam}`,
@@ -129,6 +210,13 @@ function ContactFormSync({
 
     if (typeof document !== 'undefined') {
       document.title = dynamicTitle;
+      let metaDesc = document.querySelector('meta[name="description"]');
+      if (!metaDesc) {
+        metaDesc = document.createElement('meta');
+        metaDesc.setAttribute('name', 'description');
+        document.head.appendChild(metaDesc);
+      }
+      metaDesc.setAttribute('content', dynamicDescription);
     }
   }, [setFormData]);
 

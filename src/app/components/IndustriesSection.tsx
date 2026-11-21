@@ -40,6 +40,21 @@ const industries = [
   { icon: Coins, label: 'Finance & Accounting', roles: 'Bookkeeping, tax, controller support' },
 ];
 
+const industryUrlMap: Record<string, string> = {
+  'IT, SaaS & Tech': 'IT, SaaS & Technology',
+  'Healthcare & Biotech': 'Healthcare & Life Sciences',
+  'Manufacturing': 'Manufacturing',
+  'Retail & E-commerce': 'Retail & E-commerce',
+  'BFSI & Fintech': 'BFSI & Fintech',
+  'Logistics & Supply Chain': 'Logistics & Supply Chain',
+  'EdTech & Education': 'EdTech & Education',
+  'Digital Media & Agencies': 'Digital Media & Agencies',
+  'Professional Consulting': 'Professional Consulting',
+  'Hospitality & Real Estate': 'Hospitality & Real Estate',
+  'Startups & Scale-ups': 'Startups & Scale-ups',
+  'Finance & Accounting': 'Finance & Accounting',
+};
+
 const functionalRoles = [
   { icon: Code2, label: 'IT & Engineering', desc: 'Software engineers, architects, cloud, QA' },
   { icon: Coins, label: 'Finance & Accounting', desc: 'Accountants, controllers, financial analysts' },
@@ -111,10 +126,12 @@ export default function IndustriesSection() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 scroll-reveal" style={{ transitionDelay: '0.1s' }}>
             {industries.map((item, i) => {
               const IconComp = item.icon;
+              const mappedIndustry = industryUrlMap[item.label] || item.label;
               return (
-                <div
+                <Link
                   key={item.label}
-                  className="card-premium rounded-2xl p-5 flex items-start gap-4 group"
+                  href={`/contact?industry=${encodeURIComponent(mappedIndustry)}`}
+                  className="card-premium rounded-2xl p-5 flex items-start gap-4 group hover:border-accent/30 transition-all block"
                   style={{ transitionDelay: `${i * 0.02}s` }}
                 >
                   <div className="w-11 h-11 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent flex-shrink-0 group-hover:scale-110 transition-transform">
@@ -128,7 +145,7 @@ export default function IndustriesSection() {
                       {item.roles}
                     </span>
                   </div>
-                </div>
+                </Link>
               );
             })}
           </div>

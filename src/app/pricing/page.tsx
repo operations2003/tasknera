@@ -33,6 +33,7 @@ const tiers = [
       'Dedicated domain recruitment specialist',
     ],
     cta: 'Inquire for Contingent Hiring',
+    href: '/contact?model=Recruitment+Success+Fee',
     popular: false,
     accent: 'border-border',
   },
@@ -51,6 +52,7 @@ const tiers = [
       'No payroll, tax, or statutory compliance burden on your entity',
     ],
     cta: 'Build Your Dedicated Pod',
+    href: '/contact?model=Dedicated+Resource',
     popular: true,
     accent: 'border-accent shadow-glow-accent ring-2 ring-accent/30',
   },
@@ -69,6 +71,7 @@ const tiers = [
       'Custom dashboards, executive reporting & monthly business reviews',
     ],
     cta: 'Structure an Enterprise Agreement',
+    href: '/contact?model=Custom+Enterprise+Engagement',
     popular: false,
     accent: 'border-secondary/40',
   },
@@ -202,7 +205,7 @@ export default function PricingPage() {
 
                   <div className="pt-6 border-t border-border">
                     <Link
-                      href="/contact"
+                      href={tier.href || '/contact'}
                       className={`block w-full text-center py-3.5 rounded-full font-bold text-sm transition-all shadow-md ${
                         tier.popular
                           ? 'bg-accent text-accent-foreground hover:brightness-110 shadow-accent/25'
@@ -214,6 +217,22 @@ export default function PricingPage() {
                   </div>
                 </div>
               ))}
+            </div>
+
+            {/* Startup Banner */}
+            <div className="mb-16 p-6 sm:p-8 rounded-3xl bg-card border border-border flex flex-col sm:flex-row items-center justify-between gap-6 shadow-sm">
+              <div className="space-y-1 text-center sm:text-left">
+                <div className="text-xs font-bold text-accent uppercase tracking-wider">Startup &amp; Early-Stage Hiring</div>
+                <div className="text-lg font-bold text-foreground">Need founding talent or rapid developer pods?</div>
+                <p className="text-sm text-muted-foreground">We offer tailored scoping designed specifically around startup runways and milestone hiring.</p>
+              </div>
+              <Link
+                href="/contact?industry=Startups+%26+Scale-ups"
+                className="whitespace-nowrap px-6 py-3 rounded-full bg-accent text-accent-foreground font-bold text-xs sm:text-sm hover:brightness-110 transition-all flex items-center gap-2 flex-shrink-0"
+              >
+                <span>Startup Hiring Scoping</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
             </div>
 
             {/* Comparison Table */}

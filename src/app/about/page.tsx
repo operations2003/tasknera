@@ -48,8 +48,10 @@ const values = [
 const pillars = [
   {
     title: 'People',
-    desc: 'Permanent recruitment, executive search, contract staffing and turnkey HR operations.',
+    desc: 'Permanent recruitment, executive search, contract staffing and turnkey HR operations tailored for scaling teams.',
     icon: Users,
+    href: '/contact?industry=Startups+%26+Scale-ups',
+    linkText: 'Startup & Scale-Up Hiring',
   },
   {
     title: 'Technology',
