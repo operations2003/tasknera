@@ -46,6 +46,7 @@ interface JobPosition {
   budget?: string;
   shift?: string;
   workMode?: string;
+  preference?: string;
   vendorPayout?: string;
   compensationDetails?: string[];
   whyWorkWithUs?: string[];
@@ -58,198 +59,67 @@ import { getRecruiterEmail } from '@/lib/recruiter';
 
 const openPositions: JobPosition[] = [
   {
-    id: 'oracle-grc-fusion-security-consultant-trx-26139',
-    jobCode: 'TRX-26139',
-    title: 'Oracle GRC + Fusion Security Consultant',
-    company: 'Deltacubes',
-    department: 'Enterprise Security & Oracle Cloud Solutions',
-    category: 'engineering',
-    location: 'PAN India',
-    type: 'Full-Time (FTE)',
-    experience: '7+ Years',
-    budget: 'Up to ₹14.5 LPA',
+    id: 'business-analyst-insurance-platform-warren-nj',
+    jobCode: 'BA-INS-26140',
+    title: 'Business Analyst – Multinational Insurance Platform',
+    company: 'TaskNera Global Operations',
+    department: 'Multinational Insurance Platforms & Business Analysis',
+    category: 'operations',
+    location: 'Warren, New Jersey, USA',
+    type: 'Full-Time (Hybrid)',
+    workMode: 'Hybrid (3 days onsite / week)',
+    preference: 'Local candidates only',
+    experience: '5+ Years',
+    budget: 'Competitive US Market Rate',
     summary:
-      'We are looking for an experienced Oracle GRC + Fusion Security Consultant to lead functional and technical support operations. The role involves governance, risk management, Segregation of Duties (SoD) monitoring, compliance adherence, access governance, and continuous improvement of Oracle GRC processes in Oracle Fusion Cloud environments.',
+      'We are looking for an experienced Business Analyst to join a multinational insurance platform project in Warren, New Jersey. The ideal candidate should have strong experience in business requirements gathering, functional documentation, Agile delivery, and collaboration with technical and product teams.',
     responsibilities: [
-      'Manage Oracle GRC and Oracle Fusion Security support operations.',
-      'Handle risk assessment, SoD monitoring, access certification, and compliance activities.',
-      'Support Oracle Risk Management Cloud modules, including Advanced Access Controls (AAC), Transaction Controls Governor (TCG), and Preventive Controls Advisor (PCA).',
-      'Manage role-based access control (RBAC), user provisioning, duty roles, and job roles.',
-      'Support security across Oracle Fusion Financials, Procurement, SCM, and HCM.',
-      'Coordinate audit activities, risk remediation, and compliance monitoring.',
-      'Work with internal and external auditors on SOX, ITGC, and access governance requirements.',
-      'Manage AMS and managed services support engagements.',
-      'Drive stakeholder coordination, client communication, and continuous process improvement.',
+      'Gather, analyze, and document business and functional requirements.',
+      'Develop detailed business specifications, user stories, process flows, and acceptance criteria.',
+      'Collaborate with Product Managers, Technical Architects, Developers, and UX teams.',
+      'Participate in sprint planning, backlog refinement, and solution discussions.',
+      'Define business rules, data validations, workflows, and exception-handling scenarios.',
+      'Support insurance platform processes, including underwriting, quotation, policy issuance, claims, and renewals.',
+      'Work on AI-assisted development and workflow automation initiatives.',
     ],
     requirements: [
-      'Strong hands-on experience in Oracle Risk Management Cloud / Oracle GRC.',
-      'Strong expertise in Oracle Fusion ERP Security.',
-      'Experience with Segregation of Duties (SoD), access certification, and enterprise access governance.',
-      'Knowledge of RBAC, user provisioning, duty roles, and job roles.',
-      'Understanding of GRC processes, internal controls, SOX compliance, ITGC, audit management, and risk remediation.',
-      'Experience supporting Oracle Fusion Cloud environments.',
-      'Minimum 5 years of Oracle GRC implementation or support experience.',
-      'Experience in AMS / managed services support models and managing support engagements.',
-      'Experience working with internal and external auditors.',
+      '5+ years of relevant Business Analysis / Functional Analysis experience.',
+      'Strong expertise in BRDs, FRDs, user stories, and functional specifications.',
+      'Hands-on experience working in Agile environments.',
+      'Excellent stakeholder management and documentation skills.',
+      'Experience translating business requirements into technical specifications.',
+      'Local candidates only: Ability to work hybrid with 3 days onsite per week in Warren, New Jersey.',
     ],
     secondarySkills: [
-      'Oracle Risk Management Cloud / Oracle GRC',
-      'Oracle Fusion Security',
-      'Segregation of Duties (SoD)',
-      'Access Certification & Governance',
-      'SOX Compliance & Audit Support',
-      'CISA / CRISC / CISSP certifications',
-      'Oracle ERP Financials knowledge',
-      'ITIL and Service Management',
-      'Security Automation & Controls Monitoring',
-      'Project & Stakeholder Management',
-      'Preferred Certifications: Oracle Risk Management Cloud, Oracle Fusion Security, CISA/CRISC/CISSP, CPA/CA, ITIL Foundation',
+      'Commercial or Multinational Insurance domain experience',
+      'Knowledge of D&O (Directors & Officers) and Ocean Cargo insurance',
+      'Familiarity with Microsoft Copilot and AI-assisted tools',
+      'Underwriting, Quotation, Policy Issuance, Claims & Renewals workflows',
+      'Agile / Scrum delivery and user story mapping',
     ],
     quickScreening:
-      'Oracle GRC | Oracle Risk Management Cloud | Oracle Fusion Security | Segregation of Duties (SoD) | Access Certification & Governance | RBAC | SOX Compliance | ITGC | AMS Support | 7+ Years Exp',
+      'Business Analyst | 5+ Years Exp | Multinational Insurance Platform | BRDs & FRDs | User Stories | Agile | Underwriting, Claims & Renewals | AI-Assisted Tools (MS Copilot) | Warren, NJ (Hybrid - 3 days onsite) | Local candidates only',
     compensationDetails: [
-      'Annual CTC: Up to ₹14.5 LPA (commensurate with skills and experience)',
-      'Employment Type: Full-Time (FTE)',
+      'Competitive US Market Rate (commensurate with skills and experience)',
+      'Work Model: Hybrid (3 days onsite per week in Warren, NJ)',
+      'Candidate Preference: Local candidates only',
     ],
     whyWorkWithUs: [
-      'Lead critical Oracle Risk Management Cloud & Fusion Security support for enterprise clients.',
-      'Collaborate with international audit and compliance teams on high-impact governance initiatives.',
-      'Transparent work culture with opportunities for rapid technical leadership advancement.',
+      'High-impact role contributing to a core multinational insurance platform transformation.',
+      'Work on cutting-edge AI-assisted development and workflow automation initiatives.',
+      'Collaborate directly with cross-functional technical, product, and architectural leadership.',
     ],
     howToApplyDetails: [
-      'Total years of experience & relevant Oracle GRC / Fusion Security experience',
-      'Current CTC and Expected CTC',
-      'Official Notice Period / Last Working Day (LWD)',
-      'Current Location and Contact Number',
-    ],
-    email: 'rashmikotekar@tasknera.com',
-    applySubject: 'Application for Oracle GRC + Fusion Security Consultant [TRX-26139] [TaskNera Careers]',
-    applyBody: `Hi Recruitment Team,\r\n\r\nI am applying for the Oracle GRC + Fusion Security Consultant position (Job Code: TRX-26139).\r\n\r\nHere are my professional details:\r\n1. Total Experience: \r\n2. Relevant Oracle GRC / Risk Management Cloud Experience: \r\n3. Relevant Oracle Fusion Security Experience: \r\n4. Current CTC: \r\n5. Expected CTC: \r\n6. Notice Period: \r\n7. Current Location: \r\n8. Contact Number: \r\n\r\nPlease find my updated resume attached.\r\n\r\nBest regards,`,
-  },
-  {
-    id: 'rpa-developer-kofax-trx-26138',
-    jobCode: 'TRX-26138',
-    title: 'RPA Developer (Kofax)',
-    company: 'Deltacubes',
-    department: 'Robotic Process Automation & AI',
-    category: 'engineering',
-    location: 'PAN India',
-    type: 'Full-Time (FTE)',
-    experience: '3–5 Years (Minimum 3+ Years)',
-    budget: 'Up to ₹12 LPA',
-    shift: '5:30 PM – 2:30 AM IST (US Shift)',
-    summary:
-      'We are seeking an experienced RPA Developer with strong hands-on expertise in Kofax, particularly Kofax Kapow, along with mid-level SQL proficiency. The candidate will be responsible for developing, maintaining, and optimizing RPA solutions to automate business processes and improve operational efficiency.',
-    responsibilities: [
-      'Develop and maintain Kofax RPA solutions to automate business processes.',
-      'Design, configure, and optimize automation workflows using Kofax Kapow.',
-      'Collaborate with business analysts and stakeholders to understand automation requirements.',
-      'Develop and maintain SQL queries and scripts for database interactions.',
-      'Troubleshoot and resolve issues related to automation processes.',
-      'Monitor RPA bot performance and implement necessary improvements.',
-      'Integrate RPA solutions with other applications and systems.',
-      'Ensure compliance with security and data protection standards.',
-      'Provide technical support and training to end users.',
-      'Work with cross-functional teams to enhance RPA capabilities.',
-    ],
-    requirements: [
-      "Bachelor's degree in Computer Science or a related field.",
-      'Minimum 3 years of experience in RPA development, with a strong focus on Kofax.',
-      'Proficiency in Kofax Kapow and its components.',
-      'Mid-level proficiency in SQL for database interactions.',
-      'Strong analytical, troubleshooting, and problem-solving skills.',
-      'Good communication and teamwork abilities.',
-      'Ability to work in a fast-paced environment and meet deadlines.',
-      'Willingness to work in US shift timings (5:30 PM – 2:30 AM IST).',
-    ],
-    secondarySkills: [
-      'Kofax RPA / Kofax Kapow',
-      'SQL Querying & Database Scripting',
-      'Knowledge of UiPath',
-      'RPA Bot Monitoring & Performance Optimization',
-      'Process Automation & Systems Integration',
-      'US Shift Alignment (5:30 PM – 2:30 AM IST)',
-    ],
-    quickScreening:
-      'RPA Developer | Kofax RPA | Kofax Kapow | SQL | Bot Performance | Process Automation | US Shift (5:30 PM - 2:30 AM IST) | 3-5 Years Exp | PAN India',
-    compensationDetails: [
-      'Annual CTC: Up to ₹12 LPA (commensurate with skills and experience)',
-      'Working Hours: 5:30 PM – 2:30 AM IST (US Shift)',
-      'Shift Benefits: Cab facility and shift allowance as per organizational policy.',
-    ],
-    whyWorkWithUs: [
-      'Hands-on experience developing and scaling complex RPA solutions across enterprise systems.',
-      'Comprehensive shift benefits including cab facilities and shift allowances.',
-      'Collaborative, growth-oriented engineering culture with modern automation toolsets.',
-    ],
-    howToApplyDetails: [
-      'Total years of RPA experience and dedicated Kofax / Kofax Kapow experience',
-      'Proficiency with SQL and database interactions',
-      'Comfort with US Shift timings (5:30 PM – 2:30 AM IST)',
-      'Current CTC and Expected CTC',
-      'Official Notice Period / Last Working Day (LWD)',
-      'Current Location and Contact Number',
-    ],
-    email: 'rashmikotekar@tasknera.com',
-    applySubject: 'Application for RPA Developer (Kofax) [TRX-26138] [TaskNera Careers]',
-    applyBody: `Hi Recruitment Team,\r\n\r\nI am applying for the RPA Developer (Kofax) position (Job Code: TRX-26138).\r\n\r\nHere are my professional details:\r\n1. Total RPA Experience: \r\n2. Kofax / Kofax Kapow Experience: \r\n3. SQL Experience / Proficiency: \r\n4. Current CTC: \r\n5. Expected CTC: \r\n6. Notice Period: \r\n7. Current Location: \r\n8. Willingness to work US Shift (5:30 PM – 2:30 AM IST): \r\n9. Contact Number: \r\n\r\nPlease find my updated resume attached.\r\n\r\nBest regards,`,
-  },
-  {
-    id: 'tele-sales-associate-hyderabad-goquickhire',
-    title: 'Tele Sales Associate',
-    company: 'GoQuickHire',
-    department: 'Tele Sales & Inside Business Development',
-    category: 'sales',
-    location: 'Hyderabad',
-    type: 'Full-Time (FTE) · WFH / WFO',
-    workMode: 'WFH / WFO',
-    experience: 'Freshers & 0–2 Years',
-    budget: '₹15,000–₹18,000 / month + Incentives',
-    summary:
-      'GoQuickHire is hiring freshers and candidates with 0–2 years of experience for the position of Tele Sales Associate in Hyderabad! The role involves making outbound calls, pitching products or services, resolving queries, and closing sales to meet assigned targets.',
-    responsibilities: [
-      'Make outbound calls and interact with potential customers.',
-      'Explain products or services and address customer queries.',
-      'Convince customers and achieve assigned sales targets.',
-      'Maintain positive customer relationships and follow up on warm leads.',
-      'Track call dispositions, customer responses, and lead progress in CRM.',
-    ],
-    requirements: [
-      'Freshers looking to start their careers or candidates with 0–2 years of experience.',
-      'Qualification: B.Tech / Any Graduate.',
-      'Good communication skills in Telugu + English OR Telugu + Hindi.',
-      'Goal-oriented, persuasive mindset with an enthusiasm for tele-sales.',
-      'Location: Hyderabad (Work From Home / Work From Office).',
-    ],
-    secondarySkills: [
-      'Tele Sales & Outbound Calling',
-      'Telugu + English or Hindi Fluency',
-      'Customer Relationship Management',
-      'Sales Pitching & Objection Handling',
-      'Target Achievement & Lead Pipeline',
-    ],
-    quickScreening:
-      'Tele Sales Associate | Outbound Calling | Telugu + English/Hindi | B.Tech / Any Graduate | Freshers & 0-2 Years | Hyderabad (WFH/WFO) | PF + ESIC + Incentives',
-    compensationDetails: [
-      'Salary: ₹15,000–₹18,000 per month',
-      'Attractive performance-linked sales incentives',
-      'Statutory Benefits: PF + ESIC',
-    ],
-    whyWorkWithUs: [
-      'Competitive monthly fixed salary plus attractive sales incentives.',
-      'Comprehensive statutory benefits including PF and ESIC coverage.',
-      'Excellent launchpad for fresh graduates and early-career sales professionals.',
-    ],
-    howToApplyDetails: [
-      'Highest Qualification (B.Tech / Any Graduate)',
-      'Total Sales experience (Freshers welcome to apply)',
-      'Language fluency (Telugu + English or Telugu + Hindi)',
-      'Preferred work mode in Hyderabad (WFH or WFO)',
-      'Contact number',
+      'Total years of Business Analysis / Functional Analysis experience',
+      'Relevant insurance domain experience (Commercial, D&O, Ocean Cargo, etc.)',
+      'Current location and confirmation of ability to work hybrid in Warren, NJ (3 days onsite)',
+      'US Work Authorization status',
+      'Notice period / availability to join',
+      'Contact number and updated resume',
     ],
     email: 'careers@tasknera.com',
-    applySubject: 'Application for Tele Sales Associate – Hyderabad [TaskNera Careers]',
-    applyBody: `Hi Recruitment Team,\r\n\r\nI am applying for the Tele Sales Associate position in Hyderabad.\r\n\r\nHere are my professional details:\r\n1. Highest Qualification (B.Tech / Any Graduate): \r\n2. Total Sales Experience (0-2 Years / Fresher): \r\n3. Languages Known (Telugu + English/Hindi): \r\n4. Current Location in Hyderabad: \r\n5. Preferred Work Mode (WFH/WFO): \r\n6. Contact Number: \r\n\r\nPlease find my updated resume attached.\r\n\r\nBest regards,`,
+    applySubject: 'Application for Business Analyst – Multinational Insurance Platform [Warren, NJ] [TaskNera Careers]',
+    applyBody: `Hi Recruitment Team,\r\n\r\nI am applying for the Business Analyst – Multinational Insurance Platform position in Warren, New Jersey.\r\n\r\nHere are my professional details:\r\n1. Total Business Analysis Experience: \r\n2. Relevant Insurance Domain Experience: \r\n3. Current Location: \r\n4. Confirmation of Hybrid Work (3 days onsite in Warren, NJ): \r\n5. US Work Authorization Status: \r\n6. Notice Period / Availability: \r\n7. Contact Number: \r\n\r\nPlease find my updated resume attached.\r\n\r\nBest regards,`,
   },
 ];
 
@@ -456,14 +326,8 @@ export default function CareersPage() {
               {openPositions.length > 0 && (
                 <div className="flex flex-wrap gap-2">
                   {[
-                    { id: 'all', label: 'All Openings' },
-                    { id: 'software-sales', label: 'Software Sales' },
-                    { id: 'sales', label: 'Sales & Growth' },
-                    { id: 'engineering', label: 'Cloud & Engineering' },
-                    { id: 'operations', label: 'Operations & Mgt' },
-                    { id: 'talent', label: 'Recruitment & Talent' },
-                    { id: 'hr', label: 'HR Operations' },
-                    { id: 'va', label: 'Virtual Assistant' },
+                    { id: 'all', label: `All Openings (${openPositions.length})` },
+                    { id: 'operations', label: 'Operations & Business Analysis' },
                   ].map((tab) => (
                     <button
                       key={tab.id}
@@ -515,6 +379,18 @@ export default function CareersPage() {
                         {job.jobCode && (
                           <span className="text-xs font-bold text-slate-700 bg-slate-100 border border-slate-300 px-2.5 py-0.5 rounded-md">
                             Code: {job.jobCode}
+                          </span>
+                        )}
+                        {job.workMode && (
+                          <span className="text-xs font-medium text-blue-700 bg-blue-50 border border-blue-200/70 px-2.5 py-0.5 rounded-md flex items-center gap-1">
+                            <Building2 className="w-3 h-3 text-blue-600" />
+                            {job.workMode}
+                          </span>
+                        )}
+                        {job.preference && (
+                          <span className="text-xs font-medium text-rose-700 bg-rose-50 border border-rose-200/70 px-2.5 py-0.5 rounded-md flex items-center gap-1">
+                            <MapPin className="w-3 h-3 text-rose-600" />
+                            {job.preference}
                           </span>
                         )}
                         {job.shift && (
